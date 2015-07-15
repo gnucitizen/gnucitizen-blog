@@ -1,0 +1,20 @@
+---
+title: Steal His Wi-Fi
+author: adrian-pastor
+date: Fri, 11 Jan 2008 07:01:23 GMT
+template: this/views/post.jade
+---
+
+Leaving your WiFi network open is not a good idea. Bruce Schneier does not agree and wrote an interesting article. The following is an extract of it:
+
+> I'm also unmoved by those who say I'm putting my own data at risk, because hackers might park in front of my house, log on to my open network and eavesdrop on my internet traffic or break into my computers. This is true, but my computers are much more at risk when I use them on wireless networks in airports, coffee shops and other public places. If I configure my computer to be secure regardless of the network it's on, then it simply doesn't matter. And if my computer isn't secure on a public network, securing my own network isn't going to reduce my risk very much. [Wired](http://www.wired.com/politics/security/commentary/securitymatters/2008/01/securitymatters_0110)
+
+Although Bruce is making some good points regarding the smaller likelihood of being attacked via wifi at home as opposed to a public place, he makes one mistake: he assumes the attack will be an attempt to compromise his PC/laptop or eavesdrop his traffic. Of course these are valid attacks, but how about attacking his router? In all these three attacks the victim is ultimately a user: Bruce in this case, but the nature of the attack is different.
+
+Let's think about it: who gives a darn about compromising your computer when you can [change the DNS settings on most consumer routers](/blog/bt-home-flub-pwnin-the-bt-home-hub-5) _without_ a password via [UPnP](/blog/hacking-with-upnp-universal-plug-and-play)? We've said it before here at GNUCITIZEN: people are stuck on the old-school mentality of rooting the user's box. Things have changed. Your data is now online, your router is a computer much more insecure than you XP desktop that runs an AV + firewall and updates itself automatically on a regular basis. For instance, did you know that CSRF attacks against home routers have already been [intercepted in the wild](http://blog.hispasec.com/laboratorio/255) which change DNS setting in order to phish banking login details!
+
+Of course the wireless sniffing attacks could also have terrible consequences. Most sites send cookies in the clear, even the ones that encrypt the connection when submitting passwords. Getting your [gmail account hijacked](http://scissormonkey.wordpress.com/2007/12/24/popular-blogger-loses-domain-because-of-gmail-hack/) could lead to [really bad things](http://www.derkeiler.com/Mailing-Lists/Full-Disclosure/2007-11/msg00255.html). However, I do agree with Bruce that is much more likely that someone will perform wireless sniffing attacks on public places such as airports and coffee shops, since many more victims can be attacked at once.
+
+Regarding "If I configure my computer to be secure regardless of the network it's on, then it simply doesn't matter" I couldn't disagree more strongly! This would perhaps be only true if your computer wasn't part of a network (isolated), and yes, I'm ignoring physical attacks from the picture. However, being on a wireless network will expose sensitive information on your Internet traffic since now you depend on websites enforcing encryption at all times, not to mention clear-text protocols such as `POP3, IMAP, FTP`, etc. Even if all traffic was always encrypted - which won't happen unless you tunnel it via VPN - SSL MITM would still be possible. Of course Bruce would get an invalid SSL certificate dialog box when visiting sites, but would he click on "Cancel"? Hmmm, maybe not! Also again, even if your computer is secured, your router could be compromised (i.e: weak pwd, auth bypass or UPnP) which means that the attacker controls the flow of your traffic among other attacks!
+
+_pdp and I propose a friendly challenge to Bruce: let us drop by your place and give us a chance to convince you that the threat is more than you think by simply testing a few attacks on your router (BT Home Hub as he works for BT?)._

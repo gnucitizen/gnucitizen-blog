@@ -1,0 +1,28 @@
+---
+title: Fuzzing XML and JSON Pt.1
+author: petko-d-petkov
+date: Thu, 13 Dec 2012 11:47:35 GMT
+template: this/views/post.jade
+---
+
+> It is hard to get back to blogging especially when there are easier alternatives to scratch your itch - I am talking about [twitter](http://twitter.com/pdp). However, I decided to make the effort and see where it takes me. It will be difficult initially but practice leads to continuous improvement.
+
+What I would like to do is to highlight some of the work I did to take two relatively simple and straightforward penetration testing practices to the next level: this is XML and JSON fuzzing. If you have worked as a penetration tester or you have been moderately interested in web security you should have encountered a web service written on top of either of these technologies.
+
+Both JSON and XML are slick beasts. They are both structured data containers and rely on well-formatted documents in order to be processed successfully. There is very little room for movement out of the spec and in fact they are both error intolerant. Most parsers will explode even on the tiniest errors in the document structure, such as for example if you leave a comma on the last item of an array inside a JSON structure. The reason I am mentioning this is because this is the basis of the two core fuzzing strategies - as I define them.
+
+The first strategy is to concentrate on finding bugs in the actual parser/processor. In this case we will aim to submit ill-formatted documents and observe for strange behaviour. The types of problems typically discovered through this strategy are memory corruption bugs. The reason for this is because even in 2012 strings are still difficult to deal with and both formats are human-readable and rely heavily on processing text. Even binary input is represented textually.
+
+The second strategy is to concentrate on finding bugs after the document has been parsed/processed. In this case we will aim to submit unexpected input but still stick to the format and the specifications of the document. This strategy is used to discover a lot wider range of bugs depending on how the structured data is used later on inside the application. The types of bugs discovered will depend on the targeted platform, language and all kinds of other things.
+
+Both strategies can be mixed. However, from personal experience, I believe that you will be better off if you don't because things can get quite confusing and you may not be able to setup all necessary measurement equipment correctly in order to find actual bugs or extract any useful data.
+
+The first strategy I tend to leave it in the realm of research. The reason for this is because there are not that many parsers for both JSON and XML. Each programming language usually offers a few libraries which are widely adopted. Fuzzing these libraries will get us bugs which apply to all applications that make use of them - i.e. research in my opinion. On the other hand, the second strategy is targeted towards specific applications and platforms. And this is what I will mainly concentrate on for the rest of this series of articles.
+
+As I discussed earlier this "second", so-to-say, strategy is all about sending unexpected input but still keeping the document well formatted. So what is unexpected input? Well unexpected input is everything from very large numbers to very small ones (MIN_INT, MAX_INT, UNSIGNED MAX_INT, LONG, etc). Unexpected input is also logical values such as true and false, the special atom nil, null and 0 and 1. Some other unexpected values could be empty data structures where a value is expected such as when sending empty array but the application expects a number or a string. The list goes on and on and you can spend weeks tuning a fuzzer to find more interesting stuff by incorporating more unexpected input.
+
+It is fair to say that not all unexpected values are equal. Some values are more likely to cause strange behaviour than others and this all depends on the target platform. Let's take JSON for example. In JSON we have 2 main structured containers: `{}` - object and `[]` - array. Now, Java applications typically map/unmarshall JSON structures to classes. Therefore if we have a class which has public member variable `"a"` of type integer but we send an empty object, an exception will be raised before the input is even processed by the application. This is not quite like that in other programming languages which are not so strictly typed. For example, in PHP the developer may expect an integer but actually the parser will produce an array and while this will cause an error at some point later inside the application it will not immediately explode during parsing. This kind of conditions are very interesting.
+
+So why I am mentioning this? Well, typically a fuzzer will generate a lot of combinations. Some of them may be fruitful. Most of them will be waste of time. However, by knowing what we are up against we can tune the fuzzer to be smarter and as a result of this a lot faster and more fruitful - I rather spend manually analysing 1000 results than 1000000.
+
+I think I am running out of energy. After so many years of silence this post looks quite lengthy. Btw, such fuzzers exist. You can find one as part of the [Websecurify Online Suite](http://www.websecurify.com/suite) and you can go ahead and try it for free now. Both [JSON](https://suite.websecurify.com/market/jsonfuzz) and [XML](https://suite.websecurify.com/market/xmlfuzz) are well supported. The reason I am mentioning this is because the rest of the series will concentrate on exploring how these fuzzers work and what kind of vulnerabilities we can find with them.
