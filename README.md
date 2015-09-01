@@ -13,7 +13,7 @@ This is the GNUCITIZEN.ORG blog. The content will be published to http://gnuciti
 
 If you want to contribute simply do a pull request. We will review your contribution and decide if it can be published.
 
-All kinds of contributions are welcome including code fixes, spelling and grammer corrections, fixing factual mistakes, etc.
+All kinds of contributions are welcome including code fixes, spelling and grammar corrections, fixing factual mistakes, etc.
 
 Thanks for the support,
 The GNUCITIZEN Team
