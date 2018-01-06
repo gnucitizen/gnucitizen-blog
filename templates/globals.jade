@@ -1,0 +1,28 @@
+- page = page || {}
+- page.metadata = page.metadata || {}
+
+//- --
+
+- if (!page.getUrl) {
+-     page.getUrl = function (baseUrl) {
+-         return (baseUrl || '').replace(/\/$/, '') + '/' + (page.url || '').replace(/^\//, '')
+-     }
+- }
+
+//- --
+//- --
+//- --
+
+- locals = locals || {}
+
+//- --
+//- --
+//- --
+
+- (function (env) {
+-     for (var key in env) {
+-         locals[key] = env[key]
+-     }
+- })((locals || this)[process.env.NODE_ENV] || {})
+
+//- --

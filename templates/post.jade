@@ -1,2 +1,35 @@
-div
-    !=page.html
+extends ./page.jade
+
+//- --
+//- --
+//- --
+
+block prepend head
+    if !page.metadata.description
+        - var pageDescription = retrievePageDescriptionFromMarkdown(page)
+        
+    //- --
+    
+    if !page.metadata.image
+        - var pageImage = retrievePageImageFromMarkdown(page)
+        
+//- --
+//- --
+//- --
+
+block content
+    block post-title
+        h1.title=page.title
+        
+    //- --
+    
+    if (page.metadata || {}).subtitle
+        block post-subtitle
+            h2.subtitle=page.metadata.subtitle
+            
+    //- --
+    
+    block post-content
+        !=page.html
+        
+//- --

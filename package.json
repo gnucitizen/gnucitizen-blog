@@ -11,6 +11,8 @@
     "url": "git+https://github.com/gnucitizen/gnucitizen-blog.git"
   },
   "dependencies": {
-    "wintersmith": "^2.4.1"
+    "wintersmith": "^2.4.1",
+    "wintersmith-browserify": "^1.3.0",
+    "wintersmith-less": "^1.0.0"
   }
 }
