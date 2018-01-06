@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+- '9'
+before_install:
+- npm install
+script:
+- npm build
+after_success:
+- bash .deploy.sh
+branches:
+  only: master
+env:
+  global:
+  - secure: 4eq/HjlZkNv2R/ZwrZlQM9EpMKrou0DcgFKWMNjUBx38M3FVPHbBO+c2hZDzr5WPWWzR/0nPjo9L3eAUmOBr9SVUAr8qsOtJQ3JxLjRpUDoUovkKRmHtoBKkAlHwdcKx5BBMBCS1mHD8gE+n+uaRm1mqiUAqZbw6uC4yTELnig0a6ES40FF6ynmNDNAoGteF4R0lq4NoGIT2XeY6lL8m8MsVelVybOd5EiyEnzxMYc34FfN5dWLyS8QLUdSZVVRup39od+fEMeWjqaNZjhS3PPSkYCeKiS8r2GmKFbsUpVxH2spDAKeh9pxawv/ksHC7JoK+en2CE+tAYo5/Qtb23GegxyC3VECcIXJvTCa7EhFz9tqh0/uPkPR2Ma00sePR4/VyVPlghF9ocGYqz6nrS6Nw8x/8JO3fYOvgRq/PYdiWYJeDPM5fFk+tWmJSg1w3WprBc/wx49o/c6g5mhInlaXW456sVus5H18mY/a0qLxuEyBRR81tT9Id+tBu9dpeiTt9+EGoDEN27j0u25t6NsudCxHL1HVhjC6lyoadGaSL5VzYynEcFyNuG5Rhvl5s9sCVx92SYFa04Dw46ExGW+JEZEck2nT+VqjNi8EzlU0yHYnUO6XA/HXDjS4pIXRowtFcfSVVrkhBdgLR211YnnmODj20vFu8KeXcjaEgpxs=
