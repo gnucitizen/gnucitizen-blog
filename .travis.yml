@@ -4,7 +4,7 @@ node_js:
 before_install:
 - npm install
 script:
-- npm build
+- npm run build
 after_success:
 - bash .deploy.sh
 branches:
