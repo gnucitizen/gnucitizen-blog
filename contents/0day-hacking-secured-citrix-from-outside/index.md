@@ -2,7 +2,7 @@
 title: 0day Hacking Secured CITRIX From Outside
 author: petko-d-petkov
 date: Wed, 10 Oct 2007 15:40:34 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 In the true spirit of GNUCITIZEN half(partial)-disclosure movement, we announce that it is possible to gain user access level on CITRIX. The bug/feature does not rely on any client/server vulnerabilities nor client/server misconfiguration issues. All an attacker needs to do to exploit the weakness is to lure a victim to a malicious website or trick him/her into opening specially crafted ICA files. The attack results into remote command execution inside CITRIX with the access level of the current user.
