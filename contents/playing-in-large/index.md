@@ -2,7 +2,7 @@
 title: Playing in Large
 author: petko-d-petkov
 date: Tue, 06 Feb 2007 14:18:53 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 > Many times, Web Applications enforce restrictions on the number of characters the user can input. That happens quite often since this is probably the easiest and most obvious way of sanitizing the user input. Overcoming these restrictions, when performing Cross-site scripting attacks, is a challenge, so I am going to discuss a few techniques that I have developed, which prove to be quite useful in various situations.

@@ -2,7 +2,7 @@
 title: Backdooring Flash Objects (the receipt)
 author: petko-d-petkov
 date: Tue, 05 Sep 2006 22:03:52 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

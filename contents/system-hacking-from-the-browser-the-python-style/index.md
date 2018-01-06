@@ -2,7 +2,7 @@
 title: System Hacking from the Browser (the Python Style)
 author: petko-d-petkov
 date: Wed, 05 Dec 2007 21:39:01 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 If you haven't noticed yet, the browser becomes more and more like the desktop. You are still restrained by the same origin policies (SOP) but there are always ways to hack back and get your way though. This post is not about exploits, as some of you may assume based on my introduction. This post is more about how to use the browser as a platform for executing attack scripts, system commands, low level system calls, etc, etc, etc.

@@ -2,7 +2,7 @@
 title: Social Media Security
 author: petko-d-petkov
 date: Mon, 22 Sep 2008 10:57:46 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 _I am happy to announce the relaunch of Blogsecurify. I have some more announcements to make._

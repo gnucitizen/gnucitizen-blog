@@ -2,7 +2,7 @@
 title: BT Home Flub Pwnin The BT Home Hub (2)
 author: adrian-pastor
 date: Tue, 16 Oct 2007 22:02:03 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 In this post I'll elaborate a bit more on our [demo video](http://stage6.divx.com/user/gnucitizen/video/1722388/BT-Home-Flub) previously released and what the intruder can do to remotely access the Home Hub _anytime and from anywhere_ after it's been been broken into.  You are recommended to read the [first part](/blog/bt-home-flub-pwnin-the-bt-home-hub) of this post if you haven't done so yet.

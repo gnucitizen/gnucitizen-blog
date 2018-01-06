@@ -2,7 +2,7 @@
 title: Exploring The UNKNOWN Scanning The Internet Via SNMP
 author: adrian-pastor
 date: Mon, 03 Mar 2008 16:51:32 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

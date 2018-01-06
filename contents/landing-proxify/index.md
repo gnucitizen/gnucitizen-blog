@@ -2,7 +2,7 @@
 title: Landing Proxify
 author: petko-d-petkov
 date: Wed, 06 Feb 2013 23:28:40 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 I am really happy to announce the first release of proxify. I started writing this tool several years ago but I was never able to finished it. The first release (version 1.0) is now available for [download](http://code.google.com/p/gnucitizen/downloads/list) on all platforms: Linux, Mac and Windows.

@@ -2,7 +2,7 @@
 title: Web Pages from Hell
 author: petko-d-petkov
 date: Mon, 11 Sep 2006 21:23:31 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 You open a html file but you are not aware. You check the content but you don't know.

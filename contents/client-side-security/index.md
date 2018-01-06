@@ -2,7 +2,7 @@
 title: Client-side Security
 author: petko-d-petkov
 date: Mon, 11 Jun 2007 17:11:36 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 I was planning to start this topic for some time now and here I am making the first steps towards explaining what client-side security is and why it is important. I suspect that there will be a follow up post in the near future. There is definitely a lot of ground work that needs to be laid out for this topic.

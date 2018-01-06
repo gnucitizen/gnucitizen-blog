@@ -2,7 +2,7 @@
 title: The Generic XSS Worm
 author: david-kierznowski
 date: Wed, 20 Jun 2007 22:52:15 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 When we think of computer worms, we generally think about operating-system based worms such as the famous Code Red, which replicated itself 250,000 times in approximately nine hours on July 19, 2001. Its replication was made possible by a vulnerability within MS Windows platform. Firewalls and defense in depth help mitigate the spread of worms by providing layers of protection between public and private networks; however, a new age worm is upon us, the XSS Worm aka the Web 2.0 worm.

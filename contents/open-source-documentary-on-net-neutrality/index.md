@@ -2,7 +2,7 @@
 title: Open Source Documentary on Net Neutrality
 author: petko-d-petkov
 date: Tue, 26 Jun 2007 21:33:04 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 <iframe width="100%" height="420" src="http://www.youtube.com/embed/8rNg_FVaPek" frameborder="0" allowfullscreen></iframe>

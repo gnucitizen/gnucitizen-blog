@@ -2,7 +2,7 @@
 title: CSRF-ing Blogger Classic
 author: adrian-pastor
 date: Fri, 19 Jan 2007 10:02:10 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 In [Blogger](http://www.blogger.com) Classic, admin users who originally created a blog can be removed by other admin users. This behavior allows for a complete and non-reversible hijack of a Blogger Classic blog through  CSRF/XSRF/session riding/one-click attacks.

@@ -2,7 +2,7 @@
 title: New Technique To Perform Universal Website Hijacking
 author: adrian-pastor
 date: Sat, 20 Sep 2008 14:56:05 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 I'm really excited that [HITBSecConf2008 Malaysia](http://conference.hackinthebox.org/hitbsecconf2008kl/) is coming up soon: end of October to be precise. I highly recommend our readers to attend such event, as it's organized by one of the finest security event crews I have ever dealt with. There are tons of talks I want to attend, which I will cover in another post. The GNUCITIZEN team would like to thank the Hack in the Box (HITB) staff for inviting us to the Malaysia edition of the conference, making this the second time pdp and I will speak at HITBSecConf. The HITBSecConf crew includes Dhillon, [geek00l](http://geek00l.blogspot.com/), [spoonfork](http://mel.icious.net/), Belinda, Prabu, [ruFI0](http://geeks.serverfreak.biz/rufi0/blog/) and Amy among others. Thank you guys, we're really humbled by your invitation.

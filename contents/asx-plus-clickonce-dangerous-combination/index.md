@@ -2,7 +2,7 @@
 title: ASX Plus ClickOnce - Dangerous Combination
 author: petko-d-petkov
 date: Mon, 05 Nov 2007 12:52:02 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 Over the last couple of days there was a surge of stories related to the recent drive-by-download malware attacks against Macs and PCs. The attacks are nothing more but social engineering attempts which try to trick the victim into installing the malicious program on the victims' machines. This approach is very simple but, as you can see, quite effective. In this post I would like to draw your attention on a variation of these types of attacks which work for Windows environments with Microsoft Media Player 9 or earlier and .NET 2 or later installed.

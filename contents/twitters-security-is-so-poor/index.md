@@ -2,7 +2,7 @@
 title: Twitter's Security is so Poor
 author: petko-d-petkov
 date: Thu, 29 Jan 2009 23:17:21 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 ...and there are a lot of privacy concerns too.

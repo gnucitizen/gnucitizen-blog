@@ -2,7 +2,7 @@
 title: Black Hat Europe 2008
 author: petko-d-petkov
 date: Tue, 22 Apr 2008 15:11:48 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 The Black Hat Europe 2008 event took place on the 27th and 28th of March. In this post, you will be able to find information regarding my talk and research. My presentation was titled [Client-side Security](http://www.blackhat.com/html/bh-europe-08/bh-eu-08-speakers.html#Petkov). Here is the abstract:

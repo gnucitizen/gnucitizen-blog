@@ -2,7 +2,7 @@
 title: 6th OWASP Conference
 author: petko-d-petkov
 date: Thu, 17 May 2007 07:33:14 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 Here you will be able find all materials that I used for my [presentation](http://www.gnucitizen.org/static/blog/2007/05/advanced-web-hacking.ppt) at the [6th OWASP Conference](http://www.owasp.org/index.php/6th_OWASP_AppSec_Conference_-_Italy_2007/Agenda). Further discussion and clarification on the subject to be expected very soon.

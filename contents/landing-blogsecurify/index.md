@@ -2,7 +2,7 @@
 title: Landing Blogsecurify
 author: petko-d-petkov
 date: Thu, 26 Jun 2008 08:45:30 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 During the last couple of days, we combined forces with [Blogsecurity.NET](http://www.blogsecurity.net) in an effort to improve their [online Wordpress vulnerability scanner](http://blogsecurity.net/cgi-bin/wp-scanner.cgi). The result of these efforts is our new initiative called Blogsecurify.

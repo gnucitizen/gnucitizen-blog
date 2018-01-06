@@ -2,7 +2,7 @@
 title: GIFARs and Other Issues
 author: petko-d-petkov
 date: Sun, 03 Aug 2008 15:20:11 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 A lot of people have asked me (especially reporters) about the GIFAR attack since it resembles what I have already spoken about [here](/blog/java-jar-attacks-and-features/) and presented at the [last Black Hat in Amsterdam](/blog/black-hat-europe-2008/). So, I decided to shed some light without being too revealing as the talk, which will demonstrate and explains the attack in more details, will give away the awesome stuff.

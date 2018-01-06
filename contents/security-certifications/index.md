@@ -2,7 +2,7 @@
 title: Security Certifications
 author: petko-d-petkov
 date: Mon, 06 Oct 2008 16:33:37 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 Security Certifications - should you get some? Well, this is what I think.

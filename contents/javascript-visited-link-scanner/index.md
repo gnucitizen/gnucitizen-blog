@@ -2,7 +2,7 @@
 title: JavaScript Visited Link Scanner
 author: petko-d-petkov
 date: Tue, 15 Aug 2006 20:50:51 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 This is a technique which I learned from [Jeremiah Grossman](http://jeremiahgrossman.blogspot.com/) and his presentation on JavaScript malware. Please, keep all the credits for this finding to Jeremiah.

@@ -2,7 +2,7 @@
 title: AttackAPI
 author: petko-d-petkov
 date: Sat, 26 Aug 2006 02:00:47 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 AttackAPI provides simple and intuitive programmable interface for composing attack vectors with JavaScript and other client and server related technologies.

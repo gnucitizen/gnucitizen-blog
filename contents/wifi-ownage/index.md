@@ -3,7 +3,7 @@ title: WiFi Ownage
 author: petko-d-petkov
 guest: sam-aldis
 date: Thu, 07 Feb 2008 10:59:13 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 > This month GNUCITIZEN's guest blogger is Sam Aldis, the founder of [darkstar.me.uk](http://darkstar.me.uk/). Sam started as a blackhat/script kiddie but soon he has learned a life lesson when he broke into a big football(soccer) leagues site. Sam did not serve any sentence but he had to pay a hefty fine. This is how he turned into a whitehat and now he is in the process of setting up his own security company. These are his words:

@@ -2,7 +2,7 @@
 title: Tools of Trade
 author: petko-d-petkov
 date: Fri, 10 Apr 2009 20:18:31 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 Lately I've been dropping a lot bash scripts on public forums and of course on work related projects. Many people came back to me asking why I chose bash. "Python or perl would have been better!" While I agree that both python and perl are a lot more expressive, I disagree that tools in general should be written just to accommodate the needs of a particular framework. Tools are tools and they have their lifetime just like everything else. So should we bother?

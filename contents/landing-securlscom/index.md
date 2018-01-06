@@ -2,7 +2,7 @@
 title: Landing Securls.com
 author: petko-d-petkov
 date: Sat, 30 Jun 2007 09:25:11 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 In the last couple of months the GNUCITIZEN group has been secretively working on projects of various nature. We've jump started [blogsecurity.net](http://www.blogsecurity.net), the only organization that deals with web blog security exclusively, and we also introduced great improvements into the GNUCITIZEN Gadgets Interface, which rocks as you can see from its project page [here](/blog/gadgets). Let's not forget about [AttackAPIv3](/blog/attackapi), which will be available for download as soon as we fix  the documentation, and [Hakiri](http://www.hakiri.com), which will make its way through as the first hacker lifestyle portal very soon. Today we are announcing a new project called [Securls](http://www.securls.com) and we hope that you will find it as interesting and useful as we do.

@@ -2,7 +2,7 @@
 title: Clear
 author: petko-d-petkov
 date: Sat, 13 Oct 2007 12:38:55 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 I am planning to be very quick and brief with this post and to try to clarify some misconception regarding some of our latest posts and projects on GNUCITIZEN.

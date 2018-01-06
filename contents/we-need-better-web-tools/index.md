@@ -2,7 +2,7 @@
 title: We Need Better Web Tools
 author: petko-d-petkov
 date: Fri, 21 Nov 2008 17:33:26 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 _Oh yes, we certainly do! And let me tell you something: they ain't going to be quite the same thing as what we are used to._

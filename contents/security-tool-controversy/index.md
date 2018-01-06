@@ -2,7 +2,7 @@
 title: Security Tool Controversy
 author: david-kierznowski
 date: Tue, 10 Jul 2007 22:29:08 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 Last year I discussed some of the hacking and security laws in the UK on [michaeldaw.org](http://michaeldaw.org/news/news-021206/); pdp also discussed this on [GNUCITIZEN](/blog/changes-in-the-british-computer-misuse-act) a few months back. Governments are looking at clamping down on security tool development and distribution to mitigate hacking risks. It looks like [Germany are now following](http://www.0x000000.com/?i=383):

@@ -2,7 +2,7 @@
 title: Co-authoring Google Hacking for Penetration Testers, Volume 2
 author: petko-d-petkov
 date: Wed, 04 Jul 2007 08:44:42 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 j0hnny, Roelof Temmingh and I are currently working on the second edition of Syngress' best selling book [Google Hacking for Penetration Testers](http://www.syngress.com/catalog/?pid=3150). We are all excited about it and we hope that the second edition will be as good or even better then the first edition with an up-to-date information on the latest Google hacks (Google Dorks) and a lot more interesting additions, which we cannot disclose at the moment.

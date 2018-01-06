@@ -2,7 +2,7 @@
 title: Holes In Embedded Devices Authentication Bypass (pt 3)
 author: adrian-pastor
 date: Sat, 16 Feb 2008 08:08:17 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 We move on with the 3rd kind of authentication bypass bug. You may want to familiarize yourself with the previous two entries [here](/blog/holes-in-embedded-devices-authentication-bypass-pt-1) and [here](/blog/holes-in-embedded-devices-authentication-bypass-pt-2), before you continue.

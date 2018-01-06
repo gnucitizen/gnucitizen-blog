@@ -2,7 +2,7 @@
 title: Promo Videos
 author: petko-d-petkov
 date: Tue, 20 May 2008 16:45:44 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 We've created several promo videos for the fans of gnucitizen.org. You will be able to find them here or on our [YouTube channel](http://youtube.com/gnucitizen).

@@ -2,7 +2,7 @@
 title: Total surveillance made easy with VoIP phones
 author: mario-heiderich
 date: Mon, 11 Feb 2008 23:03:43 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

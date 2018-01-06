@@ -2,7 +2,7 @@
 title: Client-side SQL Injection Attacks
 author: petko-d-petkov
 date: Tue, 05 Jun 2007 21:33:36 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 A couple of days ago, Google unleashed a new product called [Google Gears](http://code.google.com/apis/gears/). At the beginning I was sceptical about the purpose and the actual benefit of this project but I soon realised that indeed it is very powerful and it does save developers from a lot of trouble when dealing with AJAXy applications. The two most useful/interesting Google Gears (GGears) features are the [relational persistent storage](http://code.google.com/apis/gears/api_database.html) and the [worker pool](http://code.google.com/apis/gears/api_workerpool.html). Both of these features are quite interesting. Let's see why?

@@ -2,7 +2,7 @@
 title: Firefox Could Also Be Used As The Entry Point
 author: petko-d-petkov
 date: Tue, 24 Jul 2007 08:11:45 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 From Window Snyder's [blog](http://blog.mozilla.com/security):

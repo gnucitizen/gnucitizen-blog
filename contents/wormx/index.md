@@ -2,7 +2,7 @@
 title: WormX
 author: petko-d-petkov
 date: Mon, 22 Jan 2007 23:01:33 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 WormX is a collection of various notorious web worms mostly written on the top of popular client-side technologies and propagating primarily on social networking web sites.

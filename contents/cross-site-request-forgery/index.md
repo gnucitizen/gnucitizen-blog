@@ -2,7 +2,7 @@
 title: Cross-site Request Forgery
 author: petko-d-petkov
 date: Mon, 04 Dec 2006 07:32:39 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 CSRF or Cross-site Request Forgery sounds quite self-explanatory. This is an attack vector that gives malicious sites the ability to send a (forged) request from its context to a different site. The purpose of this attack vector is to act on behalf of the current user in order to gain control of his/her account or perform other types of malicious activities.

@@ -2,7 +2,7 @@
 title: One Drop on A Spider Web
 author: petko-d-petkov
 date: Mon, 25 Jun 2007 14:56:36 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 On 6th February 2007, I've published an article titled [Playing in Large](/blog/playing-in-large), which discusses various ways of injecting large JavaScript payloads into tiny XSS holes. The technique that I used as an example is quite simple. In general, all attackers need to do is to place their malicious payload behind the fragment identifier (`# sign`) and evaluate it within the attacked application context. This can be achieved by using something like this: `eval(location.hash.substr(1))`.

@@ -2,7 +2,7 @@
 title: Hijacking Innocent Frames
 author: petko-d-petkov
 date: Thu, 11 Dec 2008 21:39:16 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 Magic tricks are all about suggestion, psychology, misdirection and showmanship (see [Tricks of the Mind](http://www.amazon.co.uk/Tricks-Mind-Derren-Brown/dp/1905026269)), or as [Cutter](http://en.wikipedia.org/wiki/The_Prestige_(film)) perhaps will say, every magic trick has tree parts: the pledge (where the magician shows you something ordinary), the turn (where the ordinary becomes something extraordinary), and the prestige (where the extraordinary turns into something you have never seen before).

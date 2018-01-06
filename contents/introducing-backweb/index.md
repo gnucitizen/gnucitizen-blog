@@ -2,7 +2,7 @@
 title: Introducing Backweb
 author: petko-d-petkov
 date: Mon, 30 Oct 2006 09:36:42 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 After a couple of weeks well spend time in Malaysia and a few days in Singapore, I am quite happy to release the [Backweb Attack Console](http://www.gnucitizen.org/backweb).

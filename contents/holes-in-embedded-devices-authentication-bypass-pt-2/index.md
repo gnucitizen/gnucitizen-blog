@@ -2,7 +2,7 @@
 title: Holes In Embedded Devices Authentication Bypass (pt 2)
 author: adrian-pastor
 date: Fri, 15 Feb 2008 17:18:09 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 Usually, when accessing a web interface of an appliance, the user is prompted to enter a password if not authenticated already. This could be done via a HTML form on the login page or a basic HTTP authentication prompt (among other methods).

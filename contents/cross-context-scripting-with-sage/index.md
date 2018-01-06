@@ -3,7 +3,7 @@ title: Cross Context Scripting with Sage
 author: petko-d-petkov
 guest: david-kierznowski
 date: Fri, 08 Sep 2006 16:39:36 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

@@ -2,7 +2,7 @@
 title: Script Kiddies
 author: petko-d-petkov
 date: Sat, 25 Oct 2008 09:22:50 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 According to [Wikipedia](http://en.wikipedia.org/wiki/Script_kiddie):

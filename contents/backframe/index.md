@@ -2,7 +2,7 @@
 title: Backframe
 author: petko-d-petkov
 date: Mon, 30 Oct 2006 03:02:44 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 Backframe is a full-featured attack console for exploiting WEB browsers, WEB users and WEB applications. Backframe was started as a pet projected of mine called Backweb. Because Backweb is a registered trademark of Backweb Technologies, the application name has changed since then to what it is today.

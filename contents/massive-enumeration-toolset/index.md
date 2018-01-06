@@ -2,7 +2,7 @@
 title: Massive Enumeration Toolset
 author: petko-d-petkov
 date: Mon, 06 Mar 2006 07:31:56 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 [Massive Enumeration Toolset (MET)](http://code.google.com/p/massive-enumeration-toolset/) is a collection of Python scripts designed to perform various passive information gathering attacks which can be useful when evaluating the security of public computer networks.

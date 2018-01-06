@@ -2,7 +2,7 @@
 title: Name (mDNS) Poisoning Attacks Inside The LAN
 author: petko-d-petkov
 date: Wed, 23 Jan 2008 16:15:29 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 "How easy is for attackers to compromise the LAN?" Answer: **Very easy!** With a few simple tricks, attackers can easily poison the local name resolution system for the machines inside a given LAN. Network Devices and Apple products are most vulnerable among others of course.

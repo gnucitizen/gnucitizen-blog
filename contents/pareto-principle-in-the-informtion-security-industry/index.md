@@ -2,7 +2,7 @@
 title: Pareto Principle In The Informtion Security Industry
 author: petko-d-petkov
 date: Mon, 28 Jul 2008 13:26:13 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 Over the weekend I had time to read some great books on economics and as such and I've become more aware of a phenomenon known as the [Pareto Principle or the 80/20 rule](http://en.wikipedia.org/wiki/Pareto_principle).

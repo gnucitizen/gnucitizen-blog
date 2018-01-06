@@ -2,7 +2,7 @@
 title: Simple Universal Authentication System
 author: petko-d-petkov
 date: Wed, 24 Sep 2008 20:29:21 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 This idea is perhaps stupid. Nevertheless, I rather document it here for good than not documenting it at all.

@@ -2,7 +2,7 @@
 title: Google.js
 author: petko-d-petkov
 date: Sat, 06 Oct 2007 11:39:00 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 I am learning to love Windows. Yeh it has its own problems and sometimes could be a bit insecure but in general, it just works well and every single piece of it is reusable and scriptable. Today, I quickly wrote a Google search scraper. It runs straight from the command line.

@@ -2,7 +2,7 @@
 title: Application Layer Anti-virus/Firewall
 author: petko-d-petkov
 date: Wed, 11 Apr 2007 09:05:44 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 So, we have servers, and these servers host applications. Each application is composed of server-side and client-side components. Traditionally, the server side components is where most of the business logic resides. Traditionally again, in order to secure your application you have to spend considerable amount of time to make sure that every server-side component works as it is intended to. If you happen to miss something, you can quickly patch it with [mod_security](http://www.modsecurity.org/) for Apache. Traditionally, none cares about the client.

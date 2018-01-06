@@ -2,7 +2,7 @@
 title: Remote Desktop Command Fixation Attacks
 author: petko-d-petkov
 date: Wed, 10 Oct 2007 11:00:42 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 The attack is rather simple. All the attacker needs to do is to compose a malicious RDP (for Windows Terminal Services) or ICA (for CITRIX) file and send it to the victim. The victim is persuaded to open the file by double clicking on it. When the connection is established, the user will enter their credentials to login and as such let the attacker in.

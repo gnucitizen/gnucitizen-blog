@@ -2,7 +2,7 @@
 title: Professional Soldier
 author: petko-d-petkov
 date: Wed, 23 Jul 2008 15:44:48 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 I would like to draw a simple analogy between professional soldiers and professional penetration testers. I find a lot in common between them and I believe that this exercise may help some members of the audience to clarify their understandings regarding our industry.

@@ -2,7 +2,7 @@
 title: On Browser Security Restrictions
 author: petko-d-petkov
 date: Sat, 11 Aug 2007 09:27:07 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 [Anurag Agarwal](http://myappsecurity.blogspot.com/) has brought an interesting discussion on WASC and the Webappsec Security Focus mailing lists. Here is a snippet from his e-mail:

@@ -2,7 +2,7 @@
 title: 1ST European Edition of HITB Coming Up!
 author: adrian-pastor
 date: Thu, 24 Jun 2010 09:16:22 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 In case you haven't heard yet, HITBSecConf is hosting the first European Edition of their [conference](http://conference.hackinthebox.org/hitbsecconf2010ams/?page_id=24) in Amsterdam during 1st-2nd July '10. The history of the HITB conferences can be traced back to 2002, the year in which the first ever edition of HITB took place in Malaysia. Since then, HITB has grown to become the biggest technical computer security event in Asia and has extended their presence to the Middle East and now Europe.

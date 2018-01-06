@@ -2,7 +2,7 @@
 title: IE Pwns SecondLife
 author: petko-d-petkov
 date: Sun, 16 Sep 2007 10:37:53 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

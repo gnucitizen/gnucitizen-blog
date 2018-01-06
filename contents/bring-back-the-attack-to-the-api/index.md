@@ -2,7 +2,7 @@
 title: Bring Back the Attack to the API
 author: petko-d-petkov
 date: Mon, 24 Nov 2008 11:56:23 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 A couple of years ago I started a project called [AttackAPI](/blog/attackapi). It kind of became a hit at the time because there was no other project that was doing the same thing. Btw, the situation remains the same.

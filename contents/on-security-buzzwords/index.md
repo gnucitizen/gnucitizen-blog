@@ -2,7 +2,7 @@
 title: On Security Buzzwords
 author: petko-d-petkov
 date: Fri, 03 Apr 2009 09:36:08 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 I've got quite a lot of good feedback on the [security buzzword generator](http://buzz.gnucitizen.org) I [announced yesterday](/blog/security-buzzword-generator/). For those of you who do not know, the generator is a fun little utility which helps you with coming up with new and exciting buzzwords like a security pro.

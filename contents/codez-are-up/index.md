@@ -2,7 +2,7 @@
 title: Codez Are Up
 author: petko-d-petkov
 date: Wed, 11 Mar 2009 14:18:54 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 This is a quick announcement just to let you know that our codes are now getting synced at [code.gnucitizen.org](http://code.gnucitizen.org), which is basically a file browser interface to the source repositories.

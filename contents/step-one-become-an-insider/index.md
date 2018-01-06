@@ -2,7 +2,7 @@
 title: Step One - Become an Insider
 author: petko-d-petkov
 date: Fri, 30 Nov 2007 12:41:18 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 When I was boarding this morning on the train towards the office, I saw a smart dressed guy sitting in First Class, staring on his brand new Samsung ultra slick Q35 Red Core 2 Duo notebook, and checking his Facebook account. This guy, apparently a big corporate shot by the look of it, was on Facebook. Then it hit me!

@@ -2,7 +2,7 @@
 title: Pwnie Award Nominee
 author: adrian-pastor
 date: Thu, 24 Jul 2008 12:36:06 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 Yesterday a friend of mine let me know that some of my BT Home Hub security research (details [here](/blog/bt-home-flub-pwnin-the-bt-home-hub/) and [here](/blog/bt-home-flub-pwnin-the-bt-home-hub-4/)) got [nominated](http://pwnie-awards.org/2008/awards.html#overhypedbug) for the Pwnie Awards.

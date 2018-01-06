@@ -2,7 +2,7 @@
 title: Free Web Application Security Testing Tool
 author: petko-d-petkov
 date: Fri, 07 Aug 2009 08:02:38 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 Automated Web Application Security Testing tools are in the core of modern penetration testing practices. You cannot rely 100% on the results they produce, without considering seriously their limitations. However, because these tools are so good at picking the low-hanging fruit by employing force and repetition, they still have a place in our arsenal of penetrating testing equipment.

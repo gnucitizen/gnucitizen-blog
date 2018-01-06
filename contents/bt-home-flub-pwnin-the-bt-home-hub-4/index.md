@@ -2,7 +2,7 @@
 title: BT Home Flub Pwnin The BT Home Hub (4)
 author: adrian-pastor
 date: Thu, 08 Nov 2007 11:33:13 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 The following are the full details of the vulnerabilities we reported ([BID 25972](http://www.securityfocus.com/bid/25972)) to BT regarding their Home Hub router. We are going to have a brief detail on all POCs. If you have any suggestions, recommendations or corrections, do not hesitate to [contact us](http://www.gnucitizen.org/contact). _All the vulnerabilities and demo exploits discussed below have been tested on version `6.2.2.6` of the firmware, unless otherwise specified. Have fun and be responsible!_

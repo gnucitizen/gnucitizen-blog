@@ -2,7 +2,7 @@
 title: JavaScript Port Scanner
 author: petko-d-petkov
 date: Tue, 01 Aug 2006 19:37:52 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

@@ -2,7 +2,7 @@
 title: All Your Metadata Are Belong To Us
 author: petko-d-petkov
 date: Fri, 04 Jan 2008 08:15:22 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 Every penetration test consists of 90% enumeration and discovery and 10% of actual exploitation. Of course, these are the figures unless you are performing a vulnerability research where the situation is very different. I tend to believe that enumeration is essential if not critical for hacking into whatever system you may have in mind. Though, I've seen many testers who rush into the exploitation stage, which is not necessarily a bad thing, but given the fact that there are always better things to do instead of firing metasploit and bombarding the targeted system with crap, it is largely unnecessary.

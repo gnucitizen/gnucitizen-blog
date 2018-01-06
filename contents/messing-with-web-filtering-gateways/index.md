@@ -2,7 +2,7 @@
 title: Messing With Web Filtering Gateways
 author: adrian-pastor
 date: Wed, 14 Jan 2009 17:49:26 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

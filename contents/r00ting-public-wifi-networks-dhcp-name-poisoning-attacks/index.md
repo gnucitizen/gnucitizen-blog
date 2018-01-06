@@ -2,7 +2,7 @@
 title: R00Ting Public WiFi Networks DHCP Name Poisoning Attacks
 author: petko-d-petkov
 date: Fri, 25 Jan 2008 12:19:15 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

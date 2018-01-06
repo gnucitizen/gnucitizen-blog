@@ -2,7 +2,7 @@
 title: Mozilla Prism Not There Yet
 author: petko-d-petkov
 date: Tue, 30 Oct 2007 16:53:25 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 From Mozilla's Lab [blog post](http://labs.mozilla.com/2007/10/prism/): "Prism is an application that lets users split web applications out of their browser and run them directly on their desktop". I was intrigued.

@@ -2,7 +2,7 @@
 title: More Advanced Clickjacking - UI Redress Attacks
 author: petko-d-petkov
 date: Wed, 08 Oct 2008 18:08:24 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

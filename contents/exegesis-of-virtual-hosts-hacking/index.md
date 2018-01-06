@@ -2,7 +2,7 @@
 title: Exegesis of Virtual Hosts Hacking
 author: petko-d-petkov
 date: Thu, 06 Apr 2006 22:45:00 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 This is the first [paper](http://www.gnucitizen.org/static/blog/2006/04/exegesis-of-virtual-hosts-hacking.pdf) (as far as we know) written on the topic of **virtual hosts hacking**. It covers basic skills such as passive discovery techniques and (almost) stealth active discovery techniques. It also presents possible scenarios of exploitation.

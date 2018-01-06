@@ -2,7 +2,7 @@
 title: The Value Of Automated Security Tests
 author: petko-d-petkov
 date: Tue, 04 Dec 2007 21:28:16 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 I think that I should speak up how I feel about automated security tests. I don't think that this post will bring much value to you but at least you will be able to see what it feels like from the field. I will try to keep my thoughts short and clean and emphasize on the main points without going too much out of scope. I think that this topic has been already widely discussed so there is no need to waste more time on it. Everyone should make up their own mind.

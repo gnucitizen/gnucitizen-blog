@@ -2,7 +2,7 @@
 title: DHCP/mDNS Injection Issues
 author: petko-d-petkov
 date: Sun, 27 Jan 2008 09:30:07 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 In the [previous](/blog/r00ting-public-wifi-networks-dhcp-name-poisoning-attacks/) post I've talked about how someone can poison local name servers (nasty things like registering a `wpad` name) through DHCP. In this post, I would like to draw your attention on various other injection issues that come into mind when we are dealing with that very same protocol. The reason for all these issues is because people tend to trust certain known protocols far too much than they should.

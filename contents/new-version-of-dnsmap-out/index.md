@@ -2,7 +2,7 @@
 title: New Version Of Dnsmap Out
 author: adrian-pastor
 date: Sun, 22 Feb 2009 16:42:19 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

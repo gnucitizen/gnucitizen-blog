@@ -2,7 +2,7 @@
 title: Google Search Results Poisoning
 author: petko-d-petkov
 date: Tue, 16 Jan 2007 09:31:13 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

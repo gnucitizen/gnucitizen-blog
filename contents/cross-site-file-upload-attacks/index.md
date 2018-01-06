@@ -2,7 +2,7 @@
 title: Cross-site File Upload Attacks
 author: petko-d-petkov
 date: Thu, 21 Feb 2008 12:15:32 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 As you probably already know, CSRF attack are only possible when the attacked web application does not have an additional mechanism to ensure that requests towards it are genuine. In order to do that, the web developer must include a unique token for each request, which is validated on the server upon receiving a request. If the request value that represents the token matches the token that was generated for the request, then it is considered genuine and it should be left for additional processing. However, if both values do not match then the request is considered forged and as such should be disregarded.

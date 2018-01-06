@@ -2,7 +2,7 @@
 title: Zero Degrees of Seperation
 author: petko-d-petkov
 date: Wed, 09 May 2007 15:12:01 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 > Everyone is no more than six "steps" away from each person on Earth. [Wikipedia](http://en.wikipedia.org/wiki/Six_degrees_of_separation)

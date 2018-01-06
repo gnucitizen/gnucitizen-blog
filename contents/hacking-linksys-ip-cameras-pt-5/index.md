@@ -2,7 +2,7 @@
 title: Hacking Linksys IP Cameras (pt 5)
 author: adrian-pastor
 date: Fri, 05 Jun 2009 08:04:55 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

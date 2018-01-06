@@ -2,7 +2,7 @@
 title: Backdooring Web Pages
 author: petko-d-petkov
 date: Mon, 28 Aug 2006 11:09:08 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

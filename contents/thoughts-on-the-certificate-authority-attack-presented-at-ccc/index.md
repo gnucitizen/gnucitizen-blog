@@ -2,7 +2,7 @@
 title: Thoughts on the Certificate Authority Attack presented at CCC
 author: petko-d-petkov
 date: Wed, 31 Dec 2008 11:02:05 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 It [turns out](http://events.ccc.de/congress/2008/Fahrplan/events/3023.en.html) that the group of international researchers have created their own legitimate CA ([Certificate Authority](http://en.wikipedia.org/wiki/Certificate_Authority)) which can be used to sign any other cert they want and as such increase the likelihood of success when performing SSL man-in-the-middle types of attacks.

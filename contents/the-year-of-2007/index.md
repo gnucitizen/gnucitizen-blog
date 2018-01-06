@@ -2,7 +2,7 @@
 title: The Year Of 2007
 author: petko-d-petkov
 date: Fri, 29 Dec 2006 08:45:48 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 It has been a long year. Too many things has happened: some good, others pretty bad but in general all interesting and valuable. The year of 2006 was quite dynamic and filled with passion, hard work and insane achievements. However, this is not what this post is about. Let's have a look into what to expect for the new 2007.

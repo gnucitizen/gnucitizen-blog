@@ -2,7 +2,7 @@
 title: Extensions at War
 author: petko-d-petkov
 date: Sun, 03 May 2009 08:37:28 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 Oh yes, the digital battlefield is taking unusual shapes. The latest manifestation of cyber warfare is a conflict between the Adblock Plus and the NoScript extensions. The [story goes](http://adblockplus.org/blog/attention-noscript-users) that NoScript used some JavaScript tactics and, of course, some obfuscations in order to cripple the Adblock Plus functionalities. This attack was a response to Adblock Plus blocking NoScript ads which you see when you upgrade the extension, which as you know happens quite regularly, don't know why.

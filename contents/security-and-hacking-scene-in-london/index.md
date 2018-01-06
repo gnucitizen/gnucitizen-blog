@@ -2,7 +2,7 @@
 title: Security And Hacking Scene in London
 author: adrian-pastor
 date: Tue, 11 Dec 2007 21:04:10 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 Although London enjoys one of the most vibrant infosec industries in the world, there are not as many hacker and security events and one would think. Meetings-wise, we have organizations such as [2600](http://www.london2600.org.uk/), [Defcon](http://dc4420.org/), and [Owasp](http://www.owasp.org/index.php/London) among others. However, the number of attendees needs to be improved. Usually, having a turnup of 20 people on one of these meetings is considered a success in London. Not much for such a big city if you think about it.

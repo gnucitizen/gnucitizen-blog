@@ -2,7 +2,7 @@
 title: Identity Theft Attacks
 author: petko-d-petkov
 date: Sat, 07 Feb 2009 13:19:09 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 "Work with the system rather against it." I have always been a big fan of this approach as it proved to be successful every time it was put into practice.

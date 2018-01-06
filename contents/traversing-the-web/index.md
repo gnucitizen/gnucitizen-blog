@@ -2,7 +2,7 @@
 title: Traversing the Web
 author: petko-d-petkov
 date: Tue, 10 Oct 2006 06:48:09 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 Every modern browser implements a security sandbox also known as the Same Origin Policy. This sandbox restricts dynamic resources to access others that are from a different context (origin). As such, JavaScript code that is located at `http://www.gnucitizen.org` can access only resources that match the same protocol (`http`), the same domain (`gnucitizen.org`) and the same port (`80`). On the other hand `ftp://ftp.gnucitizen.org`, `https://www.gnucitizen.org` and `http://www.gnucitizen.org:81` are not accessible.

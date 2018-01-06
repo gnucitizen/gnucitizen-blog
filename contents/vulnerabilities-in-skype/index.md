@@ -2,7 +2,7 @@
 title: Vulnerabilities in Skype
 author: petko-d-petkov
 date: Thu, 17 Jan 2008 21:03:04 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 [Aviv](http://aviv.raffon.net/2008/01/17/SkypeCrosszoneScriptingVulnerability.aspx) has already done most of the work but I would like to add a few more notes on the recently reported [Skype Cross-site Scripting](http://seclists.org/fulldisclosure/2008/Jan/0328.html) issue. In general, the issue is pretty much underestimated. The vulnerability is not of a type Cross-site Scripting bug, but mostly a Cross-site Scripting bug on [DailyMotion](http://dailymotion.com), which results into a Cross-zone Scripting issue within Skype due to the unlocked IE controller Skype makes use of. When a given resource executes within the Local Zone context, all sorts of things are possible like, including but not only, reading/writing files from the local disc and launching executables through the WSH primitives. Which in simple words means a complete 0wnage.

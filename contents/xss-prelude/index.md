@@ -2,7 +2,7 @@
 title: XSS Prelude
 author: petko-d-petkov
 date: Sat, 06 Jan 2007 18:01:32 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 _Memory corruption bugs are the past, XSS is the future._

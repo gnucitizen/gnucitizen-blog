@@ -2,7 +2,7 @@
 title: Java JAR Attacks and Features
 author: petko-d-petkov
 date: Sat, 10 Nov 2007 22:35:33 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 This is my last post for this week, so I will try to keep it short and sweet. While playing with the JAR protocol for Firefox ([here](/blog/web-mayhem-firefoxs-jar-protocol-issues) and [here](/blog/severe-xss-in-google-and-others-due-to-the-jar-protocol-issues)), I also did some investigation on the way Java handles jars, as well. To my surprise, the Java runtime seems to posses some very interesting features which may easily be implemented into an attack scenario. I shared some of my research and ideas with [Aviv Raff](http://aviv.raffon.net/) and we both concluded that the observed behavior may not be the perfect way to attack someone, although IMHO, I see nothing more but opportunities for **evilness**.

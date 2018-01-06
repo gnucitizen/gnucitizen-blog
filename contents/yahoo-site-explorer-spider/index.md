@@ -2,7 +2,7 @@
 title: Yahoo Site Explorer Spider
 author: petko-d-petkov
 date: Sun, 15 Jul 2007 21:47:10 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

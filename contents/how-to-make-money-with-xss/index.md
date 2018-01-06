@@ -2,7 +2,7 @@
 title: How To Make Money With XSS
 author: petko-d-petkov
 date: Mon, 10 Sep 2007 15:27:59 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 Finding XSS is dead easy task. Everybody is vulnerable to this type of issue and even if there are protection mechanisms on place such as application firewalls and sanitization filters, very often attackers can get a stable exploit working in a matter of a couple of minutes. In fact, I don't think that there are unstable XSS exploits. It is not like the attacker have to manipulate the stack or a corrupted heap in order to get some sort of execution control. No! It is a simple injection issue.

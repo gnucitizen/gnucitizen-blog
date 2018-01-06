@@ -2,7 +2,7 @@
 title: Noscript HScan
 author: petko-d-petkov
 date: Wed, 28 Feb 2007 22:57:00 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

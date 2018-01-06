@@ -2,7 +2,7 @@
 title: Unveiling shoulder skimming
 author: adrian-pastor
 date: Wed, 12 Dec 2007 16:42:58 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 So now countries like the UK have converted most of their POS terminals to [Chip and PIN](http://www.chipandspin.co.uk/spin.pdf). The idea is that if somone skimmed your magnetic stripe, they won't be able to make a purchase without your PIN. Of course, in reality most of the skimmed magstripes are simply being shipped to countries where Chip-and-PIN-like systems haven't been rolled out yet, which means that criminals will be able to make purchases without knowing your PIN. Another problem with entering your PIN every time you buy something (i.e.: at a restaurant or supermarket) is shoulder-surfing your PIN. However, this problem is beyond the scope of this post.

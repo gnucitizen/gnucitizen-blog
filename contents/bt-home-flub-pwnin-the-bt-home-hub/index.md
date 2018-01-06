@@ -2,7 +2,7 @@
 title: BT Home Flub - Pwnin the BT Home Hub
 author: adrian-pastor
 date: Mon, 08 Oct 2007 16:41:42 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 OK, let me get to the point. The [BT Home Hub](http://en.wikipedia.org/wiki/BT_Home_Hub), which is probably the most popular home router in the UK, is susceptible to critical vulnerabilities.

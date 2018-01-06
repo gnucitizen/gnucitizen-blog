@@ -2,7 +2,7 @@
 title: Severe XSS in Google and Others Due To The JAR Protocol Issues
 author: petko-d-petkov
 date: Sat, 10 Nov 2007 11:39:16 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 After [publishing](/blog/web-mayhem-firefoxs-jar-protocol-issues) my findings on the `jar:` URL protocol security issue for Firefox, I was contacted by [MichaÅ‚ Zalewski](http://lcamtuf.coredump.cx/) regarding the possibilities for exploiting the vulnerability on the Google domain. I did not have much time to get back to him at the time, but I had a few ideas about how it could work. Of course, I was planning to silently release any of my findings to Michal and Google in order to prevent any attacks that may occur before Mozilla's scheduled update. The guys from Mozilla are currently busy with Firefox3, so I knew that it may take some time to properly patch the issue.

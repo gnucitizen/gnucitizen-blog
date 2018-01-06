@@ -2,7 +2,7 @@
 title: JavaScript Address Info
 author: petko-d-petkov
 date: Sat, 12 Aug 2006 08:26:47 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

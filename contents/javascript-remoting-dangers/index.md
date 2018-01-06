@@ -3,7 +3,7 @@ title: JavaScript Remoting Dangers
 author: petko-d-petkov
 guest: billy-hoffman
 date: Tue, 30 Jan 2007 21:31:08 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

@@ -2,7 +2,7 @@
 title: Black Hat Europe 2008 Amsterdam
 author: petko-d-petkov
 date: Tue, 25 Mar 2008 16:17:51 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 I am just using the opportunity to let everybody (mainly pals who expect to see me there) know that I am heading off to [Black Hat Europe 2008](http://www.blackhat.com/html/bh-europe-08/bh-eu-08-main.html "from the Black Hat") in [Amsterdam](http://en.wikipedia.org/wiki/Amsterdam "Amsterdam is the capital of the Netherlands.") (as usual).

@@ -2,7 +2,7 @@
 title: Google and Wildcard Domains
 author: petko-d-petkov
 date: Mon, 23 Jun 2008 09:38:59 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 Basically, Google allows you to use custom domains for your Google for Applications, Blogspot, Mashup Editor and of course App Engine accounts. I think this is an excellent feature and I use it for several of my domains. Although, some of the Google applications ask you to verify the ownership of the domain you are about to use by instructing you to place a special CNAME record on your nameserver, others don't. They simply assume that if a domain points back to them it must have been authorized by the owner and this is exactly the case with Blogspot.

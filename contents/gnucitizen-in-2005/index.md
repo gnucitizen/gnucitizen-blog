@@ -2,7 +2,7 @@
 title: GNUCITIZEN in 2005
 author: petko-d-petkov
 date: Mon, 24 Nov 2008 11:09:18 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

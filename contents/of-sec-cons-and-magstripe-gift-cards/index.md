@@ -2,7 +2,7 @@
 title: Of Sec Cons and Magstripe Gift Cards
 author: adrian-pastor
 date: Wed, 22 Jul 2009 09:53:54 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 I've been meaning to talk about [CONFidence](http://2009.confidence.org.pl/lang-pref/en/) and [EUSecWest](http://eusecwest.com/) for quite a while, but May was such an intense month for me, that's hardly left me with any time for other things. I eventually got caught up with other matters, which resulted in me publishing this post about 2 months late.

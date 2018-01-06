@@ -2,7 +2,7 @@
 title: Router hacking is for schoolgirls - or the CSRF of Death
 author: petko-d-petkov
 date: Mon, 03 Mar 2008 10:28:34 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 Some days ago the very interesting [router hacking challenge](/blog/router-hacking-challenge/) [ended](http://www.0x000000.com/index.php?i=524) and I thought to myself that the impact an attacker can have on an unprotected router is pretty high - sometimes frighteningly high. But all this is still not enough to make sure that developers and system engineers get the very meaning of the danger coming with XSS and CSRF. So I thought to myself what attack scenario could be created that is even more dangerous than all the interesting submissions for the router hacking challenge. After a short while thinking and playing around I found the solution. **Imagine a CSRF that is capable of formatting and stealing the whole remote web server a user own who visits a malicious or prepared site.**

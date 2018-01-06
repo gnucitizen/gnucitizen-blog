@@ -2,7 +2,7 @@
 title: Author of the XSS Book
 author: petko-d-petkov
 date: Fri, 16 Feb 2007 23:19:40 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 It is probably about time to announce that I am one of the authors of the upcoming XSS Book, [RSnake talked about](http://ha.ckers.org/blog/20070128/xss-book/) a month ago on his [blog](http://ha.ckers.org). The complete list of authors is: Seth Fogie, Jeremiah Grossman, Robert Hansen, Anton Rager and Petko Petkov (a.k.a me).

@@ -2,7 +2,7 @@
 title: General Purpose Fuzzer.py
 author: petko-d-petkov
 date: Mon, 17 Dec 2007 00:15:42 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 Fuzzing is a quite important for security researchers mainly because it helps going through the boring stuff quickly. Generally speaking, fuzzers are tools for automation. Unfortunately most moderns fuzzers are a lot more then automation tools. They are big, bloated and most of all, highly unusable, imho. And if you want to do some fuzzing, first of all you have to learn how they were built, and this is not a trivial thing.

@@ -2,7 +2,7 @@
 title: Frame Injection Fun
 author: adrian-pastor
 date: Fri, 10 Oct 2008 00:01:28 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

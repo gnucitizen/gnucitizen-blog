@@ -2,7 +2,7 @@
 title: Hacking CITRIX - the forceful way
 author: petko-d-petkov
 date: Fri, 05 Oct 2007 15:39:03 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 [Yesterday](/blog/citrix-owning-the-legitimate-backdoor) I briefly covered how CITIRX hacking works by performing simple enumeration exercises. Today, I will show you how to drill.

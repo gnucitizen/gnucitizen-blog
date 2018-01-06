@@ -2,7 +2,7 @@
 title: Big Fish
 author: petko-d-petkov
 date: Tue, 03 Apr 2007 13:01:10 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 We are nearly finished with the long awaited [XSS book](/blog/author-of-the-xss-book) and I am really happy with the way it builds up. Everyone who is interesting in learning about the so called "WEB2.0 hacking" that raises the concerns of the masses today should definitely get a copy of the book.

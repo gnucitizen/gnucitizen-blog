@@ -2,7 +2,7 @@
 title: Infocrobes
 author: petko-d-petkov
 date: Fri, 02 Jun 2006 10:37:39 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 Very often I end up performing a series of string manipulation and information extraction tasks from the command line. Usually this is achieved with several excellent shell utilities available on Linux/Unix/Cygwin.

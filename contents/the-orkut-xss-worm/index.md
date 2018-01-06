@@ -2,7 +2,7 @@
 title: The Orkut XSS Worm
 author: petko-d-petkov
 date: Wed, 19 Dec 2007 11:15:27 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

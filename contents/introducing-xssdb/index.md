@@ -2,7 +2,7 @@
 title: Introducing XSSDB
 author: petko-d-petkov
 date: Sun, 24 Sep 2006 11:18:37 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 In a recent post [David K suggested](/blog/self-contained-xss-attacks/#comment-125) that the XSS cheat sheet hosted at [ha.ckers.org](http://ha.ckers.org) is not as accessible as it should be.

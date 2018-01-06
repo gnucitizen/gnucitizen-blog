@@ -2,7 +2,7 @@
 title: Google Search API Worms 3
 author: petko-d-petkov
 date: Thu, 05 Oct 2006 02:05:51 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 I found an interesting [post](http://www.schneier.com/blog/archives/2006/10/sql_injection_v.html) from [Schneier's blog]() about SQL injection vulnerabilities that can be enumerated with Google. Then I read the follow up link of the original [post](http://portal.spidynamics.com/blogs/msutton/archive/2006/09/26/How-Prevalent-Are-SQL-Injection-Vulnerabilities_3F00_.aspx) from [Michael Sutton's blog](http://portal.spidynamics.com/blogs/msutton). In his post titled "How Prevalent Are SQL Injection Vulnerabilities?" Michael goes into details how to enumerate SQL Injection vulnerabilities with Google.

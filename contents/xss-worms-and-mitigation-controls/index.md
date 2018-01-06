@@ -2,7 +2,7 @@
 title: XSS Worms and Mitigation Controls
 author: david-kierznowski
 date: Sat, 23 Jun 2007 13:52:13 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

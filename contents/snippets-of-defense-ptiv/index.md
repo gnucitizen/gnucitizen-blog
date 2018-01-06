@@ -2,7 +2,7 @@
 title: Snippets Of Defense Pt.IV
 author: mario-heiderich
 date: Wed, 31 Oct 2007 10:41:28 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

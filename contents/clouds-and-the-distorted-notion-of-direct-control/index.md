@@ -2,7 +2,7 @@
 title: Clouds and The Distorted Notion of Direct Control
 author: petko-d-petkov
 date: Wed, 27 Aug 2008 09:38:20 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 I would like to share a few thoughts on the notion of being in direct control of your environment. This article is a continuation from my [previous one](/blog/targeted/) and it aims to justify why nowadays individuals and organizations prefer to give away control in order to gain more agility. Needless to say, less control is often equal to less security.

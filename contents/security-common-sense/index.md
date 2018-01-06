@@ -2,7 +2,7 @@
 title: Security Common Sense
 author: petko-d-petkov
 date: Tue, 18 Dec 2007 15:53:23 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 During the last couple of years we have seen major developments in terms of securing the server as well as the desktop, though it has been mostly the desktop that has caught our interest due to its "vulnerable by default" nature. The desktop has become the primary target for attackers and it seams that this trend will continue to grow during the upcoming 2008. Some my argue that we have done well, as a community, and the desktop and the server a lot more secure then before, but only a few will admit that what we have achieved is not exactly what we've wanted. 2007 was the year in which we've destroyed the "Security Common Sense".

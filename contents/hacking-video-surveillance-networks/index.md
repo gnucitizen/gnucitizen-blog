@@ -2,7 +2,7 @@
 title: Hacking Video Surveillance Networks
 author: petko-d-petkov
 date: Wed, 30 Jan 2008 11:05:48 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 **The usual suspects:** George Clooney, Brad Pitt and Matt Damon. **The plot:** rob a casino. **The method:** hijack the vault's security camera video stream and replace it with a static image. "Fiction?" I don't think so.

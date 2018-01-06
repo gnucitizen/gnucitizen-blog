@@ -2,7 +2,7 @@
 title: CITRIX Owning the Legitimate Backdoor
 author: petko-d-petkov
 date: Thu, 04 Oct 2007 16:26:51 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 > The Internet is full of wide open CITRIX gateways. This is madness!

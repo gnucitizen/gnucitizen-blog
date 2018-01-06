@@ -2,7 +2,7 @@
 title: Targeted
 author: petko-d-petkov
 date: Tue, 12 Aug 2008 22:21:34 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 Alright. If you have been following the Full-disclosure mailing list, you have probably stumbled across several emails which claim that one of my GMail accounts have been compromised. That is right. It did happen but I am not that surprised since I've been expecting it ever since I started doing security.

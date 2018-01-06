@@ -2,7 +2,7 @@
 title: The Computer Misused Act
 author: petko-d-petkov
 date: Tue, 01 Apr 2008 19:37:46 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 Both [Ivan Ristic](http://blog.ivanristic.com/2008/04/changes-to-brit.html) and [Nathan McFeters](http://blogs.zdnet.com/security/?p=997) has blogged about it so I wont waste your time with what they have already said. Go ahead and read their blogs. Instead, I would like to represent my view in this blog post.

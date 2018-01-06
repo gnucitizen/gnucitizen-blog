@@ -3,7 +3,7 @@ title: Ghost Busters
 author: petko-d-petkov
 guest: eduardo-vela
 date: Thu, 15 May 2008 16:26:48 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 > A special guest blogger for this month is Eduardo Vela, also known as sirdarckcat, a security researcher from Mexico. Eduardo has been on the field for a couple of years, mainly focusing on web-app based vulnerabilities, privilege escalation, and IDS/filter evasion. Today, he is a student of computer sciences, does some research on his free time, and works for an important website as a security engineer. These are his words:

@@ -2,7 +2,7 @@
 title: A Brief History of MySpace
 author: petko-d-petkov
 date: Fri, 22 Jun 2007 21:23:17 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 <iframe width="100%" height="420" src="http://www.youtube.com/embed/iGTSXdXS15U" frameborder="0" allowfullscreen></iframe>

@@ -2,7 +2,7 @@
 title: XSSing the Lan 3
 author: petko-d-petkov
 date: Tue, 08 Aug 2006 13:02:33 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

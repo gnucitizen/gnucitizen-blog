@@ -2,7 +2,7 @@
 title: OWI - Yet Another Anonymous Point Of Attack
 author: adrian-pastor
 date: Fri, 04 Jul 2008 09:35:41 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 About a month ago I traveled by train for a pre-sales meeting with a prospective customer. The trip was about two hours long, which would usually mean that it'd be boring. In this case it was different though: I was surprised with free OWI (Onboard Wireless Internet) on the train!

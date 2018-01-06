@@ -2,7 +2,7 @@
 title: Content-Disposition Hacking
 author: adrian-pastor
 date: Mon, 05 Nov 2007 12:44:31 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 In a recent pentest, a colleague of mine pointed out to me a script/html injection vulnerability on one of the hosts we were testing. I then copied and pasted the GET request he forwarded to me on telnet and verified that JavaScript could indeed be injected through the non-sanitized parameter. There were no restrictions on the input length or types of characters. No filtering whatsoever. The attack goes as the following:

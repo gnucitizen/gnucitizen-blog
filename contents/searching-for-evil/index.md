@@ -2,7 +2,7 @@
 title: Searching For Evil
 author: petko-d-petkov
 date: Fri, 31 Aug 2007 09:47:10 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 > Computer security has recently imported a lot of ideas from economics, psychology and  ... all sociology, leading to fresh insights and new tools. I will describe one thread of research that draws together techniques from fields as diverse as signals intelligence and sociology to search for artificial communities.

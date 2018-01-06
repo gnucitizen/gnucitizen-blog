@@ -2,7 +2,7 @@
 title: Viva La Defcon!
 author: adrian-pastor
 date: Wed, 13 Aug 2008 06:19:42 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

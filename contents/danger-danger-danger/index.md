@@ -2,7 +2,7 @@
 title: DANGER, DANGER, DANGER
 author: petko-d-petkov
 date: Wed, 03 Jan 2007 01:10:32 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

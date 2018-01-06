@@ -2,7 +2,7 @@
 title: Username Enumeration Vulnerabilities
 author: adrian-pastor
 date: Wed, 04 Apr 2007 09:34:18 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 We all know what username enumeration vulnerabilities are about. In this post, I will talk about them within the context of web application pentesting and will discuss some of the common issues I've come across during my experience while working at [ProCheckUp](http://www.procheckup.com/).

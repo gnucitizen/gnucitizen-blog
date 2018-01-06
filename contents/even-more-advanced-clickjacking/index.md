@@ -2,7 +2,7 @@
 title: Even More Advanced Clickjacking
 author: petko-d-petkov
 date: Thu, 27 Nov 2008 17:18:27 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 Clickjacking is one of these types of attacks which are incredibly simplistic to perform, yet very powerful in today's web-driven world. In this post I would like to draw you attention to one more technique that can be used to perform successful clickjacking.

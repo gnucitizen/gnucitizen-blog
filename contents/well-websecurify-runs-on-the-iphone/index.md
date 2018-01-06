@@ -2,7 +2,7 @@
 title: Well Websecurify Runs on The iPhone
 author: petko-d-petkov
 date: Thu, 04 Aug 2011 16:27:04 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 This is not necessarily news anymore since it was [discussed](http://blog.websecurify.com/2011/08/websecurify-for-iphone-preview.html) on the Websecurify official blog but we are so excited about it that we could not hold ourselves from posting it here too.

@@ -3,7 +3,7 @@ title: OWASP
 author: petko-d-petkov
 guest: dinis-cruz
 date: Tue, 06 Mar 2007 16:33:51 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

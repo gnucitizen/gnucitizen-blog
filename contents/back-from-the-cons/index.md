@@ -2,7 +2,7 @@
 title: Back From The Cons
 author: adrian-pastor
 date: Mon, 10 Nov 2008 10:05:21 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

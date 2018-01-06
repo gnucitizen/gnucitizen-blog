@@ -2,7 +2,7 @@
 title: Flash UPnP Attack FAQ
 author: petko-d-petkov
 date: Mon, 14 Jan 2008 20:20:02 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

@@ -2,7 +2,7 @@
 title: Conspiracy
 author: petko-d-petkov
 date: Wed, 07 May 2008 23:14:47 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 > There is a lot of conspiracy about GNUCITIZEN. Who are they? Where they come from? And what they are trying to do? Well, these videos shall give you all the answers.

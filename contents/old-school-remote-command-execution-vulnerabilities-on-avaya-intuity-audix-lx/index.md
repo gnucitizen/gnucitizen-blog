@@ -2,7 +2,7 @@
 title: Old-school Remote Command Exec Vulnerabilities on Avaya Intuity
 author: adrian-pastor
 date: Thu, 17 Sep 2009 08:32:47 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 Remember those old remote command exec vulns where you had a CGI script such as a perl program which would take input from the client to construct command strings that would then be passed to the shell environment? Well, there were tons of those affecting diagnostic scripts available on the web interface of Avaya Intuity Audix LX.

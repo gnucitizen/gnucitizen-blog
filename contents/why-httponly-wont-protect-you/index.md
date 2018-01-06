@@ -2,7 +2,7 @@
 title: Why HttpOnly Won't Protect You
 author: petko-d-petkov
 date: Thu, 12 Apr 2007 08:27:07 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 Before going in depth criticizing the **HttpOnly** session protection mechanism I better explain what it is and why it is useful.

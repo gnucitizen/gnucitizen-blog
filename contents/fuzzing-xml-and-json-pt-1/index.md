@@ -2,7 +2,7 @@
 title: Fuzzing XML and JSON Pt.1
 author: petko-d-petkov
 date: Thu, 13 Dec 2012 11:47:35 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 > It is hard to get back to blogging especially when there are easier alternatives to scratch your itch - I am talking about [twitter](http://twitter.com/pdp). However, I decided to make the effort and see where it takes me. It will be difficult initially but practice leads to continuous improvement.

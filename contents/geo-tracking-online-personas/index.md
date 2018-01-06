@@ -2,7 +2,7 @@
 title: GEO Tracking Online Personas
 author: petko-d-petkov
 date: Fri, 30 Nov 2007 14:37:45 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 After I have released the [paper on Web2.0 hacking/security](/blog/for-my-next-trick-hacking-web20), I've been asked, on a numerous occasion, to come up with some tools that can be used to better understand the security implications involved into these new technologies which I had referred to. Today, I would like to show you how easy it is to pin-point someone's geographical position even if they have never shared that information on the Web. Welcome to the world of digital stalking.

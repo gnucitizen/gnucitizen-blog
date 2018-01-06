@@ -2,7 +2,7 @@
 title: A Bag Full Of Tricks
 author: petko-d-petkov
 date: Thu, 19 Oct 2006 03:26:10 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

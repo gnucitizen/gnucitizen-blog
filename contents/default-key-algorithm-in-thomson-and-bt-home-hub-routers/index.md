@@ -2,7 +2,7 @@
 title: Default Key Algorithm In Thomson And BT Home Hub Routers
 author: adrian-pastor
 date: Mon, 14 Apr 2008 08:00:33 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

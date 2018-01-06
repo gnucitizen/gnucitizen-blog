@@ -2,7 +2,7 @@
 title: JavaScript XSS Scanner
 author: petko-d-petkov
 date: Mon, 16 Jul 2007 19:13:04 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

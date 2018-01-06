@@ -2,7 +2,7 @@
 title: WS Discovery
 author: petko-d-petkov
 date: Tue, 06 Jun 2006 08:45:42 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 In the last couple of months I've been playing with Web Service and in the process I found several useful things. There are many discovery techniques but I would like to share the most recent ones (the ones that makes most sense to me today). You can check [Massive Enumeration Toolset (MET)](/blog/met) if you need tools to automate the discovery process.

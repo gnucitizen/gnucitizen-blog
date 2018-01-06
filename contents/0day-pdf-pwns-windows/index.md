@@ -2,7 +2,7 @@
 title: 0day PDF pwns Windows
 author: petko-d-petkov
 date: Thu, 20 Sep 2007 13:03:33 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 > I am closing the season with the following **HIGH** Risk vulnerability: Adobe Acrobat/Reader PDF documents can be used to compromise your Windows box. Completely!!! Invisibly and unwillingly!!! All it takes is to open a PDF document or stumble across a page which embeds one.

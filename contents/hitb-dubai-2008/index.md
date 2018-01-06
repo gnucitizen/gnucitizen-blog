@@ -2,7 +2,7 @@
 title: HITB Dubai 2008
 author: petko-d-petkov
 date: Thu, 24 Apr 2008 14:23:38 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 The Hack in the Box (HITB) conference (Dubai), was all in all great fun. I would like to personally thank Dhillon, Belinda, Amy and everybody else from the HITB crew for making this event possible and making sure that everybody had good time. The devil is in the details and this is what makes HITB the best conference in Asia and the middle-east region. I am anxiously looking forward to visit HITB KL.

@@ -2,7 +2,7 @@
 title: Backdooring Windows Media Files
 author: petko-d-petkov
 date: Tue, 18 Sep 2007 12:51:31 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 I am planning to keep this post short and sweet. So, here is the deal. Meta Files are dangerous! In this post I am planning to cover some security findings that concern files with extensions `.wax`, `.wvx`, `.asx` and `.wmx`.

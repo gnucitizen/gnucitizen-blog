@@ -2,7 +2,7 @@
 title: GEO-tracking Mobile Phones
 author: petko-d-petkov
 date: Thu, 18 Oct 2007 11:11:47 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 For those of you who haven't got the time to catch up with some of the latest developments around all-mighty iPhone, I highly recommend [H. D. Moore](http://www.metasploit.com/)'s [Cracking the iPhone](http://blog.metasploit.com/2007/10/cracking-iphone-part-21.html) series where he explains how to crack open the device with the well known libtiff vulnerability that was affecting the Sony's PSP, but with a twist. In this post I am going to introduce you a technique for GEO-tracking the iPhone, or any other mobile phone, after successful exploitation. Keep in mind that all you are going to see is a general description of an attack scenario. I am still waiting for my iPhone, so I haven't coded anything for it yet.

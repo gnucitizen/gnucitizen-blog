@@ -2,7 +2,7 @@
 title: Google.py
 author: petko-d-petkov
 date: Sat, 22 Dec 2007 08:29:35 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

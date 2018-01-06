@@ -2,7 +2,7 @@
 title: Holes in Embedded Devices - Binary state session management
 author: adrian-pastor
 date: Tue, 29 Jan 2008 09:52:22 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 This type of vulnerability is similar to IP address-based session management holes which has been discussed in my [previous post](/blog/holes-in-embedded-devices-ip-based-session-management). It is similar in the sense that the web browser of the admin user who is currently logged into the vulnerable device doesn't send any auth data such as session IDs or passwords. However, this vulnerability is more serious as illustrated by the algorithm implemented by the session management mechanism of the vulnerable device:

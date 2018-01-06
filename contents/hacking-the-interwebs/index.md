@@ -2,7 +2,7 @@
 title: Hacking The Interwebs
 author: petko-d-petkov
 date: Sat, 12 Jan 2008 12:57:22 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

@@ -2,7 +2,7 @@
 title: GHDB
 author: petko-d-petkov
 date: Mon, 21 May 2007 13:24:45 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 ![Ggoogle Dark](http://www.gnucitizen.org/static/blog/2006/10/google-dark.jpg "Ggoogle Dark")

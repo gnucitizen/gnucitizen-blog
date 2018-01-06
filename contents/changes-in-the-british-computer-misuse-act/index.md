@@ -2,7 +2,7 @@
 title: Changes in the British Computer Misuse Act
 author: petko-d-petkov
 date: Fri, 27 Apr 2007 09:40:57 GMT
-template: this/views/post.jade
+template: post.jade
 category: fucked
 ---
 

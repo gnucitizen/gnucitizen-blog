@@ -2,7 +2,7 @@
 title: AttackAPI 0.8 is OUT
 author: petko-d-petkov
 date: Mon, 16 Oct 2006 04:39:05 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 I recommend [AttackAPI](http://code.google.com/p/attackapi) 0.8 to everyone who is interested in client-side hacking not because I wrote it but because it provides a good demonstration of what is possible today. That, I hope will take our awareness even further.

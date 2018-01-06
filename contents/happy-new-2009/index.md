@@ -2,7 +2,7 @@
 title: Happy New 2009
 author: petko-d-petkov
 date: Thu, 01 Jan 2009 11:15:58 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 2008 is gone! Let's welcome the brand new 2009. Happy New Year!

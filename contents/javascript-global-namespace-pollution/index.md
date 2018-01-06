@@ -2,7 +2,7 @@
 title: JavaScript Global Namespace Pollution
 author: petko-d-petkov
 date: Thu, 07 Feb 2008 10:11:56 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 If you are reading this you are probably thinking what does this post has to do with security. Well, let me explain. One of the ways to detect JavaScript malware is to check for namespace pollutions symptoms. Simply put, if the JavaScript execution container contains more objects then the expected, something wrong is going on. This post will briefly walk through some ideas currently circulating in my head.

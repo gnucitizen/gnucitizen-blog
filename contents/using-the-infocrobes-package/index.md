@@ -2,7 +2,7 @@
 title: Using The Infocrobes Package
 author: petko-d-petkov
 date: Tue, 06 Jun 2006 10:00:01 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 It is probably about time to explain a little bit about the Infocrobes project. The [infocrobes](/blog/infocrobes) project is a collection of bash scripts that wrap around common UNIX utilities in order to simplify the process of extracting interesting information from various data sources.

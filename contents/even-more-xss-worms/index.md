@@ -2,7 +2,7 @@
 title: Even More XSS Worms
 author: petko-d-petkov
 date: Sun, 12 Apr 2009 08:29:41 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 This morning I spotted [several blog posts](http://www.techcrunch.com/2009/04/11/twitter-hit-by-stalkdaily-worm/) mentioning that Twitter has been hit by yet another XSS worm.

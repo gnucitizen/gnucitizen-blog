@@ -2,7 +2,7 @@
 title: The Shadow
 author: petko-d-petkov
 date: Fri, 02 Feb 2007 14:26:48 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 _Let's start this conversation with a quick overview of the browser security model._

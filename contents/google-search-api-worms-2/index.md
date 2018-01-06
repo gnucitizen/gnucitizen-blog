@@ -2,7 +2,7 @@
 title: Google Search API Worms 2
 author: petko-d-petkov
 date: Wed, 04 Oct 2006 02:11:42 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 I [covered](/blog/google-search-api-worms) Google AJAX Search API functionalities a week ago. I also provided my view why this service is practically dangerous and how it can be used by AJAX/JavaScript based worms to propagate. It seams that the situations have become a lot more interesting since Google released a full blown AJAX Search Service called [SearchMash](http://www.searchmash.com/).

@@ -2,7 +2,7 @@
 title: About The Power Of Google
 author: petko-d-petkov
 date: Sat, 23 Jun 2007 10:31:50 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 <iframe width="100%" height="420" src="http://www.youtube.com/embed/9zKXCQpUnMg" frameborder="0" allowfullscreen></iframe>

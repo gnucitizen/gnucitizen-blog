@@ -2,7 +2,7 @@
 title: Reconsidering The Side-jacking Attack
 author: petko-d-petkov
 date: Sun, 17 Feb 2008 17:11:19 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 Not that long time ago, I've [made](/blog/hamster-plus-hotspot-equals-web-20-meltdown-not) some comments on Robet Graham's side-jacking attack. Clearly, my reasoning was based upon the his PowerPoint slides but not his BlackHat presentation, where he is more then clear about the motivation behind his work. I've become part of the senseless bashing masses, which are currently haunting the hacker circles. Therefore, I would like to make things right once and for all on this particular topic.

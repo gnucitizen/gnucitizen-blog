@@ -3,7 +3,7 @@ title: There Is No Spoon
 author: petko-d-petkov
 guest: paul-asadoorian
 date: Mon, 21 Apr 2008 10:22:11 GMT
-template: this/views/post.jade
+template: post.jade
 ---
 
 > Our guest blogger for this month is Paul Asadoorian, one of the crew behind [PaulDotCom Security Weekly](http://www.pauldotcom.com/) - the best security podcast on the Web. Paul is a holder of various security degrees and qualifications and he is incredibly active around the embedded devices hacking research. Paul is also co-author of the "[Linksys WRT54G Ultimate Hacking](http://www.amazon.com/Linksys-WRT54G-Ultimate-Hacking-Asadoorian/dp/1597491667/ref=sr_1_1?ie=UTF8&s=books&qid=1208774914&sr=1-1)" book, a must read reference for everyone who is interested in the WRT54G architecture. In this post, Paul is suggesting several things to keep in mind no matter which side of the fence you are at. These are his words:
