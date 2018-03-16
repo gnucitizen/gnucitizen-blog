@@ -1,5 +1,6 @@
 #!/bin/bash
 
+cp -f CNAME build/CNAME
 cd build
 git init
 git config user.name "Travis-CI"
