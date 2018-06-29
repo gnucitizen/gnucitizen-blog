@@ -6,7 +6,7 @@ date: Wed, 15 Nov 2006 02:39:52 GMT
 template: post.jade
 ---
 
-> This month my guest blogger is Adrian Pastor (a.k.a pagvac) the founder of [In Knowledge We Trust - Security Research Labs](http://www.ikwt.com/) and co-author of [Exegesis of Virtual Hosts Hacking](/blog/exegesis). Adrian and I have been brainstorming together on various security related projects. He currently works as a security analyst and researcher involved in high-profile web application testing. In this post Adrian expands on topic of [Web Pages from Hell](/blog/web-pages-from-hell).
+> This month my guest blogger is Adrian Pastor (a.k.a pagvac) the founder of [In Knowledge We Trust - Security Research Labs](http://www.ikwt.com/) and co-author of [Exegesis of Virtual Hosts Hacking](/blog/exegesis-of-virtual-hosts-hacking/). Adrian and I have been brainstorming together on various security related projects. He currently works as a security analyst and researcher involved in high-profile web application testing. In this post Adrian expands on topic of [Web Pages from Hell](/blog/web-pages-from-hell).
 
 After playing with the XSS [vulnerability](/blog/cross-context-scripting-with-sage) found by [pdp](http://www.gnucitizen.org) and [dwk](http://michaeldaw.org) in Sage RSS reader (Firefox extension), I thought "OK fine, we got script execution within the local context since Sage stores the feed on the local system, but how come Firefox never even displays a warning to the user??!!"
 
