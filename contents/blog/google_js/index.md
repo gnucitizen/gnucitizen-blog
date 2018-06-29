@@ -9,7 +9,7 @@ I am learning to love Windows. Yeh it has its own problems and sometimes could b
 
 Pay attention on the size of the script and the level of clarity of the code. Moreover, it is well integrated with the host's setup and connection settings (proxies, socks, etc). You cannot do that even with Python. Thanks Microsoft.
 
-    [http://www.gnucitizen.org/static/blog/2007/10/google.js](http://www.gnucitizen.org/static/blog/2007/10/google.js)
+    [/files/2007/10/google.js](/files/2007/10/google.js)
 
 There are two way you can run the script. If your default scripting engine is `cscript`, then you can just type: `google.js **some query here**`. If this is not the case then you either need to be explicit like this: `cscript /nologo google.js **some query here**`, or make cscript default like this: `cscript //H:CScript`. Whatever you do, the code will run and will work flawlessly.
 

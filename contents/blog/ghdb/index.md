@@ -5,7 +5,7 @@ date: Mon, 21 May 2007 13:24:45 GMT
 template: post.jade
 ---
 
-![Ggoogle Dark](http://www.gnucitizen.org/static/blog/2006/10/google-dark.jpg "Ggoogle Dark")
+![Ggoogle Dark](/files/2006/10/google-dark.jpg "Ggoogle Dark")
 
 GHDB (a.k.a. Google Hacking Database) is HTML/JavaScript wrapper application that uses advance JavaScript techniques to scrape information from [Johnny's Google Hacking Database](http://johnny.ihackstuff.com/ghdb.php) without the need for hosted server side scripts.
 

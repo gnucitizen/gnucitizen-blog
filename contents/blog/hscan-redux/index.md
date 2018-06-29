@@ -11,4 +11,4 @@ This vulnerability is not a reworked version of [Jeremiah Grossman history hack]
 
 Keep in mind that attackers can abuse this vulnerability to extract valuable information about your browsing habits. Attackers can also use this hack to precisely detect whether you are logged into your router management interface, for example. This hack can also be used to detect your router type and version as well. Based on this information, attackers might be able to compromise the integrity of your network.
 
-_The POC is located [here](http://www.gnucitizen.org/static/blog/2007/02/hscan-redux-poc.htm). If all checks show up as **NOT visited**, then visit one of the listed URLs and retest again._
+_The POC is located [here](/files/2007/02/hscan-redux-poc.htm). If all checks show up as **NOT visited**, then visit one of the listed URLs and retest again._

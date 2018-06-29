@@ -79,6 +79,6 @@ modes:
         2 - all TCP ports
 ```
 
-<div class="screen">![Homegrown Telnet Portscanner](http://www.gnucitizen.org/static/blog/2008/05/homegrown_telnet_portscanner.png "Homegrown Telnet Portscanner")</div>
+<div class="screen">![Homegrown Telnet Portscanner](/files/2008/05/homegrown_telnet_portscanner.png "Homegrown Telnet Portscanner")</div>
 
 I realize this is not a very elegant tool, but I hope you can see how it can be useful in certain scenarios!

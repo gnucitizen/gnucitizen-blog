@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+		<title>JavaScript Spider</title>
+		<style>
+			#sub-header {
+			margin: 0;
+			padding: 0;
+			margin-bottom: 0.5em;
+			}
+
+			.results {
+			margin: 0;
+			padding: 0;
+			margin-top: 1em;
+			list-style-type: none;
+			}
+
+			.results a {
+			color: #FFFFFF;
+			font-size: 80%;
+			text-decoration: none;
+			}
+
+			.results a:visited {
+			color: #FFFFFF;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 id="header">JavaScript Spider</h1>
+		<p id="sub-header">code that can traverse the web</p>
+		<div class="message">This is the first implementation of the JavaScript Spider. The following proof of concept tool shows that Javascript can be in fact quite dangerous. This implementation depends on <a href="proxydrop.com">proxydrop.com</a> but others are possible as well: <a href="http://translate.google.com/">Google Translate</a> is one of them. Only the first level is spidered.</div>
+		<form>
+			<label for="location">start location</label>
+			<input name="location" type="text"/>
+			<input type="button" value="spider" onclick="spider_with_target_form(this.form)"/>
+		</form>
+		<script>
+			/*
+			 * HELPERS
+			 */
+
+			function spider_with_target_form(form) {
+				var target = document.location.href;
+				var index = target.indexOf('#');
+
+				if (index != -1)
+					target = target.substring(0, index);
+
+				var iframe = document.createElement('iframe');
+				iframe.src = 'http://www.proxydrop.com/index.php?hl=0010101001&q=' + AttackAPI.Base64Encoder.encode(target + '#spider:' + escape(form.location.value));
+				iframe.setAttribute('style', 'display:none');
+				iframe.style.visibility = 'hidden';
+
+				document.body.appendChild(iframe);
+
+				var timer = setInterval(function () {
+					if (document.location.hash.substring(0, 5) != '#data')
+						return;
+
+					clearInterval(timer);
+					var data = AttackAPI.Base64Encoder.decode(document.location.hash.substring(6));
+					document.location.hash = '#';
+
+					handle_data_protocol(data);
+				}, 5000);
+			}
+
+			function getDocument(iframe) {
+				var doc = null;
+
+				if (iframe.contentDocument) {
+					doc = iframe.contentDocument; 
+				} else if (iframe.contentWindow) {
+					doc = iframe.contentWindow.document;
+				} else if (iframe.document) {
+					doc = iframe.document;
+				}
+
+				return doc;
+			}
+
+			function getParameter(name, from) {
+				var regexS = "[\\?&]"+name+"=([^&#]*)";
+				var regex = new RegExp( regexS );
+				var tmpURL = (from == undefined)?window.location.href:from;
+				var results = regex.exec(tmpURL);
+
+				if (results == null)
+					return '';
+				else
+					return results[1];
+			}
+
+			function handle_data_protocol(data) {
+				var tokens = data.split(':');
+				var ul = document.createElement('ul');
+
+				for (var index = 0; index < tokens.length; index++) {
+					var link = unescape(tokens[index]);
+					var li = document.createElement('li');
+					var a = document.createElement('a');
+					a.href = link;
+					a.innerHTML = link;
+
+					li.appendChild(a);
+					ul.appendChild(li);
+				}
+
+				ul.setAttribute('class', 'results');
+				document.getElementsByTagName('form')[0].appendChild(ul);
+			}
+
+			function handle_spider_protocol(location) {
+				var iframe = document.createElement('iframe');
+				iframe.src = 'http://www.proxydrop.com/index.php?hl=0010101001&q=' + AttackAPI.Base64Encoder.encode(unescape(location));
+				iframe.onload = function () {
+					var data = '';
+					var links = getDocument(iframe).getElementsByTagName('a');	
+
+					for (var index = 0; index < links.length; index++) {
+						var q = getParameter('q', links[index].href);
+						data += escape(AttackAPI.Base64Encoder.decode(unescape(q))) + ':';
+					}
+
+					data = AttackAPI.Base64Encoder.encode(data.substring(0, data.length - 1));
+					parent.location.hash = '#data:' + data;
+				};
+
+				document.body.appendChild(iframe);
+			}
+
+			var AttackAPI = {};
+			AttackAPI.Base64Encoder = {};
+			AttackAPI.Base64Encoder.character_space = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+			AttackAPI.Base64Encoder.encode = function(input) {
+				var output = "";
+				var chr1, chr2, chr3;
+				var enc1, enc2, enc3, enc4;
+				var i = 0;
+				
+				do {
+					chr1 = input.charCodeAt(i++);
+					chr2 = input.charCodeAt(i++);
+					chr3 = input.charCodeAt(i++);
+					
+					enc1 = chr1 >> 2;
+					enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+					enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+					enc4 = chr3 & 63;
+					
+					if (isNaN(chr2)) {
+						enc3 = enc4 = 64;
+					} else if (isNaN(chr3)) {
+						enc4 = 64;
+					}
+					
+					output = output + AttackAPI.Base64Encoder.character_space.charAt(enc1) + AttackAPI.Base64Encoder.character_space.charAt(enc2) + AttackAPI.Base64Encoder.character_space.charAt(enc3) + AttackAPI.Base64Encoder.character_space.charAt(enc4);
+				} while (i < input.length);
+				
+				return output;
+			};
+			AttackAPI.Base64Encoder.decode = function (input) {
+				var output = "";
+				var chr1, chr2, chr3;
+				var enc1, enc2, enc3, enc4;
+				var i = 0;
+
+				input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+
+				do {
+					enc1 = AttackAPI.Base64Encoder.character_space.indexOf(input.charAt(i++));
+					enc2 = AttackAPI.Base64Encoder.character_space.indexOf(input.charAt(i++));
+					enc3 = AttackAPI.Base64Encoder.character_space.indexOf(input.charAt(i++));
+					enc4 = AttackAPI.Base64Encoder.character_space.indexOf(input.charAt(i++));
+
+					chr1 = (enc1 << 2) | (enc2 >> 4);
+					chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+					chr3 = ((enc3 & 3) << 6) | enc4;
+
+					output = output + String.fromCharCode(chr1);
+
+					if (enc3 != 64) {
+						output = output + String.fromCharCode(chr2);
+					}
+					if (enc4 != 64) {
+						output = output + String.fromCharCode(chr3);
+					}
+				} while (i < input.length);
+				
+				return output;
+			};
+
+			/*
+			 * MAIN
+			 */
+
+			if ((q = getParameter('q'))) {
+				var data = AttackAPI.Base64Encoder.decode(q);
+				var tokens = data.substring(data.indexOf('#') + 1).split(':');
+
+				if (tokens[0] == 'spider')
+					handle_spider_protocol(tokens[1]);
+			}
+		</script>
+		<p id="footer"><a href="http://www.gnucitizen.org">GNUCITIZEN</a> &copy; 2006 all rights reserved</p>
+	</body>
+</html>

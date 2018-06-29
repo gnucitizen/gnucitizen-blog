@@ -54,7 +54,7 @@ After scratching my head for a few minutes, I figured out that there is user-sup
 
 There you go! The Injection Point and the XSSed profile look like like screens bellow:
 
-<div class="screen">[![Pownce Screen01](http://www.gnucitizen.org/static/blog/2008/02/pownce-screen01-248x150.jpg "Pownce Screen01") <a href="http://www.gnucitizen.org/static/blog/2008/02/pownce-screen02.jpg">![Pownce Screen02](http://www.gnucitizen.org/static/blog/2008/02/pownce-screen02-248x150.jpg "Pownce Screen02")](http://www.gnucitizen.org/static/blog/2008/02/pownce-screen01.jpg)</a></div>
+<div class="screen">[![Pownce Screen01](/files/2008/02/pownce-screen01-248x150.jpg "Pownce Screen01") <a href="/files/2008/02/pownce-screen02.jpg">![Pownce Screen02](/files/2008/02/pownce-screen02-248x150.jpg "Pownce Screen02")](/files/2008/02/pownce-screen01.jpg)</a></div>
 
 Unfortunately there is more to that. The profile page is also vulnerable to Cross-site Request Forgery attacks. This means that if the user is logged in and he/she visits a malicious site, his/her profile will get infected permanently with the provided evil code. I am not planning to spend time explaining why is that a problem.
 

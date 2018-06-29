@@ -16,6 +16,6 @@ The attack needs to take place either via the Ethernet or the WLAN (Wi-Fi) inter
 
 **UPDATE:** the serial number disclosure reported in this post was originally tested on a BT Home Hub running firmware version 6.2.2.6 (please see screenshots for more information). However, it appears that BT has replaced such information with the Hub's MAC address in the latest firmware (6.2.6.E at time of writing).
 
-<div class="screen">[![](http://www.gnucitizen.org/static/blog/2008/05/bthh_sn_a-162x150.png "BTHH SN A PNG")](http://www.gnucitizen.org/static/blog/2008/05/bthh_sn_a.png) [![](http://www.gnucitizen.org/static/blog/2008/05/bthh_sn_b-188x150.png "BTHH SN B")](http://www.gnucitizen.org/static/blog/2008/05/bthh_sn_b.png)</div>
+<div class="screen">[![](/files/2008/05/bthh_sn_a-162x150.png "BTHH SN A PNG")](/files/2008/05/bthh_sn_a.png) [![](/files/2008/05/bthh_sn_b-188x150.png "BTHH SN B")](/files/2008/05/bthh_sn_b.png)</div>
 
 _Since only the latest firmware uses the Hub's serial number as the default admin password, the reported serial number disclosure via UPnP XML description files is NOT exploitable. Nevertheless, the [MDAP attack](/blog/dumping-the-admin-password-of-the-bt-home-hub/) has been verified on the latest firmware and has been confirmed by several users both on the BT Home Hub v1 and v1.5._

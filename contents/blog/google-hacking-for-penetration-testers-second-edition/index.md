@@ -8,7 +8,7 @@ category: fucked
 
 I was invited to co-author "Google Hacking for Penetration Testers Second Edition" with the some of the greatest minds of enumeration gathering attacks and Google Hacking.
 
-![](http://www.gnucitizen.org/static/blog/2008/01/google-hacking-book.jpg "google-hacking-book")
+![](/files/2008/01/google-hacking-book.jpg "google-hacking-book")
 
 ...from the book excerpt:
 

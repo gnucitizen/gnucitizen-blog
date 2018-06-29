@@ -6,7 +6,7 @@ template: post.jade
 category: fucked
 ---
 
-![Killer Tomatoes](http://www.gnucitizen.org/static/blog/2006/08/killer-tomatoes.jpg "Killer Tomatoes")
+![Killer Tomatoes](/files/2006/08/killer-tomatoes.jpg "Killer Tomatoes")
 
 In order to perform browser based attacks, JavaScript is most definitely required with a number of restrictions of course. Flash 7 has the flexibility to perform cross domain requests without restrictions, however this is sort of fixed in Flash Player 8. Java applets are quite the same in that respect. In certain situations it might be possible to trick the browser into doing what ever you want, but this is a different story. Let's briefly outline how JavaScript and Flash can be used to attack your LAN.
 

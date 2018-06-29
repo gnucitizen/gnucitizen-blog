@@ -10,6 +10,6 @@ Back in the days when Google Hacking was the hot topic of the day, I wrote a sim
 
 Use the script responsibly and keep in mind Google's Terms of Service before doing anything drastic. The command line interface is configured to run through up to 5 pages. You can change that at source level or if you embed it into your own scripts.
 
-    [http://www.gnucitizen.org/static/blog/2007/12/google.py](http://www.gnucitizen.org/static/blog/2007/12/google.py)
+    [/files/2007/12/google.py](/files/2007/12/google.py)
 
 _Let me know if you have any problems. The script is self documented and quite simple, so you should not have any problems getting used to it._

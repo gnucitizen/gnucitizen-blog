@@ -16,6 +16,6 @@ The attack depicted here is very, very simple. All I do is UI redressing an evil
 
 > The solution for Flash is very simple. Show pop-up dialogs just like the ones used by signed Java applets, but make them more informational. Keep in mind though, that this solution can be abused to create rather annoying situations.
 
-_You can download my POCs from [here](http://www.gnucitizen.org/static/blog/2008/10/clickjacking-pocs.zip) and [here](http://www.gnucitizen.org/static/blog/2008/10/clickjacking-pocs2.zip)._
+_You can download my POCs from [here](/files/2008/10/clickjacking-pocs.zip) and [here](/files/2008/10/clickjacking-pocs2.zip)._
 
-<div class="screen">![Flash Redress 01](http://www.gnucitizen.org/static/blog/2008/10/flash-redress-01-300x151.png "Flash Redress 01") ![Flash Redress 02](http://www.gnucitizen.org/static/blog/2008/10/flash-redress-02-300x131.png "Flash Redress 02")</div>
+<div class="screen">![Flash Redress 01](/files/2008/10/flash-redress-01-300x151.png "Flash Redress 01") ![Flash Redress 02](/files/2008/10/flash-redress-02-300x131.png "Flash Redress 02")</div>

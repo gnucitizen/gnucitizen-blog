@@ -1,0 +1,212 @@
+<?php
+#
+# VERSION: 0.1a
+# AUTHOR: Petko Petkov | pdp (architect)
+# HOMEPAGE: http://www.gnucitizen.org
+#
+
+#
+# NOTES
+# the next version of this tool will implement its own session management
+# mechanism and with that the project will be completed
+#
+
+#
+# GLOBAL SETTINGS
+#
+$CHANNEL_SESSION_ID = 'SESSIONID';
+$CHANNEL_SESSION_EXPIRY = 60; // seconds
+$CHANNEL_SESSION_CACHE_EXPIRY = 1; // minutes
+$CHANNEL_SESSION_COOKIE_EXPIRY = 60; // seconds
+$CHANNEL_SESSION_FOLDER = '.htsessions';
+
+#
+# NOTES
+# your filesystem must keep track of access times (atime). Windows FAT does not
+# so you will have to come up with another way to handle garbage collecting 
+# your session if you are stuck with a FAT filesystem or any other filesystem
+# where atime tracking is not available.
+#
+
+#
+# INITIALIZE SESSION MANAGEMENT FACILITIES
+#
+if (!is_dir($CHANNEL_SESSION_FOLDER))
+	mkdir($CHANNEL_SESSION_FOLDER);
+
+ini_set('session.gc_maxlifetime', $CHANNEL_SESSION_EXPIRY);
+
+session_name($CHANNEL_SESSION_ID);
+session_save_path($CHANNEL_SESSION_FOLDER);
+session_cache_expire($CHANNEL_SESSION_CACHE_EXPIRY);
+session_set_cookie_params($CHANNEL_SESSION_COOKIE_EXPIRY);
+session_start();
+
+#
+# INITIALIZE CLIENT INFORMATION
+#
+$_SESSION['client_agent'] = $_SERVER['HTTP_USER_AGENT'];
+$_SESSION['client_address'] = $_SERVER['REMOTE_ADDR'];
+
+if (!is_array($_SESSION['client_queue']))
+	$_SESSION['client_queue'] = array();
+
+if (isset($_SERVER['HTTP_REFERRER']) && !isset($_SESSION['client_queue'][$_SERVER['HTTP_REFERRER']]))
+	$_SESSION['client_queue'][$_SERVER['HTTP_REFERRER']] = array();
+
+#
+# DISPATCHER
+#
+if (isset($_GET['action']) && function_exists('action_'.$_GET['action']))
+	call_user_func('action_'.$_GET['action']);
+else
+	action_pull();
+
+#
+# FINISH
+#
+session_write_close();
+
+#
+# HELPERS
+#
+function is_assoc($php_val) {
+	return is_array($php_val) && array_keys($php_val) !== range(0, sizeof($php_val) - 1);
+}
+
+function export_to_json($php_val) {
+	if (is_assoc($php_val)) {
+		$tmp = '{';
+
+		foreach ($php_val as $key => $val)
+			$tmp .= $key.': '.export_to_json($val).', ';
+
+		if (sizeof($php_val) > 0)
+			$tmp = substr($tmp, 0, -2);
+
+		return $tmp.'}';
+	} else if (is_array($php_val)) {
+		$tmp = '[';
+
+		foreach ($php_val as $val)
+			$tmp .= export_to_json($val).', ';
+
+		if (sizeof($php_val) > 0)
+			$tmp = substr($tmp, 0, -2);
+
+		return $tmp.']';
+	} else
+		return "'".stripslashes($php_val)."'";
+}
+
+#
+# ACTIONS
+#
+function action_push() {
+	global $CHANNEL_SESSION_FOLDER;
+
+	if (!isset($_GET['client']) || !isset($_GET['message']))
+		return;
+
+	$file = realpath($CHANNEL_SESSION_FOLDER.'/'.$_GET['client']);
+
+	if (!is_file($file))
+		return;
+
+	$current_session = $_SESSION;
+	$_SESSION = array();
+
+	session_decode(file_get_contents($file));
+
+	if (isset($_SERVER['HTTP_REFERRER']))
+		$_SESSION['client_queue'][$_SERVER['HTTP_REFERRER']][] = $_GET['message'];
+	else
+		$_SESSION['client_queue']['_'][] = $_GET['message'];
+
+	$fd = fopen($file, 'w');
+
+	if (flock($fd, LOCK_EX)) {
+		fputs($fd, session_encode());
+		flock($fd, LOCK_UN);
+	}
+
+	fclose($fd);
+
+	$_SESSION = $current_session;
+}
+
+function action_pull() {
+	$php_val = '';
+
+	if (isset($_SERVER['HTTP_REFERRER']) && sizeof($_SESSION['client_queue'][$_SERVER['HTTP_REFERRER']]) > 0)
+		$php_val = array_shift($_SESSION['client_queue'][$_SERVER['HTTP_REFERRER']]);
+	else if (sizeof($_SESSION['client_queue']['_']) > 0)
+		$php_val = array_shift($_SESSION['client_queue']['_']);
+
+	if (isset($_GET['callback']))
+		echo $_GET['callback'].'('.export_to_json($php_val).');';
+	else
+		echo stripslashes($php_val);
+}
+
+function action_list() {
+	global $CHANNEL_SESSION_FOLDER;
+
+	$sessions = array();
+
+	foreach (glob($CHANNEL_SESSION_FOLDER.'/*') as $file) {
+		$session_id = substr($file, strlen($CHANNEL_SESSION_FOLDER) + 1);
+
+		if (!stristr($session_id, session_id()))
+			$sessions[] = $session_id;
+	}
+
+	if (sizeof($sessions) == 0)
+		return;
+
+	if (isset($_GET['callback']))
+		echo $_GET['callback'].'('.export_to_json($sessions).');';
+	else
+		echo 'list('.export_to_json($sessions).');';
+}
+
+function action_view() {
+	global $CHANNEL_SESSION_FOLDER;
+
+	if (!isset($_GET['client']))
+		return;
+
+	$file = realpath($CHANNEL_SESSION_FOLDER.'/'.$_GET['client']);
+
+	if (!is_file($file))
+		return;
+
+	$current_session = $_SESSION;
+	$_SESSION = array();
+
+	session_decode(file_get_contents($file));
+
+	if (isset($_GET['callback']))
+		echo $_GET['callback'].'('.export_to_json($_SESSION).');';
+	else
+		echo 'view('.export_to_json($_SESSION).');';
+
+	$_SESSION = $current_session;
+}
+
+function action_self() {
+	global $CHANNEL_SESSION_FOLDER;
+
+	foreach (glob($CHANNEL_SESSION_FOLDER.'/*') as $file) {
+		$session_id = substr($file, strlen($CHANNEL_SESSION_FOLDER) + 1);
+
+		if (stristr($session_id, session_id()))
+			break;
+	}
+
+	if (isset($_GET['callback']))
+		echo $_GET['callback']."('$session_id');";
+	else
+		echo "self('$session_id');";
+}
+?>

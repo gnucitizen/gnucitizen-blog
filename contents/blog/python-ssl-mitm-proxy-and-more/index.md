@@ -8,7 +8,7 @@ category: fucked
 
 Lately I've been busy with putting together a python module which allows me to create man-in-the-middle (MITM) HTTP Proxies with a programmer-friendly extension interface and support for SSL. This kind of proxies can be used for many things ranging from creating your own tampering proxies to hijacking network traffic via a transparent proxy connection.
 
-    [http://www.gnucitizen.org/static/blog/2009/02/httpservers.py](http://www.gnucitizen.org/static/blog/2009/02/httpservers.py)
+    [/files/2009/02/httpservers.py](/files/2009/02/httpservers.py)
 
 I am quite pleased with the end result! Although my proxy hasn't been heavily tested, I find the code lot better when compared to Dave Aitel's SpikeProxy (sorry Dave :)) and extending/adding functionalities is actually piece of cake.
 

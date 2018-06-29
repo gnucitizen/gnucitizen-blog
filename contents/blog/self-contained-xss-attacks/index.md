@@ -6,7 +6,7 @@ template: post.jade
 category: fucked
 ---
 
-![50ft Woman](http://www.gnucitizen.org/static/blog/2006/08/50ft-woman.jpg "50ft Woman")
+![50ft Woman](/files/2006/08/50ft-woman.jpg "50ft Woman")
 
 The essence of all Cross-site scripting (XSS) attacks is "unsanitized verbosity". Not a very good name! `:)` In that respect every application that simply echoes input is vulnerable and can be potentially exploited by attackers to steal session identifiers, trick the user into performing some malicious activity, gather important information, etc.
 

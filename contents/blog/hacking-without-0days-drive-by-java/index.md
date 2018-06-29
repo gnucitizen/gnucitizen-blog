@@ -9,7 +9,7 @@ From [Wikipedia](http://en.wikipedia.org/wiki/Drive-by_download), the free encyc
 
 For those of you who have never seen a warning message like the one bellow, this is the default dialog box you get from the Java Runtime when you run cryptographically signed applets. Signed applets are different in comparison to the unsigned ones. Basically they defer in terms of their security sandbox and level of privilege. Signed applets can do anything your desktop applications can do, although they run from within the browser.
 
-<div class="screen">[![](http://www.gnucitizen.org/static/blog/2007/10/warning-supermario-3d-nintendo.jpg "Warning Supermario 3D Nintendo PNG")](http://www.gnucitizen.org/static/blog/2007/10/warning-supermario-3d-nintendo.jpg)</div>
+<div class="screen">[![](/files/2007/10/warning-supermario-3d-nintendo.jpg "Warning Supermario 3D Nintendo PNG")](/files/2007/10/warning-supermario-3d-nintendo.jpg)</div>
 
 _The one million dollar question is:_
 

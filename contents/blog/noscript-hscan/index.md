@@ -10,7 +10,7 @@ After releasing my Firefox specific [history scanner](/blog/hscan-redux/), RSnak
 
 On the advantages side, you don't really need JavaScript to steal the victim's browser history anymore. So, everybody who is thinking that turning off JavaScript is the safe way to go, you are most definitely wrong. You should turn CSS off too. This is it. Sparten browsing is the key. On the other hand, history scanning without JavaScript is less powerful in a way that attackers are not able to perform actions as soon as a history entry is discovered.
 
-Still, I think that RSnake's approach is quite interesting and innovative. I decided to write a generic scanner that can be configured on the fly to steal any browser history. The scanner is located [here](http://www.gnucitizen.org/static/blog/2007/02/noscript-hscan-php.txt). Before using it you need to pass several GET or POST (it is up to you really) parameters to the script like this:
+Still, I think that RSnake's approach is quite interesting and innovative. I decided to write a generic scanner that can be configured on the fly to steal any browser history. The scanner is located [here](/files/2007/02/noscript-hscan-php.txt). Before using it you need to pass several GET or POST (it is up to you really) parameters to the script like this:
 
 	noscript-hscan.php?u1=[url]&u2=[url]&t=[target collection point]
 

@@ -24,6 +24,6 @@ It is also worth mentioning that usually there are no restrictions on how many n
 
 > Attackers can also register domains such as `google` so that if the user types the word in their browser, they will be redirected to the attacker's web server.
 
-I have developed a very basic [script](http://www.gnucitizen.org/static/blog/2008/01/dhcpmangle-perl.txt) that you can use for testing whether you network is vulnerable or not. I highly suggest to give it a bash and see what it comes up with. If the result is positive then you should undertake some precocious steps to secure your network.
+I have developed a very basic [script](/files/2008/01/dhcpmangle-perl.txt) that you can use for testing whether you network is vulnerable or not. I highly suggest to give it a bash and see what it comes up with. If the result is positive then you should undertake some precocious steps to secure your network.
 
-    [http://www.gnucitizen.org/static/blog/2008/01/dhcpmangle-perl.txt](http://www.gnucitizen.org/static/blog/2008/01/dhcpmangle-perl.txt)
+    [/files/2008/01/dhcpmangle-perl.txt](/files/2008/01/dhcpmangle-perl.txt)

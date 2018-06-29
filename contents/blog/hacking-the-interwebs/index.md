@@ -20,7 +20,7 @@ Adrian did an amazing job [explaining](/blog/bt-home-flub-pwnin-the-bt-home-hub-
 
 To the point: SOAP Messages are nothing but POST requests with `contentType` equal to `application/xml`, a SOAPAction header and a request body that complies with the SOAP message format. These three request values cannot be changed with JavaScript unless we deal with the `XMLHttpRequest` object. Though, in order to successfully use this object, we need to comply with the Same Origin Policies (SOP) and that will mean that we need an XSS vulnerability, as Adrian [proposed](/blog/bt-home-flub-pwnin-the-bt-home-hub-5) in his article. However, it is less known that these values can be easily set with Flash. The following code demonstrates the attack vector:
 
-    [http://www.gnucitizen.org/static/blog/2008/01/test.mxml](http://www.gnucitizen.org/static/blog/2008/01/test.mxml)
+    [/files/2008/01/test.mxml](/files/2008/01/test.mxml)
 
 The Test.mxml Flash Application performs several operations.
 

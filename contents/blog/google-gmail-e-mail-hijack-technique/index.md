@@ -9,7 +9,7 @@ In this post I am going to show you how someone can remotely install a simple, p
 
 The following sequence of screenshots describes how the attack works.
 
-<div class="screen">[![GGEHT Seq1](http://www.gnucitizen.org/static/blog/2007/09/ggeht-seq1-248x150.jpg "GGEHT Seq1")](http://www.gnucitizen.org/static/blog/2007/09/ggeht-seq1.jpg) [![GGEHT Seq2](http://www.gnucitizen.org/static/blog/2007/09/ggeht-seq2-248x150.jpg "GGEHT Seq2")](http://www.gnucitizen.org/static/blog/2007/09/ggeht-seq2.jpg) [![GGEHT Seq3](http://www.gnucitizen.org/static/blog/2007/09/ggeht-seq3-248x150.jpg "GGEHT Seq3")](http://www.gnucitizen.org/static/blog/2007/09/ggeht-seq3.jpg)</div>
+<div class="screen">[![GGEHT Seq1](/files/2007/09/ggeht-seq1-248x150.jpg "GGEHT Seq1")](/files/2007/09/ggeht-seq1.jpg) [![GGEHT Seq2](/files/2007/09/ggeht-seq2-248x150.jpg "GGEHT Seq2")](/files/2007/09/ggeht-seq2.jpg) [![GGEHT Seq3](/files/2007/09/ggeht-seq3-248x150.jpg "GGEHT Seq3")](/files/2007/09/ggeht-seq3.jpg)</div>
 
 The victim visits a malicious page while being logged into GMail. Upon that, the page performs a `multipart/form-data` `POST` to one of the GMail alternative interfaces and injects a filter into the victim's filter list. In the example above, the attacker writes a filter, which simply looks for emails with attachments and forward them to an email of their choice. This filter will automatically transfer all emails matching the rule. Keep in mind that future emails will be forwarded as well. The attack will remain **present** for as long as the victim has the filter within their filter list, even if the initial vulnerability, which was the cause of the injection, is fixed by Google.
 
@@ -37,4 +37,4 @@ I am not planning to release the details of this vulnerability for now. The expl
     	document.forms[0].submit();
     </script>
 
-_The actual exploit can be launched from [here](http://www.gnucitizen.org/static/blog/2007/09/ggeht-exploit.htm). It makes use of a CSRF redirection utility to simplify the process._
+_The actual exploit can be launched from [here](/files/2007/09/ggeht-exploit.htm). It makes use of a CSRF redirection utility to simplify the process._

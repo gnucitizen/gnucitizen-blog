@@ -6,7 +6,7 @@ template: post.jade
 category: fucked
 ---
 
-On this page you will find the [POC](http://www.gnucitizen.org/static/blog/2007/07/scanner.htm) of a JavaScript XSS (Cross-site Scripting) Scanner which I promised to release when I publish the [Yahoo Site Explorer Spider](/blog/yahoo-site-explorer-spider).
+On this page you will find the [POC](/files/2007/07/scanner.htm) of a JavaScript XSS (Cross-site Scripting) Scanner which I promised to release when I publish the [Yahoo Site Explorer Spider](/blog/yahoo-site-explorer-spider).
 
 If you notice, the scanner is a bit restricted. It is not exhaustive and it can be improved in a number of areas. However, all restrictions were introduced on purpose for a number of reasons. The first reason is because this tool is just a Proof of Concept - it is not intended to be part of any XSS/AJAX worm, attack toolkit or other type of software whether it is malicious or not. Second, the tool should only be used for educational purposes only. Last but not least, this tools is written just to prove that AJAX worms can propagate across several domains by scanning and discovering new vulnerabilities on their own. That used to be considered a theoretical attack vector. In this example we put the theory into practice.
 
@@ -30,10 +30,10 @@ The second option scans only one URL. The scanner will grab your input and mutat
 
 Here is the scanner's source code:
 
-    [http://www.gnucitizen.org/static/blog/2007/07/scanner.js](http://www.gnucitizen.org/static/blog/2007/07/scanner.js)
+    [/files/2007/07/scanner.js](/files/2007/07/scanner.js)
 
     and this is how I use it:
 
-    [http://www.gnucitizen.org/static/blog/2007/07/scanner-init.js](http://www.gnucitizen.org/static/blog/2007/07/scanner-init.js)
+    [/files/2007/07/scanner-init.js](/files/2007/07/scanner-init.js)
 
 _This is pretty much it!_

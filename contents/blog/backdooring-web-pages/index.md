@@ -6,7 +6,7 @@ template: post.jade
 category: fucked
 ---
 
-![Greasemonkey](http://www.gnucitizen.org/static/blog/2006/08/greasemonkey.jpg "Greasemonkey")
+![Greasemonkey](/files/2006/08/greasemonkey.jpg "Greasemonkey")
 
 The most obvious way of maliciously infecting web pages is to perform Cross-Site Scripting (XSS). In practice, XSS vulnerabilities can be persistent and non-persistent. Depending on the type, the attacker has various degree of control. The persistent vector produces better results and it lasts longer, where non-persistent vector lasts a single hit, although it is possible for the attacker to take control of the user browser by using other techniques. Here I am trying to explore another vector that can permanently take control of the user web experience.
 

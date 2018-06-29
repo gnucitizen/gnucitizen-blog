@@ -128,7 +128,7 @@ Visiting the change admin password page:
 
 If you capture the traffic while testing the exploit against yourself you will see the admin login and password being sent to google.com:
 
-<div class="screen">![Screenshot eth1 Capturing Wireshark 1](http://www.gnucitizen.org/static/blog/2009/04/screenshot-eth1-capturing-wireshark1.png "Screenshot eth1 Capturing Wireshark 1")</div>
+<div class="screen">![Screenshot eth1 Capturing Wireshark 1](/files/2009/04/screenshot-eth1-capturing-wireshark1.png "Screenshot eth1 Capturing Wireshark 1")</div>
 
 #### Attack Requirements
 

@@ -11,4 +11,4 @@ Remember those old remote command exec vulns where you had a CGI script such as 
 
 These vulnerabilities, although cool, are not critical since you need to be logged into the interface in order to exploit them. That being said, it could be handy for bypassing restricting imposed by the web GUI and eventually escalate privileges. Apart from that, there were also the usual client-side bugs such as XSS and CSRF which are usually expected of an appliance with a web interface.
 
-Details can be found [here](http://www.gnucitizen.org/static/blog/2009/09/Avaya_Intuity_Remote_Command_Execution.pdf).
+Details can be found [here](/files/2009/09/Avaya_Intuity_Remote_Command_Execution.pdf).

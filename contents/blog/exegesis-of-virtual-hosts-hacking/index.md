@@ -5,7 +5,7 @@ date: Thu, 06 Apr 2006 22:45:00 GMT
 template: post.jade
 ---
 
-This is the first [paper](http://www.gnucitizen.org/static/blog/2006/04/exegesis-of-virtual-hosts-hacking.pdf) (as far as we know) written on the topic of **virtual hosts hacking**. It covers basic skills such as passive discovery techniques and (almost) stealth active discovery techniques. It also presents possible scenarios of exploitation.
+This is the first [paper](/files/2006/04/exegesis-of-virtual-hosts-hacking.pdf) (as far as we know) written on the topic of **virtual hosts hacking**. It covers basic skills such as passive discovery techniques and (almost) stealth active discovery techniques. It also presents possible scenarios of exploitation.
 
 **Exegesis of Virtual Hosts Hacking** was an experiment. The topic about hacking virtual hosts has been covered very vaguely in the past. This is the reason why we decided to develop standard techniques which can be implemented into our personal toolkits. Of course this led to a paper which you can read now.
 

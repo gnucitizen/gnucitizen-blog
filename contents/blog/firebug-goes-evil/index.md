@@ -43,6 +43,6 @@ function runFile(f) {
 
 The function `runFile` allows execution of files. With the function declaration in the browser chrome, attackers can call `console.log` a few more times to spawn any file they want or even silently install browser extensions, not to mention that they will be able to read and write the file system too. The possibilities for evilness are endless.
 
-There is a catch though. The Cross-context scripting vector is very tiny. In order to exploit the vulnerability, I needed to go through some extreme things like dynamically composing the malicious payload in a string then evaluating the string content inside the chrome. I wrote two ([1](http://www.gnucitizen.org/static/blog/2007/04/firebug-poc.htm), [2](http://www.gnucitizen.org/static/blog/2007/04/firebug-poc2.htm)) Proof of Concept exploits that you can try out.
+There is a catch though. The Cross-context scripting vector is very tiny. In order to exploit the vulnerability, I needed to go through some extreme things like dynamically composing the malicious payload in a string then evaluating the string content inside the chrome. I wrote two ([1](/files/2007/04/firebug-poc.htm), [2](/files/2007/04/firebug-poc2.htm)) Proof of Concept exploits that you can try out.
 
 _It is highly recommended that you disable Firebug until this issue is fixed which I have no doubt that it will be quite soon._

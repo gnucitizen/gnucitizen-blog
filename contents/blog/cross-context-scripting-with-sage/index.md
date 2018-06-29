@@ -19,4 +19,4 @@ I turned off HTML tags and continued on as normal. However, something odd happen
 * **Second**: Logical mental progression put forward the question, what if we reversed it? `&lt;`, `&gt;` became `<>` when HTML tags were turned on (THE DEFAULT). This means we can effectively hack the latest version of Sage via RSS Injection regardless of which mode is set.
 * **Thirdly**: Sage converts the feed into an HTML file and stores it on the local system. This means we were now in the browser's local zone policy. From here we could read any file from the local system.
 
-The proof of concept feed can be downloaded from the following [URL](http://www.gnucitizen.org/static/blog/2006/09/sage-feed-poc.xml).
+The proof of concept feed can be downloaded from the following [URL](/files/2006/09/sage-feed-poc.xml).

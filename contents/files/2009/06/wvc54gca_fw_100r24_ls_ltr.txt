@@ -1,0 +1,587 @@
+./:
+total 0
+drwxr-xr-x 2 root root  24 2007-11-09 03:58 dev
+drwxr-xr-x 3 root root 262 2007-11-09 03:58 etc
+drwxr-xr-x 3  513  503 368 2007-11-09 03:58 lib
+drwxr-xr-x 3 root root  24 2007-11-09 03:58 mnt
+drwxr-xr-x 2 root root   3 2007-11-09 03:58 proc
+lrwxrwxrwx 1 root root  17 2007-11-09 03:58 root -> /mnt/ramdisk/root
+lrwxrwxrwx 1 root root  16 2007-11-09 03:58 tmp -> /mnt/ramdisk/tmp
+lrwxrwxrwx 1 root root  16 2007-11-09 03:58 var -> /mnt/ramdisk/var
+drwxr-xr-x 6 root root  56 2007-11-09 03:57 usr
+drwxr-xr-x 2 root root 350 2007-11-09 03:57 bin
+drwxr-xr-x 2 root root 121 2007-11-09 03:57 sbin
+
+./dev:
+total 0
+crw------- 1 root root 5, 1 2007-11-09 03:58 console
+
+./etc:
+total 50
+lrwxrwxrwx 1 root root     8 2007-11-09 03:58 icon.large.ico -> icon.ico
+drwxr-xr-x 2 root root    20 2007-11-09 03:58 init.d
+lrwxrwxrwx 1 root root    24 2007-11-09 03:58 resolv.conf -> /mnt/ramdisk/resolv.conf
+lrwxrwxrwx 1 root root    24 2007-11-09 03:58 system.conf -> /mnt/ramdisk/system.conf
+lrwxrwxrwx 1 root root    32 2007-11-09 03:58 wpa_supplicant.conf -> /mnt/ramdisk/wpa_supplicant.conf
+-rw-r--r-- 1 root root  9662 2007-11-09 03:58 icon.ico
+-rwxr-xr-x 1 root root  6572 2007-11-09 03:58 rc.sethost
+-rwxr-xr-x 1 root root  8192 2007-11-09 03:57 rt2561.bin
+-rwxr-xr-x 1 root root   467 2007-11-09 03:57 rt61sta.dat
+-rw-r--r-- 1 root root  4087 2007-11-09 03:54 def_sys.conf
+-rw-r--r-- 1 root root  3269 2007-11-09 03:54 logfile_en
+-rw-r--r-- 1 root root  3269 2007-11-09 03:54 logfile_us
+-rw-r--r-- 1 root root    42 2007-06-20 07:39 passwd
+-rw-r--r-- 1 root root    13 2006-12-08 09:15 group
+-rw-r--r-- 1 root root    20 2006-12-08 09:15 hosts
+-rw-r--r-- 1 root root    67 2006-12-08 09:15 inittab
+-rw-r--r-- 1 root root 12682 2006-12-08 09:15 mime.types
+
+./etc/init.d:
+total 3
+-rwxr-xr-x 1 root root 2718 2007-09-24 08:17 rcS
+
+./lib:
+total 655
+lrwxrwxrwx 1 root root     19 2007-11-09 03:58 ld-uClibc.so.0 -> ld-uClibc-0.9.28.so
+lrwxrwxrwx 1 root root     18 2007-11-09 03:58 libcrypt.so.0 -> libcrypt-0.9.28.so
+lrwxrwxrwx 1 root root     19 2007-11-09 03:58 libc.so.0 -> libuClibc-0.9.28.so
+lrwxrwxrwx 1 root root     15 2007-11-09 03:58 libdl.so.0 -> libdl-0.9.28.so
+lrwxrwxrwx 1 root root     13 2007-11-09 03:58 libfloat.so -> libfloat.so.1
+lrwxrwxrwx 1 root root     13 2007-11-09 03:58 libgcc_s.so -> libgcc_s.so.1
+lrwxrwxrwx 1 root root     20 2007-11-09 03:58 libpthread.so.0 -> libpthread-0.9.28.so
+lrwxrwxrwx 1 root root     13 2007-11-09 03:58 libz.so -> libz.so.1.2.3
+lrwxrwxrwx 1 root root     13 2007-11-09 03:58 libz.so.1 -> libz.so.1.2.3
+drwxr-xr-x 3  513  503     56 2007-11-09 03:58 modules
+-rwxr-xr-x 1 root root  20124 2007-05-10 03:54 ld-uClibc-0.9.28.so
+-rw-r--r-- 1 root root  10120 2007-05-10 03:54 libcrypt-0.9.28.so
+-rw-r--r-- 1 root root   7260 2007-05-10 03:54 libdl-0.9.28.so
+-rw-r--r-- 1 root root  83621 2007-05-10 03:54 libpthread-0.9.28.so
+-rw-r--r-- 1 root root  80641 2007-05-10 03:54 libz.so.1.2.3
+-rwxr-xr-x 1 root root 102745 2007-05-10 03:54 libfloat.so.1
+-rw-r--r-- 1 root root  27956 2007-05-10 03:54 libgcc_s.so.1
+-rw-r--r-- 1 root root 312396 2007-05-10 03:54 libuClibc-0.9.28.so
+-rw-r--r-- 1  513  503   7260 2006-12-08 09:15 libdl.so
+-rw-r--r-- 1  513  503  15334 2006-12-08 09:15 liblocale.so
+
+./lib/modules:
+total 57
+drwxr-xr-x 2 root root   114 2007-11-09 03:57 2.4.19-pl1029
+-rw-r--r-- 1  513  503 49149 2007-08-06 06:47 plmedia.o
+-rw-r--r-- 1  513  503  8243 2006-12-08 09:15 crypt.o
+
+./lib/modules/2.4.19-pl1029:
+total 531
+-rwxr-xr-x 1 root root   1684 2007-11-09 03:57 watchdog.o
+-rwxr-xr-x 1 root root   2296 2007-11-09 03:57 reset.o
+-rwxr-xr-x 1 root root 477933 2007-11-09 03:57 rt61.o
+-rwxr-xr-x 1 root root  16058 2007-11-09 03:57 video_in.o
+-rwxr-xr-x 1 root root   8548 2007-11-09 03:57 ioport.o
+-rwxr-xr-x 1 root root   4928 2007-11-09 03:57 leds.o
+-rwxr-xr-x 1 root root   5616 2007-11-09 03:57 switchs.o
+-rwxr-xr-x 1 root root  24948 2007-11-09 03:57 dmfe.o
+
+./mnt:
+total 0
+drwxr-xr-x 2 root root 3 2007-11-09 03:58 ramdisk
+
+./mnt/ramdisk:
+total 0
+
+./proc:
+total 0
+
+./usr:
+total 0
+drwxr-xr-x 7 root root  67 2007-11-09 03:58 local
+drwxr-xr-x 2 root root  58 2007-11-09 03:58 sbin
+drwxr-xr-x 2 root root  76 2007-11-09 03:57 lib
+drwxr-xr-x 2 root root 183 2007-11-09 03:57 bin
+
+./usr/local:
+total 0
+drwxr-xr-x  2 root root 696 2007-11-09 03:58 bin
+drwxr-xr-x  7 root root 786 2007-11-09 03:58 www
+drwxrwxrwx 13 root root 169 2007-11-09 03:58 zoneinfo
+drwxr-xr-x  3 root root  25 2007-11-09 03:58 lib
+drwxr-xr-x  2 root root  25 2007-11-09 03:58 sbin
+
+./usr/local/bin:
+total 1458
+-rwxr-xr-x 1 root root  26308 2007-11-09 03:58 ez-ipupdate
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 jabber_stunnel -> stunnel
+-rwxr-xr-x 1 root root  14356 2007-11-09 03:58 tzoupdate
+-rwxr-xr-x 1 root root  34120 2007-11-09 03:58 jabberlog
+-rwxr-xr-x 1 root root  24304 2007-11-09 03:58 ntpdate
+-rwxr-xr-x 1 root root  42720 2007-11-09 03:58 dhcpcd
+-rwxr-xr-x 1 root root 153248 2007-11-09 03:58 iwconfig
+-rwxr-xr-x 1 root root 149152 2007-11-09 03:58 iwlist
+-rwxr-xr-x 1 root root 145084 2007-11-09 03:58 iwpriv
+-rwxr-xr-x 1 root root 216812 2007-11-09 03:58 wpa_supplicant
+-rwxr-xr-x 1 root root  76436 2007-11-09 03:58 thttpd
+-rwxr-xr-x 1 root root    327 2007-11-09 03:58 thttpd.conf
+-rwxr-xr-x 1 root root   4332 2007-11-09 03:58 ov_tool
+-rwxr-xr-x 1 root root   9120 2007-11-09 03:58 ac97
+-rwxr-xr-x 1 root root   3864 2007-11-09 03:58 au_echo
+-rwxr-xr-x 1 root root   3496 2007-11-09 03:58 ovi2c
+-rwxr-xr-x 1 root root  18632 2007-11-09 03:58 sc_dst_setcron
+-rwxr-xr-x 1 root root   3272 2007-11-09 03:58 sensor_ioctl
+-rwxr-xr-x 1 root root  51772 2007-11-09 03:58 lld2d
+-rwxr-xr-x 1 root root  14564 2007-11-09 03:58 nttcp
+-rwxr-xr-x 1 root root   3228 2007-11-09 03:58 dnswitch_action
+-rwxr-xr-x 1 root root     31 2007-11-09 03:58 dnswitch_ctrl
+-rwxr-xr-x 1 root root   2868 2007-11-09 03:58 io_init
+-rwxr-xr-x 1 root root   6474 2007-11-09 03:58 ledoff
+-rwxr-xr-x 1 root root   3056 2007-11-09 03:58 reboot
+-rwxr-xr-x 1 root root   7026 2007-11-09 03:58 sensor
+-rwxr-xr-x 1 root root   8883 2007-11-09 03:58 sensor_daemon
+-rwxr-xr-x 1 root root   5788 2007-11-09 03:58 syslog
+-rwxr-xr-x 1 root root   5000 2007-11-09 03:58 ddnsinit
+-rwxr-xr-x 1 root root  67252 2007-11-09 03:58 UPnPPortMapping
+-rwxr-xr-x 1 root root  19288 2007-11-09 03:58 ListenMcast
+-rwxr-xr-x 1 root root  10004 2007-11-09 03:58 miniserver
+-rwxr-xr-x 1 root root  15468 2007-11-09 03:58 upnpd
+-rwxr-xr-x 1 root root   6916 2007-11-09 03:58 dsp_dae
+-rwxr-xr-x 1 root root   6940 2007-11-09 03:58 httpd
+-rwxr-xr-x 1 root root   2868 2007-11-09 03:58 linkstatus
+-rwxr-xr-x 1 root root  13908 2007-11-09 03:58 nc_qset
+-rwxr-xr-x 1 root root   3676 2007-11-09 03:58 ntp_setcron
+-rwxr-xr-x 1 root root   5536 2007-11-09 03:58 nt_services
+-rwxr-xr-x 1 root root   3636 2007-11-09 03:58 do_leds
+-rwxr-xr-x 1 root root 155784 2007-11-09 03:58 hydra
+-rwxr-xr-x 1 root root   5752 2007-11-09 03:58 listen_input
+-rwxr-xr-x 1 root root   5544 2007-11-09 03:58 read_push
+-rwxr-xr-x 1 root root   7428 2007-11-09 03:58 snapshooter
+-rwxr-xr-x 1 root root  22668 2007-11-09 03:58 snap_swencoder
+-rwxr-xr-x 1 root root   7416 2007-11-09 03:58 videolog
+-rwxr-xr-x 1 root root   4016 2007-11-09 03:58 chgip
+-rwxr-xr-x 1 root root   4324 2007-11-09 03:57 auth
+-rwxr-xr-x 1 root root   4360 2007-11-09 03:57 r_flash
+-rwxr-xr-x 1 root root   5688 2007-11-09 03:57 tflash
+-rwxr-xr-x 1 root root  65856 2007-11-09 03:57 ftp
+
+./usr/local/www:
+total 242
+drwxr-xr-x 2 root root   968 2007-11-09 03:58 adm
+lrwxrwxrwx 1 root root    13 2007-11-09 03:58 HNAP1 -> adm/HNAP1.cgi
+drwxr-xr-x 2 root root   550 2007-11-09 03:58 img
+lrwxrwxrwx 1 root root     8 2007-11-09 03:58 language.cgi -> main.cgi
+lrwxrwxrwx 1 root root     8 2007-11-09 03:58 message.cgi -> main.cgi
+drwxr-xr-x 2 root root    98 2007-11-09 03:58 io
+drwxrwxrwx 2 root root    29 2007-11-09 03:58 pt
+drwxr-xr-x 2 root root    26 2007-11-09 03:58 util
+-rw-r--r-- 1 root root   151 2007-11-09 03:58 blank.htm
+-rw-r--r-- 1 root root   345 2007-11-09 03:58 blue_tl.gif
+-rw-r--r-- 1 root root   350 2007-11-09 03:58 blue_top_left.gif
+-rw-r--r-- 1 root root   932 2007-11-09 03:58 blue_top_right.gif
+-rw-r--r-- 1 root root   930 2007-11-09 03:58 blue_tr.gif
+-rw-r--r-- 1 root root   334 2007-11-09 03:58 bluewhite_bottom_left.gif
+-rw-r--r-- 1 root root   528 2007-11-09 03:58 bluewhite_bottom_right.gif
+-rw-r--r-- 1 root root   335 2007-11-09 03:58 bluewhite_top_left.gif
+-rw-r--r-- 1 root root   532 2007-11-09 03:58 bluewhite_top_right.gif
+-rw-r--r-- 1 root root  2674 2007-11-09 03:58 bottom_bar.jpg
+-rw-r--r-- 1 root root  3113 2007-11-09 03:58 cisco_footer.gif
+-rw-r--r-- 1 root root  5151 2007-11-09 03:58 device.jpg
+-rw-r--r-- 1 root root   428 2007-11-09 03:58 gray_bottom_left.gif
+-rw-r--r-- 1 root root   322 2007-11-09 03:58 gray_bottom_right.gif
+-rw-r--r-- 1 root root   492 2007-11-09 03:58 gray_top_left.gif
+-rw-r--r-- 1 root root   337 2007-11-09 03:58 gray_top_right.gif
+-rw-r--r-- 1 root root  5723 2007-11-09 03:58 hlp_client.htm
+-rw-r--r-- 1 root root  4121 2007-11-09 03:58 index.htm
+-rw-r--r-- 1 root root 33494 2007-11-09 03:58 lang_en.js
+-rw-r--r-- 1 root root 33492 2007-11-09 03:58 lang_us.js
+-rw-r--r-- 1 root root  3051 2007-11-09 03:58 Linksys_Blue_Logo.gif
+-rw-r--r-- 1 root root 12086 2007-11-09 03:58 linux.js
+-rw-r--r-- 1 root root 10941 2007-11-09 03:58 lnxlib.js
+-rw-r--r-- 1 root root   467 2007-11-09 03:58 logout.htm
+-rwxr-xr-x 1 root root 45528 2007-11-09 03:58 main.cgi
+-rw-r--r-- 1 root root   478 2007-11-09 03:58 menu_bottom.gif
+-rw-r--r-- 1 root root   641 2007-11-09 03:58 menu_head.gif
+-rw-r--r-- 1 root root  9177 2007-11-09 03:58 message_en.js
+-rw-r--r-- 1 root root 11916 2007-11-09 03:58 message.htm
+-rw-r--r-- 1 root root  9177 2007-11-09 03:58 message_us.js
+-rw-r--r-- 1 root root     9 2007-11-09 03:58 pure_msg.htm
+-rw-r--r-- 1 root root  4304 2007-11-09 03:58 std.css
+-rw-r--r-- 1 root root 18195 2007-11-09 03:58 stdlib.js
+-rw-r--r-- 1 root root  2829 2007-11-09 03:58 sys_msg.htm
+-rw-r--r-- 1 root root  2835 2007-11-09 03:58 top_bar.jpg
+-rw-r--r-- 1 root root 13370 2007-11-09 03:58 welcome.jpg
+
+./usr/local/www/adm:
+total 518
+lrwxrwxrwx 1 root root      6 2007-11-09 03:58 admcfg.cfg -> ez.cgi
+lrwxrwxrwx 1 root root      6 2007-11-09 03:58 audioctrl.cgi -> ez.cgi
+lrwxrwxrwx 1 root root     13 2007-11-09 03:58 ca_tlsr.cgi -> ca_upload.cgi
+lrwxrwxrwx 1 root root     13 2007-11-09 03:58 ca_tlsu.cgi -> ca_upload.cgi
+lrwxrwxrwx 1 root root     13 2007-11-09 03:58 ca_ttlsr.cgi -> ca_upload.cgi
+lrwxrwxrwx 1 root root      6 2007-11-09 03:58 get_group.cgi -> ez.cgi
+lrwxrwxrwx 1 root root      6 2007-11-09 03:58 log.cgi -> ez.cgi
+lrwxrwxrwx 1 root root     13 2007-11-09 03:58 logout.htm -> ../logout.htm
+lrwxrwxrwx 1 root root      6 2007-11-09 03:58 reboot.cgi -> ez.cgi
+lrwxrwxrwx 1 root root      6 2007-11-09 03:58 reset_to_default.cgi -> ez.cgi
+lrwxrwxrwx 1 root root      6 2007-11-09 03:58 scinfo.cgi -> ez.cgi
+lrwxrwxrwx 1 root root      8 2007-11-09 03:58 set_group.cgi -> file.cgi
+lrwxrwxrwx 1 root root      6 2007-11-09 03:58 sysinfo.cgi -> ez.cgi
+lrwxrwxrwx 1 root root     11 2007-11-09 03:58 video.asf -> ../main.htm
+-rwxr-xr-x 1 root root   6136 2007-11-09 03:58 logo_uploader.cgi
+-rwxr-xr-x 1 root root   7924 2007-11-09 03:58 ca_upload.cgi
+-rwxr-xr-x 1 root root  12448 2007-11-09 03:58 ez.cgi
+-rwxr-xr-x 1 root root  10400 2007-11-09 03:58 upgrade.cgi
+-rwxr-xr-x 1 root root  11068 2007-11-09 03:58 upload.cgi
+-rw-r--r-- 1 root root   2678 2007-11-09 03:58 adm.css
+-rw-r--r-- 1 root root   1345 2007-11-09 03:58 admin_fs.htm
+-rw-r--r-- 1 root root   5989 2007-11-09 03:58 basic_fs.htm
+-rw-r--r-- 1 root root  24659 2007-11-09 03:58 basic.htm
+-rw-r--r-- 1 root root    250 2007-11-09 03:58 bt_blank110.gif
+-rw-r--r-- 1 root root    271 2007-11-09 03:58 bt_blank160.gif
+-rw-r--r-- 1 root root   1086 2007-11-09 03:58 bt_blank80.gif
+-rw-r--r-- 1 root root   9819 2007-11-09 03:58 cgi_msg_en
+-rw-r--r-- 1 root root   9819 2007-11-09 03:58 cgi_msg_us
+-rw-r--r-- 1 root root   5993 2007-11-09 03:58 event_fs.htm
+-rw-r--r-- 1 root root  32201 2007-11-09 03:58 event.htm
+-rwxr-xr-x 1 root root 114296 2007-11-09 03:58 file.cgi
+-rw-r--r-- 1 root root   4650 2007-11-09 03:58 help_fs.htm
+-rw-r--r-- 1 root root   2869 2007-11-09 03:58 help.htm
+-rw-r--r-- 1 root root   2197 2007-11-09 03:58 hlp_basic.htm
+-rw-r--r-- 1 root root   4891 2007-11-09 03:58 hlp_event.htm
+-rw-r--r-- 1 root root   3518 2007-11-09 03:58 hlp_image.htm
+-rw-r--r-- 1 root root   3263 2007-11-09 03:58 hlp_opt.htm
+-rw-r--r-- 1 root root   1866 2007-11-09 03:58 hlp_pwd.htm
+-rw-r--r-- 1 root root   2739 2007-11-09 03:58 hlp_status.htm
+-rw-r--r-- 1 root root   1863 2007-11-09 03:58 hlp_user.htm
+-rw-r--r-- 1 root root   1320 2007-11-09 03:58 hlp_wsec.htm
+-rw-r--r-- 1 root root   6708 2007-11-09 03:58 image_fs.htm
+-rw-r--r-- 1 root root  14630 2007-11-09 03:58 image.htm
+-rw-r--r-- 1 root root 121913 2007-11-09 03:58 LinksysAlertCfg.cab
+-rw-r--r-- 1 root root   2482 2007-11-09 03:58 m_detect.htm
+-rw-r--r-- 1 root root   5988 2007-11-09 03:58 options_fs.htm
+-rw-r--r-- 1 root root  21561 2007-11-09 03:58 options.htm
+-rw-r--r-- 1 root root   5985 2007-11-09 03:58 pass_wd_fs.htm
+-rw-r--r-- 1 root root   7069 2007-11-09 03:58 pass_wd.htm
+-rw-r--r-- 1 root root   5835 2007-11-09 03:58 status_fs.htm
+-rw-r--r-- 1 root root   5996 2007-11-09 03:58 status.htm
+-rw-r--r-- 1 root root     85 2007-11-09 03:58 TRANSPAR.GIF
+-rw-r--r-- 1 root root   2949 2007-11-09 03:58 upg_fw.htm
+-rw-r--r-- 1 root root   3020 2007-11-09 03:58 upg_pg.htm
+-rw-r--r-- 1 root root   5988 2007-11-09 03:58 user_fs.htm
+-rw-r--r-- 1 root root  11359 2007-11-09 03:58 user.htm
+-rw-r--r-- 1 root root  11315 2007-11-09 03:58 Wsecurity.htm
+
+./usr/local/www/img:
+total 310
+lrwxrwxrwx 1 root root      8 2007-11-09 03:58 audio2.sav -> main.htm
+lrwxrwxrwx 1 root root      8 2007-11-09 03:58 audio.sav -> main.htm
+lrwxrwxrwx 1 root root     11 2007-11-09 03:58 CreateAudioRTP.cgi -> rau_srv.cgi
+lrwxrwxrwx 1 root root     11 2007-11-09 03:58 DestroyAudioRTP.cgi -> rau_srv.cgi
+lrwxrwxrwx 1 root root     16 2007-11-09 03:58 g711a.cgi -> audio_upload.cgi
+lrwxrwxrwx 1 root root     16 2007-11-09 03:58 g711u.cgi -> audio_upload.cgi
+lrwxrwxrwx 1 root root     16 2007-11-09 03:58 g726.cgi -> audio_upload.cgi
+lrwxrwxrwx 1 root root     11 2007-11-09 03:58 main.cgi -> ../main.cgi
+lrwxrwxrwx 1 root root      8 2007-11-09 03:58 media2.sav -> main.htm
+lrwxrwxrwx 1 root root      8 2007-11-09 03:58 media.sav -> main.htm
+lrwxrwxrwx 1 root root      8 2007-11-09 03:58 mjpeg2.cgi -> main.htm
+lrwxrwxrwx 1 root root      8 2007-11-09 03:58 mjpeg2.jpg -> main.htm
+lrwxrwxrwx 1 root root      8 2007-11-09 03:58 mjpeg.cgi -> main.htm
+lrwxrwxrwx 1 root root      8 2007-11-09 03:58 mjpeg.jpg -> main.htm
+lrwxrwxrwx 1 root root     13 2007-11-09 03:58 mobile.cgi -> ../adm/ez.cgi
+lrwxrwxrwx 1 root root     16 2007-11-09 03:58 pcm.cgi -> audio_upload.cgi
+lrwxrwxrwx 1 root root     13 2007-11-09 03:58 snapshot.cgi -> ../adm/ez.cgi
+lrwxrwxrwx 1 root root     11 2007-11-09 03:58 StartAudioRTP.cgi -> rau_srv.cgi
+lrwxrwxrwx 1 root root     11 2007-11-09 03:58 StopAudioRTP.cgi -> rau_srv.cgi
+lrwxrwxrwx 1 root root      8 2007-11-09 03:58 video2.asf -> main.htm
+lrwxrwxrwx 1 root root      8 2007-11-09 03:58 video2.mjpeg -> main.htm
+lrwxrwxrwx 1 root root      8 2007-11-09 03:58 video2.sav -> main.htm
+lrwxrwxrwx 1 root root      8 2007-11-09 03:58 video.asf -> main.htm
+lrwxrwxrwx 1 root root      8 2007-11-09 03:58 video.mjpeg -> main.htm
+lrwxrwxrwx 1 root root      8 2007-11-09 03:58 video.sav -> main.htm
+-rwxr-xr-x 1 root root  10260 2007-11-09 03:58 rau_srv.cgi
+-rwxr-xr-x 1 root root  11796 2007-11-09 03:58 audio_upload.cgi
+-rwxr-xr-x 1 root root   7948 2007-11-09 03:58 media.sdp
+-rwxr-xr-x 1 root root   5552 2007-11-09 03:58 query.cgi
+-rw-r--r-- 1 root root 271398 2007-11-09 03:58 LinksysViewer.cab
+-rw-r--r-- 1 root root   7022 2007-11-09 03:58 main.htm
+-rw-r--r-- 1 root root    789 2007-11-09 03:58 mjpeg.htm
+-rw-r--r-- 1 root root    478 2007-11-09 03:58 mobile.htm
+
+./usr/local/www/io:
+total 16
+-rwxr-xr-x 1 root root 3700 2007-11-09 03:58 filterctrl.cgi
+-rwxr-xr-x 1 root root 4360 2007-11-09 03:58 ioctrl.cgi
+-rwxr-xr-x 1 root root 3240 2007-11-09 03:58 query_filter.cgi
+-rwxr-xr-x 1 root root 3888 2007-11-09 03:58 query_io.cgi
+
+./usr/local/www/pt:
+total 5
+-rwxr-xr-x 1 root root 4188 2007-11-09 03:58 irisctrl.cgi
+
+./usr/local/www/util:
+total 0
+lrwxrwxrwx 1 root root 13 2007-11-09 03:58 query.cgi -> ../adm/ez.cgi
+
+./usr/local/zoneinfo:
+total 22
+drwxr-xr-x 2 root root    60 2007-11-09 03:58 Africa
+drwxr-xr-x 2 root root   120 2007-11-09 03:58 America
+drwxr-xr-x 2 root root   317 2007-11-09 03:58 Asia
+drwxr-xr-x 2 root root    38 2007-11-09 03:58 Atlantic
+drwxr-xr-x 2 root root    83 2007-11-09 03:58 Australia
+drwxr-xr-x 2 root root    83 2007-11-09 03:58 Canada
+drwxr-xr-x 2 root root   370 2007-11-09 03:58 Etc
+drwxr-xr-x 2 root root   102 2007-11-09 03:58 Europe
+drwxr-xr-x 2 root root    53 2007-11-09 03:58 Pacific
+drwxr-xr-x 2 root root   148 2007-11-09 03:58 SystemV
+drwxr-xr-x 2 root root    88 2007-11-09 03:58 US
+-rw-r--r-- 1 root root    56 2007-11-09 03:58 GMT
+-rw-r--r-- 1 root root  4029 2007-11-09 03:58 iso3166.tab
+-rw-r--r-- 1 root root 17591 2007-11-09 03:58 zone.tab
+
+./usr/local/zoneinfo/Africa:
+total 3
+-rw-r--r-- 1 root root 955 2007-11-09 03:58 Cairo
+-rw-r--r-- 1 root root 188 2007-11-09 03:58 Casablanca
+-rw-r--r-- 1 root root  73 2007-11-09 03:58 Harare
+-rw-r--r-- 1 root root 115 2007-11-09 03:58 Nairobi
+
+./usr/local/zoneinfo/America:
+total 7
+-rw-r--r-- 1 root root   96 2007-11-09 03:58 Bogota
+-rw-r--r-- 1 root root  377 2007-11-09 03:58 Buenos_Aires
+-rw-r--r-- 1 root root   86 2007-11-09 03:58 Caracas
+-rw-r--r-- 1 root root  682 2007-11-09 03:58 Godthab
+-rw-r--r-- 1 root root 1017 2007-11-09 03:58 Los_Angeles
+-rw-r--r-- 1 root root  569 2007-11-09 03:58 Mazatlan
+-rw-r--r-- 1 root root  515 2007-11-09 03:58 Monterrey
+-rw-r--r-- 1 root root  890 2007-11-09 03:58 Santiago
+
+./usr/local/zoneinfo/Asia:
+total 18
+-rw-r--r-- 1 root root 682 2007-11-09 03:58 Almaty
+-rw-r--r-- 1 root root 661 2007-11-09 03:58 Baghdad
+-rw-r--r-- 1 root root 758 2007-11-09 03:58 Baku
+-rw-r--r-- 1 root root  73 2007-11-09 03:58 Bangkok
+-rw-r--r-- 1 root root 109 2007-11-09 03:58 Calcutta
+-rw-r--r-- 1 root root 131 2007-11-09 03:58 Dhaka
+-rw-r--r-- 1 root root 708 2007-11-09 03:58 Irkutsk
+-rw-r--r-- 1 root root 803 2007-11-09 03:58 Jerusalem
+-rw-r--r-- 1 root root  69 2007-11-09 03:58 Kabul
+-rw-r--r-- 1 root root 149 2007-11-09 03:58 Karachi
+-rw-r--r-- 1 root root  90 2007-11-09 03:58 Katmandu
+-rw-r--r-- 1 root root 708 2007-11-09 03:58 Krasnoyarsk
+-rw-r--r-- 1 root root  73 2007-11-09 03:58 Kuwait
+-rw-r--r-- 1 root root 708 2007-11-09 03:58 Magadan
+-rw-r--r-- 1 root root  73 2007-11-09 03:58 Muscat
+-rw-r--r-- 1 root root 108 2007-11-09 03:58 Rangoon
+-rw-r--r-- 1 root root 152 2007-11-09 03:58 Seoul
+-rw-r--r-- 1 root root 165 2007-11-09 03:58 Shanghai
+-rw-r--r-- 1 root root 171 2007-11-09 03:58 Singapore
+-rw-r--r-- 1 root root 268 2007-11-09 03:58 Taipei
+-rw-r--r-- 1 root root 630 2007-11-09 03:58 Tehran
+-rw-r--r-- 1 root root  73 2007-11-09 03:58 Tokyo
+-rw-r--r-- 1 root root 715 2007-11-09 03:58 Vladivostok
+-rw-r--r-- 1 root root 708 2007-11-09 03:58 Yakutsk
+-rw-r--r-- 1 root root 751 2007-11-09 03:58 Yekaterinburg
+
+./usr/local/zoneinfo/Atlantic:
+total 2
+-rw-r--r-- 1 root root 1265 2007-11-09 03:58 Azores
+-rw-r--r-- 1 root root  109 2007-11-09 03:58 Cape_Verde
+
+./usr/local/zoneinfo/Australia:
+total 5
+-rw-r--r-- 1 root root 785 2007-11-09 03:58 Adelaide
+-rw-r--r-- 1 root root 160 2007-11-09 03:58 Brisbane
+-rw-r--r-- 1 root root 785 2007-11-09 03:58 Canberra
+-rw-r--r-- 1 root root 104 2007-11-09 03:58 Darwin
+-rw-r--r-- 1 root root 825 2007-11-09 03:58 Hobart
+-rw-r--r-- 1 root root 140 2007-11-09 03:58 Perth
+
+./usr/local/zoneinfo/Canada:
+total 7
+-rw-r--r-- 1 root root 1244 2007-11-09 03:58 Atlantic
+-rw-r--r-- 1 root root 1025 2007-11-09 03:58 Central
+-rw-r--r-- 1 root root 1252 2007-11-09 03:58 Eastern
+-rw-r--r-- 1 root root 1311 2007-11-09 03:58 Newfoundland
+-rw-r--r-- 1 root root  381 2007-11-09 03:58 Saskatchewan
+
+./usr/local/zoneinfo/Etc:
+total 18
+-rw-r--r-- 1 root root 56 2007-11-09 03:58 GMT
+-rw-r--r-- 1 root root 56 2007-11-09 03:58 GMT0
+-rw-r--r-- 1 root root 56 2007-11-09 03:58 GMT-0
+-rw-r--r-- 1 root root 56 2007-11-09 03:58 GMT+0
+-rw-r--r-- 1 root root 58 2007-11-09 03:58 GMT-1
+-rw-r--r-- 1 root root 58 2007-11-09 03:58 GMT+1
+-rw-r--r-- 1 root root 59 2007-11-09 03:58 GMT-10
+-rw-r--r-- 1 root root 59 2007-11-09 03:58 GMT+10
+-rw-r--r-- 1 root root 59 2007-11-09 03:58 GMT-11
+-rw-r--r-- 1 root root 59 2007-11-09 03:58 GMT+11
+-rw-r--r-- 1 root root 59 2007-11-09 03:58 GMT-12
+-rw-r--r-- 1 root root 59 2007-11-09 03:58 GMT+12
+-rw-r--r-- 1 root root 59 2007-11-09 03:58 GMT-13
+-rw-r--r-- 1 root root 59 2007-11-09 03:58 GMT-14
+-rw-r--r-- 1 root root 58 2007-11-09 03:58 GMT-2
+-rw-r--r-- 1 root root 58 2007-11-09 03:58 GMT+2
+-rw-r--r-- 1 root root 58 2007-11-09 03:58 GMT-3
+-rw-r--r-- 1 root root 58 2007-11-09 03:58 GMT+3
+-rw-r--r-- 1 root root 58 2007-11-09 03:58 GMT-4
+-rw-r--r-- 1 root root 58 2007-11-09 03:58 GMT+4
+-rw-r--r-- 1 root root 58 2007-11-09 03:58 GMT-5
+-rw-r--r-- 1 root root 58 2007-11-09 03:58 GMT+5
+-rw-r--r-- 1 root root 58 2007-11-09 03:58 GMT-6
+-rw-r--r-- 1 root root 58 2007-11-09 03:58 GMT+6
+-rw-r--r-- 1 root root 58 2007-11-09 03:58 GMT-7
+-rw-r--r-- 1 root root 58 2007-11-09 03:58 GMT+7
+-rw-r--r-- 1 root root 58 2007-11-09 03:58 GMT-8
+-rw-r--r-- 1 root root 58 2007-11-09 03:58 GMT+8
+-rw-r--r-- 1 root root 58 2007-11-09 03:58 GMT-9
+-rw-r--r-- 1 root root 58 2007-11-09 03:58 GMT+9
+-rw-r--r-- 1 root root 56 2007-11-09 03:58 Greenwich
+-rw-r--r-- 1 root root 56 2007-11-09 03:58 UCT
+-rw-r--r-- 1 root root 56 2007-11-09 03:58 Universal
+-rw-r--r-- 1 root root 56 2007-11-09 03:58 UTC
+-rw-r--r-- 1 root root 56 2007-11-09 03:58 Zulu
+
+./usr/local/zoneinfo/Europe:
+total 9
+-rw-r--r-- 1 root root  823 2007-11-09 03:58 Athens
+-rw-r--r-- 1 root root  696 2007-11-09 03:58 Belgrade
+-rw-r--r-- 1 root root  837 2007-11-09 03:58 Berlin
+-rw-r--r-- 1 root root 1323 2007-11-09 03:58 London
+-rw-r--r-- 1 root root  815 2007-11-09 03:58 Moscow
+-rw-r--r-- 1 root root 1082 2007-11-09 03:58 Paris
+-rw-r--r-- 1 root root  819 2007-11-09 03:58 Vilnius
+-rw-r--r-- 1 root root  961 2007-11-09 03:58 Warsaw
+
+./usr/local/zoneinfo/Pacific:
+total 3
+-rw-r--r-- 1 root root 882 2007-11-09 03:58 Auckland
+-rw-r--r-- 1 root root 106 2007-11-09 03:58 Fiji
+-rw-r--r-- 1 root root  74 2007-11-09 03:58 Guam
+-rw-r--r-- 1 root root 125 2007-11-09 03:58 Samoa
+
+./usr/local/zoneinfo/SystemV:
+total 11
+-rw-r--r-- 1 root root   78 2007-11-09 03:58 AST4
+-rw-r--r-- 1 root root 1244 2007-11-09 03:58 AST4ADT
+-rw-r--r-- 1 root root  381 2007-11-09 03:58 CST6
+-rw-r--r-- 1 root root 1279 2007-11-09 03:58 CST6CDT
+-rw-r--r-- 1 root root  286 2007-11-09 03:58 EST5
+-rw-r--r-- 1 root root 1267 2007-11-09 03:58 EST5EDT
+-rw-r--r-- 1 root root  130 2007-11-09 03:58 HST10
+-rw-r--r-- 1 root root  130 2007-11-09 03:58 MST7
+-rw-r--r-- 1 root root  877 2007-11-09 03:58 MST7MDT
+-rw-r--r-- 1 root root   73 2007-11-09 03:58 PST8
+-rw-r--r-- 1 root root 1017 2007-11-09 03:58 PST8PDT
+-rw-r--r-- 1 root root   74 2007-11-09 03:58 YST9
+-rw-r--r-- 1 root root  856 2007-11-09 03:58 YST9YDT
+
+./usr/local/zoneinfo/US:
+total 5
+-rw-r--r-- 1 root root  856 2007-11-09 03:58 Alaska
+-rw-r--r-- 1 root root  130 2007-11-09 03:58 Arizona
+-rw-r--r-- 1 root root 1279 2007-11-09 03:58 Central
+-rw-r--r-- 1 root root  286 2007-11-09 03:58 East-Indiana
+-rw-r--r-- 1 root root  130 2007-11-09 03:58 Hawaii
+-rw-r--r-- 1 root root  877 2007-11-09 03:58 Mountain
+
+./usr/local/lib:
+total 0
+drwxr-xr-x 2 root root 93 2007-11-09 03:58 iptables
+
+./usr/local/lib/iptables:
+total 25
+-rwxr-xr-x 1 root root 5612 2007-11-09 03:58 libipt_iprange.so
+-rwxr-xr-x 1 root root 2994 2007-11-09 03:58 libipt_standard.so
+-rwxr-xr-x 1 root root 9463 2007-11-09 03:58 libipt_tcp.so
+-rwxr-xr-x 1 root root 7066 2007-11-09 03:58 libipt_udp.so
+
+./usr/local/sbin:
+total 44
+-rwxr-xr-x 1 root root 44944 2007-11-09 03:58 iptables
+
+./usr/sbin:
+total 17
+lrwxrwxrwx 1 root root    17 2007-11-09 03:58 chroot -> ../../bin/busybox
+lrwxrwxrwx 1 root root    17 2007-11-09 03:58 telnetd -> ../../bin/busybox
+-rwxr-xr-x 1 root root 13128 2007-11-09 03:58 crond
+-rwxr-xr-x 1 root root  3680 2007-11-09 03:58 ipfilter
+
+./usr/lib:
+total 292
+-rwxr-xr-x 1 root root  21818 2007-11-09 03:57 libcgilib.so.0.0
+-rwxr-xr-x 1 root root 221510 2007-11-09 03:57 libcgicomm.so.0.0
+-rwxr-xr-x 1 root root  54486 2007-11-09 03:57 libsccomm.so.0.0
+
+./usr/bin:
+total 0
+lrwxrwxrwx 1 root root 17 2007-11-09 03:58 [ -> ../../bin/busybox
+lrwxrwxrwx 1 root root 17 2007-11-09 03:58 arping -> ../../bin/busybox
+lrwxrwxrwx 1 root root 17 2007-11-09 03:58 basename -> ../../bin/busybox
+lrwxrwxrwx 1 root root 17 2007-11-09 03:58 clear -> ../../bin/busybox
+lrwxrwxrwx 1 root root 17 2007-11-09 03:58 cut -> ../../bin/busybox
+lrwxrwxrwx 1 root root 17 2007-11-09 03:58 du -> ../../bin/busybox
+lrwxrwxrwx 1 root root 17 2007-11-09 03:58 env -> ../../bin/busybox
+lrwxrwxrwx 1 root root 17 2007-11-09 03:58 find -> ../../bin/busybox
+lrwxrwxrwx 1 root root 17 2007-11-09 03:58 free -> ../../bin/busybox
+lrwxrwxrwx 1 root root 17 2007-11-09 03:58 head -> ../../bin/busybox
+lrwxrwxrwx 1 root root 17 2007-11-09 03:58 id -> ../../bin/busybox
+lrwxrwxrwx 1 root root 17 2007-11-09 03:58 killall -> ../../bin/busybox
+lrwxrwxrwx 1 root root 17 2007-11-09 03:58 renice -> ../../bin/busybox
+lrwxrwxrwx 1 root root 17 2007-11-09 03:58 reset -> ../../bin/busybox
+lrwxrwxrwx 1 root root 17 2007-11-09 03:58 tail -> ../../bin/busybox
+lrwxrwxrwx 1 root root 17 2007-11-09 03:58 test -> ../../bin/busybox
+lrwxrwxrwx 1 root root 17 2007-11-09 03:58 top -> ../../bin/busybox
+lrwxrwxrwx 1 root root 17 2007-11-09 03:58 tr -> ../../bin/busybox
+lrwxrwxrwx 1 root root 17 2007-11-09 03:58 tty -> ../../bin/busybox
+
+./bin:
+total 222
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 ash -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 cat -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 chmod -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 chown -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 cp -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 date -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 dd -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 df -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 dmesg -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 echo -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 false -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 grep -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 hostname -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 kill -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 ln -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 login -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 ls -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 mkdir -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 mknod -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 more -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 mount -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 mv -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 netstat -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 pidof -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 ping -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 ps -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 pwd -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 rm -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 rmdir -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 sh -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 sleep -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 sync -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 touch -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 true -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 umount -> busybox
+lrwxrwxrwx 1 root root      7 2007-11-09 03:58 usleep -> busybox
+-rwxr-xr-x 1 root root 226612 2007-11-09 03:57 busybox
+
+./sbin:
+total 0
+lrwxrwxrwx 1 root root 14 2007-11-09 03:58 getty -> ../bin/busybox
+lrwxrwxrwx 1 root root 14 2007-11-09 03:58 hwclock -> ../bin/busybox
+lrwxrwxrwx 1 root root 14 2007-11-09 03:58 ifconfig -> ../bin/busybox
+lrwxrwxrwx 1 root root 14 2007-11-09 03:58 init -> ../bin/busybox
+lrwxrwxrwx 1 root root 14 2007-11-09 03:58 insmod -> ../bin/busybox
+lrwxrwxrwx 1 root root 14 2007-11-09 03:58 lsmod -> ../bin/busybox
+lrwxrwxrwx 1 root root 14 2007-11-09 03:58 modprobe -> ../bin/busybox
+lrwxrwxrwx 1 root root 14 2007-11-09 03:58 rmmod -> ../bin/busybox
+lrwxrwxrwx 1 root root 14 2007-11-09 03:58 route -> ../bin/busybox
+lrwxrwxrwx 1 root root 14 2007-11-09 03:58 sysctl -> ../bin/busybox

@@ -11,6 +11,6 @@ The Black Hat Europe 2008 event took place on the 27th and 28th of March. In thi
 > 
 > This paper[/presentation] describes numerous techniques for attacking Clients-side technologies. The content of the paper is based the research that has been conducted over the past year by the GNUCITIZEN Ethical Hacker Outfit.
 
-The event was very interesting and very well organized. I met a lot of people and had very interesting discussions all together. You can download the conference materials from [here](http://www.gnucitizen.org/static/blog/2008/04/pdp-gnucitizen.zip). The paper is located [here](http://www.gnucitizen.org/static/blog/2008/04/client-side-security-one-year-later.pdf) and the slides over [here](http://www.gnucitizen.org/static/blog/2008/04/client-side-security-slides-bh.pdf).
+The event was very interesting and very well organized. I met a lot of people and had very interesting discussions all together. You can download the conference materials from [here](/files/2008/04/pdp-gnucitizen.zip). The paper is located [here](/files/2008/04/client-side-security-one-year-later.pdf) and the slides over [here](/files/2008/04/client-side-security-slides-bh.pdf).
 
 If you have any questions regarding my talk, please do let me know.

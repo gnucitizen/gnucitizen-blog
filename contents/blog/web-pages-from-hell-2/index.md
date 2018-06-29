@@ -16,7 +16,7 @@ This means that if someone sent you an HTML file and you double-clicked on it fr
 
 Of course we could use something like ActiveX objects in IE to list files in directories, read them, modify them, and even create new ones. However, the point of this experiment is that we <storng>DONT</strong> want the web browser to display a security warning to the user -  even though most users would ignore the warning anyways. Since most Windows users access the web using local administrator accounts, that means that an attacker can steal **almost** any file on your system by fooling you to open a "harmless" HTML file locally. I said almost because some files can only be accessed by the `SYSTEM` account, and others are locked by processes that are currently accessing them.
 
-I created a very simple [PoC](http://www.gnucitizen.org/static/blog/2006/11/theft_of_win_ff_cookies.htm) HTML file that steals Mozilla Firefox `cookies.txt` file when launching it locally and sends the file to the attacker in base64 encoding. Needless to say, `cookies.txt` contains the cookies for all the domains accessed by the victim. So, unlike XSS attacks, now we're **not** restricted to the context of the vulnerable site.
+I created a very simple [PoC](/files/2006/11/theft_of_win_ff_cookies.htm) HTML file that steals Mozilla Firefox `cookies.txt` file when launching it locally and sends the file to the attacker in base64 encoding. Needless to say, `cookies.txt` contains the cookies for all the domains accessed by the victim. So, unlike XSS attacks, now we're **not** restricted to the context of the vulnerable site.
 
 Here are the results of the test. Tested successfully with no security warning displayed to the user in the following versions of Firefox (Windows version):
 
@@ -24,7 +24,7 @@ Here are the results of the test. Tested successfully with no security warning d
 * Mozilla Firefox 1.5
 * Mozilla Firefox 2.0
 
-However, we do get a [security warning](http://www.gnucitizen.org/static/blog/2006/11/ie7_local-context_js_warning.jpg) on the following versions of IE, so the user needs to be fooled to ignore the warning in order to get local JavaScript running:
+However, we do get a [security warning](/files/2006/11/ie7_local-context_js_warning.jpg) on the following versions of IE, so the user needs to be fooled to ignore the warning in order to get local JavaScript running:
 
 * Internet Explorer 6.0
 * Internet Explorer 7.0

@@ -17,7 +17,7 @@ Before going further I need to mention a few things about my motivation to write
 
 For these reason, I decided that fuzzing the browser with one huge blob of JavaScript is not efficient, not even as customizable as I would like it to be, and not as simple as it really should be. So instead of using JS to fuzz the DOM, I instruct the browser to repeatedly connect to a server and fetch a new test until no more tests are available. In order to achieve that, I had to write a server, an engine for launching tests and provide some dictionaries everyone can make use of. Believe me, it is easier then it sounds. Here follows the code of the fuzzer:
 
-    [http://www.gnucitizen.org/static/blog/2007/10/fuzzer.py](http://www.gnucitizen.org/static/blog/2007/10/fuzzer.py)
+    [/files/2007/10/fuzzer.py](/files/2007/10/fuzzer.py)
 
     Notice that the actual fuzzer is not more then 20 lines of code. The rest is just dictionaries, some demo tests and of course, the synthetic sugar for the command line options. The concepts involved into this tool are based around the idea of writing test cases. I simply call them generators. A generator is a function which is prefixed with **generator_** and does not return but yields stuff out. An example of a generator is the function defined bellow:
 

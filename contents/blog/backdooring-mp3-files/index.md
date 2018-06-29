@@ -43,12 +43,12 @@ This is a quite big problem especially in default configurations of iTunes. The 
 
 For the sole purpose of demonstrating how this vulnerability works I composed a quite simple and harmless proof of concept. There are two links to mp3 files at the bottom of this page. Two of these files are backdoored. One of them is a tune I composed many years ago.
 
-1. [backdoored.mp3](http://www.gnucitizen.org/static/blog/2006/09/backdoored.mp3) - executes javascript immediately
-2. [jamesbond-overdrive-backdoored.mp3](http://www.gnucitizen.org/static/blog/2006/09/jamesbond-overdrive-backdoored.mp3) - executes javascript at the end
-3. [jamesbond-overdrive.mp3](http://www.gnucitizen.org/static/blog/2006/09/jamesbond-overdrive.mp3) - the real tune
+1. [backdoored.mp3](/files/2006/09/backdoored.mp3) - executes javascript immediately
+2. [jamesbond-overdrive-backdoored.mp3](/files/2006/09/jamesbond-overdrive-backdoored.mp3) - executes javascript at the end
+3. [jamesbond-overdrive.mp3](/files/2006/09/jamesbond-overdrive.mp3) - the real tune
 
 I mentioned earlier that .qtl files can end with .mov, .avi or even .asf extensions. This means that users can be fooled into executing malicious JavaScript content not only through mp3.
 
 There is one more thing that is quite important to point in this article. JavaScript opened from QuickTime is executed in the browser local context. This attack is also know as [Cross-context scripting](/blog/cross-context-scripting). In Firefox the context is `about:blank`. I am not quite familiar with `about:blank` but my understandings are that everything from `about:*` can request special privileges that will be granted without warning the user. If this the case malicious JavaScript will not only be able to read the local file system but also to alter it. This feature might be used to spread worms that go far beyond the traditional Cross-site Scripting attack.
 
-_Proof of concept for this issue can be found at the following [URL](http://www.gnucitizen.org/static/blog/2006/09/about-blank.mp3)._
+_Proof of concept for this issue can be found at the following [URL](/files/2006/09/about-blank.mp3)._

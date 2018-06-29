@@ -47,4 +47,4 @@ The most common systems found were the following:
 
 Obviously, what kind of SNMP-enabled devices are the most popular on the Internet is very interesting information from a research point of view. For instance, if researching remote SNMP vulnerabilities, it would make sense to focus on a type of device that is widely-spread through the Internet.
 
-_I'll leave you guys to make your own observations by reading the [results CSV file](http://www.gnucitizen.org/static/blog/2008/03/snmp-results.csv)._
+_I'll leave you guys to make your own observations by reading the [results CSV file](/files/2008/03/snmp-results.csv)._

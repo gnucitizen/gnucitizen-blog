@@ -7,7 +7,7 @@ template: post.jade
 
 If you haven't heard from [RSnake](http://ha.ckers.org/blog/20070423/xss-book-preview)'s or [JG](http://jeremiahgrossman.blogspot.com/)'s blogs yet, the long awaited **XSS Attacks** book will be out very soon and here I have the chance to present you with the way the cover will look like in addition to the TOC and a sample chapter. I hope that you find it useful. We've put a lot of effort into making this book possible. It is a quite good technical read so give it a try.
 
-![XSS Attacks](http://www.gnucitizen.org/static/blog/2007/04/xss-book.jpg)
+![XSS Attacks](/files/2007/04/xss-book.jpg)
 
 I would like to thank for the opportunity that has been given to me. It has been great honer to work with Seth Fogie, RSnake, Jeremiah Grossman, Anton Rager and Andrew Williams. We all had ups and downs while putting the book together, due to our busy schedules, but we've made it and I am happy with the final result. It was a collective work at its best. I am looking forward to work on other projects with you guys.
 

@@ -6,7 +6,7 @@ template: post.jade
 category: fucked
 ---
 
-![Killer Tomatoes](http://www.gnucitizen.org/static/blog/2006/08/killer-tomatoes.jpg "Killer Tomatoes")
+![Killer Tomatoes](/files/2006/08/killer-tomatoes.jpg "Killer Tomatoes")
 
 Trust is a beautiful concept that rarely finds application in real life. Unfortunately, trust is all we've got when dealing with computers: username, password, master I am here to serve you; neither semantics nor pragmatics. The browser security model is kind of based on trust. The browser trusts websites that you trust. It relies on our judgment which is wrong most of the time.
 

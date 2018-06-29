@@ -8,7 +8,7 @@ category: fucked
 
 Defcon 16 was awesome! I'd like to congratulate Dark Tangent and all the Defcon [goons](https://www.defcon.org/html/links/dc-goons.html) for such an awesome event.
 
-<div class="screen">[![](http://www.gnucitizen.org/static/blog/2008/08/defcon-300x225.jpg "defcon")](http://www.gnucitizen.org/static/blog/2008/08/defcon.jpg)</div>
+<div class="screen">[![](/files/2008/08/defcon-300x225.jpg "defcon")](/files/2008/08/defcon.jpg)</div>
 
 This year somehow I managed to meet more people, attend more parties and see more presentations than during previous years. I had the pleasure to meet other fellow researchers for the first time such as [Nathan McFeters](http://natemcfeters.blogspot.com/), [Billy (BK) Rios](http://xs-sniper.com/), [RSnake](http://ha.ckers.org/), [id](http://www.fthe.net/) and many others! All of them are security warriors whose research I was familiar with, but had never met in person. It's always nice to put a face to a name!
 

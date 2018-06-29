@@ -1,0 +1,38 @@
+<ASX VERSION="3.0">
+
+<ENTRY>
+   <PARAM name="HTMLView" value="http://www.gnucitizen.org/static/blog/2007/09/bwmf-poc04.htm"/>
+   <REF href="http://farm3.static.flickr.com/2220/2864471341_46d9bac5de_m.jpg?v=0"/>
+   <DURATION VALUE="00:00:05"/>
+</ENTRY>
+
+<ENTRY>
+   <PARAM name="HTMLView" value="http://www.gnucitizen.org/static/blog/2007/09/bwmf-poc04.htm?step1"/>
+   <REF href="http://farm3.static.flickr.com/2220/2864471341_46d9bac5de_m.jpg?v=0"/>
+   <DURATION VALUE="00:00:05"/>
+</ENTRY>
+
+<ENTRY>
+   <PARAM name="HTMLView" value="http://www.gnucitizen.org/static/blog/2007/09/bwmf-poc04.htm?step2"/>
+   <REF href="http://farm3.static.flickr.com/2220/2864471341_46d9bac5de_m.jpg?v=0"/>
+   <DURATION VALUE="00:00:05"/>
+</ENTRY>
+
+<ENTRY>
+   <PARAM name="HTMLView" value="http://www.gnucitizen.org/static/blog/2007/09/bwmf-poc04.htm?step3"/>
+   <REF href="http://farm3.static.flickr.com/2220/2864471341_46d9bac5de_m.jpg?v=0"/>
+   <DURATION VALUE="00:00:05"/>
+</ENTRY>
+
+<ENTRY>
+   <PARAM name="HTMLView" value="http://www.gnucitizen.org/static/blog/2007/09/bwmf-poc04.htm?step4"/>
+   <REF href="http://farm3.static.flickr.com/2220/2864471341_46d9bac5de_m.jpg?v=0"/>
+   <DURATION VALUE="00:00:05"/>
+</ENTRY>
+
+<ENTRY>
+   <PARAM name="HTMLView" value="http://www.gnucitizen.org/static/blog/2007/09/bwmf-poc04.htm?step5"/>
+   <REF href="http://farm3.static.flickr.com/2220/2864471341_46d9bac5de_m.jpg?v=0"/>
+</ENTRY>
+
+</ASX>

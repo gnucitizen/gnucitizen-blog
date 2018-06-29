@@ -6,7 +6,7 @@ template: post.jade
 category: fucked
 ---
 
-Here you go. On this page you will find a [POC](http://www.gnucitizen.org/static/blog/2007/07/spider.htm) of a client-side spider that is based on the top of Yahoo Site Explorer `PageData` service which you can read more about from [this](http://developer.yahoo.com/search/siteexplorer/V1/pageData.html) page.
+Here you go. On this page you will find a [POC](/files/2007/07/spider.htm) of a client-side spider that is based on the top of Yahoo Site Explorer `PageData` service which you can read more about from [this](http://developer.yahoo.com/search/siteexplorer/V1/pageData.html) page.
 
 I've being talking about client-side spiders for quite some time now over [here](/blog/traversing-the-web) and [here](/blog/javascript-spider/) and I even came up with POC based on Yahoo Pipes for my OWASP presentation on "Advanced Web Hacking Reveled", which you can find over [there](/blog/6th-owasp-conference/).
 
@@ -24,10 +24,10 @@ You see, worms are often quite stupid in nature. They propagate either too fast 
 
 The spider that I wrote is anything by malicious. It just spiders. However, keep in mind that it will take no time to make it equipped with the latest client-side and server-side exploits. So, here is the spider's source code:
 
-    [http://www.gnucitizen.org/static/blog/2007/07/spider.js](http://www.gnucitizen.org/static/blog/2007/07/spider.js)
+    [/files/2007/07/spider.js](/files/2007/07/spider.js)
 
     _and this is how I use it:_
 
-    [http://www.gnucitizen.org/static/blog/2007/07/spider-init.js](http://www.gnucitizen.org/static/blog/2007/07/spider-init.js)
+    [/files/2007/07/spider-init.js](/files/2007/07/spider-init.js)
 
-_Keep in mind that this spider is ultra fast. It does only several connects in order to obtain the entire directory structure of the targeted website. You can launch the POC from [here](http://www.gnucitizen.org/static/blog/2007/07/spider.htm)._
+_Keep in mind that this spider is ultra fast. It does only several connects in order to obtain the entire directory structure of the targeted website. You can launch the POC from [here](/files/2007/07/spider.htm)._

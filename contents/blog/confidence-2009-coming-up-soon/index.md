@@ -7,7 +7,7 @@ template: post.jade
 
 The new edition of [CONFidence](http://2009.confidence.org.pl/) is coming up soon! CONFidence, which has become one of the biggest technical IT security conferences in Europe, is taking place on 15-16 May in the beautiful city of [Krakow](http://en.wikipedia.org/wiki/Krak%C3%B3w).
 
-<div class="screen">[![](http://www.gnucitizen.org/static/blog/2009/03/confidence.png "CONFidence 2009")](http://www.gnucitizen.org/static/blog/2009/03/confidence.png)</div>
+<div class="screen">[![](/files/2009/03/confidence.png "CONFidence 2009")](/files/2009/03/confidence.png)</div>
 
 This is the fifth year CONFidence is taking place, and there have been several changes introduced. First of all there will be two simultaneous tracks after lunch time, whereas previous editions only offered one track all day. Also, this year introduced the **Hackers' Squad**, which sounds to me like a great idea for learning and having fun at the same time. The following is mentioned on the CONFidence website regarding the Hackers' Squad:
 

@@ -11,14 +11,14 @@ As ways, I prepared a video that demonstrates the attack in more visual way. BTW
 
 <iframe class="video" src="http://www.youtube.com/embed/i_zbObjFnrY" frameborder="0" allowfullscreen></iframe>
 
-In case the video does not work, you can download the high-quality version from over [here](http://www.gnucitizen.org/static/blog/2007/10/hc02.wmv).
+In case the video does not work, you can download the high-quality version from over [here](/files/2007/10/hc02.wmv).
 
-I also did some coding as well. The following [script](http://www.gnucitizen.org/static/blog/2007/10/bforce.js) can be used to bruteforce the Windows/Netware logon. With a few mods you can make it work for CITRIX SSLs auth as well.
+I also did some coding as well. The following [script](/files/2007/10/bforce.js) can be used to bruteforce the Windows/Netware logon. With a few mods you can make it work for CITRIX SSLs auth as well.
 
-    [http://www.gnucitizen.org/static/blog/2007/10/bforce.js](http://www.gnucitizen.org/static/blog/2007/10/bforce.js)
+    [/files/2007/10/bforce.js](/files/2007/10/bforce.js)
 
-    I have [another script](http://www.gnucitizen.org/static/blog/2007/10/connect.js), which I use to fine tune connections - very suitable when you don't want to deal with ICA but you want to tryout different citrix communication mechanisms and connection options.
+    I have [another script](/files/2007/10/connect.js), which I use to fine tune connections - very suitable when you don't want to deal with ICA but you want to tryout different citrix communication mechanisms and connection options.
 
-    [http://www.gnucitizen.org/static/blog/2007/10/connect.js](http://www.gnucitizen.org/static/blog/2007/10/connect.js)
+    [/files/2007/10/connect.js](/files/2007/10/connect.js)
 
 _This is it. I hope that you enjoyed the demo._

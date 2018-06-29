@@ -35,17 +35,17 @@ The whole device seemed to be especially designed for these issues to work. It i
 
 <div class="message">Please check the VoIP devices that you use and verify that the Web interfaces implements strong passwords and enforces some minimum security level. Contact the company who built the device and do bug them with you concerns. This will help generating a less dangerous situation for you and other VoIP phone users. Vulnerabilities like the one mentioned above could cost you or your company great amounts of money, reputation loss and even large scale information theft.</div>
 
-The [proof of concept](http://www.gnucitizen.org/static/blog/2008/02/snom.htm)  (POC) code can be found over here (please use it responsibly):
+The [proof of concept](/files/2008/02/snom.htm)  (POC) code can be found over here (please use it responsibly):
 
-    [http://www.gnucitizen.org/static/blog/2008/02/snom.htm](http://www.gnucitizen.org/static/blog/2008/02/snom.htm)
+    [/files/2008/02/snom.htm](/files/2008/02/snom.htm)
 
 ... and some supporting screenshots follow here:
 
 <div class="screen">
-[![Snom Screen1](http://www.gnucitizen.org/static/blog/2008/02/snom-screen1-255x150.png "Snom Screen1")](http://www.gnucitizen.org/static/blog/2008/02/snom-screen1.png)
-[![Snom Screen2](http://www.gnucitizen.org/static/blog/2008/02/snom-screen2-255x150.png "Snom Screen2")](http://www.gnucitizen.org/static/blog/2008/02/snom-screen2.png)
-[![Snom Screen3](http://www.gnucitizen.org/static/blog/2008/02/snom-screen3-255x150.png "Snom Screen3")](http://www.gnucitizen.org/static/blog/2008/02/snom-screen3.png)
-[![Snom Screen4](http://www.gnucitizen.org/static/blog/2008/02/snom-screen4-255x150.png "Snom Screen4")](http://www.gnucitizen.org/static/blog/2008/02/snom-screen4.png)
+[![Snom Screen1](/files/2008/02/snom-screen1-255x150.png "Snom Screen1")](/files/2008/02/snom-screen1.png)
+[![Snom Screen2](/files/2008/02/snom-screen2-255x150.png "Snom Screen2")](/files/2008/02/snom-screen2.png)
+[![Snom Screen3](/files/2008/02/snom-screen3-255x150.png "Snom Screen3")](/files/2008/02/snom-screen3.png)
+[![Snom Screen4](/files/2008/02/snom-screen4-255x150.png "Snom Screen4")](/files/2008/02/snom-screen4.png)
 </div>
 
 _Snom has been contacted in several ways but we haven't got any responded yet. We will keep you posted about any news. Feel free to comment - we are very looking forward discussing those issues more in depth._

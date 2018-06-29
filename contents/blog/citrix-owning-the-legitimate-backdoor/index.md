@@ -21,7 +21,7 @@ The other day I was performing some CITRIX poking, so I had a lot of fun with br
 
     When performing a Citrix tests, my goal is very simple: "try to open a command shell". Sometimes, `cmd.exe` and `command.com` are blocked, but I can still execute commands by saving them in `.bat` or `.cmd` files. If you care to read the command output, just pause the window with `pause`. It is simple. Let's not forget about Windows Scripting Host (WSH) which is usually not blocked at all.
 
-    But to get to the command line, you have to escape the GUI first and when it comes to Windows GUIs, escaping them is like a walk in the park. As soon as you open explorer with File Open/Save/Save as/Print or Help features, you can execute commands. Just for demonstration purposes, I composed a [video](http://www.gnucitizen.org/static/blog/2007/10/hc01.wmv) that shows how it is done:
+    But to get to the command line, you have to escape the GUI first and when it comes to Windows GUIs, escaping them is like a walk in the park. As soon as you open explorer with File Open/Save/Save as/Print or Help features, you can execute commands. Just for demonstration purposes, I composed a [video](/files/2007/10/hc01.wmv) that shows how it is done:
 
     <iframe class="video" src="http://www.youtube.com/embed/1-cXrZIVlTU" frameborder="0" allowfullscreen></iframe>
 
@@ -63,17 +63,17 @@ The other day I was performing some CITRIX poking, so I had a lot of fun with br
 
     Among the ICAs I found, there were a few which do require authentication. For dedicated attackers, this is definitely not the end of the world. Now you probably think that it is time to take out all the bruteforcers and dictionary files and start some heavy drilling. "Hold on! Let's try the backdoors first."
 
-    After you connect to Citrix you will land most likely on the Desktop which is protected by the Windows/Netware logon. However, keep in mind that there might be some applications underneath that does not require authentication, just like those we discussed earlier. So how do we find them? Ian Viteks [coded](http://www.gnucitizen.org/static/blog/2007/10/enum.pl) a perl script to do exactly that:
+    After you connect to Citrix you will land most likely on the Desktop which is protected by the Windows/Netware logon. However, keep in mind that there might be some applications underneath that does not require authentication, just like those we discussed earlier. So how do we find them? Ian Viteks [coded](/files/2007/10/enum.pl) a perl script to do exactly that:
 
-    [http://www.gnucitizen.org/static/blog/2007/10/enum.pl](http://www.gnucitizen.org/static/blog/2007/10/enum.pl)
+    [/files/2007/10/enum.pl](/files/2007/10/enum.pl)
 
-    I was intrigued by Ian's script, so I decided to write my own. However, I wasn't very keen on re-reversing citrix so I through I would go the easy way - reusable components. A few minutes on the Citrix' website were enough to get me started. I ended up with the following [script](http://www.gnucitizen.org/static/blog/2007/10/enum.js). Keep in mind that you need to have a copy of the Citrix client in order to get it going:
+    I was intrigued by Ian's script, so I decided to write my own. However, I wasn't very keen on re-reversing citrix so I through I would go the easy way - reusable components. A few minutes on the Citrix' website were enough to get me started. I ended up with the following [script](/files/2007/10/enum.js). Keep in mind that you need to have a copy of the Citrix client in order to get it going:
 
-    [http://www.gnucitizen.org/static/blog/2007/10/enum.js](http://www.gnucitizen.org/static/blog/2007/10/enum.js)
+    [/files/2007/10/enum.js](/files/2007/10/enum.js)
 
 I don't know which script is better.  Ian's implementation seams to be cross-platformed and quite transparent for the user but it works only for UDP, while my approach works only on Windows and it requires a bit of understanding the architecture but it supports all possible ways Citrix can establish connections, and it can enumerate the Citrix servers and farms as well. Here is a demonstration of how you can use it:
 
-<div class="screen">![Hacking CITRIX Screen01](http://www.gnucitizen.org/static/blog/2007/10/screen01.jpg "Hacking CITRIX Screen01")</div>
+<div class="screen">![Hacking CITRIX Screen01](/files/2007/10/screen01.jpg "Hacking CITRIX Screen01")</div>
 
 ### Conclusion
 

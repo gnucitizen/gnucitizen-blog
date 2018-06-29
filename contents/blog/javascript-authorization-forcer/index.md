@@ -8,9 +8,9 @@ category: fucked
 
 This is an idea I am still developing. The malicious JavaScript presented here tries to guess URLs that contain credentials. It is sort of Basic Authentication/FTP Authentication bruteforcer.
 
-The source code can be downloaded from [here](http://www.gnucitizen.org/static/blog/2006/08/authorizationforcer.js).
+The source code can be downloaded from [here](/files/2006/08/authorizationforcer.js).
 
-    [http://www.gnucitizen.org/static/blog/2006/08/authorizationforcer.js](http://www.gnucitizen.org/static/blog/2006/08/authorizationforcer.js)
+    [/files/2006/08/authorizationforcer.js](/files/2006/08/authorizationforcer.js)
 
 The POC works well in IE6, IE7, Firefox and Opera. I wasn't able to suppress the Basic Authentication dialog when trying to create a real Basic Authentication Bruteforcer. However, I came up with this lazyForce implementation. A typical attack vector will work like this:
 

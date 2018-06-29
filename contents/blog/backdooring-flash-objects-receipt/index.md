@@ -6,7 +6,7 @@ template: post.jade
 category: fucked
 ---
 
-![Death Flash](http://www.gnucitizen.org/static/blog/2006/09/death-flash.jpg "Death Flash")
+![Death Flash](/files/2006/09/death-flash.jpg "Death Flash")
 
 Just a day ago I released a quite narrative article called [Backdooring Flash Objects (the walkthrough)](/blog/backdooring-flash-objects). Although, I received some quite good responds on the style of writing, I decided to write more narrowed and specific version on how Flash object infection works. The following post outlines one of the many ways and expands further on some of the core concepts.
 

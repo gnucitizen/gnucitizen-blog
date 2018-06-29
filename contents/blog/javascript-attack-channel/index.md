@@ -9,4 +9,4 @@ The JavaScript Attack Channel/Proxy is a simple message queuing and routing appl
 
 The tool is still experimental although it is quite stable at the time of writing. Within the next release the development cycle will be completed. I am planning to include this tool into [AttackAPI](/blog/attackapi). This is scheduled for release 0.8 which will contain several fixes and improvements.
 
-_The channel source code can be downloaded from [here](http://www.gnucitizen.org/static/blog/2006/10/channel.txt)._
+_The channel source code can be downloaded from [here](/files/2006/10/channel.txt)._

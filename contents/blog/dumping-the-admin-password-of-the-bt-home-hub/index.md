@@ -43,11 +43,11 @@ The following is what a MDAP ANT-SEARCH request looks like. Such request would b
 
     The following Python script dumps MDAP multicast requests:
 
-    [http://www.gnucitizen.org/static/blog/2008/05/mdap-dump.py_.txt](http://www.gnucitizen.org/static/blog/2008/05/mdap-dump.py_.txt)
+    [/files/2008/05/mdap-dump.py_.txt](/files/2008/05/mdap-dump.py_.txt)
 
     And the following one sends the MDAP ANT-SEARCH requests which causes the Home Hub to return its serial number:
 
-    [http://www.gnucitizen.org/static/blog/2008/05/mdap-send-ant-search.py_.txt](http://www.gnucitizen.org/static/blog/2008/05/mdap-send-ant-search.py_.txt)
+    [/files/2008/05/mdap-send-ant-search.py_.txt](/files/2008/05/mdap-send-ant-search.py_.txt)
 
     You have to run `mdap-send-ant-search.py` while `mdap-dump.py` is still running. i.e.:
 
@@ -55,6 +55,6 @@ The following is what a MDAP ANT-SEARCH request looks like. Such request would b
 
 For some reason the scripts don't work under Python for Windows or even Python for Cygwin. It should work on GNU/Linux (I tried it on Backtrack 2).
 
-<div class="screen">[![](http://www.gnucitizen.org/static/blog/2008/05/change-default-pwd-234x150.png "Change Default Pwd PNG")](http://www.gnucitizen.org/static/blog/2008/05/change-default-pwd.png) [![](http://www.gnucitizen.org/static/blog/2008/05/MDAP-ANT-SEARCH-fu-331x150.png "MDAP-ANT-SEARCH-fu PNG")](http://www.gnucitizen.org/static/blog/2008/05/MDAP-ANT-SEARCH-fu.png)</div>
+<div class="screen">[![](/files/2008/05/change-default-pwd-234x150.png "Change Default Pwd PNG")](/files/2008/05/change-default-pwd.png) [![](/files/2008/05/MDAP-ANT-SEARCH-fu-331x150.png "MDAP-ANT-SEARCH-fu PNG")](/files/2008/05/MDAP-ANT-SEARCH-fu.png)</div>
 
 _Finally, I just wanted to thank Mark Livesey for brainstorming ideas with me which led me to explore the MDAP protocol further._

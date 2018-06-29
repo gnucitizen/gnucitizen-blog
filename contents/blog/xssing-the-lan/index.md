@@ -6,7 +6,7 @@ template: post.jade
 category: fucked
 ---
 
-![Killer Tomatoes](http://www.gnucitizen.org/static/blog/2006/08/killer-tomatoes.jpg "Killer Tomatoes")
+![Killer Tomatoes](/files/2006/08/killer-tomatoes.jpg "Killer Tomatoes")
 
 Since there is a growing interest in XSS (Cross-site Scripting) attacks, I will try to put in theory how border routers/gateways can be trivially compromised over the web. For the purpose of this, three prerequisites need to be met: a page that is controlled by the attacker, lets call it `evil.com`; router vulnerable to XSS; user attending `evil.com`.
 

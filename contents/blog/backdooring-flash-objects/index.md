@@ -8,7 +8,7 @@ category: fucked
 
 > The following article is in narrative format and it is purely experimental. Feedback on whether you like it or not will be highly appreciated.
 
-![The Flash](http://www.gnucitizen.org/static/blog/2006/09/the-flash.jpg "The Flash")
+![The Flash](/files/2006/09/the-flash.jpg "The Flash")
 
 I started my work station. The old DELL Inspiron 8100 laptop switched automatically to Windows XP SP2 after 30 seconds of countdown in Grub. "What is going to be?" [The Prodigy](http://www.prodigy.co.uk/) seamed to be quite alright for the situation. These guys have never let me down. There is something about their music. When I am listening to their stuff my brain switches to state of mind which I usually call hackmode.
 
@@ -22,7 +22,7 @@ Both of these are quite disruptive activities used by biological viruses that ha
 
 My first aim was to download some tools. I used to play with Flash and its IDE in the past, however I needed something more robust. The first tool to download was [Mtasc](http://www.mtasc.org/) from Nicolas Cannasse. I had found it couple of weeks ago but I had never had time to do some serious play with it. To me it looked quite sophisticated little tool, great to hacking around Flash.
 
-For the purpose of my training day I needed to download a SWF file that would be eventually enhanced with my demo backdoor as well. After couple of seconds in Google, I found ["The Corruptibles"](http://www.gnucitizen.org/static/blog/2006/09/the_corruptibles.swf). This is quite interesting and well composed animation that was just perfect for my proof of concept.
+For the purpose of my training day I needed to download a SWF file that would be eventually enhanced with my demo backdoor as well. After couple of seconds in Google, I found ["The Corruptibles"](/files/2006/09/the_corruptibles.swf). This is quite interesting and well composed animation that was just perfect for my proof of concept.
 
 I unziped Mtasc project into my `C:/` drive and started to fiddle around with it. The command line of the tool is not as straight forward as you might think. There are several options that could confuse you but it is OK. Good tools are usually like that; too much functionalities to put inside the same shell.
 

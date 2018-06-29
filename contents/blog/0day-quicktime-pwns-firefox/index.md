@@ -30,6 +30,6 @@ Enough theory, let's see some action. For more information, just read [this](/bl
 
 In practice I can do anything with the browser. However, just for the sake of this demonstration, I simply open **calc.exe**.
 
-If you dare to try this in your browser, here is a list of a few files you have to click on. They are not malicious. You have my word: [qt-poc-01.mp3](http://www.gnucitizen.org/static/blog/2007/09/qt-poc-01.mp3), [qt-poc-02-shutdown-dont-click.mp3](http://www.gnucitizen.org/static/blog/2007/09/qt-poc-02-shutdown-dont-click.mp3), [qt-poc-03.mpeg](http://www.gnucitizen.org/static/blog/2007/09/qt-poc-03.mpeg), [qt-poc-04.mov](http://www.gnucitizen.org/static/blog/2007/09/qt-poc-04.mov), [qt-poc-05.avi](http://www.gnucitizen.org/static/blog/2007/09/qt-poc-05.avi).
+If you dare to try this in your browser, here is a list of a few files you have to click on. They are not malicious. You have my word: [qt-poc-01.mp3](/files/2007/09/qt-poc-01.mp3), [qt-poc-02-shutdown-dont-click.mp3](/files/2007/09/qt-poc-02-shutdown-dont-click.mp3), [qt-poc-03.mpeg](/files/2007/09/qt-poc-03.mpeg), [qt-poc-04.mov](/files/2007/09/qt-poc-04.mov), [qt-poc-05.avi](/files/2007/09/qt-poc-05.avi).
 
 _BTW, QuickTime comes by default with iTunes. Therefore, iTunes users are most affected, I believe._

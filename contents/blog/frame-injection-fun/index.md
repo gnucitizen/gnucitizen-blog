@@ -23,7 +23,7 @@ The best way to explain what I mean is to show an example. Most frame injection 
 
     http://mail.google.com/imgres?imgurl=http://SecureGoogleMail&**imgrefurl**=http://mail.google.com/imgres?imgurl=http://SecureGoogleMail&imgrefurl=%68%74%74%70%3a%2f%2f%73%6e%69%70%75%72%6c%2e%63%6f%6d%2f%67%6e%77%62%6f
 
-<div class="screen">![Frame Injection Fun POC](http://www.gnucitizen.org/static/blog/2008/10/frame-injection-fun-poc-300x210.png "Frame Injection Fun POC")</div>
+<div class="screen">![Frame Injection Fun POC](/files/2008/10/frame-injection-fun-poc-300x210.png "Frame Injection Fun POC")</div>
 
 The previous PoC URL will cause the entered credentials to be submitted to www.gnucitizen.org when clicking on Sign in, so please do NOT submit any real credentials!
 

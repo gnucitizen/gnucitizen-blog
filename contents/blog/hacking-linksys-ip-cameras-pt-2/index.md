@@ -28,7 +28,7 @@ The only restriction that needs to be bypassed, is dots (`.`) symbols being filt
 
 Like most IP cameras, the Linksys WVC54GCA allows administrators to grant access to the video stream to selected users only (rather than anonymous users who don't need to authenticate). In this case, the admin user can click on the `Users` menu and tick the `Only users in database` option (please see screenshot below). After this, all that is needed is to add a username/password pair for the account to grant video-viewing access to:
 
-<div class="screen">![Video User Accounts](http://www.gnucitizen.org/static/blog/2009/04/video_user_accounts.png "Video User Accounts")</div>
+<div class="screen">![Video User Accounts](/files/2009/04/video_user_accounts.png "Video User Accounts")</div>
 
 Well, the feature discussed above can be rendered useless by exploiting the vulnerability I have described, since it allows restricted users to retrieve the admin password.
 

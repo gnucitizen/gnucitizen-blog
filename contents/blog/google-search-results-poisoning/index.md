@@ -8,7 +8,7 @@ category: fucked
 
 When GNUCITIZEN was down for almost a week in December last year, I've experienced something that I've remained silent about till now. I wanted to investigate it myself before sharing it with the rest of the world. So, here is the discovery, it is up to you to decide whether it something or absolutely nothing.
 
-<div class="screen">![Search Results Poisoning Screen JPG](http://www.gnucitizen.org/static/blog/2007/01/search-results-poisoning-screen.jpg "Search Results Poisoning Screen JPG")</div>
+<div class="screen">![Search Results Poisoning Screen JPG](/files/2007/01/search-results-poisoning-screen.jpg "Search Results Poisoning Screen JPG")</div>
 
 Because GNUCITIZEN was down for almost a week, I was concerned that Google and other search engines will index Wordpress default error page since that was what it was showing when there was no database connectivity. In the following days, after the site went on-line, I tried to query Google by searching for "GNUCITIZEN". I was expecting to see the GNUCITIZEN front page, [AttackAPI](/blog/attackapi), the [backdooring](/blog/backdooring-mp3-files/) [articles](/blog/backdooring-quicktime-movies) and some Full-Disclosure and Bugtraq posts. To my surprise, the search result was quite different. GNUCITIZEN front page was still there holding on number one, however the rest was all gone. All other links were pointing to some websites I had never seen before.
 

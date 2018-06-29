@@ -6,7 +6,7 @@ template: post.jade
 category: fucked
 ---
 
-![Killer Tomatoes](http://www.gnucitizen.org/static/blog/2006/08/killer-tomatoes.jpg "Killer Tomatoes")
+![Killer Tomatoes](/files/2006/08/killer-tomatoes.jpg "Killer Tomatoes")
 
 In my [previous](/blog/xssing-the-lan) [posts](/blog/xssing-the-lan-2) I mentioned that in order to compromise a LAN device from the Internet the attacker needs to exploit a XSS vulnerability in the device firmware. The limitations of this kind of attack are quite obvious. Let's have a look at the exploitation process again.
 

@@ -6,7 +6,7 @@ template: post.jade
 category: fucked
 ---
 
-We just released a new version of [dnsmap](http://www.gnucitizen.org/static/blog/2009/03/dnsmap-0222tar.gz). dnsmap is a subdomain bruteforcer for stealth enumeration.
+We just released a new version of [dnsmap](/files/2009/03/dnsmap-0222tar.gz). dnsmap is a subdomain bruteforcer for stealth enumeration.
 
 Originally released in 2006, dnsmap is mainly meant to be used by pentesters during the information gathering/enumeration phase of infrastructure security assessments. During the enumeration stage, the security consultant would typically discover the target company's IP netblocks, domain names, phone numbers, etc. dnsmap was [included](http://backtrack.offensive-security.com/index.php?title=Tools "Tools") in Backtrack 2 and 3, although the version included is the now dated version 0.1.
 

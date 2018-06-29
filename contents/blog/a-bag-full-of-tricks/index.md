@@ -6,7 +6,7 @@ template: post.jade
 category: fucked
 ---
 
-![50ft Woman](http://www.gnucitizen.org/static/blog/2006/08/50ft-woman.jpg "50ft Woman")
+![50ft Woman](/files/2006/08/50ft-woman.jpg "50ft Woman")
 
 Not too long ago I [presented](/blog/self-contained-xss-attacks) a technique that can be used to compose self-contained html pages. Apart from the most obvious use of this technique (XSS and CSRF), attackers can use it to compose malicious binary payloads of PDF, DOC, MP3 types of files. As such, if there is vulnerability in Microsoft Word 2003, JavaScript attack scripts could be able to take advantage of it without pulling remote content (remote DOC file). Everything is self-contained.
 

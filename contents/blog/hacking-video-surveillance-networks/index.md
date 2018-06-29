@@ -21,7 +21,7 @@ The next time you watch a movie where the bad guys replace a video stream from t
 
 Many of the IP-based video surveillance solutions are based on simple discovery protocols such as mDNS and UPnP. Both of them work on multicast addresses. Therefore, it is extremely easy to fake as many cameras as we want.
 
-Here is how to do this. The `[register.py](http://www.gnucitizen.org/static/blog/2008/01/register.py)` script will register a brand new AXIS 206 camera, while the `[server.py](http://www.gnucitizen.org/static/blog/2008/01/server.py)` will feed MJPG video stream from an external source. This is how we use them:
+Here is how to do this. The `[register.py](/files/2008/01/register.py)` script will register a brand new AXIS 206 camera, while the `[server.py](/files/2008/01/server.py)` will feed MJPG video stream from an external source. This is how we use them:
 
 	register.py **[your mac address here]** &
 	server.py http://152.1.130.216/mjpg/video.mjpg **# MJP video stream**
@@ -34,7 +34,7 @@ Computer networks are vulnerable to all sorts of attacks: ARP spoofing/hijacking
 
 ## Administrative functions are handled over ancient security mechanisms
 
-All embedded devices can be accessed via their HTTP server with the need of Basic Authorization credentials. Basic Auth is sniff-able and easily reversible-able. This is why it is called **basic**. Moreover, it can be easily used for stealing access credentials of the video surveillance system. For that to work, the attacker needs a fake "credentials-hijacking" camera. The `[stealing_server.py](http://www.gnucitizen.org/static/blog/2008/01/stealing_server.py)` script part of the PoCs comes into play. This is how we launch the attack:
+All embedded devices can be accessed via their HTTP server with the need of Basic Authorization credentials. Basic Auth is sniff-able and easily reversible-able. This is why it is called **basic**. Moreover, it can be easily used for stealing access credentials of the video surveillance system. For that to work, the attacker needs a fake "credentials-hijacking" camera. The `[stealing_server.py](/files/2008/01/stealing_server.py)` script part of the PoCs comes into play. This is how we launch the attack:
 
 	register.py **[your mac address here]** &
 	stealing_server.py http://152.1.130.216/mjpg/video.mjpg "AXIS 206" 5 **# MJP video stream, realm AXIS 206, 5 consequent tries**
