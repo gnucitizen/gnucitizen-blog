@@ -1,0 +1,32 @@
+[
+  {
+    "author": "Aviv",
+    "avatar": "ff7d0cd31f3e8a78777398ee3e6394b5",
+    "date": "2007-03-16T13:11:39.000Z",
+    "content": "The equivalent for the javascript's semicolon (;) in vbscript is a colon (:).\r\nEven though I wasn't able to use it directly in the address bar (at-least on my Vista's IE7), it worked in the Execute statement instead of the CrLf chars."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-03-16T22:09:30.000Z",
+    "content": "cool, I didn't know about that. thanks."
+  },
+  {
+    "author": "Awesome AnDrEw",
+    "avatar": "5e0f595cbc8f1811233adce10ac6c5d3",
+    "date": "2007-03-16T23:14:41.000Z",
+    "content": "I've been utilizing VBScript since 2001 knowing full well it only renders in Internet Explorer, which as pointed out in the above article is still the most popular browser. Another thing to be noted about VBScript is its case insensitivity when it comes to statements. What sucks about VBScript though is that all variables remain variants (I believe they remain that way even after appending them with an abbreviation such as \"$\" for strings, \"%\" for integers, and so forth) even with Option Explicit (which forces you to declare variables)."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-03-18T09:40:08.000Z",
+    "content": "Awesome, you know what people say about VBScript and in particular VBasic: once you learn it you programming mindset will be crippled for life. That, of course, is a joke. :)"
+  },
+  {
+    "author": "Dnupter",
+    "avatar": "f912d9140c6c3a05c195adfa1824096b",
+    "date": "2008-10-30T18:26:31.000Z",
+    "content": "it is so cool. i just want to know more"
+  }
+]

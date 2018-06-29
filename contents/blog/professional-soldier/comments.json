@@ -1,0 +1,32 @@
+[
+  {
+    "author": "Mike",
+    "avatar": "fef26a19c3f17a05420007a30423493e",
+    "date": "2008-07-23T18:59:00.000Z",
+    "content": "If price was no object, what are some of the tools a professional pen-tester ought to be using?"
+  },
+  {
+    "author": "CG",
+    "avatar": "1037354f27302ad1053ed800cc989d3c",
+    "date": "2008-07-24T03:23:06.000Z",
+    "content": "I see where you are going with the post but you are missing some important point.\r\n\r\nAssuming professional soldiers are not mercenaries but rather are part of some sort of military of a country or nation state there are several things in place that try to ensure a certain \"quality of service\" with soldiers that doesn't exist within the security or professional penetration testing community.  \r\n\r\nThese \"things\" include ENFORCEABLE standards of behavior, rules and regulations (also enforceable--usually at a more severe level than that of civilian law), oversight, governing body or chain of command, and required mandatory training to become a soldier.  You could argue both ways about training...that hackers can be self taught, don't need certs, yadda yadda.  For the sake of brevity i'll just say there are no currently AGREED UPON or formal training paths that guarantee a minimal level of competence for penetration testing like military basic training and occupational specialty training.\r\n\r\nLastly, I don't know of any army or military that works \"for profit\" meaning they always operate at  a loss in business terms.  That in itself allows for much more money and time to be spent on creating professional soldiers where that business model wont work for any type of for profit pen-testing consultancy.\r\n\r\nYour comments in italics are right on.  We as a community should start policing ourselves.  possibly starting with defeating this notion that someone can pass an exam and go to work penetration testing.  Just because you passed your hacking certification of the month doesnt make you ready to go out there and actually do it.  Which goes right back to having some sort of governing body, enforceable standards of conduct and behavior, and required training (lasting longer than some IT Cert bootcamp)."
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2008-07-24T11:08:47.000Z",
+    "content": "Hey pdp, you know I love this topic of conversation is one of my faves :). We should also talk about the similarities between hacker/researchers and the masters would used to build samurai swords (as opposed to the warriors who use them in battles).\r\n\r\nwarrior/soldier-&gt; pentester/cracker\r\nmilitary scientist/weapon crafter -&gt; hacker/security researcher"
+  },
+  {
+    "author": "M Dundas",
+    "avatar": "384c02b9789b6a645e9ddc67f1e6bcc0",
+    "date": "2008-07-25T17:05:35.000Z",
+    "content": "I agree with your \"Nessus and Backtrack won't cut it\" comment ... I think .... are you saying that in order to be a 'professional' penetration tester you have to have commercial versions of penetration testing software and that open source is not adequate enough, or just that other tools besides \"Nessus and Backtrack\" are required?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-07-28T09:55:26.000Z",
+    "content": "yes, this is exactly what I mean..."
+  }
+]

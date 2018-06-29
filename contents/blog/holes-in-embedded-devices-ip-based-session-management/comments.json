@@ -1,0 +1,38 @@
+[
+  {
+    "author": "ntp",
+    "avatar": "e9e7690eccc0e9b2ab8ec6a375c96bbd",
+    "date": "2008-01-29T13:12:47.000Z",
+    "content": "http://ha.ckers.org/blog/20070122/ip-trust-relationships-xss-and-you/"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-01-29T15:29:57.000Z",
+    "content": "OK, trusting source IP addresses for authentication purposes on embedded devices is pretty bad, but doing the same thing on credit card transaction environments is just insane!"
+  },
+  {
+    "author": "C4",
+    "avatar": "e0ffc23a6958661ccdfaa7ee27bcff05",
+    "date": "2008-01-29T15:57:34.000Z",
+    "content": "This could be used on any basic router as well, as long as the you can do it before the admin session TTL times out?"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-01-29T21:56:22.000Z",
+    "content": "@C4 - you're right. This type of attack could be launched against a basic router as well. Any embedded device could be affected by this vulnerability. Of course, provided that its administrative web interface solely trusts the admin's source IP for authentication purposes.\r\n\r\nI wrote this post with any type of embedded devices in mind. i.e.: cameras, printers, VoIP phones, firewalls, routers, switches, etc ..."
+  },
+  {
+    "author": "Antrix",
+    "avatar": "74fa022df54601ceafda9ca4846f3033",
+    "date": "2008-01-30T09:12:08.000Z",
+    "content": "Ohhhh, this is old .... They fixed it quite a while ago."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-01-30T11:28:52.000Z",
+    "content": "@Antrix - yes, you're right: the VPN-1 Edge vuln is old. That's why I said \"Early versions of Checkpoint VPN-1 Edge\". \r\n\r\nI just mentioned VPN-1 Edge vuln as a real example. This post is NOT an advisory of a new vulenrability, but rather an explanation of IP address-based session management vulnerabilities.\r\n\r\nThanks for your feedback everyone!"
+  }
+]

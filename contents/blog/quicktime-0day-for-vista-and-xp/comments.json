@@ -1,0 +1,206 @@
+[
+  {
+    "author": "Yousif Yalda",
+    "avatar": "0cee37308e264139b018a3ce257f1e17",
+    "date": "2008-04-25T19:22:40.000Z",
+    "content": "Wow, impressive. You stumbled upon this doing what? How we can help prevent against this sort of vulnerability?"
+  },
+  {
+    "author": "RyanTheGreat",
+    "avatar": "4298c8d3897f0c3891fe37a731251b67",
+    "date": "2008-04-25T20:09:51.000Z",
+    "content": "Nice work PDP, very interesting find. I look forward to reading the information behind this technique in the future."
+  },
+  {
+    "author": "Lucky",
+    "avatar": "77cd1dcc51e43b6c5546ea7c22a3d09c",
+    "date": "2008-04-25T22:02:49.000Z",
+    "content": "Also more about the music artist and title names, please :)"
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-04-25T23:33:38.000Z",
+    "content": "good stuff pdp! I must say you're really inspiring me to find a client-side RCE vuln!"
+  },
+  {
+    "author": "Jonas",
+    "avatar": "c970dee63fb8c2f40d17e04454742964",
+    "date": "2008-04-26T00:05:02.000Z",
+    "content": "This is simply amazing. I was just thinking, what if someone found this vulnerability and decided to embed the file on a malicious website. Then infect a few larger websites with a hidden iframe including the site. Would hit pretty hard i think."
+  },
+  {
+    "author": "rob",
+    "avatar": "a503fababef9aada4d35bb409e39d59f",
+    "date": "2008-04-26T05:24:25.000Z",
+    "content": "YouTube must not like your exploit: <q>We're sorry, this video is no longer available.</q>"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-04-26T05:41:02.000Z",
+    "content": "I don't know the name of the song because I took it from a site providing CCed audio. So, I have no idea. rob, the video is still up."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-04-26T05:42:26.000Z",
+    "content": "Jonas, that's why we don't disclose the details of the issue. We want to inform and at the same time prevent mass 0wnage."
+  },
+  {
+    "author": "Keve",
+    "avatar": "de47b7c8446d390d704dc881c6b1c82d",
+    "date": "2008-04-26T11:27:10.000Z",
+    "content": "Music is from the swordfish soundtrack....\r\nDope Smugglaz - The Word (PMT Remix)"
+  },
+  {
+    "author": "Lucky",
+    "avatar": "77cd1dcc51e43b6c5546ea7c22a3d09c",
+    "date": "2008-04-26T11:41:09.000Z",
+    "content": "pdp, would you name the site or give a link to the track used? Thanks!"
+  },
+  {
+    "author": "wishi",
+    "avatar": "73a10339614577d007c1c473f8896bd3",
+    "date": "2008-04-26T12:28:29.000Z",
+    "content": "Cool... :) \r\n\r\nGood - not to post the \"exploit\" now, but to mention the standard fact: don't work as Admin. \r\n\r\nI like the whitehead way: no destruction, but construction. That's the right way. You're sweet as!"
+  },
+  {
+    "author": "OwariDa",
+    "avatar": "f65b45f74b56d59571749921d0d462a3",
+    "date": "2008-04-26T13:41:57.000Z",
+    "content": "Is only the stand-alone player affected or is it exploitable through a browser as well?"
+  },
+  {
+    "author": "Lucky",
+    "avatar": "77cd1dcc51e43b6c5546ea7c22a3d09c",
+    "date": "2008-04-26T18:09:58.000Z",
+    "content": "Thank you Keve! Sorry for the OT."
+  },
+  {
+    "author": "whocares",
+    "avatar": "fbcbbf18ffd88c5ddf48ec6c528ed177",
+    "date": "2008-04-26T19:21:43.000Z",
+    "content": "Don't you have to give credit to the person who made the music, even if it is creative commons licensed? I don't remember seeing a CC license where you don't have to give credit to the author, though I might not be up to date :)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-04-26T21:46:15.000Z",
+    "content": "well, I should have, but if I only knew the author. however, this is irrelevant to the current subject. stay focused. :)"
+  },
+  {
+    "author": "Jim Manico",
+    "avatar": "04b8fca2c8dde2ed82373ade37e9789d",
+    "date": "2008-04-27T01:04:13.000Z",
+    "content": "What about Vista w/ UAC turned on? Cool video, nicely produced."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-04-27T06:36:42.000Z",
+    "content": "Jim, exploits are means to an end. :) I would be more worried for my online accounts getting compromised, as I don't have control over them, then my Vista box being included in a harmless botnet."
+  },
+  {
+    "author": "skf",
+    "avatar": "4a76ef1bc83862911dd5e759537c83cc",
+    "date": "2008-04-27T07:13:03.000Z",
+    "content": "And how is this remote vulnerability? You click on bloody local file and run it in your local application. Tricks doesn't make this vulnerability remote."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-04-27T07:17:57.000Z",
+    "content": "remote in a sense that the user can be compromised when opening such a file."
+  },
+  {
+    "author": "adriang",
+    "avatar": "1079df844d30c32ee8e8e23faeb17bcd",
+    "date": "2008-04-27T14:15:37.000Z",
+    "content": "Nice one Petko, if you say it is so I trust you,after the PDF thing my faith is almost religious, is there a workaround to prevent this, or just disable Quicktime, any advice? ;&gt;}"
+  },
+  {
+    "author": "Awesome AnDrEw",
+    "avatar": "5e0f595cbc8f1811233adce10ac6c5d3",
+    "date": "2008-04-28T00:32:49.000Z",
+    "content": "This wouldn't happen to be exploited in a similar fashion to the Windows Media Player one would it?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-04-28T05:49:04.000Z",
+    "content": "no details regarding the vulnerability will be shared at this stage. 10x"
+  },
+  {
+    "author": "Thor Larholm",
+    "avatar": "4550629aa60f7ef68d07db76ff7244ec",
+    "date": "2008-04-28T10:40:02.000Z",
+    "content": "Nice find, yet again :) Why do I keep forgetting that you are based in the UK? You're just a small Viking raid away. So, probably some URL protocol vulnerability. Or, embedded HTML with an object tag that points the codeBase attribute on mspaint or notepad in known locations. Am I getting close? ;)\n\n/Thor"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-04-28T10:46:10.000Z",
+    "content": "yeh, if you are around London we should catch up."
+  },
+  {
+    "author": "Jim Manico",
+    "avatar": "04b8fca2c8dde2ed82373ade37e9789d",
+    "date": "2008-04-28T10:57:10.000Z",
+    "content": "UAC is a joke and can be circumvented by savvy programmers.\r\n\r\nhttp://developers.slashdot.org/article.pl?sid=08/04/27/2013215"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-04-28T11:01:31.000Z",
+    "content": "there you go, thanks Jim"
+  },
+  {
+    "author": "cryoohki",
+    "avatar": "0d5b8048ff215f6e72cba4e25c612f1f",
+    "date": "2008-04-29T09:50:12.000Z",
+    "content": "@jim: rtfa next time. Or at least the comments on /.\r\n\r\nFor the \"imaginary vulnerabilities\" Apple's policy stinks, that's all I can say..."
+  },
+  {
+    "author": "David Kierznowski",
+    "avatar": "1d95d2324345e3dd2e41d6066cc1b492",
+    "date": "2008-04-29T09:57:06.000Z",
+    "content": "<blockquote>\r\nRegarding hype:\r\n</blockquote>\r\n\r\nI think we sometimes forget our roots as security researchers. The only reason we have an industry today was because of full-disclosure and hype. If you can't create a noise to motivate change, then you don't affect the commercial market, which in turn means we are all out of jobs ;)"
+  },
+  {
+    "author": "alino",
+    "avatar": "90073603a23a7b7eba2cb40d7dacef77",
+    "date": "2008-04-29T12:09:05.000Z",
+    "content": "@PDP: Which Class of Vulnerability ( stack/heap based buffer overflow or other.. ) was used for this vulnerability? btw: good work pdp :)"
+  },
+  {
+    "author": "hilikus",
+    "avatar": "022d7b4e2906e5e9344db4fdf10850ad",
+    "date": "2008-04-29T17:44:38.000Z",
+    "content": "Very good findings and research pdp, keep up the good work, and props for the responsible disclosure. Don't let any of these trolls take away from your execlent findings. And good luck working with Apple, I just keep thinking about the wireless dirver vulnerability and how they treated HDMoore :\\ \r\n\r\n@alino: I doubt he is going to say, read the other comments and his responses."
+  },
+  {
+    "author": "works on mac?",
+    "avatar": "43f113f4959d5470efade43baeebb4f9",
+    "date": "2008-04-30T15:59:47.000Z",
+    "content": "so you are doing some HREF track ninja? http://www.apple.com/quicktime/tutorials/hreftracks.html You test this stuff on a mac PDP?"
+  },
+  {
+    "author": "flashdrive",
+    "avatar": "e3b9dcc6019bde0fdf814fee3eca02cb",
+    "date": "2008-05-01T00:03:47.000Z",
+    "content": "when can we expect to see how this is done?"
+  },
+  {
+    "author": "Jim Manico",
+    "avatar": "04b8fca2c8dde2ed82373ade37e9789d",
+    "date": "2008-05-01T04:13:13.000Z",
+    "content": "Inquiring minds want to know. Can you at least let us know how Apple is reacting to this exploit?"
+  },
+  {
+    "author": "Ix",
+    "avatar": "17cb223cbd50ebed7dee240b45fbf5c3",
+    "date": "2008-05-02T13:38:13.000Z",
+    "content": "Seconding Jim's question. Knowing it exists is important, knowing what's being done about it is even more important."
+  }
+]

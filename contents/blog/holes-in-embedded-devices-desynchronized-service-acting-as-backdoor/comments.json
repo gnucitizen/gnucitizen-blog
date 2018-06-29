@@ -1,0 +1,38 @@
+[
+  {
+    "author": "entombed",
+    "avatar": "8672bdc77e8e4953c9e28cd13b3952c8",
+    "date": "2008-02-06T19:45:09.000Z",
+    "content": "If a specific service such as telnet is needed it's most likely the admin has changed the default password. Otherwise the service will be disabled anyway."
+  },
+  {
+    "author": "Ghost",
+    "avatar": "64d301ecc719e76f49bfba83efca7f76",
+    "date": "2008-02-07T07:50:28.000Z",
+    "content": "I've dealt with routers that have telnet off by default (or at least booted you as soon as you connected) but it was possible to enable them and be accessed by the default username and password. Dunno how many of them are out there that are like that but its interesting though."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-02-07T10:54:19.000Z",
+    "content": "@entombed - how about devices that come with telnet running by default? Are *all* admins checking if such services are enabled by default?\r\n\r\nHow about home routers shipped by ISPs with telnet enabled by default on the WAN interface? Think about this for a second. We all remember the BeThere fiasco in which a backdoor account could be used to login to routers from the Internet via telnet: http://blogs.securiteam.com/index.php/archives/826"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-02-07T22:34:26.000Z",
+    "content": "@Ghost - although this issue is not usually a default setup on embedded devices, I assure you that there are real examples of this vulnerability out there.\r\n\r\nFor instance, I'm currently working towards reporting a very severe issue to a vendor which is based on the same idea: an administrative service different to HTTP which runs by default allows remote access with a different set of credentials. Worst of all, such service is enabled on the WAN interface by default!\r\n\r\nMost likely I will be able to present this vulnerability among many others on my \"Cracking into Embedded Devices and Beyond!\" presentation @ HITB Dubai: http://conference.hackinthebox.org/hitbsecconf2008dubai/?page_id=186"
+  },
+  {
+    "author": "DamionKutaeff",
+    "avatar": "e9b93bac9d80ccc27130468d465879c6",
+    "date": "2008-03-23T01:43:50.000Z",
+    "content": "Hello everybody, my name is Damion, and I'm glad to join your conmunity, \r\nand wish to assit as far as possible."
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2008-07-24T11:01:40.000Z",
+    "content": "Just noticed a very nice example of a desynchronized service acting as a backdoor: http://www.milw0rm.com/exploits/5289\r\n\r\nEven if the user changes the default password, there is still another management service which keeps using the original default pass. Simple vulnerability yet it has obvious serious implications."
+  }
+]

@@ -1,0 +1,104 @@
+[
+  {
+    "author": "Awesome AnDrEw",
+    "avatar": "5e0f595cbc8f1811233adce10ac6c5d3",
+    "date": "2007-09-18T15:05:11.000Z",
+    "content": "I believe there's options within almost every version of Windows Media Player to at least ask for confirmation when attempting to load web content. The first thing I do when installing any media application is to set the privacy and security settings to deny access to the player ID and any script commands. I did allow it to connect for your demonstration, which was pretty cool.\n\nAnother thing I noticed is that you could probably do this without most users really understanding what is taking place, because upon viewing the proof of concept I was able to navigate back to the other blogs on your site within Windows Media Player, and then clicked the link to my own website. My own website has MP3s embedded within it, and upon viewing the page the MP3 immediately transferred itself to Windows Media Player's \"Now Playing\" list. So essentially this could be more even more dangerous if you were to place an embedded media file such as a blank WAV or MP3 to immediately mask any suspicious activity."
+  },
+  {
+    "author": "Awesome AnDrEw",
+    "avatar": "5e0f595cbc8f1811233adce10ac6c5d3",
+    "date": "2007-09-18T15:23:39.000Z",
+    "content": "I've been playing around with it for a few moments, and I see that certain scripting elements are disabled within Windows Media Player. A regular alert box will not execute when the content loads, but so far I see it supports other statements and properties such as location.href, window.open, and document.write. You're doing awesome work, PDP. Keep it up."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-09-18T15:28:25.000Z",
+    "content": "Awesome AnDrEw, the docs mention that both alert and confirm are disabled. I've tried to access the <strong>external</strong> object but with no luck. For the actual testing, I use a inbrowser JavaScript console. Hmmmm, let me create one POC for you guys to mess around. I will be back in a sec."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-09-18T15:32:25.000Z",
+    "content": "You can use the <a href=\"http://www.gnucitizen.org/static/blog/2007/09/bwmf-console.asx\" rel=\"nofollow\">following POC</a> to script Windows Media Player from within. Once inside, click on the first link."
+  },
+  {
+    "author": "Sam",
+    "avatar": "e5cbad9527e23aeb9f3766f5c1e1c2e8",
+    "date": "2007-09-18T19:40:17.000Z",
+    "content": "I tried in WMP10 and I still get a confirmation dialog, so seems WMP10 is about as secure as WMP11 in that respect.\r\n\r\nHowever, I agree with you on the dangers of meta files. Generally it is a good idea to avoid them."
+  },
+  {
+    "author": "/nul",
+    "avatar": "1d3fc02c9a66b6f0222792f02f284b02",
+    "date": "2007-09-18T20:27:21.000Z",
+    "content": "Nice work as always pdp. I've tested PoC on Windows Media Player 10 and 11. On both versions confirmation dialog pops-up. I suppose that only WMP9 (default on XP) is affected."
+  },
+  {
+    "author": "Rosario Valotta",
+    "avatar": "c5f240c71253599c1be1be455dc13bc3",
+    "date": "2007-09-18T22:43:32.000Z",
+    "content": "Hi pdp, i've played a bit on these topics some months ago and I already noticed the wmp behaviour you depicted in the post. After some tests I gave up as in order to run javascript you need to play files in HTMLView mode, so no \"hidden attack\" can be performed (afaik)\n\nI turned to investigate on possible exploitation of wmp in embedded html page. In this scenario, many DOM objects often used in scripts (document, parent, so on) are accessible from a JS script running from the the movie environment.\n\nAs reported in the official documentation, it is possible to edit wmp files in order to embed scripts and marker. Scripts can be of 2 types: URL (allow to launch URL in the browser window embedding the wmp) and TEXT. Text scripts are generally used for caption purposes but...if you use javascript syntax...it will be executed in the"
+  },
+  {
+    "author": "Rosario Valotta",
+    "avatar": "c5f240c71253599c1be1be455dc13bc3",
+    "date": "2007-09-18T22:47:26.000Z",
+    "content": "embedding window. The only limit to this is that you must define in the  tag the HTML node (a DIV for example) where the TEXT script shoud be showed.\n\nI've tried to embed a wmp in sites that allow video uploading (spaces.live.com, myspace.com) but the embed code always is sanitized so I had no succes in exploiting this functionality."
+  },
+  {
+    "author": "FiSh",
+    "avatar": "4d096f0c01c34c101e711637a3c39d46",
+    "date": "2007-09-19T04:03:54.000Z",
+    "content": "I've been reading your RSS feed for the past week or two, and let me tell you, you've scared me shitless! Keep up the good work ;)"
+  },
+  {
+    "author": "Joe Phantom",
+    "avatar": "d8582ad45d02151e2f22560a64036336",
+    "date": "2007-09-19T21:29:00.000Z",
+    "content": "Another excellent post about meta files danger."
+  },
+  {
+    "author": "chucky",
+    "avatar": "624e7d26d7a9a43d39ea76624a8fb6a6",
+    "date": "2007-09-20T03:55:43.000Z",
+    "content": "good job man, this is pretty crazy"
+  },
+  {
+    "author": "CrashOne",
+    "avatar": "3d5808eeaf247697f1148988f53c6b4b",
+    "date": "2007-09-20T07:13:40.000Z",
+    "content": "This example illustrates the lack of good security within MS products.\r\n\r\nAlthoug i think this wil be patched soon, simply change the default behaviour of WMP.\r\n\r\nIf your default player for WMP files isn't WMP (like VLC) your not vulnerable."
+  },
+  {
+    "author": "Lff",
+    "avatar": "ed10ac32a0bd307784871efc74312200",
+    "date": "2007-09-21T07:17:54.000Z",
+    "content": "Guys, no one ever thought that windows itself and microsoft as a company are free from bugs and security holes... In general, microsoft is sucks by itself, no less no more. Everybosy, let us say: \"Bill, we do not want your sloppy company anymore!\""
+  },
+  {
+    "author": "Sergey Gordeychik",
+    "avatar": "16bbff61099696c7cd63ad803586f137",
+    "date": "2007-09-21T09:45:23.000Z",
+    "content": "There are lot of other applications which use IE as  default rendering engine and can used to exploit IE's bugs. But via different vectors. \n\nExamples:\n\nhttp://seclists.org/bugtraq/2005/Jul/0427.html\nhttp://www.securitylab.ru/contest/212127.php (Russian)\nhttp://www.securityfocus.com/bid/17913/references"
+  },
+  {
+    "author": "CX",
+    "avatar": "bb1950e649d23ea1f807f6e59fa12d6f",
+    "date": "2007-09-25T15:07:47.000Z",
+    "content": "No problem: try lite version WinXP SP2 Vista edition (175 Mb.) _WITHOUT WINDOWS MEDIA PLAYER_\r\n\r\n:))"
+  },
+  {
+    "author": "0xDeadFace",
+    "avatar": "f91b7b3cabbfbd68774339eb98c7564b",
+    "date": "2007-09-25T21:57:17.000Z",
+    "content": "I read and code your exploit but I'm missing something: the jscript you launch in wmp works well in an html file opened directly with ie. I mean: no need to use this wmp trick.\r\n\r\nThe advantage of your exploit is that you use the less restrictive security rules of wmp than ie for executing jscript. Correct?\r\n\r\nMay you put an example with such a jscript?\r\n\r\nthx"
+  },
+  {
+    "author": "crypt1c_cyph3r",
+    "avatar": "f67ae868e54131ed534cee97644fbfda",
+    "date": "2007-10-26T22:11:19.000Z",
+    "content": "Hello, everyone just want to say thanx for this info really appreciate the insight! I'm honestly fed up with MS(I call em MicroSh1t)! i'm just about ready to switch over to linux! u know ubuntu, just as soon as i can figure out how to get my internet connection up and running with it! just need a little help with the drivers i need and how to install them on ubuntu's linux os! i am using a Motorola SURFboard SB5120 USB Cable Modem and my isp is cox high speed internet! any help any1 could give me is much appreciated.\r\n\r\nas i'm kinda new to the linux os!"
+  }
+]

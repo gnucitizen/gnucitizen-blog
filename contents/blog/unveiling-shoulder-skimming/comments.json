@@ -1,0 +1,62 @@
+[
+  {
+    "author": "vindic",
+    "avatar": "2fbd3fcfa626bd4301c18cdbd207a7bb",
+    "date": "2007-12-12T21:17:18.000Z",
+    "content": "Adrian, 3-D secure is shit. first problem of most countrys is, that they have avaible lookuping service for user data (uk - dob, usa - dob, ssn, mmn) then 3-D can't protect you. Second prob is that this service have many bugs, maybe you know how attackers use VBV bypass via wu (which use firstadata online checking service [achex.com])\r\nChip and Pin is nice security, but nothing amazing, because 90% of skimmed dumps (skimmed credit card) are with PIN. many are from destinations like thaywan, moscow from hotels and restaurants where Chip and PIN working long time. Sorry for my english, if you want talk about it contact me via email"
+  },
+  {
+    "author": "Makken Skeyes",
+    "avatar": "cdc845c55af1410369e03e0c85724df6",
+    "date": "2007-12-13T13:01:57.000Z",
+    "content": "What about organic systems? Like finger-print or eye-scanners? Aren't those much more secure?"
+  },
+  {
+    "author": "vindic",
+    "avatar": "2fbd3fcfa626bd4301c18cdbd207a7bb",
+    "date": "2007-12-13T20:54:50.000Z",
+    "content": "yea i think so, but again. if you will put them somewhere, someone else will be able somehow get them and use. i saw in london on one conference company which working on this, but i am not much happy, it's not much good accessibile for ppl."
+  },
+  {
+    "author": "shining whit",
+    "avatar": "ec201e4a19b8e5fa99c7459f0271984b",
+    "date": "2007-12-14T12:22:10.000Z",
+    "content": "Aren't online retailers only supposed to deliver to the registered card holders address?\r\n\r\nThe goal of banks etc is not to make it 100% secure as this becomes an unfeasibly expensive pipe dream, the goal is to make it secure enough that the losses are negligble in the banks eyes, the banks do not care how much time or effort it costs you to get your money back.\r\n\r\nRegardless of the method used people will find a way round it, money is a great incentive. I often wonder how many blackhats are 'paid' for their work as opposed to doing it just because they can, and how many there are versus the number of white(maybe slightly grubby) hats."
+  },
+  {
+    "author": "NIX",
+    "avatar": "fc569dc75bff454672e05115679cd473",
+    "date": "2007-12-15T09:02:05.000Z",
+    "content": "@ap, you are right with the scenarios ..\r\nbut does this make u to pay at a restaurant or supermarket with cash?"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-12-18T23:07:40.000Z",
+    "content": "@vindic - I'm not really in touch with the credit card fraud \"scene\" as part of my job, except for PCI DSS scans and knowledge of CC DB break-ins. As suppose you're talking about querying online resources in order to attempt to obtain personal information and 3-D secure is trying to verify? \r\n\r\nI'd be very happy if you posted more details on the attacks you're mentioning such as \"VBV bypass via wu\".\r\n\r\n@NIX - no, it *doesn't* make me pay with cash instead, but it DOES make me insert my CC in the POS terminal on my own, as opposed to letting the waiter do it for me ;-D\r\n\r\nshining - remember the common \"deliver to address different to billing address\" option. Think of how many shitty online retailers there are out there where many of the basic security mechanisms (ie.: AVS) do not apply. \r\nIf I remember correctly the _minimum_ data required to perform a CC transaction is the CC number and the expiry date. This doesn't only apply to online transactions, but also to MOTO (mail order telephone order)."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-12-18T23:09:45.000Z",
+    "content": "Meant to say \"*that* 3-D secure is trying to verify\""
+  },
+  {
+    "author": "Shoaib Yousuf",
+    "avatar": "af275b336b54b308c86ba4c164bf3b89",
+    "date": "2007-12-19T10:21:54.000Z",
+    "content": "Hi Adrian,\r\n\r\nMethod you just mention is way too old. Its been happening for years now. I have also seen cases where you can buy pack of 100 credit card numbers along with expiry and credit verification number for $5.\r\n\r\nVisa and Master card has 100% dispute policy. In which merchant is held liable for not verifiying the owner and providing the service.\r\n\r\nI have also seen cases where camera is fixed on the top of the roof which is recording your pin while you punching it on POS terminal.\r\n\r\nCheers\r\n\r\nShoaib"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-01-11T00:02:23.000Z",
+    "content": "Hi Shoaib. I'm not claiming this is new.  My point is that in places like in the UK, TV shows such as the Real Hustle have made skimming techniques used by - for example dishonest waiters - known to most people. \r\n\r\nHowever, I feel that low-tech and primitive methods such as the one described here are being overlooked. In this attack the criminal doesn't need a magstripe skimmer. All he/she needs is the merchant receipt and have a look at the 3 digit security code on the victims CC. \r\n\r\nEven worse, some websites don't even ask for the security code when purchasing items. I just bought flowers for my mom on a site of a company from Spain and I only had to enter the CC# and expiry date!\r\n\r\nquestion: does the 100% dispute policy also apply to e-commerce sites, or only physical merchants?"
+  },
+  {
+    "author": "Fareed",
+    "avatar": "b2c619b011c11dc52f550130565a5e96",
+    "date": "2009-06-09T10:06:07.000Z",
+    "content": "Chip cards have mag stripes as well. If the mag stripe of such a card is read thru a card reader, a clone card with the same data can be produced. so how does the CHIP ensure 'better' security than a mag stripe card in this case?"
+  }
+]

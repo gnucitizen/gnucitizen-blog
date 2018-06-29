@@ -1,0 +1,62 @@
+[
+  {
+    "author": "Kalyani",
+    "avatar": "d4bb81c0798269a57e1b6dcec17971c4",
+    "date": "2007-06-07T18:08:32.000Z",
+    "content": "Wow, the code looks awesome, but is there any way that I store all the visited pages to a text document. I need it for my project."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-06-07T19:10:19.000Z",
+    "content": "Well, you need a server that will handle all the gathered data and then store it into a simple text file. You can use PHP or any other scripting language for this purpose."
+  },
+  {
+    "author": "Nadav",
+    "avatar": "30214950c4a81efba1551dc0c0706221",
+    "date": "2007-08-28T09:32:26.000Z",
+    "content": "Hi, I have tested this javascript-visited-link-scanner on several computers that have IE7 installed. Unfortuantly it didn't worked. Am i doing something wrong, Or this a known problem with this java script scanner?"
+  },
+  {
+    "author": "jk",
+    "avatar": "45e4cc6f720ec3b67b56959c9599188d",
+    "date": "2007-09-28T06:46:43.000Z",
+    "content": "what is this use for?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-09-29T07:33:42.000Z",
+    "content": "jk, it is useful if you want to detect where the user has been before arriving on the malicious site."
+  },
+  {
+    "author": "alf",
+    "avatar": "003a01f8feba47addb0ad9f5b1ab2139",
+    "date": "2007-10-29T00:17:26.000Z",
+    "content": "Your demo doesn't work in Safari. (the approach works, though)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-29T20:46:12.000Z",
+    "content": "alf, that might be the case. keep in mind though that the latest stuff are inside <a href=\"http://www.gnucitizen.org/blog/attackapi\" rel=\"nofollow\">AttackAPI</a>."
+  },
+  {
+    "author": "kalyani",
+    "avatar": "d4bb81c0798269a57e1b6dcec17971c4",
+    "date": "2007-11-29T23:29:32.000Z",
+    "content": "Hey, I looked at java script, can you explain me where are you stealing the history from, I didn't get the trick"
+  },
+  {
+    "author": "dude1",
+    "avatar": "199578653ce0a86a110305701a2c7536",
+    "date": "2008-04-09T14:52:20.000Z",
+    "content": "yeah no go in ie6 windows for me... kind of pissed I didn't test it on the site beforehand. :("
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-04-09T15:06:16.000Z",
+    "content": "the technique has been improved drastically since its discovery. You should be able to find better code in AttackAPI. Nevertheless, the current version of AttackAPI is a bit broken. I will try to fix it at some point in the future when I have got some time."
+  }
+]

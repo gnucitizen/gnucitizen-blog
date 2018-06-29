@@ -1,0 +1,98 @@
+[
+  {
+    "author": "Ben Bucksch",
+    "avatar": "8c5548eb0b2b80924f237953392df5e7",
+    "date": "2007-02-13T01:42:37.000Z",
+    "content": "<blockquote>Mozillaâ€™s Bugzilla back then and still, none has fixed it.</blockquote>\r\n\r\nNot correct. As mentioned in https://bugzilla.mozilla.org/show_bug.cgi?id=370092 and on FD, the big was fixed on Firefox trunk, before these reports. It's not yet on the Firefox 2 branch."
+  },
+  {
+    "author": "Paul Rawdon",
+    "avatar": "f852d08a4aff0fda77f4c7ce3026180b",
+    "date": "2007-02-13T08:56:19.000Z",
+    "content": "Re your vulnerabilities for Fire Fox and Internet Explorer 7. Have just tried the test with Internet Explorer 6 and Sea Monkey 1.0.7 (the replacement for Mozilla) and the same applies for these two as well. Fire-Fox's replacement Minefield appears to be immune to this problem."
+  },
+  {
+    "author": "Luca",
+    "avatar": "70f3624e5141ce2f2641a779497d3bcb",
+    "date": "2007-02-13T10:00:45.000Z",
+    "content": "The latest Firefox released to the public is 2.0.0.1 and it's vulnerable. So the flaw is still unpatched!"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-02-13T11:09:50.000Z",
+    "content": "I am experimenting with Opera. It seams to be vulnerable too, although I don't have a working exploit right now."
+  },
+  {
+    "author": "Mephisto",
+    "avatar": "2965c85564924dfc952ed5d364425938",
+    "date": "2007-02-13T19:00:40.000Z",
+    "content": "This is not good! This is the 2nd browser vulnerability in the last month that has allowed local file access. Well, actually the 3rd if you count the FireFox popup blocker issue as well."
+  },
+  {
+    "author": "Andrew",
+    "avatar": "302beb62dc6f2f47acc9e3bbe2fe4f34",
+    "date": "2007-02-13T22:59:57.000Z",
+    "content": "Firefox has many more security vulnerabilities:\r\n\r\nwww.FirefoxMyths.com"
+  },
+  {
+    "author": "Sebastian",
+    "avatar": "68af617b4ca087422d8d9b35732f678a",
+    "date": "2007-02-14T10:00:57.000Z",
+    "content": "There are only very few websites that _require_ JavaScript, so I have disabled JavaScript by default. Most serious browser vulnerabilities were, are and will be based on active contents like JavaScript, JScript, Java, ActiveX, Flash etc."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-02-14T13:29:30.000Z",
+    "content": "OK folks, I cannot reproduce the bug in Opera, although sometimes I get the feeling that it is possible. It seams that Opera is in fact the most secure browser, or maybe I am wrong.\r\n\r\nAnyway, I will continue experimenting with my code and if I find anything interesting, I will post it here. Thanks."
+  },
+  {
+    "author": "AC",
+    "avatar": "cd668b5d3b0b60de64704c1eee4cc1e2",
+    "date": "2007-02-16T06:25:27.000Z",
+    "content": "Oh god Andrew, if you want to critisize software, at least use a source from a non-zealot then. This guy tries too hard to be one."
+  },
+  {
+    "author": "John Dowdell",
+    "avatar": "120f6678dc7990a340d3ad465602bfd3",
+    "date": "2007-02-19T07:47:41.000Z",
+    "content": "Thanks for the catch... \"don't type lots on strange sites\", I guess that's the takeaway.... :(\r\n\r\nI don't know about Apollo... it's still in development. It will use the WebKit rendering engine, as Apple's Safari does, but I don't know the local file permissions system myself yet. A public release is still a bit aways, but such focus transfers would be a good thing to doublecheck, thanks.\r\n\r\njd/adobe"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-02-19T15:15:44.000Z",
+    "content": "Thanks John. Is it possible to have a copy of the Apollo engine? I might be able to spot some problems that can be fixed before the actual release. I am a bit busy right now, but it will be interesting if we can do that."
+  },
+  {
+    "author": "John Dowdell",
+    "avatar": "120f6678dc7990a340d3ad465602bfd3",
+    "date": "2007-02-19T16:27:53.000Z",
+    "content": "There will be a public release soon, but it's not here yet... http://www.adobe.com/go/apollo will redirect to the best page for latest info.\r\n\r\ntx, jd/adobe"
+  },
+  {
+    "author": "sigma",
+    "avatar": "2edb06fde747554fffdea71f2f81b2d8",
+    "date": "2007-02-20T21:06:30.000Z",
+    "content": " : I would lower the opacity of the browser logos to make it more realistic :)\r\n\r\ncheers!"
+  },
+  {
+    "author": "sigma",
+    "avatar": "2edb06fde747554fffdea71f2f81b2d8",
+    "date": "2007-02-20T22:07:37.000Z",
+    "content": "\"kind of off-topic: \" (was removed from the upper comment because I used \"great than\" and \"lower than\" ^^ ) - tighten the filters eh pdp ?  :) "
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-02-20T22:09:05.000Z",
+    "content": "not really"
+  },
+  {
+    "author": "a064c4b89718",
+    "avatar": "d41d8cd98f00b204e9800998ecf8427e",
+    "date": "2008-05-07T20:42:34.000Z",
+    "content": "<strong>a064c4b89718</strong>\n\na064c4b89718d00cfb93"
+  }
+]

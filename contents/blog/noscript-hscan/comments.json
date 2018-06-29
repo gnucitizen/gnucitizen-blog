@@ -1,0 +1,38 @@
+[
+  {
+    "author": "anonymous",
+    "avatar": "fcaae4cce015a80ca9d013888cb183dd",
+    "date": "2007-03-01T10:38:43.000Z",
+    "content": "The PHP download unfortunately gets parsed thus we can get the output, but not the download. You'll have to change the extension ot pack it into a TAR/ZIP file if you want people to download it.\n\nThanks a lot!"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-03-01T10:40:16.000Z",
+    "content": "That's the purpose of it. You can use it straight from here... no need to download."
+  },
+  {
+    "author": "Joe",
+    "avatar": "5c4f68132e344371b8ec9545ced719ee",
+    "date": "2007-03-01T22:35:03.000Z",
+    "content": "nice tool, thank you"
+  },
+  {
+    "author": "Franck",
+    "avatar": "049995fad6ad37c27bccef86ab1f80b7",
+    "date": "2007-06-06T00:37:45.000Z",
+    "content": "Doesnt work here. Not in IE neither FF. I am seeing 'v' characters as output. This is supposed to mean 'visited'? But I never visit those sites. Even a fake url shows up as 'v'. So I don't get this.."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-06-06T18:54:34.000Z",
+    "content": "Visited sites will show up as pink Vs while not visted sites will show up as simle blue Vs. See the generated CSS for more information how it works."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-02-08T18:47:08.000Z",
+    "content": "and now you can download the code."
+  }
+]

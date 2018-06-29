@@ -1,0 +1,32 @@
+[
+  {
+    "author": "Andre Gironda",
+    "avatar": "9e5ead8d196682f52a67382794809efa",
+    "date": "2009-02-25T12:45:04.000Z",
+    "content": "I disagree.  There is:\r\n\r\nTesting\r\nInspection\r\n\r\nTesting has Dynamic analysis, white-box testing (full knowledge), black-box testing, gray-box testing (see: OSSTMM 3.0 for more details), experience-based testing (which you speak against), and defect-driven testing (which Gareth Hayes has mastered with XSS and which Bernardo Damele A. G.has mastered with SQLi - and which Shreeraj Shah has mastered with basically everything else).\r\n\r\nInspection has static analysis + another called \"review\".\r\n\r\nYour \"Persistence\" is really something else called \"Completeness\" in my eyes.  I also feel that experienced-based testing is the most important, which is why tools fail us (imagine imperfect software failing at testing imperfect software!).  I have found bugs just by looking at a web page and saying \"that's a bug!\" that nobody else would ever see.  Ask the tssci-security team + others that I probably can't and shouldn't name.\r\n\r\nSo for you to dismiss experience-based testing seems to demonstrate (to me) that you don't have enough experience.  This isn't a knock, but defect-driven approaches and focusing too much on other areas (which you are clearly highly intelligent about) may blind you to the overall \"big picture\" stuff.\r\n\r\nCurphey wrote an article about the Security Gene, so this was already discussed (and I think at the time, I didn't agree with either of you), but it's an interesting conversation topic.  Thanks."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-02-25T13:10:03.000Z",
+    "content": "I see what you are saying and I am not disagreeing that experience is important. I am simply mentioning that finding vulnerabilities (not penetration testing), when time is not an issue, does not require anything else apart from persistence."
+  },
+  {
+    "author": "triggerzdown",
+    "avatar": "3dcfdb3995b5da1e62bb2db1ea54900b",
+    "date": "2009-03-03T15:44:06.000Z",
+    "content": "Yes this is correct the more you dabble and research on a topic the more you will find out. But experience does have a factor in this. So to all you researchers just keep on searching and trying new things and something is bound to happen.\r\n\r\n-triggerzdown"
+  },
+  {
+    "author": "hartog",
+    "avatar": "d7ab3cfa2161dd46283b929d3713d850",
+    "date": "2009-03-06T14:47:04.000Z",
+    "content": "Totally agreeed! I dont know much about cryptography but I did find a flaw in a crypto module of Ruby. See my blog article (http://www.coffeeaddict.nl/blog/20090306/171/) for the full story"
+  },
+  {
+    "author": "stephen",
+    "avatar": "dccf9fa305b0bacdd31e49d2a350b5ef",
+    "date": "2009-03-26T02:27:44.000Z",
+    "content": "Most people stumble and bumble around and bounce into vulnerabilities. Some use a toolbox of strategies in a particular order. Some use a toolbox in no particular order. \r\n\r\nWhilst others still can almost KNOW what the vulnerabilities are before they delve down deep inside. A kind of sixth sense (intuition)- is what they have.\r\n\r\nWhen you research the psychology of analysts you begin to understand just how deep some can get into this zone. Why they can is the most interesting story of all."
+  }
+]

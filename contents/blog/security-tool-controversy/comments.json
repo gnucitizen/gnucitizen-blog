@@ -1,0 +1,50 @@
+[
+  {
+    "author": ".mario",
+    "avatar": "89886495b27cfdc78593e1f5c8810594",
+    "date": "2007-07-11T07:00:50.000Z",
+    "content": "This not exactly correct. The critical part of the new article is Â§202c.\r\n\r\nQuote from heise.de:\r\n\r\n<blockquote>Danach soll die Vorbereitung einer Straftat durch Herstellung, Beschaffung, Verkauf, Ãœberlassung, Verbreitung oder ZugÃ¤nglichmachen von PasswÃ¶rtern oder sonstigen Sicherheitscodes fÃ¼r den Datenzugang sowie von geeigneten Computerprogrammen kÃ¼nftig mit Geldstrafe oder Freiheitsentzug bis zu einem Jahr geahndet werden.</blockquote>\r\n\r\nHere's a machine-translated version: http://66.249.91.104/translate_c?hl=en&amp;langpair=de%7Cen&amp;u=http://www.heise.de/newsticker/meldung/92334\r\n\r\nBut what the heck are <q>Sicherheitscodes</q>. Even as German I am not able to get the meaning of the word - so as long as the article stays as interpretable as the bible we have to wait for the first precedence case to occur. Bitter.\r\n\r\nGreetings,\r\n.mario"
+  },
+  {
+    "author": "David Kierznowski",
+    "avatar": "1d95d2324345e3dd2e41d6066cc1b492",
+    "date": "2007-07-11T09:18:56.000Z",
+    "content": "Mario, thanks for the correction. Maybe you could translate the crux of it, Google doesn't do a great job :)"
+  },
+  {
+    "author": ".mario",
+    "avatar": "89886495b27cfdc78593e1f5c8810594",
+    "date": "2007-07-11T10:31:34.000Z",
+    "content": "Translation: \"The preparation of a crime via assembly, acquisition, disposal, abandonment, distribution or enabling of accessibility of passwords or miscellaneous security codes for data access as well as via suitable software tools will be avenged with penalty or imprisonment (one year maximum)\"\r\n\r\nThe relation between tool and crime is pretty clear but at which point is the tool-author responsible? \r\nThe old kitchen-knife dilemma?"
+  },
+  {
+    "author": "Aodhhan",
+    "avatar": "613720a7bae4ce9b3c7a536782671ee9",
+    "date": "2007-07-11T13:02:03.000Z",
+    "content": "I believe legislation needs to focus on intent or motive of a person/act rather than a tool. Due to the breadth of application development, focusing on applications/tools will lead to many gray lines and inconsistencies. \r\n\r\nMost countries allow the use of hammers and large screwdrivers. Two tools which can be used to get passed physical security barriers. While these two tools may not be used in this manner by you and I, to some, they are considered the right tool for this particular job.\r\n\r\nAs security professionals, we should actively educate and lend technical support to legislators so they understand proper rationale. They are not the experts in this area, and ignorance will lead to problems. I encourage you to get involved and be heard, no matter what side you may fall on this issue. \r\n\r\nIf you are content in letting others make this decision without your involvement; don't get upset later when laws are enacted contrary to your beliefs."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-07-11T13:45:55.000Z",
+    "content": "\"Due to the breadth of application development, focusing on applications/tools will lead to many gray lines and inconsistencies.\"\r\n\r\nI couldn't agree more with Aodhhan. The question here is what makes the so called \"hacking tools\". \r\n\r\nMany of us believe that there is NOT such as thing as a hacking tool. Even the most intrusive tool such as a password bruteforcer could be used as a legitimate tool used for password autiding purposes. At the end of the day it's about semantics and using language to manipulate thinking. i.e.: password cracker versus password autiding tool\r\n\r\nFor all I know even default Windows commands such as the \"net\" commands could be considered \"hacking tools\"."
+  },
+  {
+    "author": "David Kierznowski",
+    "avatar": "1d95d2324345e3dd2e41d6066cc1b492",
+    "date": "2007-07-11T14:35:22.000Z",
+    "content": "<blockquote>\r\nPlaying Devils Advocate:\r\n</blockquote>\r\n\r\nAdrian if I liken Aodhhan's hammer and screwdrivers to OS tools like telnet, tftp and net, then banning other security tools still makes sense :)"
+  },
+  {
+    "author": "Aodhhan",
+    "avatar": "974ac8c18883e0dd81b576e0efdd242e",
+    "date": "2007-07-12T13:01:40.000Z",
+    "content": "I would consider applications incorporated with an operating system as \"features\" not security tools. Metaphorically, they would be equal to having a key/smart card to the locked door, thus wouldn't require a hammer/screwdriver."
+  },
+  {
+    "author": "nem",
+    "avatar": "d3177f284e5e5ade2b9ee9c8070f7732",
+    "date": "2011-11-09T12:37:23.000Z",
+    "content": "The second I read the original article (i'm german), i just sat back relaxed and smiled. As Mario already pointed out, its open to interpretation. The strongest point here is: \"... intention ...\". So if i create a tool to breach security, in order to abuse it, its illegal. Do create it, claiming its a security testtool its big grins all the way :-)"
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "author": ".mario",
+    "avatar": "e53f5d616931bfe8fa74bfd9f72e049e",
+    "date": "2007-08-02T09:20:19.000Z",
+    "content": "Hi David!\r\n\r\nLooking awesome - are you planning on releasing basic documentation or a hands-on tutorial?\r\n\r\nGreetings,\r\n.mario"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-08-02T09:22:38.000Z",
+    "content": "I am currently working on the sandbox for Technika which was removed in version 0.1 due to the overhead in the code structure. The new sandbox will allow us to write cross-browser bookmarklets which do no interfere with the underlaying DOM. We can use this feature to include additional functionalities for the scripts such as support for command line options :). It will be cool to have something like unix shell that works straight from the browser, something that Technika is aiming to achieve."
+  },
+  {
+    "author": "David Kierznowski",
+    "avatar": "1d95d2324345e3dd2e41d6066cc1b492",
+    "date": "2007-08-02T09:27:05.000Z",
+    "content": "mario, the delay in releasing this post was my attempts at being a movie director. I would still like to have a movie demonstrating the features, but yes when we launch v1.0 we'll have some basic documentation.\r\n\r\npdp, this option would definately rock! we also may want to put t_httprequest for cross-domain requests back in, I think we took it out."
+  },
+  {
+    "author": "Gareth Heyes",
+    "avatar": "7f5964ed9f043821b46150632596ed9a",
+    "date": "2007-08-02T09:51:41.000Z",
+    "content": "Cool work! I can't until it's finished"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-08-02T09:56:27.000Z",
+    "content": "yep, I took it out because I don't want people to abuse it too much. I think that we don't really need it. I cannot think of a situation where we really need this feature. After all, if we need data from external site we can simply call via JSON."
+  },
+  {
+    "author": "David Kierznowski",
+    "avatar": "1d95d2324345e3dd2e41d6066cc1b492",
+    "date": "2007-08-02T10:52:57.000Z",
+    "content": "pdp, yes JSON is cool, we do this with Google queries, but I can think of a few ideas where it may be useful to allow cross-domain: we can chat offline about it and weigh up if we really want to put it back in.\r\n\r\nGareth, me too, its becoming expensive keeping my miss happy while developing it the last 2 weeks :-)"
+  },
+  {
+    "author": "inc",
+    "avatar": "45869e915ef6496087604aa4bd2e71ed",
+    "date": "2007-08-02T13:02:14.000Z",
+    "content": "Well well, what can I say can't wait to give this a spin. Looks to be very promising and useful."
+  },
+  {
+    "author": "David Kierznowski",
+    "avatar": "1d95d2324345e3dd2e41d6066cc1b492",
+    "date": "2007-08-02T15:42:31.000Z",
+    "content": "inc, well we hope so. I have tried developing the toolkit while doing actual web application security testing, so it supports alot of funky little features like, tech.keepalive, which allows you to keep your session alive while checking e-mail, or if you pop off somewhere."
+  },
+  {
+    "author": "Gareth Heyes",
+    "avatar": "7f5964ed9f043821b46150632596ed9a",
+    "date": "2007-08-02T20:11:42.000Z",
+    "content": "David I know what you mean :)\r\n\r\nMy LAN scanner caused a bit of problems with my missus"
+  },
+  {
+    "author": "rezn",
+    "avatar": "5d1658ac36692c8b5ff5612aa9d6a837",
+    "date": "2007-08-05T11:59:40.000Z",
+    "content": "Is there any hope for something that will work in IE?  Many web applications will not work at all in firefox.  I understand that FireBug is an excellent tool, but a bookmarklet-injectable cross browser version of TSF would be very useful.  For some ideas, check this out: http://extjs.com/deploy/ext/examples/debug/debug-console.html\n\nAlso, vaporware is so Web 1.0.  Release something already."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-08-05T12:12:38.000Z",
+    "content": "rezn, I don't see why it should be possible. We are working on the framework building system at the moment. So we can features to export the bookmarklets for whatever browser version we want to. Give us some time and we will come up with good enough solution. Cheers."
+  },
+  {
+    "author": "David Kierznowski",
+    "avatar": "1d95d2324345e3dd2e41d6066cc1b492",
+    "date": "2007-08-05T13:18:21.000Z",
+    "content": "Thats the awesome idea of TSF, not only is it possible to port alot of tools for IE, but it also has potential for testing other applications outside the browser, as JavaScript is supported by a number of other frameworks."
+  },
+  {
+    "author": "mr.r.birtles",
+    "avatar": "8c8d38091ac5bee13439a3ed7fa88ab4",
+    "date": "2008-07-17T01:34:03.000Z",
+    "content": "When can we expect to see a working version where exploits can be ported/implamented in Technika. As well as haveing the functions such as techStore, techDspider, techMutate etc?\n\nThanks"
+  }
+]

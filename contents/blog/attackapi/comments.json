@@ -1,0 +1,62 @@
+[
+  {
+    "author": "Jan Novak",
+    "avatar": "8862261236a7a21068cab35e59ef929b",
+    "date": "2007-03-17T17:11:03.000Z",
+    "content": "i'd like to test this api"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-03-17T17:57:55.000Z",
+    "content": "sure, give it a go. If you find any problems with it please post them <a href=\"http://code.google.com/p/attackapi/issues/list\" rel=\"nofollow\">here</a>. Thanks."
+  },
+  {
+    "author": "f0rg3",
+    "avatar": "36fabb8d0362fd3cff2662c6bab1596c",
+    "date": "2007-05-22T02:09:21.000Z",
+    "content": "I'm really banking alot of the future of web  application security on XSS, As in i'm staking my career on it. Sure BUffer overflows are still gonna exist and teh skillz are requisite but xss is the future and any hacker worth his salt should know about this. thanks Mr pdp, you are an invaluable resource/person. Big Up."
+  },
+  {
+    "author": "rootkid",
+    "avatar": "8288f51796514beb3c57314ebcfa5423",
+    "date": "2007-06-27T13:16:51.000Z",
+    "content": "pdp, I really like your library so far, helped me a _LOT_ developing my own stuff. At the moment I am pretty much stuck here with a problem regarding execution of an AttackApi script in an IE 6 environment. Is there anything like a chat or forum which can be used for problems like this (I'd rather do it this way than posting it to code.google.com, as I am not sure if this really is an issue or simply stupidity of me). I'd really like to see a AttackAPI community out there..:)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "711f58b095c5a8b45419d3e94df1129e",
+    "date": "2007-06-27T13:31:36.000Z",
+    "content": "rootkid, I've created <a href=\"http://groups.google.com/group/attackapi\" rel=\"nofollow\">AttackAPI Google group</a>. Feel free to post your stuff there. I would like to build community around the library too since V3 looks very promising in terms of new features. I am not sure whether I discussed this thing somewhere else, but AttackAPIv3 has features to export the most basic set of requirements for each attack payload."
+  },
+  {
+    "author": "zaib",
+    "avatar": "11a1164bee690aa4030e61f4124cf1bf",
+    "date": "2008-08-29T07:08:46.000Z",
+    "content": "Where to download attackAPI package because this link http://www.gnucitizen.org/blog/attackapi/AttackAPI.zip\r\n\r\nis showing \"Not Content Found\" message ?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-10-10T08:00:02.000Z",
+    "content": "I know! The project has been broken for long time. I hope that it is not dead. I will put it as a <a href=\"http://www.houseofhackers.org\" rel=\"nofollow\">HoH</a> initiative to see if people will pick on it and expand it."
+  },
+  {
+    "author": "meandmine",
+    "avatar": "a9c8abf90d90c7741eb66c0c9ffd3ae1",
+    "date": "2009-09-29T10:28:55.000Z",
+    "content": "I was wondering, since I can't download the code to help improve the code to in turn help others, why have the code up on google code? \r\n\r\nIt's a simple thing to bookmark the page and plagiarize your work, no?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-11-09T23:17:49.000Z",
+    "content": "meandmine, we use google code because it is simple and it does the job."
+  },
+  {
+    "author": "Stefan",
+    "avatar": "02a05e766e107f0e99ad88e24eede36d",
+    "date": "2013-02-02T17:50:40.000Z",
+    "content": "Has the attackAPI project been discontinued? I can't find anywhere to download it?\r\n\r\nThanks!"
+  }
+]

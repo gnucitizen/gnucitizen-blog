@@ -1,0 +1,20 @@
+[
+  {
+    "author": "Seth Fogarty",
+    "avatar": "885f0d954ac7d5a5a00a58102896d3c1",
+    "date": "2008-07-28T19:29:18.000Z",
+    "content": "Is there any way to unindent a code block: I.E. so as to enter\r\n\r\n<pre><code>if x == 5:\r\n  ... x = 2\r\nelse:\r\n  ... x = 3</code></pre>\r\n\r\n?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-07-29T15:52:26.000Z",
+    "content": "hmmm, I might need to dig into the code"
+  },
+  {
+    "author": "Brian",
+    "avatar": "7c046b6ab0711ba38428f837be68b026",
+    "date": "2009-12-25T17:10:32.000Z",
+    "content": "I can't seem to get the app to load correctly in my browser. I get a \"Exception: java.lang.ClassNotFoundException: AppletConsole\"  And I'm pretty sure I have appletconsole in the right dir ;)"
+  }
+]

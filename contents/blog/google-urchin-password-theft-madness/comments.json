@@ -1,0 +1,32 @@
+[
+  {
+    "author": "MustLive",
+    "avatar": "997a9fa55e557e2aa8262a07758b161d",
+    "date": "2007-09-25T01:17:27.000Z",
+    "content": "Adrian.\r\n\r\nAs I wrote at my site month ago (http://websecurity.com.ua/1283/) about this XSS hole  in Urchin, RSnake already wrote about this hole. Like you also mentioned about. But as I and RSnake wrote, there is not only XSS, but also Authorization bypass vulnerability in Urchin. Which give possibility to look at statistic without any login and password!\r\n\r\n<blockquote>I know that youâ€™re sick of XSS PoCs that only open alert boxes.</blockquote>\r\nI'm not, I like alert boxes :-), especially alert(document.cookie).\r\n\r\nNevertheless, man, nice XSS PoCs and video ;-)."
+  },
+  {
+    "author": "djteller",
+    "avatar": "44c5e290ccf283471210752d0b1ed6df",
+    "date": "2007-09-25T10:00:23.000Z",
+    "content": "Nice work man.\r\nSorry about the credit issue, but dont worry, you got our respect."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-09-25T10:11:03.000Z",
+    "content": "Hi MustLive:\r\n\r\nCopied and pasted from this very same post:\r\n\r\n<blockquote>I reported the issue to Google back on Jul 25 and was confirmed by their security team. They are now working on a fix. My original plan was to publish this info after a fix would be released. However, the issue has also been found by other folks about a month ago.</blockquote>\r\n\r\nIn other words, I do mention that it's been publicly made a month ago by others, but ALSO that I reported it to Google 2 months ago and that I was waiting for them to fix it BEFORE making it public."
+  },
+  {
+    "author": "MustLive",
+    "avatar": "997a9fa55e557e2aa8262a07758b161d",
+    "date": "2007-09-28T20:14:48.000Z",
+    "content": "Hi Adrian!\r\n\r\nNo need to paste your words, I read your whole post carefully ;-). I understand that you was first who found this hole and I believe you (and Google also know that you was first who tell them about this XSS). Some people who found this hole after you outstrip you with disclosure, but you was the first discoverer, so you have respect of me and security community.\r\n\r\nI understand you with this situation, when other guys officially disclosed your hole before you. This incidents sometimes happens in webappsec world. I regularly have such experience, when people disclosing holes which I first discover before me, or when people disclosing holes many months after my disclosure.\r\n\r\nWhat I wrote in my previous comment (and what I wrote at my site), that there is another hole in Urchin. It is Authorization bypass vulnerability (which as I know was found by RSnake and you didn't mention it in your post). This one gives possibility to enter into account without any login and password. It is also interesting hole as your XSS."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-09-28T21:56:16.000Z",
+    "content": "Hey MustLive,\r\n\r\nThanks for your kind words, very much appreciated!\r\n\r\nI did read about the unauthenticated access issue and left my comments here: http://ha.ckers.org/blog/20070823/xss-and-possible-information-disclosure-in-urchin/\r\n\r\n<blockquote><p>Back in July, when I was searching some examples in Google also noticed that some sites have the Urchin stats wide open, but I thought this was a configuration problem as opposed to a bug.</p>\r\n\r\n<p>Are you guys sure there is a <q>authorization bypass hole</q>?</p></blockquote>\r\n\r\nMustLive, is this a 100% verified issue? Have you guys replicated this in a lab environment? I can't make it work on my test installation."
+  }
+]

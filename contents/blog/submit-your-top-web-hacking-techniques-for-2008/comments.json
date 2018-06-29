@@ -1,0 +1,62 @@
+[
+  {
+    "author": "jeremiah",
+    "avatar": "28f6d5b6029f06972752b5fe980cc5a8",
+    "date": "2009-01-30T01:45:42.000Z",
+    "content": "I'd preferred to have an open voting system decide the eventual outcome, if fact, this is what I did the last time. However, when doing this in the midst of a bunch of Web hackers, its a bit easier said than done. :) What if we used a public voting system create a short list and let the judges order the final 10. Or, perhaps the other way around?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-01-30T10:32:03.000Z",
+    "content": "I don't know J :) Saying this is like saying that there is no point of securing Web Application as they will get hacked eventually. I think that it can be done and it can be made secure too. Here is something that wont be easy to trick.\r\n\r\n<pre><code>Recaptcha + Email Verification = Vote you should be able to trust!</code></pre>"
+  },
+  {
+    "author": "torstein",
+    "avatar": "ebc3e23042ec62e09ddd910a1fa12b8b",
+    "date": "2009-02-01T14:12:50.000Z",
+    "content": "If you - of all people - can't secure a webapp, Jeremiah, how can you expect anyone else to?\r\n\r\n(no offence)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-02-01T19:26:56.000Z",
+    "content": "sometimes security experts are just keen on not taking the risk so that they can have clean names :) although we all know that people make mistakes, regardless how good they are. it is a proven fact."
+  },
+  {
+    "author": "Jeremiah",
+    "avatar": "28f6d5b6029f06972752b5fe980cc5a8",
+    "date": "2009-02-01T21:47:13.000Z",
+    "content": "There were a couple of factors that went into my decision for this year. And remember, last year I did an open vote system via survey monkey.\r\n\r\n1) Ballot stuffing last year was a real problem. My decision had nothing to do with the \"security\" of a site, but a lot more to do with the amount of workload involved.\r\n\r\n2) While we got results last year I felt were representative of the communities vote, myself and several others did not feel it was accurate. At least a couple very powerful attacks were left off the list and should have easily overtaken others. \r\n\r\nSo for this year I felt it would be better to leave it to a solid panel of experts that could fully investigate the merits of the attacks to come up with a better list. Will it be perfect? No, of course not, impossible to make everyone happy. Will it be better than last year? Yes, that is my hope."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-02-01T23:34:27.000Z",
+    "content": "J,\n\nwhy didn't you form an internal group/mail list of experts, 30-50 people, to form the list of web hacking techniques and decide between each other which one is the best? that way, the whole thing will be consistent from start."
+  },
+  {
+    "author": "Jeremiah",
+    "avatar": "28f6d5b6029f06972752b5fe980cc5a8",
+    "date": "2009-02-02T02:29:51.000Z",
+    "content": "Is that a subtle way of saying you want on the judges panel? ;) I would have asked you actually, but you were in the running for the top ten. Needed to limit bias. Would have also been the case for the \"30-50\" others likely. That's why no RSnake and a bunch of other researchers. \r\n\r\nHad to choose some solid security people with some webappsec background."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-02-02T16:18:24.000Z",
+    "content": "haha :), ok, ok... I understand that it may look like that but this is definitely not the case :) just trying to improve the way these things are handled in the future. and there is alway room for improvements. I am interested what the judges will come with."
+  },
+  {
+    "author": "XanthiX",
+    "avatar": "409b075db3e2f4a2c0612dfdee727f22",
+    "date": "2009-02-07T01:31:12.000Z",
+    "content": "From my personal point of view the top web hacking technique for 2008 is XSS via Adobe Flash which is still active in current version of Adobe Flash pluggin. I have successfully tested XSS keylogger  via this attack vector and in my opinion this vector has potential to become very dangerous for the future, if not fixed."
+  },
+  {
+    "author": "LonerVamp",
+    "avatar": "1e41c58e98f24908060130e58333e07a",
+    "date": "2009-02-13T18:10:58.000Z",
+    "content": "Kinda like asking one person or even a team of people to secure everything in a company, you can't ask one person, team, group of judges, or even a general representation of your traffic/hits to poop out a list of the best things.\r\n\r\nThere will always be some person or group of another pdp who feels slighted or does not agree with the weighting or feels something was left out of wrongly included. Let alone getting respectful concensus inside the group itself! \"Bah, take my name off the list because I disagree!\"\r\n\r\nI think that's going to be the nature of something like a list of top hacks or techniques or issues.\r\n\r\nBy the way, democracy does not always work. I would much rather have a good panel of judges rather than the dirty masses of the public...\r\n\r\nThe best I hope for in lists like this are as follows:\r\n- eventual consistency (in scope and definitions)\r\n- possible information that I didn't know before\r\n- opinions from experts on what I should care about in my enterprise\r\n\r\nThat actual ordering or bragging rights on things like this are not important and will forever be open to debate by everyone."
+  }
+]

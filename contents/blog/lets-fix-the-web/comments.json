@@ -1,0 +1,50 @@
+[
+  {
+    "author": "just me",
+    "avatar": "fee778a87c72dfd3dc36f3b4f19765b7",
+    "date": "2008-08-31T09:50:05.000Z",
+    "content": "Your ideas are very good, I wonder if a similar thing can be done for other commonly used web site applications, such as phpNuke and Invision Power Board"
+  },
+  {
+    "author": "mindcorrosive",
+    "avatar": "be3b138352dc100c9459e612b275b413",
+    "date": "2008-08-31T12:29:12.000Z",
+    "content": "Your ideas, of course, suggest that the users are educated about secure browsing and are impenetrable to stupidity - which is hardly the case, considering the amount of non-technical privacy and security breaches we see these days. \r\nThe power users already know how to fix the things and do not need much more security - it's all the others irresponsible individuals that need to be educated in the first place, instead of trying to invent an imaginary fool-proof technology.."
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2008-08-31T13:06:30.000Z",
+    "content": "It's worth it mentioning that if someone is in the same Wi-Fi network as you, SSL alone won't protect you against session hijacking:\r\n\r\nhttps://www.defcon.org/html/defcon-16/dc-16-speakers.html#Perry\r\nhttp://enablesecurity.com/2008/08/11/surf-jack-https-will-not-save-you/"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-08-31T18:20:31.000Z",
+    "content": "just me, yes!\r\n\r\nmindcorrosive, you are right but this is exactly why some mainstream applications like GMail and Yahoo Mail will be protected by default. Also, I am thinking that the browser should ask you how much you trust the current network, every time the network settings change.\r\n\r\nadrian, why not? we force SSL, we compare the self-signed signatures against a list of SHA1 collected while being on a trusted network, we force <code>secure</code> and <code>httpOnly</code> cookies. this setup should make you feel save even on very unsafe networks."
+  },
+  {
+    "author": "pepe",
+    "avatar": "c4e8bfccc476a6ac99cbf85737a2b25b",
+    "date": "2008-08-31T19:53:11.000Z",
+    "content": "yeah...lets make millions of websites, millions of lines of code secure by telling everyone what rules they should obey...it worked so well for open smtp relays..it works so well for phishing...\r\n\r\nLets just list all the things that could break and implement a measure against it. It works so well with AV software suites...\r\n\r\nIts good to be in the security field: Everyone constantly assures that there's new work to do next week.."
+  },
+  {
+    "author": "mindcorrosive",
+    "avatar": "be3b138352dc100c9459e612b275b413",
+    "date": "2008-08-31T20:32:31.000Z",
+    "content": "pdp: still, it boils down to \"trust\". How much do you trust your ISP? Your government? Yahoo and Google, for that matter?\r\nWithout a trusting model from the bottom up, it is impossible to guarantee security - it is simply \"security by obscurity\", i.e. malicious crackers lack the sheer labor force to harvest the web and the average inhabitants at large scale, giving the imagery of \"security\". Please note that I don't underestimate your efforts in that respect, I just point out what is probably obvious to everyone.\r\n\r\nI agree that secured connections are the way to go, but what good is an 4096-bit SHA-1 encrypted SSH connection to a non-trusted host?\r\n\r\nI would suggest that both parties need to identify each other - both the server and the client. What is done today is server-side only, in most occasions. Client-side is still dependent on the human factor - and that probably constitutes the largest share of security breaches these days. Why not issuing a government-signed certificate to everyone - the way we get ID papers? Of course, that creates more problems along a way, but might be a solution in the near future."
+  },
+  {
+    "author": "Jeff Williams",
+    "avatar": "c26704aa7b55355611d52834c44d7d1d",
+    "date": "2008-09-01T03:32:24.000Z",
+    "content": "It's not easy to do all of the things in your list in some environments. The OWASP ESAPI project is defining an security API that encourages developers to do these things. The Java implementation has been released for almost a year, and the .NET and PHP implementations are in progress."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-09-01T12:16:49.000Z",
+    "content": "mindcorrosive, well you cannot be 100% sure but you still trust some networks more then others. the plugin will detect if you are changing network settings and thus will ask you how much you trust the network you are in. if you are not trusting it as much as your home network then the plugin will match any data it gets from the web apps you are visiting against a trusted model built previously. I think that it makes sense.\r\n\r\nJeff, I think that the project is very interesting but I doubt that you will be able to force it on developers. WebApp firewalls are such a hot topic at the moment simply because you don't have to deal with developers. They are not perfect but provide that transparency that satisfies most people. My proposal for this firefox extension aims to do to the client-side what webapp firewalls do for the server-side. No more then that - a simple, elegant, yet effective solution."
+  }
+]

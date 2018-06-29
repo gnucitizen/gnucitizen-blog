@@ -1,0 +1,206 @@
+[
+  {
+    "author": "Mark Livesey",
+    "avatar": "cf8e190883e12b1ef1df32007659dacd",
+    "date": "2008-05-21T13:27:21.000Z",
+    "content": "Cheers mate. Is the MDAP proprietary Thomson like CLI? Could this protocol lead to a UDP attack? Anyway, it gets harder with each firmware revision so at least BT 2 million plus HomeHub users are eventually getting a secure product."
+  },
+  {
+    "author": "Stephen",
+    "avatar": "7900a7c7a83f32c569fab55cfa7b424a",
+    "date": "2008-05-21T22:30:10.000Z",
+    "content": "Good work guys at finding another hole in the BT Home Sieve.  I can confirm this works from the LAN on my BTHH v15."
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2008-05-22T11:20:48.000Z",
+    "content": "@Mark: yes, MDAP is a Thomson proprietary protocol. I will talk more about it in a upcoming post. Getting harder? At this moment all BT Home Hubs can be turned into zombie routers via relaxed UPnP port-forwarding functionalities. All you need is to get a Home Hub user visit your evil page. Furthermore, there are about 3 million BT Home Hub Wi-Fi networks that can be broken into trivially.\n\n@Stephen: thanks a lot for testing this attack. We can now confirm that it works on the latest firmware for both the BT Home Hub v1 and v1.5. I'm assuming that you're running firmware version 6.2.6.E?"
+  },
+  {
+    "author": "mohclips",
+    "avatar": "1a7936bde6a37825bb2976e313172af1",
+    "date": "2008-05-22T20:41:06.000Z",
+    "content": "I take it this is a wired attacked rather than a wireless one?"
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2008-05-23T19:19:41.000Z",
+    "content": "@mohclips: copied and pasted from this post:\r\n\r\n\"Yes, you must already be part of the LAN where the Home Hub is present, either via ethernet or via Wi-Fi. However, at GNUCITIZEN, we have demonstrated trivial ways to predict the WEP encryption key of the Home Hub if you know what you are doing. In summary, there are two ways to break into a BT Home Hub Wi-Fi network: [snip]\""
+  },
+  {
+    "author": "^o^",
+    "avatar": "d89d81f673dac06b16cade5b4bf19954",
+    "date": "2008-05-24T00:42:31.000Z",
+    "content": "Amazing, may i ask how did you find this vulnerability? was it by sniffing?"
+  },
+  {
+    "author": "Daily Telegraph",
+    "avatar": "88b87698be0bc461f3cacf1f080929d5",
+    "date": "2008-05-26T13:27:22.000Z",
+    "content": "Your BT home hub pwning made the front page of today's Daily telegraph in the uk."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-05-26T14:37:19.000Z",
+    "content": "are you talking about <a href=\"http://www.telegraph.co.uk/news/uknews/2028687/Millions-of-BT-internet-users-%27open-to-hackers%27.html\" rel=\"nofollow\">this</a> one?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-05-26T14:46:21.000Z",
+    "content": "obviously this is a marketing stunt initiated by the NCC group, omitting the voice of the real researchers as usual... and of course BT is just plain silly and their anti-crisis team does not know what they are doing. very amateur for BT I must say."
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2008-05-26T18:17:08.000Z",
+    "content": "this is ridiculous, all the vulnerability research publicly-released affecting the BT Home Hub has been published on www.gnucitizen.org . The only Home Hub research published on other sources is related to _unlocking_ the Hub, rather than _breaking into it_. I can only hope that NCC did mention us in the original press release but the final Daily Telegraph article filtered our name out.\n\nSummary of vulnerability research published for the BT Home Hub here: http://en.wikipedia.org/wiki/BT_Home_Hub#Security_concerns"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-05-26T18:26:29.000Z",
+    "content": "it is a NCC's marketing stunt (payed ad)! :)"
+  },
+  {
+    "author": "Mark Livesey",
+    "avatar": "cf8e190883e12b1ef1df32007659dacd",
+    "date": "2008-05-26T19:56:02.000Z",
+    "content": "This is ridiculous. It says about the software easily available for \"bad guys\" but not about it being easily available from BT themselves. Oh, and V1.5 is safer apparently."
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2008-05-26T20:08:06.000Z",
+    "content": "@^o^: yes, you're right. the vulnerability was found by analyzing traffic."
+  },
+  {
+    "author": "Mark Livesey",
+    "avatar": "cf8e190883e12b1ef1df32007659dacd",
+    "date": "2008-05-26T20:58:37.000Z",
+    "content": "Sorry, very true, the key to open the door so to speak."
+  },
+  {
+    "author": "djteller",
+    "avatar": "44c5e290ccf283471210752d0b1ed6df",
+    "date": "2008-05-27T08:12:48.000Z",
+    "content": "This is indeed ridiculous, but it's nice to see that BT are aware, too bad the implementation was bad. I think that Home router vendors should disable deviced until proper installation when the device is purchased. Using a simple wizard the user will change his/her password to something other than 'admin' and that's it."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-05-27T08:45:34.000Z",
+    "content": "BT's statement is just ridiculous. Check this out:\r\n\r\n<blockquote>BT disputed the claim, saying the risk was \"theoretical\" and that hackers would have to \"win the computer cracking equivalent of the National Lottery\" to succeed.</blockquote>\r\n\r\nRight.... Cracking 40BIT WEP is exactly like winning the National Lottery."
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2008-05-27T12:22:12.000Z",
+    "content": "After having observed BT's reaction to several Home Hub vulnerabilities published in the past, it's easy to notice BT's PR template. It kind of goes like this:\n\n<blockquote>\n<p><q>We do not believe any of our customers have been affected by this attack.</q></p>\n<p><q>Such security research describes a theoretical attack.</q></p>\n</blockquote>\n\nIn reality this translates to: \n\n<blockquote>\n<p><q>We are not aware of any attack performed in a _mass fashion_ which uses such vulnerabilities. Of course this doesn't mean such vulnerabilities have not been exploited in the wild. We know that most likely they *have* been exploited as they are practical. However, we don't want mainstream users (i.e: non-technical) to know this.</q></p>\n<p><q>We want the public to think that such attack is not possible in real life, so they do not realize how bad the current state of the security of the Home Hub really is.</q></p>\n</blockquote>"
+  },
+  {
+    "author": "Stephen",
+    "avatar": "7900a7c7a83f32c569fab55cfa7b424a",
+    "date": "2008-05-27T16:14:25.000Z",
+    "content": "To confirm from my post near the top - yes I'm on 6.2.6.E on a v1.5"
+  },
+  {
+    "author": "joe",
+    "avatar": "29063f9ef087584a4ab1e96c5d58ec59",
+    "date": "2008-05-30T20:39:16.000Z",
+    "content": "I'm running bthomehub-bb59 firmware version 6.2.6.E. where do i get the programs from to get it to work. will this work on windows xp or backtrack 3"
+  },
+  {
+    "author": "Robbie",
+    "avatar": "08aa70e0d60620da43c4104af4b3390e",
+    "date": "2008-06-06T10:25:45.000Z",
+    "content": "for those on windows an easy way id say is to download http://static.btopenworld.com/broadband/adhoc_pages/drivers/Windows_recovery_626E.zip when it asks you for a username and password you can see next to the box with the serial number next to it http://i30.tinypic.com/35l82a9.jpg and voila you have the password for the hub"
+  },
+  {
+    "author": "Robbie",
+    "avatar": "08aa70e0d60620da43c4104af4b3390e",
+    "date": "2008-06-06T11:28:10.000Z",
+    "content": "just looking for some reason the home hub im testing has 6.2.6H  firmware . It's a new hub so i presume it must be 1.5 and its had fon opted in. any one else messed with this firmware?"
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2008-06-08T09:36:40.000Z",
+    "content": "@joe: the Python scripts we provided only seem to work in Linux (we tested them on backtrack 2 but should also work on bt3).\r\n\r\nIf you just want to get the Hub's serial number prior to authenticating without using the MDAP protocol, then simply check 'OU' field of the SSL certificate as mentioned by Aaron on http://www.gnucitizen.org/blog/dumping-the-admin-password-of-the-bt-home-hub-pt-2/\r\n\r\nYou should be able to examine the Hub's SSL certificate by accessing: https://api.home/ or https://192.168.1.254"
+  },
+  {
+    "author": "Craig",
+    "avatar": "bce2a57a23a1353f92593304e6a599ef",
+    "date": "2008-09-17T20:13:01.000Z",
+    "content": "I'm attempting to run this on backtrack 3. I've run the scripts as you have said yet I get no feedback in Konsole.\n\n<pre><code>bt ~# cd /tmp\nbt tmp # python mdap-dump.py &amp;\n[1] 6763\nbt tmp # python mdap-send-ant-search.py\nANT-SEARCH MDAP/1.1\n46\nbt tmp #</code></pre>\n\nThat is all I get. I'm connect as follows: Windows XP machine (192.168.1.164) &gt; VMWare Bridge &gt; backtrack 3 (192.168.1.78). Does this mean the network is secure?"
+  },
+  {
+    "author": "Craig",
+    "avatar": "bce2a57a23a1353f92593304e6a599ef",
+    "date": "2008-09-17T20:24:24.000Z",
+    "content": "No matter, I have used aaron's way of finding the SN by viewing the SSL certificate."
+  },
+  {
+    "author": "john smith",
+    "avatar": "140a6b1b91cdbd247e7da13df2b21302",
+    "date": "2008-11-03T15:33:18.000Z",
+    "content": "It worked on python for windows for me. The standard 2.6 installer. I just ran the dump script by double-clicking. Then ran the fetch script by double-clicking. It took a couple of tries for the fetch but worked in the end. Of course, that password is only the admin password until the owner visits the hub's homepage, whereupon they are required to set a new one immediately."
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2008-11-05T23:03:12.000Z",
+    "content": "@john smith: cool, nice to see it worked on Win for u. :)"
+  },
+  {
+    "author": "thomas smith",
+    "avatar": "7bea8e5af83dbfd43db926c40f0caaab",
+    "date": "2009-03-24T18:14:28.000Z",
+    "content": "I can still confirm that bt homehubs are very insecure. I went to the router page and noticed that it shows you everyone who has logged on to your network going by computer name and mac address. My computer name kind of gives me away, so i looked at this for getting the admin password.\r\n\r\nI can confirm the python scripts do work on windows using the method john smith said, but also confirm Robbies method works as well, and is a lot easier to do. You now have to go here to download the scripts: http://lab.gnucitizen.org/projects/bt-home-hub-s-n-dumper\r\n\r\nthe software version is now 6.2.6H and even though i got the unique ID, I cant log on using it (with CP in front) someone said it prompts you to change it straight away now? I think im stuck or is there anything i can do to get it now?"
+  },
+  {
+    "author": "Jakey",
+    "avatar": "1958b7e629d49b3f2f0c068ab0f119f2",
+    "date": "2009-04-08T12:20:27.000Z",
+    "content": "Just go here and click on \"Schedule your BT Home Hub upgrade\" and you see your serial: http://pbteu.bt.motive.com/ElectiveFWUpgradePortal/\n\nSimple!"
+  },
+  {
+    "author": "Nagi",
+    "avatar": "1e460f0aeffe8fe7e0a526e11e956bcc",
+    "date": "2009-12-20T03:35:51.000Z",
+    "content": "Hi guys, I decided to stop using bthh. So I bought a drytek 2820n router. I was trying to get it to work but failed. At some stage of router installation it asks me for a username and password for WAN1, which, it says, I should had been given by my ISP - BT. Now, I don't know where to get this details from? Any advice most appreciated."
+  },
+  {
+    "author": "Ross",
+    "avatar": "f8924f96c742386baa861522d17736f7",
+    "date": "2009-12-25T17:03:27.000Z",
+    "content": "Using BT 3 I get the following (mdap-dump.py is running)\n\n<pre><code>python mdap-send-ant-search.py\nFile \"mdap-send-ant-search.py\", line 1</code></pre>"
+  },
+  {
+    "author": "Ross",
+    "avatar": "f8924f96c742386baa861522d17736f7",
+    "date": "2009-12-25T18:08:38.000Z",
+    "content": "Please Ignore my previous post. Works perfectly on Winxp and BT3."
+  },
+  {
+    "author": "Homeseer",
+    "avatar": "17616e5d5079c60e8cd66026bb13e2b5",
+    "date": "2010-01-08T23:09:15.000Z",
+    "content": "This is security through obscurity at it's finest.  Gotta love the lottery comment - perhaps if each attempt was the equivalent to purchasing a ticket, but since there's zero cost to attempt it's not exactly a robust analogy."
+  },
+  {
+    "author": "Ash",
+    "avatar": "1b3f0eccd776aecd069badccc7bf19a2",
+    "date": "2010-08-23T00:17:44.000Z",
+    "content": "Jakey haha thats just excelent, how did you figer that out lol"
+  },
+  {
+    "author": "point",
+    "avatar": "cfac80da21fcea934e943f89c332b373",
+    "date": "2010-10-30T05:30:34.000Z",
+    "content": "Iused three methods so far nothing good I tryed with recovery get serial but then i enter it i got wrong serial number then i use gdi i get 12 numberer and guy dont know what router is so it gonna be long waiting. anu suggestions"
+  }
+]

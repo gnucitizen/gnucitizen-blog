@@ -1,0 +1,224 @@
+[
+  {
+    "author": "Browser War",
+    "avatar": "07eb7759c16e90ab3b2b372485789b5f",
+    "date": "2008-09-02T12:23:15.000Z",
+    "content": "So is it the Third Browser War or the Second Browser War?\r\n\r\nWhich is it?\r\n\r\nI read a few days ago in this blog gameshogun.ws that its Browser War 2 (under the feature tab)"
+  },
+  {
+    "author": "just me",
+    "avatar": "fee778a87c72dfd3dc36f3b4f19765b7",
+    "date": "2008-09-02T12:36:32.000Z",
+    "content": "Grammar mistake?\r\n\r\nYou said: <q>If you corrupt the tab's memspace then you will cache only that particular process</q>\r\nYou probably mean: <q>If you corrupt the tab's memspace then you will crash only that particular process</q>"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-09-02T13:45:27.000Z",
+    "content": "thanks, all fixed now!"
+  },
+  {
+    "author": "Geoffrey Lee",
+    "avatar": "d697e0b3ae6b8c7de255e1bf4dcf4c7b",
+    "date": "2008-09-02T13:54:32.000Z",
+    "content": "What is less-secure about a security model that isolates each tab in its own process?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-09-02T14:12:37.000Z",
+    "content": "who said it is less secure? though, you have to admit that now the browser game has totally changed. I marely speculate on what I think might be a problem but only time will tell. therefore, you cannot say it is more secure either."
+  },
+  {
+    "author": "Ian Macfarlane",
+    "avatar": "5918767f8a59bf17636f3736454aca7f",
+    "date": "2008-09-02T15:06:50.000Z",
+    "content": "Interesting that they've gone with WebKit rather than Gecko - reportedly it was on the recommendations of the Android developers.\r\n\r\nWebKit is LGPL (so effectively LGPL/GPL) whereas Mozilla is MPL/LGPL/GPL. That makes Gecko-to-Webkit code contributions possible, but not WebKit-to-Gecko. Makes you wonder if Mozilla will ever drop the MPL and switch just to the (L)GPL - if they want to take advantage of this new code (such as the V8 JavaScript VM) they'll have to."
+  },
+  {
+    "author": "Aris",
+    "avatar": "ec7f1e3ec3b50d2adda5b0ad6ccff841",
+    "date": "2008-09-02T15:54:39.000Z",
+    "content": "Although you have to admit that the built-in anti-phishing and anti-malware protections seem interesting at first, and definitely promising. \r\nAnd for the moment being, they affect a much larger part of the Internet population than do XSS and CSRF (being mostly targeted to a single person and not to a group o people).\r\n\r\nThe thing is, all we can do for the moment is speculate, not having any executables to run and test."
+  },
+  {
+    "author": "Aditya",
+    "avatar": "b13746dcf951ff8ad5548002bd27623c",
+    "date": "2008-09-02T20:03:18.000Z",
+    "content": "The browser is a good concept, but a little shaky. Some of the fonts rendered are not clear, making it unusable.\r\n\r\nThe rest of the sites which load fine look good. The browser seems fast, and it a sure firefox killer.\r\nhttp://www.techielife.com/google-chrome-initial-review-and-comments/browsers/aditya/2008-09-02/"
+  },
+  {
+    "author": "Corey Creed",
+    "avatar": "9b57ce29cd7fcca76bd0611139b4b9da",
+    "date": "2008-09-02T20:21:39.000Z",
+    "content": "The real reason they are doing this was actually admitted during the Q&amp;A today.\r\n\r\nI quote:\r\n“Our hope is that by adding our voice, more users will realize there is a choice.”\r\n\r\nIn other words, “We don’t care if they use Firefox or Google Chrome. We just don’t want them to use IE”"
+  },
+  {
+    "author": "google chrome",
+    "avatar": "cb7f933f4a6ac13aa2a1bfc2f6d762b7",
+    "date": "2008-09-02T22:47:16.000Z",
+    "content": "http://www.certbible.org/googlechromewinnersand-losers/"
+  },
+  {
+    "author": "media buff",
+    "avatar": "2faac1f4d03ba88b481aa3a94b46b504",
+    "date": "2008-09-02T23:06:57.000Z",
+    "content": "i'm willing to try it out just to see if it works more efficiently than FireFox... if it's faster than Firefox, has tabs and isn't IE, then i'll use it"
+  },
+  {
+    "author": "Google Chrome",
+    "avatar": "4dcfd151a533c6b7061aa909062783a5",
+    "date": "2008-09-03T02:24:56.000Z",
+    "content": "The new browser by Google is extremely fast compared to the other browser out there so that alone is a major improvement really. I recommend to download it and try it out, it's very smooth to use. I posted a speed test and some graphics at http://google-chrome.com/?p=104 so you can compare."
+  },
+  {
+    "author": "Farhan",
+    "avatar": "41d99443fd7fabaaad4f53fcd6acc719",
+    "date": "2008-09-03T03:58:18.000Z",
+    "content": "Its very interesting that Google has decided to take on a project like this. They obviously have such an interest in how people access the web, it was only a matter of time before they took things into their own hands. It is going to be very interesting to see how this pans out.\r\n\r\nGoogle Chrome browser Screenshots\r\nhttp://www.tonesall.com/computers-internet/google-chrome-screenshots.html"
+  },
+  {
+    "author": "Google Chrome",
+    "avatar": "0f166e8949883b1b3ba1f7f49e372cec",
+    "date": "2008-09-03T05:01:36.000Z",
+    "content": "This catch will catch on like wildfire once plugins are released. I'm following all the Chrome  news/updates at http://ChromeSpot.com"
+  },
+  {
+    "author": "Morgan Storey",
+    "avatar": "37b5ef749ebd516e99541d628fb21311",
+    "date": "2008-09-03T06:35:34.000Z",
+    "content": "Well posting this via chrome as it is so damn fast. There are issue with it is it; seems to die on ssl sites through our proxy server, where as all other browsers are fine. I also miss my no-script and adblock plus... but I am sure plugins will come. It is by and away faster and more responsive than Firefox3 and IE7."
+  },
+  {
+    "author": "Nick Night",
+    "avatar": "140038f170eb1973d9c1145e68ff8ee8",
+    "date": "2008-09-03T06:43:20.000Z",
+    "content": "Well, I wonder why some people are so excited about Google Chrome. The only add-ons (by now) are Web Inspector (from WebKit), Chrome’s own Task Manager, and Chrome’s own Java Debugger. The Google Updater software it installs runs as a separate process, it is not a service, and installs itself into the registry to startup at boot. And what about Privacy policy???? This and default configuration should scare all of us worse than Mozilla. Also Google has now an easy way to spy on the users' surfing behavior. Oh my gosh.....who needs such a browser?"
+  },
+  {
+    "author": "Foil",
+    "avatar": "d46b5d5ae495c2c49d4b9432404bb408",
+    "date": "2008-09-03T11:20:47.000Z",
+    "content": "Great browser, but not that great for a powerhouse like Google. One great feature in Firefox is the NoScript add on, block unwanted ads, pop ups, and tracking tools used by Google. Maybe these technologies were why Google decided to create its own browser as it posed a direct threat to the primary revenue stream. Look forward to others thoughts."
+  },
+  {
+    "author": "roamer",
+    "avatar": "2871fba81bed440aec3cbfc2086348ff",
+    "date": "2008-09-03T13:19:15.000Z",
+    "content": "Heheh you and your Chrome xD I'll just continue using my Firefox until Google Bronze comes out. That is gonna be the Browser with the big B!\r\nhttp://ch4ng3d.brb.cz/index.php?lang=enus&amp;page=detail&amp;id=95"
+  },
+  {
+    "author": "treser",
+    "avatar": "3eda6fcd3204ef285fa52176c28c4d3e",
+    "date": "2008-09-03T14:19:54.000Z",
+    "content": "I just checked out Google Chrome...i honestly hope it doesnt catch on...im a flash game developer and chrome gets lousy frame rates...compared to FireFox and MS IE. one game im working on gets a solid 25 fps on both FireFox and IE...but in Chrome i get 15 fps."
+  },
+  {
+    "author": "mindcorrosive",
+    "avatar": "be3b138352dc100c9459e612b275b413",
+    "date": "2008-09-03T16:25:47.000Z",
+    "content": "I am usually conservative against a browser that installs itself wherever it pleases, without any options to customize my installation. The additional Google Updater is simply a PITA. If it is needed to install Chrome, then I certainly would appreciate being told *in advance*. \r\n\r\nThat said, the browser rendering is impressive, and memory footprint is lower than a FF 3.0. A large *BUT* here - the feature list of Chrome leaves something yet to be desired, especially on the side of security and customization options (SSL certificates, JS controls, plugin/addon management, RSS capabilities first come to mind). When all those features are in place, *then* we can compare performance among browsers. \r\n\r\nIn an interesting twist - are we going to see an ad-blocking plugin blessed by Google that's going to block their ads? ?hose that bothered to read the EULA might be confused by the fact that Google might be free to push those promotions directly to the browser.."
+  },
+  {
+    "author": "The Star Ruby Shop",
+    "avatar": "db99833c908a9c6811d162ee45538d48",
+    "date": "2008-09-03T17:00:41.000Z",
+    "content": "Really.. Google is getting everywhere!"
+  },
+  {
+    "author": "brandon miles",
+    "avatar": "9625838cf89df06ecf1cd02e8748c2ff",
+    "date": "2008-09-03T19:59:56.000Z",
+    "content": "Google Chrome has 2 very very important security holes. Which can let some bad webmasters upload exe files to your computers without your prompt !! Go ahead and continue loving Google Chrome. When your computer suddenly shuts down and when you realize all your data is gone dont blame anybody but Google Chrome..\r\n\r\ngo and read http://www.computersake.com/2008/09/google-chrome-security-hole/ and be aware of that kind of security issues !!!"
+  },
+  {
+    "author": "chrisbdaemon",
+    "avatar": "5843f6624044d5717ee07d5e87e5516b",
+    "date": "2008-09-04T07:45:24.000Z",
+    "content": "Yes Chrome does sound pretty good, however I'd recommend checking out this blog post as well as it points out some of the defects (granted it is beta but some of their points are valid imo)\r\n\r\nhttp://blog.ncircle.com/blogs/vert/archives/2008/09/the_browser_with_bling.html\r\n\r\nAlso make sure to pay attention to the snippet of the EULA statement quoted in the post."
+  },
+  {
+    "author": "chi",
+    "avatar": "c17253c7c45e8e12f0fff930e1463caa",
+    "date": "2008-09-04T20:54:03.000Z",
+    "content": "mock of google cartoons.\r\n\r\nhttp://www.surfchrome.com/index.php/gallery/chrometoon-googleville-satire/59-initial-mock-google-cartoons-emerge"
+  },
+  {
+    "author": "NurBo",
+    "avatar": "3cead94016ef2136edb79c952ddb9f95",
+    "date": "2008-09-05T21:39:58.000Z",
+    "content": "The new Google Chrome browser is very nice and is surprising really fast. I can't wait to see the final addition of this browser maybe a darker skin and some new add ons and perhaps a spell check. If so I will be using this browser alot. Keep it up Google!"
+  },
+  {
+    "author": "Google Chrome Knowledge Base",
+    "avatar": "7c87aec042134112abb855e82d94a31f",
+    "date": "2008-09-08T04:39:26.000Z",
+    "content": "I can't believe how quiet all the browser bug hunters are at the moment. I was positive Ronald would have put something together for us by now or Rsnake would have found a post in something bad about the whole Google influence... but nothing. I guess its just a matter of time before ppl get through with analyzing the source code and bam, we will have a flood of 0days.\r\n\r\nAnyways atm, the 1 common theme I'm seeing from the bugs coming out is that there doesn't seem to be enough data validation (i.e.checking string lengths etc) in its routine processing which seems to be cause for most issues. \r\n\r\nFinally, I plan to document all the bugs/spoilts for Chrome as they come out and you can keep up to date on them here - http://chromekb.com/vulnerabilities/"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-09-08T08:35:10.000Z",
+    "content": "there are vulnerabilities, just we haven't publicly disclosed them just yet. :)"
+  },
+  {
+    "author": "Google Chrome Knowledge Base",
+    "avatar": "7c87aec042134112abb855e82d94a31f",
+    "date": "2008-09-09T03:51:49.000Z",
+    "content": "haha I new you wouldn't let us down. I'm working on some stuff myself atm and have had mild success in bypassing a few restrictions imposed by the browser but nothing worthy of a post just yet."
+  },
+  {
+    "author": "Synergy6",
+    "avatar": "8a839ef12d6a0680d40645f2707d9709",
+    "date": "2008-09-09T18:48:04.000Z",
+    "content": "Looks good so far, but a lack of Adblock is an issue. \r\n\r\nDiscussion forum at http://wearechrome.com"
+  },
+  {
+    "author": "katy",
+    "avatar": "afd892d58752ea922d66d81d281c8b37",
+    "date": "2008-09-16T13:23:29.000Z",
+    "content": "A few more words on the speed :we've measured the speed of our aplication (http://www.taskwriter.com) on Google Chrome, and it's just a bit faster than Firefox 3.0 . IE is well behind. The graphs are here : http://www.taskwriter.com/blog/how-good-chrome-really-is"
+  },
+  {
+    "author": "Andy",
+    "avatar": "76aa356488c99deb61bcbbff5f968d76",
+    "date": "2008-09-19T14:00:28.000Z",
+    "content": "As a new comer, Chrome is good and its right, I'd tried it by myself. Compare to the others internet browser,Chrome apparently take a high position level. toptenreviews.com had reviewed &amp; done the survey and the result is Chrome take 2nd position between Firefox 3 at 1st &amp; IE 8 at 3rd position"
+  },
+  {
+    "author": "PaulusDev",
+    "avatar": "efbc8d65a0ce489b01e7ff3d6a9d1a9d",
+    "date": "2008-09-22T21:04:10.000Z",
+    "content": "If anyone cannot scroll up, I released a program to quickly and automatically fix the \"cannot scroll up using certain touch pads\" issue for Google Chrome (until Chrome is fixed officially). Just run chrome_patch.exe. It will modify chrome.dll to fix the issue. You can download/read about it at http://digg.com/software/Google_Chrome_68"
+  },
+  {
+    "author": "Lucian",
+    "avatar": "3bf0f578b75759d6e091089f83f7d283",
+    "date": "2008-09-23T19:12:43.000Z",
+    "content": "All new Google Chrome tricks at \r\n\r\nhttp&#58;//mygooglechrome.blogspot.com"
+  },
+  {
+    "author": "joseph",
+    "avatar": "c99c65168b09f2d670de8b4cc1fb5533",
+    "date": "2008-09-30T13:29:04.000Z",
+    "content": "google chrome is awsom.\r\n\r\n\r\nweeeeeeeeeeeeeeeeeeeeeeeeee."
+  },
+  {
+    "author": "led",
+    "avatar": "277101af14086733781fa428d25d5213",
+    "date": "2008-10-06T23:01:52.000Z",
+    "content": "well chrome is a great user experience, as it goes, and it has added tabs which will help a novie user to go back to his pre-page as quikcley as possible"
+  },
+  {
+    "author": "Marketing Man",
+    "avatar": "971afea252d392f3bed4527581d5792d",
+    "date": "2008-10-13T12:01:25.000Z",
+    "content": "I think the launch of Google Chrome is going to sink firefox in the long run, and it makes it much more painful for web developers because another browser means another platform they'll have to test their websites on. But I actually like Chrome, it's very robust."
+  },
+  {
+    "author": "Traian Neacsu",
+    "avatar": "0e01b23697b6664097d69db3748f72c2",
+    "date": "2008-11-17T23:49:39.000Z",
+    "content": "Hi,\r\n\r\nI am still curious if the launch of Chrome was something \"unintentional\". I wrote a little piece of article about this, called <a href=\"http://www.pitstopmedia.com/sem/googles-chrome-coincidence\" rel=\"nofollow\">Google's Chrome, a coincidence?</a>. I also kept a log on <a href=\"http://www.pitstopmedia.com/sem/google-chrome\" rel=\"nofollow\">how Chrome evolved from search engines point of view</a>.\r\n\r\nThanks,\r\nTraiaN"
+  }
+]

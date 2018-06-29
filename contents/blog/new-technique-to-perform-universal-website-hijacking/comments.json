@@ -1,0 +1,92 @@
+[
+  {
+    "author": "N",
+    "avatar": "deb9a39eb3c9049674c9711c3c46ceb2",
+    "date": "2008-09-20T18:41:47.000Z",
+    "content": "cisco pix?"
+  },
+  {
+    "author": "randomer",
+    "avatar": "c6e1de8c64ba8ae709e4140bfaee3f31",
+    "date": "2008-09-20T20:27:51.000Z",
+    "content": "I bet it's Agnitum Outpost firewall."
+  },
+  {
+    "author": "ax0n",
+    "avatar": "3ac09971a0935236d08afd6db126eab6",
+    "date": "2008-09-20T23:03:26.000Z",
+    "content": "From a responsible disclosure standpoint, I would much rather have gotten the name of a product family than a list of bad stuff that this vulnerability exposes users to. Now I have to sit around wondering if any of the firewall appliances I've deployed are \"the one\" and throw extra wide-spectrum effort at the problem despite if I'm actually affected or not."
+  },
+  {
+    "author": "NurBo",
+    "avatar": "3cead94016ef2136edb79c952ddb9f95",
+    "date": "2008-09-21T02:29:20.000Z",
+    "content": "why tell us about something if your not going to share thats like saying heres some new shoes but you can't wear them."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-09-21T09:33:04.000Z",
+    "content": "There will never be a good way of disclosing vulnerabilities! At least we try to give you the heads up that an issue exists. The more inform you are the better decisions you can make."
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2008-09-21T10:06:09.000Z",
+    "content": "guys, as I said I can't provide full details at this point, even though I would love to! I simply wanted to share what I could regarding the new material which I will present at HITBSecConf Malaysia."
+  },
+  {
+    "author": "FilipM",
+    "avatar": "2618c57325bb27d7f91728d1b81f50fb",
+    "date": "2008-09-22T10:21:00.000Z",
+    "content": "@NurBo: At least Adrian is taking the appropriate steps after finding vulnerabilities, instead of abusing (or even selling!) them. \r\n\r\nBut I am concerned. If Adrian found this one, who else found the same? And when? Did someone already abused any of my systems? We'll know after HITBSecConf Malaysia..."
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2008-09-22T20:35:44.000Z",
+    "content": "@FlipM: we shouldn't turn selling a vulnerability into a synonym for irresponsible disclosure. There are several *responsible* vulnerability disclosure programs which pay researchers. ZDI for instance is the one I used, which reported the vulnerability I found to the vendor. Of course, the details will only be available once a fix is released."
+  },
+  {
+    "author": "ax0n",
+    "avatar": "3ac09971a0935236d08afd6db126eab6",
+    "date": "2008-09-23T03:49:39.000Z",
+    "content": "I'd not think listing the vendor would fall into the realm \"irresponsible disclosure\" and I understand that disclosure is tricky business, and selling vulnerabilities is NOT always a bad thing. \r\n\r\nI've deployed many different solutions for customers, so there's a good chance I have a client whose dick is hanging in the breeze because of this.  I just don't know which one(s). HITBSecConf is a long ways off. And people wonder why I get 15 hours of sleep per week."
+  },
+  {
+    "author": "FilipM",
+    "avatar": "2618c57325bb27d7f91728d1b81f50fb",
+    "date": "2008-09-23T06:18:47.000Z",
+    "content": "You're right, I should have been more clear. I ment selling it to irresponsible groups or individuals who have some bad intentions with it. \r\n\r\nWhat about my concern? I know it's possibly impossible to answer correct, but if you have to make a guess, what are the chances that this vuln is already found (and abused) by someone else? \r\nWithout revealing the details on howto, is there a way to check if someone has been a victim of the vuln? Or are there no traces at all? \r\nAs you can notice, you post scared the sh*t out of me   :oÞ"
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2008-09-24T07:26:27.000Z",
+    "content": "Sure there is always a possibility that someone else can find the same vulnerability. I wouldn't be so naive to think I'm the only one who found it. \r\n\r\nHowever, I must warn you that this vuln is a *weird one*. In fact I discovered it by pure accident. I'm planning to explain what lead me to discover it at HITBSecConf, because it's actually kind of a funny story ;)"
+  },
+  {
+    "author": "ax0n",
+    "avatar": "3ac09971a0935236d08afd6db126eab6",
+    "date": "2008-09-25T00:37:39.000Z",
+    "content": "I know some of my favorite vuln finds are serendipitous ones. That's always awesome.\r\n\r\nOn a side note, your finding wouldn't happen to have anything to do with the huge pile of Cisco advisories that went out today, would it?"
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2008-09-26T19:40:22.000Z",
+    "content": "@ax0n: no, my finding is not related with those advisories you mentioned."
+  },
+  {
+    "author": "maxdj",
+    "avatar": "b50180e6077e9e13e37f6d24246d7ff8",
+    "date": "2008-09-30T15:06:41.000Z",
+    "content": "Hi, Is it by chance related to Web security gateway software (Web filtering), aka Internet content-control ?"
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2008-10-02T21:26:25.000Z",
+    "content": "@maxdj: can't comment on any details yet unfortunately :("
+  }
+]

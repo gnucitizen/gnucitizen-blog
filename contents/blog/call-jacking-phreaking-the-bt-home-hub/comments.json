@@ -1,0 +1,104 @@
+[
+  {
+    "author": "Pope",
+    "avatar": "ef13278c52026df0c2540c9002cc572c",
+    "date": "2008-01-21T12:16:11.000Z",
+    "content": "hi, interesting post. btw, isn't the phone # in the poc from the vatican?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-21T16:34:08.000Z",
+    "content": "one way to protect against this type of attack is to be extra conscious about the type of calls you receive/make from your BT VoIP unit. It might be a good idea to consider using extensions such as <a href=\"http://noscript.net/\" rel=\"nofollow\">NoScript</a> if you are a Firefox user."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-01-21T16:58:35.000Z",
+    "content": "I'd like to repeat that although this attack is new, it's based on vulnerabilities we reported to BT several months ago (auth bypass and CSRF especifically). Such vulnerabilities should have been fixed by now. Instead, it appears that BT simply disabled remote assistance on the Home Hub after our first research was published back in October: http://www.gnucitizen.org/blog/bt-home-flub-pwnin-the-bt-home-hub\r\n\r\n<div class=\"message\">Therefore, there is nothing new to report to BT at this point. If BT had fixed all the Home Hub vulnerabilities we reported in the past, this call jacking attack would NOT be possible.</div>\r\n\r\nTherefore I consider BT's statement on <a href=\"http://www.networkworld.com/news/2008/012108-group-points-to-voip-flaw.html?page=2\" rel=\"nofollow\">http://www.networkworld.com/news/2008/012108-group-points-to-voip-flaw.html?page=2</a>: <q>Pastor's public disclosure of the flaw on the blog is highly irresponsible</q> very <strong>inappropriate</strong>."
+  },
+  {
+    "author": "hackathology",
+    "avatar": "271ecedbd232e23677ddc1d3956147eb",
+    "date": "2008-01-22T10:26:58.000Z",
+    "content": "interesting post. But is 00390669893461 the voip phone number or the LAN line? How did you derive into that number?"
+  },
+  {
+    "author": "phil_mcracken",
+    "avatar": "5d685a3e2794af005c472b255c59932b",
+    "date": "2008-01-22T10:34:06.000Z",
+    "content": "If I blackholed the DNS for api.home on my local machine (and others on the network) in the HOSTS file, surely that would render this attack useless?"
+  },
+  {
+    "author": "Tim",
+    "avatar": "66dd876212314a4403a074db49fd558c",
+    "date": "2008-01-22T13:16:42.000Z",
+    "content": "BT have claimed this attack doesn't work with the firmware they have rolled out at the moment."
+  },
+  {
+    "author": "Ben Tasker",
+    "avatar": "8ca5702a8bce4074592692a8f9acc9bb",
+    "date": "2008-01-22T13:33:23.000Z",
+    "content": "Either BT have now fixed it, or not all BT Home Hubs are vulnerable. Mine simply asks for the username and password, and then asks again when I hit cancel.\r\n\r\nThe phone never rings afterwards, I do have BT BroadBand Talk and a BT Home Hub running Version 6.2.6.E"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-22T13:42:26.000Z",
+    "content": "<blockquote>The rollout of the BT Home Hub firmware version 6.2.6.E started on 12 December 2007. It can take several weeks before all BT Home Hubs are upgraded to a new version of the firmware, so please be patient. <a href=\"http://bt.custhelp.com/cgi-bin/bt.cfg/php/enduser/cci/bt_adp.php?cat_lvl1=346&cat_lvl2=401&cat_lvl3=407&cat_lvl4=751&p_cv=4.751&p_cats=346,401,407,751&p_faqid=9381\" rel=\"nofollow\">BT Support & Advice</a></blockquote>"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-01-22T14:35:23.000Z",
+    "content": "@hackathology - 00390669893461 is an international phone number located in the country whose code is 39 (vatican city in this case): http://www.countrycallingcodes.com/Reverse-Lookup.php?calling-code=39\r\n\r\n@Tim - they prob. fixed it. We tested it on 6.2.6.B, which was the most udpated firmware we could get at time of testing without being part of FON. I believe that signing up for FON makes your Home Hub upgrade to a newer firmware? Correct me if I'm wrong.\r\n\r\nas pdp pointed out, firmware version 6.2.6.E can take several weeks to upgrade and it appears that many users are having problems receiving the new firmware."
+  },
+  {
+    "author": "goundoulf",
+    "avatar": "b1df4c2b27687c1a0c82b431621e8539",
+    "date": "2008-01-22T15:03:09.000Z",
+    "content": "The only way to prevent this with ISP gateways is...\r\n\r\nprojects like http://www.neufbox4.org which aims at creating an alternative and entirely open firmware for the gateway\r\n\r\nISPs usually break the GPL by using free software and not redistributing, and their gateways rely on security by obscurity.\r\n\r\nThe customer is then dependent on the firmware upgrade from the ISP following the discovery of a vulnerability, and some times it can take ages before it is corrected.\r\n\r\nWhen the community is in charge of an alternative firmware, vulnerabilities are spotted earlier and corrected faster."
+  },
+  {
+    "author": "David Kierznowski",
+    "avatar": "1d95d2324345e3dd2e41d6066cc1b492",
+    "date": "2008-01-22T21:10:26.000Z",
+    "content": "Adrian's laugh is always comical :)"
+  },
+  {
+    "author": "hackathology",
+    "avatar": "271ecedbd232e23677ddc1d3956147eb",
+    "date": "2008-01-23T04:26:21.000Z",
+    "content": "thanks Adrian."
+  },
+  {
+    "author": "Avee",
+    "avatar": "91eb90c2c8e3694a2f8b75390b13e3ef",
+    "date": "2008-01-23T11:54:26.000Z",
+    "content": "This is pretty useful for autodialing stuff from my laptop. Thanks!"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-01-25T02:20:26.000Z",
+    "content": "@David - I guess there is something contagious about my laugh? hehehe\r\n\r\n@hackathology - you're welcome dude!\r\n\r\n@Avee - actually it'd be quite simple to setup a tool that allows you to dial phone numbers from your laptop with a simple HTML."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-01-25T13:34:44.000Z",
+    "content": "It looks like other home hub users who are also running firmware 6.2.6.B have confirmed our VoIP call jacking hack: http://www.digitalspy.co.uk/forums/showthread.php?t=735655&amp;highlight=6.2.6.B"
+  },
+  {
+    "author": "Test-Guru",
+    "avatar": "80da0ab18ac5ac0cf93dcf19f2699407",
+    "date": "2009-07-13T18:57:50.000Z",
+    "content": "I cannot believe this is true!"
+  },
+  {
+    "author": "Trackback - Free Internation Call &gt;&gt; How to make free international call",
+    "avatar": "d453fe11f52df4f569a8a001fc772485",
+    "date": "2009-11-19T22:55:51.000Z",
+    "content": ",[...] www.gnucitizen.org is other great source on this subject,[...]"
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "author": "Jipe",
+    "avatar": "02c9c4a5d6d7ac89cfd1697d5e358ab7",
+    "date": "2007-10-16T12:06:29.000Z",
+    "content": "Regarding the hidden capabilities of firefox extensions.\r\n\r\nThe hidden field of the install manifest only works for extensions installed in a restricted access area (so it does not work for add-ons installed in the profile).\r\n\r\nHowever, as an extension extends the browser it will be trivial to it to remove itself from the extension list (just browse the list and remove the one which match the extension name)...\r\n\r\n2c"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-16T12:41:28.000Z",
+    "content": "Jipe, you are right... the hidden field only works if you install the extension globally but as you suggested it is trivial to overlay the addons windows and as such remove the presence of the extension from the list."
+  },
+  {
+    "author": "fazed",
+    "avatar": "9bac8baa8ae20d56ec0320a2f2c33c82",
+    "date": "2007-10-16T13:19:36.000Z",
+    "content": "Nice write up, I agree that they will become more common place in the future. You could combine it with a browser exploit for your point of access and drop A exe which overwrites the browser.jar file with your own code. sorry if thats a bit off-topic. would you be interested in giving a talk about it on the upcomming darkstar e-conference?\r\n\r\n-fazed"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-16T13:26:05.000Z",
+    "content": "can I ping you privately? or you can ping me privately with the information provided on the <a href=\"http://www.gnucitizen.org/contact\" rel=\"nofollow\">contact</a> page. cheers :)"
+  },
+  {
+    "author": "Sp0oKeR",
+    "avatar": "3c5103f613c394651ced1e7b48eaa66b",
+    "date": "2007-10-16T13:49:35.000Z",
+    "content": "I think metafisher is kind of that already . It's for IE and use Hel Objects if I'm not wrong.\r\n  Nice post.\r\n\r\nRegards,\r\n\r\nSp0oKeR"
+  },
+  {
+    "author": "Chris",
+    "avatar": "5843f6624044d5717ee07d5e87e5516b",
+    "date": "2007-10-16T16:11:14.000Z",
+    "content": "I look forward to seeing some of this talk put into action."
+  },
+  {
+    "author": "Hugh Mungus",
+    "avatar": "e2bce8505fe485f686060a24cda7882c",
+    "date": "2007-10-16T21:33:21.000Z",
+    "content": "I wonder if it might be possible to make the text font color a shade darker. That way, it will be impossible to read your blog at all."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-16T22:06:10.000Z",
+    "content": "Hugh, unfortunately that cannot be done on our side, but you can easily modify your browser settings to server your needs."
+  },
+  {
+    "author": "Gustavo Bittencourt",
+    "avatar": "189ea272538720c3222cc9b2aae1a6cc",
+    "date": "2007-10-18T02:35:44.000Z",
+    "content": "This article is really interesting. With its inspiration, I wrote an article about Browser Botnets: http://english.gustavobittencourt.com/2007/10/browser-botnets.html\r\n\r\nThank you\r\nGustavo Bittencourt"
+  },
+  {
+    "author": "hackathology",
+    "avatar": "271ecedbd232e23677ddc1d3956147eb",
+    "date": "2007-10-18T13:33:14.000Z",
+    "content": "Great article pdp"
+  },
+  {
+    "author": "shabnam",
+    "avatar": "e2863b387253afbd346e86bd6cf60cce",
+    "date": "2008-03-15T20:39:35.000Z",
+    "content": "Great! thanks :)"
+  }
+]

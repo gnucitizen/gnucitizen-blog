@@ -1,0 +1,86 @@
+[
+  {
+    "author": "malkav",
+    "avatar": "33ebd77b79f0b5b62ee77a5b355c59d5",
+    "date": "2008-03-21T10:46:54.000Z",
+    "content": "red teams/tiger teams should be the standard, as should be the threat modeling based on objective/assets.\r\n\r\nbut we have a big problem here. users (so clients) where educated technology centric, and are vastly unaware of real world attackers practice. why would i spend time on exploiting your network when i can get the password i need to access your assets with a drunk manager at a local bar ? or in the trash ?\r\n\r\ni hope that by offering this kind of services to my clients, some of them will become aware of how easily vital IP can be stolen/destroyed, but the contacts i had proves me wrong for the moment, people still wants NAC, automated nessus scan, and many other pretty useless energy consumption."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-03-21T10:53:54.000Z",
+    "content": "well, that business model will change soon."
+  },
+  {
+    "author": "LUPUS",
+    "avatar": "cd4d5ff4785339df9e5366a8b285c844",
+    "date": "2008-03-21T10:54:50.000Z",
+    "content": "Thanks :)"
+  },
+  {
+    "author": "Sid",
+    "avatar": "9f2183a53f556596489aa83fa81b70e3",
+    "date": "2008-03-21T11:28:56.000Z",
+    "content": "Well, Wi-Fi security might be after all just a bad answer in a flawed security model. Instead of trying at all cost to prevent people from entering the network by securing layer 2, maybe we should think more of securing layer 3. And bye bye 802.1x, WPA, NAC and similar expensive stuff...\r\n\r\nIn the end, an open Wi-Fi network with an IPSEC gateway might be easier to deploy."
+  },
+  {
+    "author": "Geoffrey Lee",
+    "avatar": "d697e0b3ae6b8c7de255e1bf4dcf4c7b",
+    "date": "2008-03-21T11:55:47.000Z",
+    "content": "I think another way to say it is that your security is only as strong as the weakest link, and human behavior is part of that link."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-03-21T11:58:43.000Z",
+    "content": "Geoffrey, exactly :)"
+  },
+  {
+    "author": "commercials",
+    "avatar": "7905d373cfab2e0fda04b9e7acc8c879",
+    "date": "2008-03-21T13:21:45.000Z",
+    "content": "\"...but we keep the best ones for ourselves\"..."
+  },
+  {
+    "author": "Mike",
+    "avatar": "7afb16388b1069be6cf4af4cd49c3dc3",
+    "date": "2008-03-21T14:11:33.000Z",
+    "content": "Many enterprise start discussing training, training, training, but I'm pretty sure you are all aware of how well that is going. If human behavior is part of that link (and will probably be the weakest part the majority of the time), how do we cope with human error?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-03-21T16:06:40.000Z",
+    "content": "mike, easy. we promote brain augmentation via nano robots which are connected to a security management console :)"
+  },
+  {
+    "author": "Steve",
+    "avatar": "7900a7c7a83f32c569fab55cfa7b424a",
+    "date": "2008-03-22T01:54:36.000Z",
+    "content": "But what if the attackers deploy nanopirates against your nanorobots..."
+  },
+  {
+    "author": "Aodhhan",
+    "avatar": "613720a7bae4ce9b3c7a536782671ee9",
+    "date": "2008-03-24T13:30:40.000Z",
+    "content": "To increase security for user log in, increase the required authorization factors. For our secure internal network, you must use a smartcard (PKI of course) along with a pass-phrase (something you have and something you know). You can always add fingerprint scan to give you, \"something you are\".\r\n\r\nAlthough nothing is fool proof, a hacker will most likely move on to an easier target. With WiFi, there are plenty of them.\r\n\r\n-Aod-"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-03-24T13:35:45.000Z",
+    "content": "Aod, I agree although I could add that attackers will move to an easier target but probably still within the scope of their goals. Probably, hacking into a network where employs are connecting to, hoping to get control over their computers and use them as a stepping stone to access the secure network, as I explained in the post.\r\n\r\nBut as you said, <q>nothing is fool proof</q>.\r\n\r\nthanks"
+  },
+  {
+    "author": "sebastian nielsen",
+    "avatar": "dd74a636b43213d4152c50d1a2f24575",
+    "date": "2008-03-30T20:52:51.000Z",
+    "content": "Client side security is inneccesary, and can always be bypassed. For example using a linux cd to boot up the computer and access every file on the computer.\r\n\r\nIts always good to adhere to the following rule:\r\n\"If you have physical access to a computer, nothing prevents you to read or access the data stored on it\".\r\n\r\nread or access means in some way downloading or reading data. The data may be unreadable (encrypted) but then you take the data with you and do a offline attack.\r\n\r\nSo the best is to place all security as centrally as possible. A good idea is to never store anything on the laptop.\r\nBut instead store everything on central servers. These servers can then verify user in some way.\r\n\r\nBut keep in mind that user can still copy data that he gets from the server to a USB memory, or just take photos of screen and then OCR them.\r\n\r\nSo use a VERY strict need-to-know policy, and make sure that if the system is in doubt of if a people is really needing a specific information, make it go through approval by manager before allowing the employer access.\r\n\r\nSo this means a worker who is working on a software part is only need access to that part of software.\r\n\r\nThis means that EVEN if a attacker gets physical posession of his laptop, or gets hold of a employer's authorization card or gets access to a logged-in computer, the attacker cannot access more than the employer is able to access..\r\n\r\nLet the users be administrators on their clients, and control access to documents, files and data by storing them at a central server."
+  },
+  {
+    "author": "frank kern",
+    "avatar": "a74f6315cf3c7901fbc3ee63b631b28d",
+    "date": "2009-08-11T01:26:44.000Z",
+    "content": "Now I get cleared my doubts in WiFi security,thank you very much."
+  }
+]

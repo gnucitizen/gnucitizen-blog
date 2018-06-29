@@ -1,0 +1,38 @@
+[
+  {
+    "author": "ax0n",
+    "avatar": "9952e3b43008689e3ddc2ab47b4cd5dd",
+    "date": "2009-01-14T21:02:57.000Z",
+    "content": "I threw together a 5-part series on bypassing web filters, and I missed some of these. There are indeed a myriad of ways. Some others worth mentioning:\r\n\r\n<ul>\r\n<li>Web-Enabled RSS (Google Reader, yahoo pipes, etc)</li>\r\n<li>Out-of-band (EV-DO, Neighboring WiFi, etc)</li>\r\n<li>Web-Enabled Anonymizers (PHP Proxy, Megaproxy)</li>\r\n<li>Wide-open public proxies on Port 80 (e-pr0xy.com for lists of these)</li>\r\n<li>Tunneling (SSH, ICMP, SSL/HTTP)</li>\r\n</ul>\r\n\r\nIndeed, it's quite hard to keep people from accessing content that they really, really want to access. Good write-up."
+  },
+  {
+    "author": "Adrian Crenshaw",
+    "avatar": "d54bf9796b2987f9047d47794232d184",
+    "date": "2009-01-15T18:37:32.000Z",
+    "content": "Thanks for using me as the test subject. :)"
+  },
+  {
+    "author": "marchiner",
+    "avatar": "564e44b6b33cc73b9bb444ea8f22694c",
+    "date": "2009-01-16T03:04:47.000Z",
+    "content": "I know tha the topic is ralated to proxy bypass techinichs, but.. a example of Tunneling is that tool.. UltraSurf\r\n\r\nIt´s very usefull when the objectve is to avoid proxy restrictions of urls and you dont have much time to do it yourself."
+  },
+  {
+    "author": "giano",
+    "avatar": "c402b08cfc1918f5d76c30d941c2ef16",
+    "date": "2009-01-16T15:44:41.000Z",
+    "content": "In my high school the admins block \"internet traffic\" using dans guardian to filter http requests. I noticed how I could freely use ftp or ssh so I'm using a couple of \"header distorcing proxies\" to bypass the filter: one application runs on the pc i'm using at school increasing by one the value of each letter of the first word in the headers ( HTTP -&gt; IUUQ ) and then passing the stream to a remote proxy which shifts the header back ( IUUQ -&gt; HTTP ). The reverse is done for incoming responses.\r\n\r\nWhat do you think about this? Every feedback is welcomed!!"
+  },
+  {
+    "author": "Franck Wurtz",
+    "avatar": "3ffb881362a4de765416181fe0be6944",
+    "date": "2009-01-19T01:30:05.000Z",
+    "content": "A good way to surf all days bypassing the webfitering gateway is to used proxy tunneling.\r\n\r\nHere is a demonstration : http://blog.f-wurtz.com/?p=65"
+  },
+  {
+    "author": "huntingknowledge",
+    "avatar": "7ff0c51f14dcff43b7830c317e0cdba8",
+    "date": "2009-01-25T08:01:22.000Z",
+    "content": "Although ISP's and admins configure to filter such websites, data sniffing while filtering out and writing the requests to rawdata file and analysing mechanism can trace the users requesting website in order to block them.\r\n\r\nhence i recommend using a trusted Secured anonymous tunneling like gotunnel.com which is encrypted and which cannot be logged for requested websites.\r\n\r\nany other ideas as i suspect my ISP sniffing out for the websites i access."
+  }
+]

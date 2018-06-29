@@ -1,0 +1,32 @@
+[
+  {
+    "author": "kuza55",
+    "avatar": "2f6303f9095f59c14c3097ef4df566f5",
+    "date": "2008-02-18T02:27:18.000Z",
+    "content": "I'm confused here, writing a tool that doesn't need to be written since you can do the same with existing tools is now innovation? You've got to be kidding me...\r\n\r\nSure, writing a point and click tool that replaces some semblance of knowledge of what you're doing improves upon the exploitability of something by incompetents, but it's not particularly noteworthy.\r\n\r\nThe recent addition to what they found, i.e. that Gmail fails open when it can't connect via SSL, is interesting in a \"this is a great example of how not to write software\" way, but is still just a single bug...\r\n\r\nP.S. The whole topic of discussion is pretty worthless considering almost everyone who does web stuff knew about this problem before and we have the secure attribute on cookies to prevent this exact issue."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-18T08:44:36.000Z",
+    "content": "kuza55, before Metasploit there were tones of other tools that did practically the same. Before BackTrack there was Knopix. And before Hamster and Ferret it was mostly dsniff. As I've mentioned in the article, the concepts are not innovative. If you watch Robert's talk you will see that he is quite clear about that as well. Within his presentation, it was mentioned more then once that it is about the tools or at least the combination of them: <code>proxy + sniffer + packet content analyzer</code> - something that was not available before that. Ferret and Hamster is for sniffing like Metasploit for exploits. It is innovation, because the next generation of hacker sniffing tools will concentrate on getting the most of the captured data without wasting too much time. And yes, it is an innovation! But in order to prove that I've picked the right words, let me quote how <strong>innovation</strong> is defined by several sources:\r\n\r\n<ul>\r\n<li>A creation (a new device or process) resulting from study and experimentation.</li>\r\n<li>Introduction of a new idea into the marketplace in the form of a new product or service, or an improvement in organization or process.</li>\r\n<li>The use of a new technology, item, or process to change what goods and services are provided, the way they are produced, or the way they are distributed.</li>\r\n<li><strong>The creation, development and implementation of a new product, process or service, with the aim of improving efficiency, effectiveness or competitive advantage. Innovation may apply to products, services, manufacturing processes, managerial processes or the design of an organization.</strong></li>\r\n<li>etc...</li>\r\n</ul>"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-18T08:52:32.000Z",
+    "content": "on another note, WiFi hacking is the most easiest way to get into corporate networks. I am speaking from personal experience by looking at all pentest I have performed in the past and also by considering every single emergency response I have encountered. It is too bad that all this knowledge cannot be shared due to various forms of NDAs I've signed. I was one of the first to comment on Robert's talk but I can clearly see now that judging others for what they do is pointless. You will never reach to the same conclusions unless you put yourself in their shoes."
+  },
+  {
+    "author": "kuza55",
+    "avatar": "2f6303f9095f59c14c3097ef4df566f5",
+    "date": "2008-02-18T09:29:42.000Z",
+    "content": "Fine, I'll accept that it's innovation by that definition, but then I don't particularly care about innovation. I care about new ideas. Maybe there's a specific term for that I should start using instead.\r\n\r\nI'm not trying to say the tool sucks or anything; just that it's generated waaaay more attention than it deserves."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-18T10:39:48.000Z",
+    "content": "yep it did and it has raised the user awareness..."
+  }
+]

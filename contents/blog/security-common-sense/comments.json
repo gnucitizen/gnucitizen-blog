@@ -1,0 +1,20 @@
+[
+  {
+    "author": "Thomas Roessler",
+    "avatar": "645ade6965ddd0b8b4ceff68538a1203",
+    "date": "2007-12-18T19:22:38.000Z",
+    "content": "Well, seems like this is \"there's relevant W3C work\" comment day for me... There's a Working Group going on, called the Web Security Context WG, that tries to attack precisely this point - security usability, for the kinds of security interactions that commonly go on on the Web. We indeed train a bunch of monkeys to click the \"yes\" button these days -- in particular since we ask the user precisely in those situations in which a decision may be really hard to make.  Unfortunately, these are the situations in which things are usually even worse for users than they are for browser developers, and in which users will be unable to either understand the consequences of what they do, or to understand how they should even make a decision. What remains, then, is the feedback whether or not \"it works\". Of course, \"it works\" when people click \"ok\", and \"it does not work\" when people click \"cancel\". Guess what they do.\r\n\r\nWorking Group home page: http://www.w3.org/2006/WSC/\r\nCurrent Working Draft: http://www.w3.org/TR/wsc-xit/\r\n\r\nEnjoy!"
+  },
+  {
+    "author": "Shoaib Yousuf",
+    "avatar": "af275b336b54b308c86ba4c164bf3b89",
+    "date": "2007-12-19T04:14:29.000Z",
+    "content": "I agree with your thoughts pdp, The best example is when we goto ebay.com, paypal.com or any of our financial intitution website to login..All saying same stuff; Our organization will never send any email asking about your credentials...\r\n\r\nStill ppl are replying to phishing emails and still getting victim. I liked your idea of Security Common Sense. Doesn't matter whatever we do, if we will not use our common sense we will continue to support bad guys indirectly.\r\n\r\nCheers\r\nShoaib"
+  },
+  {
+    "author": "CG",
+    "avatar": "1037354f27302ad1053ed800cc989d3c",
+    "date": "2007-12-24T06:24:41.000Z",
+    "content": "valid points but the fix, just like in life, isnt by taking responsibility for their actions AWAY from the monkeys, its making the monkey's responsible for their actions.\r\n\r\ni dont have technical way to accomplish this but we dont have a way to accomplish this in life either but we certainly need both!"
+  }
+]

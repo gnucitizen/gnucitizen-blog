@@ -1,0 +1,26 @@
+[
+  {
+    "author": "dian",
+    "avatar": "4c59a9319ddbfb938a4d7eb5be51e43e",
+    "date": "2008-10-26T13:35:10.000Z",
+    "content": "i've been reading your site along time, this one i'm goin to use it in my site after wordpress 2.7 comes out. Thx for the tips guys :)"
+  },
+  {
+    "author": "ehmo",
+    "avatar": "6c95f98764491e9e786607e79d3d0bdb",
+    "date": "2008-10-26T13:54:29.000Z",
+    "content": "hey, i'm sceptic. so far as i know, mostly blogs running on hostings, which don't have ssl connection allowed. i don't think that this is a good way. i've some others ideas, which will protect ppl, but will not bounds them.\r\n\r\nbut good job anyway."
+  },
+  {
+    "author": "MartinJ",
+    "avatar": "21e43594693e8efa95c359546c47cd72",
+    "date": "2008-10-27T10:27:32.000Z",
+    "content": "Out of curiosity: How does the promised protection against session hijacking work? http_only?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-10-27T11:12:38.000Z",
+    "content": "Hi Martin,\r\n\r\nThe plugin does a few things. First of all, it detects whether you want to authenticate or you are already authenticated. If yes, then it forces you over SSL. Underneath it is a bit more tricky. The plugin tries to guarantee that no matter what you do, your session identifiers never get sent over an unencrypted channel. The plugin uses its own cookies to keep your session state when browsing your site while authenticated. This mechanism preserves your user experience while enforcing extra security. In case of XSS, httpOnly is enabled to prevent damages. This only prevents session hijacking attacks though.\r\n\r\nThe plugin is coded in very clear fashion. It is easy to understand once you have a look at what it is inside."
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "author": "MustLive",
+    "avatar": "997a9fa55e557e2aa8262a07758b161d",
+    "date": "2007-02-19T00:06:28.000Z",
+    "content": "Petko!\r\n\r\nIt is good that such professional web security guys will write such interesting security book (about XSS). I wish good luck to you, and RSnake and all authors' team and to your new book!\r\n\r\nAnd I am glad that you will be the 5th author with Jeremiah, RSnake and other guys. I feel that it will be 5th author and here it is. It is good to\r\nsee you with these famous security experts in team.\r\n\r\nYou need to contact Amazon :-), and tell them to put Petko Petkov to the list of the authors, because there is no your name in the list. And it is not good. Amazon need to add Pdp to the list! Every author need a portion of attention.\r\n\r\nDon't forget to write about all of types of XSS in the book. Write a chapter about UXSS and a chapter about XSS on SEO (black seo) ;-). And about many other interesting things.\r\n\r\nP.S.\r\n\r\nYou also need to attend to security of your own site. As I planning to tell you for a long time already, there are many XSS holes at your site! So wait for my detailed letter."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-02-19T15:22:36.000Z",
+    "content": "Thanks man,\r\n\r\n<blockquote>You need to contact Amazon :-), and tell them to put Petko Petkov to the list of the authors, because there is no your name in the list. And it is not good. Amazon need to add Pdp to the list! Every author need a portion of attention.</blockquote>\r\n\r\nThanks for the advise. The reason I am not there is because I was invited to join the team at much later stage. The front cover and the author bio will change as soon as we get the book on Amazon.\r\n\r\n<blockquote>You also need to attend to security of your own site. As I planning to tell you for a long time already, there are many XSS holes at your site! So wait for my detailed letter.</blockquote>\r\n\r\nIt could be the PDF thing which I already know about or it could be something on Wordpress that I don't know about. There is one thing that can be used for XSS, Backframe's inline profiles, however you get warned that a profile is about to be loaded, so it is not a big deal. If it is the PDF issue, I don't care that much. Yes, someone can get exploited on GNUCITIZEN, but that is not beneficial to anyone. If it is Wordpress, then I don't know. I would write my own blog software\r\nif I had the time."
+  },
+  {
+    "author": "DeadOnArrival",
+    "avatar": "d6391ac585e5f7ebd2e87774bb1d7051",
+    "date": "2007-02-20T08:16:20.000Z",
+    "content": "Please continue to write this blog. Looking forward to your book."
+  },
+  {
+    "author": "MustLive",
+    "avatar": "997a9fa55e557e2aa8262a07758b161d",
+    "date": "2007-02-22T01:32:54.000Z",
+    "content": "Pdp, I am waiting until Amazon will update book's front cover and author's bio (because it will be interesting to read your bio).\r\n\r\nYou can announce at your site about this event (when the book will be out).\r\n\r\nAnd about holes. I am talking about XSS vulnerabilities at your site - in WordPress (particularly). Not UXSS, but you can fix it also (and you better do).\r\n\r\nSo wait for my detailed letter with information about XSS vulnerabilities at your site."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-02-22T08:26:51.000Z",
+    "content": "<blockquote>And about holes. I am talking about XSS vulnerabilities at your site - in WordPress (particularly).</blockquote>\r\n\r\nReally? Wow, I will be interested to see that, not that I am surprised.\r\n\r\n<blockquote>Not UXSS, but you can fix it also (and you better do).</blockquote>\r\n\r\nShow me a fix and I will show you how you can still abuse this hole. I've played with all kinds of server side fixes for this vulnerabilities and all of them can be circumvented. So, the solution is easy, update your plugin. It is client-side issue, not server-side."
+  }
+]

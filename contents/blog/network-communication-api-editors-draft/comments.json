@@ -1,0 +1,20 @@
+[
+  {
+    "author": "Wladimir Palant",
+    "avatar": "7806629160a492b05d21fd738953a4cf",
+    "date": "2007-11-23T14:37:20.000Z",
+    "content": "Great, the last thing the world needs is yet another way of sending raw TCP data. On the other hand, Java and Flash do this already..."
+  },
+  {
+    "author": "Matt",
+    "avatar": "bd8ac47a2a650bc3add0502686f33e39",
+    "date": "2007-11-23T17:50:30.000Z",
+    "content": "Is this API downloadable yet? \r\n\r\nI also noticed that you used a closure in your function declaration of the event handler so it is definitely not Java. Is it JavaScript perchance?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-11-23T20:29:22.000Z",
+    "content": "well TCPSocket is already implemented into Firefox but it is not part of the DOM. So, this draft suggests that the object it should be part of it and in a year or two, that might be the case."
+  }
+]

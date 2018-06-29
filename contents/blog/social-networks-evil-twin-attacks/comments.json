@@ -1,0 +1,104 @@
+[
+  {
+    "author": "Jim Manico",
+    "avatar": "04b8fca2c8dde2ed82373ade37e9789d",
+    "date": "2008-02-19T06:51:50.000Z",
+    "content": "1) It's very labor intensive to create a linkedIn profile, it will take time before an active profile will gain traction with your friends - giving you a significant chance to spot it - assuming you are already an active user\r\n2) Upon finding that someone is impersonating your identity, contact LinkedIn, possible sending them proof of identity\r\n\r\n<blockquote><pre>If you have questions or comments about this privacy policy, please email us at privacy@linkedin.com or contact us at:\r\n\r\nLinkedIn Corporation\r\nAttn: Privacy Policy Issues\r\n2029 Stierlin Court\r\nMountain View, CA 94043</pre></blockquote>\r\n\r\n3) Networks as well as information is mostly porous. These kinds of consumer information issues can only be protected via intrusion detection and/or identity protection. It's to late, your info is out there."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-19T10:14:33.000Z",
+    "content": "Jim, on your first point, I disagree. It is pretty straight forward. You open an account and then contact people that want to be part of your social network. Second, sending additional information about yourself to a social network which is designed to trade this information with others is pretty bad idea. On your final point, I completely agree. My information is out there and it is quite easy to impersonate me as well as many, many, many others. I am sure that it is extremely easy to impersonate you as well, given the fact that you have a blog."
+  },
+  {
+    "author": "Jim Manico",
+    "avatar": "04b8fca2c8dde2ed82373ade37e9789d",
+    "date": "2008-02-19T14:53:51.000Z",
+    "content": "On 1) Fair enough\r\non 2) Still disagree; once someone has hijacked your identity, you can contact the owners of LinkedIn to prove your identity and get the offending account removed. You do not need do give them all your biometrics, passport etc. I'm sure a simple license will do. And if you are in a position where you are overly concerned about identity theft - you should get identity theft insurance and monitoring.\r\nOn 3) Sure, impersonate me, and while you are it please help debug and/or work on some of my code. I also have a few project proposals you can help me work on.... ;-)"
+  },
+  {
+    "author": "agent0x0",
+    "avatar": "f1bb89072d693d5c41cc8b1d8ae30b3a",
+    "date": "2008-02-19T15:37:21.000Z",
+    "content": "Good post guys.  I agree with pdp that blogging, and social networking use in general will make you vulnerable to impersonation.  I believe it depends on how much personal information you give out on these types of networks.  In my LinkedIn profile I don't make my profile public, and only allow connections from people I know directly.  For me, I feel the career benefit of LinkedIn is worth a bit of risk with my personal information.  I have a blog as well but I keep it as anonymous as I can...I guess I am a bit security paranoid and don't like my real name even on my blog.  However, I have talked to other bloggers and they will say that to them it's worth the risk to have their real name on their blog.  It's all comes down to your own \"personal risk assessment\". :)"
+  },
+  {
+    "author": "roko",
+    "avatar": "3fba96b337094d552ac9b4b5a741c920",
+    "date": "2008-02-19T19:42:08.000Z",
+    "content": "Some weeks ago I was thinking in this \"social network\" fanatic movement and how people trust (blindy) in the information showed in this kind of website... and I was wondering, what would happen if someone hacks a social network like facebook, linkedin, etc and take control on some (or all) these online profiles. Good article."
+  },
+  {
+    "author": "EC",
+    "avatar": "9f77754de386562174ceb7f78d3b9aa7",
+    "date": "2008-02-19T23:44:42.000Z",
+    "content": "Great article pdp. Take a look to this paper related to your thinking about social networks.\r\nhttp://www.enisa.europa.eu/doc/pdf/deliverables/enisa_pp_social_networks.pdf\r\n\r\nRegards.\r\nEC"
+  },
+  {
+    "author": "Benjamin Juang",
+    "avatar": "743cc902b3f381f67a480bcb1c472072",
+    "date": "2008-02-20T08:37:46.000Z",
+    "content": "Lurker here - I've actually experienced a shadow of this lately.  I'm one of the administrators and developers of a facebook application, and someone took my profile picture and changed their facebook name to match mine, and started posting in the application forums.  Thankfully, facebook has things set up so that posts by application developers show up in light-green... so no one could have been fooled, unless they weren't aware of the normal light-green system.\r\n\r\nBut it would have been easy for him to go through my friend list, messaging them...\r\n\r\nAlso, what about creating the profile of your victim on a social network before they establish their connections there?  Then building off a list of the victim's friends found on one social network, they could connect to the victim's friends on the other social network.\r\n\r\n(Badly worded, sorry - it's getting late)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-20T08:41:36.000Z",
+    "content": "Benjamin, exactly. If the attack creates twin profile on a social network where their victim hasn't been registered already, it will be trivially easy to fool the victim's friends on other social networks.\r\n\r\nEC, let me have a look at that paper... 10x for sharing."
+  },
+  {
+    "author": "James",
+    "avatar": "8f7a5af04ec915ffa68d8c59dded5fc5",
+    "date": "2008-02-20T13:23:26.000Z",
+    "content": "There is some work being done in this arena at Carnegie Mellon University's Heinz School of Management.  In particular, see Becker's paper on identity theft via social network profile theft, and Acquisti's papers on identifying social security numbers from Facebook profiles."
+  },
+  {
+    "author": "Jim Manico",
+    "avatar": "04b8fca2c8dde2ed82373ade37e9789d",
+    "date": "2008-02-20T14:54:32.000Z",
+    "content": "This has nothing to do with social networks - it has to do with the open nature of web and personal information. What is to stop me from posting information about you on a blog? Or setting up an email address that looks like your name? This is similar to the argument \"Ajax makes you more insecure\" - it's the same web 1.0 transparency of information problem - only faster with Social networks."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-20T14:59:13.000Z",
+    "content": "The simple fact that social networks make you more connected with your peers and the fact that people use social networks to do business is a significant change which raises some interesting questions, like the one in the article above. As for AJAX, AJAX does introduce some security problems!"
+  },
+  {
+    "author": "jerry shenk",
+    "avatar": "d6695d6db4532c883dfa3804a3333830",
+    "date": "2008-02-20T15:35:18.000Z",
+    "content": "I've been a little slow to get into the \"social networks\" phenomenon.  Privacy has been my main concern but as has been stated...there is SO MUCH information about me out there already, what's the big deal...so I gave in about 2 weeks ago.\r\n\r\nListening to the discussion between Jim and pdp, perhaps there is more danger in NOT getting involved.  If I am not involved, then an attacker has plenty of time to impersonate me, build trust relationships and \"do bad things\"."
+  },
+  {
+    "author": "Jim Manico",
+    "avatar": "04b8fca2c8dde2ed82373ade37e9789d",
+    "date": "2008-02-20T15:44:24.000Z",
+    "content": "Ajax does not introduce security problems any more than Web 1.0 introduces security problems. That is, unless of course, you are pushing business logic to the client - which is a no no independent of Ajax. Ajax just introduces more endpoints. The same security web 1.0 implications apply, nothing new."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-20T15:47:18.000Z",
+    "content": "jerry, I agree.\r\n\r\nJim, it does. :) For example, due to AJAX CSRFing JSON calls practically exploded as a preferred attack vector for exploiting AJAX application. Some people know this as JavaScript hijacking but I don't like that name."
+  },
+  {
+    "author": "Jim Manico",
+    "avatar": "04b8fca2c8dde2ed82373ade37e9789d",
+    "date": "2008-02-20T15:53:19.000Z",
+    "content": "JSON is not specific to AJAX (specifically, asynchronous communication with a web server). It's a very old-school (decade or more) way of representing data in JavaScript. And still, you need to secure your JSON service endpoints the same way you would secure those 1.0 endpoints. Web 1.0 security. CSRF is also very old school, it was called \"Session riding\" in the past and has been around since the dawn of the dynamic web."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-20T15:57:59.000Z",
+    "content": "Jim, can we move this discussion to a private channel or maybe even a separate post? It is kind of unrelated to the content and a lot of people will get confused. I do agree on some of your points but maybe I should rephrase my statement a bit to be more accurate. Thanks for the comments."
+  },
+  {
+    "author": "toppleganger",
+    "avatar": "fd766f2d06e9a3515c560a61760c5760",
+    "date": "2008-05-04T16:27:43.000Z",
+    "content": "Well what is the craic my people, I am nuts and i thought i would have a look to see if i could pick my victim out. i love it and in the next veiw days you will see your twins"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "author": "flipper",
+    "avatar": "99905dc7cfd6a28a06a1dcc231009a6e",
+    "date": "2007-12-05T13:03:31.000Z",
+    "content": "In In think this subject can be detailed in many ways, and can lead to many different opinions. Hiring a h3ker would be a plus considering the interpretation it might give to his analysis..\r\n\r\nBut good choice â€œanalysisâ€, because often that we might admit, it relays (al least in some points) onâ€¦â€scannersâ€ïŠ Of course it relays on scanners, and more often is ..nmap. Why? Cause Itâ€™s the nearest tool to see what services are available in a public manner and which of them are not suppose to be.\r\n\r\nAs you mentionâ€¦â€combinations of tricksâ€ is the key. Yes, it is! No scanner I know can do this (at the moment), but I donâ€™t really find it impossible at all..scenarios can be scripted in templates and modulated as an AIâ€¦like in the games (Iâ€™m no gamer, ..just to mention).\r\n\r\nSo, getting back to â€œcombination of tricksâ€, a h3ker mind can go much further that considering some port opened, or not, ..or a service available or not. It can do tests based on the vulnerabilities of that version..or missconfigurations. And this is a big +.\r\n\r\nOf course hiring a h3ker is somehow ..not enough..he need the tools..just his AI is just not enough, and no one has that time to reinvent the wheelâ€¦to script new nmap (just an example) to scan a server.\r\n\r\nIs a conclusion of my thoughtsâ€¦I think scanners without AI is to few..and a good AI without the tools ..is big time consumption, effort and it came be easily a failure."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-12-05T13:19:56.000Z",
+    "content": "flipper, yes of coures, a h4kur without tools is of no use to anyone. However, my point was quite different. All I am trying to say here is that while automated test (automated vulnerability assestment tools, this does not include nmap but mostly Nessus and the clones plus those used in the WebApp world) are of no use if you really want to know how an attacker can penetrate your network or applications. They will show you all your vulnerabilities (as far as they can) but they won't show you how an attacker can gain access without using any vulnerability whatsoever or how an attacker can come up with a combination of attacks.\n\nIt think that it is really a matter of choice."
+  },
+  {
+    "author": "flipper",
+    "avatar": "99905dc7cfd6a28a06a1dcc231009a6e",
+    "date": "2007-12-05T15:43:04.000Z",
+    "content": "Always is a matter of choice..and the choose you make is always a compromise.\n\nCompanies, often believe in what other companies do..that's why often they copy mistakes from one to each other (way solution are implemented, equipments brands, software, OS..almost everything)...so unavoidable they believe in others companies testing software. Of course it's only about scanning for some vulnerabilities...but companies risk a lot..very much. They think that covering with patches and updates will solve the problem.Nope. No way u can do it like this. Becoming a h4ker..knowing what can be done is the way..But of course..to use this valuable knowledge ('cause u won't find \"Hacking for Idiots\" on every corner as being a good material, and it's perfectly understandable) in a good manner, for protecting yourself and upgrade your security level.\n\nIn this case... definitly u need a h3ker to evaluate, or become one... :)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-12-05T15:45:25.000Z",
+    "content": "nice wrap up :)"
+  },
+  {
+    "author": "flipper",
+    "avatar": "99905dc7cfd6a28a06a1dcc231009a6e",
+    "date": "2007-12-05T15:54:54.000Z",
+    "content": "Thanx, and they call it \"audit company\". I guess most of us been through such experience."
+  },
+  {
+    "author": "djteller",
+    "avatar": "44c5e290ccf283471210752d0b1ed6df",
+    "date": "2007-12-05T16:11:21.000Z",
+    "content": "I do believe that a skilled h4kur will produce much more valuable report than a scanner but: Today big organizations usually hire more than one penetration testing team, since they want different opinion about their security deployment. A mix between a person and an automated script/service will produce a reliable report.\n\n2 days ago in OWASP Israel conference i came across a new Startup company that provide an online automated penetration service, (gamasec.com), they tailor their service to each customer. Combining services such as this PLUS a real manual penetration test twice a year by a skilled individual is the right approach.\n\nP.S  - pdp i agree with you, that's a dark topic that no-one really wants to talk about, so i'm done here as well :)"
+  },
+  {
+    "author": "db",
+    "avatar": "f645b9e869b471fd52e73ee1243f1e35",
+    "date": "2007-12-05T17:12:11.000Z",
+    "content": "People (sysadmin's I worked with) would tell me that you could never automate system builds, but as the tools got better and the faith in the tools got better the reliance on automation increased.   Currently some companies rely on automation so much that they do not have the skilled labor to know when their automation has gone to the dogs.\r\n\r\nAutomation should only be used to assist a professional and not an a replacement for the skills that are needed to protect your data/infrastructure/person.\r\n\r\nHowever I am repeating what has been said before, it is worth repeating."
+  }
+]

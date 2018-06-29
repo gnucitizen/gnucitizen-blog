@@ -1,0 +1,20 @@
+[
+  {
+    "author": "Giorgio Maone",
+    "avatar": "290e868e00e8429bf1624a461b8ef81e",
+    "date": "2007-08-11T11:39:26.000Z",
+    "content": "Hi pdp, \r\nin the end looks like you're talking about #1 and #3 of the NoScript \"Anti-CSRF features in the works\"  I told you here last June: http://www.gnucitizen.org/blog/xss-worms-and-mitigation-controls#comment-31255\r\n\r\nCheers"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-08-11T18:49:30.000Z",
+    "content": "true, but we need something that is more flexible... something that is user oriented not just suitable for security people like us."
+  },
+  {
+    "author": "Joe Walker",
+    "avatar": "78a2f7cd819d229662b1cec3abf8bf92",
+    "date": "2007-09-03T17:47:06.000Z",
+    "content": "How about this for a solution to CSRF:\r\nhttp://getahead.org/blog/joe/2007/08/07/fixing_browser_security_samerefereronly.html"
+  }
+]

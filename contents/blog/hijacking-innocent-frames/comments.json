@@ -1,0 +1,92 @@
+[
+  {
+    "author": "rwnin",
+    "avatar": "bca2204daa687abf6e3963108ff5dc97",
+    "date": "2008-12-12T04:35:10.000Z",
+    "content": "i bet someone will call it a feature ;)"
+  },
+  {
+    "author": "holiman",
+    "avatar": "c6fe4b4afb6c32a931f3d361d6305497",
+    "date": "2008-12-12T07:53:11.000Z",
+    "content": "Good point, nice hack and solution that sounds like something that should have been a reasoable rule from the beginning. \r\n\r\nRegarding the AttachAPI and detecting signatures to check if someone is online: that seems to be fixed at least in moderately modern versions of FF - I tried to get a demo working of that earlier this summer, but the error messages accessible from the DOM are not as verbose anymore."
+  },
+  {
+    "author": "Baston",
+    "avatar": "831d085636d89cc6d141bacd63592351",
+    "date": "2008-12-12T08:19:03.000Z",
+    "content": "Add-on like \"secure login\" for Firefox or the \"magic wand\" connection of Opera could prevent such hack. As one doesn't enter his credentials but they are fetch by the add-on if and only the page is the right one, the second login-dialogbox would not be filled ....\r\nOr did i miss something ???"
+  },
+  {
+    "author": "Baston",
+    "avatar": "831d085636d89cc6d141bacd63592351",
+    "date": "2008-12-12T08:20:14.000Z",
+    "content": "Of course, using such a trick for other malicious purpose would work .... :o("
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-12-12T08:22:39.000Z",
+    "content": "I forgot to mention that there are other ways to detect when a user is logged on. think of dynamically generated css, image, swf and js files. all of them can be used to find the current user's state."
+  },
+  {
+    "author": "lavakumar",
+    "avatar": "606ab1a4939a8739b2d3eaae8bb281e4",
+    "date": "2008-12-12T14:02:54.000Z",
+    "content": "Intresting post! I think other vectors also exist since same-origin-policy doesnt apply for the location object here. <code>window.location</code> normally returns the current URL of the window, so all data in URL can be stolen this way. I tried this in firebug:\r\n\r\n<pre><code>w = window.open(\"http://gmail.com\")\r\nw.location = \"https://gmail.com\"\r\nw.location = \"https://gmail.com\"</pre></code>\r\n\r\nThe second time I call w.location, it returns - <code>https&#58;//www.google.com/accounts/ServiceLogin?service=mail&amp;passive=true&amp;rm=false&amp;continue=https%3A%2F%2Fmail.google.com%2Fmail%2F%3Fui%3Dhtml%26zy%3Dl&amp;bsv=1k96igf4806cy&amp;ss=1&amp;ltmpl=default&amp;ltmplcache=2</code>\r\n\r\nSo even without redirecting to another fake website, we can get the session IDs if they are in the URL(even over SSL). Also most CSRF countermeasures add the unquie nonce to the URL (including ESAPI), this can also be used to bypass the anti-CRSF measures in selective cases."
+  },
+  {
+    "author": "Matt",
+    "avatar": "bede61f8751b864f0f0e686339a37429",
+    "date": "2008-12-12T15:37:01.000Z",
+    "content": "Good write up; it seems like in principle our issue is that scripts from a previous page are running on the current one. The solution may be something along the lines of my understanding of the Google Chrome model. When you leave a site, that page dies with the executable and a new one is created for your new site; no residual triggers are left to be fired."
+  },
+  {
+    "author": "lattera",
+    "avatar": "a3ebc53bbf8294d4682b5c7124b91111",
+    "date": "2008-12-12T17:36:04.000Z",
+    "content": "This attack isn't new. In fact, it's used in a standard called SCORM. SCORM requires a javascript API to be loaded in a parent frame (or window.opener if a pop-up). The javascript API must make calls in behalf of the SCORM module. The javascript API could do what it wants, including changing the location.href of another frame (or pop-up)."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-12-12T20:46:16.000Z",
+    "content": "lavakumar, yes you can do that from Firebug but it wont work from a HTML page as far as I know, unless you are looking into some kind of a bug."
+  },
+  {
+    "author": "paulos",
+    "avatar": "9176aa3111a2d5729102a999a02754a6",
+    "date": "2008-12-13T18:20:44.000Z",
+    "content": "Hello, yes you are right, there are many not discovered bugs, or just not released, design bugs in web browsers as you said. I think that the best way to detect/discover them all is just makeing more and more fuzzers, i am almost sure that there are many specific bugs :)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-12-13T19:58:16.000Z",
+    "content": "hmmmmm, I don't think that fuzzers will work for finding design bugs... overflows yes, but not design bugs."
+  },
+  {
+    "author": "lavakumar",
+    "avatar": "606ab1a4939a8739b2d3eaae8bb281e4",
+    "date": "2008-12-15T07:52:00.000Z",
+    "content": "Your are right, looks like it only works from firebug...my bad."
+  },
+  {
+    "author": "polonus",
+    "avatar": "95eeb4f5ff5ba4d22535ae1b4a9aeccd",
+    "date": "2009-02-13T23:14:15.000Z",
+    "content": "Why is not there a decent online iFrame vulnerability scanner? We had Jutaky's iFrame Detektor, but that has gone offline somehow...\n\nNow we have to construct our own queries like feed this to Google, and see how your firekeeper flags this...\n\npolonus"
+  },
+  {
+    "author": "The Rook (Michael Brooks)",
+    "avatar": "7cedb843eb2922000eb41b4561ed660d",
+    "date": "2010-06-20T20:56:47.000Z",
+    "content": "Hey PDP people are ripping off your research!  I guess its a complement of your visionary hacks :)\r\n\r\nhttp://www.azarask.in/blog/post/a-new-type-of-phishing-attack/"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2010-06-24T10:50:27.000Z",
+    "content": "I've long realised that research should stay as a hobby. :) rather than means for making money. There are other more practical ways of earning your living."
+  }
+]

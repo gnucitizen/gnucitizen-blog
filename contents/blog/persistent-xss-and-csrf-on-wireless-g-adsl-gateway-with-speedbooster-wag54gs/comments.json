@@ -1,0 +1,20 @@
+[
+  {
+    "author": "Jordan",
+    "avatar": "129b6f1bf6c627d5ca57779bd15ea649",
+    "date": "2007-11-20T21:58:04.000Z",
+    "content": "One kinda tangential question -- I haven't played with it in a little while, but when I was doing something similar with a linksys a while back, if you specified the username:password in the url in a link, Firefox would trap the request and alert the user.  \r\n\r\nIs there a type of request that bypasses that, or does IE7 not have the same feature? \r\n\r\nI realize that doesn't actually fix the problem, but it at least does give the user a chance to say no and keeps the CSRF from working without their knowledge if they know what they're doing (hah!)\r\n\r\nUnless of course they're still logged in to the router when the attack occurs in which case no need to pass the credentials in the URL at all..."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-11-21T00:01:38.000Z",
+    "content": "Jordan, newer browsers like FF 2 spawn a warning when typing 'http://admin:admin@192.168.1.1/' and similar URLs which submit basic auth credentials.\r\n\r\nHowever, when playing with these attacks I remember getting more a interesting behavior on FF 2 if embedding URLs within HTML - ie: on iframes.\r\n\r\nAnyway, the best persistent XSS/CSRF type of flaw you can get is within log facilities. Reason being is that when the injected payload is triggered, the victim admin must be logged in by design (in order to check the logs) - hence no need to submit the password along the CSRFed request. \r\n\r\nI found something like this on Axis IP cameras: http://www.procheckup.com/Vulnerability_Axis_2100_research.pdf"
+  },
+  {
+    "author": "hackathology",
+    "avatar": "271ecedbd232e23677ddc1d3956147eb",
+    "date": "2007-11-28T17:09:36.000Z",
+    "content": "Nice one"
+  }
+]

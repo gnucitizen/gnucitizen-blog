@@ -1,0 +1,26 @@
+[
+  {
+    "author": "Sirw2p",
+    "avatar": "606c813f991f7171a8105e3c15defbaf",
+    "date": "2008-02-17T17:10:29.000Z",
+    "content": "Well! it's not bad for explain to any person who didnt know about this.. Cross-origin-scripting? :s i have never know about this flag."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-17T17:19:46.000Z",
+    "content": "yep, the presentation was mostly taken from very high angle. As far as the Cross-origin Scripting thing, I believe that this is the correct way to explain cross-site scripting and cross-zone scripting bugs, as we are not scripting SITES but different ORIGINS... therefore, Cross-origin scripting. It is much easier to use this one to describe things without too much repetition."
+  },
+  {
+    "author": "beford",
+    "avatar": "84e8ffa06cd17b4b405ff164c8354934",
+    "date": "2008-02-17T18:13:17.000Z",
+    "content": "ODT link is broken."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-17T19:39:35.000Z",
+    "content": "10x, it is fixed now"
+  }
+]

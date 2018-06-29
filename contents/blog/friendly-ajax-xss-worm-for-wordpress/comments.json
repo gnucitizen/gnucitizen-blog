@@ -1,0 +1,68 @@
+[
+  {
+    "author": "mybeNi websecurity",
+    "avatar": "43c564422282cecb1c04135491fa3af2",
+    "date": "2007-07-31T22:37:55.000Z",
+    "content": "Hey pdp!\r\n\r\nThe worm asks for permission and every step must be authorized by the Administrator, it just guides him through the process of applying the workarounds for the security vulnerabilities onto his Wordpress code. ;)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-07-31T22:45:00.000Z",
+    "content": "heh :) this is less critical but still. interesting research btw. have you informed the wordpress guys?"
+  },
+  {
+    "author": "David Kierznowski",
+    "avatar": "1d95d2324345e3dd2e41d6066cc1b492",
+    "date": "2007-07-31T23:33:23.000Z",
+    "content": "pdp, heh, I have checked the mans work ... trying to rope him in for a chat :-)"
+  },
+  {
+    "author": ".mario",
+    "avatar": "89886495b27cfdc78593e1f5c8810594",
+    "date": "2007-08-01T07:42:50.000Z",
+    "content": "Yep - very nice work indeed! But as pdp already said please release the sources. There's no way for me using this tool w/o knowing what it really does."
+  },
+  {
+    "author": "mybeNi websecurity",
+    "avatar": "43c564422282cecb1c04135491fa3af2",
+    "date": "2007-08-01T07:59:02.000Z",
+    "content": "yes, right after I pressed the Post Button, I created some Tickets at the Wordpress Bugtracker (trac.wordpress.com). They already fixed some parts, hope the release won't take too long."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-08-01T08:38:05.000Z",
+    "content": "good stuff byNi... let's see how long it will take wordpress to release a new version."
+  },
+  {
+    "author": "mybeNi websecurity",
+    "avatar": "43c564422282cecb1c04135491fa3af2",
+    "date": "2007-08-01T10:26:54.000Z",
+    "content": "mario:\r\nIf you refer from your admin panel to my page, it pops up and asks you if you'd like to fix these vulns, then it goes to your admin panel back again, carrying its XSS payload and creating a Small setup, which tells the Admin where to add which parts of code to his Wordpress files in order to Fix the Vulnerabilities.\r\nAt the end, the Admin is prompet wheter he'd like to continue the worm by pasting a small \"Referal-Checking\" php line to his sidebar (manually by copy&amp;paste) or if he'd like to add a blogroll link to my blog (of course automatically) ;)\r\n\r\n--cheers beni"
+  },
+  {
+    "author": ".mario",
+    "avatar": "89886495b27cfdc78593e1f5c8810594",
+    "date": "2007-08-01T14:48:51.000Z",
+    "content": "Thanks for the explanation but as I already said - w/o code review no usage - don't get me wrong please. \r\n\r\nAnd at the moment I have no time to set up a testblog etc.\r\n\r\nWhat's the problem with publishing the sources? You'd like to wait until the vulns are fixed?"
+  },
+  {
+    "author": "mybeNi websecurity",
+    "avatar": "43c564422282cecb1c04135491fa3af2",
+    "date": "2007-08-01T20:28:05.000Z",
+    "content": "Hell, it is javascript, you'll find the scrip tags on your own"
+  },
+  {
+    "author": "zqyves",
+    "avatar": "961884bedd94b496311e0e0b5b75fa8a",
+    "date": "2007-08-02T09:23:11.000Z",
+    "content": "hello all,\r\n\r\nhave a look at that:\r\n\r\nhttp://www.symantec.com/enterprise/security_response/weblog/2007/08/wordpress_xss_exploit_solves_p.html\r\n\r\nthere is actually a problem in the code of the XSS worm resulting in the \"+\" not encoded and interpreted as \" \" (space) by the browser."
+  },
+  {
+    "author": ".mario",
+    "avatar": "89886495b27cfdc78593e1f5c8810594",
+    "date": "2007-08-02T14:33:55.000Z",
+    "content": "Yep - just caught that too via my feeds - so maybe now you know what I mean with no review no usage."
+  }
+]

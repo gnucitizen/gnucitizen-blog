@@ -1,0 +1,98 @@
+[
+  {
+    "author": "Dfcnvt",
+    "avatar": "89d4328a0bae76d13017a840f9448096",
+    "date": "2007-10-12T20:59:50.000Z",
+    "content": "Now that you have the country of all it's ip address. What about the state in US or perhap the county in state?"
+  },
+  {
+    "author": "Dfcnvt",
+    "avatar": "89d4328a0bae76d13017a840f9448096",
+    "date": "2007-10-12T21:00:48.000Z",
+    "content": "http://www.maxmind.com/app/city"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-12T21:04:03.000Z",
+    "content": "yep, this is the one. although, as I mentioned in the post, the database is not 100% accurate, not to mention the fact that the interesting ranges are simple not even included."
+  },
+  {
+    "author": "vindic",
+    "avatar": "2fbd3fcfa626bd4301c18cdbd207a7bb",
+    "date": "2007-10-13T00:09:54.000Z",
+    "content": "pdp will you sell this, or make a new service? if you can make more accurate db, then why you dont use it for protection of websites? i will be first in list who will buy it, because is very very usefull"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-13T08:38:51.000Z",
+    "content": "vindic, what do you need this for? I mean Maxmind have a free database you can use for most things that come to mind."
+  },
+  {
+    "author": "vindic",
+    "avatar": "2fbd3fcfa626bd4301c18cdbd207a7bb",
+    "date": "2007-10-13T17:44:18.000Z",
+    "content": "pdp i have theyr's db, have too bins of cc. i am providing payments services and trying protect us for fraud. i am looking for any way or stuff which can more protect ours customers."
+  },
+  {
+    "author": "cybergoth",
+    "avatar": "d58934255c84ad1da6e10b5dc474fd6f",
+    "date": "2007-10-13T20:42:14.000Z",
+    "content": "I'm using ripe.net Europe RIRâ€™s db to extract net blocks for entire country. You can check it at  ftp://ftp.ripe.net/pub/stats/ripencc/2007"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-14T06:18:38.000Z",
+    "content": "cybergoth, cool... I need to look at this!"
+  },
+  {
+    "author": "RHW",
+    "avatar": "783ced7f61e69c95e312d276ea7b8bae",
+    "date": "2007-11-25T20:32:22.000Z",
+    "content": "This is a cool idea.  I scanned around for about 10 minutes and found about 5 boxes with open ports.  What is the default user/pass for the slingboxes?  I can't find any info on their website."
+  },
+  {
+    "author": "ricky",
+    "avatar": "8c8d38091ac5bee13439a3ed7fa88ab4",
+    "date": "2008-02-17T11:05:26.000Z",
+    "content": "Seems some changes on how the ip database is being held has been made since the last time I ran the script my files come out in the form of\r\n\r\n<pre><code>country-11.0.0.0.csv\r\ncountry-112.63.162.116.csv\r\ncountry-112.63.162.120.csv\r\ncountry-112.63.162.148.csv\r\ncountry-114.0.0.0.csv\r\ncountry-116.0.0.0.csv\r\ncountry-116.0.128.0.csv\r\ncountry-116.0.16.0.csv\r\ncountry-116.0.24.0.csv\r\ncountry-116.0.32.0.csv\r\ncountry-116.0.64.0.csv\r\ncountry-116.0.64.128.csv\r\ncountry-116.0.64.192.csv\r\ncountry-116.0.64.224.csv\r\ncountry-116.0.64.240.csv\r\ncountry-116.0.64.64.csv\r\ncountry-116.0.65.0.csv</code></pre>\r\n\r\nIf only I had backed them upbefore like I ment to.\r\n\r\n./R B"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-17T11:13:16.000Z",
+    "content": "ok, I have to look into this. I think that they have changed the positions of the CSV columns. Just rearrange the columns or better yet modify the script to outline these changes."
+  },
+  {
+    "author": "Ricky",
+    "avatar": "8c8d38091ac5bee13439a3ed7fa88ab4",
+    "date": "2008-11-20T16:42:20.000Z",
+    "content": "Links seem to be broken on this page for the script an ppt file"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-11-20T18:24:32.000Z",
+    "content": "yes, there are tones of bugs laying around since we moved. I will fix this now. thanks for the feedback."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-01-29T23:14:26.000Z",
+    "content": "all fixed now!"
+  },
+  {
+    "author": "Andrew Horton",
+    "avatar": "8051a7a2ed85308fe45d2b938d7c4cea",
+    "date": "2010-03-11T06:49:21.000Z",
+    "content": "I've published a tool that uses this technique and only just found out about your similar research from a post on the full disclosure mailing list.\r\n\r\nGeoIPgen is a tool for country to IP resolution written in ruby. It can produce IPs for 1 or a set of countries in ascending or random order, producing unique IPs with low overhead :)\r\n\r\nIt has proved useful when penetration testing to reverse resolve an entire country in order to discover networks or IPs the client forgets to mention.\r\n\r\nIt's available here, http://www.morningstarsecurity.com/research/geoipgen"
+  },
+  {
+    "author": "pagvac",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2010-03-11T23:49:16.000Z",
+    "content": "@Andrew: thank you for sharing your project with us! please keep us up to date with any significant feature additions to GeoIPgen.\r\n\r\nYou might also be interested in taking a look at http://www.country2ip.com/"
+  }
+]

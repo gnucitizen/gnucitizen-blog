@@ -1,0 +1,86 @@
+[
+  {
+    "author": "vindic",
+    "avatar": "2fbd3fcfa626bd4301c18cdbd207a7bb",
+    "date": "2008-02-13T11:13:01.000Z",
+    "content": "amazing find, thnx pdp :) and /* */ it's just great way"
+  },
+  {
+    "author": "fodznipor",
+    "avatar": "58c70fff8cc9f8a0ddbb49b332c0dbbc",
+    "date": "2008-02-13T17:39:04.000Z",
+    "content": "Aaack!  If you're going to inflict us with a picture of Sylvester Stallone in a wig and an Hawaiian shirt, at LEAST give us a barf-bag first!  :-D"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-13T18:44:10.000Z",
+    "content": "well, credits go to <a href=\"http://ha.ckers.org\" rel=\"nofollow\">RSnake</a> for coming with this brilliant proof of concept script. 10x R... it works well."
+  },
+  {
+    "author": "Leah Culver",
+    "avatar": "465cbf7da0a01de6a6192fef351008b2",
+    "date": "2008-02-13T18:56:28.000Z",
+    "content": "This has been fixed already."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-13T19:00:27.000Z",
+    "content": "the vendor was responsibly contacted about the issue and a patch was released to cover the problem before we've made our findings public. but just to stress out so that everybody knows.\n\n<div class=\"message\">we've contacted the vendor about the issue and as a result a patch was released before we've made our findings public! the vendor's response was remarkably quick.</div>"
+  },
+  {
+    "author": "Mauvis",
+    "avatar": "faf30efa626cb32e0a30e99877d99832",
+    "date": "2008-02-13T22:54:12.000Z",
+    "content": "I thought this was a cool read and something we should all look out for while making Air apps. Thanks for the post!"
+  },
+  {
+    "author": "InfoSecNirvana",
+    "avatar": "04af960e5453ab2203a66e21c7a70ea6",
+    "date": "2008-02-14T03:36:57.000Z",
+    "content": "Nice job. I mentioned Pownce in my blog earlier this week as one of the applications that corporate information security people need to worry about. http://infosecnirvana.blogspot.com/2008/02/data-leak.html"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-02-14T10:33:25.000Z",
+    "content": "This is a nice example of combining two vectors in order to accomplish fully working JS injection: an unfiltered - but limited by length - field, and a filtered but unlimited by length field."
+  },
+  {
+    "author": "Acidus",
+    "avatar": "78cba65808e304f31cb5af18bf825e32",
+    "date": "2008-02-14T23:30:03.000Z",
+    "content": "Hmmm, perhaps I'm missing something. I see how you use a start SCRIPT tag and then a code comment to blank everything between the injection point and the \"user supplied but sanitized\" data. I also see how us end the \"user supplied but sanitized\" data with a code comment to blank out everything after the \"user supplied but sanitized.\"\r\n\r\nBut where is the end script tag? You JavaScript will not run unless the SCRIPT tag is closed. And assuming there is a end SCRIPT tag on the page after your \"user supplied but sanitized\" data, you will get an unterminated comment syntax error for that script block. The only way this will work is if there is a script tag later in the page that has a closing code comment AND the rest of the code will not invoke a syntax error\r\n\r\nI hope this is making sense! Take a look at the HTML on http://msblabs.org/filedump/frag.html\r\n\r\nThe injected code alert(555) can only run because later in the HTML their is a SCRIPT block that can close both the open code comment and the open SCRIPT tag. Was that the case in the site you were exploiting?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-15T00:57:33.000Z",
+    "content": "Acidus, your question makes perfect sense. There is a second <code>&lt;script&gt;</code> <code>&lt;/script&gt;</code> text entry which closes both and fixes the code so that it runs perfectly fine. However, in some cases like where the profile needs to be xssed for unauthenticated users you have to use <code>*/&lt;script&gt;/*</code> as this strings is repeated several times across the page. And you need to do that because of a Google Analytics breaking the end of script and making the code not executing at all. But as I said this is only applicable for unauthenticated users. Does that make sense? I guess it needs more detailed explanation."
+  },
+  {
+    "author": "Acidus",
+    "avatar": "78cba65808e304f31cb5af18bf825e32",
+    "date": "2008-02-15T15:09:13.000Z",
+    "content": "got it. thanks"
+  },
+  {
+    "author": "tweetycoaster",
+    "avatar": "3bf037f8cef4476ee7938a0f31076622",
+    "date": "2008-02-16T19:32:54.000Z",
+    "content": "I found plaxo.com also xssable and wormable when I test simple and plain xss stream as  to First Name entry field."
+  },
+  {
+    "author": "ynnhoj",
+    "avatar": "d85a492064463004e4b00b7bae82a66c",
+    "date": "2008-05-07T09:13:54.000Z",
+    "content": "This is not working with every browser. Because atob() is not standard in JavaScript. Probably it could work withe unescape()."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-05-07T14:52:32.000Z",
+    "content": "true, the POC was written exclusively for FF."
+  }
+]

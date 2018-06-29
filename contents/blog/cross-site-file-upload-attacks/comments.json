@@ -1,0 +1,80 @@
+[
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-21T13:46:04.000Z",
+    "content": "<a href=\"http://www.gnucitizen.org/about/mario\" rel=\"nofollow\">.mario</a> reported that <a href=\"http://kuza55.blogspot.com/\" rel=\"nofollow\">kuza55</a> has identified a similar problem which depends on a weird bug within Firefox, IE and Safari. Opera is not affected. Here is a demonstration of his code:\r\n\r\n<pre><code>&lt;form method=\"post\" action=\"http://kuza55.awardspace.com/files.php\" enctype=\"multipart/form-data\"&gt;\r\n&lt;textarea name='file\"; filename=\"filename.ext\r\nContent-Type: text/plain; '&gt;Arbitrary File\r\nContents&lt;/textarea&gt;\r\n&lt;input type=\"submit\" value='Send \"File\"' /&gt;\r\n&lt;/form&gt;</code></pre>\r\n\r\nhmmm, very, very, interesting."
+  },
+  {
+    "author": "kuza55",
+    "avatar": "2f6303f9095f59c14c3097ef4df566f5",
+    "date": "2008-02-22T02:46:14.000Z",
+    "content": "That's interesting. I've only played with the AS2 LoadVars Class (Since I've been to lazy to setup Flex, etc), so I thought you couldn't use Flash to do that since LoadVars URL encodes whatever you put in request body.\r\n\r\nAre there many differences between the LoadVars and URLRequest classes?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-22T08:44:08.000Z",
+    "content": "<code>LoadVars</code> is inferior when compared to <code>URLRequest</code> combined with <code>navigateToURL</code> or even better <code>sendToURL</code>. Simply put, the <code>navigateToURL</code> function will open the result into a browser window/tab while <code>sendToURL</code> will silently execute it in the background. No restrictions applied!\r\n\r\nbtw, setting up flex environment is not very hard. you just need the FlexSDK .zip file. Decompress it somewhere on the disk. write your MXML or AS and compile with mxmlc like this:\r\n\r\n<pre><code>path/to/flexsdk/<strong>bin/mxmlc path/to/app.mxml</strong></code></pre>"
+  },
+  {
+    "author": "757362",
+    "avatar": "680d96ca25f385f5c7a8caa341413aca",
+    "date": "2008-02-24T18:56:45.000Z",
+    "content": "Interesting project. \r\n\r\n\"Like CSRF attacks, there are plenty of things one can do with this type of technique.\"\r\n\r\n- DOM XSS attack entry point.\r\n\r\nUsing haXe with the Flex2 Framework\r\nhttp://haxe.org/manual/3/interop#using_haxe_with_the_flex2_framework"
+  },
+  {
+    "author": "guesty",
+    "avatar": "8ae2c1a047f75c6ee65b77faf5433416",
+    "date": "2008-02-27T11:57:07.000Z",
+    "content": "and how about spoofing the refe(f)rer with flash?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-27T12:16:20.000Z",
+    "content": "it used to work but not sure what is the situation right now."
+  },
+  {
+    "author": "Matt Presson",
+    "avatar": "bd8ac47a2a650bc3add0502686f33e39",
+    "date": "2008-03-03T23:54:19.000Z",
+    "content": "Just a thought here, but after doing some simple research on Flash and file access, an attacker could use \"one of the wrapper programs that have been written to allow local file access (SWF Studio, Zinc, Screenweaver, etc)\" (per http://www.flash-creations.com/notes/servercomm_textfile.php) along with the above code to create a drive-by file upload service. Especially if you used sendToURL().\r\n\r\nIf I understand what is presented on the above referenced page, and I may not, then if you could get anyone to visit your page you could upload any file you wished to your server from their local machine.\r\n\r\nAny thoughts? Am I crazy?"
+  },
+  {
+    "author": "Danno",
+    "avatar": "54f766440ca8765336cfe8ead70116c6",
+    "date": "2008-03-08T11:07:24.000Z",
+    "content": "Routers and modems bypassed, now cross site file upload attacks. Good thing I stopped playing poker online for cash. I don't use this thing to bank or trade stock on either. Cheeky, aren't they.\r\n\r\nWhat is a n00b to do?"
+  },
+  {
+    "author": "maosud",
+    "avatar": "dab9f1412262426064cb5e6e990d5d50",
+    "date": "2008-12-23T11:45:58.000Z",
+    "content": "i want to upload file with a large size"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-12-23T15:36:59.000Z",
+    "content": "this method should work although it could also fail from time to time."
+  },
+  {
+    "author": "blake",
+    "avatar": "a26ab14b9f92021db6fa10be81546e29",
+    "date": "2009-02-24T23:03:10.000Z",
+    "content": "it works great for webmail (yahoo/symantec &amp; gmail).\r\n\r\nsee screenshots of yahoo and gmail in .ppt presentation back in July ‘08 on www.appfuzzer.com"
+  },
+  {
+    "author": "site ekle",
+    "avatar": "26d30779c4080f21f4c3709e015ebd2e",
+    "date": "2009-06-09T08:29:23.000Z",
+    "content": "Thank you for article. I took great pleasure to read"
+  },
+  {
+    "author": "Sohbet",
+    "avatar": "aef3706bbe7b75c1cd8de34fbd7d06a9",
+    "date": "2009-07-22T04:52:07.000Z",
+    "content": "Thank you for article. I took great pleasure to read (:"
+  }
+]

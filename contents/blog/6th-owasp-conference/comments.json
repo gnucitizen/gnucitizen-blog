@@ -1,0 +1,50 @@
+[
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-05-17T12:41:22.000Z",
+    "content": "<div class=\"message\">Yahoo PIPEs is down for now. Give Yahoo some time to fix the mess, then try the POCs.</div>"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-05-17T19:28:56.000Z",
+    "content": "<div class=\"message\">Yahoo PIPEs is back. POCs work.</div>"
+  },
+  {
+    "author": "Acidus",
+    "avatar": "bc99640b554acac6fb6b03be8ff047b1",
+    "date": "2007-05-17T19:49:19.000Z",
+    "content": "HAHA! That's awesome! I did some work against TinyURL a year or so back with TinyDisk (http://www.msblabs.org/tinydisk). Glad to see someone else using it as a data storage system!\n\nGo pdp!"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-05-17T20:00:33.000Z",
+    "content": "To me, the Web is one gigantic operating system with hundreds of APIs and syscalls. The browser is our shell from where we can access the WebOS features. TinyURL, although just URL shrinking service, can be used as a storage mechanism as you pointed out long time ago. However, I seriously doubt that no one has thought that this functionality will be available to JavaScript as well. Similar types of setups can significantly increase the attack surface of web based malware written entirely in JavaScript."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-05-18T07:36:14.000Z",
+    "content": "<div class=\"message\">Unfortunately, PIPEs is down again. I suspect Yahoo has some serious problems. I have never seen anything like that before.</div>"
+  },
+  {
+    "author": "MacGyveR",
+    "avatar": "90880511222c118cd3e91f7441156b71",
+    "date": "2007-05-19T13:51:10.000Z",
+    "content": "Have you thought of implementing redundancy on the tinyFS by using other such services in a type of software raid manner. striping or mirroring could be done here, giving potenial worms etc. a fallback if one service blocks them."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-05-20T07:55:08.000Z",
+    "content": "yes, it is possible and very probable that it will happen!"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-07-15T20:03:01.000Z",
+    "content": "<div class=\"message\">Due to the fact that Yahoo is constantly changing their services, you might not be able to successfully execute this POC. At the time of publishing, the POC was working successfully.</div>"
+  }
+]

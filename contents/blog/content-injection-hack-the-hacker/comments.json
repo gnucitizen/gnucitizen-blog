@@ -1,0 +1,44 @@
+[
+  {
+    "author": "Dnaiel",
+    "avatar": "1f74196b2e9b231e7ba9a49d2b61ec2c",
+    "date": "2008-04-12T09:00:18.000Z",
+    "content": "I actually use this at the moment, I won't say what I do when some useless c*nt tries to hack the box, but it's pretty effective to say the least."
+  },
+  {
+    "author": "xnull",
+    "avatar": "bd53983161441595a6c36a6ba42998c4",
+    "date": "2008-04-12T18:06:38.000Z",
+    "content": "David, that is fun to think about, but most attacker's browsers (at least ones used in a serious attack) are stripped down of Java, javascript, flash and many other functionalities (many times even cookies). Torbutton is an example of an add-on for Firefox which tries to do this for an attacker automatically.\r\n\r\nA lot of blackhats bother compiling a separate browser to be their Tor browser.\r\n\r\nKeep in mind that anything client-side is in complete control of the attacker and can also be defeated with just a little bit of creativity."
+  },
+  {
+    "author": "Yousif Yalda",
+    "avatar": "0cee37308e264139b018a3ce257f1e17",
+    "date": "2008-04-13T18:02:50.000Z",
+    "content": "Nice post, I agree with these methods. Now this is actual out-of-the-box thinking. Trapping the hacker scheme is always what I have in mind when implementing any type of IDS, specifically reducing the use of heavy technologies, and rather just applying what we already have customized in crafted requests in real-time. I'll too be discussing ways of IDS concepts on my blog soon, I'm working on a POC to release soon as well, good job man!"
+  },
+  {
+    "author": "David Kierznowski",
+    "avatar": "1d95d2324345e3dd2e41d6066cc1b492",
+    "date": "2008-04-14T10:30:54.000Z",
+    "content": "Daniel, watch out for false positives :)\r\n\r\nxnull, I haven't actually heard of people doing this, although I have heard of peeps using a virtualised browser (i.e. VMWare etc).\r\n\r\nYousif, thanks man, keep us posted on your blog progress, would be interesting to see what you come up with."
+  },
+  {
+    "author": "Awesome AnDrEw",
+    "avatar": "5e0f595cbc8f1811233adce10ac6c5d3",
+    "date": "2008-04-14T13:54:14.000Z",
+    "content": "Out of the hundreds or thousands of attacks I receive daily a large number of them are through wget, Perl, Java, and similar applications which have been automated. Very few are from legitimate clients, but I do find a lot of attempts from Firefox users' who then try to spoof their User-Agent. A great way to tell the difference between bots and humans who are using real browsers is that in most cases even if Java, Javascript, and other embedded entities are disabled there will be a significant number of requests for other resources such as images or stylesheets (though this also depends on both the type and amount of content on a page). Most automated attacks only target a specific page, and do not make subsequent requests for the material placed on the page.\r\n\r\nI've set up my own layered system for custom intrustion detection, but some of the more interesting concepts along the lines of what you've talked about, which I have come up with, include using CSRF or 302 redirections to pass off the traffic to another host (I believe the owner of Blue Hat SEO did this when his website was being attacked, and redirected all of the malicious traffic to the FBI's website), bombarding the user with advertisements (this would only apply to those illegitimate requests caused by individuals), scanning the client for vulnerabilities, or attacking the client with one's own botnet. The CSRF issue is probably the most entertaining due to all of the possibilities it entails."
+  },
+  {
+    "author": "mordox",
+    "avatar": "cd39672ed1d60132b740e0b199cd5ee5",
+    "date": "2008-04-15T10:46:41.000Z",
+    "content": "Bharosa / Oracle OAAM too uses a client fingerprinting technology to identify threats"
+  },
+  {
+    "author": "Hamid.K",
+    "avatar": "24a1e9cbc9ea78adc0445aa1adc545bf",
+    "date": "2008-04-18T19:56:52.000Z",
+    "content": "While looking like a nice (but not new) idea , I believe it completely failed  , for various reasons :\n\n1- The same reason/capability make serious hackers bypass your IDS/IPS  , makes them bypass this one.\n2-As xnull already mentioned , every mechanism used for security(defense or defeat) at client-side should be considered broken . No matter how complex or obfuscated it is , it`s broken .\n3-Now days , even beginners has learned to live without JS in their browsers . So maybe another solution should be applied ?\n4- Wise people doing web-app testing (or hacking)check web-servers responses as much as they do for requests ! So such a behavior could be catchd almost immediately by them.\n5- If the hacker is still getting back-traced after these all , for sure s/he must be a script-kiddie not capable of doing anything serious . so just making more noise in logs . The goal should be reducing them as much as possible , to be able to use them effectively . right ? \n6- Even if #5 didn`t matched your business and you think with #5 your web-app/server could still get hurted , then this solution or trick is not for you ! Best advice for such system IMO is to completely shut it down , and sleep well at nights :)\n\nfinally , I love your blog , and am learning new ideas each time I visit it . keep the great job guys ."
+  }
+]

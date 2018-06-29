@@ -1,0 +1,68 @@
+[
+  {
+    "author": "sull",
+    "avatar": "8b71ac29d4c8fbc68955337e5143d549",
+    "date": "2007-10-30T18:53:27.000Z",
+    "content": "good points.\r\nprism project is def one to watch closely and/or participate in development.\r\n  \r\nthe core concept is solid... i've always had an interest in simply wrapping content (client and server side) in multi-platform cross-compatible desktop applications... for all the obvious benefits and also for that 'control' layer. control in security, UI and exposed functionality.\r\n\r\ntypically, i looked at this from the angle of allowing integrated web browser within a desktop app... something we have seen for a long time... early napster days even.  something i have wanted since the days of using Hotline and KDX.  i purchased Runtime Revolution and one of the selling points was this simple feature... integrating native OS web browser into my apps... or to just wrap a restricted website as a desktop app and nothing more.  runrev uses IE on windows and Safari on mac.  So it is obviously not the same approach as Prism which IS a browser (firefox/gecko) itself. \r\n\r\nAt this point, I like the Prism approach alot.  I've been following XULRunner and Webrunner so it was exciting to see the annoncement of the rebranded Webrunner as Prism and all the new discussion on what this means.... even as it is not exactly groundbreaking in a technical sense.... it still has the potential to be groundbreaking as the project evolves and launching prism apps becomes a more common thing.... it's the popup window 2.0 ;)\r\n\r\nWhat's important now is everyone participate in the ddiscussions that will help to mold prism.  \r\nMore of that, like this post here.... and less of the critically shallow early observations that prism is no big deal.  Dont miss the point.  Step outside the box and think about how this approach on RIAs and web/desktop hybrid niche can lead to new innovations. i dont mean to overstate the importance of this project... but i dont want their to be two camps that either belittle or over-hyper it.  Just look at it for what it is and what it can and should logically become.  \r\n\r\nThe comparisons to AIR and Silverlight are relevant but should not be the focus of Prism  discussions.  So I am glad to see this post doesnt go there :) \r\n\r\nSull"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-30T20:57:55.000Z",
+    "content": "sull, absolutely. I do like the concepts of Prism. Thought, I would like to see the features I discussed above implemented."
+  },
+  {
+    "author": "DinoBoff",
+    "avatar": "16ceb28d7e6867f78e92c3b82ac01b48",
+    "date": "2007-10-30T21:11:44.000Z",
+    "content": "I think all the prism applications share the same cookies but they don't share it with Firefox.\r\n\r\nWhat is happening if in your gmail prism you clic on a link for an external website? Will it open the link in your browser or in prism?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-30T21:16:59.000Z",
+    "content": "DinoBoff, well yes. Prism does not share cookies with Firefox. But two separate Prism applications do share cookies if they meet the same origin requirements. Clicks on external links, open into new chromeless pop-up windows."
+  },
+  {
+    "author": "ronald",
+    "avatar": "80d7b8935b953dabd63268177b7981f6",
+    "date": "2007-10-31T01:07:21.000Z",
+    "content": "I think it only has a nice logo, but it's exactly based upon regular chrome. I played with it already but I have trouble seeing the security aspect in any sense. Let alone users will actually starting to use it (which I doubt)."
+  },
+  {
+    "author": "Dave Duchene",
+    "avatar": "811c6cb99f8ebf0479fbea5f1f89853a",
+    "date": "2007-10-31T05:14:24.000Z",
+    "content": "Prisms definitely looks like a great start in the right direction, but I'm also disappointed to see that different applications share resources.\r\n\r\nRight now I use a separate web browser install for all of my online banking.  To put it mildly, this is inconvenient, and with all of the hoopla about phishing scams and online \"security\" these days, you'd think that browser developers would jump at the chance to implement a proper, well integrated sandbox.  Sadly, it doesn't (yet) seem to be the case."
+  },
+  {
+    "author": "Wladimir Palant",
+    "avatar": "7806629160a492b05d21fd738953a4cf",
+    "date": "2007-10-31T10:09:56.000Z",
+    "content": "I didn't look at Prism but I use WebRunner which seems to be more or less the same thing. Sure, by default all applications use the same profile. But you should be able to specify a different profile as a command line argument (-P profile8). Still, question is whether the applications all run in the same process - then they all use the same profile. MOZ_NO_REMOTE environment variable helps but it is not quite what you would like I guess."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-31T11:08:19.000Z",
+    "content": "Wladimir, yep. maybe the wizard should dynamically create a new profile for each application... or you can select an existing profile for a group of applications. Then, by default the application should launch with the -noremote and -profile options therefore ensuring that applications run in separate sandboxes. <strong>This shouldn't be that hard to do!</strong> It is good enough for a starter. :)"
+  },
+  {
+    "author": "sull",
+    "avatar": "8b71ac29d4c8fbc68955337e5143d549",
+    "date": "2007-10-31T18:40:44.000Z",
+    "content": "each webapp generated will have their own profiles in next release updates.  the developers have put it as one of the top priorities so i have read."
+  },
+  {
+    "author": "ronald",
+    "avatar": "80d7b8935b953dabd63268177b7981f6",
+    "date": "2007-10-31T20:30:33.000Z",
+    "content": "LOL\r\n\r\nSorry, but I think it's far less secure. Only the idea of running it ALL on the dektop INSIDE a cached version (WYSIWYG://) isn't a clever idea. IMHO, what's the difference? nothing! it only brings the bacon closer to home, but we will see."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-31T20:36:50.000Z",
+    "content": "sull, good stuff. though, I would like to see also some options for sharing profiles between applications.\r\n\r\nronald, there is no difference between Firefox and Prism code-wise. Both of them run on the top of xulrunner. Though, conceptionally, they are different. I think that Prism has a bright future, though a lot of way to go."
+  }
+]

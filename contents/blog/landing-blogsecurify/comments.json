@@ -1,0 +1,38 @@
+[
+  {
+    "author": "psy.echo",
+    "avatar": "bdbf6f766659c04793d255b88fa1e829",
+    "date": "2008-06-26T11:02:47.000Z",
+    "content": "Nice work PDP. I checked my blog :) It says .. perfect ... thus adding another check mark to security! Cheers."
+  },
+  {
+    "author": "takuan",
+    "avatar": "04c16bdf943696b87592aff4b30d7083",
+    "date": "2008-06-27T03:51:52.000Z",
+    "content": "I thought it was interesting to run the scanner against \"www.gnucitizen.org/blog/\" and it returned...\n\n<blockquote>This blog is running a vulnerable version of WordPress, please upgrade to the latest version available here.</blockquote>"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-06-27T06:28:18.000Z",
+    "content": "takuan, thanks for the info, although I know and you know that this information is totally fabricated. :) thanks anyway!"
+  },
+  {
+    "author": "Alex",
+    "avatar": "a8d75870431d765df3c067283af3d370",
+    "date": "2008-06-27T20:39:15.000Z",
+    "content": "For which vulnerabilites will Blogsecurify check those blogs out there? Will it create new entries via SQLi, etc. and does it only check blogs running WP for the moment? I didn't find some info about it."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-06-28T06:04:58.000Z",
+    "content": "Alex, the test is none-exploitative so it should not create any bogus entries within your database."
+  },
+  {
+    "author": "aungkhant",
+    "avatar": "a338b469baeb6c9eb982fcafa23a6082",
+    "date": "2008-07-06T12:16:48.000Z",
+    "content": "At first glance , I think this checks against public exploits such as in OSVDB/Milw0rm. Great. As for me I just wanna write a perl script that greps \"Generator\" meta tag like Word 2.0.3 and greps latest version info. If out-dated, extract wordpress vulnerabilities in wordpress version &lt; latest and show them to user and warn her to upgrade."
+  }
+]

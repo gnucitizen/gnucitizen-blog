@@ -1,0 +1,38 @@
+[
+  {
+    "author": "Steven",
+    "avatar": "5770fe4f49c0b8b146af2b088b4249c5",
+    "date": "2007-06-22T14:39:45.000Z",
+    "content": "I think I am actually going to write something about this soon as I keep hearing it over and over.  There isn't really an \"iframe\" exploit.  Someone might make a virtually-invisible iframe reference to another page that houses exploit code, however, this is not an exploit with iframes.  If you're running unpatched software (and usually as an administrator) , that is why you got owned.  Te iframe is simply how they pulled in the exploit code from the third party site."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-06-22T14:51:32.000Z",
+    "content": "steven, precisely,\r\n\r\nthe iframe in this case is a 0width 0height window/frame that downloads any exploit within the browser context without moving the user away from the current view. This is very sneaky since the user doesn't really know what is going on, unless they follow the messages inside the status bar."
+  },
+  {
+    "author": "Steven",
+    "avatar": "5770fe4f49c0b8b146af2b088b4249c5",
+    "date": "2007-06-22T17:05:26.000Z",
+    "content": "Yep I am very familiar with that as iframe's have been used for exploits for years now.  I just find it funny that the same old things get recycled and treated as new.  I guess it's good for those that might have missed it or didn't get it before."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-06-22T20:19:39.000Z",
+    "content": "most definitely man, are you interested to become GNUCITIZEN guest blogger over here on this subject?"
+  },
+  {
+    "author": "rootkid",
+    "avatar": "8288f51796514beb3c57314ebcfa5423",
+    "date": "2007-06-26T17:51:24.000Z",
+    "content": "Actually, it's not necessarily the webserver that has to be compromised/infected. A proxy server would certainly be a more powerful attack base. Actually, I developed an \"in-line\" browser exploit years ago, which could be deployed in an internal network, working as a proxy for all outgoing http request (if needed, after executing a MITM attack to redirect the network stream). I injected the exploit only once for a certain (or all) websites, that way the user or administrator could be compromised even if he/she only surfed \"trustworthy\" sites. Of course, compromising a proxy is alway a major security breach, but I think injecting malicious mobile code certainly multiplies the amount of attackable clients. Of course, that way the attacker does not have to make use of an IFRAME anymore. \r\nI wouldn't be surprised if proxy servers become more and more the aim of large-scale attacks very soon."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-06-26T21:00:06.000Z",
+    "content": "interesting idea rootkid."
+  }
+]

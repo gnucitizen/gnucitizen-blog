@@ -1,0 +1,74 @@
+[
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-01-10T23:28:15.000Z",
+    "content": "Something that worries me about many network devices that support UPnP is that when you change settings via UPnP they sometimes cannot be undone via the web console! Instead you need to undo them via UPnP."
+  },
+  {
+    "author": "rezn",
+    "avatar": "5d1658ac36692c8b5ff5612aa9d6a837",
+    "date": "2008-01-11T16:26:30.000Z",
+    "content": "UPNP requests executed via DNS Rebinding sounds like a really ugly thing.  One that wouldn't be difficult to code up into a convenient little applet."
+  },
+  {
+    "author": "Mark",
+    "avatar": "814aaca7f2ffb892b4694cca7fb6dc09",
+    "date": "2008-01-11T18:43:12.000Z",
+    "content": "Bt have kindly updated HH to version E, if you changed your password from the default (please!) the exploit now just goes into a loop with no changes made. AFAIK the HH now requires a serial number input in order to change the pass also."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-11T18:45:45.000Z",
+    "content": "10x for the info. through, I am not sure whether it is me, but how is that related to the hack discussed above."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-01-12T01:40:49.000Z",
+    "content": "Hi Mark. I'm a bit confused about your comment. Changing passwords shouldn't make a difference on this exploit as the payload uses a UPnP which is a authentication-less protocol (no password required!).\r\n\r\nPlease elaborate so I can understand your problem better."
+  },
+  {
+    "author": "gool",
+    "avatar": "5ed89ac7e2508fffb0ced695aee01a40",
+    "date": "2008-01-16T20:19:05.000Z",
+    "content": "i found that u can get straight to menu in last firmware without serial chk but it will ask for user and password\r\n\r\nhttp://192.168.1.254/cgi/b/connchk/?ce=1&amp;be=0&amp;l0=4&amp;l1=-1\r\n\r\nhope can find bug in laste firmware, UPnP attack dosent work on last firmware E"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-16T20:46:24.000Z",
+    "content": "gool, the UPnP attack does work on the latest firmware."
+  },
+  {
+    "author": "catweazle",
+    "avatar": "c61f603bdffc3d341e75ef865f9486a1",
+    "date": "2008-01-19T00:48:52.000Z",
+    "content": "gool: I run an Alcatel Speedtouch 510 (4.3.2.6.0 firmware; 9 volt supply version)router and set it to disable UPnP, turned firewall on to standard level and when I retrieve your link it opens the 510 Connectivity Check menu window.\n\nThis is quite scary as I thought UPnP was blocked by the 510. What 'should' your link do? (Using Mac OS Leopard)"
+  },
+  {
+    "author": "catweazle",
+    "avatar": "c61f603bdffc3d341e75ef865f9486a1",
+    "date": "2008-01-19T01:03:11.000Z",
+    "content": "DUH! Am so confused reading all the above have answered my own question! Of course this will happen! Sorry."
+  },
+  {
+    "author": "anonymous",
+    "avatar": "a316c5df8a71f897ab4ec571e6760e52",
+    "date": "2008-07-29T01:00:10.000Z",
+    "content": "Hi,\n\nThis must sound really dumb to you guys but I have to ask it .. how are you allowed to make a request to 192.*.* if you are from some evil.com site?"
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2008-07-29T23:31:28.000Z",
+    "content": "@anonymous: that question is NOT dumb at all! The only reason why it's possible to contact an internal system (home router in this case) is because:\r\n\r\n1. you visit evil.com which loads HTML/JS code in your browser\r\n2. your browser executes such code\r\n3. since your browser is located in the *internal* network (LAN), it CAN communicate with your home router, even if the HTTP service is only available internally\r\n\r\nIn other words: your browser becomes your worst enemy. It's nothing else than a proxy which links both the external world (WAN/Internet) and the internal one (LAN/intranet).\r\n\r\nMakes sense? Let me know if you have any other questions."
+  },
+  {
+    "author": "ocean",
+    "avatar": "2865f744799904b77b24b6e2f52e0652",
+    "date": "2009-04-15T10:21:21.000Z",
+    "content": "great post. hey anybody know how to exploit NAT in router. Port forwarding is also best way to exploit router"
+  }
+]

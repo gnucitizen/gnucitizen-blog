@@ -1,0 +1,176 @@
+[
+  {
+    "author": "Jesse Ruderman",
+    "avatar": "d2dc9227eafcd0ec5ba3712ee4f19b75",
+    "date": "2007-08-25T22:23:41.000Z",
+    "content": "I'm not sure how the internetnews.com writer got from \"Cross site XMLHttpRequest will enable web authors to more easily and safely create Web mashups\" (which Schrep said and I agree with) to \"Mozilla is aiming to put an end to XSS attacks in its upcoming Firefox 3 browser\" (which is clearly not the case).\r\n\r\nMost of your complaints about the feature seem to be about how it can make existing bugs in servers worse.  For example, you mention CRLF injection.  You can already do quite a bit if you can inject CRLF in the headers returned from a site during a page request; I'd be surprised if you can't XSS with it.  So I don't think cross-site XHR and content-access-control make that problem worse for buggy servers.\r\n\r\nYour TRACE attack looks like something that's easily prevented in browsers.  But the header is per-request, so if all TRACE does is echo your request, the only data you'll get out of it is the echoed request.  Am I missing something?\r\n\r\nOne thing that *does* worry me about the spec is the following sentence in the \"security considerations\" section: \"A user agent running inside a trusted corporate network and executing untrusted content should enforce a sandboxing policy by denying access (to untrusted content).\"  Browsers have always had a hard time distinguishing between inside-the-firewall resources and outside-the-firewall resources.  (Think CSRF attacks and DNS-rebinding attacks against home routers and internal servers.)  A spec requiring browsers to do so doesn't suddenly make it possible to do."
+  },
+  {
+    "author": "Jim Manico",
+    "avatar": "04b8fca2c8dde2ed82373ade37e9789d",
+    "date": "2007-08-25T22:42:00.000Z",
+    "content": "Petko, this is nothing short of a brilliant argument. Good work, thanks for diving deep into this!"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-08-25T23:29:06.000Z",
+    "content": "Jesse, I am not arguing with you. This post is something that I put up in 20 minutes. Only time will tell. So please consider everything that I've said as pure speculation.\r\n\r\nAbout, TRACE: I've seen a lot of weird stuff when it comes to HTTP. Don't be surprised when certain things just work. Certain Java connectors accept everything. They completely ignore the METHOD and just look at the data that is passed. Sometimes it is just possible to set the headers. I cannot give an example now but I am also not that big Java fan either. Also, mod_python and mod_rubby both have higher level of interaction with Apache. There might be situations where they can take higher priority over the body and supply only content in which case the request will be split in two. Let's not forget proxies and caching issues. I am not sure whether XmlHttpRequest will implement access control caching either.\r\n\r\nCRLF Injection on resources that deliver XML files is not that much of a problem. XML wont render and definitely does not know how to evaluate JavaScript. Let's take a look at SOAP for example. SOAP is highly dependent on request and response headers. The chances to open CRLF hole in there are usually higher. This means that now attackers can make arbitrary calls to vulnerable SOAP services and pull data out without any restrictions. <q>Big deal</q> you say. True, but let say that the vulnerable SOAP server is inside the corporate Intranet. Ok, now it becomes interesting. This means that JavaScript will be able to pull data without any restrictions. All it takes is for the user to visit a resource that is slightly malicious. Now, this is what I call a sneaky break-in.\r\n\r\nAgain, I have not idea what's going on but the spec does not sound good to me. I don't like it and I am almost certain that there will be some serious implications for browser vendors after it is implemented."
+  },
+  {
+    "author": "Awesome AnDrEw",
+    "avatar": "5e0f595cbc8f1811233adce10ac6c5d3",
+    "date": "2007-08-27T05:57:42.000Z",
+    "content": "Another awesome article, pdp. I see a lot of potential with these vulnerabilities such as combining an XSS issue with a XHR, or XST, for powerful worms, and multiple forms of information disclosures."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-08-27T07:44:14.000Z",
+    "content": "Awesome, yes. But wait for the Web2.0 paper which I am planning to release on the 1st next month, which will detail various other aspects that we need to consider. For me, the future looks quite grim."
+  },
+  {
+    "author": "rezn",
+    "avatar": "5d1658ac36692c8b5ff5612aa9d6a837",
+    "date": "2007-08-27T18:14:07.000Z",
+    "content": "Nice analysis pdp.  Thanks for posting some actual content again!  \r\n\r\nI wonder how the W3C went so wrong on this.  Same Origin is one of the few things that has been kept constant since the early days of the browser wars - any changes to it need to be very carefully considered.\r\n\r\nAs some \"official\" way of bypassing Same Origin as we know it today is inevitable (due to market pressures), do you have any suggestions for a better way than the W3C's current proposal?  What about Adobe's crossdomain.xml approach?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-08-27T19:50:48.000Z",
+    "content": "heh, I am not quite sure. I don't think that we need to enable browsers to do so much, but as you said, <q>due to market pressures</q> it is inevitable.\r\n\r\nAs for <strong>crossdomain.xml</strong>, well,... I don't think that the idea is good either. I posted a little bit more about about it over <a href=\"http://www.gnucitizen.org/blog/on-browser-security-restrictions\" rel=\"nofollow\">here</a> and <a href=\"http://ajaxian.com/archives/kevin-lynch-at-the-ajax-experience/\" rel=\"nofollow\">here</a>.\r\n\r\n<blockquote><p>Due to the Same Origin Policies JavaScript can access only the current origin. Even if you implement the crossdomain.xml file, JavaScript again will be able to access the current origin. Why? Compatibly issues. We cannot move to the new technology over the night. With or without crossdomain.xml JSON or JavaScript remoting, if you like, will still work. The only thing that will change is increased attack surface due to the trust relationship between apps. Let me explain.</p>\r\n\r\n<p>Letâ€™s say that we have app on A.com and another one on B.com. B.com says that A.com can access its data. Effectively, this means that If I can get XSS on A.com, I will be able to read the data on that domain including the data on B.com due to the trust relationship. Today this is not possible. I need two XSS vulns rather the one.</p></blockquote>\r\n\r\n<p>IMHO, <strong>crossdomain.xml</strong> sounds a lot better although it is a bit limiting. On the other hand, the W3C approach is very flexible but very insecure as well.</p>"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-08-27T20:06:07.000Z",
+    "content": "<h3>UPDATE</h3>\r\n\r\nWhile writing my previous comment I though of another problem that may arise with W3C approach to cross-domain communication.\r\n\r\n<strong>There might be cases where attackers can steal the user session identifier!!!</strong>\r\n\r\nLet's say that Joe visit joesemail.com and logs in. The browser remembers his session cookie for that site. Then Joe visit evil.com. This site knows that joesemial.com has a resource that can be accessed via the W3C cross domain security policies and it is available for everyone to use. However, evil.com will try to trigger for the cookie to reset or be sent back to the client. Then evil.com can read it. Or attackers can simply use TRACE to make the server echo back what has been sent and access it via responeText if possible. Again, these are pure speculations.\r\n\r\nAlso, as it is the case with <strong>crossdomain.xml</strong>, if site A.com and site B.com are in trust relationship, then having XSS on one of them will lead to XSS on the other."
+  },
+  {
+    "author": "Ronald van den Heetkamp",
+    "avatar": "80d7b8935b953dabd63268177b7981f6",
+    "date": "2007-08-27T22:31:18.000Z",
+    "content": "But, in a sense they are violating the same origin policy. Since connecting to different ports is violating this. (Or get a loopback response via TRACE)\r\n\r\nBut, yes we are going to see more ways of attacking instead of less. Anyone ever read the HTML5.0 and XHTML2.0 drafts? where CSRF will be facilitated by default and where we get \"cross DOM messaging\" now that is a good idea I tell ya.\r\n\r\nWe finally broke it."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-08-27T22:42:47.000Z",
+    "content": "we really did"
+  },
+  {
+    "author": "name: (required)",
+    "avatar": "45ccef09e5756c57c36d9aec646740e3",
+    "date": "2007-08-28T12:54:11.000Z",
+    "content": "encrease?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-08-28T13:03:34.000Z",
+    "content": "fixed, 10x"
+  },
+  {
+    "author": "goddamgeek",
+    "avatar": "601b2f6e5c053ba0b9bf9cdcf060eb11",
+    "date": "2007-08-29T00:21:10.000Z",
+    "content": "<blockquote>service.xml?someparam=blab%0B%0AContent-Acce....</blockquote> \r\n\r\nShudn't it be %0D%0A ?"
+  },
+  {
+    "author": "Brian",
+    "avatar": "8a97d5d5049e2414cb1ae1c47c5293f8",
+    "date": "2007-08-29T00:46:45.000Z",
+    "content": "Very interesting article, PDP.  The CRLF injection and TRACE/TRACK method attacks seem like they could probably be easily prevented.  Couldn't Firefox 3 be designed not to send CRLF characters and TRACE/TRACK requests off-domain with the XHR object?  \r\n\r\nBut it seems strange that the browser actually has to make a cross-domain request and receive a response in order to determine whether or not it is allowed to look at the response.  That's just asking for trouble."
+  },
+  {
+    "author": "Brian",
+    "avatar": "8a97d5d5049e2414cb1ae1c47c5293f8",
+    "date": "2007-08-29T01:11:42.000Z",
+    "content": "PDP - Would it be possible to create a Firefox extension that automatically inserts a \"Content-Access-Control: allow \" header into every response before the response is received by the XHR object?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-08-29T06:04:10.000Z",
+    "content": "goddamgeek, thanks for spotting this one. it should be ASCII 13 (\\r) and ASCII 10 (\\n) or simply %0D%0A, as you said.\r\n\r\nBrian, we can add a lot of preventing mechanisms on the client but they all seams to be hacks and look a bit ugly and not on place. CRLF is a valid character sequence and if developers wants to use it for whatever reason, they should be able to. As for the extension, yes you can. Check Tamper Data source code."
+  },
+  {
+    "author": "Dan Veditz",
+    "avatar": "da6b54ad3fdb36ba7656df9adfe65d12",
+    "date": "2007-08-29T06:05:09.000Z",
+    "content": "Like Jesse I'm having trouble mapping the internetnews.com article onto reality. I'll stick with a discussion of cross-site XHR.\r\n\r\nI'm not sure where TRACE is coming from. Earlier versions of the XMLHttpRequest spec explicitly disallowed it, and that's certainly true of the Firefox implementation. Regardless of spec I can't see Firefox re-enabling support for TRACE in XHR.\r\n\r\nFirefox 3 nightlies already implement cross-site XHR support, I encourage you to play with it and poke holes based on reality rather than mangled press reports.\r\n\r\nIf a web server has a CRLF injection problem then that's a problem regardless of this new feature. It could, for instance, lead to an XSS problem which allows equivalent data exfiltration to what you worry about here.\r\n\r\nYour port-scanning example is a great one, I'll find out who to bug to get the spec changed to skip or delay state 3 for cross-domain requests. Thanks!\r\n\r\nIf the FF XML engine is vulnerable to a buffer overflow then you exploit FF directly by loading an XML page or frame. XHR doesn't change a thing.\r\n\r\nI'm disappointed not seeing anything in the spec about preventing the reading of cookies or other sensitive headers in cross-site requests. That needs to be made explicit."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-08-29T06:27:58.000Z",
+    "content": "Dan, absolutely. Keep in mind that what I've put here is yet to be verified. All I am saying is the following:\r\n\r\n<div class=\"message\">The industry requires a way for performing cross-domain XHR without the need of a proxy. The standards that will come to solve this problem will cause <strong>probably</strong> more problems then what we have today.</div>\r\n\r\nRonald said:\r\n\r\n<blockquote>they are violating the same origin policy</blockquote>\r\n\r\nHe is right. Ignore the all specifications problems that we've discussed so far. We don't know whether they are going to by present in Firefox's implementation. Let's concentrate on the fact that attackers will be able to obtain sensitive information from multiple sites by compromising only one of them. The trust relationship that will be built on top of the web will be used in the most undesired ways.\r\n\r\nLet's say that Yahoo wants to enable all of their service to communicate with each other but only for their domains. This is cool - sort of secure. However, if the attacker manages to get only one XSS on any of the trusted domains, they effectively can get interesting info from all the others. To me, this is like back in 1990 - everything is broken again."
+  },
+  {
+    "author": "Spider",
+    "avatar": "204253871cf0dc3f02ef819404ff7465",
+    "date": "2007-08-29T14:41:59.000Z",
+    "content": "Yeah. I agree with your writeup. I think the only secure way to do it is to bring digital signatures into play. Any kind of list (Content-Access-Control, allowed javascript, what ever else needs to be locked down) that provides restrictions has to be protected from modification. They need to include a digital signature to assure the browser that the security settings are exactly what the server set and nothing has modified it."
+  },
+  {
+    "author": "Anne van Kesteren",
+    "avatar": "ed3869317f29f4345046d2be2172b072",
+    "date": "2007-09-02T12:00:12.000Z",
+    "content": "I'm not sure how you think your attacks will work given the algorithms outlined in http://dev.w3.org/2006/webapi/XMLHttpRequest-2/Overview.html although given that the specification is not entirely done yet there may be some issues I suppose. (Disclaimer: I'm the editor of both XMLHttpRequest level 2 and the Enabling Read Access for Web Resources specification.)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-09-02T12:08:52.000Z",
+    "content": "Anne,\r\n\r\nI don't have much time to read the spec again but by skimming through it very quickly, I stumbled across the following:\r\n\r\n<blockquote><p>A conforming user agent must support some version of the HTTP protocol. It should support any HTTP method that matches the Method production and must at least support the following methods:</p>\r\n\r\n<ul>\r\n<li>GET</li>\r\n<li>POST</li>\r\n<li>HEAD</li>\r\n<li>PUT</li>\r\n<li>DELETE</li>\r\n<li>OPTIONS</li>\r\n</ul></blockquote>\r\n\r\nSo u guys are not explicitly preventing TRACE, which potentially, again I repeat, potentially can lead to some problems.\r\n\r\nMoreover, logically, ready state 3 should fire no matter the security restrictions. Am I wrong?"
+  },
+  {
+    "author": "Anne van Kesteren",
+    "avatar": "ed3869317f29f4345046d2be2172b072",
+    "date": "2007-09-03T16:07:44.000Z",
+    "content": "If you do not read the specification carefully no wonder you can dream up all kinds of security holes. The specification makes very precise requirements on non same-origin requests. See also http://lists.w3.org/Archives/Public/public-appformats/2007Aug/0034.html for some comments on this post from a Firefox implementor."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-09-03T18:27:29.000Z",
+    "content": "Anne and Thomas Roessler,\r\n\r\nFirst of all the comments are always open. Everyone can comment! Second, I am not sure if I am mistaken or you guys are fighting for the wrong cause. I am going to quietly wait until u guys come with Firefox3 and then we all will see whether your specification is inherently insecure or not. I hope <strong>not</strong>.\r\n\r\nTo repeat, IMHO u have some quite obvious security gaps. I am referring to the specifications outlined <a href=\"http://dev.w3.org/2006/webapi/XMLHttpRequest-2/Overview.html\" rel=\"nofollow\">here (XMLHttpRequest level 2, Editor's draft 9 August 2007)</a> and <a href=\"http://www.w3.org/TR/access-control/\" rel=\"nofollow\">here (Enabling Read Access for Web Resources)</a>.\r\n\r\nLet's have a brief overview of your mistakes, the way I see them:\r\n\r\n<h3>First of all</h3>\r\n\r\nYou perform the access control checks after the request was completed. This is insane! You are saying that CSRF attacks are known for ages and you are not really contributing to the greater evilness of the Web. I must disagree. CSRF attacks via Forms (POST and GET) or Images (GET) and Links (GET) cannot contain additional headers. They do not have fine-grain over the data that is submitted. Therefore, your method makes the whole situation more <strong>insecure</strong>. I highly recommend to read Wade's excellent paper on <q><a href=\"http://www.ngssoftware.com/research/papers/InterProtocolExploitation.pdf\" rel=\"nofollow\">Inter-Protocol Exploitation</a></q> for more ideas how your approach can be abused.\r\n\r\n<h3>Second</h3>\r\n\r\nNone of the cpecs explicitly specify what methods should be used with your access control system. I am sure that you are both great coders and have a lot of good stuff to offer when it comes to specifications and design, but I am breaking into WebApp applications all day long. I've probably seen stuff that you guys cannot even imagine. The world is not perfect. I highly recommend to consider implementing a METHOD restriction, such as only GET and POST have the ability to perform cross-domain operations.\r\n\r\n<h3>Third</h3>\r\n\r\nThe whole idea of cross-domain communication is just plain <strong>insecure</strong>.  I am not saying that Adobe's crossdomain.xml implementation is any better. I am just implying that we are going to have a lot more problems then now - all of them trust related. Good that only Firefox is going to implement these specs so Internet is not going down, yet.\r\n\r\n<h3>Finally</h3>\r\n\r\nI am not completely sure whether your specifications will result in more accurate port scanning with JavaScript. Maybe I am just day dreaming. But I don't care. As far as I am concerned it is your job to make sure that this doesn't happen.\r\n\r\nBefore you flame me back, please take my points as just pure critic on the specifications, nothing personal. We are all grownups here, no matter who is mistaken we shouldn't really convert the entire matter into a war. I've made tones of mistakes in my life and I hope that I make even more in the future. There is no better way to learn new things. Making mistakes is not a really a problem. The problem is not being able to react properly when they happen.\r\n\r\n<div class=\"message\">Please, if I am missing an important paragraph in both drafts, which clearly solves the problems I mentioned earlier, do post it here. I will happily withdraw my statements with a follow-up comment and apologize for the caused troubles.</div>\r\n\r\nOtherwise, if we all agree that there might be some problems, even if they are minor for now, let's sit down and work them out. Let's not leave pride and other elements prevent us making the world slightly better place.\r\n\r\nP.S. so far my research has caused only trouble :) however, don't shoot the messenger!"
+  },
+  {
+    "author": "Anne van Kesteren",
+    "avatar": "ed3869317f29f4345046d2be2172b072",
+    "date": "2007-09-04T08:44:25.000Z",
+    "content": "I would suggest you carefully study the specification. Specifically the algorithm for the send() method. You will notice that method protection is in place, that port scanning as well as finding out whether there's some intranet to attack is protected, et cetera. If you do not carefully study the specification nor the implementation and just make bold claims you will indeed turn out to be wrong."
+  },
+  {
+    "author": "Dan Veditz",
+    "avatar": "da6b54ad3fdb36ba7656df9adfe65d12",
+    "date": "2007-09-05T18:14:52.000Z",
+    "content": "pdp writes \"I am not completely sure whether your specifications will result in more accurate port scanning with JavaScript. [...] As far as I am concerned it is your job to make sure that this doesnâ€™t happen.\"\r\n\r\nYes. Yes it is.\r\n- Dan Veditz (Mozilla)\r\n\r\nP.S. you can play with the proposed Firefox 3 implementation of this feature _today_ by downloading a nightly build. The $500 Mozilla Security Bug Bounty applies if you can demonstrate an actual data-stealing same-origin violation in it, no need to wait for the actual release. We'd much prefer to know now, in fact."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-09-07T08:57:11.000Z",
+    "content": "give me some time and I will come back to you."
+  },
+  {
+    "author": "Roy",
+    "avatar": "9ef500673ecb5b5007a8b3397d6634c5",
+    "date": "2007-09-12T22:07:24.000Z",
+    "content": "Great article.. but the headline is a bit misleading.\r\nIt implies that Firefox is the problem.... not the spec."
+  },
+  {
+    "author": "Brad",
+    "avatar": "938ff64bf5f6b82c6c87d347cdacf619",
+    "date": "2007-09-18T05:01:30.000Z",
+    "content": "Kudos for flagging an important security issue.  Detailed scrutiny of specifications and implementations that change the browser sandboxing model is desirable, welcome and absolutely necessary.  \r\n\r\nThat said, the article appears to spout FUD more than any credible security vulnerability in either the specification or Mozilla's implementation.  \r\n\r\nThe same-origin policy on the web is not the end-all-be-all-solution for proper sandboxing.  The same-origin policy greatly limits the type of applications that can be built.\r\n\r\nKudos to Firefox for implementing this.  Properly secured, this capability will open the flood gates to an entirely new wave of interoperability and application richness on the web."
+  },
+  {
+    "author": "ypyhnikz",
+    "avatar": "46b8731bcec47bba0667a9398ba2b4ba",
+    "date": "2008-09-03T14:11:02.000Z",
+    "content": "I <a href=\"http://darrinyoun.greatnuke.com\" rel=\"nofollow\">sofia vergara desnuda gratis</a> rubbed it was filled with nothing to describe."
+  }
+]

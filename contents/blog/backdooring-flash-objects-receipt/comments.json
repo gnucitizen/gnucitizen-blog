@@ -1,0 +1,98 @@
+[
+  {
+    "author": "nrg",
+    "avatar": "3e0298a2854e87166f6ddcee1fe4e005",
+    "date": "2006-09-05T23:10:55.000Z",
+    "content": "Hello mate, i enjoyed vey much reading your recent posts, but there is something in these last 2 that i didn't really understood. Whats so important about injecting javascript into a flash? can't you do the same that you would with a simple html with javascript inside? I get the idea about infecting SWFs wich is preaty cool but i don't see what's so special about it. Am I missing something?\r\n\r\nAnyway keep posting mate :)\r\n\r\n-nrg"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-09-06T00:42:16.000Z",
+    "content": "hi there,\n\nFirst of all, wrapping your malicious code inside flash files will bypass all XSS filtering systems, simply becouse they don't understand how to read SWF files not to mention that even if they know how to do that, it would be highly inefficient approach.\n\nThe second thing is that attackers are able to infect popular video, audio and interactive material and spread it on the web. This approach can be quite easily defined as viral infection. The next time you visit youtube.com or video.google.com beware that what you see might not be what you get. Sneeky JavaScript code can scan your internal LAN, hack into your WIFI router and enable the admin interface on the Internet side so attackers have direct access to you, your personal details and your bank account numbers. Well,... more or less!"
+  },
+  {
+    "author": "nrg",
+    "avatar": "3e0298a2854e87166f6ddcee1fe4e005",
+    "date": "2006-09-06T01:05:22.000Z",
+    "content": "\"First of all, wrapping your malicious code inside flash files will bypass all XSS filtering systems (...)\"\n\nHadn't thought about that. It's clear for me now, thanks for the fast explanation. Actually after thinking a bit about it was a really dumb question.\n\nSo how can websites like myspace protect them selfs from being hijacked by an 'infected' swf? (i'm not a user from my space but i think they allow the use of SWFs in users accounts). Time to read how you managed to do it with quicktime.\n\nPS: Stupid suggestion, can you get a favicon? I would like to have it on my bookmark."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-09-06T07:02:12.000Z",
+    "content": "There are no stupid questions.\n\nI don't think that there is simple way of protecting against media file malware. Of course the most obvious approach will be to disable or filter out embed an object tags. However, this will make MySpace pages highly unattractive because people won't be able to show their YouTube movies for example.\n\nYeh, I might think about favicon. Why not?"
+  },
+  {
+    "author": "dev&gt;null",
+    "avatar": "0a2550c1bb679c97ccc5be78511cf0f3",
+    "date": "2006-09-06T17:15:29.000Z",
+    "content": "um ... what about allowScriptAccess=\"never\"?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-09-06T20:51:45.000Z",
+    "content": "Well, then my POC won't work. It is that simple. However, keep in mind that JavaScript access is not required. Flash objects can be backdoored with ActionScript quite successfully and the attacker is given the same level accessibility; sometimes even more."
+  },
+  {
+    "author": "Acidus",
+    "avatar": "e78ade355027be37b2192e622b14a46f",
+    "date": "2006-09-08T02:50:42.000Z",
+    "content": "pdp,\r\n\r\nI love what you are doing so please keep up the good work. For far too long people have thought that JavaScript is a toy language and that XSS can only annoy and steal the occasional cookie. I applaud the work you have been doing.\r\n\r\nAcidus,\r\n\r\nps: I'm going to be dropping some JavaScript malware 0day in a week of back to back conferences (Toorcon-Ajax World-Security Opus) that I thhink you will find interesting..."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-09-08T07:25:54.000Z",
+    "content": "Definitely,\r\n\r\nI would like to see your malware. I won't be able to attend these conferences but I will be vary happy to get some of your slides.\r\n\r\nI am also working on some advance techniques that will go into AttackAPI and my blog quite soon."
+  },
+  {
+    "author": "Vladislav 'dgtlscrm' Mysla",
+    "avatar": "41030c447293f49895d3f5d10f871572",
+    "date": "2006-09-15T13:59:44.000Z",
+    "content": "Using javascript protocol is well known technique"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-09-15T15:51:11.000Z",
+    "content": "I know. This article is just a POC on how easy it is to backdoor any given flash object."
+  },
+  {
+    "author": "shizkani",
+    "avatar": "682024a80c53594dd7f6f33646422541",
+    "date": "2006-09-26T23:52:00.000Z",
+    "content": "can you make this exploit download and execute a RAT server to someine who views the corrupted .swf file ..??\r\nif so can someone please explain to me how i would make it possible..\r\nthanks.."
+  },
+  {
+    "author": "chown",
+    "avatar": "47cccad696f74037522590502bea5f3e",
+    "date": "2006-09-27T04:19:03.000Z",
+    "content": "How can you call it backdooring? You're simply embedding javascript in flash. Please explain your definition of 'backdoor'"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-09-28T02:00:42.000Z",
+    "content": "shizkani,\r\nthe short answer is \"NO\", unless you use something like the IE VML vulnerability.\r\n\r\nchown,\r\n<blockquote>A type of Remote Control Software that enables a third party to covertly control system resources.<a href=\"http://www.google.com.my/url?sa=X&start=1&oi=define&q=http://www.wetstonetech.com/page/page/1972572.htm\" rel=\"nofollow\" rel=\"nofollow\" rel=\"nofollow\">wetstonetech</a></blockquote>\r\n\r\nWhat do you think a backdoor is?"
+  },
+  {
+    "author": "chown",
+    "avatar": "47cccad696f74037522590502bea5f3e",
+    "date": "2006-09-29T04:34:23.000Z",
+    "content": "Primitive javascript access - within the confines of the browsers security restrictions, can hardly be classified as \"system resources\". If it were, then you could say you have access to the \"system resources\" of me, and anyone else who visits this site. By your logic, the following is a VBScript backdoor in a batch file\n\n<pre><code>@echo off\necho msgbox \"foo\" > bar.vbs\nstart bar.vbs</code></pre>"
+  },
+  {
+    "author": "Frank Walsh",
+    "avatar": "5b3086d26c86e99c66264d74d881c167",
+    "date": "2006-12-04T01:06:37.000Z",
+    "content": "above you say allowscriptaccess=\"never\" kills your POC but javascript isn't nessecary , you can do with with purse ActionScript...isn't there also a tag allowNetworking=\"internal\" would cover this... just wondering if I'm missing something in your response..not trying to be a dick."
+  },
+  {
+    "author": "karcoos",
+    "avatar": "31abbf718c2bad00106d5124858706ad",
+    "date": "2011-02-22T09:48:27.000Z",
+    "content": "nice blog, I love the \"swftools\" you recommended."
+  }
+]

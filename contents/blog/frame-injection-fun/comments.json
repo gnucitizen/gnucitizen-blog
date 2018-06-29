@@ -1,0 +1,74 @@
+[
+  {
+    "author": "dmitrisec",
+    "avatar": "47a09067b6f494a5df24a2cfd22586ba",
+    "date": "2008-10-10T08:16:07.000Z",
+    "content": "as part of the input filtering/validation, the URLs - link addresses - need to be treated specially: you most likely don't want to echo on the page javascript:  or data: URLs for the user to click even though they don't contain any tags or quotes!  As part of that validation, it is best to verify that the URL belongs to the intended domain, and substitute it with the default value or give an error otherwise.  Additionally, it may make sense to add a digital signature to make sure the parameters are issued by the site and not inserted by an attacker."
+  },
+  {
+    "author": "will",
+    "avatar": "3cd9e1a95cac0410ba48344191f53125",
+    "date": "2008-10-11T06:41:22.000Z",
+    "content": "even fools LastPass into thinking you want to log into google mail"
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2008-10-11T19:18:37.000Z",
+    "content": "I was not suggesting that filtering quotation marks or angle brackets is enough to stop all forms of XSS! Of course it's not enough, as it will only avoid very-vanilla XSS attacks. Think of XSS vulns where the injected payload is echoed within an already-existing JavaScript snippet (within existing 'script' tags). In this case, common blacklisting techniques will NOT help. This is why I always recommend applying *white-listing* filtering whenever possible.\r\n\r\nTake the example of a frame injection vuln. If you already know what URLs should be allowed to be inserted, then you should reject anything other than that. For instance, you could add the list of the trusted URLs in the backend DB, and assign a different ID to each of them. So that the URL only takes IDs as an argument. i.e.:\r\n\r\nhttps://www.site.foo/index.php?targetframe=1\r\n\r\nIf 'targetframe' is assigned an integer value which doesn't exist in the DB, then no frame is inserted whatsoever. The beauty is that the attacker cannot now manipulate the inserted frames. However, some sites cannot predict what URLs should be allowed to be inserted as frames. An example is the Google Images frame injection problem mentioned before."
+  },
+  {
+    "author": "Daniel",
+    "avatar": "cee8fa5a0cebc016c4c2414f64f033a6",
+    "date": "2008-10-13T12:42:40.000Z",
+    "content": "Whilst 'some' people consider them to be different, in reality they are not. \r\n\r\nI know it's the rage at the moment to think up new and exciting names for vulnerabilities, but let's try and keep this simple. \r\n\r\nWhen we did the OWASP Top 10, we decided it would be easier to group them all under the same banner; Injection Flaws\r\n\r\nhttp://www.owasp.org/index.php/Injection_Flaws"
+  },
+  {
+    "author": "frank",
+    "avatar": "efc2397130ab3dc07844ae1f45e8c5d7",
+    "date": "2008-10-13T18:22:00.000Z",
+    "content": "i think that this one http://www.securiteam.com/securitynews/5WP0Y00PFE.html was a big security problem in google and no one was talking about it!\r\n\r\nbye\r\nfrank"
+  },
+  {
+    "author": "Chintan",
+    "avatar": "b7d451520329ec470f6ac886b1ccd3bb",
+    "date": "2008-10-14T02:16:29.000Z",
+    "content": "Hi, I don't think its any thing different from URL Redirection (except that it is now wrapped with a new shiny marketing lingo). I still don't understand where the frame gets injected! It's just getting loaded from an external source.\r\n\r\nInstead of loading Fake Gmail page, you can load any page instead. The following loads yahoo :P\r\n\r\nhttp://mail.google.com/imgres?imgurl=http://yahoo.com&amp;imgrefurl=http://yahoo.com\r\n\r\nCan some one please explain me the rationale for calling it a frame injection?"
+  },
+  {
+    "author": "Jim Manico",
+    "avatar": "04b8fca2c8dde2ed82373ade37e9789d",
+    "date": "2008-10-14T18:00:26.000Z",
+    "content": "RE: Comments about about input validation above : you do NOT defend against XSS by input validation - thats one of the biggest misnomers in AppSec. You solve it via ENCODING data before presenting it to your users. ESAPI, for example, provides a variety of data encoding functions depending on context: encodeForHTML, encodeForHTMLEntity, encodeForJavascript, etc."
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2008-10-16T07:10:09.000Z",
+    "content": "@Chintan: sure it IS different. In a redirection attack, the URL in the browser's address bar changes to a non-trusted third-party site once the \"evil\" URL is visited. In a frame injection attack, the address bar remains showing the legitimate domain after the \"evil\" URL is visited.\r\n\r\nIt is called frame injection because the third-party content is inserted via a dynamically generated frame. Check the 'frame' tags in the source code for more info.\r\n\r\n@Daniel: I'm actually against creating new vulnerability names, it just complicates things. The only reason I mentioned the term \"frame injection\" is because: 1) it's NOT a new term. 2) the filtering solution needed is different to the one required for \"pure\" XSS/HTMLi vulnerabilities as the attacker doesn't need to inject \"dangerous\" characters. At least generally speaking."
+  },
+  {
+    "author": "Chintan",
+    "avatar": "6bc251d78823efaf5458068b33503d7a",
+    "date": "2008-10-19T16:32:33.000Z",
+    "content": "@Adrian - I appreciate your explanation. But i still think an attacker is not adding any frame into victim's page. I think it can be termed as url redirection via frames. \r\n\r\nThe reason the address bar reflects new url in a traditional url redirection attack is because the redirection is direct one (i.e. @page level). \r\n\r\nSince in this case the the functionality of the frame is to load an external url- which is abused to load an arbitrary page inside that frame, it will never show up in address bar (not even for the legitimate page). \r\n\r\nI repeat, an attacker is not injecting any frame into victim's webpage. Only the content of the existing frame changes as the domain is not restricted. Then how can one call it frame \"Injection\"?\r\n\r\nI think the debate may be endless. Instead i give it up here. Feel free to call it anything you want. \r\n\r\nNone the less, not a bad catch (just that it has been overhyped to reflect as a new kind of attack). I have always appreciated GNU Citizen for their innovations, but i cannot give credit for this one atleast."
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2008-10-21T07:07:13.000Z",
+    "content": "@Chintan: this is a problem of semantics, we could talk about it forever. It doesn't matter what you call it, the issue is still the same: you can insert third-party content while still showing mail.google.com in the address bar.\r\n\r\nWe did NOT come up with the term \"frame injection\" (just do a Google search), neither did we claim we came up with a new technique. The only reason why there has been some media interest is because Google is something everyone can relate to.\r\n\r\nThanks a lot for your feedback again btw."
+  },
+  {
+    "author": "p3lo",
+    "avatar": "ee09627552731c7d6b9abf41b76a4329",
+    "date": "2009-04-15T15:20:19.000Z",
+    "content": "I have worked to developp this technique, and i have constated that we can break the frame with:\n\n<pre><code>if (top.frames.length!=0) top.location=self.document.location;</code></pre>\n\nand\n\n<pre><code>document.location=\"http://evil.foo/login.php\";</code></pre>\n\nThe first script can be used to secure the page framed..."
+  },
+  {
+    "author": "JD",
+    "avatar": "7f5672a17fa1df7927bd7949ab2aa288",
+    "date": "2011-01-20T15:52:44.000Z",
+    "content": "Filtering is not the best defense against XSS and HTMLi. Encoding output is. Filtering must prevent all possible combinations of mallicious input. Encoding encodes all output. Encoding is simpler and covers more of the threat domain naturally."
+  }
+]

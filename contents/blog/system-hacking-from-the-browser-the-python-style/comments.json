@@ -1,0 +1,38 @@
+[
+  {
+    "author": "sws",
+    "avatar": "bd59844b754ef4f8e7183faea98c115d",
+    "date": "2007-12-13T18:23:17.000Z",
+    "content": "wow, fine applet ;) great work... But my Python knowlege is very bad..."
+  },
+  {
+    "author": "denish",
+    "avatar": "b08387436ea6af2b3506a275ba3c1cf0",
+    "date": "2008-01-22T10:03:13.000Z",
+    "content": "i want system haking coods"
+  },
+  {
+    "author": "dolly",
+    "avatar": "28f5c5c780e76abb2014196a407a6314",
+    "date": "2009-04-22T03:24:27.000Z",
+    "content": "this is damn so good!!!"
+  },
+  {
+    "author": "Ben Walther",
+    "avatar": "ccb35ee1bf85bc4954be3b052d8cc0c3",
+    "date": "2010-08-04T18:25:30.000Z",
+    "content": "An advanced question, if I may. Say you're running a standard J2EE stack to host a web app. With or without struts or spring, doesn't matter. You're hosting JSPs. An attacker finds a way to upload a JSP file to your website. That attacker can run Java code on your behalf - but here's the kicker - can the attacker prompt an interactive jython console that hooks straight into your application?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2010-08-24T14:31:55.000Z",
+    "content": "why not? it should be possible."
+  },
+  {
+    "author": "Iknow",
+    "avatar": "a0d65ba7d431b6fc831c137a9213b712",
+    "date": "2010-12-17T22:30:30.000Z",
+    "content": "denish&gt;&gt; he said he isn't into cracking systems..."
+  }
+]

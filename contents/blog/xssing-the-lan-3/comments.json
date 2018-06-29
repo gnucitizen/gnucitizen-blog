@@ -1,0 +1,14 @@
+[
+  {
+    "author": "dibrg",
+    "avatar": "80d408893f119b01f7f06c7471e4d381",
+    "date": "2009-02-01T07:53:31.000Z",
+    "content": "Wello, I'm comfussed,when I find an XSS bug in only one page ,how can I make XSS-worm??? Could you give me some seggestions?? Thanks for your time."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-02-01T14:10:46.000Z",
+    "content": "Hi Dibrg,\n\nIt is not straightforward. You need to find a way to persist the XSS vector. There are many way you can do that and one of it is to use public bookmarking services."
+  }
+]

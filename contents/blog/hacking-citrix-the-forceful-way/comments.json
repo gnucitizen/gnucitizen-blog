@@ -1,0 +1,146 @@
+[
+  {
+    "author": "vindic",
+    "avatar": "2fbd3fcfa626bd4301c18cdbd207a7bb",
+    "date": "2007-10-05T16:14:03.000Z",
+    "content": "amazing again :)"
+  },
+  {
+    "author": "slasher",
+    "avatar": "d89d5e399fdeaccee6cbb3404979446f",
+    "date": "2007-10-05T18:04:07.000Z",
+    "content": "Hello, first thank you for a great site, it is very nice and informative. I have one remark though, the resolutions of your videos, the text is too small, one can not follow the commands even if the youtube window is maxed.\r\n\r\nThanks."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-05T18:41:47.000Z",
+    "content": "slasher, yes... that's why I included the wmv file at the bottom of this article. It should give you a lot better idea of what's going on."
+  },
+  {
+    "author": "Sirw2p",
+    "avatar": "06153f784be70e3391b07b3582683c0f",
+    "date": "2007-10-06T12:40:30.000Z",
+    "content": "I love the themesong.. is the same that the film \"Oceans eleven\" yeah."
+  },
+  {
+    "author": "radi",
+    "avatar": "54f782b5b57b73514e980457b9c46e3f",
+    "date": "2007-10-07T15:21:53.000Z",
+    "content": "what about enum.js...? any clues as to where that can be found?"
+  },
+  {
+    "author": "NIX",
+    "avatar": "f8069e4c4dcb95906f6f6e2604bc7677",
+    "date": "2007-10-09T08:50:35.000Z",
+    "content": "radi,\n\nthe enum.js can be found in the other article titled <a href=\"http://www.gnucitizen.org/blog/citrix-owning-the-legitimate-backdoor/\" rel=\"nofollow\">CITRIX: Owning the Legitimate Backdoor</a>."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-09T08:55:48.000Z",
+    "content": "NIX, thanks... the file can be found over <a href=\"http://www.gnucitizen.org/blog/citrix-owning-the-legitimate-backdoor/\" rel=\"nofollow\">here</a>."
+  },
+  {
+    "author": "radi",
+    "avatar": "7d1909093d4a91dbf8656f3517803ae8",
+    "date": "2007-10-10T07:21:28.000Z",
+    "content": "*hides head in shame* oopps.... sorry about that guys!!! :) my bad i should have read the other article more carefully....."
+  },
+  {
+    "author": "Anthony D.",
+    "avatar": "ad5ae19eea92e99533f20e6f1946cf43",
+    "date": "2007-10-10T18:26:14.000Z",
+    "content": "You should note that you are demonstrating exploiting a poorly implemented security model. When implemented correctly using existing Citrix security features and Microsoft Security Features your attacks would not work at all.\r\n\r\nThis was an attack against a poorly implemented Citrix environment.\r\n\r\nNice work either way!"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-10T18:28:49.000Z",
+    "content": "Anthony D., yes you are right. The reason I came up with the script is mainly because I wasn't aware of any other CITRIX authentication bruteforcer."
+  },
+  {
+    "author": "RX8volution",
+    "avatar": "44edbe0992be2a90b8c4978195af2220",
+    "date": "2007-10-11T16:54:40.000Z",
+    "content": "pdp : How do you account for domains?  I am working on password \"grinding\" or brute-force... and don't quite get how to append the Domain name into your script... would be a nice pen-test tool..."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-11T18:41:36.000Z",
+    "content": "RX8volution, I forgot to include that. Give me some time and I will come with an updated script, or you can do that yourself if you want to."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-12T08:41:02.000Z",
+    "content": "Apparently CITRIX has removed the YouTube videos due to a copyright violation. This is strange and the same time not the right way to handle situations like this."
+  },
+  {
+    "author": "Jonathan",
+    "avatar": "b96d5ce60e7d3b90ce61b23086caf70d",
+    "date": "2007-10-12T10:25:38.000Z",
+    "content": "It's strange that Citrix should be able to do this. Does your video:\r\n\r\n1. breach the copyright of Citrix, or\r\n2. describe a method for illegally circumventing copyright protection?\r\n\r\nIf not, then perhaps you could file a \"counter-take-down\" notice to YouTube, as described here: http://www.youtube.com/t/dmca_policy.\r\n\r\nThis approach was famously used by Christopher Knight:\r\nhttp://theknightshift.blogspot.com/2007/08/viacom-hits-me-with-copyright.html\r\n\r\nKeep on hacking!\r\nJonathan"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-12T10:57:26.000Z",
+    "content": "Jonathan, thanks. I am not very sure. I guess it has something to do with the CITRIX logo, which appears on the screen when a connection is established."
+  },
+  {
+    "author": "curious mind",
+    "avatar": "6dc7cf0372f3966e266c626486a83ab1",
+    "date": "2007-10-16T06:22:29.000Z",
+    "content": "I'm wondering what FREE features Citrix has for deploying apps to the internet in a secure manner. The only thing I could find was the Citrix Secure Gateway 3.0 (is this still supported or maintained?) from which the admin guide and checklist is no longer avaiable so forget about the documentation. \r\n\r\nSo as it would seem, you maybe required to purchase a Citrix Access Gateway to secure your Citrix environment am I correct..? If so, this would mean that making Citrix apps available across the web would not be secure out of the box without buying additional hardware.\r\nThis is not a statement but more a question I have..."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-16T06:44:29.000Z",
+    "content": "curious mind, I have no idea how CITRIX is shipped but I believe that you are on the right track. However, it is up to the administrator to export applications that does not require authentication. In case your ICA is in the DMZ and you have one of these application hanging out in there, then you are in a big trouble. Unfortunately, this is what I see most of the times."
+  },
+  {
+    "author": "curious mind",
+    "avatar": "6dc7cf0372f3966e266c626486a83ab1",
+    "date": "2007-10-16T07:50:06.000Z",
+    "content": "pdp, I totally agree...applications without authentication is asking for trouble..but as you showed that even with authentication you're not really safe that's why I hope somebody can answer my  questions.."
+  },
+  {
+    "author": "xyyzy",
+    "avatar": "30e31425cc4a2328ad21434199921f8c",
+    "date": "2007-10-16T10:42:07.000Z",
+    "content": "Where are the videos? seems youtube has removed them."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-16T10:44:45.000Z",
+    "content": "check the bottom of the post"
+  },
+  {
+    "author": "xyyzy",
+    "avatar": "30e31425cc4a2328ad21434199921f8c",
+    "date": "2007-10-16T13:17:32.000Z",
+    "content": "thanks pdp, found them"
+  },
+  {
+    "author": "jeff",
+    "avatar": "1211ecc94ba2e83b71461323c865aa00",
+    "date": "2009-01-14T20:59:58.000Z",
+    "content": "Gone again, the links..."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-01-25T08:50:59.000Z",
+    "content": "back again :) still moving infrastructures..."
+  },
+  {
+    "author": "infoz",
+    "avatar": "fff012c69b1c07ec184a6bf0dd752499",
+    "date": "2011-01-23T01:19:06.000Z",
+    "content": "What did you do to get the scripts working in XP? They execute fine from cmd, wscript is installed, .net, etc.. but they never launch the Citrix client (which is also installed) for enum, connect or bforce. I can launch an .ica file to the target server with no issues however running the .js files never launch the client. Any help is appreciated!"
+  }
+]

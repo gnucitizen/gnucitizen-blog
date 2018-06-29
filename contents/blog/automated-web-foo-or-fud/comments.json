@@ -1,0 +1,14 @@
+[
+  {
+    "author": ".mario",
+    "avatar": "e53f5d616931bfe8fa74bfd9f72e049e",
+    "date": "2007-08-03T22:53:00.000Z",
+    "content": "<blockquote>JavaScript can be a nightmare to parse, and actually next to impossible in some cases. If you have an AJAX application, you donâ€™t want an automated tool.</blockquote>\r\n\r\nYes, yes, yes and yes. Automatic scanning can never substitute manual audit.\r\n\r\nIs there a way for Technika to log the XHR and fuzz it afterwards?"
+  },
+  {
+    "author": "David Kierznowski",
+    "avatar": "1d95d2324345e3dd2e41d6066cc1b492",
+    "date": "2007-08-04T09:56:53.000Z",
+    "content": "mario, yes there is. The feature hasn't been implemented into v1 though."
+  }
+]

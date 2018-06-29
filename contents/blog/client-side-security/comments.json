@@ -1,0 +1,38 @@
+[
+  {
+    "author": "Carl",
+    "avatar": "dfbabe01d05a8790e69c9c5a30e12957",
+    "date": "2007-06-12T03:01:33.000Z",
+    "content": "It might sound a little bit glib, but as far as our development practices go, we ALWAYS consider the client to be compromised, and factor that into how our systems respond to every request from a client.\r\n\r\nAuthentication, smauthentication.  Our systems don't even trust the 'authenticated' client, for many of the reasons you listed above.\r\n\r\nThis does make for some interesting problems - how do you design and implement a security system that introduces low overheads without compromising security?\r\n\r\nOf course, HOW we solved that problem isn't quite ready for publication just yet."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-06-12T09:05:10.000Z",
+    "content": "Carl, this is very interesting. Of course I am really looking forward to hear how exactly you solved that problem in way that users are still allowed to perform their activities without the overall security of the network being compromised.\r\n\r\nIMHO, there is no single golden solution for client-size problems, mainly because there are different aspects to be considered. Client-side security problems of Wifi networks are completely different from those found in Web technologies, for example."
+  },
+  {
+    "author": "dpd",
+    "avatar": "915074021b19042000ba9cd72e6893dd",
+    "date": "2007-06-12T11:45:02.000Z",
+    "content": "useless discussions........ it's all relative, u can't never be invulnerable. it's all for money. Security experts...bah... if a person had the capabilities he can break in every (virtual) place... if we consider the physical brute force....we're dead...so ... \n\nthe point is that security and security experts are totally useless in extreem conditions guys...\n\nso this discussions are valid for the 98% of the humanity...but if we count the 2%...\n\nthis is my point of view...maybe too sadddd ... but for me is reality..\n\nbye"
+  },
+  {
+    "author": "Teller",
+    "avatar": "44c5e290ccf283471210752d0b1ed6df",
+    "date": "2007-06-17T08:24:34.000Z",
+    "content": "Clinet-Side security is underestimated.\r\n\r\nIMO, there is no real Client-side security unless you use a strong encryption or a well permission mechanism. Client must be designed to be secured just like the server.\r\n\r\nThere are alot of vectors which one can exploit local security, since we own the client and have full access. Vendors should start writing low-level code, put delicate code in read only sections, they should also use encryption and permission mechanism.\r\n\r\nSo there will be more authentication windows, and performance issues, so what? If we look at the big picture, this is for the best."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-06-18T08:21:35.000Z",
+    "content": "true, but ... keep in mind that business still needs to make money. you cannot abandon everything and start from scratch. the world does not work this way. we need to find a compromisable way of introducing security while keeping the efficiency and usability intact."
+  },
+  {
+    "author": "Carl",
+    "avatar": "dfbabe01d05a8790e69c9c5a30e12957",
+    "date": "2007-06-28T01:42:06.000Z",
+    "content": "I'd sort of forgotten that I'd replied earlier, but here is some more information about how we ensure that the information being served, stored, and manipulated, is as safe as possible.\r\n\r\nAssumptions:\r\n1 - The client is compromised\r\n2 - The network is compromised\r\n3 - The server may be compromised (If the server is compromised, then all security is out the window, as the attackers can read straight from RAM, or poke around pretty much anywhere).  There are a couple of last-ditch measures that can be put in place, but all they will do is cause the system to halt - since it has identified itself as being compromised.\r\n\r\nAs we are only considering the user's experience for this discussion, we need to find a way to ensure that the client is assured that they are interacting with OUR service, and not a MITM.\r\n\r\nThere are a handful of techniques that we have developed that can give the client a high confidence level that they are interacting with the legitimate service.  While they can be spoofed in appearance, their functionality can't.\r\n\r\nI know that this is something that many people say can't be done, but those people are artificially limiting the scope of their imagination.  This is a real world problem that had existed and been solved in other fields of speciality for some time.  Some of these solutions can be modified to fit InfoSec.  \r\n\r\nSecondly, we need to ensure that an absolute minimum of sensitive data is sent by the client across the network (considering sniffing and replay attacks).  We assume that someone can sniff, and has sniffed, the connection and is able to try a replay attack.  In this instance it isn't so much the security of the client, but how the server responds to falsified connections.  The goal is to neutralise any and all replay / false connection attempts.\r\n\r\nIntelligent data design, compartmentalisation, and management will limit the amount of sensitive data exposure that is possible.  The other component is to ensure that client-supplied data is extremely volatile - once the legitimate client has used that data, it can't be re-used.\r\n\r\nNow, this is just scratching the surface of what we have done.  We know that it is impossible to be completely secure, but we can make it hard enough.  As the solutions evolve, we can keep one or two steps ahead of those trying to break them, so it isn't a one-shot one-off solution - it does require continual improvement.\r\n\r\nNow for the best part - the base theory can be implemented in many different languages and on most platforms (we always develop for a cross platform solution), and it can be a simple wrapper that encapsulates existing apps - enhancing the security (though it isn't as effective as a ground-up solution).\r\n\r\nThe same underlying problems affect online voting and online finance and it was through considering these challenges that we started to develop our solutions (and then spent the last few years breaking and refining them).\r\n\r\nFor more info, you can always email me."
+  }
+]

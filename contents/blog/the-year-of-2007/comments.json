@@ -1,0 +1,38 @@
+[
+  {
+    "author": "Joe",
+    "avatar": "5c4f68132e344371b8ec9545ced719ee",
+    "date": "2006-12-29T16:00:43.000Z",
+    "content": "Interesting post. Happy New Year!"
+  },
+  {
+    "author": "m@Xd",
+    "avatar": "58fe14d6f0c0b6f525934eb00042faca",
+    "date": "2006-12-29T16:40:48.000Z",
+    "content": "Yo PP, hope you are well, your grammar is mostly appalling and eastern european, been hiding in KL too long, speak to you soon, have a good new-year"
+  },
+  {
+    "author": "zeno",
+    "avatar": "0b13c43d87e140deebc0311133cfeb4e",
+    "date": "2007-01-01T11:21:13.000Z",
+    "content": "I also spoke about the RIA apps in my 2007 predictions (http://www.cgisecurity.com/2006/12/07) and just posted an entry about attacking UIML's. \r\n\r\nBackdooring UIML's and Existing JavaScript Applications\r\nhttp://www.cgisecurity.com/2006/12/12\r\n\r\nXUL has been around awhile, I see WPF to be ahead of it due to MS's immediate large user base once .net 3.0 hits mainstream.\r\n\r\n\r\n- zeno\r\nhttp://www.cgisecurity.com/"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-01T14:08:00.000Z",
+    "content": "Happy New Year!\r\n\r\nm&#64;Xd, hehe... s*** happens. I will take your comment seriously.\r\n\r\nzeno, nice read. shall I make this a <a href=\"http://www.gnucitizen.org/categories/topics\" rel=\"nofollow\">GNUCITIZEN Topic</a>."
+  },
+  {
+    "author": "MustLive",
+    "avatar": "997a9fa55e557e2aa8262a07758b161d",
+    "date": "2007-01-09T19:12:46.000Z",
+    "content": "Happy New Year!\r\n\r\nAll the best to pdp and everyone at this site.\r\n\r\npdp, nice predictions of security field in 2007 year. I plan to make myself some words about security in new year, and I'll also say some words about your and  zeno's predictions ;-).\r\n\r\nNew year will be interesting in security field. If the first days of the year was so hot - it is about UXSS in PDF - try to imagine what will be next (because it is only beginning of the year). There many possible scenarios about evolution of security industry (and underground also).\r\n\r\nP.S.\r\n\r\nPdp, really, there are to many \"RIA\" links on the text (about other overlinkings at the site I tell you in your other articles). Maybe you have to much free time :-) or you training in SEO, but you overdo with this links."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-09T21:56:45.000Z",
+    "content": "MustLive, thanks for the good words. Yes, 2007 seams to be very interesting. Let's see what will happen.\r\n\r\nBTW, it is a plugin I use that makes every RIA word into a link. Maybe I should disable it since it creates such a bad impression. Thanks for the comment."
+  }
+]

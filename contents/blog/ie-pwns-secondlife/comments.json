@@ -1,0 +1,170 @@
+[
+  {
+    "author": "Giorgio Maone",
+    "avatar": "290e868e00e8429bf1624a461b8ef81e",
+    "date": "2007-09-16T15:45:03.000Z",
+    "content": "pdp, don't dare to tell \"IE is exploitable\"!\r\nDon't forget that, according to Microsoft, the problem here is Second Life trusting too much that funny trickster of the browser ;)"
+  },
+  {
+    "author": "blad3",
+    "avatar": "1963988aaa853301e2d8d231a9b2cf94",
+    "date": "2007-09-16T16:04:30.000Z",
+    "content": "Very cool pdp, IMHO this is a new class of attacks."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-09-16T16:17:28.000Z",
+    "content": "Giorgio, really? Is that their official statement? You joker!"
+  },
+  {
+    "author": "Giorgio Maone",
+    "avatar": "290e868e00e8429bf1624a461b8ef81e",
+    "date": "2007-09-16T17:55:19.000Z",
+    "content": "Petko, yes (sort of).\r\nDidn't you see my trackback, http://hackademix.net/2007/09/16/ie-non-bug-vs-second-life/ ?"
+  },
+  {
+    "author": "Ronald",
+    "avatar": "80d7b8935b953dabd63268177b7981f6",
+    "date": "2007-09-16T19:07:50.000Z",
+    "content": "comments are broken PDP."
+  },
+  {
+    "author": "Ronald",
+    "avatar": "80d7b8935b953dabd63268177b7981f6",
+    "date": "2007-09-16T19:08:32.000Z",
+    "content": "PDP, actually this is CSRF. ^^"
+  },
+  {
+    "author": "Nathan McFeters",
+    "avatar": "dbaa4cc59dbf87f25cef1880722104f1",
+    "date": "2007-09-17T04:33:04.000Z",
+    "content": "Actually Ronald, it's not just CSRF.  It's URI exploitation, command argument injection, leading to CSRF and some other shadiness.\r\n\r\nNice work PDP, it's good to see some others capitalizing on the URI exploitation work Rios and I have been working on.  This seems very similar to our sploit against Picasa."
+  },
+  {
+    "author": "Awesome AnDrEw",
+    "avatar": "5e0f595cbc8f1811233adce10ac6c5d3",
+    "date": "2007-09-17T05:16:33.000Z",
+    "content": "These issues are becoming more amusing each and every day. I think we should start classifying them with a fake acronym like \"IEPWNS\" as BK and the others finding these issues have been labeling their posts with such titles over at sla.ckers. But yeah this is a pretty cool vulnerability, PDP."
+  },
+  {
+    "author": "djteller",
+    "avatar": "44c5e290ccf283471210752d0b1ed6df",
+    "date": "2007-09-17T12:01:34.000Z",
+    "content": "Very nice, it's a mix of CSRF and a new attack vector, Tactical exploitation that's the buzzword ;)"
+  },
+  {
+    "author": "dandellion Kimban",
+    "avatar": "fefe4aa9df73c3d9a2a02d65e37a68c4",
+    "date": "2007-09-17T17:37:08.000Z",
+    "content": "I really cannot understand why anybody uses IE. And especially people who are into something more than browsing of simple pages from the past century. But, according to the stats of my blog, there are SL rezidents who use IE."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-09-17T18:04:11.000Z",
+    "content": "dandellion Kimban, well maybe you are secure for now. With my next post, I will show you that even if you are not using IE, you are still vulnerable to IE's problems."
+  },
+  {
+    "author": "dandellion Kimban",
+    "avatar": "fefe4aa9df73c3d9a2a02d65e37a68c4",
+    "date": "2007-09-17T18:21:37.000Z",
+    "content": "pdp, please do."
+  },
+  {
+    "author": "Ethan",
+    "avatar": "cb737553f18a1b44fb3e28e1e06a24b8",
+    "date": "2007-09-17T18:28:02.000Z",
+    "content": "It's hard to blame either party completely for this.  The real problem is this persistent idea that custom protocol handlers are a good thing.  They're not.  Their whole purpose is to give remote, untrusted content command-line-ish access to the handler's program.  That's a bad idea.\r\n\r\nSL can blame IE for not sanitizing.  IE can blame SL for respecting -autologin from a custom handler.\r\n\r\nI blame them both.  SL should never have registered a handler, and browsers should stop permitting them in general.\r\n\r\n-Ethan"
+  },
+  {
+    "author": "Smiley Barry",
+    "avatar": "c09073ed5a03f64440c296858e4869b1",
+    "date": "2007-09-17T18:41:33.000Z",
+    "content": "OUCH! I use Firefox, still, the 'secondlife://' protocol is Firefox <b>and</b> IE compatible @.@ . And, I got Firefox to \"not ask me\" X.X .\r\n\r\nSo, anybody know how to reverse that tiny checkbox? X.X"
+  },
+  {
+    "author": "Smiley Barry",
+    "avatar": "c09073ed5a03f64440c296858e4869b1",
+    "date": "2007-09-17T18:46:05.000Z",
+    "content": "Found it! Fixed and done *PHEW* :-)."
+  },
+  {
+    "author": "Salusa",
+    "avatar": "e6c5b91c1526ffa4696cd4d78e3f0084",
+    "date": "2007-09-17T20:52:45.000Z",
+    "content": "It would seem to me that the blame for this lands solidly on SecondLife.  Let's count the problems:\r\n1) Not sanity checking the results of URL handlers. (Note that MS does explain that it passes the string on to you unmodified, thus they can hardly blame IE for behaving as documented. http://msdn2.microsoft.com/en-us/library/aa767914.aspx)\r\n2) Allowing the login information to be sent in the clear. (I notice that HTTP not HTTPS is used here.)\r\n3) Not protecting the credentials. Since, as you note, the hash of the password is as good as the password itself, they gain no (real) benefit by passing it as opposed to raw password.\r\n\r\nClearly, they need to re-work their authentication frame-work."
+  },
+  {
+    "author": "Aidan Thornton",
+    "avatar": "c5a88c842f8acac4d88cdfcfcabc328e",
+    "date": "2007-09-18T14:08:17.000Z",
+    "content": "Actually, IIRC the hash of the password isn't quite as good as the password itself. The hash is sufficient to log into the Second Life grid and steal the victim's L$, but it isn't sufficient to log in to secondlife.com. In particular, I think changing a user's password or e-mail address can't be done using just the hash. \r\n\r\nFortunately, there's a workaround for this vulnerability - disable saved passwords and enter your password by hand each time you login. (Oh, and be wary of secondlife&#58;// links.)\r\n\r\nAlso, in this case there's a good reason for the URL handler - it's used for linking from websites to locations inworld. Not essential, but definitely nice to have."
+  },
+  {
+    "author": "Aidan Thornton",
+    "avatar": "c5a88c842f8acac4d88cdfcfcabc328e",
+    "date": "2007-09-18T14:10:39.000Z",
+    "content": "Oh, and normally the login information is sent over https - it's just that the command-line option to select where to login accepts non-https URLs. (There are times when it's useful to be able to login to somewhere else - for example, the OpenSim project.)"
+  },
+  {
+    "author": "Similes",
+    "avatar": "d6ff977fc21c210b43b9fe713813d5ea",
+    "date": "2007-09-18T17:12:07.000Z",
+    "content": "Hi, I did some testing :\r\n- On windows, I've retrieved the exact same  credentials by accessing the page in both IE and FF, making both exploitable.\r\n- On Mac OS however, the URL is taken as a map location, the hack doesn't occur, it might if you change the URL syntax for the Mac client."
+  },
+  {
+    "author": "Jonash Vanalten",
+    "avatar": "778075a2ed4ce0dcd0f86bc1722201f2",
+    "date": "2007-09-18T19:25:34.000Z",
+    "content": "I've produced a binary patch for the current windows viewer which disables the -loginuri feature and so should prevent the exploit working.\r\n\r\nI've attached this patch to the JIRA entry for this bug. If you don't want to wait for the update from Linden, this should corect the issue:\r\n\r\nhttp://jira.secondlife.com/browse/VWR-2508"
+  },
+  {
+    "author": "MustLive",
+    "avatar": "997a9fa55e557e2aa8262a07758b161d",
+    "date": "2007-09-20T16:16:04.000Z",
+    "content": "pdp, nice one!\r\n\r\nIt's nice URI exploitation, CSRF and Information leakage vulnerabilities joint into one attack.\r\n\r\nYes, IE help to pwns SecondLife ;-). And MS will not take any responsibility for their IE \"URI feature\" :-), so SL need to fix it in their software. Like all others vendors which products are vulnerable to URI exploitation holes.\r\n\r\nNathan and Rios work a lot in case of URI exploitation and command argument injection, and pdp make his contribution. It is new attack surface guys. So every user of SecondLife (and any other software with its own url-handlers) need to attend to security (especially if they use IE). Waiting for new URI-exploit holes."
+  },
+  {
+    "author": "JEB",
+    "avatar": "a848f35d122ed4f7f83b0aec208dc3dd",
+    "date": "2008-08-27T16:11:21.000Z",
+    "content": "I cannot locate my php error file, or at least it doesn't appear to contain any fresh information, after testing this!"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-08-27T16:26:10.000Z",
+    "content": "which version are you testing this on?"
+  },
+  {
+    "author": "Cose Lefevre",
+    "avatar": "0e21dee9eeb942d2a6b0a09b8ee91ffd",
+    "date": "2008-08-27T16:55:36.000Z",
+    "content": "Wooo I'm confused, how to build this myself to test it - I have uploaded index &amp; login.php, that works, where do I go from here?!?"
+  },
+  {
+    "author": "bobalot",
+    "avatar": "b92e5f8126785b389bbae60a0fbc56c0",
+    "date": "2009-03-29T12:52:16.000Z",
+    "content": "does this even work anymore? i tryied it and nothing appears in my error folder afterward."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-03-29T15:15:24.000Z",
+    "content": "it is not working because this is an old bug and you are probably using not vulnerable version of second life."
+  },
+  {
+    "author": "bobalot",
+    "avatar": "b92e5f8126785b389bbae60a0fbc56c0",
+    "date": "2009-04-06T16:30:35.000Z",
+    "content": "o ok well thank you. Honestly wasnt expecting a response wince this eas made so long ago lol. Thanks a ton :D"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-04-07T20:24:21.000Z",
+    "content": "np! :)"
+  }
+]

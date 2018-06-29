@@ -1,0 +1,50 @@
+[
+  {
+    "author": "John from Backupanytime.com",
+    "avatar": "3d342897cc53f3a5d094435c5b766c2c",
+    "date": "2008-11-21T17:27:53.000Z",
+    "content": "Not just an endorsemement of cloud computing, this article actually makews a good job of explaining what the cloud is. I am often asked about this and providig a simple, clear explanation is not easy. Well done. I will refer to this next time I am asked \"What is the cloud all about...?\"\r\n\r\nJohn"
+  },
+  {
+    "author": "SAL-e",
+    "avatar": "9509edb3b8aecd89b16384938a3f696b",
+    "date": "2008-11-21T18:57:46.000Z",
+    "content": "The cloud computing is kinda new for most of the users. The biggest problem for me and I believe many other users is the privacy. Once you upload your applications or data files you really don't know who else has access to them. I know that the companies providing cloud computing are deploying protection systems, but as we all know any system could be broken overtime. So it is mind set not a real problem at this time. Personally I use both. Some of my data is uploaded on the Internet, but some is not and never will be. I believe that both cloud and local computing will continue to co-exist. We just need to understand how they work and do proper planning."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-11-24T11:21:20.000Z",
+    "content": "SAL-e, yes but equally you can say that once you start using the Internet you don't know really who is snooping onto your traffic. Do you trust your ISP? How about the recent case where Verizon's employees accessed Obama's account? GSM networks are perfect examples of cloud technologies although we hardly refer to them as such. Maybe you don't trust them but you use them nevertheless for convenience.\r\n\r\nWhat I am trying to say is that things are not that different. Regardless where you put your data, it can still be compromised. But you can apply the same security principles, we have been developing in the past decade, on cloud and non-cloud infrastructures to make sure that they are reasonably secure.\r\n\r\nHeck, if you don't trust Amazon's E3 than there is nothing stopping your encrypting your data as you like."
+  },
+  {
+    "author": "bfw",
+    "avatar": "174c686c9a906263f1692d82597fda1d",
+    "date": "2008-11-24T17:27:23.000Z",
+    "content": "trusting cloud is trusting other people, not only underlying technology."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-11-25T10:03:12.000Z",
+    "content": "the same applies to everything. at the end of the day you trust people, not the technology."
+  },
+  {
+    "author": "Morgan Storey",
+    "avatar": "37b5ef749ebd516e99541d628fb21311",
+    "date": "2008-12-02T23:52:25.000Z",
+    "content": "As I have always said a system is only as good as its admin. It is no different than the \"cloud computing\" servers. Gmail, Amazon EC2/S3 are only good because the people behind them are good. I have no doubt that deep seeded nigh-on unfixable flaws will be found in current and future cloud computing solutions. If all your infrastructure rests on this provider at the time what do you do? Having said that from what I have seen of the services so far I am very impressed. But I won't be storing anything as vital as my health records or password database in the cloud just yet."
+  },
+  {
+    "author": "Jon W",
+    "avatar": "dbdb444a13c4d4d8bc60e8d0e4f85ad3",
+    "date": "2008-12-03T16:27:29.000Z",
+    "content": "As a non-technical aside, one needs to consider the geographical locations of the boxes that make up the cloud, in conjunction with the kind of data you are storing.  For example German vs. USA laws on storing user data, and indeed what constitutes \"user data\" in that locale.  Essentially the same considerations you would have in using a Content Delivery Network or similar."
+  },
+  {
+    "author": "foo flaw",
+    "avatar": "ab33a99f70ab75b07ef2f9a850580bdd",
+    "date": "2008-12-05T05:07:57.000Z",
+    "content": "you pretty much skate over the whole data security issue, which is the fundamental problem with multitenant environments, i would bet that the data is stored in big blobs (structured and unstructured) and if i had me one of those ec2 vms i could get at lots of data that didn't belong to me, not to mention the whole rogue sysadmin for sale notion.  if your data doesn't matter and all you need is raw compute cycles, i'm ok with it but i'm not putting any data out there that matters."
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "author": "Keith",
+    "avatar": "ff2c4400aaaf313537c78ba308637ffe",
+    "date": "2007-11-30T15:37:53.000Z",
+    "content": "Another interesting area for exploration related to this is Facebook apps. There are no real restrictions on what the apps do or what external websites they connect to. A bit of reading of the developer information reveals many possibilities. \r\n\r\nCombined with social engineering this has potential."
+  },
+  {
+    "author": "Richard Bejtlich",
+    "avatar": "d41fcfdd1d1d9f7a7276162dbee01d81",
+    "date": "2007-12-01T19:54:22.000Z",
+    "content": "Hello,\r\n\r\nGreat blog!\r\n\r\nIf you join a company, if you are hired by the company as a contractor, or if you are a trusted partner, then you are an insider.  Insider means you have authorized access to a resource and you have an approved means to use that resource.  You are also provided some degree of instruction on how to use that resource and the data it processes.\r\n\r\nAnyone else who accesses a company resource is not an insider.  He/she is an outsider.  An outsider who compromises an employee's system does not become an insider.  True, the intruder has probably the same degree of access that the legitimate insider has.  Nevertheless, the outsider should not be called an \"insider.\""
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-12-01T20:02:11.000Z",
+    "content": "yeh you are actually right. but it is all semantics isn't it. but you are right. so how do we call insiders that has been compromised?"
+  },
+  {
+    "author": "Marcin",
+    "avatar": "0b51a21ae6931df880fad3313fbb2bab",
+    "date": "2007-12-02T19:50:53.000Z",
+    "content": "The main difference between insiders and outsiders, is the organization in question has control over their insiders. Outsiders on the other hand, are only subject to the jurisdiction of the laws they reside under. This is the point when people and process take over what technology can't handle itself.\r\n\r\nYou're also stepping into economic and industrial espionage legal territories as there are laws in place to protect against such attacks. There is the <em>Economic Espionage Act of 1996</em> here in the USA that makes the theft or misappropriation of a trade secret a federal crime.\r\n\r\n<strong>So how do we call insiders that has been compromised?</strong>\r\n\r\nCriminals."
+  },
+  {
+    "author": "Eponymous",
+    "avatar": "ae361e550987cfaca8ca4d358d08735e",
+    "date": "2007-12-04T01:29:27.000Z",
+    "content": "Linked In is probably worse, because people more consistently disclose their actual titles...\r\n\r\nEmail Subject: Good God you won't believe it! [name of ex-coworker taken from LinkedIn] from [name of old company taken from LinkedIn] has been indicted for fraud! Check out the report!"
+  }
+]

@@ -1,0 +1,446 @@
+[
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-09-20T13:07:04.000Z",
+    "content": "<em>btw, the vulnerability is more severe then the <a href=\"http://www.gnucitizen.org/blog/0day-quicktime-pwns-firefox\" rel=\"nofollow\">QTL QuickTime issue</a>.</em>"
+  },
+  {
+    "author": "nigel mellish",
+    "avatar": "7e82f4a647bbf6814faa1b12818d6c48",
+    "date": "2007-09-20T13:47:53.000Z",
+    "content": "Preview on OS X still OK then? not trying to be snarky. really want to know."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-09-20T13:59:43.000Z",
+    "content": "nigel mellish,\r\n\r\nshould be... I will try later when I have access to a Mac."
+  },
+  {
+    "author": "Xinstict",
+    "avatar": "7de10a19304d9088d2035815491a063c",
+    "date": "2007-09-20T15:08:49.000Z",
+    "content": "We love your POCs. Why after update:)"
+  },
+  {
+    "author": "DaveOJ",
+    "avatar": "68482bf88ad5f70362e47e9a61d46765",
+    "date": "2007-09-20T16:06:42.000Z",
+    "content": "Assuming that this impacts standalone PDF documents, not just those opened through a browser?"
+  },
+  {
+    "author": "Awesome AnDrEw",
+    "avatar": "5e0f595cbc8f1811233adce10ac6c5d3",
+    "date": "2007-09-20T16:14:24.000Z",
+    "content": "Can't wait to see how this works, PDP. It seems like everyday you have a new concept or issue to present."
+  },
+  {
+    "author": "Ben",
+    "avatar": "ac7a42900df516f898a023359b849371",
+    "date": "2007-09-20T16:26:59.000Z",
+    "content": "I wonder if this explains that strange password-protected pdf I got from some random person this morning.  I did open it using Preview (running MacOS X 10.4 here), although using a guest account that wasn't an administrator account.  Turned out to be yet anther stupid pyramid scheme..."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-09-20T16:31:51.000Z",
+    "content": "DaveOJ, it affects both... embeded and standalone."
+  },
+  {
+    "author": "Grant",
+    "avatar": "2c7d00734ed4ed6893fc38f7c52169e8",
+    "date": "2007-09-20T16:36:28.000Z",
+    "content": "If one views an altered Adobe file with an alternate reader (e.g. Fox-It), does this still work?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-09-20T16:53:02.000Z",
+    "content": "Grant, the exploit works although it is less severe."
+  },
+  {
+    "author": "Geo",
+    "avatar": "7ad43eaa022142da4a68104c00954588",
+    "date": "2007-09-20T17:28:00.000Z",
+    "content": "pdp, any way to block it prior to adobe releasing a patch? It took them 2 months to patch the one I found that resulted in 7.08, heck it could be christmas before they do yours. \r\n\r\nBe nice if there was something we could do in the mean time to avoid being vuln to this."
+  },
+  {
+    "author": "/nul",
+    "avatar": "fa76f45b85bb14623d9d16d647bfbb49",
+    "date": "2007-09-20T17:45:28.000Z",
+    "content": "Nice work, as always, pdp. Just one question: does it work if JavaScript is disabled in Acrobat Reader?"
+  },
+  {
+    "author": "le$$er",
+    "avatar": "101a0629c91016698d2b6854ced216f4",
+    "date": "2007-09-20T18:13:13.000Z",
+    "content": "\"Less Severe\" \r\n\r\nEither you own the box or you don't, how is it \"less severe?\""
+  },
+  {
+    "author": "imipak",
+    "avatar": "8421d2087081781e55f056b6456e026e",
+    "date": "2007-09-20T18:16:38.000Z",
+    "content": "I too would be interested to hear how my preferred alternative PDF viewers hold up (Xpdf, Ghostscript, Kpdf et al.) ..? If there were a PoC I'd test myself, but in the circs I can only ask..."
+  },
+  {
+    "author": "BK",
+    "avatar": "3232bcdda9f3851031f5a63b5b1a4285",
+    "date": "2007-09-20T19:27:29.000Z",
+    "content": "Nice... you've been on a tear lately!  Can't wait to see the details!\r\n\r\nBilly (BK) Rios"
+  },
+  {
+    "author": "GiantCrazy",
+    "avatar": "543160bf9502af1fbf7b1f419be12267",
+    "date": "2007-09-20T20:03:30.000Z",
+    "content": "Any of the open source PDF readers affected too?  I hate the phone home-i-ness of Acrobat, so I went with Foxit instead."
+  },
+  {
+    "author": "nobody",
+    "avatar": "9d0419d929a22ea07e338c1316a4f5ac",
+    "date": "2007-09-20T20:45:42.000Z",
+    "content": "3 of the last 4 releases have had \"pwns\" in the title. :S"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-09-21T00:21:00.000Z",
+    "content": "<em>The vulnerability affects Windows XP SP2 with IE7 and Adobe Reader 8.1, 8.0 and 7. Windows Vista users are not affected.</em> Here is a harmless demonstration of the issue:\n\n<div class=\"screen\"><object width=\"425\" height=\"350\"><param name=\"movie\" value=\"http://www.youtube.com/v/R_mv49Sdeok\"></param><param name=\"wmode\" value=\"transparent\"></param><embed src=\"http://www.youtube.com/v/R_mv49Sdeok\" type=\"application/x-shockwave-flash\" wmode=\"transparent\" width=\"425\" height=\"350\"></embed></object></div>\n\nYou can also download this video from <a href=\"http://www.gnucitizen.org/static/blog/2007/09/poc.wmv\" rel=\"nofollow\">here</a> or <a href=\"http://www.gnucitizen.org/static/blog/2007/09/poc.divx\" rel=\"nofollow\">here</a>. The PDF issue is officially confirmed by Adobe's team. Foxit is vulnerable as well, although the user is required to interact with the document in order to launch the exploit."
+  },
+  {
+    "author": "weweje",
+    "avatar": "97025c3b20352e2ea9c7af3be946832b",
+    "date": "2007-09-21T07:26:46.000Z",
+    "content": "This seems to explain why a wide PDF-attached spam campain had spread around last month. http://sophos.com/pressoffice/news/articles/2007/08/pdf-spam.html"
+  },
+  {
+    "author": "Roach",
+    "avatar": "0008c05234893a8de534f4cecf2f36ce",
+    "date": "2007-09-21T09:24:02.000Z",
+    "content": "I, too, would be interested in learning whether certain alternatives are affected as well. In my case, Sumatra, as in the Portable Sumatra version available from portableapps.com"
+  },
+  {
+    "author": "Thor Larholm",
+    "avatar": "4550629aa60f7ef68d07db76ff7244ec",
+    "date": "2007-09-21T09:52:06.000Z",
+    "content": "This is a little light on the details, but based on the video I would take a wild guess and think that you are using Object Codebase to launch the calculator and notepad. http://www.greymagic.com/security/advisories/gm001-ie/ has a nice example of this that requires no scripting, but does require you to render the HTML inside the My Computer zone. This would fit in well with Adobe Acrobat Reader being able to render HTML snippets and also not having set the FEATURE_LOCALMACHINE_LOCKDOWN flag.\r\n\r\nA yes or no to the above would be nice, so I don't have to reproduce this myself (lazy me ;)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-09-21T10:35:22.000Z",
+    "content": "Thor, this is not the issue although now when u r mentioning it, it might be a good idea to check it out."
+  },
+  {
+    "author": "Bruce",
+    "avatar": "1de96b2c4fc711d21836470e268e5c3b",
+    "date": "2007-09-21T10:56:43.000Z",
+    "content": "This is very serious, I wont like a bit that opening my PDF format credit card statement ensures that $1000 is debited by an online transaction. This is scary, shucks!!\n\nthanks pdp"
+  },
+  {
+    "author": "James",
+    "avatar": "e615b9d78a057edb50228c265797baeb",
+    "date": "2007-09-21T15:13:29.000Z",
+    "content": "Cmon fricken show us some code! or post that pdf file so we can reverse it"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-09-21T16:16:38.000Z",
+    "content": "pdp,\n\nremember to mention that it also works on win2k3 fully patched. I can definitely see some administrators accessing a malicious PDF file from a shared folder which compromises the server when running it on the win2k3 box."
+  },
+  {
+    "author": "David Kierznowski",
+    "avatar": "1d95d2324345e3dd2e41d6066cc1b492",
+    "date": "2007-09-21T18:17:47.000Z",
+    "content": "pdp, simple and very effective, nice."
+  },
+  {
+    "author": "Vincent",
+    "avatar": "1051a47d9d7e30b74ed68e9d7bc02d72",
+    "date": "2007-09-21T19:49:52.000Z",
+    "content": "Very nice that you found this bug. I don't open any PDF!"
+  },
+  {
+    "author": "Mark",
+    "avatar": "a0edebabb7ab4e3a174e10cdebb83cf6",
+    "date": "2007-09-21T21:39:09.000Z",
+    "content": "Information is a bit sparse right now.  Is IE the only browser affected?\r\n\r\nThanks,\r\nMark"
+  },
+  {
+    "author": "Charles",
+    "avatar": "90991690fca5be1163a586586e355d07",
+    "date": "2007-09-21T22:57:53.000Z",
+    "content": "Could this vulnerability be propagated via a web page?  E.g., a coupon page with code hidden it it, that gets the user to print to a pdf file, which when then opened triggers the vulnerability?"
+  },
+  {
+    "author": "packetracer",
+    "avatar": "7d690ffefa92bda80d9990dae56453f0",
+    "date": "2007-09-22T03:46:12.000Z",
+    "content": "Two questions:\r\n\r\n1) When a Adobe confirmed the bug, did they give a timeline for releasing the fix?\r\n\r\n2) Can you please not release details until a week (or two) _after_ the Adobe update is available?  This week or two gives corporate IT guys time to update, and stay ahead of game.\r\n\r\nMany thanks!"
+  },
+  {
+    "author": "swhx7",
+    "avatar": "729f89d432ded2a638b6c897f20b2076",
+    "date": "2007-09-22T05:35:11.000Z",
+    "content": "Based on the greymagic link [ http://www.greymagic.com/security/advisories/gm001-ie/ ] it is clear there is an exploit with Activex, though I am not sure it is the only one or the same one that pdp is reporting.\r\n\r\nMy result with the Greymagic POC on Windows 2000 was that the asp file, downloaded and opened locally, would start calc.exe when opened with IE but not when opened with Seamonkey. This is with Active X totally turned off in 4 IE zones but probably still on in the 5th zone which I have not made visible. (Note, i do not use browser plugins and do not have Adobe installed, so it was clearly the Active X.)\r\n\r\npdp, will you at least say whether what you've found is the same as or different than the greymagic POC? This would help with user protection."
+  },
+  {
+    "author": "swhx7",
+    "avatar": "729f89d432ded2a638b6c897f20b2076",
+    "date": "2007-09-22T05:42:45.000Z",
+    "content": "Apologies, I see my question was already answered in the reply to Thor. So the new vuln is a different one."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-09-22T10:32:20.000Z",
+    "content": "packetracer, adobe confirmed the bug privately. the bug was also confirmed by several friends and well known security researchers who had access to the exploit.\r\n\r\nswhx7, the bug is different."
+  },
+  {
+    "author": "OmegaJunior",
+    "avatar": "83d20f0c77c7c2ede4153838c2d29662",
+    "date": "2007-09-23T09:21:31.000Z",
+    "content": "This will still affect user accounts without administration privileges, I assume, but hopefully within the privileges range of the logged-in user? Only administrators will risk having their system taken over?"
+  },
+  {
+    "author": "Suma",
+    "avatar": "d0a588b2287e6c2c4f1610db409e321f",
+    "date": "2007-09-23T15:09:53.000Z",
+    "content": "Why don't you upload the pdf?"
+  },
+  {
+    "author": "herbalist",
+    "avatar": "5298d7022753f583af3c80b4ba44f377",
+    "date": "2007-09-23T18:07:01.000Z",
+    "content": "I understand your reasons for not releasing details or a usable sample of this exploit, though it would sure be nice to have one for testing. In your video, the demo launches calculator. Can this exploit be effectively neutralized with a HIPS and restricting parent-child dependency settings?\r\n\r\nRick"
+  },
+  {
+    "author": "Quadro",
+    "avatar": "e3c10817a8adae852c1fa11a3555553a",
+    "date": "2007-09-24T04:33:24.000Z",
+    "content": "Is the interaction required to launch the exploit in Foxit something that appears normal or not?  In other words, is it something that doesn't usually happen?  A video of the interaction required would be nice if you can provide it."
+  },
+  {
+    "author": "Crack",
+    "avatar": "ac5b16e448103d4184fb6b0a30e9c543",
+    "date": "2007-09-24T08:54:22.000Z",
+    "content": "Hahah what a owner \r\n\r\nhttp://www.marketwatch.com/quotes/adbe"
+  },
+  {
+    "author": "tsw",
+    "avatar": "adb3e4d29fba0d4360f225eba6ba47d7",
+    "date": "2007-09-24T16:29:15.000Z",
+    "content": "pdp, could you post a regex that can detect PDFs that contain the vulnerability at least? This would allow us to block incoming attachments and uploads without necessarily giving away the exploit itself..."
+  },
+  {
+    "author": "swhx7",
+    "avatar": "729f89d432ded2a638b6c897f20b2076",
+    "date": "2007-09-24T18:01:18.000Z",
+    "content": "The fact that it works in Foxit as well as Adobe reader implies that it relies on a flaw in Windows, not just Adobe's reader.\r\n\r\nI'm interpreting \"interaction\" in Foxit as something more than just opening a PDF. If this is correct, then Foxit can be a safe alternative for now if used with care.\r\n\r\nThe interaction referred to could be either something with Javascript or clicking a link (any other possibilities? form?). In my version of Foxit, at least up to v.2 I think, Javascript is an optional add-on, not installed by default."
+  },
+  {
+    "author": "Somewhat_Concerned",
+    "avatar": "253abced36f672589af48bad405580a2",
+    "date": "2007-09-25T21:00:45.000Z",
+    "content": "Does the exploit look for a local file path, a remote file path, or both? At least knowing that much, I can write some IPS rules."
+  },
+  {
+    "author": "severity",
+    "avatar": "cfdf261e761cbfc46f2484abfc3218fa",
+    "date": "2007-09-26T02:43:32.000Z",
+    "content": "The demo video simply executes executables already existing on the local machine with no command line arguments. To me, this is more of a nuisance, than a security issue. \r\n\r\nHowever, if an attacker could execute arbitrary commands with arbitrary command line arguments, then that would be interesting. \r\n\r\nDoes your exploit allow for arbitrary command line arguments? If so, could you post a PoC loading c:\\boot.ini in notepad.exe to prove it?\r\n\r\nOr could you explain the security implication of running calc.exe, notepad.exe, or any other common executable in Windows without command line arguments?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-09-26T06:29:57.000Z",
+    "content": "severity, arbitrary commands options can be passed but to be honest with you, don't need them. There are ways attackers to execute far more dangerous things then simple commands."
+  },
+  {
+    "author": "hackathology",
+    "avatar": "271ecedbd232e23677ddc1d3956147eb",
+    "date": "2007-09-28T14:46:03.000Z",
+    "content": "pdp is the facilitator, he starts something cool and create a hype. I definitely cant wait to see this."
+  },
+  {
+    "author": "tombstone",
+    "avatar": "9349ef53a24535af00e5c70f78ebe74c",
+    "date": "2007-09-29T15:11:58.000Z",
+    "content": "Hi pdp, do you know when the patch will be out? The vulnerability that you discovered is vital to one of my demo. Would appreciate it if you know when the patch is out so that I can take a look at the POC."
+  },
+  {
+    "author": "MustLive",
+    "avatar": "997a9fa55e557e2aa8262a07758b161d",
+    "date": "2007-10-02T20:53:58.000Z",
+    "content": "Pdp, nice find! Interesting vulnerability and video.\r\n\r\nWaiting for detailed information about it.\r\n\r\nYou said it works in Acrobat (as shown in video) and in browser. What difference and can you make video (in browser demonstration)? And what browsers are vulnerable (and what Acrobat/Reader/plugin versions except Adobe Reader 8.1).\r\n\r\nAbout video: it is harmless one, but you can make harmful video :-). To show all possibility of this hole and to make people (and Adobe guys) to be more aware of danger of this vulnerability. You can make \"format c:\" demonstration ;-). Make it in VM environment (it will be harmless and easier for you and will be bright demonstration of the hole)."
+  },
+  {
+    "author": "MadScientist",
+    "avatar": "3c41ba676251eb6ab8d0727fd5313947",
+    "date": "2007-10-03T02:40:27.000Z",
+    "content": "Any update from Adobe on a patch? I'd at least like to see a public acknowledgment that they are fixing it..."
+  },
+  {
+    "author": "PDP11",
+    "avatar": "e24a97730ac5b4a85e065810664330a3",
+    "date": "2007-10-08T04:20:24.000Z",
+    "content": "Hi guys,\r\n\r\nIs The fix out already ? \r\n\r\nIt's funny, but before I read about this PDF vulnerability, a while back, I was thinking is that possible ?  maybe I was just being creatively thinking lol as no one really expect a \"text file\" be a vehicle for madness !\r\n\r\nNote: I've been always PDP11 :) just a coincidence  PDP"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-08T09:29:37.000Z",
+    "content": "PDP11, not yet... according to my contacts in Adobe, the patch will be available at the end of this month."
+  },
+  {
+    "author": "codepupil",
+    "avatar": "a140b8dc81fe2816010e7af9696e3ac9",
+    "date": "2007-10-08T19:07:43.000Z",
+    "content": "Can you confirm if this work around will work?\r\nhttp://www.adobe.com/support/security/advisories/apsa07-04.html"
+  },
+  {
+    "author": "/nul",
+    "avatar": "1d3fc02c9a66b6f0222792f02f284b02",
+    "date": "2007-10-08T22:16:45.000Z",
+    "content": "IMHO, with Adobe bulletin, it became obvious that this is an URI handler bug. Mitigation reg key (cDefaultLaunchURLPerms) speaks for itself :)\r\n\r\nIt seems like mailto: handler is by default set to \"automatic\" launch in Adobe Acrobat/Reader (reg value=2)."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-09T08:24:05.000Z",
+    "content": "codepupil, I need to verify this. There are a few more issues that make the exploit functional and complete."
+  },
+  {
+    "author": "tigre",
+    "avatar": "a45a726c1555922f3ce86da3d842c701",
+    "date": "2007-10-09T11:47:01.000Z",
+    "content": "Hi, isn't the point here that only  pdf's of unknown origib could be suspicious? Most pdf's are from legitimate providers and so you must mean spam that comes with a pdf. So can normal pdf's even be infected with whatever the exploit is? Or are we talking abour PDF\"S FROM SUSPICIOUS SOURCES ONLY HERE OR ALL PDF'S ?"
+  },
+  {
+    "author": "codepupil",
+    "avatar": "a140b8dc81fe2816010e7af9696e3ac9",
+    "date": "2007-10-09T14:41:08.000Z",
+    "content": "PDP, Thanks I've deployed the workaround just in case. \n\nTigre: It would seem to me the bigger issue is  someone embedding this pdf in webpages or in html emails but I may be wrong..."
+  },
+  {
+    "author": "thorin",
+    "avatar": "4d59140c495fbcbc36fdc8bbffd0462b",
+    "date": "2007-10-09T17:07:13.000Z",
+    "content": "I have a hard time believing that \"XP with IE7\" is the only vulnerable combination. Especially when you're example video doesn't seem to depend on IE at all.\r\n\r\nHas anyone tested on Win2K? XP w/ IE 6? other"
+  },
+  {
+    "author": "MadScientist",
+    "avatar": "3c41ba676251eb6ab8d0727fd5313947",
+    "date": "2007-10-10T02:31:43.000Z",
+    "content": "I'm with thorin - a whole shitload of companies who aren't running IE7 have just removed all their mitigations based on that announcement, but I'm not convinced. pdp, can you please confirm that Adobe's workaround really solved the problem that you found? Thanks."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-11T13:25:48.000Z",
+    "content": "More information on the issue can be found <a href=\"http://blogs.technet.com/msrc/archive/2007/10/10/msrc-blog-additional-details-and-background-on-security-advisory-943521.aspx \" rel=\"nofollow\">here</a> and <a href=\"http://www.microsoft.com/technet/security/advisory/943521.mspx\" rel=\"nofollow\">here</a>. Adobe has released advisory over <a href=\"http://www.adobe.com/support/security/advisories/apsa07-04.html\" rel=\"nofollow\">here</a>. Successful exploitation of the PDF issue relays on a few other things.\r\n\r\nMicrosoft has no other choice but to patch up the issue just to satisfy the community, even though this may not by entirely their problem. First of all developers should not really trust the user input and pass it to a function that they don't fully understand. Now, some of you may criticize me for this statement, but do we blame PHP or ASP for the SQL Injections that your software has? No! Why should anyone pass something that does not look like a URL into a function that expects URLs?"
+  },
+  {
+    "author": "thorin",
+    "avatar": "4d59140c495fbcbc36fdc8bbffd0462b",
+    "date": "2007-10-11T14:39:34.000Z",
+    "content": "Thanks pdp that technet blog article was great."
+  },
+  {
+    "author": "Adrian",
+    "avatar": "1265deee50c8070f2203eefe89d67f58",
+    "date": "2007-10-12T01:05:58.000Z",
+    "content": "Thanks. \r\n\r\nFor those who are against the idea of publishing this vulnerability. Their concerns are understood. People just don't like being helpless. To make an analogy, I would imagine that we shouldn't talk about AIDS because we didn't find a cure for it; we shouldn't broadcast news of Burma because we can't help the people there."
+  },
+  {
+    "author": "MadScientist",
+    "avatar": "3c41ba676251eb6ab8d0727fd5313947",
+    "date": "2007-10-13T01:54:24.000Z",
+    "content": "Adrian: not the best analogy since AIDS is rampant in the wild and many people are working on stopping it, so we need to talk about it. With the PDF vulnerability, it is still contained.\r\n\r\nI'm a big fan of full disclosure *if the vendor is unresponsive* as a means to increase pressure for a solution. If I can find a vulnearbility, so can many others, so we need a fix. But if the vendor has acknowledged and is working towards a 'cure', give them time before unleashing the madness."
+  },
+  {
+    "author": "Picco",
+    "avatar": "ec3f2d09d20ac2e0415d9f37302d195d",
+    "date": "2007-10-15T07:49:02.000Z",
+    "content": "Why can't we have an example of this vurnerability ?"
+  },
+  {
+    "author": "cyanid-E",
+    "avatar": "c857a3381eab0e4397956df67b5c0d06",
+    "date": "2007-10-16T12:09:57.000Z",
+    "content": "hi \r\n\r\nthere is my PoC: http://security.fedora-hosting.com/0day/pdf/pdf_poc.pdf\r\n\r\nthere is ugly description: http://security.fedora-hosting.com/0day/pdf/pdf_poc.txt\r\n\r\nthank you, pdp :)\r\n\r\nregards,\r\ncyanid-E"
+  },
+  {
+    "author": "helloworld",
+    "avatar": "3eda6fcd3204ef285fa52176c28c4d3e",
+    "date": "2007-10-16T20:38:17.000Z",
+    "content": "Hi There\r\n\r\nThere's a direct exploitation of this vuln without any prompt,advertise,or whatever. we can reevaluate the XSS criticity vector with these kind of PoC. http://aviv.raffon.net/ (news = Back from the dead)\r\n\r\nregards."
+  },
+  {
+    "author": "laurent.gaffiÃ©",
+    "avatar": "7dc5ca2fa9e7b0c59c9eac93cb6ef58a",
+    "date": "2007-10-16T21:09:16.000Z",
+    "content": "Hi guys\r\n\r\ni guess we can rename your PoC from remote unless than locally now! nice find btw keep it up dude ;)\r\n\r\nregards laurent gaffiÃ©"
+  },
+  {
+    "author": "ricko",
+    "avatar": "f585c7dfb86ea897f7d300b1e7ec0c70",
+    "date": "2007-10-24T05:35:59.000Z",
+    "content": "This is a great tutorial thanks!2"
+  },
+  {
+    "author": "Nms",
+    "avatar": "8d92071e7bc33eac07c506cd2f9dc87c",
+    "date": "2007-10-24T14:43:55.000Z",
+    "content": "Hi there!\r\n\r\n@helloworld&amp;laurent.gaffiÃ© : just rename your pdf file, say test.pdf, to test.fdf ... Opens external Acrobat with IE7 and prompt an open dialog with FF. Enjoy ;)\r\n\r\nCheers"
+  },
+  {
+    "author": "Deeprunner",
+    "avatar": "099cc20d9847b3bd51550f015b0ac6ea",
+    "date": "2007-11-05T05:44:14.000Z",
+    "content": "Very Informative and I see We still can't get along apparently, oh well.  But, being obviously on the lower end of the knowledge curve in this arena...Can any of you human beings tell me what you think of this link's usefullness regarding these kind of issues? -Vegas"
+  },
+  {
+    "author": "XT12D",
+    "avatar": "0b338471ea11335460a502f3154821ac",
+    "date": "2007-11-09T20:34:48.000Z",
+    "content": "Bad analogy, Adrian, A better one would be, \"Why not hand out vials of HIV tainted blood in the hopes that some freelance doctor will find a cure?\""
+  },
+  {
+    "author": "ggman",
+    "avatar": "e7503337b63bfee71bd1957c7d306ac1",
+    "date": "2007-11-16T00:45:22.000Z",
+    "content": "@cyanid-E\r\n\r\nI opened your pdf on a linux system\r\nvia:\r\n\r\n1. adobe firefox plugin\r\n2. adobe reader 8.1.1 (\"Adobe strongly recommends upgrading to Adobe Reader 8.1.1\")\r\n\r\nand evolution offered me to send an email to guys with really strange email adresses:\r\n\r\n1. \"windows/system32/calc.exe\" \r\n2. test%.. \r\n\r\n- quite scary -"
+  },
+  {
+    "author": "Sally",
+    "avatar": "3d537a47f01a60bf665bd028b9375853",
+    "date": "2007-11-24T11:44:27.000Z",
+    "content": "This explains why spammers have now switched to sending their emails with a PDF attachment. Usually the PDF attachment contains an embedded image of a stock quote or something stupid like that. Lately I have been openning these out of curiousity but it seems we should not."
+  },
+  {
+    "author": "Sally",
+    "avatar": "3d537a47f01a60bf665bd028b9375853",
+    "date": "2007-11-24T11:48:11.000Z",
+    "content": "Have you all noticed that the spammer's choice of delivery has become PDF attachments?\r\n\r\nThe attached PDF usually contains stock quotes."
+  },
+  {
+    "author": "Onlinespiele",
+    "avatar": "cdb1cac0aaba555d7d86f1c650279dd7",
+    "date": "2007-12-08T18:27:06.000Z",
+    "content": "Are there any reactions from Adobe?"
+  },
+  {
+    "author": "CG",
+    "avatar": "1037354f27302ad1053ed800cc989d3c",
+    "date": "2008-02-14T23:47:13.000Z",
+    "content": "now that all the patches are out are you going to release some more details?"
+  },
+  {
+    "author": "Moose",
+    "avatar": "8d8f74ed7ebd95361f447f1b37f2dae6",
+    "date": "2009-02-25T19:44:53.000Z",
+    "content": "Does this affect Windows XP w/ Service Pack 3?\r\n\r\nThanks"
+  }
+]

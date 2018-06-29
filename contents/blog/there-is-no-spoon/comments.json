@@ -1,0 +1,8 @@
+[
+  {
+    "author": "MadIrish",
+    "avatar": "0f1d4ab4402a47e1ee89471c240bb90d",
+    "date": "2008-04-22T19:18:18.000Z",
+    "content": "I recently attended a training seminar on business decision making and one of the most interesting things the speaker pointed out was that the best solution to a problem is to recast the situation so that the problem is no longer a problem.  This is classic \"out of the box\" thinking.  It's interesting to see network security evolve a paradigm shift that treats the network as hostile (even the internal network).  It is this kind of shift that allows you to remove many traditional \"problems\" of security by assuming they're actually the norm rather than anomalous.  I think the crux of this approach is to recognize that most servers provide open services to the internet.  When an attacker attempts a brute force of a service it's not actually an attack, or even an exploitation of the service, the attacker is utilizing the service *exactly* as it was intended.  While the behavior may be the harbinger of \"very bad\" things to come, the system itself is operating according to design.  In order to remove the attacker's brute force attack you have to fundamentally change the design of the public service, or accept the attack as part of the normal state affairs."
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "author": "Quine",
+    "avatar": "198fd228ebf0a46e0e223de7f5385e6c",
+    "date": "2007-08-15T09:48:31.000Z",
+    "content": "If memory serves me correctly, Graham *sort of* mentioned that this wasn't entirely Web 2.0-centric, but he just highlighted his PoC's applicability to Web 2.0 style applications.\r\n\r\nIn any case, you (and just about anyone else who's blogged about Graham's presentation) are completely correct: it's not a Web 2.0 problem. People should knock off the \"OMG Web 2.0 is broken...again!\" nonsense."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-08-15T09:57:59.000Z",
+    "content": "I understand that Web2.0 is buzzword and by using it it pretty much guarantees pretty good media coverage of your work but let's not abuse it. There are problems with Web2.0 but they have nothing to do with AJAX (not directly) nor with WiFi Sniffing as presented by Graham."
+  },
+  {
+    "author": "Gareth Heyes",
+    "avatar": "7f5964ed9f043821b46150632596ed9a",
+    "date": "2007-08-15T10:34:42.000Z",
+    "content": "All the more reason to use a VPN on public wi-fi."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-08-15T10:39:35.000Z",
+    "content": "or at least tunnel via SSH..."
+  },
+  {
+    "author": "Daniel",
+    "avatar": "1f74196b2e9b231e7ba9a49d2b61ec2c",
+    "date": "2007-08-15T11:18:41.000Z",
+    "content": "I'm glad you posted this as I was also thinking wtf all the fuss was about.\r\n\r\nIt just goes to show that this industry is like any other, give it 10 years and the topic will come back into fashion, like flared pants :)"
+  },
+  {
+    "author": "Galeazzi",
+    "avatar": "2fa3394daceb57985dd8e7ba1435fe3f",
+    "date": "2007-08-15T11:28:27.000Z",
+    "content": "You are the first who continues to abuse terms, Web 8.0 Mashup Hacking with Yahoo Tubes. WTF? Can I laugh? Where is the technical stuff you published at the beginning of this blog?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-08-15T11:54:03.000Z",
+    "content": "First of all, nobody is laughing. Come on, we are not kids.\r\n\r\n<blockquote>Web 8.0 Mashup Hacking with Yahoo Tubes. WTF?</blockquote>\r\n\r\nwell, yes. Yahoo Pipes is a Web2.0 technology so I don't see any problems with using Web2.0 terminology. Moreover, the pipes interface proves one thing: I can spider Web Applications in search for vulnerabilities circumventing to an extend the same origin policies. That wasn't possible before. There is more to that but you will hear about it soon. So yes, it is new and yes it is Web2.0. So, what exactly is your point, Galeazzi?\r\n\r\nThe technical stuff are still on the blog but I have to agree with you that there was sort of a dry period lately. The reason for this is mainly because I was involved into two huge projects, the XSS Book and the Google Hacking for Penteasters vol2 book. However, there is a lot in the background going on that you cannot see. :) So, stay tuned."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-08-15T11:55:49.000Z",
+    "content": "Daniel, you are completely right <q>everything new is well forgotten old thing</q>."
+  },
+  {
+    "author": "Ronald",
+    "avatar": "80d7b8935b953dabd63268177b7981f6",
+    "date": "2007-08-15T17:03:34.000Z",
+    "content": "Hehe pretty funny, although everyone knows that wireless connections are insecure from day one. So, yeah you are right."
+  },
+  {
+    "author": "rezn",
+    "avatar": "5d1658ac36692c8b5ff5612aa9d6a837",
+    "date": "2007-08-15T21:42:15.000Z",
+    "content": "Isn't this why SSL was invented?  That some webmail providers don't support it isn't worthy of a BlackHat talk.  If anything, all this shows is that BlackHat needs some better people to review submissions.  However, I do agree with the above poster that you are also guilty of publishing the same old thing again and again, pdp.\r\n\r\nYour JavaScript Spider is just another take on Jikto which was just another take on your own earlier research.  Any service which will \"launder\" http requests for you enables partial violation of same origin.  Big deal.  The fact that new services (pipes, etc) are now out there that make it easier isn't anything new - much like sniffing cookies over wifi isn't new.  So while I agree that perhaps \"Web2.0\" is a misnomer for Graham's work, you have also been rehashing the same old thing for quite some time.\r\n\r\nYahoo Pipes will now send a post for you! So, who really cares?  Anyone can create a similar service with a very cheap webhost account.  You could probably do it with netcat and bash.  It does not equate to \"MAGE POWERFUL\"."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-08-15T22:22:03.000Z",
+    "content": "rezn, first of all \"MAGE POWERFUL\" was a play of words which obviously didn't succeeded to get the message out the way I had pictured in my head.\r\n\r\nAnyway, I see what you are saying. I completely agree with you that the JavaScript spider was rehashed version of Jikto and yes Jikto is pretty much the proxy POC I published last year but this is not what my talk and the work on GNUCITIZEN is all about. It is about agents. It is about autonomous robots that live on the surface of the web.\r\n\r\nLet's face it, what's the point of discovering vulnerabilities on the fly? I mean what's the point of having XSS scanner written in JavaScript? It makes no difference at all. It is slow, sloppy and highly ineffective. So why?\r\n\r\nLet's forget about it. If you combine several key components of the so called Web2.0 we can really come up with something nasty and something probably worth our attention. This thing will be based primary on services which we cannot easily shutdown and will have recovery processes to ensure preservation. And the POCs (the JavaScript spider and XSS scanner) are just demonstration of certain features that possibly will be included to one degree or another. What if I tell you that JavaScript can receive as well send emails. It starts to get interesting, right? What if the attacker have several agents spread across the web which he/she can control via distributed broadcast messages. Now we completely change the game. Where is the head of the worm? There isn't any. How do I stop this? You can't!\r\n\r\nI hope that with my next presentation it will get a lot clearer what I mean. I am sure that I can convince you in what I believe and show you the value of the research if we talk in person. However, the truth is that we have to deal with virtual boundaries and it is completely my fault for not having the message out as clear as possible today."
+  },
+  {
+    "author": "pagvac",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-08-17T08:01:04.000Z",
+    "content": "Nothing to do with WEB 2.0. This is just a design problem with most web apps that use login form authentication (99% of webapps).  Even if SSL is supported during authentication, the connection downgrades to clear-text HTTP for overhead reasons right after submitting your username and password.\r\n\r\nHowever, this attack remains one of my favorites against hotspots. It's easy, passive and works like a charm.\r\n\r\nAs long as Robert doesn't claim is new or WEB 2.0 related, I don't see a problem with this research.\r\n\r\nMy wife was amazed when I tested this against her gmail account. This means that although most people in the security community know about this attack, most average users don't. And remember, there is NO idle session time out on Gmail. And who clicks on logout? Only geeks do :D"
+  }
+]

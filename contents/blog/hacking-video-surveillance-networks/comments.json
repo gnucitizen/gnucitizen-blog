@@ -1,0 +1,104 @@
+[
+  {
+    "author": "pang",
+    "avatar": "c92e0b0cd585bbee9826c9d2bdf4e8b1",
+    "date": "2008-01-30T14:26:25.000Z",
+    "content": "Don't you mean Ocean's Eleven? We got lots of AXIS cameras in the subway here in Sweden. Really nice cameras. I think they run some kind of linux. You can get telnet running on them anyway. They got a nice API via the web also. Now that I think about it I think AXIS headquarters are located here in Sweden."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-30T16:03:47.000Z",
+    "content": "pang, yes AXIS is linux based. In fact, if you have the credentials (often obtained by bruteforce), you can FTP in and look at the file structure."
+  },
+  {
+    "author": "agent0x0",
+    "avatar": "f1bb89072d693d5c41cc8b1d8ae30b3a",
+    "date": "2008-01-30T21:26:25.000Z",
+    "content": "Very good post pdp.  Do you know if using another camera that supports something like 802.1x authentication might help mitigate this risk perhaps?  I think I read somewhere that Cisco IP cameras support this and can be configured more secure then your AXIS types (Cisco will cost you $$$ though..)."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-31T10:44:06.000Z",
+    "content": "I guess the 802.1x authentication based mechanism makes a lot more sense, since the port on the switch will be marked as unauthorized, and therefore will be blocked, unless you send the right EIP credentials. However, as far as I am aware, 802.1x is vulnerable to man in the middle attacks (MITM). Please correct me if I am wrong. On another note, if the attacker has a physical access to a camera they <strong>might</strong> be able to read the creds from the device. But definitely, it is a lot better then what AXIS currently has.\r\n\r\nThe truth is that, like everything else, you have to find the golden balance between security and accessibility and layer the security models in a way that they make sense for the setup you have."
+  },
+  {
+    "author": "Ix",
+    "avatar": "17cb223cbd50ebed7dee240b45fbf5c3",
+    "date": "2008-01-31T20:56:03.000Z",
+    "content": "Interesting post. This looks like it's almost easier than it is in movieland, which is amusing considering their idea of hacking a Gibson (yeah, that's a reference to the \"Hackers\" movie for all it's horrible hacking portrayal). Heh, anyways it was interesting to see proof that this is more than do-able in the real world. I know a few family friends have had these types of things set up to watch their small family business while they were on a vacation but one has to wonder if any of the more technical employees set up something like this and held parties in the break room."
+  },
+  {
+    "author": "pang",
+    "avatar": "c92e0b0cd585bbee9826c9d2bdf4e8b1",
+    "date": "2008-02-01T16:23:51.000Z",
+    "content": "I believe AXIS cameras has support for 802.1x and even if they didn't I would configure the switch to notice if the camera was unplugged.\r\n\r\nAXIS cameras can also be configured to larm if the picture is changed a lot like if you would spraypaint it or something."
+  },
+  {
+    "author": "Jason Macpherson",
+    "avatar": "e84708d25a0040efb2469dac1e9cecc3",
+    "date": "2008-02-02T05:53:12.000Z",
+    "content": "Yep Axis cameras run linux alright.  These things are very Geek/Hacker friendly. You can even enable telnet by editing \"/etc/inittab \". and uncommenting the following line: \"tnet:35:once:/usr/sbin/telnetd\""
+  },
+  {
+    "author": "hackathology",
+    "avatar": "271ecedbd232e23677ddc1d3956147eb",
+    "date": "2008-02-05T09:53:54.000Z",
+    "content": "pdp, this is a very good post. I would like to know how can i be sure if a video cam network is using the IP network when in the first place i don't even have access to the network. I can see the video cam, but there is no way i can guess if it is using the IP network"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-05T10:31:44.000Z",
+    "content": "well the easiest way is to try to spot the camera model and check it on the Web. Also observing any network-type infrastructure around it could also lead to the conclusion that it is IP-based. On the other hand, if you have access to the network but you are not sure whether there are some IP-based cameras, simply query for mDNS and UPnP."
+  },
+  {
+    "author": "marchiner",
+    "avatar": "564e44b6b33cc73b9bb444ea8f22694c",
+    "date": "2008-02-06T20:48:45.000Z",
+    "content": "Hi citizens...\r\n\r\nSince i saw i IP based cam using wireless i started to think about deathentication atacks and please correct if i am wrong but.. its something extremaly easy to be made in wireless word... if you spoof the target MAC andress and got signal force to send the correct packages. \r\nSo... theres any kind of protection against this deauthentication? And what about Broadcast Deauthentication pckts?\r\nIf i am right.. and i hope so that iÂ´m wrong.. its easy to confuse any Ip cam  video system based on wireless.\r\n\r\nNice post pdp... keep going! :D"
+  },
+  {
+    "author": "srcasm",
+    "avatar": "0f08a888192208e211a37923ac8927a8",
+    "date": "2008-02-18T01:44:20.000Z",
+    "content": "@marchiner,\r\nYou are absolutely right.  It's a scary thought but deauths and broadcast deauths are available to anyone to use.  One of the only ways of protecting from is it to contain your radio signals but this seems like a far-fetched idea for most people/companies.  Maybe one day we'll have a system that is a bit more secure."
+  },
+  {
+    "author": "Vasile Bujor",
+    "avatar": "bde4f368cbc5fdf084a89343a27294cd",
+    "date": "2008-06-04T13:32:13.000Z",
+    "content": "Hi,\r\n\r\nI am the IT Manager at a division of BMCO Romania - not Barton Marlow Company - . This article it is interesting, congruatulations. I am a surveillance solutions integrator and I use wireless cameras only for amateur use, and budget limited where the costs of mounting cameras exceed budget. For professional installation I only use FTP and patch cord FTP, and one ideea of using shielded cord is that no startreck technology can be used to interferate with the system and hack it. The only way is to phisically cut the wire or the exterior shield and connect. BUT to have acces at this technology it is expensive and the only way to succed is that the instalaltion could be made by some moron that has no knowledge of cable routing."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-06-05T10:18:08.000Z",
+    "content": "interesting... :) never say impossible! most of the hacks happen because of human mistakes."
+  },
+  {
+    "author": "axis.hat0r",
+    "avatar": "06e2f60be2a86df7930248223baea023",
+    "date": "2008-09-15T23:57:45.000Z",
+    "content": "very inspiring text, thank you. would be also very great to have a glimpse over the python scripts, anyone still got them?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-11-20T19:56:27.000Z",
+    "content": "yep, updated the post to outline the correct location of the scripts."
+  },
+  {
+    "author": "Bashar",
+    "avatar": "175d679ed8da66d33ee84b3c6f353f75",
+    "date": "2010-03-14T19:44:41.000Z",
+    "content": "need to know the device that can be surround the utp cable to get the video inside the cable."
+  },
+  {
+    "author": "MeTo",
+    "avatar": "0c2a5b435597e697920c07b97f51c441",
+    "date": "2012-05-29T19:36:47.000Z",
+    "content": "Sheilded cables are not as shielded as most of you amateurs think! I can sit outside your house about 75ft away and see what is on your screen and your keystrokes. I use a small yagi antenna centered on the 1.25Ghz band. Again that is about the center of the bandwidth needed. I'm not going to mention the technique or software. There is enough crap out here without me contribuing.Yes I am a professional and in law enforcement."
+  }
+]

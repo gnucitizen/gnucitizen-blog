@@ -1,0 +1,98 @@
+[
+  {
+    "author": "anty",
+    "avatar": "897ca8f3cdbe4a0c68be53a8a08c51e0",
+    "date": "2006-09-16T23:47:13.000Z",
+    "content": "I've just tested this with Firefox and Opera. First: This does only work if you call the HTML file localy right? Second: You don't need the iframe. You can list directories with the Java-Function as well.\n\nIt would be cool to get this working if the file is <strong>not</strong> localy called...\n\nThanks for sharing!"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-09-17T07:31:04.000Z",
+    "content": "Yes anty,\r\n\r\nYou are right. The reason I presented it this way was because sometimes JRE is not installed in which case you cannot read binary files, but you can read text files with iframe. It it the same when listing directories. Also, you can use the XMLHttpRequest object, however, to me it seams that it works on some setups but it doesn't on others.\r\n\r\nYes, this technique works only when the file is executed locally due to the same origin policy. It will not work remotely unless you find a browser bug but this is a completely different story.\r\n\r\nHowever, there are situations where a plugin or an extension unconsciously caches web content on the file system and presents it to the user. This was the case with <a href=\"http://www.gnucitizen.org/blog/cross-context-scripting-with-sage\" rel=\"nofollow\" rel=\"nofollow\">Sage cross-context scripting vulnerability</a>.\r\n\r\nThe complete sourcode of the techniques presented here are available at <a href=\"http://www.gnucitizen.org/blog/attackapi\" rel=\"nofollow\" rel=\"nofollow\">AttackAPI project page</a>."
+  },
+  {
+    "author": "offtopic",
+    "avatar": "8184e348aaa209a916d8b1ed965bac82",
+    "date": "2006-09-23T10:44:34.000Z",
+    "content": "This techniques widly used to exploit Internet Explorer \"embedded\" in different applications.\r\n2 old examples\r\n\r\nhttp://www.securityfocus.com/bid/14385\r\n\r\nhttp://www.securityfocus.com/archive/1/433360"
+  },
+  {
+    "author": "offtopic",
+    "avatar": "8184e348aaa209a916d8b1ed965bac82",
+    "date": "2006-09-23T11:40:26.000Z",
+    "content": "About Internet Explorer. While IE (in XP and W2K3) per se by default locks active content, many applications which reuse IE starts it “unlocked” mode."
+  },
+  {
+    "author": "ravikiran.k",
+    "avatar": "11566af8dcd11e7aa34805614eab2385",
+    "date": "2006-10-03T12:49:35.000Z",
+    "content": "Great Work,Can i get your appointment for a  talk."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-10-05T01:37:31.000Z",
+    "content": "ravikiran.k, sure. You will be able to get my gmail address from various security lists. Add me in and if I am online drop me a message."
+  },
+  {
+    "author": "MARCOS OLIVEIRA",
+    "avatar": "a0ee9a17a849308cd92bd24bf2ed4285",
+    "date": "2006-10-10T19:30:49.000Z",
+    "content": "My problem is that i have IIS and a virtual directory... could you please tell me if it is possible to use an iframe to get a html page from, for example, c:\\test\\x.htm... Be aware that my VD is different from the c:\\test.\r\n\r\n\r\n\r\nThank you so much.\r\nMarcos Oliveira"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-10-11T01:50:14.000Z",
+    "content": "MARCOS, maybe I don't quite understand your question but from what I see you want to retrieve the content of c:\\test\\x.htm from http://www.example.com for example. That is not possible."
+  },
+  {
+    "author": "PartyOf1",
+    "avatar": "92f59ee8c48437e8ac3405abc5075bb5",
+    "date": "2007-01-04T13:33:48.000Z",
+    "content": "Do all the attack functions work if IE or FF are runing inside of something like SandBoxIE?\r\n\r\nDoes the attack also try to work on a Virtual machine?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-04T14:12:34.000Z",
+    "content": "the Java live connect will work on FF and Opera only. The rest should work on all browsers"
+  },
+  {
+    "author": "crash_daemonicus",
+    "avatar": "b10ef17e271f77713b456cac20b95613",
+    "date": "2007-05-25T11:51:58.000Z",
+    "content": "well, unless your target file is a configuration file that would be in correct syntax as a JS file.... then you simply  and call each configuration variable by name\n\nbut anymore it'd be difficult unless your target is a specific program's configuration file because anymore they have [type of information]  lines that will kill the script\n\nbut if they dont then there might be a problem lol"
+  },
+  {
+    "author": "crash_daemonicus",
+    "avatar": "b10ef17e271f77713b456cac20b95613",
+    "date": "2007-05-25T11:57:53.000Z",
+    "content": "I guess another classic example of information disclosure would be using res&#58;// calls to DLL's to load images only there in certain versions of windows and then testing the image's width and height information with javascript...\r\n\r\nPS. last post my example HTML didnt post:\r\n\r\n<pre><code>&lt;script src=C:\\file.ext&gt;</code></pre>"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-05-25T14:07:35.000Z",
+    "content": "crash_daemonicus,\r\n\r\nI totally agree with you, however you can still get certain parts of the file if the information that you are interested in is somewhere at the top of the file. The way you do that is by importing the file as script and watching for errors. Some JS interpreters return not only the type of error that is generated but also the actual code line, which is exactly what you are after."
+  },
+  {
+    "author": "sushant",
+    "avatar": "a4d40d6e6c10342a5701c5d2f02f1887",
+    "date": "2007-10-17T19:01:35.000Z",
+    "content": "i am confused.  my question is \r\n\r\nCan i open C drive document on client browser by giving a path in iframe\r\n\r\nexample \r\n\r\ncan i do this ??"
+  },
+  {
+    "author": "tom",
+    "avatar": "8f8ff21a67437febebc70afd19364e95",
+    "date": "2007-12-05T00:24:07.000Z",
+    "content": "this web page looks weird like a programmer T-shirt"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-01-01T21:01:11.000Z",
+    "content": "well :) heh..."
+  }
+]

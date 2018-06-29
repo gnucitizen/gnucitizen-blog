@@ -1,0 +1,38 @@
+[
+  {
+    "author": "pagvac",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-01-23T00:39:18.000Z",
+    "content": "The reason for adding a comment to the post is that today January 22 2007, I examined the \"add new user\" request of both, Blogger Classic and New Blogger and I was impressed that Google had added tokens for both versions of Blogger.\r\n\r\nAt first, when I informed Google and forwarded the research, they simply replied with automated emails, finally pointing me to a Blogger help URL.\r\n\r\nSo I thought they didn't care much about CSRF issues. However, I must admit that I'm very impressed with them since they fixed the problem very fast.\r\n\r\nIt'd be nice to get additional ideas from some of you guys if possible.\r\n\r\nHere is an example of the fixed \"add new user\" requests for both versions of Blogger (notice 'securityToken'):\r\n\r\n<pre><code>POST /add-authors.do HTTP/1.1\r\nHost: www2.blogger.com\r\n\r\nblogID=12345678&amp;securityToken=fmA1trWgTvwf6XZIlyn9WI_n0Nc%3D%3A1169507915539&amp;authorsList=%3Cattacker%40domain.com%3E%2C+&amp;submit=true</code></pre>\r\n\r\n\r\n<pre><code>POST /add-authors.do HTTP/1.1\r\nHost: www&#46;blogger.com\r\n\r\nblogID=12345678&amp;securityToken=fmA1trWgTvwf6XZIlyn9WI_n0Nc%3D%3A1169507915539&amp;authorsList=%3Cattacker%40domain.com%3E%2C+&amp;submit=true</code></pre>\r\n\r\nP.S.: I forgot to say thank you to Jeremiah Grossman who kindly gave me feedback on this research."
+  },
+  {
+    "author": "mana",
+    "avatar": "2f584c695e05111afe17b1a7b1ede964",
+    "date": "2007-11-15T23:57:00.000Z",
+    "content": "interesting write up, is there a fix for this attack?"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-11-18T05:30:12.000Z",
+    "content": "Hello mana,\r\n\r\nAs mentioned in my previous comment on this page, Google fixed the issue back on January 22 2007."
+  },
+  {
+    "author": "Andrea",
+    "avatar": "57be658429f419863610a6bb7cac5bd6",
+    "date": "2010-02-26T05:01:30.000Z",
+    "content": "But mine is template problem.When I was currently changing my template,when I click the 'Preview' button,then all I saw is the same error!Can you tell me what happen?"
+  },
+  {
+    "author": "Skeptic_fx",
+    "avatar": "6932fd8236cec12354ba8230c0e80d81",
+    "date": "2011-06-09T17:10:30.000Z",
+    "content": "So did you enter the Google Security Hall of Fame? Guess you were way too early :P"
+  },
+  {
+    "author": "Skeptic_fx",
+    "avatar": "6932fd8236cec12354ba8230c0e80d81",
+    "date": "2011-06-09T17:11:37.000Z",
+    "content": "Also there are some parts of google which still has some kind of CSRfs"
+  }
+]

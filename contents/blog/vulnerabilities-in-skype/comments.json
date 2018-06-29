@@ -1,0 +1,20 @@
+[
+  {
+    "author": "LiquidIce",
+    "avatar": "a37404362c4adcafe2442489c6c6005f",
+    "date": "2008-01-18T04:09:20.000Z",
+    "content": "There are a few devices that I have seen which cause Windows XP to popup a little tooltip in the task tray saying 'a new device has been detected'. And sometiems when I click on that bubble it opens a webpage. \r\n\r\nI have not been able to reproduce this, and have not seen it occur lately... Was it fixed in a windows update? Does this have anything to do with SSDP? I was wondering if it is possible to craft an SSDP packet that will signal other XP computers on the network to show that tooltip. Some of the devices that I have seen do this are the Infrant Readynas and a DLink wifi router. I've also noticed that Sonos causes Windows Media Player to popup a tooltip sometimes as well asking to allow it to share it's media.\r\n\r\nSpeaking of sonos... this device runs off upnp. Has anyone here been able to do any interesting things with it?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-18T12:04:02.000Z",
+    "content": "LiquidIce, I think that you commented on the wrong post. This one has nothing to do with UPnP. :)"
+  },
+  {
+    "author": "Chaim Haas",
+    "avatar": "26f5ebbf54db3ebe672dab93260ea647",
+    "date": "2008-01-18T15:12:16.000Z",
+    "content": "Skype provides a full description of the vulnerability on its <a href=\"http://share.skype.com/sites/security/2008/01/skype_cross_zone_scripting_vul.html\" rel=\"nofollow\">Security Blog</a> and the steps that have been taken to neutralize the problem so it doesn't affect users."
+  }
+]

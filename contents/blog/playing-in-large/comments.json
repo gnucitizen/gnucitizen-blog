@@ -1,0 +1,80 @@
+[
+  {
+    "author": "Joe",
+    "avatar": "d336501c9eb719606599f7e87aa89063",
+    "date": "2007-02-06T17:26:11.000Z",
+    "content": "Hiya,\r\n\r\nNice article. May seem like a stupid question but how do you set cookies with CSRF??\r\n\r\nI know it can be done with CRLF but didnt know CSRF could do it?\r\n\r\nCheers,\r\nJoe"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-02-06T17:33:53.000Z",
+    "content": "Joe, I am using hypothetical scenario for this article. However, setting cookies with CSRF are possible in situations where the application you are targeting reflects the data you are sending as cookies. It is confusing, I know. Here is an example.\r\n\r\nLet's say that the application ask you for the First and Last name and then stores that information on the server but also on the client (cookie) to eliminate the need for further requests send to the server. The attacker needs to craft a CSRF to set the name for the user and as such setting the cookie to whatever value he/she may need."
+  },
+  {
+    "author": "Joe",
+    "avatar": "d336501c9eb719606599f7e87aa89063",
+    "date": "2007-02-06T17:41:22.000Z",
+    "content": "pdp,\r\n\r\nI see, thanks.\r\n\r\nI though you were saying you could use CSRF to do a set-cookie: foo \r\n\r\n(Like CRLF)\r\n\r\nMy bad :)\r\n\r\nAgain, interesting article and food for thought!\r\n\r\n-Joe"
+  },
+  {
+    "author": "Kishor",
+    "avatar": "8646bd4e904762c599e11665cc67f158",
+    "date": "2007-02-07T07:10:37.000Z",
+    "content": "That was a really nice technique pdp.\r\n\r\nTherefore I decided to save more bytes for you.\r\nYou might already know that <strong>&lt;/script&gt;</strong> tag is not required in most of the cases.\r\n\r\nHence\r\n\r\n<pre><code>&lt;body&gt;\r\n&lt;script src=http://localhost/script3.js &gt; &lt;!â€“\r\nWAHTEVER\r\n&lt;/body&gt;</code></pre>\r\n\r\nWill still result in script getting executed. Although it requires that src attribute be present.\r\n\r\nOverall, this is larger than your vector by 2 bytes (which is not good), but with tinyurl, maybe it gets reduced further. But when src attributes are filtered by url white list, your technique still works and this one fails."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-02-07T08:47:30.000Z",
+    "content": "Kishor, thanks for the comment. I was thinking to put this in but then I thought that I will get quickly out of scope describing why this thing works. So I decided to go with the KISS principle.\r\n\r\nAnyway, good stuff."
+  },
+  {
+    "author": "GE",
+    "avatar": "206390c2dc812f35ca8aaa11ffecc840",
+    "date": "2007-02-07T18:30:28.000Z",
+    "content": "So this seems to just reinforce the idea that developers must remember not to trust the data coming from the client.  From each of the examples, if I validate the input to filter out \""
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-02-07T19:34:52.000Z",
+    "content": "They should by default. This article describes what to do when they don't."
+  },
+  {
+    "author": "beNi",
+    "avatar": "23a0d30315506cb1a074860c9fdf012b",
+    "date": "2007-02-08T16:12:12.000Z",
+    "content": "hey pdp, nice article.\r\n\r\nthis is even smaller (51 characters)\r\n\r\n<pre><code>&#x27;&#x22;&#x3E;&#x3C;&#x69;&#x6D;&#x67;&#x20;&#x73;&#x72;&#x63;&#x3D;&#x31;&#x20;&#x6F;&#x6E;&#x45;&#x72;&#x72;&#x6F;&#x72;&#x3D;&#x65;&#x76;&#x61;&#x6C;&#x28;&#x6C;&#x6F;&#x63;&#x61;&#x74;&#x69;&#x6F;&#x6E;&#x2E;&#x73;&#x75;&#x62;&#x73;&#x74;&#x72;&#x28;&#x39;&#x32;&#x29;&#x3E;&#x3C;&#x21;&#x2D;&#x2D;</code></pre>\r\n\r\ncheers beNi"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-02-08T19:28:46.000Z",
+    "content": "neat :)"
+  },
+  {
+    "author": "MustLive",
+    "avatar": "997a9fa55e557e2aa8262a07758b161d",
+    "date": "2007-02-08T21:02:06.000Z",
+    "content": "Guys, you may use simple (without comment tag): \"&gt;\r\nIt is only 46 characters. When you attacking through iframe you don't need to care about commenting some ending html code.\r\n\r\nIn my practice of social security audits, I dealt with such cases with CSRF. For example I found a hole, where some data from form (from some fields) was save in cookie. And it was appear on site's pages (from cookie). So when you put XSS code to form's fields - to cookie - via CSRF, than you have XSS attacked the visitor of that site. It is persistent XSS ;-).\r\n\r\nP.S.\r\n\r\nNice article, Pdp. I am also using such short XSS sting in my own practice of security audit. Because sometime you need to limit yourself in length of XSS string (because of server restriction).\r\n\r\nFor example, when I need to show site' owner, that his site is vulnerable, and I have limited XSS payload string I use such payloads:\r\n\r\n<pre><code>\"&gt;alert(document.cookie)\r\n41 chars\r\n\"&gt;alert(\"XSS\")\r\n31 chars\r\nOr such (if quotes is filtered):\r\n\"&gt;alert(/XSS/)\r\n31 chars\r\nOr the shortest one:\r\n\"&gt;alert(1)\r\n27 chars</code></pre>"
+  },
+  {
+    "author": "Acidus",
+    "avatar": "e78ade355027be37b2192e622b14a46f",
+    "date": "2007-02-09T09:54:46.000Z",
+    "content": "Great article and good discussion all around.\r\n\r\nJust a couple of things:\r\n\r\n-You can use setInterval instead of eval or setTimeout. Downsides are it's one character longer and you need to have some code to turn it off when it runs.  However, if they are filtering, its good in a pinch\r\n\r\n-I know this is simpled for example, but remember not focus too much on \"&gt;&lt;script... attacks. You are attacking a known site, you know which tags the XSS is reflected in. Look for tag attributes that will execute script. It depends, but a simple \"onfocus=eval... could do the trick in less space. There are literally thousands of places in the DOM where JavaScript can execute, and only 2 of them are img+onerror and script. Trust me, commerical vendors are doing this :-)."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-02-09T10:23:12.000Z",
+    "content": "Yes, you can do quite virtually inject JavaScript into everything from the DOM. I provided a simple example so everyone understands the concept. Interesting thoughts all around."
+  },
+  {
+    "author": "thornmaker",
+    "avatar": "c82285eb50e222cbcbdd755029d49f4a",
+    "date": "2007-09-28T20:28:14.000Z",
+    "content": "#0={}; is a valid javascript statement.  This means that you can add 0={}; after the hash which allows your XSS injection to leave of the .substr(1) part, e.g. \"&gt;eval(location.hash)"
+  }
+]

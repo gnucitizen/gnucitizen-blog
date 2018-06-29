@@ -1,0 +1,14 @@
+[
+  {
+    "author": "Morgan Storey",
+    "avatar": "37b5ef749ebd516e99541d628fb21311",
+    "date": "2009-01-31T11:43:04.000Z",
+    "content": "Pretty good find, I seem to remember something about this from a while ago and recall trying it and it wasn't that good.\r\nBut this is good for a pre-liminary information gathering, then you can learn nicknames etc and do some google fu."
+  },
+  {
+    "author": ".mario",
+    "avatar": "89886495b27cfdc78593e1f5c8810594",
+    "date": "2009-02-01T14:54:37.000Z",
+    "content": "The problem with all those scraping estates is the value of information vs. the lack of security. Pipl and most other people scraper are highly vulnerable against XSS, Markup Injections and the so called DOM Redressing issues... \r\n\r\nSame with trust-ability. Temporary manipulation is as well possible as manipulation of the persistent search results by creating accounts with names similar to the victim's name.\r\n\r\nHopefully those issues get somehow patched to avoid having the web flooded with false information about oneself. If possible at all - how to fix things broken by design?"
+  }
+]

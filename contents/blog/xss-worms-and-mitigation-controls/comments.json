@@ -1,0 +1,38 @@
+[
+  {
+    "author": "ntp",
+    "avatar": "e9e7690eccc0e9b2ab8ec6a375c96bbd",
+    "date": "2007-06-23T21:46:48.000Z",
+    "content": "Thanks for posting about my thoughts.\r\n\r\nJeremiah said, \"Restrict websites with public IPâ€™s from including content from websites with non-routable IP address\" as seen here: http://jeremiahgrossman.blogspot.com/2007/02/if-we-could-start-all-over.html\r\n\r\nand he also said it slightly differently here: http://jeremiahgrossman.blogspot.com/2007/01/3-wishes-for-web-browser-security.html\r\n\r\nAs much as I dislike making changes (which usually means adding features instead of fixing bugs) to protocols and languages - there are two things going in the short term future would could affect XSS and similar attacks in the future.\r\n\r\n1) ECMAScript 4 progress\r\n2) httpbis BOF at the IETF-69\r\n\r\nWhat would we want to design into these to make them safer and provide security with a higher level of assurance?\r\n\r\nOtherwise, I enjoyed how you summarized (edited?) my suggestions.  Here's one point I wanted to elaborate further on:\r\n\r\n<q>Security testing is optional.</q>  I said that Web Application Security Scanners and WAF's are optional.  Testing should be done by the developers, as I described.  If you are a developer and feel that you are missing tools that will help you eliminate XSS in your code completely - let me know and I'll find something to help you or make the process almost completely automatic.  Or we'll take it up as a project and make it happen.  Even for ColdFusion.\r\n\r\nIf we rely on pen-testers and vulnerability hunters to find XSS, and do nothing else, then we'll continue to be in the same situation we are right now.  Elimination of CSRF is step two, but near-pointless if we don't have a global strategy to defend against XSS worms."
+  },
+  {
+    "author": "Roland Dobbins",
+    "avatar": "1a70c64c007293fcab482770f69fdfdd",
+    "date": "2007-06-24T12:22:18.000Z",
+    "content": "Why  have you turned off full-text syndication feeds?  Full-text feeds are very important to folks who have lots of feeds to read each day.  Please re-enable full-text feeds.\r\n\r\nMany thanks!"
+  },
+  {
+    "author": "Giorgio Maone",
+    "avatar": "290e868e00e8429bf1624a461b8ef81e",
+    "date": "2007-06-24T12:37:32.000Z",
+    "content": "FYI, current stable version of the NoScript Firefox extension - http://noscript.net/getit#direct - aside the notorious JS  whitelist, already implements:\r\n\r\n1. Unconditional XSS filters on every request (GET/POST/...) originated by untrusted origins (i.e. non whitelisted sites or external applications, e.g. email client) landing on whitelisted pages - http://noscript.net/features#xss\r\n2. \"Light\" script injection detection on every GET request (even from trusted sites), triggering the aforementioned XSS filters on suspicious URL patterns\r\n3. Java, Flash and other plugin content blocking - http://noscript.net/features#contentblocking\r\n\r\nOther relevant Anti-XSS and Anti-CSRF features in the works are:\r\n\r\n1. A better implementation of the LocalRodeo concepts (made easy by the request interception framework already used by Anti-XSS filters)\r\n2. A facility to flag some  IFrames as \"scriptless\" and \"XSS checked\", usable either by the web developer or by the user (sort of \"\" preview leveraging currently available browser technology)\r\n3. A \"Mashup manager\" to declare web application trust boundaries (i.e. whitelists of sites that are allowed to perform cross-site requests in a certain \"mashup\"), definable either by the web developer dropping a \"mashup.txt\" file on the web-app root directory or on the client side via UI. This will overcome the inherent unreliability of REFERER header checks.\r\n4. Finer grained per site permissions/restrictions"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-06-24T13:34:55.000Z",
+    "content": "Giorgio,\r\n\r\nthanks for the info. We follow <strong>noscript</strong> development very closely.\r\n\r\nRoland,\r\n\r\nyes, full-text feeds are disabled for now. We are experimenting with a few things at the moment. We are going to keep the situation as such till the end of the month. Then, we are going to decide which way to go."
+  },
+  {
+    "author": "Tim Brown",
+    "avatar": "f5329348d4779b4e62b72b5bd9017eab",
+    "date": "2007-06-25T00:24:29.000Z",
+    "content": "\"Given the issues that Javascript injection poses, it is questionable whether it should be enabled by default on web browsers as they are supplied to members of the public. It is also questionable that Javascript should be considered an all or nothing option. Web browser developers need to up their game and start to provide sandbox functionality similar to that found in JVM, with options to limit access to dangerous interfaces on an individual site by site basis in a granular manner. It should also be considered whether it would be possible for Javascript code to be signed in a manner which makes use of existing PKI to lessen the opportunities available to malicious code.\" -- I wrote this over a year ago in my paper http://www.nth-dimension.org.uk/pub/MUJSI.pdf, but it still holds true today. NoScript and the mechanisms employed by Konqueror for example are part of the the solution, but when are web browsers going to support/push coding signing for Javascript (http://www.mozilla.org/projects/security/components/signed-scripts.html) down the throats of developers. This could make a real difference without breaking the functionality of Javascript reliant sites."
+  },
+  {
+    "author": "ntp",
+    "avatar": "e9e7690eccc0e9b2ab8ec6a375c96bbd",
+    "date": "2007-06-25T16:10:44.000Z",
+    "content": "NoScript is what I meant by Anti-XSS features, although I do know that Microsoft is working on a separate one based on their .NET Anti-XSS library.  RSnake has blogged about these in the past.\r\n\r\n@ Tim :\r\n\r\nJavascript Sandbox functionality -\r\n1) HTTPOnly.  Which has a broken implementation and design\r\n2) Content-restrictions.  I already mentioned these, which are improvements to HTTPOnly.  Browser developers need to put this stuff in the browser so that web application developers can start using it\r\n\r\nSigning JavaScript code is by far one of the best options we have.  I mention this very often.  I think it does have a place in NTPolicy, but in all seriousness, I think it's the least likely for any organization to implement.  I would say in 100% of cases, it will be the last thing to implement, thus a waste of time in comparison to everything else.  I guess maybe the same can be said of content-restrictions, but I try to be optimistic since it is so badly needed."
+  }
+]

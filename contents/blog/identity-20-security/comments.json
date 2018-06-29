@@ -1,0 +1,68 @@
+[
+  {
+    "author": "Dick Hardt",
+    "avatar": "73d0ffd984018a7e01af3949869bdc4d",
+    "date": "2007-08-18T15:50:22.000Z",
+    "content": "Looking forward to you joining the conversation! The more security related analysis we have of Identity 2.0 at this point, the better it will be."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-08-18T15:59:49.000Z",
+    "content": "happy to hear that :)"
+  },
+  {
+    "author": "Ronald van den Heetkamp",
+    "avatar": "80d7b8935b953dabd63268177b7981f6",
+    "date": "2007-08-19T13:28:46.000Z",
+    "content": "This is the same as OpenID if I am not mistaken? If so, Single Signon is a terrible idea. You can't make life easier on the net. It's contradicting security. Sure it will happen, it already has. But it scares me."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-08-20T08:37:40.000Z",
+    "content": "Ronald, OpenID is not that bad idea. However, it will take some time for the majority of users to learn how to use it effectively and moreover securely. This is the main concern with OpenID, but otherwise it will be one of the best things that have happened to the Web."
+  },
+  {
+    "author": "Ronald",
+    "avatar": "80d7b8935b953dabd63268177b7981f6",
+    "date": "2007-08-20T19:49:17.000Z",
+    "content": "No I have to disagree, it's like saying: buy this lock, it's safer. I think it's a sad fact that security just doesn't exist. It's a myth, and a bad nightmare. In the end that user will step into a snare one way or the other.\r\n\r\nAlmost no one pays attention what those fools at Google are doing. They already have a single sign on, and anyone with too much free time, already knows that I can access any Google service of a user if he happens to visit my CSRF Iframe and happens to be logged in only one of them. I discovered that GMail, Adsense, Adwords, Analytics are still vulnerable to a critical degree. \r\n\r\nOne cookie to rule them all, now that's a great idea.\r\n\r\nAnd yeah, teaching the user might be the biggest hurdle. Phishing will never stop because of the fact that you have to think like a conman in order not to be conned. Hence, that's why people still fall for those Nigerian money letter fools."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-08-20T20:26:28.000Z",
+    "content": "Ronald, no you are absolutely right, but single sign on mechanisms solve a huge problem. With the advances in Web2.0 technology it makes no sense to register for each service out there. It is ridiculous. Imagine that you have to type separate username/password for every application you use on your desktop. So yes, although identity centric system can be hacked, and I doubt that we ever going to find the right balance, there are a lot better then what we have at the moment, which is a total chaos."
+  },
+  {
+    "author": "Ronald",
+    "avatar": "80d7b8935b953dabd63268177b7981f6",
+    "date": "2007-08-21T19:53:44.000Z",
+    "content": "Yeah,\r\n\r\nI always wonder what we try to solve here. OpenID only solves the strain of memorizing multiple passwords. But it doesn't solve a security issue, it might even weaken it.\r\n\r\nWhat if the sysadmin of OpenID has a password like this: qwerty123. Okay maybe not, but maybe he has it stored inside his GMail account, or uses the same pass for a forum."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-08-21T20:02:00.000Z",
+    "content": "sure, you are right. But when we use OpenID then we can afford to secure it as much as possible. I don't mind using keyfobs in this case. Two factor authentication with one-time password is considered pretty secure authentication mechanism. However, without OpenID we cannot even start thinking using this for every site out there. It makes no sense.\r\n\r\nWhat I would like to suggest is the following: Let's stick to OpenID but we need to add some enhancements to the browser. For example, the browse detects when we use OpenID for the sites we visit and automatically forces HTTPS. If HTTPS is not available then it just gives up with 404 message or whatever. Now, this won't prevent XSS or CSRF but it is a good start. Put the one-time password thing on the top and we have a system that scales well and it is a lot more secure then what we have today."
+  },
+  {
+    "author": "Ronald",
+    "avatar": "1f094e6209c35f6da8d871bc109ee748",
+    "date": "2007-08-21T20:53:27.000Z",
+    "content": "Yes that is true.\r\n\r\nIn the end the internet was never designed to perform the stuff everyone demands. Even authentication and identification schemes were only designed for accessing certain restricted areas on a server.\r\n\r\nSo basically we try to let this oldsmobile (the net) perform a F1 Grand prix.\r\n\r\nAnd I figured we need to build a new racecar. Or quit joining a grand prix and go back to plain text."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-08-21T21:06:52.000Z",
+    "content": "yes, but plain text is not cool so we are stuck with  the oldsmobile. :) maybe we can compete on F1 Grand prix but let's make it at least convertible."
+  },
+  {
+    "author": "Ronald",
+    "avatar": "1f094e6209c35f6da8d871bc109ee748",
+    "date": "2007-08-22T15:09:16.000Z",
+    "content": "haha yes you beat me there. ^^"
+  }
+]

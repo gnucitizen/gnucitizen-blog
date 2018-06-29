@@ -1,0 +1,80 @@
+[
+  {
+    "author": "Garrett Gee",
+    "avatar": "74ea35fb72dd46a86682455fc786b6a7",
+    "date": "2007-12-22T20:58:31.000Z",
+    "content": "Many thanks for this python module. I recently started a project that needs to leverage search engine results, and I was very sad to see google removing their soap interface over the ajax one."
+  },
+  {
+    "author": "Willy",
+    "avatar": "c7a999b10ed1b6010e01270e8133ca15",
+    "date": "2008-01-15T15:23:17.000Z",
+    "content": "If you put this in an infinite loop you can mess with google trends, although the results are only changed for whatever region you're connected through.\r\n\r\nI didn't know how to change the user agent from python when I wrote mine though, so I did it through another site that returns results from Google, they don't check."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-15T15:30:50.000Z",
+    "content": "Willy, the Google.py code shows how to change the user agent. You can just grab the Get object and use it in your projects."
+  },
+  {
+    "author": "zaggy",
+    "avatar": "0251dce77bdcc5925b04d0de1271c0ad",
+    "date": "2008-01-16T11:13:07.000Z",
+    "content": "<pre><code>C:\\shared&gt;google.py define:lol\r\n# define:lol\r\n# crawls the first 5 pages only (50 results max)</code></pre>\r\n\r\nDid I miss something?"
+  },
+  {
+    "author": "Willy",
+    "avatar": "c7a999b10ed1b6010e01270e8133ca15",
+    "date": "2008-01-17T09:11:48.000Z",
+    "content": "I noticed that in the script.  I wish I'd known it when I was writing mine.  It still seemed to work to just search through someone else's site that didn't check the user agent, but knowing that would have saved me about an hour of messing around trying to get past the forbidden error."
+  },
+  {
+    "author": "GooHackle",
+    "avatar": "675cb79cdc958d0fd4eb243e1748a62c",
+    "date": "2008-02-06T04:49:30.000Z",
+    "content": "First of all, congratulations for this site.\r\n\r\nNow about this post, back in the hot google hacking days I wrote a similar script but in Perl. Some months ago I wrote it in PHP and publish a online version of this \"google parser\" named GooParser to test a couple of things. You can try it here: <a href=\"http://goohackle.com/scripts/google_parser.php\" rel=\"nofollow\">Google Parser</a>\r\n\r\nCheers,\r\n       GooHackle"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-06T11:58:36.000Z",
+    "content": "10x for sharing. I will have a look."
+  },
+  {
+    "author": "barbsie",
+    "avatar": "817c6a3da5e5f97bddadc81fbbb07062",
+    "date": "2008-02-08T13:58:12.000Z",
+    "content": "Hi,\r\n\r\nI also wrote a googlescraper in ruby. During my tests I had the impression that google not only checks the agent. Therefore I also added random delay in getting next pages and resetting cookies on top of randomizing agents. Oh...and also the use of a proxy (so privoxy with tor can be used)..."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-09T09:21:57.000Z",
+    "content": "yep, good enough solution to evade Google's bot detection mechanism. I was planning to implement all these stuff into the next release of <a href=\"http://www.gnucitizen.org/blog/met\" rel=\"nofollow\">MET (Massive Enumeration Toolset)</a>, but I never find time for it. I hope that the project is not dead just yet."
+  },
+  {
+    "author": "barbsie",
+    "avatar": "817c6a3da5e5f97bddadc81fbbb07062",
+    "date": "2008-02-09T09:36:51.000Z",
+    "content": "interesting :) . I'm working on something similar, together with someone else. Basically it combines dns enumeration with some google scraping and whois stuff. It's a major rewrite of the old dnsenum thingy. If you are interested to exchange ideas, drop me a mail..."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-09T20:58:24.000Z",
+    "content": "might be a good idea to collaborate."
+  },
+  {
+    "author": "vatts",
+    "avatar": "d446d7429a63ccd33089dfb05204ebac",
+    "date": "2009-03-15T14:21:29.000Z",
+    "content": "Hey why do i run the code and get just this:\n\n<pre><code>[vatts@VattServ Desktop]$ python google.py \nusage: google.py query\n[vatts@VattServ Desktop]$ python google.py linux\n# linux\n# crawls the first 5 pages only (50 results max)\n[vatts@VattServ Desktop]$</code></pre>"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-03-17T17:08:22.000Z",
+    "content": "the code is old! perhaps you need to change the regexes slightly..."
+  }
+]

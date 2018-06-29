@@ -1,0 +1,86 @@
+[
+  {
+    "author": "NurBo",
+    "avatar": "3d6a350133d92590f648098405210bae",
+    "date": "2007-11-08T17:43:41.000Z",
+    "content": "whoa nice stuff"
+  },
+  {
+    "author": "G-Brain",
+    "avatar": "870419564f7ebe6cb4f631e98e14e5dd",
+    "date": "2007-11-08T22:26:39.000Z",
+    "content": "NurBo reads this stuff? Hehe...\r\n\r\nI'd use $_POST['data'] instead of $_REQUEST['data'] in steal.php though. $_REQUEST contains $_GET, $_POST, and $_COOKIE, and all you need here is $_POST. Furthermore, good job! Nice article."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-11-08T23:20:49.000Z",
+    "content": "@NurBo - Glad yo like it!\r\n\r\n@G-Brain - 'steal.php' is derived from a generic data theft script I wrote long time ago. The idea of the original script is that it works for both, GET and POST, hence the use of $_REQUEST .\r\n\r\nbtw guys, there is video we're posting soon on this very same page showing a DoS on the BT Home Hub. The exploit takes advantage of the double slash auth bypass + CSRF to disable the wireless connection.\r\n\r\nAlthough I usually don't like DoS attacks, I must say that this one is kind of a killer. Just visit site, and boom, the Home Hub's wireless interface is disabled permanently!"
+  },
+  {
+    "author": "G-Brain",
+    "avatar": "870419564f7ebe6cb4f631e98e14e5dd",
+    "date": "2007-11-09T00:00:50.000Z",
+    "content": "I see, thanks for the explanation. I don't see why  those definitions of RCPT_EMAIL and EMAIL_SUBJECT are made even when there is no $_REQUEST['data'] though... ;)"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-11-09T10:45:44.000Z",
+    "content": "@G-Brain - fair enough! I see what you mean, I guess I wasted a few CPU cycles in the script. \r\n\r\nYou're right though, if you want to be perfectionist, the definitions on 'steal.php' should be under the IF statement."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-11-11T13:03:19.000Z",
+    "content": "Here is the demo video for Exploit #3 : http://www.youtube.com/watch?v=QiFQPKcAtNI"
+  },
+  {
+    "author": "Rob",
+    "avatar": "9c6181302e3a76a1c9738f1b78e9444d",
+    "date": "2007-11-24T18:08:40.000Z",
+    "content": "I don't suppose there is an exploit in 6.2.6.B that allows telnet access?"
+  },
+  {
+    "author": "t3h 1337",
+    "avatar": "fdb887e38fde4261e4b5b3fb8c627b60",
+    "date": "2007-12-22T08:16:40.000Z",
+    "content": "Any 0day for 626c?"
+  },
+  {
+    "author": "norm",
+    "avatar": "7972dcc8e7e86eddc564c5eb3a1692e8",
+    "date": "2008-01-21T23:09:20.000Z",
+    "content": "The new Home Hub firmware (6.2.6E) removes these exploits.\r\n\r\nHowever if you gain wireless access to the device (which isn't difficult if it's on WEP) you will find the default password has been changed to the serial number of the device (unless the owner changed it since).\r\n\r\nNow you might think getting the serial number would be impossible without physical access, but using the firmware recovery tool provided by BT it will tell you the serial number on finding it. Then all you do is add the two characters 'CP' infront of it to make it valid e.g. CP01234ABCD.\r\n\r\nFrom there I guess the possibility lies with downgrading the firmware to a more vulnerable version."
+  },
+  {
+    "author": "Noggin",
+    "avatar": "0a9a909a47770a02ec68d9b434180397",
+    "date": "2009-01-15T10:58:48.000Z",
+    "content": "I am connected to a BT Home Hub with the WPA2 key (it's a long story how I got that!) and when I browse 192.168.1.254 I get the \"Change your admin password for the first time\" screen, showing version 8.1.A\r\n\r\nI've tried entering the serial number (from the BT Home Hub Admin app plus \"CP\" in front) but it tells me it is invalid. I have another BT Home Hub and once I've changed the admin password this screen no longer shows.\r\n\r\nAny ideas how I can gain access to the admin pages?"
+  },
+  {
+    "author": "Jonnycorer77",
+    "avatar": "2eef12246100fc6f36b38f176b4edc2b",
+    "date": "2009-01-17T21:05:21.000Z",
+    "content": "Noggin, take a look at the post concerning bypassing the admin password, all you need is there"
+  },
+  {
+    "author": "Richard Burns",
+    "avatar": "0cf27abdf478a70afe234b747f891ad9",
+    "date": "2009-04-29T07:00:55.000Z",
+    "content": "This all seems pointless, tell me i'm wrong. How can you run any of this unless your on the network? I am surrounded by at least 10 hubs and need to access one of them??"
+  },
+  {
+    "author": "JC",
+    "avatar": "5d9a19e6b9d73f74767d5b75e667d708",
+    "date": "2010-06-09T18:39:49.000Z",
+    "content": "The first thing I do with any router is to change its ip address and the range of ips that the lan users can use and turn of dhcp. This would mean your script would have in theory to cover the whole range of private ip addresses from the Wan side and make access from the lan side much more difficult"
+  },
+  {
+    "author": "bobp",
+    "avatar": "a824e5156fe092b2b4a5fbfc6ed0ce8c",
+    "date": "2010-09-01T09:57:58.000Z",
+    "content": "Is there any way to reset admin password, other than doing factory reset of router?"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "author": "Simon Willison",
+    "avatar": "ac7005eff7720218df4cf0c72ddf6a3d",
+    "date": "2007-06-05T22:59:17.000Z",
+    "content": "The Google Gears database API uses bind parameters which are immune to SQL injection. Developers could still write bad code, but Gears makes it easy enough to avoid SQL injection that only very poor developers are likely to end up with injection holes."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-06-06T18:58:42.000Z",
+    "content": "Simon, you are right... the point is that it is still possible. Only the time will show. One thing that Googe Gears definitely promotes is persitent XSS. Even if your SQL queries are right but you trust the user input, you may end up saving JavaScript inside your database and then recalling it everytime the user does an action to retrieve that malicious entry. I know that the Firefox team is also working on a persistent storage for Firefox3 which is also based on SQLite. IE and Opera will follow. That will only increase the attack surface of attacks such as SQL Injection, XSS and CSRF."
+  },
+  {
+    "author": "Aaron Boodman (Gears developer)",
+    "avatar": "97fd8407dc3175b4aeebbf4e71b4d620",
+    "date": "2007-06-09T01:37:18.000Z",
+    "content": "You're right that Gears does open up more possibilities once a website has an XSS hole. Developers will have to treat the client database as suspect and validate it on the server, much the same way they validate other data coming from the client."
+  },
+  {
+    "author": "name",
+    "avatar": "8f8ff21a67437febebc70afd19364e95",
+    "date": "2007-06-09T20:22:45.000Z",
+    "content": "<blockquote>Even if your SQL queries are right but you trust the user input,</blockquote>\r\n\r\nwhy would anyone trust user input? (When attempting to avoid the obvious, of course)"
+  },
+  {
+    "author": "anonymous",
+    "avatar": "7905d373cfab2e0fda04b9e7acc8c879",
+    "date": "2008-07-03T02:49:53.000Z",
+    "content": "isnt there protection against that kind of attack?"
+  }
+]

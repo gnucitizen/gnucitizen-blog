@@ -1,0 +1,206 @@
+[
+  {
+    "author": "PartyOf1",
+    "avatar": "92f59ee8c48437e8ac3405abc5075bb5",
+    "date": "2007-01-04T13:36:09.000Z",
+    "content": "Does all this work if running from a Virtual Machine? \r\n\r\nHow about if end user starts up browser from SandboxIE, what happens in this case?\r\n\r\nJust my 2/100$"
+  },
+  {
+    "author": "zmx32",
+    "avatar": "623ed3fa2a7d578af692b4391d8b304a",
+    "date": "2007-01-04T13:47:17.000Z",
+    "content": "you may want to check \r\nhttp://sla.ckers.org/forum/read.php?2,4785"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-04T14:15:42.000Z",
+    "content": "PartyOf1,\r\n\r\nif you run in SandboxIE or Sandboxed FF then there will be no impact at all. If you are inside a Virtual Machine then only the emulated disk will be attacked. I guess you shouldn't be worried in that case."
+  },
+  {
+    "author": "luma",
+    "avatar": "7e907ebcb3846cb393630eb424d839ed",
+    "date": "2007-01-04T14:47:04.000Z",
+    "content": "file:///C:/Program%20Files/Adobe/Acrobat%207.0/Resource/ENUtxt.pdf#something=javascript:your_code_here\r\n\r\nHow can an attacker exploit this? Because the user have to open this url directly for this to work. It can't be loaded into an iframe, or be redirected to by anything."
+  },
+  {
+    "author": ".mario",
+    "avatar": "7ef1c803c904b9a9834d3bd7645790bb",
+    "date": "2007-01-04T15:05:56.000Z",
+    "content": "@luma: e.g. take the link, put it into a short url, (digg|delicuious|dzone) it or send it around via im and there you go..."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-04T15:09:11.000Z",
+    "content": "luma, indeed... fortunately this is the case. However, we are hackers aren't we? So lets think outside of the box. I found a very simple technique for triggering the above URL automatically circumventing the browser same origin security policies. We can do that with QTL files. For more information how QTL files can be abused read <a href=\"http://www.gnucitizen.org/blog/backdooring-mp3-files/\" rel=\"nofollow\">here</a>.\r\n\r\nCreate a QTL file with mp3, mp4, mov, avi or qtl extension. Put the following content inside:\r\n\r\n<pre><code>&lt;?xml version=\"1.0\"&gt;\r\n&lt;?quicktime type=\"application/x-quicktime-media-link\"?&gt;\r\n&lt;embed src=\"a.mp3\" autoplay=\"true\" qtnext=\"file:///C:/Program%20Files/Adobe/Acrobat%207.0/Resource/ENUtxt.pdf#something=javascript:<strong>your_code_here</strong>\"/&gt;</code></pre>\r\n\r\nWhen the user visits the file, their local file system will be explored and dumped on a remote machine. It is a bit evil I know."
+  },
+  {
+    "author": "Richard Moore",
+    "avatar": "c835240f868ac44ee8ca22837d4e5d04",
+    "date": "2007-01-04T17:16:00.000Z",
+    "content": "Works comes with a PDF too and is almost always installed:\r\nC:\\Program Files\\Microsoft Works\\wksgsg03.pdf"
+  },
+  {
+    "author": "Guignol",
+    "avatar": "9ab67aed6c885df18155ed2608fe0198",
+    "date": "2007-01-05T02:29:34.000Z",
+    "content": "This doesn't work. It's all a hoax."
+  },
+  {
+    "author": "Sean",
+    "avatar": "b9823f715cee6a38a1a3a87943ff9db1",
+    "date": "2007-01-05T09:34:57.000Z",
+    "content": "It works in FF2.0.0.1 but only when the Adobe plugin is used.  If the action is \"Open with default app\" or \"save to disk\", the exploit does not work."
+  },
+  {
+    "author": "h4ck",
+    "avatar": "68d44e094e3890d433e09f1d100cf896",
+    "date": "2007-01-05T11:14:34.000Z",
+    "content": "<a href=\"http://www.google.com/librariancenter/downloads/Tips_Tricks_85x11.pdf#something=javascript:alert('xss');\" rel=\"nofollow\">http://www.google.com/librariancenter/downloads/Tips_Tricks_85x11.pdf#something=javascript:alert('xss');</a>\r\n\r\nThis did not work for me.I have acrobat reader 7.0 installed on my machine.it did not give an alert message on my browser."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-05T11:32:36.000Z",
+    "content": "h4ck, this is because google fixed it by adding the following header to the response:\r\n\r\n<pre><code>Content-disposition: attachement filename=filename_of_the_document.pdf</code></pre>"
+  },
+  {
+    "author": "KeithF",
+    "avatar": "69de85828d22f4dc02e92571b0d2ad67",
+    "date": "2007-01-05T13:13:12.000Z",
+    "content": "I'm making a bit of an assumption here, but providing you type a direct URL into your address bar then, if the site itself hasn't been compromised, there is no chance of this vulnerability being exploited on a link created by the site owner.\r\n\r\nIt only becomes a problem with user generated content, or in the case of a phishing attack.\r\n\r\nAm I right?\r\n\r\nKeith"
+  },
+  {
+    "author": "GE",
+    "avatar": "206390c2dc812f35ca8aaa11ffecc840",
+    "date": "2007-01-05T13:59:57.000Z",
+    "content": "The example did work for me.  I am more interested in the \"Content-disposition: attachement filename=filename_of_the_document.pdf\"..  is this a resolution for this issue?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-05T14:16:12.000Z",
+    "content": "KeithF, kind of... not completely. Yes, in certain situation the user has to click on a link. However, it is also possible for the attacker to launch an exploit automatically. Still a logged in user is required in order to gain the maximum benefit of the operation. The concept is exactly as the one found in XSS attack vectors.\r\n\r\nGE, yes\r\nthis is what Google did to prevent their PDF files from being abused."
+  },
+  {
+    "author": "rootbeet",
+    "avatar": "4b51888dca3d68e98e3d6eb8f8e309ef",
+    "date": "2007-01-05T15:16:59.000Z",
+    "content": "<a href=\"file:///C:/Program%20Files/Adobe/Acrobat%207.0/Resource/ENUtxt.pdf#a=javascript:alert('Hi');\" rel=\"nofollow\">file:///C:/Program%20Files/Adobe/Acrobat%207.0/Resource/ENUtxt.pdf#a=javascript:alert('Hi');</a>\r\nDoesn't work for me in IE.  Doc just opens.  Also, are u limited to 32 characters for the parameter + value?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-05T15:24:58.000Z",
+    "content": "it works on very specific IE versions. Your Windows version and patch level also matters. There are no limitations."
+  },
+  {
+    "author": "joeconodo",
+    "avatar": "9533648af152d76d35e86f4116da3a07",
+    "date": "2007-01-05T16:23:00.000Z",
+    "content": "in mac os x 10.4.8 ppc with safari 2.x or firefox 2.x doesn't work, mainly I Think because the acrobat 7.0.8 is called as an external application and not as a plugin"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-05T16:26:39.000Z",
+    "content": "you could be right"
+  },
+  {
+    "author": "Klir",
+    "avatar": "e1efeeab4f7f766d4c357a527155f8d9",
+    "date": "2007-01-05T17:34:51.000Z",
+    "content": "Itâ€™s not occurs on IE 7, IE6 SP2 FF 2.0.2 , 1.5.0.9 on windows XP ...\r\nIf a user still didnâ€™t understand that he needs to upgrade to the latest patch than maybe he deserve to be hackedâ€¦"
+  },
+  {
+    "author": "Joel",
+    "avatar": "476e02898e081f67375fc8f9771ca33a",
+    "date": "2007-01-05T22:28:46.000Z",
+    "content": "From what I found (http://secunia.com/advisories/23483/) they claim that this can affect both IE and FF depends on the specific version of browser and acrobat.\r\n\r\n\r\nAlthough the alert did not work for me on FF (up to date 2.0.0.1) this did work.\r\n\r\nfile:///C:/Program%20Files/Adobe/Acrobat%206.0/Help/ENU/Pdfmark.pdf#a=javascript:window.location.href='http://www.google.com';\r\n\r\nSo my guess is the bug exists just because the plugin takes the window over, we don't get to see that window, however the bug does exist, and can be used.\r\n\r\nJoel"
+  },
+  {
+    "author": "Louise",
+    "avatar": "c4b85c2ff5cb391bb445c62ed5bef1fb",
+    "date": "2007-01-05T23:02:06.000Z",
+    "content": "Everyone,\r\n\r\nI got http://path/to/pdf/file.pdf#whatever_name_you_want=javascript:your_code_here to run in FF 1.5.0.7 on windows XP, but the file one did not run in that version"
+  },
+  {
+    "author": "Jeremy Hannon",
+    "avatar": "c6d0fcbf0962271cda85f53c980b62c5",
+    "date": "2007-01-05T23:34:59.000Z",
+    "content": "Google may have changed their content-disposition to force the browser to treat it as a download rather than in-line.  That appears to mitigate the threat."
+  },
+  {
+    "author": "MustLive",
+    "avatar": "997a9fa55e557e2aa8262a07758b161d",
+    "date": "2007-01-07T21:28:39.000Z",
+    "content": "<blockquote>Disable JavaScript or update to Acrobat 8.</blockquote>\r\nOr disable Acrobat plugin, or even delete it. For your main browser or for all browsers in the system. There are many suggestions.\r\n\r\nGuys, as Google tell me, the are up to 317 000 000 sites in the Internet which have pdf files (and they all have this vulnerability). So every admin of every site and every user need to deal with this Universal PDF XSS."
+  },
+  {
+    "author": "fearphage",
+    "avatar": "cf9d4ff7e3dec9f1f108feb62153e36f",
+    "date": "2007-01-08T02:52:05.000Z",
+    "content": "This is already patched in Opera"
+  },
+  {
+    "author": "marvin",
+    "avatar": "a86db371d8efe4163c177d067f73f539",
+    "date": "2007-01-08T10:10:55.000Z",
+    "content": "i tried that link, and it doesn't alert me with xss, but it prompts me to download that pdf file. Im using firefox 1.5.0.9 under ubuntu dapper"
+  },
+  {
+    "author": "matt",
+    "avatar": "30d413ad240f752aa3c79385b32c7a1a",
+    "date": "2007-01-09T10:54:36.000Z",
+    "content": "Nice Work."
+  },
+  {
+    "author": "Sebastian Wolfgarten",
+    "avatar": "ac559c279b10c2e14c0e30bef831761d",
+    "date": "2007-01-11T18:54:45.000Z",
+    "content": "Hi,\r\n\r\nwell one way to prevent people from exploiting your customers is to add the following directive to Apache's httpd.conf:\r\n\r\n\r\nHeader unset Content-Disposition\r\nHeader add Content-Disposition \"attachment; filename=document.pdf\"\r\n\r\n\r\nThis will cause a save/open dialogue to pop up every time a user tries to download a .pdf file. As the \"normal\" Acrobat is not vulnerable (it's just the plugin), potentially attached malicious code will not be executed. If one wants to keep the original name of the .pdf file untouched, then one could use Apache's environment variables rather than setting it to \"filename=document.pdf\".\r\n\r\nBye,\r\nSebastian"
+  },
+  {
+    "author": "Sebastian Wolfgarten",
+    "avatar": "ac559c279b10c2e14c0e30bef831761d",
+    "date": "2007-01-11T18:55:53.000Z",
+    "content": "Okay, some stuff was stripped out from my previous posting...you basically need to wrap a FilesMatch-directive around the aforementioned \"Header\" settings...\r\n\r\nHope that helps!\r\n\r\nBye,\r\nSeb"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-12T11:51:27.000Z",
+    "content": "thanks Sebastian, that was very helpful"
+  },
+  {
+    "author": "erez",
+    "avatar": "a5066de475de171e84bea6cbed2caf2f",
+    "date": "2007-01-16T15:08:47.000Z",
+    "content": "seems to be fixed with the latest 7.0.9 patch..."
+  },
+  {
+    "author": "alex",
+    "avatar": "62c5b459b45a5467497b3b3148a9d0ee",
+    "date": "2007-04-12T20:07:12.000Z",
+    "content": "hi nice site."
+  },
+  {
+    "author": "Edward",
+    "avatar": "a071ac65aed1002d91775b1fbee4ecba",
+    "date": "2007-11-24T11:54:41.000Z",
+    "content": "We allow users to try our software by uploading documents to an application we host. Some of the uploaded documents can be seen and accessed by other users.\r\n\r\nWhat kind of measures can we take so that users with older Acrobat versions are not compromised?"
+  },
+  {
+    "author": "DReTeN",
+    "avatar": "f789ee92569456849ce6cdd29497ed5e",
+    "date": "2007-12-12T20:13:53.000Z",
+    "content": "you just gotta convince them to get the newest version of Acrobat. That's why there are updates and improved versions, to fix the bugs and vulnerabilities of previous editions."
+  },
+  {
+    "author": "????????",
+    "avatar": "3712eb8e31fe07fd895d582c28be7261",
+    "date": "2009-02-25T23:35:42.000Z",
+    "content": "KeithF, kind of… not completely. Yes, in certain situation the user has to click on a link. However, it is also possible for the attacker to launch an exploit automatically. Still a logged in user is required in order to gain the maximum benefit of the operation. The concept is exactly as the one found in XSS attack vectors."
+  }
+]

@@ -1,0 +1,98 @@
+[
+  {
+    "author": "MJW",
+    "avatar": "f31b9d88eae32f38965a1c23aba02e26",
+    "date": "2008-05-27T13:48:59.000Z",
+    "content": "I'm on 6.2.6.E and I've checked the IGD.xml file, the Serial Number field shows my MAC code not the serial number. Is this a change in 6.2.6.E?"
+  },
+  {
+    "author": "Stephen",
+    "avatar": "7900a7c7a83f32c569fab55cfa7b424a",
+    "date": "2008-05-27T16:10:21.000Z",
+    "content": "On my HH v15 the serialnumber field has the MAC address in it"
+  },
+  {
+    "author": "Stephen",
+    "avatar": "7900a7c7a83f32c569fab55cfa7b424a",
+    "date": "2008-05-27T16:15:19.000Z",
+    "content": "Just to add that I'm on 6.2.6.E (forgot to mention that)"
+  },
+  {
+    "author": "Stephen",
+    "avatar": "7900a7c7a83f32c569fab55cfa7b424a",
+    "date": "2008-05-27T16:19:22.000Z",
+    "content": "Apologies for three posts in a row but I just checked and UPnP is definitely switched off on my HH (I immediately disabled it on reading your initial HH posts some months ago).\r\n\r\nShould these files still be available even when UPnP is off? Because they are..."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-05-27T16:21:13.000Z",
+    "content": "even when you switch off UPnP the IGD description may still be present."
+  },
+  {
+    "author": "Stephen",
+    "avatar": "7900a7c7a83f32c569fab55cfa7b424a",
+    "date": "2008-05-27T16:24:47.000Z",
+    "content": "Ok. Reading it in detail the upnp/IGD.xml file contains the following:\n\n<pre><code>Device not enabled: UPNP-IGD</code></pre>\n\nSo at least it seems to be off. However the dslf/IGD.xml looks like it still offers services - does this mean that even turning off UPnP that one could still utilise the dslf stuff to pwn it?"
+  },
+  {
+    "author": "rishi",
+    "avatar": "422e4c3bd050ffe31350a738748d9c3e",
+    "date": "2008-05-28T13:32:43.000Z",
+    "content": "Have any flaws been found in the H firmware? Thanks!"
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2008-05-28T22:51:58.000Z",
+    "content": "The serial number disclosure reported in this post was originally tested on a BT Home Hub running firmware version 6.2.2.6. However, it appears that BT has replaced such information with the Hub's MAC address in the latest firmware (6.2.6.E at time of writing).\r\n\r\nSince only the latest firmware uses the Hub's serial number as the default admin password, the reported serial number disclosure via UPnP XML description files is NOT exploitable. \r\n\r\nNevertheless, the MDAP attack described in our previous post has been verified on the latest firmware and has been confirmed by several users both, on the BT Home Hub v1, and v1.5."
+  },
+  {
+    "author": "Aaron",
+    "avatar": "f2a04ebf06d8566e03dea5292fe7c7f3",
+    "date": "2008-05-29T18:41:45.000Z",
+    "content": "You can dump the serial number of the HomeHub 6.2.6.E by connecting to the HTTPS port and examining the SSL Certificate... the default OU of the certificate issuer is the serial number of the device...\n\nHence, the pwndhub I am currently using has just dished out this after I ran a Nessus scan on it...\n\n<pre><code>OU = 0641EHJRR\nO = THOMSON\nCN = BT Home Hub</code></pre>\n\nPlease verify this works for others..."
+  },
+  {
+    "author": "Stephen",
+    "avatar": "7900a7c7a83f32c569fab55cfa7b424a",
+    "date": "2008-05-30T16:28:10.000Z",
+    "content": "I can verify that the OU of the SSL certificate gives the serial number on 6.2.6.E on my HH v1.5\r\n\r\nJust point your browser to https://api.home/ and click examine certificate when prompted ;)"
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2008-05-31T08:33:19.000Z",
+    "content": "We got a winner :) I can confirm this works on the BT Home Hub v1, firmware 6.2.6.E. Good catch Aaron! Any other ideas on how to obtain the Hub's S/N and therefore the default admin password? The more techniques the merrier!\n\nbtw, the troubleshooting page - which doesn't require a password to be seen - *used to* include the S/N but BT removed such info in the latest firmware: https://api.home/cgi/b/bttroubleshooting/"
+  },
+  {
+    "author": "Gary",
+    "avatar": "d23088fe8da73a13f841e24865290054",
+    "date": "2008-11-15T20:13:38.000Z",
+    "content": "You can also get the Serial Number by visiting this page: http://pbteu.bt.motive.com/ElectiveFWUpgradePortal/ and clicking on \"Schedule your BT Home Hub upgrade\"\n\nor follow the link direct: http://pbteu.bt.motive.com/ElectiveFWUpgradePortal/jsp/Loading.jsp?URL=Schedule.jsp\n\nThis has to be done while connected to a HomeHub."
+  },
+  {
+    "author": "Martin",
+    "avatar": "3cf7349b6aa29e3100aa2aee560f4ccd",
+    "date": "2009-06-16T10:01:46.000Z",
+    "content": "Gary, that was perfect. I couldn't get the other methods to work as I didn't realise you had to add on the CP to the start of what was returned."
+  },
+  {
+    "author": "fLaMePr0oF",
+    "avatar": "f37024687c4e24aa8a5b0e8c11e523cf",
+    "date": "2009-08-02T03:49:40.000Z",
+    "content": "Another method for getting the serial number of any BTHH is to download and run the latest BT Home Hub Recovery Tool 6.2.2.6 (can get it here: http://www.josephn.net/download/dl.php?file=bthh_recovery)...  When the tool tries to access the HH and asks for authentication, the serial number will be displayed above the user/pass input fields.\r\n\r\n(LoL @ BT for changing password to serial to improve security when serial can be accessed SO easily!)"
+  },
+  {
+    "author": "pwn-a-cycle",
+    "avatar": "6c13abf6a119b8785b8d0619b4f497da",
+    "date": "2009-10-30T16:59:54.000Z",
+    "content": "the link is http://www.josephn.net/download/dl.php?file=bthh_recovery\r\n\r\n@fLaMePr0oF - seems you accidently appended a ).. to the url"
+  },
+  {
+    "author": "Andy",
+    "avatar": "7f0b26939227d6241f9f924d03b176f6",
+    "date": "2010-02-15T17:59:34.000Z",
+    "content": "You can still get the serial. Go to https://api.home View the cert like said, but it's simply the OU- organizational unit above serial number. Add CP to that string, and that's the serial."
+  }
+]

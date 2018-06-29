@@ -30,6 +30,16 @@ block content
     //- --
 
     block post-content
-        !=page.html
+        div#post-content
+            !=page.html
 
+        if page.parent['comments.json']
+            div#post-comments
+                for comment in page.parent['comments.json'].metadata
+                    .post-comment
+                        img(src="//gravatar.com/avatar/#{comment.avatar}?s=256&d=retro", alt=comment.author)
+                        span=comment.author
+
+                        div.post-comment-content
+                            !=comment.content
 //- --

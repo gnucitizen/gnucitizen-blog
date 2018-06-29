@@ -1,0 +1,32 @@
+[
+  {
+    "author": "Jordan",
+    "avatar": "bd38ec8896a46f6a173c7b80aac0d5be",
+    "date": "2007-04-04T14:58:45.000Z",
+    "content": "Thanks for the writeup -- one note about the third method of using account signup forms.  It seems that another prevention mechanism besides CAPTCHAS would be to make the check if the account name is taken the very last step in the signup process, so if the account doesn't exist, you've just created the account.  Combine that with log monitoring such that any single IP can only sign up for x number of new accounts in y minutes.  Sure, somebody could come at you with a botnet, but it's a lot harder to create and distribute an automated probing tool to a botnet than it is to run it on a single attacking server.  Plus, as a last resort, you could always throw on system-wide thresholding for new accounts created so that an admin can get an email and determine whether or not the new accounts are the result of, say, a slashdotting, or just a bot trying to brute-force account names.\r\n\r\nAlternatively, you could not tell users about the account name collision until /after/ they've signed up.  Make the next page after the initial account activation or password reset (via email) let them know if there's a collision.  That raises the bar yet again for an attacker to try to enumerate the accounts because he's got to have a lot of valid email addresses now and an automated way to check them as a part of the brute forcing process."
+  },
+  {
+    "author": "Sergey Gordeychik",
+    "avatar": "2736c183681a3d436f70b9f5fd0e5500",
+    "date": "2007-04-06T03:40:13.000Z",
+    "content": "Another good example of information leakage via error message is Oracle isqlplus (inurl:/isqlplus intitle:Release).\r\nIf you specify wrong Connection Identifier (SID) you got ORA-12154 error, in other case - ORA-01017: invalid username/password"
+  },
+  {
+    "author": "naka",
+    "avatar": "d5fd00f741981af1a4c9c779b79aec2a",
+    "date": "2007-04-11T02:45:36.000Z",
+    "content": "The way to avoid the third method on account signup facilities is to implement CAPTCHA, right? Is it an only counter measure? CAPTCHA is an obstacle for handicapped people. So it is difficult to avoid this vuln on a site which have an account signup facility. I think that the level of importance of this vul is low in most cases. If an adequate counter measure is not available, what do you say to a website owner (your customer)?"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-04-11T19:15:12.000Z",
+    "content": "naka,\r\n\r\nI'm guessing that when you say handicapped people, you mean people with sight problems. In this case, I would think that applications like Windows magnifier would be more than enough to read the CAPTCHA.\r\n\r\nOn the other hand, if the handicapped person was completely blind, then there would be a problem since voice synthesizers wouldn't be able to pick up the text in the CAPTCHA.\r\n\r\nInteresting point though.\r\n\r\nRegarding the importance of this vuln, it really depends on the nature application and the privilege of the username that has been enumerated. Username enumeration does nothing but help you when cracking accounts. I've historically considered this type of vulnerability almost useless, but like everything in this field, when you push the limits and get successful results you change your mind completely."
+  },
+  {
+    "author": "Idetrorce",
+    "avatar": "dd3058ffc10ea3fceee9c51796ed3b15",
+    "date": "2007-12-15T12:10:32.000Z",
+    "content": "very interesting, but I don't agree with you \r\nIdetrorce"
+  }
+]

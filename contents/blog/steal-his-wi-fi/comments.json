@@ -1,0 +1,74 @@
+[
+  {
+    "author": "shitbull",
+    "avatar": "c7b424a8530195395ff2738e9d3eb0e2",
+    "date": "2008-01-11T12:39:25.000Z",
+    "content": "You are wrong here.\r\nBecause, you guys think that everyone is using POP3, IMAP, FTP and are clicking on fake certs.\r\n\r\nThe problem is not in arp spoofing or MITM'ing, the problem is in insecure upper layer protocols.\r\n\r\nUsing WPA2 on your home wifi network doesn't help anyway, because attacker has bunch of ways to sniff and mitm on network points of which you have no control.\r\n\r\nI agree with ptacek about why dnssec is pointless anyway."
+  },
+  {
+    "author": "BoBaLeX",
+    "avatar": "f8a46392f9b17370e0aa9cbfbc4413c5",
+    "date": "2008-01-11T15:47:56.000Z",
+    "content": "Thanks for this article :)! And, YES, Wi-fi is definitely unsecure!"
+  },
+  {
+    "author": "Daniel",
+    "avatar": "1f74196b2e9b231e7ba9a49d2b61ec2c",
+    "date": "2008-01-11T17:22:14.000Z",
+    "content": "Another thing Bruce hasn't taken into consideration are the laws in the territory your wireless is situated.\r\n\r\nLet's see, I visit the UK and decide I want to run a \"hacking\" tool like, oh i don't know.. perl, but I've had my fair share of being in court and fighting the CPS so I look for someone else with free wireless and download it and run it from their connection.\r\n\r\nEnd result is the owner of the wifi might be visited by Britains most useless and end up being charged, all because they dared to offer free wireless.\r\n\r\nCommon sense is often forgotten with security, and i've yet to find out why :0)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-11T17:25:02.000Z",
+    "content": "Daniel, I am not even sure that common sense exists when it comes to security. :)"
+  },
+  {
+    "author": "sal-e",
+    "avatar": "9509edb3b8aecd89b16384938a3f696b",
+    "date": "2008-01-11T19:21:20.000Z",
+    "content": "I have one more idea, Can I borrow Bruce connection to download DVDs, CDs and etc? Then I'd like to here Bruce's explanations when the RIAA and etc Intellectual Monopolists ask him to show in court! Is he really believes what he wrote or he is forced to protect someone, really 'stupid' at BT? I don't know how much money I can steal from Bruce's bank account, but I know any teenager will be more then happy to run his BitTorrent client from his IP!"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-01-11T21:00:36.000Z",
+    "content": "@shitbull - haven't you seen Defcon's wall of sheep? You would think that people that assist a hacking/infosec event would know better, but the amount of passwords sniffed from cleartext protocols speaks for itself! I remember being wowed when seeing several big consulting firms domains among the email accounts compromised.\r\n\r\nRegarding invalid SSL cert dialog boxes, users *are* used to accept them most of the times since even legitimate sites make browsers show such dialog boxes. ie: due to not trusted CA, expired certificate or even missmatching between the site's domain name and cert's CN field. Plus, as I said, cookies travel in the clear on most sites. The amount of auth data traveling in the clear when we're online is crazy.\r\n\r\n1. Get gmail cookie via wifi sniffing @ starbucks (gmail downgrades to HTTP after authenticating)\r\n2. Add a filter that forwards victim's emails to the attacker's\r\n3. Start compromising victim's online identify by requesting \"reset/recover password\" emails from all sites the victim accesses\r\n\r\nIn my opinion there is a clear problem here.\r\n\r\n@Daniel - perhaps the reason why a lack of common sense is present on Bruce's article is because he's helping his employer (BT) promote the new FON service."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-01-12T01:42:46.000Z",
+    "content": "btw, I meant \"identity\" rather than \"identify\""
+  },
+  {
+    "author": "Marchiner",
+    "avatar": "564e44b6b33cc73b9bb444ea8f22694c",
+    "date": "2008-01-14T12:19:13.000Z",
+    "content": "Hi... i agree with all of you here... wireless has many problems of security including industrial standards, bad user configurations, hardware limitations and many others. But... if i don't pay attention in my own AP router ... i believe that i am surrendering my self to many  threats, and this is not what we intend to do right? If we follow the idea of forget the security of ours  owns APs, probably we will have many problems coming soon. I a country that has laws that can arrest someone  for web attacks, i believe that is not good try to explain in court that \"someone\" was using your AP  (\"Internet\") to attack some target. Imaging that the \"wireless signal thief\" has successful, against a \"big target\" like something that can stop a public service or against a government piece , and some cops come to knock in your door in the middle of the night!       \r\n\r\nI prefer to keep protecting my own AP as i its possible, and donÂ´t use free hotspots. \r\n\r\nAnd to finish here... nice post Adrian."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-01-15T23:59:27.000Z",
+    "content": "Thanks for your feedback and nice comments Marchiner!"
+  },
+  {
+    "author": "Quake",
+    "avatar": "ec9e848400f84fa8ef99cb9f0f190006",
+    "date": "2008-01-16T15:51:51.000Z",
+    "content": "I know I would notice if the certs were different and I developed much of my paranoia from reading Bruce for the last ~15 years, so I think Bruce would notice a MITM. \r\n\r\nGmail? If you use https://gmail.google.com to start the connection, then it does not drop back to HTTP."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-01-25T00:07:20.000Z",
+    "content": "@Quake - So you always leave legitimate sites that show invalid certificates? Or do you actually take your time to find out the very reason why your browser complains about an \"invalid\" cert?\r\n\r\nOf course you can force gmail to remain on SSL by accessing the site through a https URL. However, this is not the default. In other words, only geeks would bother to type \"https://\", which means that most users' gmail sessions travel in the clear after logging in.\r\n\r\nEven the \"My Account\" homepage of google uses the cleartext http version of the gmail (\"http://mail.google.com/mail\") URL: https://www.google.com/accounts/ManageAccount"
+  },
+  {
+    "author": "wintermute",
+    "avatar": "8bf3f779fea74e57d11ee65d7d6454db",
+    "date": "2008-02-01T19:12:33.000Z",
+    "content": "\"change the DNS settings on most consumer routers without a password via UPnP\" - I'm not convinced the Home Hub actually implements this properly - when I fire a LANHostConfigManagement:1#SetDNSServer at http://192.168.1.254/upnp/control/igd/lanhcm, all I get is a 501 Action Failed. \r\n\r\nAdmittedly there's a lot of other stuff in LANHostConfigManagement that *does* work!"
+  }
+]

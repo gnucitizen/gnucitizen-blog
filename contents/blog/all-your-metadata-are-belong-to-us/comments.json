@@ -1,0 +1,50 @@
+[
+  {
+    "author": "Sid",
+    "avatar": "00fb2da514ccee42c9224329cc4fc81f",
+    "date": "2008-01-04T09:40:03.000Z",
+    "content": "You might also want to check hachoir toolkit at http://hachoir.org/ and in particular hachoir-metadata, dedicated to metadata extraction."
+  },
+  {
+    "author": "dex",
+    "avatar": "d4f2dbac1587a95bb24b1617e992aef7",
+    "date": "2008-01-04T19:41:15.000Z",
+    "content": "pretty good article. Maltego is really a cool tool... looking forward for more info"
+  },
+  {
+    "author": "BECN",
+    "avatar": "3fd9b887c9f4a8b06943f268c0be2503",
+    "date": "2008-01-07T03:36:51.000Z",
+    "content": "exiftool http://www.sno.phy.queensu.ca/~phil/exiftool/ is a fantastic metadata discovery &amp; altering perl based package that's also worth checking out"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-07T09:38:47.000Z",
+    "content": "cool, 10x, I will check it out!"
+  },
+  {
+    "author": "labmice from Greece",
+    "avatar": "92a6d6d2b3f4f7d45aacfb3a9a18f366",
+    "date": "2008-02-08T16:17:50.000Z",
+    "content": "Dear pdp, maybe you would like to have a look at Michal Zalewski's tool called \"the revisionist\" at http://lcamtuf.coredump.cx/strikeout/. The tool is located at http://lcamtuf.coredump.cx/soft/therev.tgz\r\n\r\nHope you find it interesting\r\n\r\nKeep up the wonderful work :-)\r\nlabmice"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-09T09:20:16.000Z",
+    "content": "labmice, 10x, I will check it out."
+  },
+  {
+    "author": "Laramies",
+    "avatar": "a9d773561c7bb7591e04b2ce00c0e46f",
+    "date": "2008-09-24T13:46:24.000Z",
+    "content": "Cool post, i made a tool (metagoofil) that automates the whole process of downloading available public documents, processing metadata with libextractor, getting the interesting info, and creating a report.\r\n\r\nYou could check it here http://www.edge-security.com/metagoofil.php\r\n\r\nCheers"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-09-24T14:38:50.000Z",
+    "content": "hi, I am aware of this tool. Cool stuff. I might need to implement something similar for my MET project which btw is way outdated. not enough time."
+  }
+]

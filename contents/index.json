@@ -1,4 +1,7 @@
 {
   "template": "index.jade",
-  "from": "blog"
+  "from": "blog",
+  "ignore": [
+    "comments.html"
+  ]
 }

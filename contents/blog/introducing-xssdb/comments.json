@@ -1,0 +1,38 @@
+[
+  {
+    "author": "daniel",
+    "avatar": "1e9a95700a50d318eb7c8503980f676b",
+    "date": "2006-09-24T12:31:12.000Z",
+    "content": "Also happily works in Safari/Camino and FF"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-09-24T12:36:09.000Z",
+    "content": "hi daniel,\r\n\r\nthat's great news. How about the CSS? Is it working correctly? Do you have any suggestions or recommendations? Thanks."
+  },
+  {
+    "author": "clon",
+    "avatar": "9b6a75d17b3e16434134408238fa3731",
+    "date": "2006-09-25T05:06:31.000Z",
+    "content": "exellent job tested in opera 9.02 working nice and your blog is very good Congratulations!"
+  },
+  {
+    "author": "Steve Christey",
+    "avatar": "f0594fa796b2c20286f72bf02eee3842",
+    "date": "2006-09-27T23:20:01.000Z",
+    "content": "kudos to you and Rsnake for a great layout, and for giving names to these attacks.  This is the best classification of XSS I've seen so far."
+  },
+  {
+    "author": "shyaam",
+    "avatar": "34d3ad30780d594c0acfbb7fbf4ccb67",
+    "date": "2006-10-10T14:18:20.000Z",
+    "content": "THIS IS AWESOME WORK..."
+  },
+  {
+    "author": "help",
+    "avatar": "89d49115933ea326a55f486ead50b3e3",
+    "date": "2008-04-02T11:24:52.000Z",
+    "content": "All of the cheat sheet content disappeared.  Can you fix it?"
+  }
+]

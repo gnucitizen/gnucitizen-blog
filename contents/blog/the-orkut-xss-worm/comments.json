@@ -1,0 +1,56 @@
+[
+  {
+    "author": "Tarun",
+    "avatar": "29d88e91acaaa4a811c74fe8d8340143",
+    "date": "2007-12-19T19:15:01.000Z",
+    "content": "Great Effort By yOU !!!tHX"
+  },
+  {
+    "author": "Psychlo",
+    "avatar": "e458906a1d395c5c641fa129fbc61745",
+    "date": "2007-12-19T19:38:16.000Z",
+    "content": "brazilians are the best asuhs (just kiddin'..).. actually this was corrected today 19/12/07 and it doesn't infected really because the \"virus\" just added people into a community... the possibilities of joinning vulnerabilities could cause a bigger damage...\r\n\r\nbut now it's already fixed.."
+  },
+  {
+    "author": "Psychlo",
+    "avatar": "e458906a1d395c5c641fa129fbc61745",
+    "date": "2007-12-19T19:39:05.000Z",
+    "content": "the blog.. cut my code.. sry..."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-12-19T23:01:57.000Z",
+    "content": "well, the worm wasn't anything special and I guess tis is the good thing. :) if it was armed with some exploits simple channeled via MPack or WebAttacker, the casualties would have been a lot more."
+  },
+  {
+    "author": "Raaka!",
+    "avatar": "11566af8dcd11e7aa34805614eab2385",
+    "date": "2007-12-20T19:40:37.000Z",
+    "content": "<pre><code>var flashWriter = new _SWFObject('http://www.orkut.com/GLogin.aspx?cmd=logout', '77299695', '300', '300', '9', '#FFFFFF', 'autohigh', '', '', '77299695'); flashWriter._addParam('wmode', 'transparent'); flashWriter._addParam('allowNetworking', 'internal'); flashWriter._addParam('allowScriptAccess', 'never'); flashWriter._setAttribute('style', ''); flashWriter._write('flashDiv77299695');</code></pre>\r\n\r\nseen this ?"
+  },
+  {
+    "author": "Ix",
+    "avatar": "17cb223cbd50ebed7dee240b45fbf5c3",
+    "date": "2007-12-20T20:43:37.000Z",
+    "content": "Almost 660 thousand hit by this, unless some people joined the group without being infected... Anyone know how long it was out in the wild before it was fixed? I've only heard that it's been fixed but nothing on how long it took, and it would be nice to have a time amount to compare to the 659154 members.\r\n\r\nGuess the good news is it was just a proof and not an actual attack, else life would be bad for those members right now, and nothing can wreck the holiday season like identity theft and its other related problems."
+  },
+  {
+    "author": "Ryan",
+    "avatar": "c872975d1ea67ae6babfeefe79f4df4b",
+    "date": "2007-12-21T21:28:37.000Z",
+    "content": "that code is packed with dean edwards javascript packer. if anyone needs any help deciphering what it does I wrote an article on defeating that packer, you can find it here: \r\n\r\nhttp://yaisb.blogspot.com/2006/10/defeating-dean-edwards-javascript.html"
+  },
+  {
+    "author": "cristiano",
+    "avatar": "48ad9ca83281fdb220d9c5373e1753f0",
+    "date": "2008-04-14T16:53:15.000Z",
+    "content": "<pre><code>var flashWriter = new _SWFObject('http://www.orkut.com/GLogin.aspx?cmd=logout', '77299695', '300', '300', '9', '#FFFFFF', 'autohigh', '', '', '77299695'); flashWriter._addParam('wmode', 'transparent'); flashWriter._addParam('allowNetworking', 'internal'); flashWriter._addParam('allowScriptAccess', 'never'); flashWriter._setAttribute('style', ''); flashWriter._write('flashDiv77299695');</code></pre>"
+  },
+  {
+    "author": "hanush",
+    "avatar": "82ea281335364dbfde20b4c400f81d9f",
+    "date": "2008-11-09T20:43:21.000Z",
+    "content": "How can i put ths script as scrap. i just got ths as a scrap in orkut from a frnd of mine."
+  }
+]

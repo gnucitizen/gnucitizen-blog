@@ -1,0 +1,74 @@
+[
+  {
+    "author": "Adam",
+    "avatar": "23191258ee971b0be7c3bba63bb0bda5",
+    "date": "2007-09-11T00:45:16.000Z",
+    "content": "I thought you were going to say something about black hat seo / xss :["
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-09-11T06:34:14.000Z",
+    "content": "well, if u think about it... this technique is pretty black hat seo like"
+  },
+  {
+    "author": "kork",
+    "avatar": "0e6ddcd6d6d78b9a837cbaf4874816d7",
+    "date": "2007-09-11T09:20:57.000Z",
+    "content": "<blockquote>CAPTCHAs can be easy broken as well.</blockquote>\r\n\r\ncode?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-09-11T09:31:40.000Z",
+    "content": "kork, heh :) no code but you can check out some of the successful projects currently available for free that does break most of the CAPTCHAs.\r\n\r\nThe other day I had a brief discussion with AP about how to break CAPTCHAs. We concluded that almost every CAPTCHA can be broken, in one degree or another, with simple customized scripts and a couple of open source OCR tools from Freshmeat. So, no code is available, and I doubt that we are going to ever publish any code at all on this, mainly because it will be highly unethical. So you have to take my word for it and look into the subject yourself.\r\n\r\n<div class=\"message\">CAPTCHAs are dead!</div>"
+  },
+  {
+    "author": "Awesome AnDrEw",
+    "avatar": "5e0f595cbc8f1811233adce10ac6c5d3",
+    "date": "2007-09-14T02:16:38.000Z",
+    "content": "Just like phishing you can use a transparent image as an overlay to subvert clicks to some other site, which could realistically put some money in your pocket depending on the type of traffic the site generates. I think I've read on some SEO sites that this is usually done on sites such as Wikipedia."
+  },
+  {
+    "author": "FORGE",
+    "avatar": "4599da64ad8ba53203db470b9134f81d",
+    "date": "2007-09-27T09:26:34.000Z",
+    "content": "Yeah i think this is blackhat SEO technique. Pretty Neat if you ask me. Being doing alot of readin on it. It pawns."
+  },
+  {
+    "author": "MustLive",
+    "avatar": "997a9fa55e557e2aa8262a07758b161d",
+    "date": "2007-10-07T23:04:05.000Z",
+    "content": "Pdp, nice article! Ad-jacking it's interesting way to make money out of XSS.\r\n\r\nBut what about others ways? :-) Such as black SEO way of making money out of XSS holes. You need to cover different sides of this topic (think about it, maybe in future you'll write about others ways). Though this is interesting one.\r\n\r\n<blockquote>Of course, attackers will keep websites with very, very, very high ranking for services such as DIGG and Reddit for manual submission, since both of them have CAPTCHAs</blockquote>\r\nAfter I read your post in 12.09.2007, I looked at Digg's captcha and found that it's velnerable (to my MustLive CAPTCHA bypass method). So this captcha like a lot of others can be easily bypassed (with my method)."
+  },
+  {
+    "author": "MustLive",
+    "avatar": "997a9fa55e557e2aa8262a07758b161d",
+    "date": "2007-10-07T23:33:30.000Z",
+    "content": "Petko, captchas can be bypassed (using vulnerabilities in them, without any OCR). I explored a lot in this topic last time.\r\n\r\nLike I wrote at my site (http://websecurity.com.ua/1337/#comment-60245), I'll write an article about my MustLive CAPTCHA bypass method. And I am planning to make event about bypassing a lot of CAPTCHAs ;-) (with my method). I'll write you in detail about this.\r\n\r\n<blockquote>code?</blockquote>\r\nkork, there will be a whole of month which I'll make - Month of bugs in CAPTCHAs. This month will be full of codes (exploits) for bypassing captchas all over the Internet. So keep waiting for official announcement. You will be happy ;-), everyone will be happy, especially bad guys, but good guys too.\r\n\r\n<blockquote>no code but you can check out some of the successful projects currently available for free that does break most of the CAPTCHAs.</blockquote>\r\nYou speaking mostly about OCR breaking of captchas or breaking with manual typing (low cost man power). But there is a way (with my methods - main and advanced) to bypass a lot of captchas in the Internet.\r\n\r\n<blockquote>CAPTCHAs are dead!</blockquote>\r\nNot all captchas - many still trying (for their last days). And many still making look that \"they are working fine\". And many others still believe that captchas can protect them (security site's also - there are a lot of vulnerable captchas on security sites also).\r\n\r\nBut I'll show to web community and their captchas the real life ;-). Very soon Internet will see - the Captchas Apocalypses. A lot of captchas will die. The time has come."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-08T09:36:18.000Z",
+    "content": "MustLive, you right there there are bugs in CAPTCHA mechanisms but if they are implemented correctly, there is no other way to break out of them but to type the string. So, OCR will remain the primary and most generic way for braking captchas."
+  },
+  {
+    "author": "bookequatry",
+    "avatar": "d5d066a61a371994571c81f55e853525",
+    "date": "2008-04-18T08:29:07.000Z",
+    "content": "I have carried out  huge research and collected the most trustworthy sites about  online investment  in the Internet \r\n \r\nI choose only update and developing ones and collected them in the same place. They are accessible for everybody. I offer you to acquaint with them ( online investing bookmak http://bookmark.searchengines.ru/bookmarks.php/nnikolaa   ) If somebody can supplement  my list   please publish here your research or bookmark \r\n \r\nPS I am sorry if my message out of forum topic  or it`s not interesting to community."
+  },
+  {
+    "author": "yang",
+    "avatar": "f8a528b6f2bfc9a87e6c6837fa23ff9b",
+    "date": "2010-07-01T16:42:15.000Z",
+    "content": "nice information, i have already read about the SEO but i don't know how to use that black hot SEO.."
+  },
+  {
+    "author": "atomiku",
+    "avatar": "514bee587e0e0efa40c084e25d2dbdf5",
+    "date": "2011-01-18T17:08:17.000Z",
+    "content": "XSS can be a good way to get some backlinks. Creating a HTML page that has 100s of HTML links and having the spider index it. Thanks for this article!"
+  }
+]

@@ -1,0 +1,140 @@
+[
+  {
+    "author": "mindcorrosive",
+    "avatar": "be3b138352dc100c9459e612b275b413",
+    "date": "2008-05-11T07:02:50.000Z",
+    "content": "hmm.. Isn't telnet one of the first services that every sysadmin turns off - for reasons all too known?"
+  },
+  {
+    "author": "defcon",
+    "avatar": "f432f91e7343dada3bfed35d7ceeb511",
+    "date": "2008-05-11T07:32:16.000Z",
+    "content": "doesnt netcat do this? <code>nc -z host.example.com 20-30</code>"
+  },
+  {
+    "author": "Udi",
+    "avatar": "93ea97e27eab21ae8e4c7c33a04b15fd",
+    "date": "2008-05-11T07:39:44.000Z",
+    "content": "we use to do that 5 years ago. nice to see it still rocks .\r\n\r\nyihaaaaa"
+  },
+  {
+    "author": "Sandro Gauci",
+    "avatar": "192a78d487076b95fb3562ad601a1535",
+    "date": "2008-05-11T09:36:19.000Z",
+    "content": "Such a tool can be useful ;) Most UNIX and linux systems come with perl builtin - even the older ones. So I'd make use of that instead if its available. Has the advantage of not relying on screen scraping telnet and not relying on having telnet on the system.\nthe idea:\n\n<pre><code>use strict;\nuse IO::Socket;\nmy ($target,$remote,$results,$port,@ports);\nunless (@ARGV > 0) { die \"usage: $0 [ip]\" }\n$target = shift(@ARGV);\nfor ($port = 0; $port<65536; $port++)\n{\n    $remote = IO::Socket::INET->new(\n                        Proto    => \"tcp\",\n                        PeerAddr => $target,\n                        PeerPort => $port,\n                    );\n    if ($remote) {print  \"$port is open\\n\" };\n}</code></pre>"
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2008-05-11T11:50:40.000Z",
+    "content": "@mindcorrosive: I see your point, however I usually find the telnet command available on many systems I audit.\r\n\r\n@defcon: that's completely correct. This solution I proposed would be useful in cases in which netcat is not already installed on the system but telnet is. Also remember that in my case installing/downloading an additional tool was NOT an option.\r\n\r\n@Udi: some solutions will always rock! I'm with you on that one :-D\r\n\r\n@Sandro: Good to see you at GNUCITIZEN dude :) . Thanks a lot for another very useful solution. Another trick to use when needed. To me, it's all about knowing different tricks which come in handy in different scenarios! We'll definitely consider your solution for the Agile Hacking book! (you'll be credited of course)."
+  },
+  {
+    "author": "Sandro Gauci",
+    "avatar": "192a78d487076b95fb3562ad601a1535",
+    "date": "2008-05-11T11:55:36.000Z",
+    "content": "@pagvac: the more tricks the merrier :) re the book - that sounds great. looking forward to that\r\n\r\n@mindcorrosive: the post refers to telnet the client rather than the daemon/server/service"
+  },
+  {
+    "author": "Johann",
+    "avatar": "e981d16e114902e23308d7371369d931",
+    "date": "2008-05-11T22:16:40.000Z",
+    "content": "@mindcorrosive: Yes, telnet as a service, but this is using the telnet client. Not all sysadmins remove the telnet client."
+  },
+  {
+    "author": "Shoaib Yousuf",
+    "avatar": "af275b336b54b308c86ba4c164bf3b89",
+    "date": "2008-05-12T04:08:45.000Z",
+    "content": "Its more then 5 years old....Good to see refresh version of it by Adrian.\r\n\r\nThis is really worth using it if you are performing audit in restrictive mode and you see telnet option is available...Bingo!!"
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2008-05-12T20:52:13.000Z",
+    "content": "I'll repeat it again in case it wasn't clear: my proposed homegrown port-scanner relies on the 'telnet' *CLIENT* (NOT server), which again is present on most Unix/Linux systems.\r\n\r\n@Shoaib: I've never seen this specific implementation (telnet parser) of a portscanner in the public, but of course I'm not so naive to think this hasn't been done before! ;) All in all, this is just another trick of the trade which fits the Agile Hacking book project quite nicely IMHO."
+  },
+  {
+    "author": "Venom23",
+    "avatar": "c65f2a23045a747655b93b343d1f5000",
+    "date": "2008-05-12T22:55:07.000Z",
+    "content": "Ok, again. Try this code. Does the same without telnet. It is still buggy but works. \r\n\r\n<pre><code>HOST=127.0.0.1;for((port=1;port&lt;=65535;++port));do echo -en \"$port \";if exec 5&lt;&gt;/dev/tcp/$HOST/$port 2&gt;/dev/null;then echo -en \"\\n\\nport $port/tcp is open\\n\\n\";fi;done</code></pre>"
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2008-05-14T08:31:29.000Z",
+    "content": "@Venom23: I'm on a Debian-based system now (Ubuntu) which does not support /dev/tcp. However, it looks like your script should work on any systems that support /dev/tcp. Thanks for your solution to this problem!\r\n\r\nAny other ideas guys? Any default clients with TCP capabilities (i.e. ftp) is a good candidate for a homegrown port-scanner which doesn't require root privileges to be run. Also, as Sandro mentioned, using any commonly-supported scripting environments such as Perl is another good candidate."
+  },
+  {
+    "author": "Shoaib Yousuf",
+    "avatar": "af275b336b54b308c86ba4c164bf3b89",
+    "date": "2008-05-14T11:15:38.000Z",
+    "content": "Adrian,\r\n\r\nI totally agree. Another great piece of work from you guys. Keep it up!"
+  },
+  {
+    "author": "macubergeek",
+    "avatar": "5e10822e3d033324c2a0f8fecf2450cc",
+    "date": "2008-05-15T22:48:13.000Z",
+    "content": "This is cool. I believe Ed Skoudis has done something similar to this on Windows....\r\n\r\nHere is an alternative, though not as polished, using curl...\r\n\r\nOpen ports return this response to our stimulous sorry if line is wrapped:\r\n\r\n<pre><code>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\r\n                                 Dload  Upload   Total   Spent    Left  Speed\r\n100  5242  100  5242    0     0  15489      0 --:--:-- --:--:-- --:--:--     0</code></pre>\r\n\r\nclose ports look like this:\r\n\r\n<pre><code>scanning port 122...\r\n\r\ncurl: (7) couldn't connect to host</code></pre>\r\n\r\n----------script-----------\r\n\r\n<pre><code>## portscanner implimented with curl\r\n#!/bin/bash\r\n\r\nif [ $# -ne 1 ]; then\r\n    echo 1&gt;&amp;2 \"usage: $0  \"\r\n    echo 1&gt;&amp;2 \"mode 1 = well known ports 1-1024\"\r\n    echo 1&gt;&amp;2 \"mode 2 = all ports\"\r\n    exit 127\r\nfi\r\n\r\ncase \"$1\" in\r\n1)\r\nLIMIT=1024\r\nfor ((a=1; a  /dev/null &gt; out\r\n  cat out | grep -v \"curl: (7) couldn't connect to host\"\r\ndone;                           \r\n;;\r\n2)\r\nLIMIT=65535\r\nfor ((a=1; a  /dev/null &gt; out\r\n  cat out | grep -v \"curl: (7) couldn't connect to host\"\r\ndone;              \r\n;;\r\nesac</code></pre>"
+  },
+  {
+    "author": "Venom23",
+    "avatar": "c65f2a23045a747655b93b343d1f5000",
+    "date": "2008-05-16T10:37:52.000Z",
+    "content": "Or let's use the wget command to perform the scan ;)\r\n\r\n<pre><code>HOST=192.168.178.88;for((port=1;port&lt;=65535;++port));do echo -en \"$port \";if wget -F -S -t 1 -T 1 -v -O banner.txt $HOST:$port 2&gt;&amp;1 | grep connected;then echo -en \"\\n\\nport $port/tcp is open\\n\\n\";cat banner.txt;fi;done</code></pre>\r\n\r\nwget should also be available on most of the systems. And - the coolest - it does a \"banner grabbing\" as well. Nice, isn't it?"
+  },
+  {
+    "author": "macubergeek",
+    "avatar": "5e10822e3d033324c2a0f8fecf2450cc",
+    "date": "2008-05-16T18:49:33.000Z",
+    "content": "Venom23: nicely done! I particularly like the banner grabbing ;-)"
+  },
+  {
+    "author": "maeh",
+    "avatar": "ed3de6ce3f881c547df0c9ec2b55be07",
+    "date": "2008-05-19T06:17:49.000Z",
+    "content": "Here's a one for windows using netsh that just prints out any open ports it finds.\r\n\r\n<pre><code>@ECHO OFF &amp; ECHO start &amp; (FOR /L %p IN (1,1,65535) DO (FOR /F \"tokens=*\" %a IN ('netsh diag connect iphost 127.0.0.1 %p ^| find /C /I \"[NONE]\"') DO ( IF %a == 0 echo %p))) &amp; ECHO stop &amp; @ECHO ON</code></pre>\r\n\r\nIt's rather slow since netsh seems to take quite a while to load, so you might want to narrow down the port range a bit ;&gt;.\r\n\r\nWhat I found interesting is the message the \"netsh diag connect iphost\" command outputs: \"Server appears to be running on port(s) [NONE]\" which seems to suggest you could enter more than one port to connect to, but I could'nt find out how to do so."
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2008-05-20T00:25:18.000Z",
+    "content": "It's awesome to see so many solutions and implementations for on-the-fly portscanning. This is great guys, keep it coming!"
+  },
+  {
+    "author": "Simon Stroh",
+    "avatar": "425b307120eb2cae2dbda9bb22690d3d",
+    "date": "2008-07-01T18:44:45.000Z",
+    "content": "Here's a perl solution I just threw together, thought the ones presented here might be a tad slow when scanning all the ports, so I made this one multithreaded:  :-)\r\n\r\n<pre><code>#!/usr/bin/perl\r\nuse IO::Socket;\r\n@ARGV||die'usage: perl scanner.pl host [number of threads]';\r\n($|,$h,$t)=(1,@ARGV,20);$p=65535/$t;\r\nfor$n(1..$t){\r\n        pipe($r[$n],$w[$n]);next if fork;\r\n        print IO::Socket::INET-&gt;new(PeerAddr=&gt;$h,PeerPort=&gt;$_)?\"Port $_ open\\n\":''for($p*($n-1)...$p*$n-1);\r\n        print{$w[$n]}'x';exit;\r\n}\r\nread($r[$_],$x,1)for(1..$t);</code></pre>"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-07-01T22:24:40.000Z",
+    "content": "nice. this is quite neat actually."
+  },
+  {
+    "author": "Broeisi",
+    "avatar": "cda3633ce59fb6ba2ce123f9411760fc",
+    "date": "2008-07-09T19:27:05.000Z",
+    "content": "Simon Stroh... Your perl script isn't working."
+  },
+  {
+    "author": "NOVA",
+    "avatar": "e71ef99180c588da767cde951f604dbd",
+    "date": "2008-07-26T05:20:05.000Z",
+    "content": "This is a script i wrote to demonstrate a sort of bounce technique i use :) its written in python which i am currently in love with :)\r\n\r\n<pre><code>import socket\r\nimport getpass\r\nimport sys\r\nimport telnetlib\r\n\r\n#Edit these\r\nHOSTA = \"78.32.236.185\"\r\nPasswordA = \"Sch5636$\\n\"\r\n\r\nHOSTB = \"82.111.251.241\"\r\nPasswordB = \"LLUcpe99\\n\"\r\n\r\nHOSTC = \"82.108.105.177\"\r\nPasswordC = \"LLUcpe99\\n\"\r\n\r\nPORT = \"23\"\r\n\r\n\r\n\r\n#RAS Commands\r\n\r\njmp1 = \"ip telnet \"+HOSTB+\" \"+PORT+\"\\n\"\r\njmp2 = \"ip telnet \"+HOSTC+\" \"+PORT+\"\\n\" \r\n\r\n#Connect to 1st router.\r\ntn = telnetlib.Telnet(HOSTA)\r\nprint tn.read_until(\"Password: \") \r\ntn.write(PasswordA)\r\nprint tn.read_until(\"ras&gt;\")\r\ntn.write(jmp1)\r\n\r\n#Connect to second router.\r\nprint tn.read_until(\"Password: \")\r\ntn.write(PasswordB)\r\nprint tn.read_until(\"ras&gt;\")\r\ntn.write(jmp2)\r\n\r\n#Connect to target system.\r\nprint tn.read_until(\"Password: \")\r\ntn.write(PasswordC)\r\nprint tn.read_until(\"ras&gt;\")\r\ntn.write(jmp3)\r\n\r\nprint tn.read_until(\"Password: \")\r\ntn.write(PasswordC)\r\nprint tn.read_until(\"ras&gt;\")</code></pre>"
+  },
+  {
+    "author": "Simon Stroh",
+    "avatar": "40aca19232b2e7b05ceff5a3256e49ca",
+    "date": "2011-06-11T21:39:00.000Z",
+    "content": "Here's another one. This one is special, because it only uses bash builtins! No programs other than bash shells are called :-)\n\n<pre><code>HOST=127.0.0.1;for p in {0..65535};do((bash -c \"(&gt;/dev/tcp/$HOST/$p)\" 2&gt; /dev/null &amp;&amp; echo open: $p)&amp;read -t0.1;kill $! 2&gt;/dev/null)2&gt;/dev/null;done</code></pre>"
+  },
+  {
+    "author": "Bob",
+    "avatar": "2da0a05e8aa3acfcb6e7ed1872b7661b",
+    "date": "2012-02-06T16:17:12.000Z",
+    "content": "Would this be a correct three-liner to test single port connectivity (say to test for an install prerequisite with same restrictions)?\n\n<pre><code>echo -en \"open $HOST $PORT\\nlogout\\quit\" | telnet 2&gt;/dev/null | grep 'Connected to' &gt; /dev/null\nCONNECT_ERROR=$?\nif[$CONNECT_ERROR]; then echo\"no good\"</code></pre>"
+  }
+]

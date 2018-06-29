@@ -1,0 +1,398 @@
+[
+  {
+    "author": "buherator",
+    "avatar": "b6ef85fccd69e62ad1debf90ce3e8db4",
+    "date": "2007-09-25T19:41:12.000Z",
+    "content": "I think beford was faster: http://blog.beford.org/?p=3"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-09-25T19:49:56.000Z",
+    "content": "buherator, this is a different exploit/vulnerability all together..."
+  },
+  {
+    "author": "xen ix",
+    "avatar": "60b7efe2b404b2704902e50c23c2e164",
+    "date": "2007-09-25T19:51:16.000Z",
+    "content": "Wow. Checked my Filters right away and gladly I haven't been affected.\r\n\r\nKeep up the great work."
+  },
+  {
+    "author": "Anonymous",
+    "avatar": "b58996c504c5638798eb6b511e6f49af",
+    "date": "2007-09-25T20:24:52.000Z",
+    "content": "I'm all for giving the developer time to fix a bug, but why simultaneously disclose without detail?  There are plenty of smart people that will use it as information pointing to something that is interesting and will likely also find the bug.  Not very useful.  If you don't like full public disclosure, say nothing at all until a fix is in place.\r\n\r\nYou do great work and I enjoy reading the technical details of your disclosures and research.  I'm not sure this new disclosure experiment is any better than someone saying, \"There is a critical bug in IE.  Don't use it\".\r\n\r\nPlease do keep up the good work even if some of us are critical of your new disclosure policy."
+  },
+  {
+    "author": "Giorgio Maone",
+    "avatar": "290e868e00e8429bf1624a461b8ef81e",
+    "date": "2007-09-25T20:42:10.000Z",
+    "content": "CSRF using POST, right? Can I assume what I'm assuming about mitigation provided by a certain Firefox extension?"
+  },
+  {
+    "author": "troika",
+    "avatar": "d1e239246ee02acb2956696cd53d99db",
+    "date": "2007-09-25T20:50:02.000Z",
+    "content": "i don't know if people realize How Much these bugs can be dangerous. E-mail is a very very personal space,the user trust it. \r\n\r\nI like G.ogle but, it should slow down a bit. There  are too much services/features. The user have no time to fully understand how it works and it's weakness. The Course To Web 2.0 it's becoming very dangerous."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-09-25T20:54:48.000Z",
+    "content": "Giorgio, I thought that NoScript can prevent JavaScript from executing only, but it cannot prevent POST forms to submit if the user clicks on it right? Nevertheless, the attack will be a lot more difficult without JavaScript, unless there is a way to say that the forms should submit when it renders without using any scripting at all."
+  },
+  {
+    "author": "Giorgio Maone",
+    "avatar": "290e868e00e8429bf1624a461b8ef81e",
+    "date": "2007-09-25T21:01:53.000Z",
+    "content": "Petko, NoScript by default prevents every each cross-site POST from untrusted sites as part of its anti-XSS countermeasures which, incidentally, do work as anti-CSRF countermeasures in the best-practice case of POST used for non-idempotent requests, like GMail filters do.\n\nSo even if you manage to trick user into clicking a submit button (e.g. using clever CSS disguises), the payload will be stripped out :)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-09-25T21:06:29.000Z",
+    "content": "Giorgio, sounds good but doesn't that break things. I mean, CSRF is one of the most fundamental Web characteristic. Disabling it might be ok for people like us, but for the general population, that is a no go! I am not trying to make people more vulnerable. I want for the the extension to succeed. But that wont happen if it breaks pages."
+  },
+  {
+    "author": "xen ix",
+    "avatar": "60b7efe2b404b2704902e50c23c2e164",
+    "date": "2007-09-25T21:09:56.000Z",
+    "content": "@Anonymous: This is what happens if you silently wait for someone to fix a bug.\r\n\r\nhttp://bitsex.net/2007/09/norwegian-police-fucks-up/\r\n\r\nIs this what you want?\r\n\r\nWhat pdp is doing is very honourable. Not only does he warn us, but he keeps a lid on how to do it. If he let people know how to do it, then we would have a bunch of script kiddies probably making a mess. Now those who know and might find out how to do it are so few, so most of us won't notice it, and it will be hopefully fixed within it might get very critical.\r\n\r\nSo again, what do you want? A silent warning or no warning at all?"
+  },
+  {
+    "author": "Giorgio Maone",
+    "avatar": "290e868e00e8429bf1624a461b8ef81e",
+    "date": "2007-09-25T21:17:31.000Z",
+    "content": "Petko, this anti-CSRF feature has been in place for six months now (since March, 18th) and nobody complained about it. Consider that by default NoScript filters exclusively cross-site POST requests *from untrusted to trusted* sites, and as such is very unlikely to break anything legitimate.\n\nWhy should you want an untrusted site to modify the state (that's what POST is for) of a site you trust? At any rate, I repeat: I didn't receive any complaint about it, and many people didn't even notice -- just like you ;)"
+  },
+  {
+    "author": "Anonymous",
+    "avatar": "b58996c504c5638798eb6b511e6f49af",
+    "date": "2007-09-25T21:38:50.000Z",
+    "content": "@xen ix\r\n\r\nI'm not too interested in the script kiddie effect.  Yes, they can cause a severe nuisance.\r\n\r\nWhat I am more concerned about are those with equal or greater talents than the public researchers that are tipped off as to where to look.  As you say, they are few and most of us won't notice when they succeed.  What partial disclosure does is to raise the awareness of those who can exploit a weakness as they WILL know what to look for.\r\n\r\nI am in the full public disclosure camp, following a reasonable private disclosure timeout to the vendor.  While you await a vendor fix in whatever timeline suits you as the discloser, don't tip your hat to the people who have no ethics.\r\n\r\npdp does a great service to the community at large.  My only gripe is that if there is a public disclosure of any kind, make it full so that mitigations can be researched.  If you are working with the vendor and don't want to make a full disclosure because the vendor has not yet fixed the issue, don't publicly disclose at all.  When the vendor either fixes the problem or stops working with you, go for full public disclosure."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-09-25T21:51:29.000Z",
+    "content": "Giorgio, that's all cool. However, I've seen many many different setups, especially Intranet ones, that require CSRF to work. In one recent case, the company that I was consulting had to even reduce the security level for the Internet zone, from the domain controller, in order to make their Web app work, since it requires users to be able to open file&#58;// URLs. You call that crazy. I call that crazy, but this is the real world."
+  },
+  {
+    "author": "Awesome AnDrEw",
+    "avatar": "5e0f595cbc8f1811233adce10ac6c5d3",
+    "date": "2007-09-25T21:52:51.000Z",
+    "content": "Another awesome disclosure, pdp. I always enjoy the creative uses you find for vulnerabilities. I don't believe I ever would have thought to combine a filter with a CSRF in order to create a persistent issue within any mail service. Nice work."
+  },
+  {
+    "author": "Giorgio Maone",
+    "avatar": "290e868e00e8429bf1624a461b8ef81e",
+    "date": "2007-09-25T22:25:35.000Z",
+    "content": "Petko, not to be picky, but they need CSR, not CSRF to work :) Anyway, NoScript is very configurable on this side: \"NoScript Options|Advanced|XSS|Exceptions\""
+  },
+  {
+    "author": "LiquidBrain",
+    "avatar": "a3b620701f9268c2da5b7d8eb8c36935",
+    "date": "2007-09-26T07:43:29.000Z",
+    "content": "Very interesting... tried and works... Great thinking..."
+  },
+  {
+    "author": ".mario",
+    "avatar": "89886495b27cfdc78593e1f5c8810594",
+    "date": "2007-09-26T07:51:05.000Z",
+    "content": "Very nice find again - and a signal to not underestimate CSRF like usual.\r\n\r\n@Giorgio: I didn't know about the CSRF protection yet - great thing."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-09-26T08:51:46.000Z",
+    "content": "\"Nevertheless, the attack will be a lot more difficult without JavaScript, unless there is a way to say that the forms should submit when it renders without using any scripting at all.\"\r\n\r\nGuys,\r\n\r\nLet's remember that even if you don't allow scripting from a certain domain (i.e.: using NoScript), we can still forge a POST request by simply tricking the user to click on a image. I love using the thumbnail of a hot chick for demo purposes. Come on, don't tell me you wouldn't click on it to make the picture bigger! :-D\r\n\r\n<pre><code>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;\r\nClick on the thumbnail to zoom in!&lt;br&gt;&lt;br&gt;\r\n&lt;form action=&quot;http://mail.google.com/blah/blah.py&quot; method=&quot;post&quot;&gt;\r\n&lt;input type=&quot;text&quot; name=&quot;param1&quot; value=&quot;whatever1&quot; style=&quot;display: none;&quot; /&gt;\r\n&lt;input type=&quot;text&quot; name=&quot;param2&quot; value=&quot;whatever2&quot; style=&quot;display: none;&quot; /&gt;\r\n&lt;input type=&quot;image&quot; src=&quot;http://somewhere.com/hotchick.jpg&quot; value=&quot;Login&quot;&gt;\r\n&lt;/form&gt;&lt;/body&gt;&lt;/html&gt;</code></pre>\r\n\r\nI really doubt NoScript can stop the previous code, as we don't use JavaScript. Anyways, this vulnerability is a KILLER and gives me lots of new ideas to poke with webmail services out there."
+  },
+  {
+    "author": "Giorgio Maone",
+    "avatar": "290e868e00e8429bf1624a461b8ef81e",
+    "date": "2007-09-26T10:06:14.000Z",
+    "content": "Adrian,\nYou probably missed my comment http://www.gnucitizen.org/blog/google-gmail-e-mail-hijack-technique/#comment-52628 and the discussion which followed.\n\nIn short, NoScript actually prevents this kind of attack even if the attacker uses a scriptless CSRF vector like yours, and the countermeasure proved to be so much transparent that neither you nor Petko noticed it even if it's there since six months ago ( http://noscript.net/changelog#1.1.4.6.070318 ): cross-site POST requests from untrusted sites are turned into no-data GET."
+  },
+  {
+    "author": "Frizz",
+    "avatar": "ab78075bda345e40a6da0a50b8d45841",
+    "date": "2007-09-26T18:00:51.000Z",
+    "content": "gmail BETA, verry inportant to read the beta thing ;)"
+  },
+  {
+    "author": "hnky",
+    "avatar": "c01ec1960cee5bc724047823e264550e",
+    "date": "2007-09-26T18:12:34.000Z",
+    "content": "What happens when you delete the filter?"
+  },
+  {
+    "author": "Vincent van den Brink",
+    "avatar": "1051a47d9d7e30b74ed68e9d7bc02d72",
+    "date": "2007-09-26T18:16:59.000Z",
+    "content": "Nice found! To Google to fix it."
+  },
+  {
+    "author": "DrByte",
+    "avatar": "3f97990bcee4216af83a7181d49581d2",
+    "date": "2007-09-26T20:02:05.000Z",
+    "content": "Your friend Ryan Naraine disclosed the exploit in his plagiarism of your article and even included links to an EVIL site with the LIVE exploit, so that the unaware could get infected first hand.\n\nThat's not the kind of education I need... I have requested that he edit the article with no response."
+  },
+  {
+    "author": "Amanda",
+    "avatar": "b9ecc11019cfb35028b995dd754bab7e",
+    "date": "2007-09-26T20:08:03.000Z",
+    "content": "I can't say nothing...\n\njust...\n\nWow...\n\nlol\n\nCongrats for your great job!"
+  },
+  {
+    "author": "jumpin joe",
+    "avatar": "42546023414d7251a54379ddf98675b7",
+    "date": "2007-09-26T21:15:48.000Z",
+    "content": "How Do We Fix This Vulnerability?"
+  },
+  {
+    "author": "rezn",
+    "avatar": "5d1658ac36692c8b5ff5612aa9d6a837",
+    "date": "2007-09-26T23:27:25.000Z",
+    "content": "DrByte: the links in Narrine's blog are to an older, already patched exploit.  I don't know why he linked to PoCs for something that is patched.\r\n\r\nPDP: I just want to say that it is great how you have stepped up the technical content in the blog again, even if I'm not quite in agreement with your (non)disclosure technique.  But its your choice, so i won't bother complaining or debating.\r\n\r\nAnyway, nice job on the recent vulns, including this one."
+  },
+  {
+    "author": "vsync",
+    "avatar": "5fd77a2be33565709c3a79091e31bd4d",
+    "date": "2007-09-27T10:36:10.000Z",
+    "content": "<blockquote>Let's remember that even if you don't allow scripting from a certain domain (i.e.: using NoScript), we can still forge a POST request by simply tricking the user to click on a image.</blockquote>\n\nYes, and that's why various RFCs recommend that servers only take action on POST requests, and that user agents make POST actions visually distinct.  Another wise and obvious rule broken by \"designers\"."
+  },
+  {
+    "author": "Panio Donev",
+    "avatar": "8f3c9f368e554f1126a7563e679a4de6",
+    "date": "2007-09-27T10:50:19.000Z",
+    "content": "Good job. Only maybe you should have notified google first (and ask for a hefty ransom :-))."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-09-27T18:29:51.000Z",
+    "content": "Giorgio Maone,\r\n\r\nThat's actually pretty cool, nice work! I'm a big fan of NoScript btw!"
+  },
+  {
+    "author": "Lizandro Diaz",
+    "avatar": "8e1b4a5b128ddf2323e289e299d3bf55",
+    "date": "2007-09-27T20:07:48.000Z",
+    "content": "Com'on GMAIL this is the second time, this happens, enough is enough."
+  },
+  {
+    "author": "sirdarckcat",
+    "avatar": "de37b9dc788b0268d438591e085e4496",
+    "date": "2007-09-28T04:10:30.000Z",
+    "content": "yeap, the bug has been fixed, as you can see, the request now has a new field named \"at\", that has 2 hex-strings separated by a slash, the first one appears to be a session identifier, and the second a counter.\r\n\r\nGreetz!!"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-09-28T06:50:45.000Z",
+    "content": "check above for further details on the vulnerability..."
+  },
+  {
+    "author": "MuyCapaz",
+    "avatar": "fd137cf8185b5b71f0c8fe5eda095375",
+    "date": "2007-09-28T08:51:13.000Z",
+    "content": "Forgive my ignorance, but wouldn't launching every click in a separate virtual machine sandbox go a long way toward a solution?  No cross pollination, no problem, right?"
+  },
+  {
+    "author": "hackathology",
+    "avatar": "271ecedbd232e23677ddc1d3956147eb",
+    "date": "2007-09-28T08:57:58.000Z",
+    "content": "nice one pdp!!"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-09-28T10:54:37.000Z",
+    "content": "Is it just me, or is this the security post with the biggest number of trackbacks on the planet? :-D"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-09-28T17:30:36.000Z",
+    "content": "MuyCapaz, the sandboxing model will help protecting you box but not your data!!!"
+  },
+  {
+    "author": "thornade",
+    "avatar": "4845d1f3289ed725286d4813cc3e267f",
+    "date": "2007-09-29T10:07:52.000Z",
+    "content": "Did someone know if this other bugs has been fixed http://xs-sniper.com/blog/Google-Docs-Cross-Domain-Hole/\r\n\r\nIt concerns Google Docs &amp; Crossdomain.xml\r\n\r\nThorn"
+  },
+  {
+    "author": "SNaRe",
+    "avatar": "09cfb4a035d13bf45d6fd8fec4038926",
+    "date": "2007-09-29T10:56:25.000Z",
+    "content": "I heard that google fixed this problem"
+  },
+  {
+    "author": "alok",
+    "avatar": "5408a73f5f7447ddce88388df02b3ea7",
+    "date": "2007-09-29T17:16:38.000Z",
+    "content": "this is good but it has some problem like it doesn't  describe a lot about hw it hack the email account.... it requires little bit more description"
+  },
+  {
+    "author": "0kn0ck",
+    "avatar": "bf5a66d322fc6b46324b6a3abbb0e5ff",
+    "date": "2007-09-30T07:12:07.000Z",
+    "content": "Good stuff man!."
+  },
+  {
+    "author": "Romain Wartel",
+    "avatar": "a6b622d8559f7b1076935035bddb6627",
+    "date": "2007-10-01T14:30:24.000Z",
+    "content": "This is the second CSRF affecting GMail recently. Is there any details on how they fixed the two vulnerabilities?\r\n\r\nRomain."
+  },
+  {
+    "author": "Ranjkar",
+    "avatar": "e44fac1db15566e303ccba6bf3de2812",
+    "date": "2007-10-01T20:33:02.000Z",
+    "content": "That's actually pretty cool, nice work! I'm a big fan of NoScript btw!"
+  },
+  {
+    "author": "MARKY",
+    "avatar": "effdd00f4c4b6ad3e0ee33d05843999a",
+    "date": "2007-10-17T20:22:32.000Z",
+    "content": "Salut,"
+  },
+  {
+    "author": "Hacker",
+    "avatar": "598702cfa66c64bf2236a7020e54ee34",
+    "date": "2007-10-18T19:46:34.000Z",
+    "content": "Yahoo has similar attack holes in http://omg.yahoo.com/\r\n\r\nAttack example\r\n\r\nhttp://omg.yahoo.com/happy-birthday-zac/photos/810/6\r\n\r\n1. Get yahoo 360 blog ... upload your picture in the blog and select the picture to be shared in settings.\r\n\r\n2. Go to above omg.Yahoo.com/something and comment in the box with any evil script type url.\r\n\r\nNow the example attack im using is with 360.\r\n\r\nPost: <code>\"&gt;YahooHacked');\"&gt;</code>\r\n\r\nThis script will replace all others users avatars with your own avatar and you will recive a Yahoo Admin Email and might have your account closed ... Enjoy"
+  },
+  {
+    "author": "brielle",
+    "avatar": "5eec41ca815936ff4fa0b38e2d48273d",
+    "date": "2007-12-01T20:40:17.000Z",
+    "content": "lol...this makes no sense 2 me...it sounds great however does this stuff work 2 catch a cheating spouse???"
+  },
+  {
+    "author": "grawity",
+    "avatar": "604619bdf37843700f1dc622ba8c6bf0",
+    "date": "2007-12-25T18:28:02.000Z",
+    "content": "came here by browsing archives... is the account in seq1.jpg yours? it looks that the jvyyuie guy is adding all the Wink to his friends."
+  },
+  {
+    "author": "sexyman",
+    "avatar": "fab9bf307725606556840d9a5f291c5c",
+    "date": "2007-12-25T20:58:55.000Z",
+    "content": "thanks for keeping us up to speed and even moreso for making sure these script kiddies don't figure out how to do it (eventho fixed). keep up the good work!"
+  },
+  {
+    "author": "Rockdrala",
+    "avatar": "6bc4d517679a88c599148f1c188984f5",
+    "date": "2007-12-26T13:42:26.000Z",
+    "content": "You fix the exploit by not opening mail or clicking on any links in mail from people you dont know silly :p \n\nThis crap is old. Anyone can sploit this.  \n\nThis technique has been out long before Gmail was even a thought. And its one of those things thats always going to be around. \n\nSome people use mail server hacks where they can send a email completely from a email like \"support@paypal.com\" and have the paypal page in the email but when you click on the link it goes to there cookie sploiting site instead of people or even worse may collect your login information becuase your too silly to look at the url or they have a URL rewrite filter that makes it look like its paypal. \n\nThe only thing you can do to fight these things. \n\n1. Dont open mail from people you dont know. \n2. If the mail is from a potential customer \"someone you need to meet through email as a new person\" then setup a email address for that flow like sales@mydomain.com Makes sure the mail is scanned for virus and spoof checked. \n3. Use a smaller email provider. Smaller email service providers can take more care in adding custom SPF records and spam filters in the Mail server for your pop and smtp service that checks headers and makes the mail actually comes from what it says its coming from."
+  },
+  {
+    "author": "Green Party Guy",
+    "avatar": "d9892a954dd3f8e0279c7442a853cebd",
+    "date": "2007-12-29T21:56:40.000Z",
+    "content": "Thanks for posting this. A good friend had their account compromised and they wondering why their domain name registrations were stolen from them."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-12-30T06:13:13.000Z",
+    "content": "Green Party Guy, we are aware of the case, though it is very hard to define the method the attacker has used in order to hijack the account in question."
+  },
+  {
+    "author": "Consumed Consumer",
+    "avatar": "8c22e050952b477eeebb21d62e0c0ed2",
+    "date": "2007-12-31T23:23:48.000Z",
+    "content": "Very informative, esp. the trick for NoScript (kiddies) :)"
+  },
+  {
+    "author": "Nicolae Namolovan",
+    "avatar": "88f225d9d64d501561b86e7037fb9158",
+    "date": "2008-01-27T04:49:19.000Z",
+    "content": "I think CSRF can be easily defeated by checking referer. If your site is not supposed to receive any POST from any 3th party side, then check where POST comes from and block them altogether.\r\nSurprised that gmail is not doing this.."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-27T09:40:18.000Z",
+    "content": "Nicolae, refers can be spoofed, not to mention that you can configure your browser not to send them at all. Therefore, CSRF protection based on refers only is not a solution. The only solution is to implement random tokens per request and store their values within the form you want to check for a CSRF condition. This works and this is what the Google folks tried to do, although their implementation was seriously flawed."
+  },
+  {
+    "author": "adilah",
+    "avatar": "305eeb15fb40f7f0339209702e6a87f3",
+    "date": "2008-02-08T06:01:38.000Z",
+    "content": "I would like to hack into my friends account i believe that she is hidding something from me"
+  },
+  {
+    "author": "Rogger",
+    "avatar": "3570a47862e0b2379244fa18f0a73ae2",
+    "date": "2008-03-02T15:13:20.000Z",
+    "content": "Hey....\r\n\r\nI m not understanding what have to do in the filter.... can anyone plz tell me......"
+  },
+  {
+    "author": "rok",
+    "avatar": "189f9c2030626bd7d8f436eb985fbd9f",
+    "date": "2008-05-07T15:50:53.000Z",
+    "content": "but these days mitm is possible though..:d"
+  },
+  {
+    "author": "Johnes I.",
+    "avatar": "ea8095e8899f0ef382a7ba873e32441f",
+    "date": "2008-06-19T20:29:24.000Z",
+    "content": "I have been locked out of my gmail account. How do I hack back in?"
+  },
+  {
+    "author": "Jay",
+    "avatar": "9c852609f51d72fbc6eaa4303d090d92",
+    "date": "2009-02-13T03:50:33.000Z",
+    "content": "Wow, lifesavers, you guys totally rock.  My problem is that I think I have a total data stream process on me - from gmail, devart, facebook, google searching - everything.  May also have got into or are trying to get into my ISP email.  My complete digital footprint seems to have been uplifted and is being taunted back to me on various bogus sites found through combining my various identity markers in google searches."
+  },
+  {
+    "author": "rmadeat",
+    "avatar": "38de284147db9f4311379749056913b2",
+    "date": "2009-06-11T15:33:36.000Z",
+    "content": "Quote :\r\n\r\nWow, lifesavers, you guys totally rock. My problem is that I think I have a total data stream process on me - from gmail, devart, facebook, google searching - everything. May also have got into or are trying to get into my ISP email. My complete digital footprint seems to have been uplifted and is being taunted back to me on various bogus sites found through combining my various identity markers in google searches."
+  },
+  {
+    "author": "tiesto",
+    "avatar": "45a98ec32e490772c0d0ca3a8e04951e",
+    "date": "2009-09-15T04:37:27.000Z",
+    "content": "Love You Gmail :p"
+  },
+  {
+    "author": "Edward",
+    "avatar": "8fc0f7a4ee9a43d890a12ea25cb8ad85",
+    "date": "2010-03-25T08:12:09.000Z",
+    "content": "2 points. \n\n1. the perp could create the filter temporarily then delete it &amp; repeat etc. how would one know it have ever been there?\n2. i just discovered gmail messages can be 'deleted forever' so one may never know what emails have been sent/received. this is not a good idea from Gmail. all historic entries should be traceable from the logs."
+  },
+  {
+    "author": "John Woodz",
+    "avatar": "9c95c9b3c7f9be55811b3e8f61057cdc",
+    "date": "2010-06-21T05:30:43.000Z",
+    "content": "Was once hacked by watever means i dont know but all contact addresses in my account were being send an email using my gmail account by some hacker perporting to be me.! since am a general mind i stopped using gmail was the best i kuld do i hav no idea about java scripting or watever technical terms u talkn here bt i just wana be safe do i doubt technogy en go stone age !"
+  },
+  {
+    "author": "Janet",
+    "avatar": "268fdb66013b277b2cac61eccb0b793c",
+    "date": "2010-07-11T05:52:41.000Z",
+    "content": "wow i didnt know that was possible!"
+  },
+  {
+    "author": "video videolar",
+    "avatar": "dbed6c9ad6e12ced4d9af8491a96ba75",
+    "date": "2010-07-15T22:13:08.000Z",
+    "content": "Nicolae, refers can be spoofed, not to mention that you can configure your browser not to send them at all. Therefore, CSRF protection based on refers only is not a solution. The only solution is to implement random tokens per request and store their values within the form you want to check for a CSRF condition. This works and this is what the Google folks tried to do, although their implementation was seriously flawed."
+  },
+  {
+    "author": "Ethical Hacking Forum",
+    "avatar": "5f2003fdaed6012162d2645206a4e606",
+    "date": "2010-10-28T07:46:41.000Z",
+    "content": "Phishing - Phishing is by far the most used and easiest method. The attacker simply sets up a page that looks exactly like the real email login page and tricks people into entering their login information.\n\nUpdate: Check out the new post on how to create your own phishing page here."
+  },
+  {
+    "author": "Roger",
+    "avatar": "16cbd07df54e786e703f6c834d76ab0e",
+    "date": "2012-03-23T14:00:24.000Z",
+    "content": "I've been once hacked too, it's rather an unpleasant experience. However Gmail looks fine now, I guess the problem was fixed then. I created a new Google account half a year ago and faced no more similar problems."
+  }
+]

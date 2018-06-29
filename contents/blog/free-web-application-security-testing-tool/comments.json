@@ -1,0 +1,146 @@
+[
+  {
+    "author": "FaNtA",
+    "avatar": "2af0bf72097b96d667037033d074c83d",
+    "date": "2009-08-07T14:19:05.000Z",
+    "content": "Windows Downloadlink doesn't work :("
+  },
+  {
+    "author": "me",
+    "avatar": "077c428ec1cb5adc9a164b4e033e2b39",
+    "date": "2009-08-07T19:04:18.000Z",
+    "content": "Not Found The requested URL /files/Websecurify%200.2.exe was not found on this server."
+  },
+  {
+    "author": "Dan",
+    "avatar": "71fa3ceea27c889b9e4c555314595d0c",
+    "date": "2009-08-08T05:24:08.000Z",
+    "content": "Hey, I really appreciate your site and how you people use your talent for good. However I hate coming to sites like these because quite frankly they scare me a bit. Is the web eventually going to lead us into a deathtrap? Anyway, my question to you is, do you think the internet as a whole could ever be secure and reliably safe?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-08-08T08:08:02.000Z",
+    "content": "hi FaNtA,\n\nthe windows version is cooking at the moment"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-08-08T08:12:33.000Z",
+    "content": "hi Dan,\n\nIMHO, technology-wise things are getting better although you see more and more hacking incidents happening. The biggest problems that face the Web and the Internet in general are mostly related to bad practices. In a system composed of humans and machines, the human is always the weakest link."
+  },
+  {
+    "author": "kenrtx",
+    "avatar": "432fdfd439f9845972d339362f8f19af",
+    "date": "2009-08-08T10:21:57.000Z",
+    "content": "Woot!  Another web app tester, keep em comin.  Unfortunately I do not have my Mac anymore.  :(  \r\n\r\nEmail me once it's ready?  \r\n\r\nNo information on the product site, does it test signature libraries like the OWASP top 10 or is that something we'll have to add?  Tell us more."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-08-08T10:39:27.000Z",
+    "content": "hi kenrtx, the windows and linux versions are coming along nicely. keep in mind that the we are only releasing version 0.2 which to be honest is not very advanced. however, we've got a solid framework which we can build on. saying that, websecurify pro is also coming along quite nicely and should be available for download soon."
+  },
+  {
+    "author": "Chris",
+    "avatar": "b2b5f38248a5e532347dd2bf5b0c280c",
+    "date": "2009-08-10T15:16:34.000Z",
+    "content": "Terrific tool.  Like the simplicity of the interface and the results.  Would be even better if there were a way to save the results to a file, or even just copy the vulnerable URL to do manual verifications (did not see a way to do this on the mac verison)."
+  },
+  {
+    "author": "ttyX",
+    "avatar": "2a92aa114ce648313fa26b9a9421a77b",
+    "date": "2009-08-10T16:51:12.000Z",
+    "content": "Links don't work"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-08-11T09:12:04.000Z",
+    "content": "10x Chris, 0.3 will have features to select the text. we are also soon to release websecurify pro which will add more features for professional penetration testers"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-08-11T09:13:11.000Z",
+    "content": "ttyX, we don't have windows and linux versions just yet"
+  },
+  {
+    "author": "dillon",
+    "avatar": "aac43d880c1aa1c94f0726016c336aeb",
+    "date": "2009-08-12T12:04:57.000Z",
+    "content": "please release a linux/windows version(s) this is exactly the software i am looking for"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-08-15T10:34:16.000Z",
+    "content": "dillon, 0.3 will be released for mac, windows and linux platforms."
+  },
+  {
+    "author": "Venom23",
+    "avatar": "50828c8117f7a73e83c50a07ed235ee9",
+    "date": "2009-08-16T01:24:25.000Z",
+    "content": "The windows link doesn't work. ;) *just kidding* So - I have Linux and Windows machines ... which means that I do have to wait *sob* Do you post project changes on twitter as well?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-08-18T08:12:21.000Z",
+    "content": "Venom23, yes I will post updates on twitter as well"
+  },
+  {
+    "author": "infamousjeff",
+    "avatar": "d3be60ac1d67bd4d5f405f1960306681",
+    "date": "2009-08-30T07:16:57.000Z",
+    "content": "Good job! Adding extensibility with Python or C really opens it up. Love xulrunner sdk. Looking forward to the Linux/Windows release."
+  },
+  {
+    "author": "Hannibal",
+    "avatar": "9c02b89fc1454b3e5d006bc2caf9cf4c",
+    "date": "2009-09-23T08:44:23.000Z",
+    "content": "Damn this thing is good... Looking forward for the Pro version. I could use it as I'm a security tester here in my company. Of course i will give all the credit to Teh Tool! :) Thanks guys for using you knowledge to help us mortals to defend against a harsh, cruel world!"
+  },
+  {
+    "author": "Gaurav Chaturvedi",
+    "avatar": "6d5e1977b3fc9b9ae4d989b36e19c2c7",
+    "date": "2009-10-03T19:07:21.000Z",
+    "content": "Awesome tool"
+  },
+  {
+    "author": "Munankarmi",
+    "avatar": "a634b121e822d53f65675a118369a811",
+    "date": "2009-12-15T17:12:11.000Z",
+    "content": "Nice tool, now windows downlink also work. nice tool to secure website."
+  },
+  {
+    "author": "Darkmailer",
+    "avatar": "35791bad680d60a21670fcb58090ecbf",
+    "date": "2010-01-14T13:23:07.000Z",
+    "content": "keep up the good work pdp,you have my total support. More blessings. @Dan, dont be scared, just make sure that you are well tested and are secured ! security is an on going process so you have just to be one step ahead of the 'real' bad guys out there who want to rape you and leave you for dead, pdp is a good guy and he is doing all these things to make web users more safe based on assurance and testing of our security by releasing more tools and wetware to increase knowlegde. Thank you Mr pdp and the rest of all the security companies. Your blessed."
+  },
+  {
+    "author": "steve lusby",
+    "avatar": "9bd41f428e3cd347b271d48723c89858",
+    "date": "2010-07-26T07:13:59.000Z",
+    "content": "Will the proposed legislation by senator Lieberman to allow the Government to suspend internet activity for security emergencies allow for security testing or experimentation not otherwise possible during normal internet activity?"
+  },
+  {
+    "author": "Warrior0216",
+    "avatar": "c43c752325ae72c6ef961bc50abd4c97",
+    "date": "2010-08-06T17:04:15.000Z",
+    "content": "Hey, just for the record, I think the spanish word for free is \"gratis\". You know, not that it matters..."
+  },
+  {
+    "author": "sclusby12@gmail.com",
+    "avatar": "9bd41f428e3cd347b271d48723c89858",
+    "date": "2010-08-26T09:21:06.000Z",
+    "content": "I downloaded your free security tool and no Icon was made and I can't find it in my programs, can you help me with this I would really like to try it.  Thanks very much, Steve."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2010-11-13T03:00:43.000Z",
+    "content": "Steve, if you follow the wizard you should be able to get the application up and running in no time."
+  }
+]

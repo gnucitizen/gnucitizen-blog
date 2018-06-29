@@ -1,0 +1,86 @@
+[
+  {
+    "author": "Tod",
+    "avatar": "590273fa1d26b0cbd5c09692e2a8ae73",
+    "date": "2009-04-20T12:48:57.000Z",
+    "content": "Aw man, no pcap? Don't make me go out and buy one of these things just to see if I can't decode the handshake..."
+  },
+  {
+    "author": "ZachR",
+    "avatar": "c54afccedcda011701643b3c0a1a01b2",
+    "date": "2009-04-20T13:24:06.000Z",
+    "content": "Very nice. Keep up the great work!"
+  },
+  {
+    "author": "pagvac",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2009-04-20T15:58:27.000Z",
+    "content": "@Tod: the only reason i didnt post the pcap file is because the handshake (whether truly encrypted or not) will include config data that's specific to my camera (i.e.: MAC address). call me paranoid, but i rather not post it. besides, these cameras are relatively affordable.\r\n\r\n@ZachR: thanks for the nice comment :)"
+  },
+  {
+    "author": "j-zero",
+    "avatar": "012b82c152a3df5f6870638701a232a5",
+    "date": "2009-04-21T08:06:45.000Z",
+    "content": "yeah linksys. epic fail."
+  },
+  {
+    "author": "CERT",
+    "avatar": "b70a46f09148634901fa6e442fca8201",
+    "date": "2009-04-21T14:46:42.000Z",
+    "content": "http://www.kb.cert.org/vuls/id/528993\r\n\r\nOld news"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-04-21T20:28:44.000Z",
+    "content": "ahhhhhhh, r u sure this is the same vuln?"
+  },
+  {
+    "author": "Justin",
+    "avatar": "9c2dbe4b2f5214590ceb3f0a9c1a920a",
+    "date": "2009-04-22T02:07:25.000Z",
+    "content": "Ok I just ordered one to try this myself. justin@wastate.net"
+  },
+  {
+    "author": "pagvac",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2009-04-22T06:34:43.000Z",
+    "content": "@CERT: the US-CERT note you mentioned (VU#528993) is the same as CVE-2008-4390 which I *did* talk about in this post. It might not be the same exact issue but it's hard to tell as there is very little info provided by CVE-2008-4390/VU#528993.\r\n\r\nPlease note that:\r\n\r\n1) a different model (WVC54GC) was reported to be vulnerable on CVE-2008-4390/VU#528993\r\n\r\n2) the data didn't seem to travel unencrypted in the case of the WVC54GCA during communications with the setup wizard (maybe just encoded/obfuscated?). VU#528993 mentions: \"This packet is sent over the network unencrypted\", which doesn't appear to be true for the WVC54GCA (at least at first sight, further digging might reveal otherwise)\r\n\r\n3) there is no fix available for the WVC54GCA at time of writing, while Linksys did release a fix for the WVC54GC\r\n\r\nI tried contacting Andre Protas and Greg Linares who found the issue you mentioned (CVE-2008-4390/VU#528993) in order to gather more details, but I received no response.\r\n\r\nIt might be possible that Linksys did fix the issue of sensitive data traveling in the clear when the wizard communicates with the camera, but might have still left unfixed a fundamental flaw: the camera sends the admin password to the wizard before the user even enters them on the wizard. I guess the developer(s) didn't think of someone examining the memory of the wizard process?"
+  },
+  {
+    "author": "shawnmer",
+    "avatar": "e6db5cd515ae82eda3d5e9845672e9a3",
+    "date": "2009-04-28T02:42:36.000Z",
+    "content": "Looks like the Linksys Setup utility has been pullled from the link you provided above: WVC54GCA-CD-Content-10-25-2007_SetupWiz.zip"
+  },
+  {
+    "author": "pagvac",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2009-05-07T17:38:25.000Z",
+    "content": "@shawnmer: Linksys updated the wizard URL. The new link is http://downloads.linksysbycisco.com/downloads/WVC54GCA-CD-Content-10-25-2007_SetupWiz,0.zip\n\nFYI:\n\n<pre><code>$ md5sum SetupWizard.exe \n1c7cb77e906152376102b88604650577  SetupWizard.exe</code></pre>"
+  },
+  {
+    "author": "---",
+    "avatar": "080ff49f2b30e1b9432f2ab176fc7201",
+    "date": "2009-05-10T15:50:50.000Z",
+    "content": "Has anyone tried to sniff and playback the video stream (probably mpeg4) of these IP cameras?"
+  },
+  {
+    "author": "Wayland",
+    "avatar": "2065ef03a417daa9b3affe38a8f716df",
+    "date": "2009-06-05T20:09:44.000Z",
+    "content": "I can confirm that the camera does lock up on occasion but clears itself and it's light sensitivity is not as good as a Sitecom Wifi camera. However it's an excellent price and works very well with Go1984. \r\n\r\nIt would be interesting to turn a router or a print server into a mini USB camera server."
+  },
+  {
+    "author": "rmadeat",
+    "avatar": "38de284147db9f4311379749056913b2",
+    "date": "2009-06-13T10:25:40.000Z",
+    "content": "Very nice. \r\n\r\nThank you"
+  },
+  {
+    "author": "william c",
+    "avatar": "b769899d399ba865214bdc67b91b5d2e",
+    "date": "2011-06-22T01:01:55.000Z",
+    "content": "if its running linux why hasn't anyone written a replacement os like dd-wrt for the routers. the cameras credentials for the plugin are out of date so the only way to view it with out the pc software is to make your browser vulnerably to unsigned content. so why doesnt some code genius do just that and write a more updated os for the camera i mean look what dd-wrt did for the wrt54g"
+  }
+]

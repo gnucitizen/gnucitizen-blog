@@ -1,0 +1,74 @@
+[
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-02-07T14:30:27.000Z",
+    "content": "That's a quite handy script, I will play around with it later on today!"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-02-07T14:42:49.000Z",
+    "content": "The script works like a charm, just tested it. The idea is that any domain names resolve to one IP address chosen by the attacker.\r\n\r\nIt'd also be useful to write a variation of the tool that only makes certain domain names resolve to the evil IP address, and simply query a public DNS server for all other IPs. For instance, maybe the attacker is only interested in poisoning www.trustedbank.foo and wants all other domain names to resolve to legitimate IP addresses."
+  },
+  {
+    "author": "Sid",
+    "avatar": "9f2183a53f556596489aa83fa81b70e3",
+    "date": "2008-02-07T16:48:50.000Z",
+    "content": "I wrote 3 scripts in the same spirit aside of Wifitap that can be foudn in the same tarball:\r\n\r\nwifiping.py is just a PoC that answers ping requests on the fly\r\nwifiarp.py that poisons ARP requests on the fly\r\nwifidns.py that roughly does the same as yours\r\n\r\nEverything based on Scapy."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-02-07T22:14:03.000Z",
+    "content": "@Sid - sounds interesting!."
+  },
+  {
+    "author": "sqid",
+    "avatar": "b4ea44fe1403213b6058de91c6856962",
+    "date": "2008-02-08T02:26:14.000Z",
+    "content": "\"Sam started as a blackhat/script kiddie but soon he has learned a life lesson when he broke into a big football(soccer) leagues site. Sam did not serve any sentence but he had to pay a hefty fine. This is how he turned into a whitehat...\"\r\n\r\nYou make it sounds like Gnucitizen is similar to Alcoholics Anonymous for blackhats. Also, by grouping blackhat and script-kiddie together, you make it sound like they are related to another, when, in fact, they are not. Could you give me some good reasoning on that?"
+  },
+  {
+    "author": "Christopher Haney",
+    "avatar": "b670ac0a57f3b4dcdcba0791b2df128b",
+    "date": "2008-02-08T04:28:48.000Z",
+    "content": "Would this attack also work is you simply used (for example) a WRT54G with DD-WRT as a repeater and simply acted as a second access point to the WEP free AP?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-08T08:29:45.000Z",
+    "content": "sqid, it should have been blackhat script kiddie (no slash). And yes it makes a perfect sense. Blackhat can be used as a noun or adjective. Cheers."
+  },
+  {
+    "author": "Sid",
+    "avatar": "9f2183a53f556596489aa83fa81b70e3",
+    "date": "2008-02-08T08:46:21.000Z",
+    "content": "@Christopher: traffic injection attacks on WiFi work like a charm on WEP networks too, as long as you know the key. Not a big requirement after all ;)\r\n\r\nI could have Wifitap work on a WDS link as well, with an ugly hack I'm not really proud of.\r\n\r\nGetting back to the script, this attack is very like airpwn. This tool, demonstrated at Defcon 2004, catches HTTP requests for pictures and injects arbitrary replies. Very handy when you have... Let's say... A JPEG or PNG buffer overflow  on browser :) You can also reply \"GET /\" requests with a 301 or 302 that will redirect browser anywhere you want, like a metasploit loaded with whatever client side exploit you may like.\r\n\r\nCheck http://sid.rstack.org/pres/0608_BCS_OpenWireless.pdf slides 33 to 47."
+  },
+  {
+    "author": "fazed",
+    "avatar": "9bac8baa8ae20d56ec0320a2f2c33c82",
+    "date": "2008-02-11T02:21:36.000Z",
+    "content": "@squid:\r\nwhat is meant is that I went through both being a script kiddie and as I learned more a blackhat.\r\n\r\nthanks for the comments everyone\r\n\r\n@Adrian:\r\nI was thinking about creating a more complex script which can also redirect different entered urls to different IP's/vHost's and let any that are not listed in this \"host\" file go to the correct location but this script is just a PoC."
+  },
+  {
+    "author": "rezn",
+    "avatar": "5d1658ac36692c8b5ff5612aa9d6a837",
+    "date": "2008-02-11T17:14:53.000Z",
+    "content": "This code may be helpful in further exploring malicious DNS server creation: \r\n\r\nhttp://www.dnspython.org/"
+  },
+  {
+    "author": "lljkrieg",
+    "avatar": "19d06429e8184c0f571af4f0339b64e4",
+    "date": "2009-02-24T13:59:19.000Z",
+    "content": "DNS hijacking is certainly an interesting and potentially catastrophic issue for internet users but why reinvent the wheel to exploit the results?\r\n\r\nIt is possible for an attacker controlled DNS server that supports wildcards, such as bind, to force all domains to resolve to the attacker's web server. The web server can then proxy the real hostname and inject data into the stream, or load phishing pages for specific sites (sites which don't allow proxies perhaps?), or launch malware, etc.\r\n\r\nThis way user HTTP requests can easily be logged and a simple script on the web server could immediately change the payload without having to worry about DNS lease length."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-02-25T11:10:57.000Z",
+    "content": "you are right! I guess the intention was to write something that runs without too much configuration."
+  }
+]

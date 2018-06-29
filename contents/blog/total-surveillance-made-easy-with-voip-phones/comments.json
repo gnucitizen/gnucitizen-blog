@@ -1,0 +1,122 @@
+[
+  {
+    "author": "Gareth Heyes",
+    "avatar": "684b988d3240f16f6a4566ba5869f187",
+    "date": "2008-02-12T00:15:04.000Z",
+    "content": "Awesome stuff Mario!"
+  },
+  {
+    "author": "cirrus",
+    "avatar": "e1ee777ac8ed0a44d77f5abea723664b",
+    "date": "2008-02-12T10:45:24.000Z",
+    "content": "Nice research. I'd like to add that some VoIP phones come with intercom mode enabled by default. This means that by sending it a special SIP request (using the SIP header: <code>Call-Info: ; answer-after=0</code>), one can monitor what is being said in the room, just by calling the phone, as the phone automatically answers the call and puts it thru the speakerphone. One example of such a phone is the Linksys SPA941 (which in its older firmware versions used to have the intercom mode enabled by default). There are probably others that come with this \"feature\" enabled by default and there is always the possibility that one could use an XSS/CSRF to enable it if disabled."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-12T10:46:55.000Z",
+    "content": "cirrus, this is very, very interesting. 10x for the tip."
+  },
+  {
+    "author": ".mario",
+    "avatar": "89886495b27cfdc78593e1f5c8810594",
+    "date": "2008-02-12T10:57:08.000Z",
+    "content": "Interesting indeed! I haven't had a deeper look into those kinds of features but probably will during the next weeks."
+  },
+  {
+    "author": ".mario",
+    "avatar": "89886495b27cfdc78593e1f5c8810594",
+    "date": "2008-02-14T18:27:07.000Z",
+    "content": "Just FYI: Meanwhile I was contacted by Snom and we managed to work out plans for securing the affected devices. Hats off to Snom - long time no such great reaction!"
+  },
+  {
+    "author": "reid",
+    "avatar": "18a299fdf3154980834c13a2ae67f476",
+    "date": "2008-02-15T01:54:35.000Z",
+    "content": "one of the nice things about Snom, instead of just web page linked to there that initiates a call with an HTTP string, just do it from outlook http://wiki.snom.com/Outlook_Add_In"
+  },
+  {
+    "author": "reid",
+    "avatar": "18a299fdf3154980834c13a2ae67f476",
+    "date": "2008-02-15T04:16:52.000Z",
+    "content": "Also, the more interesting attack to me would be to factory reset the phones remotely.\r\n\r\n\"http://phonesIpAdr/advanced.htm?reset=Reset\" will factory default a phone. \r\n\r\nIn many service provider based setups there will be QoS tagging, VLAN tagging, proxy information, along with the SIP credentials. If you managed a CSRF attack to factory default the phone, better yet, a scripted attack that could scan a whole subnet, find the Snom phones and pass the HTTP GET, you're looking at a significant outage."
+  },
+  {
+    "author": ".mario",
+    "avatar": "89886495b27cfdc78593e1f5c8810594",
+    "date": "2008-02-15T12:12:11.000Z",
+    "content": "@reid: This sounds very interesting. Keep the Snom guys posted - they are currently implementing a security@snom.com mail address and many other clever ideas of securing the devices so the intent of the article has come reality - awareness was generated - win-win."
+  },
+  {
+    "author": "reid",
+    "avatar": "18a299fdf3154980834c13a2ae67f476",
+    "date": "2008-02-22T00:11:11.000Z",
+    "content": "Sorry, a bit of a distraction but I was doing a bit more googling, it's disturbing what you can come up with by a simple inurl: search on google (the /img/logo2.gif doesn't pop up anything so I was trying a couple others)\r\n\r\nAre you guys doing anything as far as seeing what data can be mined from the SIP traces (also available w/out admin rights on the phone)? The reason I ask is that I haven't done much personally on going through the SIP traces trying to figure out if it's possible to grab version and vulnerability info on the SIP server, proxy, SBC, whatever the phone is registering to. \r\n\r\nso consider, by getting to the phonoe itself I can draw out application version info and hardware specific info (MAC, etc.) on the specific phone as well call history, possibly SIP credentials. Flip that around, what if I can draw out information about the proxy or registrar common to ALL phones within a business and find an attack vector? Goes a little beyond a simple XSS attack I think but something maybe worth looking into. Would also potentially be much a much wider attack surface for MITM and spearphishing attacks. Alright, I'm going to stop the use of jargon and acronyms now because it's begining to annoy even me."
+  },
+  {
+    "author": "J4zen",
+    "avatar": "b42e4e4f5f11bd4beb2caa67d03a6d8e",
+    "date": "2008-03-05T15:23:19.000Z",
+    "content": "Nice writeup, i've actually stumbled upon this myself during the last year or so while working with SNOM320's. They indeed do have a large number of vulnerabilities BUT, the firmware is open source(not many people know this). Thus you could go fix it yourself if you do stumble upon a bug that needs immediate attention.\r\n\r\nAlso it might be worth mentioning, a lot of VOIP-platforms are ran on a popular piece of software called Asterisk(or distros using Asterisk such as FreePBX/CentPBX/Elastix/Trixbox/etc). \r\n\r\nYou'd be amazed exactly how many vulnerabilities are in their software that can easely result in bankruptcy."
+  },
+  {
+    "author": ".mario",
+    "avatar": "e53f5d616931bfe8fa74bfd9f72e049e",
+    "date": "2008-03-05T22:39:50.000Z",
+    "content": "I just returned from CeBIT in Hannover, Germany where I was invited to a event organized by snom due to this exact article and it was pretty interesting. \r\n\r\nPeter Cox was there and other very interesting people to talk to. I had pretty good discussions with the developers of the snom web interface and I got a preview on the new phone firmware. It definite has been improved a lot and I got a phone for my private lab to test for more issues. \r\n\r\nSo my impression of this day is a good thumbs up to snom - let's see what can be found in the most recent firmware ;)"
+  },
+  {
+    "author": "Jonas",
+    "avatar": "85e4239ff9662bf8296083d98da17677",
+    "date": "2008-04-09T09:29:33.000Z",
+    "content": "Ok, I've got a bunch of these on public IPs. Am I in trouble?\r\n\r\nThis article clearly states that if the IP is known an attacker can hijack the phone. Snom says otherwise; only if you have failed to set a password on it (obviously). I came here from the Snom security announcement which downplays this attack. This worries me gravely.\r\n\r\nOn the other hand this article is light on details. The only code is how to make calls once you're in, which would be unrelated to the actual attack.\r\n\r\nNow that the manufacturer has responded, can you please publish more information so we can properly determine if we are at risk?"
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-04-09T09:57:04.000Z",
+    "content": "@Jonas: put it this way, if the attacker can talk to the Snom's IP phone web server (as in the case of Internet-visible phones), then he can make the phone start any VoIP calls WITHOUT a password. This is because the CGI script that handles such POST requests is publicly available (can be talked to, without a password).\r\n\r\nQuoted from .mario's post, some possible attacks include:\r\n\r\n\"monitoring the victim by making a phone call to the attackerâ€™s number, who in tern will accept the call and recording the incoming sound. Note that the phone doesnâ€™t give any noticeable feedback (ring tones, etc) while the victim was kept under surveillance. Keep in mind that the victim pays for the call.\"\r\n\r\nIf I were you I would restrict access to such phones from the LAN only *immediately*."
+  },
+  {
+    "author": "Jonas",
+    "avatar": "85e4239ff9662bf8296083d98da17677",
+    "date": "2008-04-22T20:45:36.000Z",
+    "content": "Adrian: Thank you for your reply. It does not help me however. If I just POST the data to the phone it replies with \"unauthorized\", obviously, as I did not send the required HTTP authentication.\r\n\r\nApparently there is something else to this. Can somebody PLEASE speak up on this! I just need to know this is actually an issue. I can't start limiting access to phones based on nothing.\r\n\r\nCan you just show a dump on a working request, or anything at all that can convince me this works?"
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-04-23T10:44:40.000Z",
+    "content": "@Jonas: it's not just any POST request, it has to be the request that starts a conversation. Just use the PoC (proof of concept): http://www.gnucitizen.org/blog/total-surveillance-made-easy-with-voip-phones/snom.htm\r\n\r\nSorry, but we can't make it easier than that. Keep in mind that .mario tested the attacks on Snom 32x and by the way, all the vulnerabilities were confirmed by Snom, so you can bet this IS a real issue.\r\n\r\nAlso remember that stealing calls and eavesdropping the room where the phone is located are not the only vulnerabilities found by .mario.\r\n\r\nAs I said, connecting these phones directly to the internet is asking to get pwned!"
+  },
+  {
+    "author": "Jonas",
+    "avatar": "85e4239ff9662bf8296083d98da17677",
+    "date": "2008-04-29T08:28:07.000Z",
+    "content": "Adrian: I'm not sure what you mean by starting a conversation, but I mean the POST request that initiates a call, normally called through the web interface.\r\n\r\nI wouldn't have asked if your proof of concept worked. I have tried it on several models on Snom phones, including the 320.\r\n\r\nSnom did not confirm the vulnerabilities by the way. Did you read their security announcement? I read CVE-2008-1248, which gave me the impression that a manufacturer was trying to downplay a security issue which is why I came here to find the truth.\r\n\r\nBut now I suspect that there was no issue to begin with..?"
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-05-04T01:31:49.000Z",
+    "content": "Hi Jonas,\r\n\r\nIt appears that if you set a password you can resolve the unauthorized POST \"initiate call\" request issue: http://blog.tmcnet.com/blog/tom-keating/voip/snom-voip-vulnerability-resolved.asp\r\n\r\nCareful: no password is set by default!"
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-05-04T01:33:42.000Z",
+    "content": "@Jonas: forgot to add that this is NOT my research, but Mario's (as shown in the post). Therefore, I suggest you to contact him directly if you have any more specific questions.\r\n\r\nAlso, thanks a lot for your feedback. It's always a very good habit to question everything you read."
+  },
+  {
+    "author": "etd",
+    "avatar": "df6edcc7a9fab5e886a831ba2d6d6d6c",
+    "date": "2009-01-11T01:19:13.000Z",
+    "content": "Don't know if you're aware, but this article made it's way into the \"News Briefs\" section of IEEE's Security &amp; Privacy (March/April 2008) :)\r\n\r\ngood job"
+  },
+  {
+    "author": "reid",
+    "avatar": "dbb890d615e977e1f4fb1dc4b50290b9",
+    "date": "2009-10-31T04:20:07.000Z",
+    "content": "okay so this is probably a bit old, but I found it amusing anyway.  We use snom phones internally and also for a hosted voip solution. I was looking for a phone on our LAN and (stupid) decided to do a quick port scan for it.\n\nnmap 5.0 running service scan (-sV) option against a snom phone may cause the phone to reboot. I can do this on snom v7.1.33 and 7.1.39. Foudn it out this afternoon so i'm still raising a ticket with Snom. \n\ni've run earlier versions of nmap previously and it doesn't cause this kind of error. highly amusing to know i can jump on someone's LAN and cause all their phones to reboot."
+  }
+]

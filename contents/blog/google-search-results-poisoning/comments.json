@@ -1,0 +1,62 @@
+[
+  {
+    "author": "d-y",
+    "avatar": "a219598e4d988b99763c287f5f8335e5",
+    "date": "2007-01-16T20:46:13.000Z",
+    "content": "Maybe it is a part of some protection against content stealing?"
+  },
+  {
+    "author": "Joe",
+    "avatar": "5c4f68132e344371b8ec9545ced719ee",
+    "date": "2007-01-17T00:18:43.000Z",
+    "content": "Google gives penalties to pages/sites offering duplicate content, it places these sites in the supplementals. Since all these error messages are the same, it should've put your site in the supplementals. \r\n\r\nAs you kept your rankings, that must mean google was using the cached version of your pages.\r\n\r\nStill it is kind of weird, maybe google was using a mix of your cached keywords and the new error message.\r\n\r\nIf you are right about all this - it would be pretty easy for spammers to steal keywords and make huge profits."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-17T10:15:23.000Z",
+    "content": "Joe, you can say that again. I hope it is not what it seams to be."
+  },
+  {
+    "author": "Jason Duke",
+    "avatar": "f232a620bb7c3e0d556a8152386bdf69",
+    "date": "2007-01-18T16:50:53.000Z",
+    "content": "I think you're wrong :)\r\n\r\nI work as an SEO and overall am pretty good at it \r\n\r\nFrom the example you gave, grepblogs.com within the screenshot I think it is nothing more than a site that mentioned a post(s) from here and whilst being crawled also had a DB connection issue.\r\n\r\nThey deserved to rank due to the inbound links and domain status the site / pages had obtained and were relevant to the search query of (I presume \"gnucitizen\") \r\n\r\nThere is definately no poisoining going on from the limited information in your post, but Google poisoning is definately possible, happens and is managable by many with the knowledge of how G works in practice. If you want to discuss it more feel free to get in touch"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-18T18:11:52.000Z",
+    "content": "I am not much into SEO, so I didn't know what was really going on at the time when I had this particular problem. Thanks for the clarification. I appreciate it.\n\nAlthough, SEO is considered a taboo topic in some security circles, I can clearly see its importance to web application security. I am particularly interested in shaping web traffic in terms of fiddling with RSS feeds, spawning related blogs, etc.\n\nIMHO, If attackers know how to use and abuse search engines, the damage they can cause is greater then what we can imagine. I am most definitely interested in continuing this topic."
+  },
+  {
+    "author": "Jason Duke",
+    "avatar": "f232a620bb7c3e0d556a8152386bdf69",
+    "date": "2007-01-18T21:59:47.000Z",
+    "content": "You're welcome mate. I'll happily look more into the specifics if you can share more information but as to your point about SEO being relevant to security aspects you are entirely right.\r\n\r\nI won't go into specifics here but there is much cross over from SEO -&gt; security in being able to rank as well as from security -&gt; SEO in being able to propogate.\r\n\r\nI'll stop now but I am sure everyone reading this (whether an experienced SEO or security professional) understands to what I am referring."
+  },
+  {
+    "author": "Adria",
+    "avatar": "ff41932200f71406e8a0408599eebd45",
+    "date": "2007-03-30T13:06:23.000Z",
+    "content": "Why is SEO a taboo in some security circles? Is it just because they're opposed to marketing in general?\r\n\r\nBTW, I agree with Jason that there's nothing wrong with the search results you showed. The ordinary behavior for any search is that Google will show, at most, two search results from any one website. If people want to see more results from a particular, that's why they have the \"More results...\" link.\r\n\r\nHowever, his other comments are more a sales pitch than anything else, because his fear-mongering about \"poisoning\" Google search results is just nonsense. Get in touch with him, indeed. I would also challenge the assertion that there is any significant connection between security and SEO. (I would love to have more of a discussion of this, re: your mention of web app security) SEO is marketing, plain and simple, and any attempt to make it seem more technical or geeky or mysterious is just self-aggrandizement. Beyond a basic knowledge of how the internet works, how websites are built, etc (which I would be embarrassed to say was technical to someone who, say, actually writes code), it's just a marketing exercise."
+  },
+  {
+    "author": "Jason Duke",
+    "avatar": "11ef47bd05d16302b24c3fd28a808040",
+    "date": "2008-02-14T18:42:26.000Z",
+    "content": "Reflecting back on this, it's pretty obvious I was wrong after all!"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-14T21:14:07.000Z",
+    "content": "what do u mean Jason?"
+  },
+  {
+    "author": "Mike Jennings",
+    "avatar": "2175fbd69c7a16fbd7fa3b718af71988",
+    "date": "2010-02-21T10:28:53.000Z",
+    "content": "Olympics-related search results on Google have been poisoned this weekend, redirecting to \"Qooglesearch.com\" or bogus sites that trigger Firefox's malware warnings."
+  }
+]

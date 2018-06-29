@@ -1,0 +1,176 @@
+[
+  {
+    "author": "sal-e",
+    "avatar": "9509edb3b8aecd89b16384938a3f696b",
+    "date": "2008-02-03T20:10:35.000Z",
+    "content": "Hi pdp,\r\n\r\nI'd like to make sure that I understand correctly the problem you bringing to our attention. In order this vector of attack to succeed the following conditions have to be met:\r\n\r\n1. I need to visit site controlled by attacker and I have to decide to use my OpenID.\r\n2. The attacker's web site should redirect me to fake site that works like my OpenID provider site. (Very similar to phishing attack). In order to still my username and password for my OpenID account.\r\n\r\nWhen I discover OpenID some time ago I had the same idea. My research back then proved that most of OpenID providers are vulnerable for this type of attack. I have found that only MyOpenID.com is taking this problem seriously and they have implemented some features to address the problem.\r\n\r\nFor example you can enable 'secure mode' that will force you to open new and connect directly to MyOpenID site in order to get authenticated. This  should protect you in most cases. Unfortunately this is not the end of the story because if you workstation is compromised (or your router) and the hacker has change your DNS server you still going to end up on attackers OpenID server. Against this problem MyOpenID has setup authentication by pre-exchanged certificates instead of username/password.\r\n\r\nMy question is the MyOpenID approach will prevent the problem you have described?\r\n\r\nAnd the main conclusion is that risk never disappears. Using OpenID protects you against the problem of using the same username/password on many websites, but at the same time moves the risk to you OpenID provider. So it become important to select good OpenID provider that takes this issues  very seriously."
+  },
+  {
+    "author": "bugmenot",
+    "avatar": "d147130cd01d801ad46d096383ff6754",
+    "date": "2008-02-03T20:21:01.000Z",
+    "content": "Huh? Isn't this by design? OpenID isn't for identity verification. It's like saying that a registration form e-mail address is for identity verification and that it is vulnerable because it (correctly) accepts arbitrary domains, which may be under the control of the attacker."
+  },
+  {
+    "author": "Mark Cross",
+    "avatar": "c971f6fc59029d1fa54a3fc680f2fc52",
+    "date": "2008-02-03T21:41:11.000Z",
+    "content": "Hi,\r\n\r\nCheck this out, which came in v2 before Christmas? http://openid.net/specs/openid-provider-authentication-policy-extension-1_0-01.html\r\n\r\nI am not a security expert, but clearly users are free to pick their providers. Personally I have no idea why people buy Ford motor cars - but they do. You may lecture people about the cost benefit analysis of buying another car brand X. But in the main they'll always pick the cheapest, not looking at the MTBF stats.\r\n\r\nWith OpenID, people may choose the ease of the use a username and Password pair - it's understood, accepted, and the slightly more tricky two-factor authentications overhead will be chosen by the educated. People effectively wishing to pay more.\r\n\r\nI think it's our job (geeks) to educate John Doe to make better security choices?\r\n\r\nSo whilst you may see problems with OpenID, it would be good if you highlighted the plus points to the security which has already been discussed and put forward for the protocol?\r\n\r\nCheers Mark"
+  },
+  {
+    "author": "James",
+    "avatar": "ec000b82f543f0236d5af5d30286a3c2",
+    "date": "2008-02-04T01:03:59.000Z",
+    "content": "Interesting. Thinking more generically, I wonder if this method could be used to change user passwords on your typical agile Web 2.0 site?"
+  },
+  {
+    "author": "rattus",
+    "avatar": "1e6f3dd86f5715780070cbe72c44f345",
+    "date": "2008-02-04T09:42:58.000Z",
+    "content": "What this means is that you can register, and authenticate without need to supply anything except the URL. I don't know wordpress so does this form add OpenID account for currently logged in user account ? Meaning attacker tricks user into submitting the form, and if user is logged in the wordpress instance, it will add attacker's OpenID url to his account?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-04T10:11:02.000Z",
+    "content": "too many comments for the night :) let me cover each one by one:\r\n\r\nsal-e, \r\n\r\n<blockquote>1. I need to visit site controlled by attacker and I have to decide to use my OpenID.</blockquote>\r\n\r\nIncorrect! The idea is that because OpenID enabled sites treat the OpenID technology as a captcha of some sort, ignoring the fact that the OpenID authentication and authorization stages can be completely automated by a simple OpenID identity provider server written in python or any other language, when the identity management page of the OpenID enabled device is vulnerable to CSRF, attackers can add their own identity there and use that to get access to the account. Since they use their own identity and their own identity provider, they don't need credentials.\r\n\r\n<blockquote>My question is the MyOpenID approach will prevent the problem you have described</blockquote>\r\n\r\nNo, the problem is unrelated to the way MyOpenID handles the authentication or authorization processes."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-04T10:12:48.000Z",
+    "content": "bugmenot, OpenID is exactly for identity verification rather then authorization although it has been widely used for that in general."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-04T10:19:00.000Z",
+    "content": "Mark,\r\n\r\n<blockquote>So whilst you may see problems with OpenID, it would be good if you highlighted the plus points to the security which has already been discussed and put forward for the protocol?</blockquote>\r\n\r\nPoint taken. Although I brag about OpenID security far too often, I am personally a big fan of the concepts and technologies involved. The simple fact is that your OpenID identity provider can be secured pretty well, like for example by using RSA tokens, etc. Using this identity for all your online presence will be far more secure then using individual passwords, from password management prospective only. Though, there are a bunch of other things which come into place that needs to be taken into consideration. One of the main things is that if OpenID makes it so easy to login anywhere you want, most people will be logged in all the time. And from Web security point of view, with all these XSS and CSRF attacks popping everywhere, it is a really bad idea."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-04T10:20:56.000Z",
+    "content": "James,\r\n\r\nyes, it can be used though most Web2.0 sites learned the lesson and they ask you for the current password in order to reset it. This effectively demobilizes CSRF issues that may occur in this area."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-04T10:22:19.000Z",
+    "content": "rattus, correct!"
+  },
+  {
+    "author": "kravietz",
+    "avatar": "f134d6601aeef5cbf24677463c43af61",
+    "date": "2008-02-04T13:00:26.000Z",
+    "content": "FYI - Drupal seems to protect against this type of attacks using an uniform Forms API, which adds hidden random tokens for each form generated using this API. \r\n\r\nAs I've just looked, the \"Add OpenID identity\" form in \"Edit My Account\" contains the anti-CSRF token."
+  },
+  {
+    "author": "Michael Yang",
+    "avatar": "506736a78317043bbdd6ab4ea9e7a587",
+    "date": "2008-02-04T17:14:12.000Z",
+    "content": "rattus &amp; pdp\r\n\r\nThe point is how can attacker's OpenID be added at user's side. If I were the attacker, even I tell you my OpenID and let you tie it to your WP account, it can't be done. Because according to my understanding, the authentication does not require nothing but URL, it requires your prove of the ownership to that URL."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-04T17:17:37.000Z",
+    "content": "kravietz, cheers for the info"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-04T17:21:03.000Z",
+    "content": "Michael, I am not sure whether you understand the concepts of the attack. Because OpenID is nothing but a URL the attacker can register their own OpenID service. It is very simple really. All you need is a dynamic DNS name and a python script that consists of 5 lines of code. Through CSRF the attacker can add his/her OpenID URL from the dynamic DNS server. Once the attacker's OpenID url is tied to the victim's account, the game is over. Now he/she can login without authentication because he/she is running/controls the malicious OpenID identity service."
+  },
+  {
+    "author": "sal-e",
+    "avatar": "9509edb3b8aecd89b16384938a3f696b",
+    "date": "2008-02-04T18:56:38.000Z",
+    "content": "Hi pdp,\r\n\r\nThank you for clarification. Now I have better understanding of the issue. In your initial post you stated:\r\n\r\n<blockquote>BTW, the vulnerability, which I so lightly covered in this post, is not due to a coding mistake within the plugin itself, bur rather then a bug that exists within the main support library, which is one of the most popular OpenID libraries available in the wild.</blockquote>\r\n\r\nI am making some assumptions. First you are referring to Wordpress plugin and the second is that you are referring to PHP library supporting OpenID. Based on those assumptions I was about to ask you did you run test on other popular software like Drupal and Joomla. At the same time I saw the comment from kravietz about Drupal. So I am little confused again. If Drupal can protect against this issue, why WP-pluging don't deploy the same protection? \r\n\r\nAnd can the library be fixed or the OpenID protocol needs to be modified?\r\n\r\nThanks,\r\nSAL-e"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-04T19:01:16.000Z",
+    "content": "yes, the vulnerability is within a popular PHP OpenID library. However, it does not mean that it is used by Drupal. In fact, I have no idea what Drupal is using. The library can be fixed as well you can add some extra precocious steps to guarantee that the request cannot be forged."
+  },
+  {
+    "author": "Johnny Bufu",
+    "avatar": "5eaead55caecbae97e258bb81c7bf023",
+    "date": "2008-02-04T23:52:28.000Z",
+    "content": "I don't see how this attack is specific to OpenID, or caused/addressable in the OpenID library. \r\n\r\nAs I understand it, it's a general CSRF attack against an administrative form; the form's controller should make sure it's still talking to the ligitimate user (owner of the username/password) *before* taking any OpenID action.\r\n\r\nJohnny"
+  },
+  {
+    "author": "Oliver",
+    "avatar": "48a46885f123e514933d8271299c1e96",
+    "date": "2008-02-05T10:44:21.000Z",
+    "content": "Hi,\r\n\r\nthe whole attack scenario/example will only work, if the relying party (in your example Wordpress) will trust each OpenID provider. And this will be indeed a real security problem of the whole OpenID concept.\r\n\r\nIt can be compared with the PKI world: OpenIDs are like certificates and the OpenID provider acts like a Certificate Authority (CA). If you trust every CA in the world, the whole PKI concept will not be effective. I can't believe that services like Wordpress or Yahoo will trust every OpenID provider ... or do they?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-05T10:49:54.000Z",
+    "content": "Oliver, why shouldn't they? OpenID is an open technology which means that I can become my own OpenID provider."
+  },
+  {
+    "author": "Oliver",
+    "avatar": "48a46885f123e514933d8271299c1e96",
+    "date": "2008-02-05T11:21:55.000Z",
+    "content": "Hi pdp,\r\n\r\nI don't want to get this topic a \"Open ID\" discusssion, but if the whole concept is based on trusts between the OpenID provider, the relying party and the end user and if the relying party trusts every OpenID provider \"per default\", then there is no security benefit. If I think about this concept (and if I get it right), an successfull (CSRF) attack can have a very high impact. I wonder whether the OpenID concept/protocol has no function/process to check whether a OpenID provider can be trusted or not - although it's a open technology. Strange."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-05T11:26:56.000Z",
+    "content": "Oliver, I can see your point, which is very good btw. But this is how it is. You can tighten up the service that uses OpenID only to support a certain number of OpenID providers, but there is nothing within the protocol to enforce that. So yes, you can implement it yourself, but the specs wont help you. And in general, you will loose a portion of the user base.\r\n\r\nHowever, keep in mind that even if there is a trust mechanism, like the one you pointed out, implemented, the attack that I describe will still work. The reason why I pointed out this CSRF based attack is because I've seen in on more then one place. Developers get lost into the complexity and tangled nature of OpenID and forgot to make some basic checks that lead to problems."
+  },
+  {
+    "author": "sal-e",
+    "avatar": "9509edb3b8aecd89b16384938a3f696b",
+    "date": "2008-02-05T15:09:46.000Z",
+    "content": "Hi Oliver,\r\n\r\nOpenID is modeled after the DNS. Every one can select own server to handle the task. I have lost the link for the OpenID presentation, but the author of OpenID clearly stated that the OpenID do not have function of establishing trust like CA. The only function is to id the user. That is way the OpenID providers supports multiple personalities. You can choose how much data you want the OpenID provider to send to each individual site. You have responsibility to select your OpenID provider and it is your responsibility to which site you are sign in with your OpenID and the level of information you want to share with that site. In other words to establish of level of trust! As I understand the goal of the OpenID protocol is to help the user with all those websites that collect information from us and help maintain this information.\r\n\r\nAfter all that I can see your point also. Thank you for raising the issue. I agree that OpenID is not full solution. It provides identification, but not trust. As you say the CA is design for establishing the trust. What I'd like to see from OpenID provider is integration between CA and OpenID. I should be able to upload different public key for each of my personality. Then the web site can accept only data encrypted by private key and this effectively will eliminate a lot of the potential attacks.  \r\n\r\nSAL-e\r\n\r\np.s. pdp, thank for the info. Over the weekend Iâ€™ll try to find out how Drupal is implementing the OpenID and which library is using. Also I will try to contact the author of the OpenID plugin for Drupal and draw his/her attention to our discussion."
+  },
+  {
+    "author": "Wladimir Palant",
+    "avatar": "7806629160a492b05d21fd738953a4cf",
+    "date": "2008-02-06T14:49:31.000Z",
+    "content": "I mentioned this article in my blog post: http://adblockplus.org/blog/vulnerability-or-feature"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-06T15:14:10.000Z",
+    "content": "Wladimir, I am surprised that you still donâ€™t understand the point of the article even after reading the comments where I personally responded to everyone who has doubts about it. Letâ€™s get back to the key sentences from the post:\r\n\r\n<strong>quote 1</strong>\r\n\r\n<blockquote>When it comes to OpenID, it seams that developers forget about CSRF, or they just donâ€™t want to simply deal with it, mainly because OpenID is not straightforward type of technology.</blockquote>\r\n\r\n<strong>quote 2</strong>\r\n\r\n<blockquote>Instead of showing you examples with real, live systems, rather unethical as you may guess, I would like to show you an example of an account hijack technique which is currently present inside one of the few Wordpress OpenID plugins.</blockquote>\r\n\r\n<strong>quote 3</strong>\r\n\r\n<blockquote>Once the attacker supplies a URL for the openid_url field, the page will redirect to the OpenID provider specified by that URL, authenticate and return back to the original position. Given the fact, that the OpenID provider is controlled by the attacker, btw. everyone can host their own OpenID provider, the attack is very trivial to pull. Once this URL is stored within the plugin database, the attacker will be able to authenticate with the attacked blog without any sort of authorization whatsoever.</blockquote>\r\n\r\nIs it still unclear what is the article all about? And if not, do you mind updating your post to outline that?"
+  },
+  {
+    "author": "Will Norris",
+    "avatar": "ec575a5bb601b070f93a244203a7c602",
+    "date": "2008-02-06T17:31:18.000Z",
+    "content": "Wow, I must say I'm a bit surprised by where this conversation has gone... questioning the security of OpenID in general.  \r\n\r\nI'm the author of the OpenID implementation in question.  It is indeed a bug, but it is in my code, not the JanRain library.  It was a minor oversight that didn't verify that the add_identity request was indeed coming from the correct form.  This has been corrected in v2.1.3 by using WordPress's built-in nonce functionality.  (Props to Sam Alexander for showing me this post and providing the simple patch.)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-06T17:36:41.000Z",
+    "content": "Will, this is how we go in the security field. We start with something and we end up with something completely different. But that's the fun and most valuable part which most people don't realize."
+  },
+  {
+    "author": "otze",
+    "avatar": "08b1d4dd76c3fe723e2ef415152399bb",
+    "date": "2008-02-07T02:36:46.000Z",
+    "content": "Don't know if this is the right place, and maybe I just didn't grok OpenID completely, but I see a another problem - not for the OpenID user but for people deploying OpenID support in their website.\r\n\r\nAs I understand OpenID, it breaks the widely supportet double-opt-in principle. Without OpenID, nearly every forum or other web service validates the given email addresses of new users by sending an email with an activation key. \r\n\r\nWith OpenID, only the OpenID provider is supposed to check the email address this way, but OpenID-enabled services rely on the information of the provider - which could stand completely under the control of an attacker.\r\n\r\nSo wouldn't it be posssible to setup your own OpenID server which doesn't verify your email addresses and so lie to other web services regarding your email? This way you could easily impersonate other people, maybe to annoy them by registering to various mailing lists. (Or make people think that you don't verify addresses on your lists.)\r\n\r\nOr you could use this for Social Engineering. Just register accounts at other peoples' blogs or forums with email addresses that belong to people normally trusted by the admin and use this to fake a conversation."
+  },
+  {
+    "author": "sal-e",
+    "avatar": "9509edb3b8aecd89b16384938a3f696b",
+    "date": "2008-02-08T12:46:49.000Z",
+    "content": "Otze,\r\nMy short experience with OpenID is that I don't have to come with new combination of username/password for each site I decide to sign-on. The issue you are taking is how to establish trust between the site and the user. The current 'standard' by sending the activation key works with OpenID. Here is how:\r\n1. The user request access with its OpenID.\r\n2. The site connects with you OpenID provider and asks confirmation.\r\n3. You will be asked by you OpenID provider to approve the request and select you 'persona'. The persona contains all information that you want to share with requesting site. The site can send the minimum level of information like: username, e-mail, full-name and etc.\r\n4. Once you approve the request the website sends you an activation key to your e-mail and from here process is very familiar for every one.\r\n\r\nNote. I have over simplified the steps. In real world OpenID have to make additional steps to work securely and that is what pdp refers as \"the process seems to be kind of obscured\".\r\n\r\nIf OpenID makes process more difficult why anyone wants to use it? Well there is many reasons, but the main advantage in discussed example is that in case you e-mail get compromised you can change it quickly at your OpenID provider and the new e-mail address will propagate to all OpenID enabled sites when you login next time.\r\n\r\nps. I am not security expert and I am just learning about OpenID. So if some one with better knowledge on the subject sees something wrong or incorrect please speak up! :)"
+  },
+  {
+    "author": "Albert",
+    "avatar": "caa2d6af28f2a77c0213b8d9399d3bda",
+    "date": "2012-08-30T23:23:47.000Z",
+    "content": "So, I need to know: \r\n\r\na. I need to provide a good Single Sign On system for WP, can I use OpenID or as it seems not to be so secure I should avoid it ?\r\n\r\nb. If there are so much security problems with OpenID, is there anything else, easy to implement and more robust in security terms ?\r\n\r\nc. Will you advise me on HOW to implement such system with a very SECURE configuration so I could forget about hackers and attackers ?"
+  }
+]

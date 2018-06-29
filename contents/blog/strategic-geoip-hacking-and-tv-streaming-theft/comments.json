@@ -1,0 +1,80 @@
+[
+  {
+    "author": "Jason Macpherson",
+    "avatar": "e84708d25a0040efb2469dac1e9cecc3",
+    "date": "2007-11-16T20:54:14.000Z",
+    "content": "Nmap tends to be a little slow for large scans like this.  You'll get your results much faster if you used scanrand.  \r\n\r\nhttp://www.doxpara.com/read.php/code/paketto.html"
+  },
+  {
+    "author": "Zeryl",
+    "avatar": "6d54c4fc7c7f8bd115cd09e8273e8b1b",
+    "date": "2007-11-17T08:52:03.000Z",
+    "content": "I re-wrote the shell script for this, in PHP.  It does all of the .csv's created from the other script, at once, and extremely quickly (about 5 seconds on a dual P3). Below is the code for it:\r\n\r\n<pre><code>&lt;?php\r\n\r\n//Look through the local directory for *.csv\r\nforeach (glob(\"*.csv\") as $filename) {\r\n    //Load the current file into the $lines array\r\n    $lines = file($filename);\r\n    \r\n    $content = '';\r\n\r\n    foreach($lines as $line)\r\n    {\r\n        //Explode the start and end ip from the current line\r\n        list($startIP, $endIP) = explode(',', $line);\r\n        \r\n        //Explode each octet of the current ip into arrays\r\n        $start = explode('.', $startIP);\r\n        $end   = explode('.', $endIP);\r\n        \r\n        //Parse each array for the ip\r\n        for($i = 0; $i&lt;=3; $i++)\r\n        {\r\n            if($start[$i] == $end[$i])\r\n            {\r\n                $nmap[$i] = $start[$i];\r\n            }\r\n            else {\r\n                $nmap[$i] = \"$start[$i]-$end[$i]\";\r\n            }\r\n        }\r\n        \r\n        //Write the current namp'ified IP to the variable\r\n        $content .= \"$nmap[0].$nmap[1].$nmap[2].$nmap[3]\\r\\n\";\r\n    }\r\n    \r\n    //replace the extension with target\r\n    $newfile = str_replace('csv', 'target', $filename);\r\n    \r\n    //write the file\r\n    $size = file_put_contents($newfile, $content);\r\n    echo(\"Wrote $newfile with a size of $size&lt;br /&gt;\\r\\n\");    \r\n}</code></pre>"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-11-18T04:55:10.000Z",
+    "content": "Hey Jason! I will try Scanrand when I have time. I've also been wanting to play with Unicorn http://www.unicornscan.org/ for a while!"
+  },
+  {
+    "author": "LordDoskias",
+    "avatar": "24819206e4f57471e625238aa2010b8d",
+    "date": "2007-11-18T16:19:07.000Z",
+    "content": "I think that \"tcp/ip is widely understood\" isn't a good argument. History has shown that \"security through obscurity\" doesn't work well. If tomorrow's technology is not tcp/ip or something else. Then it's a matter of time before someone document this technology. For example - \"Silver needle in the skype\" presented at BH '06. And skype is thought to be one of the most \"hidden\" technologies out there."
+  },
+  {
+    "author": "hackathology",
+    "avatar": "271ecedbd232e23677ddc1d3956147eb",
+    "date": "2007-11-18T17:52:47.000Z",
+    "content": "unicornscan is the way to go"
+  },
+  {
+    "author": "Dominik",
+    "avatar": "75cb2ad2020965b5ca7b502efca1aefb",
+    "date": "2007-11-18T22:16:18.000Z",
+    "content": "My personal experience has been that scanrand is indeed fast, but also misses quite some open ports.\n\nYes, nmap _will_ run very slow with the provided command line. But you can speed it up quite a bit. First, scanning with -P0 is dead slow, because nmap has no round-trip-time information without a ping first, and will default to a slow scan mode. Second, nmap has a not-so-well documented fast single port scan mode. Third, you can speed things up by setting less conservative timing limits\n\nAn updated nmap command line would be: <code>nmap -PS5001 -S5 -n -iL targets -p5001 -oG results</code>"
+  },
+  {
+    "author": "Dominik",
+    "avatar": "75cb2ad2020965b5ca7b502efca1aefb",
+    "date": "2007-11-18T22:18:06.000Z",
+    "content": "Sorry, just made a typo. It should read -T5 and not -S5"
+  },
+  {
+    "author": "br4inmatic",
+    "avatar": "2afc2c0e8404cb7facd316386b2c655c",
+    "date": "2007-11-19T08:43:39.000Z",
+    "content": "<code>nmap -PS5001 -S5 -n -iL targets -p5001 -oG results</code> yeah.. that's really make it much faster."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-11-19T23:19:08.000Z",
+    "content": "@LordDoskias - I agree that security through obscurity is not the way to go. However, we all are in a comfort zone, and that is highly reflected in public security research. btw, I will check out \"Silver needle in the skype\" :-)\r\n\r\nNice nmap tips guys! I was familiar with the timing -T flags, but not the -PS flag."
+  },
+  {
+    "author": "maze",
+    "avatar": "9e8243d98f8f2f4f0112d6d948ec7896",
+    "date": "2007-11-20T21:19:09.000Z",
+    "content": "anyone got an idea on how the auth works? im trying to get a brute forcer goin..."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-11-20T23:29:16.000Z",
+    "content": "@maze - Just run Wireshark while you try to authenticate with SlingPlayer. You can use the following filter on Wireshark: <code>ip.dst==targetIPaddress</code>"
+  },
+  {
+    "author": "sean",
+    "avatar": "f77147fbd955443d2780acf5e1c4acf6",
+    "date": "2008-03-23T11:40:52.000Z",
+    "content": "Very interesting article. However, how do you handle the password part ? I understand you can designate a slingbox by its IP address, but how would you hack the password?\n\nThanks"
+  },
+  {
+    "author": "NerdBert",
+    "avatar": "88dc166a1763482fe6a98ce223de35cc",
+    "date": "2010-04-21T07:40:53.000Z",
+    "content": "I used a Slingbox for a while but ended up ditching it. Nowadays internet speeds are so fast that I can access TV via the internet.  I'm in Europe, so I use a VPN service to connect to either the US or UK (VPN gives me a local IP address, thus working around the outside the \"US/UK\" country blocking). Three of the best sites are Hulu, SeeSaw and BBC iPlayer.\n\nHere is a good updated list of the US/UK TV networks with free internet streaming http://www.vpntelevision.com Good luck in your quest for TV online!\n\nUncle Abe"
+  }
+]

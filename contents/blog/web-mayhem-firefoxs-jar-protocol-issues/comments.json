@@ -1,0 +1,140 @@
+[
+  {
+    "author": "kuza55",
+    "avatar": "2f6303f9095f59c14c3097ef4df566f5",
+    "date": "2007-11-07T04:19:53.000Z",
+    "content": "Nice find pdp!\r\n\r\nThis could probably also be used to avoid protocol blacklists which blacklits data: URIs as well to avoid XSS filters, and not just IDS'."
+  },
+  {
+    "author": "severity",
+    "avatar": "cfdf261e761cbfc46f2484abfc3218fa",
+    "date": "2007-11-07T04:21:36.000Z",
+    "content": "I get document.domain = null with: jar:http&#58;//example.com/1.zip!/1.html"
+  },
+  {
+    "author": "Gustavo Bittencourt",
+    "avatar": "189ea272538720c3222cc9b2aae1a6cc",
+    "date": "2007-11-07T04:45:29.000Z",
+    "content": "The bug 369814 became public after your disclosure.\r\n\r\nhttps://bugzilla.mozilla.org/show_bug.cgi?id=369814"
+  },
+  {
+    "author": "rado",
+    "avatar": "d025d43c89ca5da6b20fb27fdf6b73e9",
+    "date": "2007-11-07T08:46:54.000Z",
+    "content": "it doesn't work on Opera"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-11-07T09:06:54.000Z",
+    "content": "<div class=\"message\">I would like to stress one more time that any file that is derivative of ZIP can be used as an attack vector. Moreover, if an archive contains dynamic content such as Flash or HTML, which are vulnerable to attacks, attackers will be able to use them for their benefit.</div>"
+  },
+  {
+    "author": "firefox",
+    "avatar": "82e83802592a7461af6aedf1a7d991fc",
+    "date": "2007-11-07T09:29:39.000Z",
+    "content": "wonderful,i like this blog"
+  },
+  {
+    "author": "Wisec",
+    "avatar": "b33219b8c01e7bf5e352d614e26916cb",
+    "date": "2007-11-07T10:58:11.000Z",
+    "content": "Nice find Pdp! Even if you discovered it independently, in Bugzilla.Mozilla.org, the developers found this issue on Fabruary 2007 (with a p0c too)! I think it's unbelievable that such high impact issues take so much time to fix!!\r\n\r\nJust a suggestion to Moz-Devs: \r\nAt least as a quick and dirty fix, add in about:config a flag option which prevents remote site to use data: and jar: and chrome: and whatever. One option for each proprietary/odd uri scheme.\r\n\r\noh, standards answers like \"use noscript\" will be redirected to /dev/null.\r\n\r\nAgain kudos to Pdp :)"
+  },
+  {
+    "author": "Giorgio Maone",
+    "avatar": "290e868e00e8429bf1624a461b8ef81e",
+    "date": "2007-11-07T15:20:07.000Z",
+    "content": "Hi pdp,\r\n\r\nLatest NoScript development build took a quite drastic but reasonable (considering the behavior of other browsers) measure about JARs.\r\nJAR resources can still be loaded as images, applet classes and the like, but they cannot be loaded as documents.\r\n\r\nhttp://noscript.net/getit#devel"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-11-07T15:30:08.000Z",
+    "content": "good news as always! :) 10x Giorgio."
+  },
+  {
+    "author": "G-Brain",
+    "avatar": "870419564f7ebe6cb4f631e98e14e5dd",
+    "date": "2007-11-07T17:06:48.000Z",
+    "content": "Very, very nice. Another place to use this kind of thing would be a forum that allows attachments."
+  },
+  {
+    "author": "Sam St-Pettersen",
+    "avatar": "c2cb44abc9ad1c998cfe344160f76b21",
+    "date": "2007-11-07T17:35:14.000Z",
+    "content": "Maybe a local file restriction would be sensible. From my understanding, the only (justified) legitimate use for jar: is in Firefox extensions or XULRunner applications.\r\n\r\nAllowing their use in an online context can probably be avoided without any real backlash. Of course, I might be wrong. But I've only seen jar: used legitimately for the aforementioned purposes."
+  },
+  {
+    "author": "Sam St-Pettersen",
+    "avatar": "c2cb44abc9ad1c998cfe344160f76b21",
+    "date": "2007-11-07T17:37:35.000Z",
+    "content": "BTW Is that a photograph of a young(er) Brenden Eich? :)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-11-07T17:38:46.000Z",
+    "content": "heh, I don't know but it would be funny if it is :)"
+  },
+  {
+    "author": "Kibitz",
+    "avatar": "20d78c987cda1fec614e63ce857aa44d",
+    "date": "2007-11-07T17:55:09.000Z",
+    "content": "Regarding the nested jars within jars within jars that could contain a virus or other payload: what about A/V that scans at runtime? There are still lots of other considerations to be made, but this may be one small consolation to the huge list of issues that this discovery makes."
+  },
+  {
+    "author": ".mario",
+    "avatar": "89886495b27cfdc78593e1f5c8810594",
+    "date": "2007-11-07T18:51:11.000Z",
+    "content": "Reading the mozilla.org bug lists is like a Saturday noon shopping session ;) \r\n\r\nAnyway - as a developer you must _never_ trust user input especially when coming to uploads.\r\n\r\n1. Check MIME Type\r\n2. Check image size\r\n3. Check for HTML/PHP like patterns in the images source (http://phpfi.com/274478)\r\n4. Transform the image (other size AND other format) \r\n5. Finally place the image in the upload folder\r\n\r\nGreetings,\r\n.mario"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-11-07T19:09:37.000Z",
+    "content": ".mario yes, but I would like to stress one more time: any file can be used to carry the attack. Even TXT file can do the job. So for example, let's say that your application allows export of documents as TXT files. This is a potential problem."
+  },
+  {
+    "author": "Kishor",
+    "avatar": "8646bd4e904762c599e11665cc67f158",
+    "date": "2007-11-09T01:37:18.000Z",
+    "content": "Nice! as always.."
+  },
+  {
+    "author": "beford",
+    "avatar": "513bd234e89071690de6ddad6c11cbab",
+    "date": "2007-11-10T12:06:40.000Z",
+    "content": "pdp, this can also be abused if the site has an open redirect issue, I've posted a simple poc on my site. This makes the amount of 'now' vulnerable sites bigger :)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-11-10T12:51:12.000Z",
+    "content": "beford, I wrote a new post just for you :) very nice find!"
+  },
+  {
+    "author": "Peter da Silva",
+    "avatar": "caaefeae15811188de49e613614c32ff",
+    "date": "2007-11-12T17:19:17.000Z",
+    "content": "I see a few other issues here.\r\n\r\nFirst, there's a problem in the basic design of the handler. Conceptually, the file is not accessed through a \"jar:\" protocol, the fact that the file can contain content is an attribute of the file. It's the MIME type of the file that should result in the file being treated as a JAR file:\r\n\r\nhttp&#58;//example.com/path/to/file.jar#/path/inside/jar/file.html...\r\n\r\nThis would have avoided this problem right from the start.\r\n\r\nSecond, allowing arbitrary access to the contents of untrusted archives in any context is dangerous. Apple's been burned by this, Microsoft's been burned by this. What is the benefit of this handler that makes the risk worthwhile?\r\n\r\nThird: assuming this is allowed, the file should be treated as part of the directory tree of the hosting site. If it's redirected, that's the site in the redirect, not the site in the original URL. Are there other situations in Firefox where the original URL rather than the redirected URL are used for this purpose?"
+  },
+  {
+    "author": "opera11",
+    "avatar": "943a78f7f3deac36033688f95c4a889e",
+    "date": "2007-11-13T16:25:46.000Z",
+    "content": "It is interesting issue :) Good, that i dont use FF :)))"
+  },
+  {
+    "author": "sanjuro",
+    "avatar": "b6202ccdf0d30afd1d3eff7e9270b455",
+    "date": "2008-02-29T14:17:18.000Z",
+    "content": "Never heard of that \"jar:\" protocol. I wonder if this issue has been fixed by Google, Microsoft and everyone else since this post."
+  },
+  {
+    "author": "corrector",
+    "avatar": "344c9a2663aaab035315b8dac9277901",
+    "date": "2009-10-01T20:35:45.000Z",
+    "content": "\"Never heard of that â€œjar:â€ protocol. I wonder if this issue has been fixed by Google, Microsoft and everyone else since this post.\" Hug? What is this nonsense all about? There is not/was not, \"a Google, MS and every one else\" bug. There is (was) an awful, ridiculous, crazy, MS-sh*tware-style exploit-invitation-by-design FF obscenity. No one needs to fix anything except Mozilla. Someone needs to be fired, and that someone is actually so many people. FF credibility is ruined *forever* (or until this team is fired for good)."
+  }
+]

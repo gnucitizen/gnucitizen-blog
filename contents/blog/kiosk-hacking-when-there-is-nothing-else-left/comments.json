@@ -1,0 +1,62 @@
+[
+  {
+    "author": "Jonas",
+    "avatar": "c970dee63fb8c2f40d17e04454742964",
+    "date": "2008-04-07T17:46:43.000Z",
+    "content": "Thank you for some interesting reading. I'd love to hear more about your adventures in kiosk hacking. I've recently started looking at the possibilities of kiosk hacking, and it's kind of interesting."
+  },
+  {
+    "author": "hackathology",
+    "avatar": "271ecedbd232e23677ddc1d3956147eb",
+    "date": "2008-04-08T07:01:31.000Z",
+    "content": "Interesting post. I used to play around with kiosk and its pretty crappy when it comes to security."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-04-08T10:34:05.000Z",
+    "content": "there will be more kiosk hacking related blog posts released soon, some great stuff are coming soon from fellow researchers."
+  },
+  {
+    "author": "Awesome AnDrEw",
+    "avatar": "5e0f595cbc8f1811233adce10ac6c5d3",
+    "date": "2008-04-08T13:40:33.000Z",
+    "content": "Kiosks are far more popular, and widely available across European countries, right? I don't believe I have ever come across one in the U.S. as most hotels, airports, and other places I have visited either had an available Ethernet port, Wi-Fi, or service such as WebTV. I only remember using one once several years ago in a hotel in England where it cost several pounds to go online for an hour unless our definitions of kiosks are different."
+  },
+  {
+    "author": "Mike",
+    "avatar": "24d90db9e7de48f500cea793b087ae12",
+    "date": "2008-04-08T19:27:21.000Z",
+    "content": "*TRY* opening a folder in winblows and try navigating to this: <code>%comspec%</code>. There are other places where <code>%comspec%</code> works. Fun,  huh?"
+  },
+  {
+    "author": "Dd",
+    "avatar": "21e8129fed30bec19a216e6fb5b674f9",
+    "date": "2008-04-12T23:20:44.000Z",
+    "content": "A few things I've found while bored in airports:\r\n\r\nOften he company who owns the site lets you browse the company's site free of charge: try to find pdf's/wmvs other files which may not open in the browser but will run a native app from which you can get an explorer frame.\r\n\r\nThe <code>about:</code> address can be extremely useful, as anything you enter after the about will normally be echoed back onto the page. eg <code>about:&lt;script lang=...</code> etc.\r\n\r\nI once found a knoppix kiosk which was slightly locked down but gave a prompt <q>Would you like to run <code>/bin.bash</code> from it's current location?</q> when the appropriate path was entered as the address bar. Yes please.\r\n\r\nU3 drives, autorun explorer/ portable cmd shell.\r\n\r\nOne great, but unpredicatbale thing is when a native app pops up from behind the scene... eg <q>would you like to update program x? Updating...done. Wanna browse around <code>C:\\</code> to save a log file?</q>\r\n\r\nThe other great thing about java (with <code>.jar</code> files) is they're not executables, so the OS might have no problem running them. Java usually gets to see all attached drives, and can be used to copy files to the temp directory or others which may be rwx."
+  },
+  {
+    "author": "Thomas",
+    "avatar": "299b820a3f310c9cca9819d364dd4a28",
+    "date": "2008-04-22T19:19:48.000Z",
+    "content": "I used to be the VP of Operations for a Kiosk hardware and software company. They did music downloading kiosks. Doing this required available USB ports for MP3 player and thumb drives. They were open and available on the outside of the machine. The company thought they were safe because there was no keyboard so you were unable to close the kiosk app and get to xp in the background. The problem was all you needed to do was plug a usb keyboard into the available usb port and you had access to over 1.5 TB of Music."
+  },
+  {
+    "author": "C@puNx",
+    "avatar": "9dd08162699c76c4a52fa0e0d646db60",
+    "date": "2008-05-14T15:15:02.000Z",
+    "content": "Nice articles unfortunately I have tried this when I was on High school. but its quite nice as a memories"
+  },
+  {
+    "author": "vipera",
+    "avatar": "e302c4bb326b68fcf32b43ba6c69c8f3",
+    "date": "2008-06-27T23:02:21.000Z",
+    "content": "in response to Awesome AnDrEw\r\n\r\nyes eu has ALOT of kiosks, best thing is that 80% of them has an usb port \"made for uploading  pictures\", but most often with a few browser commands or exploits, u can get ur own apps running without a hassel.\r\n\r\nand about webtv, some kiosks provide both \"surf\" and \"tv\" (webtv in most cases), and even if they have locked down the surf part of the kiosk, the webtv part can most often be exploited, as they forgett all the fastkey commands many of those have.\r\n\r\nex: in germany i was stuck in a small town, needed encrypted vnc access to my box, wifi? none! kiosks, many! but never managed to break it. then i noticed the tv function. and noticed it was streaming over the internet from several \"live\" channels. a few key clicks and i found out what the player was and got an save prompt, the issue with that player was, the save prompt didnt only take the save file name, pipe it (|) and it would let u type in any *nix prompt commands i usually use. a few seconds later, it was running my ccvnc directly from usb without asking anything."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-06-28T06:08:24.000Z",
+    "content": "Nice one, I have a few tricks for Kiosk hacking maybe we should organize a Kiosk Hacking Challenge just like the Router Hacking <a href=\"http://www.gnucitizen.org/blog/router-hacking-challenge/\" rel=\"nofollow\">one</a>."
+  }
+]

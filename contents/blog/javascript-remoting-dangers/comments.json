@@ -1,0 +1,32 @@
+[
+  {
+    "author": "pagvac",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-01-30T23:56:16.000Z",
+    "content": "Nice job Acidus! This is a very nice summary of different ways to craft nasty HTTP requests using JavaScript."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-31T10:28:13.000Z",
+    "content": "very interesting summary. good stuff."
+  },
+  {
+    "author": "busin3ss",
+    "avatar": "f23b9ef5bd79326e8f77393579a94cea",
+    "date": "2007-02-01T07:07:22.000Z",
+    "content": "awesome article... you guys rock! Keep up the good work"
+  },
+  {
+    "author": "James",
+    "avatar": "d4518e6223a1a82f53dc4919d0165151",
+    "date": "2008-06-02T18:19:30.000Z",
+    "content": "Hello, \r\n\r\nCan you please clarify how this example works:\r\n\r\n<pre><code>var iframe = document.createElement('IFRAME');\r\n//have the IFRAME download the content we want to steal\r\niframe.src = 'http://site.com/AddressBook.php);\r\n//make the IFRAME invisible\r\niframe.style=\"width:0px; height:0px; border: 0px\"\r\n//set our function to call when the IFRAME is done loading\r\niframe.onload = callbackFunction;\r\n//now add the IFRAME to the DOM.\r\nDocument.body.appendChild(iframe);</code></pre>\r\n\r\nFrom what I can tell, the above code will only work if this script is included on the site.com domain.  iframes prevent access to their data by parent windows of different domain names.  Therefore, I don't see how an attacker can access this data?  \r\n\r\nI use this technique in one of my applications to pass data from one website to another, but I have control of both websites.  I placed a script tag on domainA from domainB.  without access to domainA, I don't see how this can be accomplished.\r\n\r\nI hope my question is clear.  Please email me if it's not as I feel it's important that I understand the security implications of this technique for my product.\r\n\r\nThanks,\r\nJames"
+  },
+  {
+    "author": "Vladimir",
+    "avatar": "1e4e7e58ea7ac7d01e32829962732fda",
+    "date": "2010-04-22T20:04:09.000Z",
+    "content": "One small addition - IMG vector can also get the image size in IE8 and IE9 through the attribute fileSize. More here: http://seclists.org/fulldisclosure/2010/Apr/288"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "author": "David Kierznowski",
+    "avatar": "1d95d2324345e3dd2e41d6066cc1b492",
+    "date": "2006-09-05T08:38:48.000Z",
+    "content": "Nicely layed out and explained. Eyeonsecurity also released an article. A link to this paper can be found <a href=\"http://www.cgisecurity.com/lib/flash-xss.htm\" rel=\"nofollow\">here</a>."
+  },
+  {
+    "author": "Frank Walsh",
+    "avatar": "5b3086d26c86e99c66264d74d881c167",
+    "date": "2006-12-04T00:46:09.000Z",
+    "content": "I believe this exploit was addressed with the release of Flash 9 right? There was a way to circumvent the <strong>allowscriptaccess</strong> tag using <strong>\\n</strong> to seperate the word javascript, but i believe that was also addressed in the flash 9 release, just wondering if i've missed something or my assumption here is right? Could you let me know.\r\n\r\nThanks"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-12-04T03:48:33.000Z",
+    "content": "Frank, this is not really an exploit but a walkthrough how to backdoor flash movies. Depending on what attributes you are using in the object tag that contains the flash movie you get different results. It is that simple. The purpose of this article is show that flash movies can be trivially backdoored with freely available command line tools.\r\n\r\nYour assumptions are right!"
+  },
+  {
+    "author": "Linn",
+    "avatar": "ff7cfe9f68bb77c20f90500f7c377896",
+    "date": "2007-03-28T18:06:11.000Z",
+    "content": "Do you happen to have the codes or cheats to Ghost in the Shell: SAC? there are areas where I have trouble.."
+  },
+  {
+    "author": "raaka",
+    "avatar": "11566af8dcd11e7aa34805614eab2385",
+    "date": "2007-07-20T06:32:00.000Z",
+    "content": "well from few weeks i am working on yahoo messenger. Trying to prove my concept of exploiting ***********, this is very useful indeed\n\nsorry for laaaate posting."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-07-20T06:33:46.000Z",
+    "content": "no worries. better late then never."
+  },
+  {
+    "author": "amer",
+    "avatar": "57bf356bfde5b184943e495855e9dfbb",
+    "date": "2007-10-04T06:36:10.000Z",
+    "content": "ineed"
+  },
+  {
+    "author": "James",
+    "avatar": "7905d373cfab2e0fda04b9e7acc8c879",
+    "date": "2007-12-23T00:21:39.000Z",
+    "content": "Hi\r\n\r\n&gt;&gt; The first tool to download was Mtasc from Nicolas Cannasse.\r\n\r\nI have found online tool for backdooring flash via javascript, look at it - http://iframe.in/"
+  },
+  {
+    "author": "Mmx",
+    "avatar": "c6fdfced1374e9e62e1985d0a2a9c49c",
+    "date": "2008-08-19T09:01:13.000Z",
+    "content": "What in the world is MovieClip.attackMovie() ?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2011-05-09T08:52:56.000Z",
+    "content": "attachMovie, fixed!"
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "author": ".mario",
+    "avatar": "7ef1c803c904b9a9834d3bd7645790bb",
+    "date": "2007-04-12T09:30:31.000Z",
+    "content": "I totally agree - if a site is XSSable already HTTPOnly cookies fix nothing. When not including a library like jQuery or Prototype it's way easier to create and event-submit a new form that foging a XHR."
+  },
+  {
+    "author": "christ1an",
+    "avatar": "8291d653ee8e5e106822c70bcb2ce782",
+    "date": "2007-04-12T13:37:20.000Z",
+    "content": "Thanks for this nice writeup, I also think that (unfortunately) a lot of people have a totally wrong understanding of HttpOnly cookies. For those I hope this page comes up first on Google when searching for HttpOnly ;)\r\n\r\nApart from that, nothing to add or criticize."
+  },
+  {
+    "author": "rezn",
+    "avatar": "8f8ff21a67437febebc70afd19364e95",
+    "date": "2007-04-13T11:55:41.000Z",
+    "content": "This is a nice description, however I want to point out a small (perhaps semantic) error which I often find people actually believe:\r\n\r\n\"Remember, session hijacking is possible because concurrent sessions are possible.\"\r\n\r\nMany people seem to believe this, and thus also believe that if they structure their applications so as to prevent a single user from having multiple concurrent sessions that they are safe from XSS.  Using someone's cookies does -not- create a new session - the attacker is sharing a single session with the target.  From the application's point of view, this looks like 1 session, not 2 concurrent sessions.\r\n\r\nWhile this is obvious to attackers, it is not always obvious to developers, so I think its important not to propagate the misunderstanding."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-04-13T12:58:17.000Z",
+    "content": "rezn,\r\n\r\nI see what you mean. However, the simplest probably check you can do is to verify whether the IP of the user changes. Although in some cases, that could be a problem, since a lot of user could use the same proxy server, it still can improve the situation.\r\n\r\nYou are saying:\r\n\r\n<blockquote>Many people seem to believe this, and thus also believe that if they structure their applications so as to prevent a single user from having multiple concurrent sessions that they are safe from XSS.</blockquote>\r\n\r\nI don't think that this is the case, although I see how this could tern out to be a problem when the developer does not have good understanding on what is XSS and what damage it can cause."
+  },
+  {
+    "author": "santa claus",
+    "avatar": "198da9d08e747b76f435be18073b8e81",
+    "date": "2007-04-17T07:16:16.000Z",
+    "content": "I want to see if i have this straight.\r\nYou say that HTTPOnly is completely useless because an attacker doesn't care about cookie information or hijacking sessions, he only cares about CSRFing you into doing something evil.\r\n\r\nWell, what if the only important thing to the attacker is getting the cookie information? (say, super-duper top secret information is stored there). Then what does the attacker do? \r\n\r\nI thought you were going to explain an easy way to bypass httponly and get the data stored in cookies. \r\nI still think if all you care about is protecting the cookie info from being stolen then httponly is a decent defense. Please correct me.\r\n\r\n(The only way i know of bypassing httponly is through the TRACE method that jeremiah wrote a whitepaper about. Are there other ways?)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-04-17T09:07:50.000Z",
+    "content": "santa claus,\r\n\r\nyou are saying:\r\n\r\n<blockquote>You say that HTTPOnly is completely useless because an attacker doesnâ€™t care about cookie information or hijacking sessions, he only cares about CSRFing you into doing something evil.</blockquote>\r\n\r\nno.. this is not what I am saying. All I am saying is that you shouldn't relay on HttpOnly cookies to protect against XSS attacks because session hijacking is one of the many things an attacker can do. In fact, most of the times you are not going to perform session hijacking simply because it takes time to get the victim at the right state.\r\n\r\nIf <q>super-duper top secret information is stored there</q> (the cookies) well then you cannot do much unless you use some sort of browser exploit. However, if <q>super-duper top secret information is stored there</q> then the client side won't be able to access it either. What's the point of having info there if you cannot use it. Your server side can access the cookie but again, why do you want to store sensitive information in a cookie? What is the purpose? If someone stores sensitive information in cookies, they are basically asking for trouble."
+  },
+  {
+    "author": "santa claus",
+    "avatar": "a86acda14fc9f7817f97254000d83f4b",
+    "date": "2007-04-19T00:30:14.000Z",
+    "content": "pdp,\r\n\r\nOk, thanks for clearing that up. \r\nI understand what you are saying better now..\r\nGreat post as always! =]"
+  },
+  {
+    "author": "Acidus",
+    "avatar": "e78ade355027be37b2192e622b14a46f",
+    "date": "2007-04-19T16:47:57.000Z",
+    "content": "pdp, You are my hero. Well, my hero after Samy of course."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-04-20T08:39:23.000Z",
+    "content": "Acidus, no no, You are my hero."
+  },
+  {
+    "author": "RSnake",
+    "avatar": "925701eb0336b28e47425f9ad6f27730",
+    "date": "2007-04-21T06:17:01.000Z",
+    "content": "This is really old news.  This was covered in an email by Thor Larholm 4 years ago:  http://www.securityfocus.com/archive/1/307778"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-04-23T08:44:35.000Z",
+    "content": "RSnake, yup... it is old news. Keep in mind though, that everything new is well forgotten old thing. For example, XSS used to be consider quite lame attack, although it is still quite easy to exploit, until the point some people forgot about it. However, today, XSS is considered as one of the most dangerous Web Application threads. Maybe my example is very clear but, again, keep in mind the following:\r\n\r\n<blockquote>Everything new is well forgotten old thing.</blockquote>"
+  },
+  {
+    "author": "Bipin 3~ Upadhyay",
+    "avatar": "4ae1ef77752857ddba8f31b247961386",
+    "date": "2007-07-24T09:50:06.000Z",
+    "content": "<blockquote>Everything new is well forgotten old thing.</blockquote>\r\n\r\nAgreed completely. :)\r\n\r\nBTW, although HttpOnly doesn't do *much*, yet we cannot deny that it does *something*. Adding another layer to the \"Onion Model\" is (most of the times) a welcome, IMHO.\r\n\r\n@PDP:\r\nI like the way you write. Most of the times, providing an overview of (or pointers to) basics for noobs. :)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-07-24T16:45:35.000Z",
+    "content": "I am glad to hear that."
+  },
+  {
+    "author": "Roy",
+    "avatar": "62716b513f8a1b89d07a099782df2f47",
+    "date": "2011-10-24T18:01:00.000Z",
+    "content": "I agree it will not (fully) protect you but I strongly recommend having HttpOnly turned on as it improves security by hiding your session id."
+  }
+]

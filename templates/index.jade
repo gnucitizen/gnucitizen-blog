@@ -12,7 +12,7 @@ mixin content()
         //- --
 
         - function shouldIgnore(basePage, filename) {
-        -     return basePage.metadata &&    basePage.metadata.ignore && basePage.metadata.ignore.some(function (ignore) {
+        -     return basePage.metadata && basePage.metadata.ignore && basePage.metadata.ignore.some(function (ignore) {
         -         return (new RegExp(ignore)).test(filename)
         -     })
         - }

@@ -1,0 +1,56 @@
+[
+  {
+    "author": "blem",
+    "avatar": "52bd5b432e31a2aeb8731776d1ea17a9",
+    "date": "2008-11-28T21:52:06.000Z",
+    "content": "Yeah, web becomes more powerfull :) and it is the reason why we should believe in web development :)"
+  },
+  {
+    "author": "sirdarckcat",
+    "avatar": "de37b9dc788b0268d438591e085e4496",
+    "date": "2008-11-29T20:45:44.000Z",
+    "content": "attacker 3 works on latest flash version. attacker 1,2 are not working, flash succefully blocks the click.\r\n\r\ngreetz!!"
+  },
+  {
+    "author": "sirdarckcat",
+    "avatar": "de37b9dc788b0268d438591e085e4496",
+    "date": "2008-11-29T21:01:18.000Z",
+    "content": "nevermind, attack3 is also not working"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-11-29T22:02:07.000Z",
+    "content": "really? I just tested it again on a fresh install."
+  },
+  {
+    "author": "xell",
+    "avatar": "6411749d80c623cc9ed2e0cba6856d17",
+    "date": "2008-11-30T19:23:01.000Z",
+    "content": "Didn't worked here with a fresh install."
+  },
+  {
+    "author": "sirdarckcat",
+    "avatar": "de37b9dc788b0268d438591e085e4496",
+    "date": "2008-12-01T03:07:04.000Z",
+    "content": "My version is 10.0.12.36\r\n\r\nhttp://www.adobe.com/products/flash/about/\r\n\r\nGreetz!!"
+  },
+  {
+    "author": "A",
+    "avatar": "9543626e4824c9eceb12e5b8b2a4c736",
+    "date": "2008-12-04T23:08:44.000Z",
+    "content": "SVG stands for Scalable Vector Graphic."
+  },
+  {
+    "author": "holiman",
+    "avatar": "c6fe4b4afb6c32a931f3d361d6305497",
+    "date": "2008-12-05T11:26:36.000Z",
+    "content": "Regarding \"cool\" new client side feature-rich UI possibilities, what's your take on javafx and silverlight (2.0)? They seem to be pretty suitable for UI-redressing. I have not looked into it them (yet), but definitely plan to."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-12-06T18:49:59.000Z",
+    "content": "yes, definitely. UI redressing is quite old technique. actually you can apply it to pretty much everything you can imagine."
+  }
+]

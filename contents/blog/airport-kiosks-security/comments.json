@@ -1,0 +1,56 @@
+[
+  {
+    "author": "Sam",
+    "avatar": "251be7ca34c483d9d7ab130ba89624dd",
+    "date": "2007-11-25T00:31:51.000Z",
+    "content": "Interesting stuff. Reminds me of the time I saw the BoSoD on an ATM and the Windows XP desktop on a scan yourself checkout."
+  },
+  {
+    "author": "naom",
+    "avatar": "6e962b3e879575f509d99b0ff85dfc68",
+    "date": "2007-11-25T02:23:17.000Z",
+    "content": "3 minutes killed out of 3 hours. Not bad."
+  },
+  {
+    "author": "Daniel",
+    "avatar": "8497a99a54da652a1a5bc617c62f4000",
+    "date": "2007-11-25T08:20:43.000Z",
+    "content": "Don't forget, under UK law you would have been persecuted for doing what you did. \r\n\r\nThe issue isn't you just pressing buttons, but the fact you never had permission to make that computer perform that function, which is the crux of section 1a of the computer misuse act.\r\n\r\nGood to see kiosk security is still as crap as ever though :)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-11-25T09:15:55.000Z",
+    "content": "Daniel, this section of the UK law should get a lot more specific. Otherwise, the bad guys can use it for their own good. First of all how do we know that this is not the intendet feature when the only input device that was used was the m-pointer. In USA for example, if u r hiding drugs in your car and u get caught when being searched by a cop who did not had any reason to, then you can get away and attack back the legal system. Same with IT. The law is vague but often based on case studies, which are even more vague. In IT sec we are constantly playing with fire even when all the work we do is legal. I can get into a lot more details but I will stop here."
+  },
+  {
+    "author": "cybergoth",
+    "avatar": "d58934255c84ad1da6e10b5dc474fd6f",
+    "date": "2007-11-25T19:32:18.000Z",
+    "content": "Some sitekiosks are connected to company's lan, few times I have successfully found intranet sites using your javascript port scanner."
+  },
+  {
+    "author": "n",
+    "avatar": "a3e91850fb798a4a5b8ce5c2e8b5c588",
+    "date": "2007-11-27T12:03:09.000Z",
+    "content": "Nice, how did you use the debug functionality to get the source code listing?"
+  },
+  {
+    "author": "sws",
+    "avatar": "bd59844b754ef4f8e7183faea98c115d",
+    "date": "2007-11-27T12:12:07.000Z",
+    "content": "oh no... so great ;) funny article..."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-11-27T17:27:17.000Z",
+    "content": "@n - just click on \"Show Complete Compilation Source\" on the .NET error page (see screenshot)."
+  },
+  {
+    "author": "cybergoth",
+    "avatar": "d58934255c84ad1da6e10b5dc474fd6f",
+    "date": "2007-11-27T17:29:34.000Z",
+    "content": "n, try some asp tricks like | and ~ , example: login|.aspx"
+  }
+]

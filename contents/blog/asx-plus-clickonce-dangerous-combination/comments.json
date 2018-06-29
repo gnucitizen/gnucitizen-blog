@@ -1,0 +1,26 @@
+[
+  {
+    "author": "Awesome AnDrEw",
+    "avatar": "5e0f595cbc8f1811233adce10ac6c5d3",
+    "date": "2007-11-05T17:45:35.000Z",
+    "content": "The POC points to a nonexistent file, but I understand what you're going for. I always enjoy the way people seem to figure out how to integrate these types of issues to totally mislead others into accepting potentially harmful files."
+  },
+  {
+    "author": "is there a fix?",
+    "avatar": "002eefa2175786221e0011b78be465dd",
+    "date": "2007-11-06T16:19:02.000Z",
+    "content": "Could you get a list of systems/trails/paths that are effected or changed.To my honest opinion the least knowledgeable should get free help and improvement suggestions respectable.Let's not forget not all of 50%er's brainpower got that HIGH!My alzheimers has me forgetting much and not knowing what I learned at early stages let just call it a curse and the tragedy of it is you know its coming.Does it speed up or all at once.Wow I wondered off again. hee! hee! \r\n\r\nI removed my WMplayer classic and the yoshidi codecs.Restored back to \"WmPlayer.10\""
+  },
+  {
+    "author": "swarup",
+    "avatar": "21bca55e31165e145d027285eed1202b",
+    "date": "2008-01-28T17:40:35.000Z",
+    "content": "Thanks PDP for this article. My system can be exploited if I use WM player to open the poc.asx file. What if I use Winamp or some other media palyer to open this file? does it have same amount of risk."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-28T18:49:21.000Z",
+    "content": "swarup, if you are using a different player then you might be protected but don't take my words for granted since I haven't investigated that yet. Though, the feature that I used in this post is mostly Windows Media Player related."
+  }
+]

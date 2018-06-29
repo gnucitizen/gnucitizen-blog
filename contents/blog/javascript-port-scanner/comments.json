@@ -1,0 +1,80 @@
+[
+  {
+    "author": "lol",
+    "avatar": "5670f67b3b200a9f69df0796ddb5ce4a",
+    "date": "2007-06-25T12:41:19.000Z",
+    "content": "It doesn't work properly, says everything is open......."
+  },
+  {
+    "author": "lol",
+    "avatar": "5670f67b3b200a9f69df0796ddb5ce4a",
+    "date": "2007-06-25T12:41:50.000Z",
+    "content": "In IE6 that is."
+  },
+  {
+    "author": "pdp",
+    "avatar": "711f58b095c5a8b45419d3e94df1129e",
+    "date": "2007-06-25T15:00:02.000Z",
+    "content": "as I said above, you may need to tweak the timeout value. but yes, the portscanner is not very stable and I don't think that it will reach the desired level of stability as I am using the DOM to detect open ports. however, it works most of the time. :)"
+  },
+  {
+    "author": "kwela",
+    "avatar": "1c0a2725f5103a63020d394e2c7e2214",
+    "date": "2007-08-30T09:20:59.000Z",
+    "content": "it seems that port 25 is always open?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-08-31T09:31:01.000Z",
+    "content": "kwela, yes port scanning techniques with JavaScript are not as accurate as the traditional ones. However, by tunning the script a bit you may get more accurate results. Keep in mind that this is still a very experimental field."
+  },
+  {
+    "author": "thisiswrong",
+    "avatar": "15eee9e7be27c9e419458728e29f9982",
+    "date": "2008-03-25T11:44:40.000Z",
+    "content": "this is all wrong ........ i get\n\n<pre><code>www.gnucitizen.org:333333333333333333333333333 open</code></pre>\n\nhow could this be possible....."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-03-25T13:10:15.000Z",
+    "content": "JavaScript port scanning is not very accurate as you can see :) but it does work in most of the cases. though, I haven't updated this code for a long time. also, adjust the timeout value as this is crucial in order to perform more accurate scans. moreover, <code>333333333333333333333333333</code> is kind of a big number. :)"
+  },
+  {
+    "author": "willem",
+    "avatar": "d91195b3f2eb6ca6cfb16a03fe9eea7f",
+    "date": "2008-04-19T15:07:43.000Z",
+    "content": "Hi\r\n\r\nIs it possible that some kind of protection is built in into Firefox to prevent JS portscanning? Whatever port I scan, I always get the answer open. Even with completly different hosts and timeout values.\r\n\r\nTIA\r\n\r\nWillem."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-04-19T15:19:49.000Z",
+    "content": "hmm, not sure. It could be because of NoScript or any other plugin that you may have installed. However, I've already suggested that browser port-scanning is not extremely accurate."
+  },
+  {
+    "author": "willem",
+    "avatar": "d91195b3f2eb6ca6cfb16a03fe9eea7f",
+    "date": "2008-04-19T17:12:01.000Z",
+    "content": "I've tested Firefox in safemode, but same result. Thanks anyway for your response :)"
+  },
+  {
+    "author": "yvrelna",
+    "avatar": "e9739ec5574d9977b522d1c80fb8de84",
+    "date": "2008-10-07T19:06:09.000Z",
+    "content": "Worse, I scanned port <code>jfivsdcd</code> and it's open... I wonder whether there is an alphabet port"
+  },
+  {
+    "author": "Jason Miller",
+    "avatar": "85ed8e6da2fbf39abeb4995189be324c",
+    "date": "2008-11-15T02:25:56.000Z",
+    "content": "The port scanner cannot detect ports that are blocked by your browser. The only way you could scan ports like 25 and 443 would be to use a server-side proxy."
+  },
+  {
+    "author": "Jason Miller",
+    "avatar": "85ed8e6da2fbf39abeb4995189be324c",
+    "date": "2008-11-15T02:27:39.000Z",
+    "content": "Perhaps try using a script, link or style tag to test - I don't think there are as many port restrictions for the HTTP Request methods used in those implementations."
+  }
+]

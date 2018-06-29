@@ -1,0 +1,104 @@
+[
+  {
+    "author": "Allan",
+    "avatar": "d651c8bfbaced80509519278b350d9bc",
+    "date": "2006-09-21T08:58:54.000Z",
+    "content": "Hmm doesn't seem to do anything on my Mac ..."
+  },
+  {
+    "author": "nrg",
+    "avatar": "3e0298a2854e87166f6ddcee1fe4e005",
+    "date": "2006-09-21T09:55:23.000Z",
+    "content": "Once again very good and intresting research. So basicly anything played in quicktime can be backdored? So basicly this is a quicktime problem. I am not an iTunes user but if you say that quicktime gets installed with it and used has default for several media files then it gets a bit scary :S\n\nI personly only use quicktime(not actual quicktime but the alternative codecs) when i can't use anything else, but i believe most persons would use quicktime to play everything if its the default player.\n\nPS: I just tryed the files number 1 and 2 and they won't open (say the files are corrupt) in winamp nor media player classic nor foobar2000, so i guess backdoring a mp3 file makes it only open in quicktime.\n\nkeep posting mate"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-09-21T11:27:20.000Z",
+    "content": "Allan, I don't know about MACs. However I am almost sure that it must work. Maybe I should get a MAC from somewhere and start playing with it.\n\nnrg, yes it affects QuickTime and everything else that is based on it. As long as your applications can read QuickTime Media Links and it supports the <code>qtnext</code> attribute of the <code>embed</code> element, then you are vulnerable.\n\nQuickTime is associated with .mov files mainly and several other formats. However if you have iTunes installed any .mp3 link will open the QuickTime browser plugin. I have tested it on a default installation of iTunes."
+  },
+  {
+    "author": "David Kierznowski",
+    "avatar": "1d95d2324345e3dd2e41d6066cc1b492",
+    "date": "2006-09-21T15:05:52.000Z",
+    "content": "pdp,\r\n\r\nThis doesn't seem to affect v6.5 default install. This is odd as I can see support for qtnext back in version 5. However, it does affect the latest version when I tested it."
+  },
+  {
+    "author": "Carsten Eilers",
+    "avatar": "abd931e5b40e5c82cf649e8c3d17556f",
+    "date": "2006-09-21T18:42:23.000Z",
+    "content": "Hi,\n\nI tested the first two .mp3 on my Mac (Mac OS X 10.3.9 with Safari 1.3.2 and Quicktime Player 7.1.3)\n\nResult:\nIn Safari: Both demos are working, an alertbox opens\nIn Quicktime Player: Opens and \"plays\" the files, but nothing else happens\nIn iTunes 7.0: Doesn't open the files\n\nRegards\nCarsten"
+  },
+  {
+    "author": "Daniel Veditz",
+    "avatar": "163df81d09d5d17ddeb3ddad0a0662a3",
+    "date": "2006-09-21T23:50:58.000Z",
+    "content": "about:blank is as unprivileged as you can get in Firefox. Some about: pages are privileged (about:config, for example) and there were previous security vulnerabilities where researchers were able to leverage a \"same-origin violation\" flaw into code execution by injecting script into an about:config window or frame.\r\n\r\nBut about:blank is a different kettle of fish."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-09-21T23:58:32.000Z",
+    "content": "Hi Daniel,\r\n\r\nI was experimenting with about:blank and yes you are right, it is unprivileged. However, it seams that it could be possible to access other about: resources."
+  },
+  {
+    "author": "ankini shah",
+    "avatar": "357a20e8c56e69d6f9734d23ef9517e8",
+    "date": "2006-09-22T23:29:16.000Z",
+    "content": "I copied the code below to a text file, saved it and named it a .mp3 and it didn't give me a prompt."
+  },
+  {
+    "author": "ankini shah",
+    "avatar": "357a20e8c56e69d6f9734d23ef9517e8",
+    "date": "2006-09-22T23:35:34.000Z",
+    "content": "the first example backdoored mp3 didn't work for me, but the second one (which printed at the end) did."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-10-02T06:07:50.000Z",
+    "content": "this issue is also present in Windows Media Player Clasic with QuickTime Alternative. I wasn't able to execute it from the browser but there was no problem when files were opened from the desktop."
+  },
+  {
+    "author": "Almonaster",
+    "avatar": "2ece1125c061d1e98e9b05e600e3c20a",
+    "date": "2006-11-02T19:52:53.000Z",
+    "content": "Some more data: I gave the links a click using Firefox 1.5 - the backdoors did nothing, the genuine tune played. I use the NoScript extension, so I tried disabling that - same result."
+  },
+  {
+    "author": "abcas",
+    "avatar": "56f6f443baedee2af74f0b6a1f7f34ee",
+    "date": "2006-12-23T12:34:00.000Z",
+    "content": "usefull cuzz it happened 2 me every tim i just explore a file with mp3 in it the explorer closes and starts again and when i scanned my comp i found the amount pf viruses = 2 the amount of songs (mp3 files) but i really cant fix it can u help me ????"
+  },
+  {
+    "author": "yamzzz",
+    "avatar": "76c2e8ea0d24b4a306ae5248d7474608",
+    "date": "2007-01-11T08:27:41.000Z",
+    "content": "nice!!!!!!!!!!"
+  },
+  {
+    "author": "0ole",
+    "avatar": "6a6c19fea4a3676970167ce51f39e6ee",
+    "date": "2007-09-14T11:13:47.000Z",
+    "content": "Doesn't works on Mac OS X with the latest Quicktime updates. Might be a Windows Quicktime only problem then."
+  },
+  {
+    "author": "Ari",
+    "avatar": "752611fa9c8acbdd0152f40da21c22ea",
+    "date": "2007-11-20T23:58:16.000Z",
+    "content": "Nice work ! But Kaspersky AV blocks these backdoored mp3 files."
+  },
+  {
+    "author": "tapasman",
+    "avatar": "17d6341e77fe4d53a943d53009d31e5a",
+    "date": "2007-11-27T18:14:11.000Z",
+    "content": "I get a broken file, when using IE6 and QT 6.0."
+  },
+  {
+    "author": "Mary",
+    "avatar": "41029836a736fd04dd8ddbd44bfc7a3c",
+    "date": "2008-04-06T15:44:42.000Z",
+    "content": "Hi, thanks. but my Kaspersky AV blocks this files :("
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "author": "christ1an",
+    "avatar": "8291d653ee8e5e106822c70bcb2ce782",
+    "date": "2007-06-25T15:12:36.000Z",
+    "content": "Very good writeup, I was doing quite a lot of research on this because such a situation was present on YouTube (http://www.youtube.com/advertise) a few days ago."
+  },
+  {
+    "author": "pdp",
+    "avatar": "711f58b095c5a8b45419d3e94df1129e",
+    "date": "2007-06-25T15:33:17.000Z",
+    "content": "what is interesting about this technique that is a combination of reflected XSS with a little help from the DOM."
+  },
+  {
+    "author": "pagvac",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-06-25T16:14:24.000Z",
+    "content": "This is VERY powerful. We're saying that if we can run \r\n\r\n<pre><code>&lt;script&gt;eval(name)&lt;/script&gt;</code></pre>\r\n\r\nas our XSS payload, then we can run JavaScript without any restrictions whatsoever.\r\n\r\nSo when testing for XSS, if we get a blank alert box when injecting \r\n\r\n<pre><code>&lt;script&gt;eval(name)&lt;/script&gt;</code></pre>\r\n\r\nthen we know we can run absolutely anything by visiting a third-party page that embeds our magic iframe."
+  },
+  {
+    "author": "Giorgio Maone",
+    "avatar": "290e868e00e8429bf1624a461b8ef81e",
+    "date": "2007-06-25T16:18:32.000Z",
+    "content": "If yours is new, I guess I can patent the following:\r\n\r\n<pre><code>with(location)with(hash)eval(substring(1))</code></pre>\r\n\r\nMuch easier to post everywhere, because it's self-contained and you don't need to control the window name.\r\n\r\nCheers\r\n--\r\nThere's a brower safer than Firefox... it's Firefox, with NoScript - http://noscript.net"
+  },
+  {
+    "author": "pdp",
+    "avatar": "711f58b095c5a8b45419d3e94df1129e",
+    "date": "2007-06-25T16:21:47.000Z",
+    "content": "Giorgio, no one is patenting anything, but your trick is cooler I must admit. Nice stuff... I love it. However, mine is still smaller... :) but heck I love self-contained stuff so you win. :)"
+  },
+  {
+    "author": "Giorgio Maone",
+    "avatar": "290e868e00e8429bf1624a461b8ef81e",
+    "date": "2007-06-25T16:39:07.000Z",
+    "content": "pdp, I was just kidding - Cenzic is enough about patents.\r\nOf course I wouldn't have figured out mine if I didn't read your [a-z\\(\\)] challenge, so many thanks for inspiration ;)\r\n--\r\nThereâ€™s a brower safer than Firefoxâ€¦ itâ€™s Firefox, with NoScript - http://noscript.net"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-06-25T18:07:30.000Z",
+    "content": "Giorgio, I've totally ignored the <strong>with</strong> statement. To be honest with you, I am not using it that often. In fact, I cannot remember the last time I've made any use of it apart from the time when I tried to create a sandbox within JavaScript which didn't work, so I had to use full blown iframes to imitate similar characteristics.\r\n\r\nAnyway, great stuff. RSnake should include this one into his cheat sheet."
+  },
+  {
+    "author": "pagvac",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-06-25T19:34:38.000Z",
+    "content": "Giorgio,\r\n\r\nThat's a killer snippet. Thanks a lot for that."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-06-26T05:53:49.000Z",
+    "content": "<div class=\"message\">Here you can find a snippet from a resent discussion on Sla.ckers.org about the techniques that were presented in this post</div>\r\n\r\n<blockquote>Awesome AnDrEw Wrote:\r\n<hr/>\r\nBut then in essence I would see the technique pdp has found as relatively useless unless it was able to be done through some type of service within the site. What I mean by that is I would think it'd only be useful if say I had the ability to post an IFRAME within a messageboard on the site that I am targetting, but then again it still is of little value. If you can get a user to navigate to a third-party page then you've already won, because you can use your own payloads without cross-site scripting as a prerequisite unless you absolutely need to use the frame to target the site.</blockquote>\r\n\r\nUse the right tool for the right job... although I find ma1 technique rather cool, it may not work in some cases. For example, changes in the fragment identifier wont result in page refresh which is what you might want to achieve in some cases. Also, there are ways to make the fragment identifier to go away via a series of redirections, which is something that happens quite often. Another bad thing about the fragment identifier technique is that although everything is inside the URL, it looks too suspicious. Very often, attackers will use a 3rd party website which upon user arrival does the actual exploitation. Not to mention the fact that in some cases the # hash is used as communication mechanism between frames which are served from different origins. Any use of the fragment identifier will break the communication. You don't want to do that if you want to be stealth.\r\n\r\nHere is an example. Let's say that you have a worm that exploits the user on several domains. For sure you can use the fragment identifier technique and compose URLs which are included inside a hidden iframe. However, you need to do all the manual work for nothing, when you can simply create the iframe, assign the name or the target with your payload and rotate the src value with the URLs you want to exploit. XSSED.com has tones of vectors that simply <code>alert(1)</code>. All we need to do in order to make them work is <code>/alert\\((1|'XSS'|\"XSS\")\\)/eval(name)/i</code> and start rotating them inside an iframe. The chances of this technique to work are higher mainly because we do not add that much more characters into the payload. We don't have to do any characters counting and we don't have to think whether there is something before our code that makes uses of the information after the # hash. believe me, more and more applications make use of the hash today.\r\n\r\nTo sum up... do not be ignorant. use the right tools for the right job. as you can see, there are real applications of the technique I described."
+  },
+  {
+    "author": "Acidus",
+    "avatar": "e78ade355027be37b2192e622b14a46f",
+    "date": "2007-06-26T19:13:15.000Z",
+    "content": "I'm not sure if you all know it or not, but the contents of window.name are persisted across domains for the lifetime of the browsing context. This means window.name can be used to as a global session storage system.\r\n\r\nFor example, site1.com writes a value into window.name. Any other websites that are visited in that browsing context (i.e. that browser tab or single browsing window) can read or write this value. In fact, I've got some cool demos where I track individual users across domains without web bugs/3rd part image server using JavaScript and window.name.\r\n\r\nIn fact, we touch on this in the upcoming Ajax security book in our attacking offline Ajax apps chapter. I even wrote a source code compatible implementation for Firefox's sessionStorage object for ther other browsers."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-06-26T21:07:22.000Z",
+    "content": "Acidus,\r\n\r\nI didn't know that. Actually this is very funny. I cannot see to what extend <code>window.name</code> can be used for malicious purposes although it is sort of interesting since it is almost like some kind of global dashboard where everyone can leave a message. So, we can implement some sort of a system where sites leave information about the user inside <code>window.name</code> and other sites can reuse that information in a clever way."
+  },
+  {
+    "author": "ascii",
+    "avatar": "9eb5ed1067bbc3c9675f8911316b7600",
+    "date": "2007-06-27T01:39:46.000Z",
+    "content": "i would like to patent (built on the maone's one)\r\n\r\n"
+  },
+  {
+    "author": "Kishor",
+    "avatar": "8646bd4e904762c599e11665cc67f158",
+    "date": "2007-06-27T03:23:22.000Z",
+    "content": "What about frame breaking code on acme?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "711f58b095c5a8b45419d3e94df1129e",
+    "date": "2007-06-27T08:32:21.000Z",
+    "content": "Kishor, what do u mean?"
+  },
+  {
+    "author": "ascii",
+    "avatar": "9eb5ed1067bbc3c9675f8911316b7600",
+    "date": "2007-06-27T10:08:35.000Z",
+    "content": "i would like to patent (built on the maone's one)\r\n\r\n<pre><code>&lt;img src=http://w onError=with(document)with(e)eval(unescape(innerHTML))</code></pre>\r\n\r\nplease tell me when the registration process is finished : )\r\n\r\nhttp://www.ush.it/2007/06/27/xss-cheat-sheet-two-stage-payloads/"
+  },
+  {
+    "author": "pdp",
+    "avatar": "711f58b095c5a8b45419d3e94df1129e",
+    "date": "2007-06-27T10:16:22.000Z",
+    "content": "ascii, I am opening a patent bureau. Please send your submissions to <em>contact <strong>at</strong> gnucitizen.org</em> or contact the GNUCITIZEN group at <em>group <strong>at</strong> gnucitizen.org</em>. thanks."
+  },
+  {
+    "author": "Kishor",
+    "avatar": "8646bd4e904762c599e11665cc67f158",
+    "date": "2007-06-27T14:51:39.000Z",
+    "content": "This code inside the page which is vulnerable:\r\n\r\n<pre><code>if (top.location != location)\r\n  top.location.href = document.location.href ;</code></pre>"
+  },
+  {
+    "author": "Kishor",
+    "avatar": "8646bd4e904762c599e11665cc67f158",
+    "date": "2007-06-27T15:15:02.000Z",
+    "content": "As per Acidus's comments\r\n\r\nHere is what I tried out,\r\n\r\n1.html:\r\n\r\n<pre><code>window.name = unescape(\"alert('XSS!');\");</code></pre>\r\n\r\nand \r\n\r\n2.html:\r\n\r\n<pre><code>breakframe();\r\neval(window.name);</code></pre>\r\n\r\n2.html still alerts XSS!\r\n\r\nSo it means we can use window.name even if frame breaking code is present.\r\n\r\nSo another 'with' may be necessary for window'.'"
+  },
+  {
+    "author": "Giorgio Maone",
+    "avatar": "290e868e00e8429bf1624a461b8ef81e",
+    "date": "2007-07-05T10:52:06.000Z",
+    "content": "SirDarckCat and I are having fun with PHPIDS at http://groups.google.de/group/php-ids/browse_thread/thread/f689a9c8cc934867 \r\n\r\nIncidentally, he just added some extra spice to hash (fragment) payload attacks:\r\n\r\n<pre><code>eval(unescape(location))</code></pre>\r\n\r\nThis works if you break the hash with a %0A (newline) before your payload, because:\r\n\r\n<blockquote>\"http:\" gets parsed as a label\r\n\"//host:port/path...#...\" is ignored until newline (C++ style comment)</blockquote>\r\n\r\nSo simple, so nice :)\r\n--\r\nThereâ€™s a brower safer than Firefoxâ€¦ itâ€™s Firefox, with NoScript - http://noscript.net"
+  },
+  {
+    "author": "pdp",
+    "avatar": "711f58b095c5a8b45419d3e94df1129e",
+    "date": "2007-07-05T11:17:54.000Z",
+    "content": "Neato!"
+  }
+]

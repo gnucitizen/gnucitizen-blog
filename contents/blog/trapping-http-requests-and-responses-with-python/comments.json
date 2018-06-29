@@ -1,0 +1,32 @@
+[
+  {
+    "author": "Jay",
+    "avatar": "b6a28fa0da793609f14027a39751a7a8",
+    "date": "2009-02-18T17:47:49.000Z",
+    "content": "Looks nice. You may want to consider the numerous WSGI objects / middleware for parsing request / response. \n\nIt's good that you can also get the data raw, but rather then writing \"yet another helper function\" I could see how being able to insert these standard components into your MITM stream would make it even more powerful."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-02-18T22:23:55.000Z",
+    "content": "Hi Jay,\n\nYou don't want to mess with WSGI for just parsing simple requests and responses. <code>MessageClass</code> is actually <code>mimetools.Message</code> which is enough to parse headers and leave the rest to you as pure data. Also, I like that the functions work in raw as often we just want to perform simple regex operations without reconstructing the data.\n\nThanks for the suggestions."
+  },
+  {
+    "author": "Anon",
+    "avatar": "c510febb9bed68b5cc4a09f076701e0f",
+    "date": "2009-02-24T06:06:11.000Z",
+    "content": "Out of curiosity, why not use Twisted for this? It seems like you reimplemented a lot of functionality."
+  },
+  {
+    "author": "Anon",
+    "avatar": "c510febb9bed68b5cc4a09f076701e0f",
+    "date": "2009-02-24T06:26:06.000Z",
+    "content": "Whoops, let me elaborate on my previous point - someone mentioned unit testing as a potential concern for this library. Twisted, although it does have its flaws, has constructs that allow you to simulate packet and connections and such with relative ease. Otherwise you're going to have to hack together something on your own for fully exercising the functionality of the library. \r\n\r\nThis is a good working script, but what's probably going to happen is that you're slowly going to tack more and more features onto until it becomes a nightmare to deal with until you decide to reimplement half of some existing networking lib from scratch in V2.\r\n\r\nhttp://twistedmatrix.com/trac/wiki/TwistedTrial\r\n\r\nAnyway, good work as has been said, i'll be keeping tabs on this.\r\n\r\n-Signed,\r\nJaded Software Engineer"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-02-25T11:07:51.000Z",
+    "content": "while it is true that twisted can provide a lot more solid base for this proxy server, the truth is that proxies are not that complicated. they are relatively simple actually.\n\nright now my code relies on pyOpenSSL but once the python team introduce SSL server support, it will be easy to switch and as such make the module run without any dependencies, which is my ultimate goal."
+  }
+]

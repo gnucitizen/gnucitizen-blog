@@ -1,0 +1,152 @@
+[
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-08T22:21:42.000Z",
+    "content": "here comes the stage6 video: http://stage6.divx.com/user/gnucitizen/video/1722388/BT-Home-Flub"
+  },
+  {
+    "author": "Hubert",
+    "avatar": "375c0284a6efd8899f2bc69dbf99d6e3",
+    "date": "2007-10-09T02:23:27.000Z",
+    "content": "Nice work. A configuration interface that's not web-based at all, like on my Apple Airport Extreme router might be a good idea after all.\r\n\r\nThe web and telnet interface on the Thomson router I've used was better designed and had more features than those I've seen on Belkin and Netgear devices, but obviously they have some work to do towards making it secure."
+  },
+  {
+    "author": "devloop",
+    "avatar": "cf3ff7853a134bfba57f96be896b037a",
+    "date": "2007-10-09T06:41:16.000Z",
+    "content": "Hi guys ! I found a similar vulnerability in a modem/router provided by one of our ISP in France (Neuf Telecom)\n\nThe router got a web administration interface WITHOUT password-protection and it's vulnerable to CSRF and a persistent XSS.\n\nIntruders can create NAT rules, change WEP/WPA encryption and password, activate/deactivate the hotspot or steal the credentials for the PPoA connection :p\n\nBut the router is very basic so it's not possible to change DNS servers or stuff like that.\n\nArticle here (in french): http://devloop.lyua.org/blog/index.php?2007/09/23/468-la-securite-de-la-neufbox-4"
+  },
+  {
+    "author": "phill",
+    "avatar": "7a73c170a64a3f5b5477cde76feb39d9",
+    "date": "2007-10-09T08:14:48.000Z",
+    "content": "I have a home hub. Is there anything I can do to stop this? Is there a port I can close or something?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-09T08:27:35.000Z",
+    "content": "phill, at the moment I don't think that there is a way to protect yourself from this type of attack at router level. You need to upgrade as soon as BT releases an update."
+  },
+  {
+    "author": "memals",
+    "avatar": "23463b99b62a72f26ed677cc556c44e8",
+    "date": "2007-10-09T08:41:45.000Z",
+    "content": "phill: just do not visit any maliciouss websites.\r\neasy ;)"
+  },
+  {
+    "author": "Mark Kent",
+    "avatar": "127018260c84206ff23de0c314db4487",
+    "date": "2007-10-09T09:20:42.000Z",
+    "content": "Hi Adrian,\n\nPlease send me any details you have, and I'll aim to get them to the right people in BT.\n\nBest regards,\nMark Kent"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-10-09T09:54:53.000Z",
+    "content": "phill,\r\n\r\nIf you are a fan of Firefox extensions, NoScript filters cross-site POST requests from untrusted to trusted sites. This protection should avoid someone exploiting your router if properly configured."
+  },
+  {
+    "author": "zip",
+    "avatar": "20576f636feeb1a41b30d9f090ab2e24",
+    "date": "2007-10-09T16:24:35.000Z",
+    "content": "Nice music, who is the artist ?"
+  },
+  {
+    "author": "blah",
+    "avatar": "10468ad8d146df7dc85e4f8c51ef542e",
+    "date": "2007-10-09T18:16:00.000Z",
+    "content": "What's the point of the post other then to promote yourself? Users of this modem have no work around let alone patch.\n\n\"However, I don't have high hopes for BT\" Obviously you didn't learn from your previous experience. If you releas code they'll fix it. By making your... annoucement you've given enough direction for people with malicious intent to find what you have. But you know all this.\n\nzip; the tune is a... Spanish? version of, the girl from ipanema."
+  },
+  {
+    "author": "robadams",
+    "avatar": "72d98cbf017621a2440026135969c992",
+    "date": "2007-10-09T20:32:07.000Z",
+    "content": "Caetano Veloso - Garota de Ipanema. Lovin' it"
+  },
+  {
+    "author": "vijay",
+    "avatar": "6b16c4e55cd0b1a9054c38d336f8dc8d",
+    "date": "2007-10-09T20:49:25.000Z",
+    "content": "Interesting research. Btw you can disable remote assistance if you follow the instructions at the following site: http://baldric.net/2007/01/22/bt-home-hub-and-the-gpl/ \r\n\r\nto get \"root privileges\" then under [ mlpuser.ini ] and delete \"defremadmin=enabled\" or better yet:\r\njust delete the tech user completely. You could also change the RAS port under [ system_raccess.ini ] although you wouldn't gain much."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-10-09T20:54:51.000Z",
+    "content": "btw, I forgot to give thanks to Jan Fry for testing the vulnerabilities on the Thomson/Alcatel's Speedtouch 780 (provided by BeThere in the UK). \n\nzip, the song is Brazilian I believe (sung in Portuguese).\n\nblah, I don't think there is anything wrong with publishing vulnerability research, especially when it's independent and unpaid. \n\nThe good news is we have been in touch with some technical people from BT who are in the process of verifying the vulnerabilities we found."
+  },
+  {
+    "author": "Taffy",
+    "avatar": "1e537fa4eeaf5358adbd3a6e92e1f9dd",
+    "date": "2007-10-09T22:47:24.000Z",
+    "content": "I dout BT will do anything .. as they already have a   bad reputation with this kind of stuff"
+  },
+  {
+    "author": "antivirustaneja",
+    "avatar": "6bb4ba2dd74e93656b857c9397b29db4",
+    "date": "2007-10-10T04:26:26.000Z",
+    "content": "Nice work...bt if you release the code as well only then they'll do as quickly as they can ....moreover hereafter they can't ignore your research......."
+  },
+  {
+    "author": "DavidB",
+    "avatar": "b98c01ec66a379144347eeb1cbdc9520",
+    "date": "2007-10-19T07:49:00.000Z",
+    "content": "I know there are supposed to be some malicious sites that have cross-scripting to perform attacks on machines/routers.  Does anyone have a list of these as I'd like to put some additional rules into my firewalls to prevent access to these sites?"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-10-19T19:25:55.000Z",
+    "content": "DavidB,\r\n\r\nThat would be very unfeasible. Probably the closest thing you can do to that is using a black-list database from some popular web content filtering proxy software.\r\n\r\nI mean, the malicious JS that exploits your router could be anywhere such as in a free .googlepages.com webpage."
+  },
+  {
+    "author": "John",
+    "avatar": "7e8241dcea25a2f0c5673668bf496287",
+    "date": "2007-10-21T14:55:40.000Z",
+    "content": "I've been looking into the BT homehub recently, I'm interested to see how secure the remote desktop facility is."
+  },
+  {
+    "author": "1337",
+    "avatar": "70212aaf094cb8b1b057b5b1fed8d59b",
+    "date": "2007-11-11T03:22:13.000Z",
+    "content": "Any exploits for Software version: 6.2.6.B ? These Homehubs really are weak.  A padlock from poundland is more secure!"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-11-11T14:10:34.000Z",
+    "content": "1337:\n\nThe CSRF, XSS and double-slash auth bypass are still there on version 6.2.6.B.\n\nFor instance, although version 6.2.6.B has now password-protected the page that shows the WEP/WPA, it's still possible to access it *without* authenticating by ending the URL with 2 slashes: \nhttp://192.168.1.254/cgi/b/_wli_/seccfg//\n\nTry it on your Home Hub. It should work. This means that people can still steal your WEP/WPA key by scraping the previous URL through one of the many XSS vulns still present on version 6.2.6.B.\n\nHowever, version 6.2.6.B has added lots of restrictions such as disabling telnet, remote assistance and worst of all: the config file is now encrypted/obfuscated!: http://192.168.1.254/cgi/b/backup/user.ini//\n\nHowever, I have not checked if uploading a clear-text version of the config file still works.  If so, you could still mod your own Home Hub without restrictions by simply editing user.ini.\n\nCheck out our other 'Pwnin the BT Home Hub' posts for more info:\n\nhttp://www.gnucitizen.org/blog/bt-home-flub-pwnin-the-bt-home-hub-2\nhttp://www.gnucitizen.org/blog/bt-home-flub-pwnin-the-bt-home-hub-3\nhttp://www.gnucitizen.org/blog/bt-home-flub-pwnin-the-bt-home-hub-4"
+  },
+  {
+    "author": "cephalopod",
+    "avatar": "5ce24e5343ee7322441f158307547419",
+    "date": "2008-01-11T11:20:04.000Z",
+    "content": "er... wouldn't a simple change of the homehub LAN IP prevent these hacks?!"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-11T11:26:50.000Z",
+    "content": "nope, it will make it slightly more complicated but in general it wont prevent anything."
+  },
+  {
+    "author": "cephalopod",
+    "avatar": "5ce24e5343ee7322441f158307547419",
+    "date": "2008-01-11T11:36:10.000Z",
+    "content": "looking at the majority of the XSS vulnerabilities, they make use of 192.168.1.254 in the javascript - so surely it'll prevent script kiddies exercising that?\r\n\r\nhow about combining that with deleting the tech user aswell... would that prevent all bar the UPnP vulnerability?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-11T11:40:08.000Z",
+    "content": "the only way to prevent UPnP based attacks is to disable UPnP on your router. On some router models this is not trivial at all and sometimes even impossible."
+  },
+  {
+    "author": "lahtib",
+    "avatar": "b22ced65c9b5101206db662305122188",
+    "date": "2008-02-17T01:51:10.000Z",
+    "content": "The song is \"Girl From Ipanema\" by Stan Getz...it's American, not portuguese or brazilian.  Great post!"
+  }
+]

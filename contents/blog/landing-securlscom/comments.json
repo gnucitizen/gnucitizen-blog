@@ -1,0 +1,14 @@
+[
+  {
+    "author": "David Kierznowski",
+    "avatar": "1d95d2324345e3dd2e41d6066cc1b492",
+    "date": "2007-06-30T22:22:54.000Z",
+    "content": "I have been excited about this release: keeping up to date with Google reader is great, but having a bunch of great security sites in one place and on one page is awesome!"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-07-01T06:23:01.000Z",
+    "content": "Yes, I think so too. Moreover, I hope that the user understands that we mashup feeds and other types of data in order to provide better quality of information. For example XSSED.com does not provide any means of extracting the information they collect, but we still have their feed which serves a good value of what's currently going on in terms of XSS exploits. For those who don't know what I am talking about, check out this <a href=\"http://www.securls.com/web\" rel=\"nofollow\">page</a>.\r\n\r\nThe projects to follow are <a href=\"http://www.blogsecurity.net\" rel=\"nofollow\">Blogsecurity</a> and <a href=\"http://www.hakiri.com\" rel=\"nofollow\">Hakiri</a>."
+  }
+]

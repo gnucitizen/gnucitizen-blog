@@ -1,0 +1,38 @@
+[
+  {
+    "author": "sws",
+    "avatar": "bd59844b754ef4f8e7183faea98c115d",
+    "date": "2007-10-17T10:12:02.000Z",
+    "content": "Hey, so great this article. Is the BT Home Hub in United Kingdom so popular? Is this a hub from a TeleService hoster(like dsl, voip, etc..)?"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-10-17T13:55:55.000Z",
+    "content": "Hi sws,\r\n\r\nThanks for your kind words.\r\n\r\nIf you go wardriving in the UK you'll see that \"BTHomeHub-XXXX\" (where 'X' is a hex digit) is probably the most popular SSID.\r\n\r\nThe Hub is provided by BT and is in charge of other types of services besides broadband, such as VoIP (BT Broadband Talk), UMA telephony (BT Fusion), digital TV (BT Vision) and now FON."
+  },
+  {
+    "author": "shrodikan",
+    "avatar": "f4b6db86d7ce8755ea1a97838a87f89c",
+    "date": "2007-10-22T23:44:19.000Z",
+    "content": "Hey PDP, I began reading your blog after I found a link to it from http://www.securityfocus.com (love your reports--very easy to read). I just wanted to say good job, they listened -- http://www.vnunet.com/vnunet/news/2201737/bt-hamstrings-home-hub-hackers\r\n\r\nThe world is a better place because of your research, keep up the good work!\r\n\r\nPeace,\r\nshrodikan"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-23T06:19:10.000Z",
+    "content": "cheers bro"
+  },
+  {
+    "author": "Pete",
+    "avatar": "6c86d9e33a5de2089f3abe6792285079",
+    "date": "2007-10-24T15:54:47.000Z",
+    "content": "Does the exploit work without having the BT Home Hub  admin browser window already open? If it does (which I assume) won't the exploit pop up a browser window? Is this why distraction is required w/ the youtube video?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-24T16:01:20.000Z",
+    "content": "Pete, the exploit is completely transparent. Nothing will happen. No browser windows will open. No warnings will warn you. Nothing!"
+  }
+]

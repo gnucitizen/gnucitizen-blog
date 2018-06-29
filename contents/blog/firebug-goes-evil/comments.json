@@ -1,0 +1,176 @@
+[
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-04-04T19:13:01.000Z",
+    "content": "<div class=\"message\"><a href=\"http://michaeldaw.org/\" rel=\"nofollow\">David Kierznowski</a> has verified the issue and also suggested that not only <strong>console.log</strong> is vulnerable.</div>"
+  },
+  {
+    "author": "Zeroknock",
+    "avatar": "324cb21954bb0ed6de3ac977499373f7",
+    "date": "2007-04-04T20:07:03.000Z",
+    "content": "Hey pdp\n\nI am working on the same issue but you got first. Thats good. I think the XPI stuff is going to creat a big problem in upcoming time for the Mozilla.\n\nRegards"
+  },
+  {
+    "author": "Delixe",
+    "avatar": "e6c03dab69dcb70b8e22f7ba45ea0e5b",
+    "date": "2007-04-04T20:26:14.000Z",
+    "content": "That is seriously scary as hell. Good find pdp."
+  },
+  {
+    "author": "zeroknock",
+    "avatar": "324cb21954bb0ed6de3ac977499373f7",
+    "date": "2007-04-04T20:39:08.000Z",
+    "content": "Hey pdp\r\n\r\nThe proof of code is not working exactly. You got a simple mistake in your code to some extent.This problem i was facing too but resolved it in this way.\r\n\r\nYou have to use [form tag] with name under which you will use form properties and objects like button etc. \r\n\r\nIn the Javascript layout , you must design a funntion annd pass form as its specified parameter.\r\n\r\n<pre><code>function exploitFirebug(form) {}\r\n\r\n&lt;form name=\"form\"&gt;\r\nObjects\r\n&lt;/form&gt;</code></pre>\r\n\r\nWith new specification the code wont get execute and the error results in this way  \"console.log not defined\".\r\n\r\nJust sharp a code bit."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-04-04T20:45:04.000Z",
+    "content": "Interesting, but the exploit works on my side. So you are saying that you receive errors on your side because I need to put the input elements inside a form? Give me an example. I've tried to exploit on a couple of machines and it worked flawlessly."
+  },
+  {
+    "author": ".mario",
+    "avatar": "7ef1c803c904b9a9834d3bd7645790bb",
+    "date": "2007-04-04T20:56:11.000Z",
+    "content": "Great find! Scary find - as professional webdev I use firebug on a daily basis. Since today always switched on...\r\n\r\nAgain, great find!"
+  },
+  {
+    "author": "Jordan",
+    "avatar": "bd38ec8896a46f6a173c7b80aac0d5be",
+    "date": "2007-04-04T21:13:23.000Z",
+    "content": "I've always run firebug, but since it causes a bit of a slow down anyway, I always disable it by default except on sites where I explicitly enable it.  Ironically, gnucitizen was one of those sites since I was playing around with carnival a while back.  The list of allowed domains is back down to domains I control... ;-)\r\n\r\nGood catch, pdp.  I think it's time to move my browsing habits into a sandbox... /me sighs."
+  },
+  {
+    "author": "Joe Hewitt",
+    "avatar": "15cf42a96576559fee2a0f904427b8a0",
+    "date": "2007-04-04T21:56:36.000Z",
+    "content": "I've released an update to Firebug which fixes this issue."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-04-04T22:02:47.000Z",
+    "content": "Thanks Joe,\n\nThis is why I like Firefox Extensions: they get fixed easily and the update is almost instantaneous."
+  },
+  {
+    "author": "Michael",
+    "avatar": "a0016c8a3b1fd65cc9e4dd2e5f5810b3",
+    "date": "2007-04-04T23:30:50.000Z",
+    "content": "Thanks for the heads-up.  I use Firebug all the time."
+  },
+  {
+    "author": "zeroknock",
+    "avatar": "324cb21954bb0ed6de3ac977499373f7",
+    "date": "2007-04-05T05:21:39.000Z",
+    "content": "Hey\r\n\r\nNot everyone at this point of time have patched this flaw.Still its hold concern.The question about the code is clear by underlined way.\r\n\r\nAn Exemplary Layout:\r\n\r\n<pre><code>function sendSpam(fspam)\r\n{\r\n\r\n}</code></pre>\r\n \r\n\r\nIn body section:\r\n\r\n<pre><code>&lt;form name=\"fspam\"&gt;\r\n Calling Objects\r\n&lt;/form&gt;</code></pre>\r\n\r\nThe form has to be passed as a handler.This will make the POC super flawless.The firefox sometimes wont load the variables if not defined in this way.\r\n\r\n<div class=\"message\">The DOM says: Window - Document - Form - Objects.</div>\r\n\r\nIts a good programmin layout free from all type os error functionality.You have to just add few lines of code.\r\n\r\nRegards"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-04-05T06:19:02.000Z",
+    "content": "gotch you, very weird behaviour though."
+  },
+  {
+    "author": "zeroknock",
+    "avatar": "324cb21954bb0ed6de3ac977499373f7",
+    "date": "2007-04-05T06:25:21.000Z",
+    "content": "Hey\n\nThats what i hate about this browser stuff. Sometimes it work and vice versa.\n\nBut Still we want the things to be done."
+  },
+  {
+    "author": "r4w8173",
+    "avatar": "dcefed997fdd1fe59e9800d12c5f986b",
+    "date": "2007-04-05T07:17:42.000Z",
+    "content": "It seems that you can disable firebug to prevent the exploitation, but I found out that if you load a local file firebug automatically enables itself even if you have disabled it.\r\n\r\nNice :)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-04-05T08:07:32.000Z",
+    "content": "r4w8173,\n\nthis is something David Kierznowski suggested as well. It seams that the Firebug disabling features work on http: and https: protocols but not on file:. On file: Firebug is enabled and you cannot do anything about it, unless you completely disable the extension from the Firefox Add-ons dialog."
+  },
+  {
+    "author": "C",
+    "avatar": "81093448990c40218147633947b83a64",
+    "date": "2007-04-05T15:23:21.000Z",
+    "content": "I'm using Firebug 1.0.1... is this version safe?"
+  },
+  {
+    "author": "Joe Grossberg",
+    "avatar": "f288a8afe5302a16a366d5e9d34f2fec",
+    "date": "2007-04-05T23:39:38.000Z",
+    "content": "C:\r\n\r\nNo. Upgrade.\r\n\r\npdp:\r\n\r\nWhy would you not have contacted the extension creator directly and waited a day for him to patch it? This seems irresponsible."
+  },
+  {
+    "author": "Joe Hewitt",
+    "avatar": "15cf42a96576559fee2a0f904427b8a0",
+    "date": "2007-04-06T01:11:26.000Z",
+    "content": "I'm about to release another Firebug upgrade which adds support for disabling file: URLs.  My apologies for not doing this in the first place."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-04-06T06:38:29.000Z",
+    "content": "<div class=\"message\">Thor Larholm has identified another vulnerability in Firebug which by nature is similar to my finding. This vulnerability affects 1.0.3 which means that you should disable Firebug for now. For more information about the new issue click <a href=\"http://larholm.com/2007/04/06/more-0day-in-firebug/\" rel=\"nofollow\">here</a>.</div>"
+  },
+  {
+    "author": "mahalie",
+    "avatar": "93c8230e89d7a7ba5dd5246aad8bdf08",
+    "date": "2007-04-06T21:57:31.000Z",
+    "content": "The above exploit has been fixed as well. Joe is very responsive and I thought it would be worth posting his response on the last link here as well:\n\n<blockquote>Joe Hewitt  says:\nApril 6th, 2007 at 3:44\n\nI have fixed this issue and and released 1.04.\n\nAs you suggested, I now escape all text before inserting it into HTML, rather than leaving it up to the caller. I've also added support for disabling file: urls.\n\nI hope there aren't any more vulnerabilities to be found, but if there are, please give me a day to patch it before you publish. I do appreciate you taking the time to make Firebug more secure, but it's better for everyone to have the patch surface before the exploit.\n\nIt is a good think that Firefox has an automatic update system, so every Firebug user should be secured within a few days.</blockquote>"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-04-07T06:14:55.000Z",
+    "content": "Joe G.,\n\nWe often need to take extreme routes to make a point otherwise nobody would listen. However, I knew that Joe Hewitt will patch Firebug very quickly because the extension has one of the cleanest source code structures I have ever seen."
+  },
+  {
+    "author": "Joe Grossberg",
+    "avatar": "f288a8afe5302a16a366d5e9d34f2fec",
+    "date": "2007-04-07T12:46:04.000Z",
+    "content": "pdp:\r\n\r\nIt seems to me that saying \"you have 48 hours to patch, before we publicize the exploit\" would be just as effective in making people listen."
+  },
+  {
+    "author": "Thor Larholm",
+    "avatar": "4550629aa60f7ef68d07db76ff7244ec",
+    "date": "2007-04-08T11:45:50.000Z",
+    "content": "I don't think there is anything extreme about publishing a vulnerability when you find it. sure, Joe could have been away for the Easter holiday visiting his family and therefor not been able to patch it immediately, but I fail to see how that is my concern. In that regards I have treated him no worse or better than I have treated Microsoft, Mozilla or Valve in the past.\r\n\r\nThis is research that pdp and I have independently performed. We're not employees of Microsoft or Firebug, instead we are altruistically researching and publishing the very things that others are also researching - but keeping private."
+  },
+  {
+    "author": "Joe Grossberg",
+    "avatar": "f288a8afe5302a16a366d5e9d34f2fec",
+    "date": "2007-04-08T20:50:11.000Z",
+    "content": "\"I don't think there is anything extreme about publishing a vulnerability when you find it.\"\n\nYou put software users unnecessarily at risk. That's what's wrong with it.\n\n\"I fail to see how that is my concern\"\n\nYep, there you go.\n\nYou are not \"altruistically researching\" anything when you don't consider what's best for the end users?\n\nThere aren't just two parties involved in these bug reports -- the software developer and the security researcher -- there is a third group with interests at stake: the thousands, if not millions of end users who are vulnerable.\n\nYou're right that you don't owe Joe Hewitt anything (though I would opine it would be nice if you extended common courtesy). And you also deserve credit for finding this security hole.\n\nBut you do a huge disservice to all the everyday users like me when you dismiss the possibility that \"Joe could have been away for the Easter holiday visiting his family and therefor not been able to patch it immediately\"."
+  },
+  {
+    "author": "Randolph Finder",
+    "avatar": "ecd4038308c7a4f1415662deaf92e7a8",
+    "date": "2007-04-12T20:03:06.000Z",
+    "content": "I'm looking for a way to detect the version of Firebug running *without* going into Firefox. Registry Keys, file version of specific files, file version in readme files, or anything like that. I'm trying to write a detection of vulnerable versions for a network scanner."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-04-12T20:21:33.000Z",
+    "content": "Randolph, so you are saying that you want to detect Firebug remotely? Right now, this is a bit difficult.\n\nIf you want to detect Firebug version without going into Firefox, but still being local, you can just read the install.rdf file from Firebug extension folder which is under the Firefox profile folder."
+  },
+  {
+    "author": "James",
+    "avatar": "f9fd29cf7c9236ba5fb939520280e6a9",
+    "date": "2008-07-28T14:39:21.000Z",
+    "content": "Thor,\n\nI don't think anyone here is saying you should bury the research. We all know that security through obscurity is a fallacy. However, asking you to delay publishing an exploit for a day or two is certainly not unreasonable. It helps protect the users more than the author.\n\nPremature publishing of explicit exploit information is one of the ways that \"zero-day\" problems become widespread. As a user of Firebug I'd rather you had talked to Joe first. Actually as a user of any software I'd rather you give it's author a chance to patch before publishing exploits.\n\nIf you feel you must post immediately, post the information that the vulnerability exists and some basic details without the full \"how-to\" and follow up later with the full disclosure.\n\nThere are certainly times where it's appropriate to use disclosure as a means to force action, but give the author a reasonable chance to respond. It's better for all of us.\n\nJames.\n\nPreviously Thor Larholm said:\n\n<blockquote>I don't think there is anything extreme about publishing a vulnerability when you find it. sure, Joe could have been away for the Easter holiday visiting his family and therefor not been able to patch it immediately, but I fail to see how that is my concern. In that regards I have treated him no worse or better than I have treated Microsoft, Mozilla or Valve in the past.\n\nThis is research that pdp and I have independently performed. We're not employees of Microsoft or Firebug, instead we are altruistically researching and publishing the very things that others are also researching - but keeping private.</blockquote>"
+  },
+  {
+    "author": "Outlaw Reviews",
+    "avatar": "7ecda5296862220b8eb6db6adad3ade9",
+    "date": "2009-11-30T07:47:00.000Z",
+    "content": "Yes I think you should inform the owner before you publish or you are just contributing to the problem. So that would make you just as guilty as the people causing all the problems on the net today. But on the other hand its people like you all that help keep the net safe just be responsable with your powers are you doing it for good or evil."
+  },
+  {
+    "author": "Sebastian",
+    "avatar": "92423b10619768a996f1b16a7e00fb75",
+    "date": "2012-06-04T09:08:31.000Z",
+    "content": "To be able to read this post, I had to use Firebug to make the font bold. You can't be serious."
+  }
+]

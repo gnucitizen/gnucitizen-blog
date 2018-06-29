@@ -1,0 +1,68 @@
+[
+  {
+    "author": "David Kierznowski",
+    "avatar": "1d95d2324345e3dd2e41d6066cc1b492",
+    "date": "2007-07-21T21:11:21.000Z",
+    "content": "pp, the top link is broken champ."
+  },
+  {
+    "author": "ntp",
+    "avatar": "e9e7690eccc0e9b2ab8ec6a375c96bbd",
+    "date": "2007-07-21T21:37:02.000Z",
+    "content": "i use http://scroogle.org/scraper.html and i think trackmenot (firefox extension) has some scroogle integration capabilities (although i don't use that)\r\n\r\nstealing search engine queries is nothing particularly new, and i've always enjoyed http://aolstalker.com"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-07-21T23:23:31.000Z",
+    "content": "ntp, the Google SearchHistory goes beyond the usual stuff. It records everything. I mean everything. Every query you did and every site that you've accessed from the search result pages. And if you are unlucky enough to have a Google Toolbar, then all your actions will be recorded. :)\r\n\r\nas I mentioned on FD:\r\n\r\n<blockquote>the point that I am try to make is that the attacker doesn't need to have access to your computer anymore. The data is available online 24/7. It is a lot easier to access Google Feed then some computer behind some obscured and poorly configured NATed network.</blockquote>\r\n\r\nMoreover, just to add here, attackers can access several people's profiles easily. And no tracks are left behind."
+  },
+  {
+    "author": "kuza55",
+    "avatar": "2f6303f9095f59c14c3097ef4df566f5",
+    "date": "2007-07-22T03:22:14.000Z",
+    "content": "I'm not really convinced towards the usefulness of this - its turned off by default, you can delete the service from here: https://www.google.com/accounts/EditServices and the service is clearly listed in the My Services section of My Account and once its deleted no-one (other than google who obviously keeps the data) can see your previous searches."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-07-22T06:54:00.000Z",
+    "content": "kuza55,\r\n\r\nfor sure you can delete the WebHistory, but check this out: <q>It is enabled by default!</q> How about that? check this <a href=\"https://www.google.com/accounts/NewAccount?continue=http%3A%2F%2Fwww.google.co.uk%2F&hl=en\" rel=\"nofollow\">link</a>\r\n\r\nGoogle WebSearch is just one of the many services that offer feed export. Pretty much everything else has that option too and can be accessed through basic auth. I know that this is an obstacle. However, keep in mind that the purpose of this post is not to show how to own people but elaborate on what can be done after that. I mean, if the attacker has access to your account, they may as well turn the WebHistory ON if it is OFF. All attackers want from you is to get your secrets. Consider it like the situation where you have a physical/remote access to a machine and now you want to install a rootkit or keylogger."
+  },
+  {
+    "author": "Dfcnvt",
+    "avatar": "89d4328a0bae76d13017a840f9448096",
+    "date": "2007-07-22T15:02:45.000Z",
+    "content": "I just thought of something, You can create a dummies account on google account and set Web History turned on. Have yourself Physical access to any computer and leave that dummies account logged on behind.. You'll have all the history saved information right on that account from whoever else used on that computer."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-07-22T15:22:47.000Z",
+    "content": "Dfcnvt,\r\n\r\nnot bad idea. now when I am thinking, you can use the WebHistory for pretty much everything, like a covert channel for a botnet... evil I know.\r\n\r\nI think might be able to present another presentation in OWASP US, this year. The topic will include things like the one you mentioned."
+  },
+  {
+    "author": "kuza55",
+    "avatar": "2f6303f9095f59c14c3097ef4df566f5",
+    "date": "2007-07-23T03:22:43.000Z",
+    "content": "pdp:\r\n\r\nAlright, it might be opt-out on the sign up page, but its not enabled for people who already had an account before they added the feature.\r\n\r\nAnd it doesn't really seem the kind of feature that people wouldn't opt-out of."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-07-23T05:20:19.000Z",
+    "content": "kuza55,\r\n\r\nplease understand that in order for someone to access your WebHistory they need to have your username and password on first place. This means that they can simply enable the feature if it is disabled. As I mentioned before:\r\n\r\n<blockquote>keep in mind that the purpose of this post is not to show how to own people but elaborate on what can be done after that. I mean, if the attacker has access to your account, they may as well turn the WebHistory ON if it is OFF. All attackers want from you is to get your secrets. Consider it like the situation where you have a physical/remote access to a machine and now you want to install a rootkit or keylogger.</blockquote>"
+  },
+  {
+    "author": "imipak",
+    "avatar": "8421d2087081781e55f056b6456e026e",
+    "date": "2007-07-24T10:29:31.000Z",
+    "content": "<blockquote>the real danger is that if someone has your account details, they could potentially become your invisible stalker.</blockquote>\r\n\r\n...but if they have your account details, they can log read/write your email as well. \r\n\r\nThis seems little different from \"root on your system can install software that can monitor all your activies!\" - yeah, password auth is crap - we know that..."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-07-24T16:40:14.000Z",
+    "content": "imipak,\r\n\r\nsorry I cannot get what you are trying to say. Yes, in order to get the WebHistory you have to have the account credentials and yes, in order to root a system you have to have system access. What's the difference?"
+  }
+]

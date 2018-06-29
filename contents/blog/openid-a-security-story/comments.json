@@ -1,0 +1,50 @@
+[
+  {
+    "author": "Jordan",
+    "avatar": "129b6f1bf6c627d5ca57779bd15ea649",
+    "date": "2007-08-20T12:03:07.000Z",
+    "content": "I imagine a variant of this greasemonkey script would work:\r\n\r\nhttp://userscripts.org/scripts/show/1404\r\n\r\nAt least for forcing HTTPS.  CSRF against identity provider domain requires a bit more thought.  For example -- aren't the open id pictures stored on their domain?  And surely we want to allow linking to the domain in general.  Separating out which requests are potentially malicious CSRF would require all \"action\" urls to be obvious on the domain.  To be honest, I haven't looked at Open ID yet to know whether that's the case."
+  },
+  {
+    "author": "Gareth Heyes",
+    "avatar": "7f5964ed9f043821b46150632596ed9a",
+    "date": "2007-08-20T12:20:14.000Z",
+    "content": "I did a bit of OpenID security testing and I found many providers open to CSRF attacks. I found a exploit against MyOpenID and helped many others fix their problems. But I'm still not confident in OpenID security and providers need to up their game if it is to be ever considered for real world usage.\r\n\r\nMy exploit can be found here, if anyone finds it interesting:-\r\nhttp://www.thespanner.co.uk/2007/06/29/openid-security-issues/"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-08-20T12:53:48.000Z",
+    "content": "Jordan, yes preventing CSRF is not an easy task. I personally don't know how this can be secured at browser level. Therefore, we need to relay on the remote website being responsible enough to take the necessary actions. The script you've provided is good but I was thinking is for the browser having the ability to detect the OpenID provider and force it in there.\r\n\r\nGareth, yes OpenID systems are full of CSRF today. It is not even funny. I don't know what developers were thinking when developing these systems. Thanks for the link."
+  },
+  {
+    "author": "Gareth Heyes",
+    "avatar": "7f5964ed9f043821b46150632596ed9a",
+    "date": "2007-08-20T15:38:51.000Z",
+    "content": "@pdp\r\n\r\nCSRF can be secured with form tokens and random page names. If the attacker doesn't know what the script is called then he can't perform a CSRF."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-08-20T15:43:52.000Z",
+    "content": "Gareth, yes of course, but what I meant is preventing CSRF on browser level... otherwise we relay on the external site getting their security model right."
+  },
+  {
+    "author": "Ronald",
+    "avatar": "80d7b8935b953dabd63268177b7981f6",
+    "date": "2007-08-21T13:03:27.000Z",
+    "content": "Indeed PDP, that is the biggest problem. Because the end-user is at risk here not the site owner persee. And I've pondered this question for a long time. Preventing it from happening in the browser is next to impossible. If we sitch to a different browser model we could potentially solve it.\r\n\r\nI have ideas, but they are only ideas.\r\n\r\nOne of them is to sign all external content that is being requested. If it's unsigned it fails to load and thereby it prevents CSRF minimaly. The thing is, how do you sign it? if the browser must sign it, it must know the sites key. And there you have a key management problem.\r\n\r\nAnother idea is to disallow any Javascript inclusion below the head tag -which is the toughest to control in case of an XSS- therby making sure all Javascript inclusions are only done in the head, and they may not be dymanically be altered: so signing them is an option.\r\n\r\nSo I have a couple of hints &amp; clues, no absolute awnser. There is a lot to be investigated in this area."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-08-21T13:12:02.000Z",
+    "content": "Ronald, I see what u mean. However, I would rather not start with certificates and stuff. It will make it too damn difficult to work it. I cannot see this happening. Moreover, Web2.0 mashups wont fit into tis model. There must be something else... or maybe not. Maybe the Web is just screwed up from day one and this is how it will remain forever."
+  },
+  {
+    "author": "mario",
+    "avatar": "426d0a0dcc1d942d2ac3addcf406c671",
+    "date": "2007-08-29T19:00:07.000Z",
+    "content": "OpenID is not an authentication protocol. It is meant solely for homepage URL verification. It's not user-friendly and was never meant as generic login scheme for the web. It restricts itself to the technical experienced, so you can practically rule out phishing scams. The other security gaps might be troublesome, but hey, I see you are running Wordpress anyhow..."
+  }
+]

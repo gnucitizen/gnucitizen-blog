@@ -1,0 +1,32 @@
+[
+  {
+    "author": "kuza55",
+    "avatar": "2f6303f9095f59c14c3097ef4df566f5",
+    "date": "2007-02-02T23:14:25.000Z",
+    "content": "Ok, excuse me if I'm wrong - but this seems like just another scare article, it tells us nothing about what you've come up with only that you've come up with some attacks.\n\nBut anyway; for maintaining control of a user there is one type of XSS vulnerability which can greatly help an attacker. XSS vulns which print data stored in cookies, but which you can set through request parameters, e.g. when you are allowed to choose a stylesheet for a site, or if a reflected XSS vector is printing a $_REQUEST value rather than a $_GET value.\n\nUsing the example of being able to choose a stylesheet; if you create a reflected XSS vector where you set the cookie to a value that is valid, but append some data so that you execute your script as well, and have the cookie set to last for years, you will effectively have control of the user's browser for the whole time they are on the site - which on sites like forums is an exceptionally long time. Furthermore you could even go so far as have your code rewrite the DOM so that when the user selects a new skin, the cookie is adultered so that the XSS payload stays intact."
+  },
+  {
+    "author": "Anurag Agarwal",
+    "avatar": "3e9f2f32eabcb5936766256d6e509c59",
+    "date": "2007-02-03T02:28:23.000Z",
+    "content": "If i am reading you correctly then you want to try out an XSS attack on all the external links on a web page to see if they are vulnerable to XSS. if they are then you spawn an iframe but won't it be easier to replace the url with the XSS attack vector rather then spawning a frame? the other point i would like to mention is the limitation with this approach is that you can only try out for XSS in the url or header variables."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-02-04T10:01:16.000Z",
+    "content": "kuza55, probably you misunderstand the article. Thanks for the info.\r\n\r\nAnurag, not exactly! What I am saying is that an AJAX worm can move with the user as long as the next page of destination is also vulnerable to XSS. It is that simple. When the user serfs further, the worm just follows like a shadow.\r\n\r\nIn order to achieve that you have to find all possible XSS vectors, in advance, for all external links given a starting point. So, you need a spider that will be able to detect XSS while visiting pages. Once the shadow is in motion, it will perform queries on some sort of remote database to retrieve information about the next XSS vector. When the user clicks on a link, the shadow will take that user to the specified place but also, it will be able to move itself as well. Hope that now the concept is clear enough?\r\n\r\nUnfortunately, I cannot present my POC because I have to share my research XSS database. This is very unethical, I believe. However, with a little bit of Python and a few simple XSS checks you can definitely write a XSS spider on your own. I might publish mine actually. Let me think about it first."
+  },
+  {
+    "author": "Anurag Agarwal",
+    "avatar": "3e9f2f32eabcb5936766256d6e509c59",
+    "date": "2007-02-06T01:05:32.000Z",
+    "content": "I had been thinking about the same thing. Here is my approach \r\n\r\n1. victimA is hijacked by exploiting its XSS vulnerability.\r\n2. I have control over all its links (internal and external)\r\n3. Internal links i am not worried about as i can pass them through my ajax worm (you can see the PoC on my blog)\r\n4. When it comes to external links, ajax wont work but i can still send all those links to attacker.com server and using any server side program i can check those sites for different types of XSS vuln and when found, i replace the link on victimA.com with the XSS attack vector so when a user clicks, the worm can be passed to the new site.\r\n\r\nAll this can be done without iframe.\r\n\r\n\r\nIf your approach is different, then i would be interested to know whenever you decide to post it."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-02-06T10:30:33.000Z",
+    "content": "Anurag, it is the same. However, I have all XSS vectors in advance for all external links, so the user doesn't have to wait.\n\nI have tested this technique on several Kiosk platforms and they kind of work. :)"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "author": "David Kierznowski",
+    "avatar": "1d95d2324345e3dd2e41d6066cc1b492",
+    "date": "2007-07-16T06:18:22.000Z",
+    "content": "Nice proof of concept. I agree, the speed of this spider and the depth option is awesome! Only a technical question, but can we call this a web spider as it doesn't really spider the site but rather fetches pages already indexed by Yahoo?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-07-16T06:22:23.000Z",
+    "content": "Interesting question. I am not quite sure, I must say. From my prospective, it is still a spider. However, what name do you think will suit best for a tool like this one?"
+  },
+  {
+    "author": "David Kierznowski",
+    "avatar": "1d95d2324345e3dd2e41d6066cc1b492",
+    "date": "2007-07-16T06:29:07.000Z",
+    "content": "Yahoo calls it \"Site Explorer\" :) however, its interesting to me that the service supports a ping and update feature, so maybe web spider is just fine."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-07-16T08:24:52.000Z",
+    "content": "You are right. Although I seriously doubt that Yahoo will craw the pinged website right away, more likely it will schedule it for some latter point, attackers that are interested in particular sites can ping for updates constantly thus ensuring that Yahoo has the latest index."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-07-16T12:34:09.000Z",
+    "content": "nice one pdp. I'm really impressed by the speed of the results! Couldn't believe it! damn you, you got me excited about this, even though I have other exciting toys to play with on my todo list :)\r\n\r\nRegarding the name I would call it a \"passive spider\", since it doesn't actually visit the target site, which makes it more ideal from the cracker's perspective."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-07-16T13:10:24.000Z",
+    "content": "heh, I am working on another one which allows you to perform XSS scans right from the browser."
+  },
+  {
+    "author": "Antonio Vivaldi",
+    "avatar": "060a68a5bccbda542386f67cbaa90012",
+    "date": "2008-02-29T13:05:26.000Z",
+    "content": "I only got excited until I read the code.  I need a JS spider that actually HITS the site (not fetches pages from a pre-spidered list of yahoo's).\r\n\r\nThe Web 2.0 world needs a new JS spider to handle link-checking, perf stats and a host of other things.  AJAX components and DHTML screw every spider that is not based on JS and a DOM.\r\n\r\nWhere can we go?  Has anyone written a true JS and DOM based spider (like a FF plug in) that actually spiders???"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-03-01T08:08:36.000Z",
+    "content": "it is not possible to construct true AJAX spider. Same Origin Policies apply."
+  }
+]

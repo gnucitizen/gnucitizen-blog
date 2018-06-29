@@ -1,0 +1,26 @@
+[
+  {
+    "author": "Brad Neuberg",
+    "avatar": "96da1b3d8858bfa0306b7c55d3e48270",
+    "date": "2006-10-04T19:36:57.000Z",
+    "content": "This is interesting but I'd like to see an actual working example. My Dojo Storage flash code, for example, must be invoked and loaded on page load since it depends on a document.write; I'm not sure if a dynamic SCRIPT tag could invoke it and set it up. If the original domain already has Dojo Storage or the given flash file then that is one thing, but what if it doesn't?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-10-05T01:34:16.000Z",
+    "content": "Hi Brad,\r\n\r\nI am planning to write hacked version of Flash Storage model soon. In this article I am presenting the technique and the theory behind it. Of course that is not sufficient.\r\n\r\nSoon there will be an examples as well and I am planning to do this in the 0.9 release of AttackAPI. Thanks for the comment."
+  },
+  {
+    "author": "Brad Neuberg",
+    "avatar": "96da1b3d8858bfa0306b7c55d3e48270",
+    "date": "2006-10-05T12:58:47.000Z",
+    "content": "The reason I say this is the devil is in the details when it comes to JavaScript Flash communication, so the theory might not work in practice (which Im hoping ;)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-10-06T01:32:24.000Z",
+    "content": "Brad, very good point. I have a few more things to finish before going into this issue. I get the feeling that it is possible but than again I've been wrong before, so you are right: the theory might not work in practice. Let's see."
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "author": "anonymous",
+    "avatar": "a316c5df8a71f897ab4ec571e6760e52",
+    "date": "2008-07-28T15:57:26.000Z",
+    "content": "http://iang.org/papers/pareto-secure.html\r\n\r\nawesome paper"
+  },
+  {
+    "author": "Eponymous",
+    "avatar": "ae361e550987cfaca8ca4d358d08735e",
+    "date": "2008-07-29T14:51:23.000Z",
+    "content": "I am familiar with Pareto, and I think the take home message from it is not the specific percentages so much as the general concept that problems and solutions are rarely matched up in perfectly equal distributions...the majority of your problems will come from a minority of symptoms and the majority of your diligence will result in a minority of your successes. It's most useful as a perspective tool for reminding us to constantly evaluate our efforts and be mindful of goals, effectiveness, and diminishing returns. It reminds us that \"work smarter, not harder\" is the operative phrase, that there is no such thing as fairness, and that constantly doing the same thing while expecting a different result is tantamount to insanity."
+  },
+  {
+    "author": "Yousif",
+    "avatar": "0cee37308e264139b018a3ce257f1e17",
+    "date": "2008-07-29T15:40:20.000Z",
+    "content": "Wow, that's a fascinating mentality to use in other aspects of life. It certainly does relate very well with our line of business, security. Thanks for sharing this creative viewpoint with us."
+  },
+  {
+    "author": "fatbloke2",
+    "avatar": "bda8aefd9b64344d6d432ab74fce1fa2",
+    "date": "2008-07-30T11:57:30.000Z",
+    "content": "@pdp\r\n\r\n\"70% of breakins are due to internal attacks - I suspect you are familiar with this ruleâ€¦ it just so happens that it fits here as well\"\r\n\r\nMmmm... not according to that recent Verizon report - see here: http://www.darkreading.com/document.asp?doc_id=156243 which indicates that 73% of breaches came from external sources.\r\n\r\nTo be fair, the statistic (like most statistics) is slightly misleading in that the report states that 62% of the external breaches were due to a significant internal error - so the conclusion is that breaches are a combination of both internal error and external opportunism - nothing new there I would suspect.\r\n\r\nBut I like your general statements, many of which seem to hold water or would be commonly accepted as reasonable by security professionals.\r\n\r\nUnfortunately (and from a business perspective) management would want to see proof of such figures from studies and so forth to determine whether they have any basis in reality so whilst we as security professionals would agree that the ratios for your statements seem reasonable, proving them is an entirely different matter and this is where a significant amount of difficulty exists.\r\n\r\nAnd of course, it is only provable statistics with solid evidence to back them up I would suggest which have value, especially from a business perspective."
+  }
+]

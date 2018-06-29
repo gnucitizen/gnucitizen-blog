@@ -1,0 +1,62 @@
+[
+  {
+    "author": "/nul",
+    "avatar": "743bc49157e4c2d7b3da2f13d7168181",
+    "date": "2007-04-28T15:08:41.000Z",
+    "content": "Seems like Germany/France adopted the same legislation... http://www.metasploit.org/archive/framework/msg01912.html"
+  },
+  {
+    "author": "David Kierznowski",
+    "avatar": "1d95d2324345e3dd2e41d6066cc1b492",
+    "date": "2007-04-29T19:58:31.000Z",
+    "content": "Had some interesting feedback from Daniel on this when I brought it up as a discussion point last year, see: http://michaeldaw.org/news/news-021206/"
+  },
+  {
+    "author": "Daniel",
+    "avatar": "1f74196b2e9b231e7ba9a49d2b61ec2c",
+    "date": "2007-04-30T08:13:46.000Z",
+    "content": "Obviously I have a fair amount of experience with the CMA and fighting it in court and these changes are typical of the way the law was initially drafted and also in showing the knowledge of the people involved. \r\n\r\nLets take an example of this CMA in action. Under the CMA, if you visit a website and enter your name and the site borks (ASP.NET error, JSP page throwing a wobbly, or something else) you have basically made the site do something it was not intended to do by the owner.\r\n\r\n<div class=\"message\">Doing the above can have you arrested and charged for causing a computer to perform an action that was not intended.</div>\r\n\r\nThe CMA is a sorry state of the UK's approach to the web, rushed, confused and overall, bad for anyone using the web in the uk"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-04-30T08:25:48.000Z",
+    "content": "I guess the main idea of CMA is look for someone to blame when it is required. If you happen to be the wrong person at the wrong time you get nailed for things you probably don't even understand. This way, companies can justify their loss across their investors. I wonder to what extent these changes will be applied."
+  },
+  {
+    "author": "Daniel",
+    "avatar": "1f74196b2e9b231e7ba9a49d2b61ec2c",
+    "date": "2007-04-30T08:34:39.000Z",
+    "content": "\"Heavily\" is one comment from a friend at the seckret net police (a.k.a hi-tech crime unit)\r\n\r\nThing is they have to be shown that they are doing something, but in reality they cannot catch the serious criminals as they have no clue, so it's the smaller cases which attract the headlines."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-04-30T10:32:18.000Z",
+    "content": "This is such a bad idea. So you are saying that the British Hi-tech crime unit will target security researchers just to prove that they are doing something? This is madness."
+  },
+  {
+    "author": "Daniel",
+    "avatar": "1f74196b2e9b231e7ba9a49d2b61ec2c",
+    "date": "2007-04-30T11:13:38.000Z",
+    "content": "It will be interesting to see how they do this. As everyone says, they develop tools NOT meant to be used in a malicious manner, but how do you prove that?\r\n\r\nLets use your XSS archive as an example:\r\n\r\nyou never meant people to use it in a bad manner, but some idiot went and defaced a site and he admitted (ok sexist in a way, but Joanna and the rest of the female community out there won't mind me saying this i hope..) that he got the knowledge from pdp and gnucitizen.org.\r\n\r\nThe archive has now been used in a malicious manner and you as the author are responsible, under this act*\r\n\r\nThe key bits seem to be:\r\n\r\n<ul>\r\n<li>knowledge - ... supply any article- knowing that it is designed or adapted for use ...</li>\r\n<li>intended use - ... for use in the course of or in connection with an offence ...</li>\r\n<li>breach - ... offence under section 1 or 3 ...</li>\r\n</ul>\r\n\r\n<strong>yes you aren't UK based, so you have nothing to worry</strong>"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-04-30T11:21:42.000Z",
+    "content": "actually, I am UK based but I am not British, which does not make that much of a difference... these changes apply to me as well and I heard that they will be implemented in all EU countries.\r\n\r\nOne thing that I cannot see how it is going to work is that if someone compromises a network claiming that they did that through whatever tool... how that can be proved. I mean, yes, someone can say that they used XSSDB on GNUCITIZEN to perform the stunt but they cannot prove their statement."
+  },
+  {
+    "author": "Daniel",
+    "avatar": "1f74196b2e9b231e7ba9a49d2b61ec2c",
+    "date": "2007-04-30T12:43:30.000Z",
+    "content": "Dinis did tell me you were, my bad, im blonde :p\r\n\r\nThe first thing the coppers would do would be to take the machine he used and do some shitty forensics on it. Now if the perp didn't know he was being raided, it would be unlikely that he cleared his cache, wrote zero's to the disk and reinstalled, if that wasn't the case they would use EnCase (the gentlemans choice when in the police force) and get the forensic evidence of all traffic sent from that machine,\r\n\r\nIf they really wanted to be anal, they could goto the ISP and request the logs. For all those who think that ISP's don't log traffic, haha err think again. Ever since the kiddy fiddlers started getting clever, ISP's have been under increasing pressure to conform. \r\n\r\nThen all they would need to do is join the dots."
+  },
+  {
+    "author": "suleman",
+    "avatar": "26650a77b5c64c08e12d943c75294003",
+    "date": "2010-10-13T13:46:50.000Z",
+    "content": "i think all this will teach the robbers good"
+  }
+]

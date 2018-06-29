@@ -1,0 +1,44 @@
+[
+  {
+    "author": "hanfi",
+    "avatar": "464220dbba92a957cf4fb21c7b0e15d8",
+    "date": "2008-03-24T22:55:21.000Z",
+    "content": "I think its similar to what a lot software troubles. Its the idea to process data trought one (more or less) secure point. Same goes, for example, in input validation. Basicaly its a good idea to have one function that does it for all data a application gets from the user. But on the other side, what if that single point breaks? Then eveything is f'ked up.\r\n\r\nI see it as some sort of monopol. If everyone uses the same way, everyone is affected by one break. IF the monopol is working, there is no problem.. IF Microsoft would make secure software, we wouldn't have the problems we have today.\r\n\r\nI think the idea behind OpenID is good in Theory. But in Reality, it shatters with the same reason MS shatters. It is NOT secure. There WILL be flaws. And since everyone uses the same...everyone will be attackeable the same way.\r\n\r\nDiversity may lead to a lot different ways to secure things, and i think lots of those actualy arn't designed good. But if one of those breaks, none else is affected. Unfortunately, we tend to go into a monoplized software biosphere. Thats not only MS. Its the same with wordpress, phpBB and a lot other software. What we seen recently with those mass-hacks, is exactly this problem. Its ONE software that has ONE flaw. And it makes almost everyone vulnerable since everyone uses it.\r\n\r\nAnother thing is, that most ways to secure a software uses the same way even if the software isn't the same.\r\nEven if phpBB and wordpress use different cookie names, they basicaly verify it the same way. So actualy we already HAVE a monopolized Biosphere.\r\nAnd therefore we can just move on to OpenID, since those people work on it do focus on the security only.\r\n\r\nSo my personal conclusion is, we SHOULD move on to OpenID. But we too have to REALY be carefull, since it WILL break. And when that happens its back to the application admins to clean up. As usual. Its always the admins who run in case something happens. We never can rest. Always bee carefull, and don't relly on the software. Software can't fix a unfixable problem. As long the Internet works as it does today, there is no way to prevent such things happen. \r\nAnd I dont think its too bad... another solution (just a example) would be to give every Internet-User a Key-card and a card-reader, only allow those verified into the Net...and I dont want that. It would maybe fix the technical vulnerablilities, but would open a HUGE door for social/governemental abusage.\r\n\r\nIn the end, i run. Fix my server, fix the Clients computers at work and in my circle of friends.. But on the other side... its what gets me my monthly paycheck or a beer and dinner at friends home. So why complain."
+  },
+  {
+    "author": "Sam Alexander",
+    "avatar": "9746ca072ecbf5358328109c4c12d4b8",
+    "date": "2008-03-25T01:21:34.000Z",
+    "content": "OpenID is allowing pretty awesome innovations from companies that want to focus on authentication security.\r\n\r\nFor instance, https://myvidoop.com"
+  },
+  {
+    "author": "Sam Hasler",
+    "avatar": "571fcc262681e200d76aabeac510d629",
+    "date": "2008-03-26T00:45:09.000Z",
+    "content": "Having your OpenID account breached may be more catastrophic for the individual affected as it takes all the guesswork out of what sites you use for the attacker, but I think it will happen less frequently as time goes on because of the way OpenID decouples the identification away from identity consumer sites.\r\n\r\nPreviously if there was a weakness in the login process of software used on many websites it would have been some time before they were all updated with any fix. Now with OpenID providers reputation dependent on how well they are secured it will be in their interest to respond to any security weakness (real or perceived) as quickly as possible.\r\n\r\nOf course many people will host their own OpenID provider but I'd still argue that the number of installations that have to be updated is reduced by an order of magnitude.\r\n\r\nThere will still be the problem of individual sites getting hacked, but as long as they aren't OpenID providers then it won't spread to any other sites because there won't be any passwords to steal. And if an OpenID provider were to get hacked, well we may be putting all our eggs in one basket - collectively a smaller set of baskets - but (if you'll excuse me mixing metaphors) previously the security of our password was only as secure as the weakest link in the chain - the least secure site you used - whereas now at least we can start to make better decisions about what level of security we are comfortable with for our identity, and make sure those baskets are lead lined and bullet proof."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-03-26T08:47:24.000Z",
+    "content": "Sam, that was a very extensive comment and I agree with you. We have to give OpenID a shot although it could fail for some cases. But all big boys are heading off towards OpenID so I don't think that they haven't spend good amount of money to consider all the risks."
+  },
+  {
+    "author": "Benjamin Stover",
+    "avatar": "f80dabcccd00903700320e831f749ffd",
+    "date": "2008-03-26T19:17:46.000Z",
+    "content": "\"If your OpenID account is hacked, the attacker will be able to login as you anywhere they want.\"\r\n\r\nIn a way, this is already the case.  We have single sign-on today: email.  An attacker can focus on getting the credentials for your email address, search through your inbox for services you have, and go to those services asking for a password reset."
+  },
+  {
+    "author": "Hahleq",
+    "avatar": "8dce1c6e5da89f70933636dc83644815",
+    "date": "2008-03-26T20:22:51.000Z",
+    "content": "Interesting and even decent points, but my main concern continues to be that OpenID as implemented today remains trivially compromisable.  Phishing, pharming, man-in-the-middle attacks are all feasible without any heavyweight client compromise (keyloggers or local trojans).  I believe to pdp's post that the big boys have signed on as OPs, but not RPs because they realize they can't yet rely on the authentication from other OPs.  Of course, they also have business reasons as well, but they do validly point to the security situation as to why they are only doing OpenID in one direction.\r\n\r\nVidoop is cute, but the \"click pictures\" thing has been done to death before and is just as weak as it has always been.  Consolidating all my logins to one site is exactly what I want, but I'm not creating a \"single keys to the castle\" situation without a MUCH stronger security mechanism in place.\r\n\r\nI love where OpenID, iCards, OpenSocial, etc. are all going, but they all are hindered by a truly secure implementation.  Soon as someone offers me one, I'm all over it."
+  },
+  {
+    "author": "Marcus",
+    "avatar": "9f3c3c2b5ddaf70d5a43422d9364ae9c",
+    "date": "2008-08-05T06:29:28.000Z",
+    "content": "OpenID is the beginning of open information sharing, which is exciting to see.\r\n\r\nOne login for all sites would be more than wonderful, talk about a world wide identity.\r\n\r\nMy only problem is OpenID makes you login with a URL, not really fond of this.\r\n\r\nThere are other solutions, like Aliixer's LoginShare for example, I think a more secure method.\r\n\r\nhttp://www.aliixer.com/share/"
+  }
+]

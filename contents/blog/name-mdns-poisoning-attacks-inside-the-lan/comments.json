@@ -1,0 +1,44 @@
+[
+  {
+    "author": "Mark",
+    "avatar": "2605c631f750b5f1522339cba2c4c252",
+    "date": "2008-01-25T23:42:31.000Z",
+    "content": "For additional fun and games grab a copy of unicornscan (http://unicornscan.org/) and have a play around with various payloads on port 5353. Strange things often happen ;)"
+  },
+  {
+    "author": "darcy",
+    "avatar": "87608e219b2e7d9c30bc66c7be2a6b18",
+    "date": "2008-01-26T23:51:06.000Z",
+    "content": "i install pyBonjour and ctypes.  i'm running python 2.4 on a mac (leopard). i get this error:\r\n\r\n<pre><code>$ python mDNS.py \r\n  File \"mDNS.py\", line 86\r\n    yield result\r\nSyntaxError: 'yield' not allowed in a 'try' block with a 'finally' clause</code></pre>\r\n\r\nany suggestions?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-27T09:37:42.000Z",
+    "content": "darcy, I think that you need Python 2.5"
+  },
+  {
+    "author": "hackathology",
+    "avatar": "271ecedbd232e23677ddc1d3956147eb",
+    "date": "2008-01-29T09:43:25.000Z",
+    "content": "i am interested in playing with mDNS, however too bad, i am quite restricted in terms of using tools"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-29T10:38:09.000Z",
+    "content": "hackathology, what do u mean... all you need is Python, byBonjour and Bonjour."
+  },
+  {
+    "author": "11x17 priinter",
+    "avatar": "eb846af3d0ac6230ea752e3ac6c0b0d3",
+    "date": "2009-12-07T15:04:18.000Z",
+    "content": "I think Pyhon 2.5 is fine"
+  },
+  {
+    "author": "plumber hertfordshire",
+    "avatar": "3d9f054e175d020e1452e6a4de807b52",
+    "date": "2010-12-02T08:49:59.000Z",
+    "content": "Interesting article for a newbie, A mDNS enabled client will perform a mDNS query on a multicast address. All clients that listen on that address will respond back with their names."
+  }
+]

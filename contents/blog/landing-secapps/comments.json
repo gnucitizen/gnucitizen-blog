@@ -1,0 +1,32 @@
+[
+  {
+    "author": "M*G",
+    "avatar": "c3569fd25ebdb9e390909df09cdefbbd",
+    "date": "2008-09-29T21:26:52.000Z",
+    "content": "You have beautiful Dorks ! Good Job ! @+"
+  },
+  {
+    "author": "V",
+    "avatar": "dd79aaf20f3fc1f650a5b8e9806f755d",
+    "date": "2008-10-01T07:04:04.000Z",
+    "content": "What about Whiteacids POST-Forwarder? It is offline for weeks now. \r\nhttp://www.whiteacid.org/misc/xss_post_forwarder.php"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-10-01T08:52:38.000Z",
+    "content": "yes, this is coming soon. we used to have a CSRF proxy here at GNUCITIZEN as well."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-10-01T19:23:52.000Z",
+    "content": "the csrf tool is now up on secapps"
+  },
+  {
+    "author": "w0lf",
+    "avatar": "e284ff0fb57a473610f3e5fda9daa423",
+    "date": "2008-10-03T11:00:52.000Z",
+    "content": "CSRF tool seems to be cool. But need to test it out. Will do it after office hours :P"
+  }
+]

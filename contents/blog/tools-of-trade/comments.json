@@ -1,0 +1,26 @@
+[
+  {
+    "author": "mindcorrosive",
+    "avatar": "be3b138352dc100c9459e612b275b413",
+    "date": "2009-04-10T21:43:06.000Z",
+    "content": "Very true. I can't remember the times I've struggled with a seemingly simple (but boring and tedious) computing operation that I would have done in, say, 10 minutes manually, but instead spending several times more fooling around with more sophisticated tools. One easy thing that works for me in this cases -- when you're going to experiment with an allegedly \"time-saving\" tool, specify a time limit for playing with it to get the right result. I'd probably set it at something like 30-70% of the available time, just to have a margin for still doing it the 'stupid' way."
+  },
+  {
+    "author": "holiman",
+    "avatar": "c6fe4b4afb6c32a931f3d361d6305497",
+    "date": "2009-04-12T19:08:10.000Z",
+    "content": "You are *so* right. And not just for pen-testing, but all aspects of software development. Developers (or, more commonly, managers) stare themselves blind at tools and acronyms, which is why CV:s usually are mostly long lists of tools. \r\n\r\nI try to live by the motto: \"There is no magic\". If I find that a particular tool contains \"magic\", I need to dispel that magic by finding out how it works - and by understanding it I will be able to do it myself if that particular tool should not work."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-04-13T08:21:12.000Z",
+    "content": "I think that we need to concentrate more on the practical side of things..."
+  },
+  {
+    "author": "nobody",
+    "avatar": "0e2508812cc95321ec8762e29809961f",
+    "date": "2009-07-27T16:16:16.000Z",
+    "content": "I would like to confront the \"holiman\" by expressing an opinion opposite to the common understanding that there is \"no magic\". There is magic and it is very real. Magic is when you find something first! By the time you understand things a.k.a. \"magic\" more \"magic\" is being created, by magicians of course not by you. :) Same applies to so called tools. I am really enjoying myself when I read about so called \"security\" exploits. The real security exploits are never made public. System compromises that are worth mentioning are never made public also. What is published on the Internet is a waste of time. And ouch :) Google is not your friend."
+  }
+]

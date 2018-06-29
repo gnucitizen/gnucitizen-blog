@@ -1,0 +1,74 @@
+[
+  {
+    "author": "Rewind",
+    "avatar": "1be0cc81b33722a9bb3dd64ab7011461",
+    "date": "2008-05-15T20:04:45.000Z",
+    "content": "I have thought about something of the kind (using onkeydown). My idea was to create a page which set web browser fullscreen, for hiding the real address bar, and remake it with an input balise. After that, you can control what you want, can't you ?"
+  },
+  {
+    "author": "fazed",
+    "avatar": "9bac8baa8ae20d56ec0320a2f2c33c82",
+    "date": "2008-05-15T23:45:14.000Z",
+    "content": "nice work :)"
+  },
+  {
+    "author": "echoHI",
+    "avatar": "f562ffe3ce026981f54a75d0364328b3",
+    "date": "2008-05-16T04:11:34.000Z",
+    "content": "cool:) I will try to do the further work."
+  },
+  {
+    "author": "fragge",
+    "avatar": "3279b01e2d7bc17250897f4c3b47d27d",
+    "date": "2008-05-16T04:48:37.000Z",
+    "content": "Excellent post Eduardo ;) keylogging script from a hyperlink! wow."
+  },
+  {
+    "author": ".mario",
+    "avatar": "89886495b27cfdc78593e1f5c8810594",
+    "date": "2008-05-16T07:39:39.000Z",
+    "content": "Awesome research and very good writeup, SDC. I wouldn't have expected anything but quality from you anyway ;) \r\n\r\nGreetings, .mario"
+  },
+  {
+    "author": "tilki",
+    "avatar": "7ef2e1dc36f594a9599b3f46800d1226",
+    "date": "2008-05-16T10:14:40.000Z",
+    "content": "hi.. good ... :)the turkhackteam...!!! tirtil..."
+  },
+  {
+    "author": "Awesome AnDrEw",
+    "avatar": "5e0f595cbc8f1811233adce10ac6c5d3",
+    "date": "2008-05-16T14:02:00.000Z",
+    "content": "Although I did not use the open method I did come up with something quite similar months ago for an example, which was able to capture the keystrokes placed within an IFRAME element in order to then transmit them back through images in order to provide a basic web key-logger. I do believe I read about this presentation on some other website, but no proof of concept was attached at the time. Nice work."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-05-16T17:13:52.000Z",
+    "content": "yes, excellent research and very interesting indeed. Will mention it tmrw at CONFidence."
+  },
+  {
+    "author": "Foobar",
+    "avatar": "a854707dca048e22d1bd1621262ad6b5",
+    "date": "2008-05-16T17:41:56.000Z",
+    "content": "Yah,\r\n\r\nCaballero's work is much greater than this. He can insert cross domain javascript etc..."
+  },
+  {
+    "author": "Venom23",
+    "avatar": "7cbc92539908016d963e676d90fd26fe",
+    "date": "2008-06-28T06:55:18.000Z",
+    "content": "I found a PoC link. Perhaps some reader is interested. \r\n\r\nhttp://raffon.net/research/ms/ie/crossdomain/string.html#"
+  },
+  {
+    "author": "sirdarckcat",
+    "avatar": "de37b9dc788b0268d438591e085e4496",
+    "date": "2008-06-29T08:42:05.000Z",
+    "content": "@Foobar:\r\n&gt; Caballeroâ€™s work is much greater than this. He can insert cross domain javascript etcâ€¦\r\n\r\nI dont think so.. but an interesting discovery, revealed that this one can also make stuff cross-domain ;)\r\n\r\nhttp://www.ph4nt0m.org-a.googlepages.com/PSTZine_0x02_0x04.txt\r\n\r\nSo well.. yeah.."
+  },
+  {
+    "author": "Alok",
+    "avatar": "68007b4cbd4d6e476404dbfd36a37a1d",
+    "date": "2008-07-03T10:24:55.000Z",
+    "content": "Nice wrk .. key loggers working with simple html pages."
+  }
+]

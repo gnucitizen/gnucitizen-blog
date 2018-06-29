@@ -1,0 +1,50 @@
+[
+  {
+    "author": "AJ",
+    "avatar": "2fa599c05ae9e243f6e0d043cc67ef32",
+    "date": "2008-01-21T11:40:50.000Z",
+    "content": "Is the attack directed at the ip address of your LAN interface or a multicast address., and if so would changing the default addresses give any protection"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-21T11:49:21.000Z",
+    "content": "AJ,\r\n\r\nhas nothing to do with LAN or multicast addresses. The attack is directed to devices that have public IP addresses and UPnP enabled on public HTTP ports."
+  },
+  {
+    "author": "AJ",
+    "avatar": "2fa599c05ae9e243f6e0d043cc67ef32",
+    "date": "2008-01-21T12:02:17.000Z",
+    "content": "The proof-of-concept that is shown goes after the known ip address of the router."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-21T12:20:07.000Z",
+    "content": "AJ, I seriously do not understand what you are trying to say. In the previous posts we showed how to exploit UPnP on most routers as most devices have such facilities but only available for the local network. In this post we warn that there are many externally facing devices that has UPnP functionalities enabled as well. The first scenario requires the browser to perform the request since the attacker does not have local access. The second scenario provides the attacker with the ability to send the right type of require straight to the device without the need of any convoluted attack setup."
+  },
+  {
+    "author": "iilab",
+    "avatar": "4afbc87dbffd84f20a6f13a9cd9f633d",
+    "date": "2008-01-22T06:36:29.000Z",
+    "content": "Is that true?"
+  },
+  {
+    "author": "Markus",
+    "avatar": "3d2a2032d9c6fddbd0cbe92e5976a9a5",
+    "date": "2008-01-23T11:47:55.000Z",
+    "content": "Why you dont send a email to them? Maybe they change it then"
+  },
+  {
+    "author": "Avee",
+    "avatar": "91eb90c2c8e3694a2f8b75390b13e3ef",
+    "date": "2008-01-23T18:26:18.000Z",
+    "content": "My Thomson WL780i resolves http&#58;//speedtouch/ to the router itself. No need to find out its IP-Address."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-23T18:44:43.000Z",
+    "content": "yes, as well as BT Home Hub is just http&#58;//api.home and most routers will respond to http&#58;//home"
+  }
+]

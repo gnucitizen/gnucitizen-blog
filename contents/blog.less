@@ -43,9 +43,55 @@ a {
     }
 }
 
-.video {
-    width: 100%;
-    height: 420px;
+#post-content {
+    img {
+        border: 1px solid #cccccc;
 
-    box-shadow: 7px 7px 0px #ccc;
+        box-shadow: 7px 7px 0px #ccc;
+
+        margin: 20px 0px 20px 0px;
+
+        & + img {
+            margin-top: 0px;
+        }
+    }
+
+    .video {
+        width: 100%;
+        height: 420px;
+
+        border: 1px solid #cccccc;
+
+        box-shadow: 7px 7px 0px #ccc;
+    }
+}
+
+#post-comments {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.post-comment {
+    word-break: break-word;
+
+    margin-bottom: 20px;
+
+    clear: both;
+
+    img {
+        width: 50px;
+        height: 50px;
+
+        float: left;
+        
+        margin: 0px 10px 10px 0px;
+    }
+    
+    &:after {
+        content: " ";
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
 }

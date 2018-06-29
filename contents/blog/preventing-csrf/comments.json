@@ -1,0 +1,260 @@
+[
+  {
+    "author": "Giorgio Fedon",
+    "avatar": "4a5253071ab404f6edb3f3690e14c57d",
+    "date": "2007-03-30T12:02:23.000Z",
+    "content": "I think that it's a smart way to prevent CSRF. It's easy to implement and works most of the time.\r\nI would not use BTW the Cookie SessionID (inside the form) because could be leaked somewhere inside the html page.\r\nI would use something like hmac (hmac(SESSIONID + Secret))."
+  },
+  {
+    "author": "Tyop?",
+    "avatar": "fa600ff43c3203b7187c8c611c025f72",
+    "date": "2007-03-30T12:16:19.000Z",
+    "content": "If I first get the page with your form, parse it in order to check your sessionid, and finally do the post with?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-03-30T12:51:50.000Z",
+    "content": "Giorgio,\r\n\r\nI understand your point of view but I see nothing wrong with this approach. Even if the page is cached on the disk that shouldn't be a problem since the next time you visit the application you will receive a new token. So there is on problem. If someone is sniffing your traffic,.. well they will be able to do a lot then just CSRFing you so I think that you can use this technique without any fear whatsoever.\r\n\r\nTyop?,\r\n\r\nIf you can do that why would you want to go for CSRF? You can as simple hijack the session then. The only way you can get the page is to have some sort of XSS on the application or even worse a backdoor on the browser. But then again, why would you want to CSRF the user when you can do a lot worse then that."
+  },
+  {
+    "author": "wrc",
+    "avatar": "2d14f532d960a05eae6fd120975c8544",
+    "date": "2007-03-30T14:12:19.000Z",
+    "content": "The problems that I have seen have not been related to back-end parsing, it is the occasional accidental or intentional exception.  Request tokens need to be completely pervasive and airtight throughout the application.  \r\n\r\nI take it that in this scheme, you would be protecting GETs similarly with the sessionID?"
+  },
+  {
+    "author": "beNi",
+    "avatar": "43c564422282cecb1c04135491fa3af2",
+    "date": "2007-03-30T14:53:23.000Z",
+    "content": "Hey pdp, imho this is a very weak protection, at least for large homepages, because XSS is everywhere and one Vulnerability is enough to get all the Tokens.\r\nCheck my Blog on Saturday Evening and you'll see what I'm trying to convince you of ;-)\r\n\r\n--beNi"
+  },
+  {
+    "author": "Rick",
+    "avatar": "e728e97818bd3bf18780d58fe278d315",
+    "date": "2007-03-30T15:02:41.000Z",
+    "content": "You state that this could easily be implemented with a few mod_rewrite or mod_security rules.  How exactly?  It sounds like your concept needs to both modify outbound html and validate inbound data.  Neither mod_rewrite nor mod_security can do the former."
+  },
+  {
+    "author": "Oriol",
+    "avatar": "e4679be8d7d2484f9c0b8c4df71f4d2a",
+    "date": "2007-03-30T15:13:42.000Z",
+    "content": "What if the user has cookies disabled?"
+  },
+  {
+    "author": "christ1an",
+    "avatar": "8291d653ee8e5e106822c70bcb2ce782",
+    "date": "2007-03-30T15:16:35.000Z",
+    "content": "Uhmm well, exactly that is our current problem pdp. We do have for example the mhtml bug and actually I see no significant difference between your proposal and the ordinary token based solution.\r\n\r\nBlogger.com has implemented something similar, unfortunately I have an exploit code on my hard drive...\r\n\r\nI guess that's what Tyop meant."
+  },
+  {
+    "author": "owasp",
+    "avatar": "d7da8617bc234c15e85f7b7a1b763969",
+    "date": "2007-03-30T15:56:30.000Z",
+    "content": "This approach is dangerous. If you put the real SESSIONID in URLs, it is likely to be disclosed in logs, bookmarks, copy-n-paste, etc...  If you put the real SESSIONID in forms, it may get cached.  Just use a random token you generate yourself for each session.  It's easy AND safe.  See http://www.owasp.org/index.php/CSRF_Guard for an example."
+  },
+  {
+    "author": "Michael Sutton",
+    "avatar": "4c73384be451ce427898c1209acc5358",
+    "date": "2007-03-30T15:58:14.000Z",
+    "content": "This is the approach that Microsoft has taken with .Net 2.0+. By default, the EnableEventValidation page directive is set to true. This generates a nonce value that is sent with forms for validation purposes and works nicely when protecting againste CSRF attacks. It's encouraging to see development frameworks adding security by default."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-03-30T16:27:45.000Z",
+    "content": "wrc,\r\nGET requests are different in a way that they may leak your session ID. I will explain more about this in a bit.\r\n\r\nbeNI,\r\nWe are talking about CSRF not XSS. If an attacker can obtain XSS why on earth they will go for CSRF. Just load the big guns with XMLHttpRequest and have some fun.\r\n\r\nRick,\r\nI don't have working implementation although I see how it can be done. The idea is that mod_rewrite or mod_security checks verifies that whatever is provided as session identifier is also supplied as part of the POST body. If there is no match then the user receives an error page explaining the problem. Of course you can bypass that with,... for example setting your cookie to PHPSESSIONID=1 and in the POST body you specify PHPSESSIONID=1 but then the application will complain that the provided ID is not valid. Of course you need to include a JavaScript snippet on each generated html file to rewrite the forms so they fit into the specified criteria.\r\n\r\nOriol,\r\nIf the user has the cookies disabled they shouldn't really surf the web. 99.9% of all authentication mechanisms relay on cookies being enabled.\r\n\r\nchrist1an,\r\nAgain, you relay on a bug for IE, which means that if the users is vulnerable to this issue, why on earth the attacker will go after CSRF. They can as easily hijack the user browser and trash their entire web presence.\r\n\r\nowasp,\r\nThis approach is simple and easy to implement. Let's say that yahoo.com implements this type of CSRF protection mechanism. OK I will leak my session identifier in their logs. So what? Bid deal! After all, they are the one who issued the session identifier on first place. For sure you can store your session identifier as a bookmark but also keep in mind that the session will expire as soon as you close the browser or you click on the log out button. If the session identifier is cached then in order for someone to retrieve it they have to have some sort of access on your system. If they do have access, again there are far more dangerous things to do then performing CSRF. I agree that you can as easily generate another token and use it in a similar way but the purpose of this article is to show that we have the technology to implement CSRF protection mechanism for whatever type of legacy system we have at the moment.\r\n\r\nMichael,\r\nYes! I do agree that developing within the scope of a framework is a lot more secure but then you will have these cases when someone finds a vulnerability for the specific framework and exploits 10% of the web because of it. There are a number of other frameworks that protect against CSRF most of them written in Java, Python or Ruby. Yes, it is nice to see some development there."
+  },
+  {
+    "author": "Benjamin Field",
+    "avatar": "cc6d96a25af15db48d4d53654a79b919",
+    "date": "2007-03-30T17:42:41.000Z",
+    "content": "pdp, good work getting the word out about CSRF.  Large downside; high propensity to vulnerability; very low cost of mitigation.\r\n\r\nI concur with owasp, and agree that CSRF_Guard is a good implementation, for those who haven't tried it.  I have implemented it on a large website, and it is effective, fast and simple.\r\n\r\nConcerning using an actual session ID for the CSRF:  PHP allows for passing the session identifier in the query string, which is an even more overt exposure than a hidden form field, so at least with PHP, I don't see this as a big deal.\r\n\r\nBy the same token, the \"not a big deal\" logic should be applied to the alternative as well:  the cost for a developer to generate an arbitrarily salted token is negligible, and it's the security equivalent of \"defensive driving.\"  Your sphere of influence may be secure, but what about the other \"drivers?\"  I don't expose session identifiers in query strings because I don't have to.  The same goes for my treatment of CSRF protections.\r\n\r\nPetko, good work explaining the anatomy of this attack and the ease with which it can be mitigated; I like the way you're looking for ways to simplify security."
+  },
+  {
+    "author": "christ1an",
+    "avatar": "8291d653ee8e5e106822c70bcb2ce782",
+    "date": "2007-03-30T19:05:58.000Z",
+    "content": "Sorry in this case I don't agree with you. Every token based CSRF protection can be bypassed, at least at present and in MSIE (which is still the most popular browser). \r\n\r\nYou can not simply ignore the existence of such browser vulnerabilities if you're trying to find a good way to protect webapps.\r\n\r\nIn general - if an attacker wanted to hijack someones browser, he'd figure out how to do that.   However if he wanted to perform a CSRF, he is likely to find a way to do that as well, regardless which specific vulnerability he would have to use.\r\n\r\nI just want to say you need to consider everything. Please do not claim this method as secure, readers may blindly trust you."
+  },
+  {
+    "author": "Andrew van der Stock",
+    "avatar": "8095f5e2f13a97cc01ede88552a92b86",
+    "date": "2007-03-30T19:45:42.000Z",
+    "content": "Let's look at the attacks against the proposed defenses. \r\n\r\nCSRF forces the *victim* to submit an action, either via GET or POST. Typically, CSRF takes the form of no-click XSS (view it and you're done), like the Samy Worm, or one click - click this form and you're done. In both cases, the victim's browser has the credentials (the session id in the cookie), and the form token, t.\r\n\r\nThis defense mechanism (and the token based choices) prevents GET based attacks unless there's JS involved. But it doesn't prevent:\r\n\r\nXSS where JS is executed (anything's possible)\r\nXSS where a form has been altered\r\n\r\nThe only method to prevent all CSRF is to ask the user to enter in a second factor credential in such a way as to prevent the user from entering the credential into a trojaned form, f' or a hostile DOM, such as if a Banking trojan is installed. If the attacker succeeds at creating a hostile form f', the victim has created a trojaned credential t', regardless of our countermeasures.\r\n\r\nWhat we need to do is to come up with a way to reduce the attack to reasonable proportions. The usual way to do this is a combination of defenses:\r\n\r\na) Reduce the attack surface area. Try to eliminate XSS opportunities (makes it harder to inject hostile code to create f' or t')\r\n\r\nb) Reduce the number of attackers. Do not use GET (raises the bar from entry level attack to determined attack) for changing an application's state. This is as per the recommendations of the HTTP RFC anyway, no matter what the REST folks think.\r\n\r\nc) Securely re-authenticate for value transactions. Get the client to perform some form of 2nd factor authC using elements of data so that trojaned forms (f') can't create a good t'\r\n\r\nd) Sequencing. Most CSRF try to aim for a goal function we'll call g'. If we make it hard to get to g' without writing a complex Ajax script which emulates many user clicks, it makes the attack impossible. \r\n\r\nIf you are viewing your account balance page, and there's a CSRF attack wishing to transfer money, the web app should have sequencing protection to make it hard to go from the current page to the approve transfer step without user interaction (such as re-entering their password or a 2nd factor token, such as a SMS token authorizing the transfer). This would make \"silent\" attacks like the Samy worm impossible except on the view which immediately precedes the confirmation acceptance. \r\n\r\nImplementing sequencing could be done automatically by software like Spring Web Flow, which uses continuation markers. These continuation markers represent a half way point in a flow. If you validate the half way flow in a sequence such that:\r\n\r\ncm = (flowID, flowStep, hmac(sessionID . flow id . flow step . random salt))\r\n\r\nit would be hard to create a viable trojan'd cm', as the real cm changes between successive uses of the flow, and must match the previous cm and the proposed cm. \r\n\r\nSo let's make it hard for malware to create cm' and t' to they can successfully call their goal function g'. Most software does nothing, which is why CSRF is such an issue today.\r\n\r\nAndrew"
+  },
+  {
+    "author": "Jordan",
+    "avatar": "bd38ec8896a46f6a173c7b80aac0d5be",
+    "date": "2007-03-30T19:47:06.000Z",
+    "content": "I saw a similar suggestion to this recently.  It's kind of ironic when you consider that HttpOnly cookies kill this exact method.  \r\n\r\nSo you can either enable httponly cookies for a sort of (very weak) mitigation against XSS, or you can disable them so your legitimate javascript can access cookies to prevent CSRF.\r\n\r\nI'm a big fan of having the frameworks do the right think for users.  While yes, there is some risk that a vuln in the framework exposes lots of folks, in general, having the frameworks do the right thing int he first place is a lot better since so few of the developers have a clue about security anyway.\r\n\r\nAlso, if anybody wants to see the CSRF against a couple of linksys routers, here's some AttackAPI code for both VXWorks Linksys routers and the linux based ones that I used for a live demo.  Pretty trivial to come up with:\r\n\r\nhttp://nopaste.codersnet.org/?id=878 (I'd have pasted them here, but they're a little big)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-03-30T22:39:30.000Z",
+    "content": "christ1an,\r\nI am not ignoring the MHTML bug. In fact, I believe that it is one of the most popular way to circumvent the same origin policy, and I totally agree with you that if the attacker is serious enough, they will always find a way around whatever restrictions are introduced. All web technologies put together, are one big pile of mess.\r\n\r\nAndrew van der Stock,\r\nvery interesting and quite complete. All this sounds like the groundings of a framework :)\r\n\r\nJordan,\r\nYour code is very interesting. Actually I included a CSRF example against Linksys routers in the XSS Book we are currently finishing up with Jeremiah, RSnake, Anton and Seth. At OWASP, I am going to present a new framework which makes it even easier to write web exploits. The framework has the ability to trace through your code and include only the necessary functionalities which means that you should be able to create self-contained exploits as well as exploits that are reusable."
+  },
+  {
+    "author": "Andy",
+    "avatar": "032013983399d733838ec79b141e6ec4",
+    "date": "2007-03-30T22:55:42.000Z",
+    "content": "I'm going to agree with pdp here that if you're vulnerable to XSS exploits then you are hosed at preventing CSRF at all anyway.  Let's not confuse things.  We're talking about preventing CSRF in the absence of other security holes.  \r\n\r\nI can just hear someone saying \"but the token can be sniffed off the wire so it isn't secure if you're using HTTP.\"  To which I respond - wow, that is very insightful.  Please go away.\r\n\r\nThe hidden-form-variable using session cookie is nice, but breaks in cases where a site constantly updates the session cookie for each request, and the user spawns multiple children windows that share the same session-cookie.  Certain forms can get out of date with respect to session-id.  Not sure how common this is, but I know it happens in certain cases.\r\n\r\nIn the case of GET requests it isn't so bad to leak the URL via referer if the session-id is invalid by the time it gets sent to the referer, and things like bit-flipping attacks aren't useful against the token.\r\n\r\nYou can prevent using the token in cases where the request will be a POST, but you've still got to modify your whole web application to remove GET requests for sensitive operations.\r\n\r\nOne other small problem is a separation of duties one.  In many cases we want weblogs to not contain security relevant data because of who can see them.  Sure its the same org that created the web application, but if session-id's don't get rorated on each hit then allowing those with weblog access to see session-id's (or the equivalent as cookie/auth-token) then you might have a separation of duties concern."
+  },
+  {
+    "author": "Jordan",
+    "avatar": "bd38ec8896a46f6a173c7b80aac0d5be",
+    "date": "2007-03-30T23:25:38.000Z",
+    "content": "Very nice.  Cool idea.  Metasploit for the web...  Looking forward to playing with it."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-03-31T07:16:14.000Z",
+    "content": "Andy, interesting points. However, we don't really need to track the forms. This introduces too much complications and it is definitely prone to all sorts of bugs. All we need to do is to verify that the user is who ever they are supposed to be. The other thing is that unless you specifically require GET, you should always use POST. Why not use POST and keep the URLs nice and easy?"
+  },
+  {
+    "author": "beaule",
+    "avatar": "19611f893696bc2244f0d38cbe3981c0",
+    "date": "2007-03-31T13:01:39.000Z",
+    "content": "i think that this kind of protection(putting sessionid in form) can be danferous.\r\nan xss attack(if your site is vulnerable) can retrieve this value... often to customer we give advice to put the cookie (which contains the sessionid) as http-only!!! this protection is broken if we use your method to protect against csrf!!\r\nsecond, i'm using the owasp protection(with token) but with an home made upgrade the name of the token is also dynamic!!! so an xss attack can not stole my token value and do a csrf!!!\r\n\r\nplease don't say that first of all the website has to be protected  agaisnt xss!\r\nwe try to do it but with large website it's not easy!!!\r\ni think that we have to be protected agaisnt csrf and this protection has to be robust against xss attack"
+  },
+  {
+    "author": "Kanatoko",
+    "avatar": "f570aa7f970c6be9b9263a19ee433a5d",
+    "date": "2007-03-31T15:42:07.000Z",
+    "content": "If an attacker get the token(=sessionId) by using the MHTML bug, the system will be vulnerable not only to CSRF, but also to Session Hijack.\r\nSo IMHO this idea is an VERY BAD idea."
+  },
+  {
+    "author": "Andy",
+    "avatar": "032013983399d733838ec79b141e6ec4",
+    "date": "2007-03-31T16:52:29.000Z",
+    "content": "My point was simply that fixing CSRF isn't a easy as the token, we might want to convert to POST, which in a large codebase can take a lot of time.\r\n\r\nThere are cases where we might want to still use GET for certain operations, and in those cases we just have to be careful to not leak the token via referer.\r\n\r\nI don't worry about leaking the refer to proxy servers, because in cases where I'm really worried about preventing CSRF I'm going to be using SSL."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-03-31T19:03:47.000Z",
+    "content": "beaule,\r\nagain you are mixing too completely different problems: the first one is an a site being vulnerable to XSS and the second one a site being vulnerable to CSRF. XSS is a lot more dangerous then simple CSRF, which means that if you can get XSS then why the hell you would like to do CSRF. Use XMLHttpRequest and bring the user down to their knees.\r\n\r\nKanatoko,\r\nthe MHTML bug is more dangerous then XSS and CSRF, so your statement does not make sense at all. :) sorry!\r\n\r\nAndy,\r\nwhere exactly you are going to leak the token? We are not talking about freaking blogs man. We are talking about stuff like admin interfaces or interfaces that allows you to configure your profile or whatever. Otherwise CSRFs are pointless. These interfaces should not hold external links on the first place. I do agree that sometimes we are required to use GET but if you application does an operation over GET, something must be wrong with it. I am not saying that it is not common, all I am saying is that the idea is wrong.\r\n\r\nThe idea of this post was to show that CSRF attacks can be prevented in a very simple way without too much trouble. Still, it is possible to screw up with this implementation. However, I do use this prevention mechanism no matter what people are saying and it works very well. I do know about the dangerous of leaking your session ID in the URLs but that is a problem unless you don't know what you are doing. Look at all Google applications. The basic CSRF protection mechanism is in the URL. Can users leak that? Yes, it is possible. In theory, this means that if the user clicks on a link from an email and they arrive on some page, the browser may leak the token, right? This means that it could be possible for the website to perform CSRF, right? Well noooo, because Google does a good job to put all external links through their redirection script which eliminates all tokens from the URL.\r\n\r\nTo sum up:\r\n\r\n<div class=\"message\">No matter what you do, whether you generate a token or you use the session cookie, and you use that in the GET, there is always a change leaking that on a 3rd-party organization. This means that unless you implement a unique key for every URL and form, you will be screwed. However, depending on the application the security level varies. If the application does not contains links to external sites, then the chances of leaking the session id are 0. Does routers have links to other sites apart from the vendor home page? Nope! This is exactly my point! If you have something like DIGG or Slashdot, you need to consider all possible ways of first of all preventing CSRF and second of all protecting the user tokens. This of course is completely different topic. This is all I am saying :)</div>"
+  },
+  {
+    "author": "pagvac",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-03-31T20:09:31.000Z",
+    "content": "owasp,\r\n\r\nThere is NO need to put the session IDs within URLs when following this approach. Just include the session ID within form fields that would be transmitted as a POST request, and *not* within URLs:\r\n\r\n<pre><code>&lt;form action=&quot;http://target/profile.do&quot; method=&quot;POST&quot;&gt;\r\n&lt;input type=&quot;hidden&quot; name=&quot;name&quot; value=&quot;John&quot;/&gt;\r\n&lt;input type=&quot;hidden&quot; name=&quot;lastname&quot; value=&quot;Dawson&quot;/&gt;\r\n&lt;input type=&quot;hidden&quot; name=&quot;JSPSESSIONID&quot; value=&quot;7af7a55caff365ca594510586&quot;/&gt;\r\n&lt;input type=&quot;submit&quot;/&gt;\r\n&lt;/form&gt;</code></pre>\r\n\r\nGiorgio Fedon,\r\n\r\nThis might help if youâ€™re paranoid (disable autocomplete):\r\n\r\n<pre><code>&lt;input type=&quot;hidden&quot; name=&quot;JSPSESSIONID&quot; value=&quot;7af7a55caff365ca594510586&quot; autocomplete=&quot;off&quot;/&gt;</code></pre>\r\n\r\nBut then again, if you can access the userâ€™s machine, you can also access the session ID cookies! Hopefully, the session ID expires after the idle session timeout ends."
+  },
+  {
+    "author": "Kanatoko",
+    "avatar": "f570aa7f970c6be9b9263a19ee433a5d",
+    "date": "2007-03-31T23:36:04.000Z",
+    "content": "<blockquote>the MHTML bug is more dangerous than XSS</blockquote>\r\n\r\nInteresting.  Why?\r\n\r\nI think XSS( and Session  Hijack) is more dangerous than the MHTML bug because it can access to the response of POST."
+  },
+  {
+    "author": "Hong",
+    "avatar": "4485cf3426779efdc3113ea30f1541c9",
+    "date": "2007-04-01T07:45:21.000Z",
+    "content": "Kanatoko,\r\nBecause MHTML bug breaks the same origin policy. If you do not have any XSS flaw on site A, then you cannot access anything on site A, MHTML bug can make you able to access site A even if site A does not has any XSS flaw."
+  },
+  {
+    "author": "Kanatoko",
+    "avatar": "f570aa7f970c6be9b9263a19ee433a5d",
+    "date": "2007-04-01T13:10:45.000Z",
+    "content": "Hong \r\n\r\nI think that you are missing the point.\r\nMHTML bug can be prevented at the server side as same as XSS."
+  },
+  {
+    "author": "beaule",
+    "avatar": "19611f893696bc2244f0d38cbe3981c0",
+    "date": "2007-04-02T07:18:33.000Z",
+    "content": "to pdp @ \"XSS is a lot more dangerous then simple CSRF, which means that if you can get XSS then why the hell you would like to do CSRF\"\r\n--\r\nwhy? it's very very simple, if a transfer application is CSRFable and XSSable, i will do an CSRF to retrieve money from the user to my account.\r\nSo even if my application is XSSable i will my transfer application totaly safe against CSRF...\r\nThat's why i think that a CSRF protection must be safe against XSS attack!"
+  },
+  {
+    "author": "wrc",
+    "avatar": "2d14f532d960a05eae6fd120975c8544",
+    "date": "2007-04-02T15:29:02.000Z",
+    "content": "An attack using XMLHTTP to make the requests through the victim's browser against the desired site will only need an additional intermediate step.  Soley protecting POSTs won't help."
+  },
+  {
+    "author": "Kyle",
+    "avatar": "47711ee5719f3d0d6cfdc06fde2d019c",
+    "date": "2007-04-07T01:01:31.000Z",
+    "content": "In my admin section, the forms are submitted over xmlhttprequest. So instead of using javascript to rewrite the dom and add hidden inputs, couldn't I just modify my xmlhttprequest wrapper to add a custom header with a unique id from the cookie? The header is then checked in the back end.\r\n\r\nThis would only require 1 line of extra code client side and is faster than rewriting the dom. It also means that if you have different panels of the admin section open in separate tabs then they all have the most recent id whenever you eventually submit them (which a dom rewrite onload may not and even though a dom rewrite onsubmit would it's less efficient). I regularly regenerate the session id so this is an issue for me.\r\n\r\nIf the user has javascript turned off, the js is incompatible with the browser or the js is just plain borked then the id will not be sent because there's no fall back, but that isn't a problem here since the admin section is private and for me only.\r\n\r\nDoes this method open any new holes that I haven't noticed?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-04-07T06:18:41.000Z",
+    "content": "Kyle,\r\n\r\nIt all depends. We cannot say whether your application is secure or not. Rethink all technologies that you are using and make sure that they are applied appropriately."
+  },
+  {
+    "author": "naka",
+    "avatar": "d5fd00f741981af1a4c9c779b79aec2a",
+    "date": "2007-04-13T06:14:41.000Z",
+    "content": "How about using a hashed JSESSIONID instead of raw one?\r\nI think that it is better than the way you suggested."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-04-13T07:05:54.000Z",
+    "content": "naka, yes it will work. the problem is how we are going to prevent CSRF without introducing too mush stuff into the system. but yes, this works."
+  },
+  {
+    "author": "Scott Parsons",
+    "avatar": "3b6ee38d5458e2359549fdbe0c9e2bbd",
+    "date": "2007-04-20T18:42:02.000Z",
+    "content": "Newbie here, but have been thinking and discussing CSRF with some other folks.  I'm feeling pretty large that I had come up with the same approach as PDP a couple weeks ago.  While it sessionID <strong>should</strong> be safe to use, it would seem prudent to use a secure hash of it rather than the sessionID itself.  Provided there is sufficient entropy in the session Id and output bits in the hash, it should be rainbow-table proof.  The advantage is that there is no secret to keep, and it can either be calculated on the server or on the client-side.  This also allows it to be valiated in multiple places without the need to do secret key management, which might be required for an HMAC approach."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-04-23T08:46:34.000Z",
+    "content": "Scott,\r\n\r\ngood summary my man."
+  },
+  {
+    "author": "Zoiz",
+    "avatar": "76f53ac324b6b2c5e2c49deae956ea7f",
+    "date": "2008-01-25T14:25:23.000Z",
+    "content": "Newbie here. Can I prevent CSRF by matching the referrer URL with my site URL?"
+  },
+  {
+    "author": "r3ck0rd",
+    "avatar": "095438bdf50db737884a35e5abd5a73f",
+    "date": "2008-05-07T08:51:31.000Z",
+    "content": "^ a newbie? \r\nwell yes it could be, easily using PHP :)"
+  },
+  {
+    "author": "Inferno",
+    "avatar": "53398c90d3e8e45898b1e43fcab95aa2",
+    "date": "2009-07-19T07:30:20.000Z",
+    "content": "Hi pdp,\n\nJust to add my input to your insightful post, i got an idea of a pure client side attack to locate csrf tokens using jeremiah's css history hack. some readers commented on using a hash of session id. if this hash is short length and is part of url, then this attack is feasible (even when links to external sites=0). more details here - http://securethoughts.com/2009/07/hacking-csrf-tokens-using-css-history-hack/"
+  },
+  {
+    "author": "sibidiba",
+    "avatar": "e48e64a1efaa12a23568620b16111324",
+    "date": "2010-01-16T04:38:05.000Z",
+    "content": "A tipical CSRF attack scenario: You receive an e-mail or a web page with a link on it. You click the link.\n\nThe link is for example: http://bank.example.com/transfer?amount=1000&amp;to=12345\nor an equivalent POST request.\n\nYou are logged in with the same browser on bank.example.com . Therefore the site will think the request *is* coming on your behalf. Wont be the SESSIONDID still be there? Isn't this the reason while the request would already reach this point of code, assuming you are logged in? The presence of your session in the browser is the core of this attack vector. The session is identified by the SESSIONID cookie, isn't it? Then your solution wouldn't work."
+  },
+  {
+    "author": "Sumit",
+    "avatar": "6f86f86c52341f5d9af409af94941ca3",
+    "date": "2010-10-07T10:23:03.000Z",
+    "content": "Is using Security Tokens with URLs Correct Option of Preventing website from XSRF..."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2010-11-13T02:55:36.000Z",
+    "content": "it depends"
+  },
+  {
+    "author": "Bob",
+    "avatar": "3d7b858aecaecaf575377c757122a5c2",
+    "date": "2011-04-22T21:04:08.000Z",
+    "content": "I came across this old thread while researching CSRF prevention. It seems to me that the proposed solution on this post is what OWASP calls \"double-submit cookies\" (https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29_Prevention_Cheat_Sheet)\r\nOWASP suggests that this solution is effective, but increases risk of session hijacking, and recommends a \"synchronizer token\" solution.\r\nI put the link here in case others come across this thread."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2011-04-27T13:47:17.000Z",
+    "content": "Hi Bob,\r\n\r\nYou can still has the cookie with a known salt value in order to prevent leakage. I think the technique is very simple and effective."
+  }
+]

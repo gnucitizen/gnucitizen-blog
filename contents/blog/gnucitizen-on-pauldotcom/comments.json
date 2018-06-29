@@ -1,0 +1,32 @@
+[
+  {
+    "author": "Jonas",
+    "avatar": "c970dee63fb8c2f40d17e04454742964",
+    "date": "2008-03-14T19:51:46.000Z",
+    "content": "Sounds interesting.\r\nUnfortunately the links seems to be broken, or at least the server is down."
+  },
+  {
+    "author": "majak",
+    "avatar": "ca42934dfae9248708811c6102d67a36",
+    "date": "2008-03-14T20:04:53.000Z",
+    "content": "One slightly offtopic question about securl.com. Does it have RSS feed or I somehow missed it?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-03-14T22:42:59.000Z",
+    "content": "both links should be working, don't know what's the case.\r\n\r\nmajak, will implement a syndication technology soon."
+  },
+  {
+    "author": "RStankov",
+    "avatar": "1f8da804ade5490b2167ce3d59738954",
+    "date": "2008-03-15T23:02:29.000Z",
+    "content": "Very interesting interview, learn a lot of things.\r\np.s. I didn't know you are Bulgarian(as me too)."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-03-17T11:07:02.000Z",
+    "content": "what can I say, small world! :)"
+  }
+]

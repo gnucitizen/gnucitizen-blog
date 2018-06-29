@@ -1,0 +1,116 @@
+[
+  {
+    "author": "pdp",
+    "avatar": "711f58b095c5a8b45419d3e94df1129e",
+    "date": "2007-07-06T09:12:24.000Z",
+    "content": "I think that your approach is very interesting. I've never heard of mailinator but it seamed to be a quite interesting service. Good stuff!\r\n\r\nOne thing that I would like to point out is that mailinator supports RSS feeds as well:\r\n\r\n<pre><code>http://mailinator.com/rss.jsp?email=myrandomusername</code></pre>\r\n\r\nso, it might be easier to extract all email entries with wget/curl in combination with the <a href=\"http://xmlstar.sourceforge.net/\" rel=\"nofollow\">XMLStarlet toolkit</a> or just grep/awk. Also, GMail supports RSS through the GData services. However, we need cookies for that. So yes, your approach is definitely cleaner. I love it.\r\n\r\nHere is probably the place to mention that client-side security issues can expand across the traditional boundaries that they currently reside at. I can foresee a worm that can send XSS payloads over email and as such propagate. This is possible due to the existence of services such as mailinator and others that can transform RSS to email, email to RSS, etc. I am planning to release a paper on that soon, so stay tuned."
+  },
+  {
+    "author": ".mario",
+    "avatar": "89886495b27cfdc78593e1f5c8810594",
+    "date": "2007-07-06T10:11:47.000Z",
+    "content": "Hi!\r\n\r\nNice article. Maybe it would be interesting too to write sth about password reminder and header injection - this problem is no news but still very often to find and quite related to the topic of this article.\r\n\r\nGreetings,\r\n.mario"
+  },
+  {
+    "author": "pdp",
+    "avatar": "711f58b095c5a8b45419d3e94df1129e",
+    "date": "2007-07-06T10:19:28.000Z",
+    "content": "yep, ap is our password hacking guru, :) I am sure he will take on the challenge. sometimes, I get the feeling that he can make a password cracker out of chair or something."
+  },
+  {
+    "author": "ntp",
+    "avatar": "e9e7690eccc0e9b2ab8ec6a375c96bbd",
+    "date": "2007-07-06T16:27:15.000Z",
+    "content": "huh.  mailinator.com is a staple of mine.  i always use it (or dodgeit.com) in the mail (required) fields in blog comments.  i don't want my real email address sitting in a database or plaintext email where it can be stolen and used for nefarious purposes.\r\n\r\nbash, curl, grep, and cut are also staples of mine.  if you do\r\n\r\n<pre><code>for i in `seq 0 99` ; do stuff ; done</code></pre>\r\n\r\ni think the results might come out quite faster, although i didn't check this with time(1)."
+  },
+  {
+    "author": "pagvac",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-07-06T21:19:08.000Z",
+    "content": "pdp:\r\n\r\ndidn't know mailinator supports rss feeds. this makes the parsing even easier. well spotted!\r\n\r\nmario:\r\n\r\npassword reminder and header injection is definitely an interesting topic to discuss. Although I haven't played with this topic, who knows, you might find something on the topic in the future GNUCITIZEN :)\r\n\r\nntp:\r\n\r\nlife wouldn't really be the same without GNU tools :-). Especially curl, I'm a huge fan of the project. It even supports proprietary authentication mechanisms like Windows authentication (NTLM auth), proxies, etc ... it really is a must-have tool for server-side attacks."
+  },
+  {
+    "author": "ol",
+    "avatar": "7f837d95072e8d17edb67f4c6f11c1b0",
+    "date": "2007-07-08T08:04:14.000Z",
+    "content": "A paper that shows how to attack password request functionality using buffer truncation attacks..\r\n\r\nhttp://www.sec-1labs.co.uk/papers/BTA_CensoredRelease.pdf"
+  },
+  {
+    "author": "MadCyril",
+    "avatar": "8421d2087081781e55f056b6456e026e",
+    "date": "2007-07-09T12:13:06.000Z",
+    "content": "\"Imagine writing a script that authenticates to your gmail account and parses the content of emails? This is crazy!\"\r\n\r\n-- not at all, have you met Perl? I bet this could be done in 20 lines or less."
+  },
+  {
+    "author": "Tominator",
+    "avatar": "7ec283e12f6d2eb1fea92768c592c3f7",
+    "date": "2007-07-09T14:11:39.000Z",
+    "content": "Hi,\r\n\r\nI have a question: why must a password be stored in a hash with salt? Isn't the rest of the data in your database more valuable than the pw, and totally not encrypted whatsoever? What difference does hashing the pw make?\r\n\r\nOtherwise great read."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-07-10T09:52:10.000Z",
+    "content": "MadCyril:\r\n\r\nI agree, this can be done with scripting languages like Perl, Ruby or Python. However, wouldn't you rather reduce the number of lines of code to 5 by using a public site (mailinator in this case) that simplifies your work.\r\n\r\nTominator:\r\n\r\nSometimes the password might be more valuable. Imagine a forum site. The database simply holds public info. Now imagine the admin can see my password in the clear. Since most people reuse passwords he could now try the same password on the email I used to register (which he can see in the clear).\r\n\r\nFurthermore, some people use site-based patterns for their passwords. i.e.:\r\n\r\nMYPASS_4_www.forumsite.org\r\n\r\nIn this case the admin who can see my pw in the clear could try using my username on amazon and the following password:\r\n\r\nMYPASS_4_www.amazon.com\r\n\r\nThe point is, whenever it's feasible for information to be protected it should be. I personally don't want dodgy admins looking up my password :) but yes you're right, other sensitive data is usually in the clear anyways."
+  },
+  {
+    "author": "esteban",
+    "avatar": "c33d9571fabc1380f541d0cc2f477fb0",
+    "date": "2007-07-11T08:44:54.000Z",
+    "content": "when the provider sends and email with a link + hash, it normally wont allow you to send you another link (lets say password recovery email) unless the timeout for the first one expires...the timeout is normally a time/cost function that limits how long or how much money it would cost you to get the hash predicted the following attempt (usually hours) \r\n\r\nanyway, nice website mailinator.com, can be handy!!! anyone knows for how long it keeps your emails? probably not much! \r\n\r\nis anyone aware of cool sampling tools that tries usual tricks (like b8/64/etc encoding, etc) and non-usual ones?"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-07-11T09:16:45.000Z",
+    "content": "Hi Esteban!\r\n\r\nI believe the behaviour you described would occur only if the application is implemented properly.\r\n\r\n\r\nRegarding mailinator, the following URL\r\n\r\nhttp://www.mailinator.com/faq.jsp\r\n\r\nmentions:\r\n\r\n\"after a few hours, all email is auto-deleted.\"\r\n\r\nSo you're right, received emails are not kept that long."
+  },
+  {
+    "author": "juby",
+    "avatar": "3f41a0907f2f1e267f7fd5448e6d6625",
+    "date": "2007-07-27T07:02:50.000Z",
+    "content": "can i retrive the password of gmai account"
+  },
+  {
+    "author": "Emmanuel Hleah",
+    "avatar": "e5a0d384cc926e907403cd05f01368c7",
+    "date": "2007-09-09T04:54:25.000Z",
+    "content": "<pre><code>#!/bin/bash\r\n#\r\n# resetRootPass script\r\n#\r\n# Recover lost root password of mysql database.\r\n#\r\n# By Willem Bermon\r\n#\r\n\r\necho\r\necho \"Mysql password recovery utility\"\r\necho\r\n\r\n# Stop the mysql server\r\n/etc/init.d/mysql stop\r\n/etc/init.d/mysql zap &gt; /dev/null\r\n/bin/killall mysqld &gt; /dev/null\r\n\r\n# Run mysqld in permissionless mode\r\n/sbin/start-stop-daemon --start --quiet --exec /usr/bin/mysqld_safe \\\r\n        --background -- --skip-grant-tables &gt;/dev/null 2&gt;&amp;1\r\n\r\nsleep 1\r\n\r\n# Execute queries\r\nmysql -u root mysql -e \"UPDATE user SET Password=PASSWORD('$1') WHERE \\\r\n                        user='root'; \\\r\n                        FLUSH PRIVILEGES;\"\r\nif [[ $? -eq 0 ]]\r\nthen\r\n        echo \" ** SQL root password updated\"\r\nelse\r\n        echo \" ** SQL root password update unsuccesful\"\r\nfi\r\n\r\n# Restart the mysql server\r\n/bin/killall mysqld &gt; /dev/null\r\n/etc/init.d/mysql start\r\n\r\necho \"Succesfully updated password!!\"\r\necho\r\necho\r\nexit 0</code></pre>"
+  },
+  {
+    "author": "hany",
+    "avatar": "a93a4d203f9619aaa034e5eb6843a997",
+    "date": "2007-09-24T04:26:33.000Z",
+    "content": "Dear \r\nI will be very thankfull of urs if ur retrive my password of my e mail iceman4love@hotmail.com plz its very urgent..i will make dua for u if u get back my password. \r\n\r\nplz e mail me that password on ice.man4love@hotmail.com\r\n\r\nthanks\r\nhany"
+  },
+  {
+    "author": "Loser",
+    "avatar": "594bbdd9e8f9212616644c1d79ffa824",
+    "date": "2007-09-24T21:20:13.000Z",
+    "content": "Hi, Interesting post. However, due to lack of technical knowledge, difficult to fathom. Mind elucidating online?"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-09-24T22:55:00.000Z",
+    "content": "Loser,\r\n\r\nI just described a technique that could (for instance) allow you to a sample a large number of passwords that you would get emailed when clicking on a \"I forgot my password\" link.\r\n\r\nIf a site emails you a newly \"randomly\" generated password each time you reset it, you might be able to find a pattern by sampling a large number over a continued period of time. i.e.: 10 passwords requested per second for a total of 10 minutes.\r\n\r\nFeel free to contact me through http://www.gnucitizen.org/contact and I'll give yo u my messenger contact."
+  },
+  {
+    "author": "dAVY",
+    "avatar": "6ec25d79027b71edc9d3a492f21297ae",
+    "date": "2007-11-04T08:47:21.000Z",
+    "content": "mailinator is blocked by aol naw ,it reverts to other aol sugestion"
+  },
+  {
+    "author": "frantic",
+    "avatar": "f7c7de8e7efcfd8ab2bcde00f00e1055",
+    "date": "2008-01-04T22:07:16.000Z",
+    "content": "I need to recover my gmail password. im in college and have forgotten my password. , im scared as hell of the whole hacking/cracking business and i dnt wana be phished (however that verb is supposed to be phrased).My security question has an answer my friend(hu filled the form n made d account for me) cant remember and he put a wrong secondary email id. u c my email id shud have beenâ€¦.@yahoo.co.in and he wroteâ€¦@yahoo.com. Now i cant get those reset links. Please help me! my internship correspondence is at stake! i cudnt understand the post by emmanuel hleah. Please tell me if the password can be recovered from my comp or if i can by any means access the incorrect secondary mail id."
+  },
+  {
+    "author": "vijay",
+    "avatar": "99f112861ad6d92eda8a7aad0bd854ff",
+    "date": "2008-04-22T20:01:11.000Z",
+    "content": "want 2 break mail id password"
+  }
+]

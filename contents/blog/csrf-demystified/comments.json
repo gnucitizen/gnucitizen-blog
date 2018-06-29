@@ -1,0 +1,80 @@
+[
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-11-21T13:23:16.000Z",
+    "content": "Asking for the password again when updating profile info (i.e.: password, name, address) is also a valid protection.\r\n\r\nNeed to check out CSRFx, I might start mentioning this library in my pentest report. btw, I think it could be pronounced easily: \"sea surf X\"\r\n\r\nVery nice post on one of my favorite subjects."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-11-21T13:23:56.000Z",
+    "content": "meant to say *reports*"
+  },
+  {
+    "author": "Mario Heiderich",
+    "avatar": "e53f5d616931bfe8fa74bfd9f72e049e",
+    "date": "2007-11-21T14:01:08.000Z",
+    "content": "Thx! I always have difficulties when telling my colleagues during scrum that I worked on the see-es-ar-eff-ex again ;)\r\n\r\nYes - there are several ways to protect against CSRF in very special situations. Such as the password change form as you mentioned. But this article is targeted to create more awareness about the topic itself and about easy to implement solutions. \r\n\r\nKeeping XSS out in combination with using tokens is pretty bullet-proof. The CSRFx even takes care of accidental multiple submits since it stores a cloud of tokens for each user depending on session ID and user agent. So there are not many situations left in which such a tool wouldn't work.\r\n\r\nNevertheless you are perfectly right. It not only the tool but the application and front end logic that can mitigate CSRF holes too. The password change form is  perfect example for that - as well as 'delete profile' forms and stuff like that."
+  },
+  {
+    "author": "Josep",
+    "avatar": "ea8759d289d993ac120dc09abf5a2c94",
+    "date": "2007-11-22T22:39:17.000Z",
+    "content": "Thanks for this article, I found it very clear and straightforward!\r\n\r\nI've just started playing with it and found several webs vulnerable. Interesting... :)"
+  },
+  {
+    "author": "fatmatt",
+    "avatar": "e8cbd3f22b3191ceea025207b179c2b3",
+    "date": "2007-11-28T12:45:23.000Z",
+    "content": "Thanx!!\r\nIt showed very clearly CSRF, i'm already securing my web apps!! :)"
+  },
+  {
+    "author": "Tom",
+    "avatar": "f1924a62813c03c0c5250e471622e5a6",
+    "date": "2007-11-28T18:12:28.000Z",
+    "content": "Great article - I'm very happy it doesn't suggest adding the session ID to the URL as a defense for CRLF, as a gnucitizen article did back in March (Top google hit for CSRF defense). \r\n\r\nGreat suggestions, and unlike the previous article it does not make the site more succeptible to some attacks in order to harden against CSRF."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-11-28T20:54:30.000Z",
+    "content": "Tom, :) the older CSRF article was proposing a simple unobtrusive solution that actually works and it is very easy to implement."
+  },
+  {
+    "author": "Mario Heiderich",
+    "avatar": "e53f5d616931bfe8fa74bfd9f72e049e",
+    "date": "2007-11-29T18:02:51.000Z",
+    "content": "Thanks guys - the feedback is very appreciated. \r\n\r\nAnd on a sidenote: The CSRFx has been developed further the recent days and lots of bugs were fixed. Also we did some performance measurements and found out that despite of the thorough regex usage the project doesn't slow down your webapp significantly.\r\n\r\n10x for the support!\r\nGreetings,\r\n.mario"
+  },
+  {
+    "author": "Ardoooooon",
+    "avatar": "9bec324a8011a2fa4e93e14e5840efcb",
+    "date": "2008-11-07T11:57:40.000Z",
+    "content": "Thanks! I found this very enlighting indeed, and has now taken action to prevent CSRF.\r\n\r\n- Despite that, I still find that some of the preventive measures proposed weakens my website against other forms of attacks"
+  },
+  {
+    "author": "anshita",
+    "avatar": "865b95e83e3d6c3bdb20441b6199ace7",
+    "date": "2009-01-12T18:13:04.000Z",
+    "content": "If i need to write patterns for csrf in an xml file,which can be then scanned by any scanner to analyse a particular web service,what would those patterns be like.For example in sql injection,we use a pattern like \"1=1\" or \"a=a\".Please reply."
+  },
+  {
+    "author": "suman",
+    "avatar": "eb018af922dc5f5c8db0e5fddbb584be",
+    "date": "2009-04-28T01:14:39.000Z",
+    "content": "you are assuming that the page uses a GET request right ?? The example wont work with POST perhaps"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-04-28T06:28:46.000Z",
+    "content": "both GET and POST can be used in CSRF attacks."
+  },
+  {
+    "author": "Matthew Nelson",
+    "avatar": "266e1d56bfb834fd8b510f496edc8d38",
+    "date": "2012-01-27T22:29:06.000Z",
+    "content": "\"Referer\" is not a bulletproof CSRF solution. The header can be stripped by privacy tools and corporate proxies. Browsers won't send the header for cross-domain HTTPS requests. Very old versions of Flash had a cross-domain header injection vulnerability. (See CVE-2006-5330.) Keep this in mind when choosing which requests to guard with \"Referer\" validation."
+  }
+]

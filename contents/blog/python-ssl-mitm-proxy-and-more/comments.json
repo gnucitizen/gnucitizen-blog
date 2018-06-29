@@ -1,0 +1,86 @@
+[
+  {
+    "author": "Mike",
+    "avatar": "f13074b7e97c68d30a5792d4829dc5ef",
+    "date": "2009-02-15T00:16:22.000Z",
+    "content": "Nice tool. I have a couple of corrections. I would have emailed them, but I couldn't find your email. Now you have mine though so we should get in contact.\r\n\r\nLine 488: <code>SSL.SysCallError</code> should be <code>OpenSSL.SSL.SysCallError</code>\r\n\r\nI was getting a <code>SysCallError</code> exception on reads, so I added \"or OpenSSL.SSL.SysCallError\" to line 276.\r\n\r\nThe <code>do_GET</code> function on line 161 was having problems with certain web sites. I think it has something to do with the <code>if hasattr(self.server, 'chainedHandler\")</code> block from the other <code>do_GET</code> function elsewhere in the code. When I copied that code from the other do_GET to the do_GET on line 161 it worked for every site I tried it on.\r\n\r\nEmail me so I know how to get a hold of you later if I find more bugs, ok?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-02-15T11:11:15.000Z",
+    "content": "Hi Mike,\r\n\r\nThanks for letting me know. It will be great if we can polish this module as much as possible as I see that there is a lot of interest in a technology like this one and no one is providing it at the moment. I personally need it for several projects of mine.\r\n\r\nRegarding your comment on HTTPServerWrapper class. This code is essential in order to make SSL sniffing work. It basically transmits information about the path which needs to be accessed from the SSL endpoint the browser tries to connect to via the proxy. Anyway, I will email you so we can keep in touch."
+  },
+  {
+    "author": "Anonymous",
+    "avatar": "6ab7b730173f71ae8c931a52abd48b62",
+    "date": "2009-02-19T22:23:26.000Z",
+    "content": "Good stuff.\n\nIf i wanted to write some basic tests for this, how would I go about doing it? I think it'd be useful. I was thinking something along the lines of, say, having a Paramiko-driven app try and connect to https&#58;//gmail.com using some dummy username and password we create, and seeing if it can intercept the information properly (?)\n\nJust a thought. I don't have enough netsec experience to contribute directly, but i do have python experience enough (and with scripting paramiko) to do this i think. At the  very least, setting up some unit tests should help me figure out how the python networkign stuff works better.\n\nAgain, good stuff! I'll be keeping tabs on this definitely."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-02-21T01:30:20.000Z",
+    "content": "The file is self-descriptive. It will be great if someone can spend some time cleaning up the code an also to make sure that everything works ok."
+  },
+  {
+    "author": "schang",
+    "avatar": "22fdafb741a77191445b50c828eddee5",
+    "date": "2009-03-05T10:33:16.000Z",
+    "content": "Mike,\r\n\r\ncould you share the fixed code with us ?\r\nI have been trying to fix it myself. It kind of works but it always takes like 1 or 2 minutes before I get an answer to my POST...\r\n\r\nthanks"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-03-09T09:47:32.000Z",
+    "content": "schang, I have been a bit busy lately but I do have some patches that needs to be merged and I will do so as soon as I get some free time."
+  },
+  {
+    "author": "Eric Blair",
+    "avatar": "cd97fb54db7afec67a70e2cfebc1ec02",
+    "date": "2009-03-14T14:56:34.000Z",
+    "content": "I don't use Python, but clicked to see \"SSL Mitm Proxy.\"\r\n\r\nIt might be easier to write this as a general (CGI) script that could be developed on your local box without a web server. I could script it using a Bourne shell script ;-) but I would probably use my favorite, Tcl.\r\n\r\nFrom the command-line, you can use \"openssl s_client\", and s_server and generate a certificate:\r\n\r\nhttp://www.securityfocus.com/infocus/1486\r\nhttp://www.vanemery.com/Linux/Apache/openSSL.html\r\n\r\nAnyway, I put up a page regarding SSL termination:\r\n\r\nhttp://grandscheme.org/gs.cgi?How-secure-is-https.html\r\n\r\nSince a browser will complain about certificate mismatches, I was wondering how you were expecting your code to be useful as part of a \"transparent SSL proxy.\" You made no mention of certificates."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-03-15T01:09:06.000Z",
+    "content": "good stuff. the reason I wrote this proxy is to create a new HTTP tampering tool which I am comfortable with. but yes, you can use the code for MITM attacks but you have to make a couple of changes. I think that recently there was a presentation which discussed MITM-like attacks for SSL. worth googling it!"
+  },
+  {
+    "author": "Christian Martorella",
+    "avatar": "a9d773561c7bb7591e04b2ce00c0e46f",
+    "date": "2009-04-27T11:09:58.000Z",
+    "content": "Hi pdp, we created a proxy https in python, for our tool ProxyStrike, you can check it here: http://www.edge-security.com/proxystrike.php\n\nWe faced the same problem as you, at time we wrote the tool the only available proxy in http was the one in spikeProxy.\n\nBy the way we updated the tool and now you can easily implement plugins.\n\n-CMM"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-04-28T06:29:51.000Z",
+    "content": "cool, thanks! is this tool written in python as well?"
+  },
+  {
+    "author": "eduardo",
+    "avatar": "20d19d3f61b879780435b111db84a1e2",
+    "date": "2009-11-19T23:02:58.000Z",
+    "content": "Hi, I would like to try your mitm proxy for ssl, but i have not been able to make it work with windows, could you help me provide a step by step?  feel free to contact me by email\n\nthanks"
+  },
+  {
+    "author": "darb",
+    "avatar": "9314a4344d2f04e6d5af3ac48c49abdd",
+    "date": "2010-01-13T20:58:53.000Z",
+    "content": "Any chance of using this to effectively block Skype's use of https, while allowing the rest of https traffic alone?"
+  },
+  {
+    "author": "Subbu",
+    "avatar": "18404cfb0114ef1150b7f1b5892510f2",
+    "date": "2010-02-19T01:41:16.000Z",
+    "content": "I'm seeing a bug in this proxy, I will investigate a fix,  but wanted to let you know. The issue is this:\r\n\r\nI clear all the cookies in a browser. Then\r\nI fire up the proxy and browse some websites, and then look at what cookies are set in my browser, I don't see some cookies that I expect to be set. \r\n\r\nWhen I do the exact same thing (clear cookies, _ exact websites), I can see the cookies being set in the browser. \r\n\r\nSo my inference is that the proxy is somehow eating up the cookies in the response. These sites are http, not https, so that is also not the issue. \r\n\r\nAny pointers for investigation?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2010-02-23T10:36:27.000Z",
+    "content": "darb, not sure! you have to check."
+  }
+]

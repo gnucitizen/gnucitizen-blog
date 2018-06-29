@@ -1,0 +1,44 @@
+[
+  {
+    "author": "djteller",
+    "avatar": "44c5e290ccf283471210752d0b1ed6df",
+    "date": "2007-10-18T13:31:25.000Z",
+    "content": "I smell a new Payload :)\r\n\r\nReverse Shell, Bind Shell, Geo-Tracker :)"
+  },
+  {
+    "author": "HD",
+    "avatar": "9ea891f23f0d65a97a81598c84c6eb6e",
+    "date": "2007-10-18T15:29:10.000Z",
+    "content": "This is how you do it on the iPhone:\r\nhttp://iphone-wireless.googlecode.com/svn/trunk/CellStumbler/"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-18T15:39:11.000Z",
+    "content": "nice one, so now all you need is a way to get this information out on a regular basis and you have a bug!"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-10-21T09:32:16.000Z",
+    "content": "Definitely a payload worth it including on a exploit. \r\n\r\nHowever, I can also see legitimate purposes for this. For instance, why pay a commercial service to track you mobile (in case it gets stolen or you want your family to know where you are), when you can code a small application which retrieves the cell data and translates it to a geographical location using a web service? \r\n\r\nJust another application of this technique worth it considering."
+  },
+  {
+    "author": "Griflet",
+    "avatar": "413f6c5268f39e1b195c24ac02b49c4a",
+    "date": "2007-10-24T21:30:25.000Z",
+    "content": "Hello GNUcitizens,\r\n\r\nI enjoy a lot all your ideas and your work. Personally, I'd love to track my phone without the use of a GPS. I'd like to instantly see my track on gmaps on my mobile. I would also like to add exif data with the approx. coords. to the snapshots I take with it. Can you show us the way?\r\n\r\nKeep up the creativity and art flowing,\r\nGuillaume"
+  },
+  {
+    "author": "Anon",
+    "avatar": "a2728f91bcbe3460f0e15fe4ef263dfe",
+    "date": "2007-10-27T05:21:14.000Z",
+    "content": "There used to be a related hack for the Motorola E1 Rokr phone, involving a modified copy of iTunes. It knew which SIM was supposed to be in the phone; if the SIM changed (i.e. it was stolen, and the SIM replaced) it would start silently SMS'ing a user-definable list of numbers with the current cell tower details (and obviously its new phone number)."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-11-29T10:47:19.000Z",
+    "content": "Here is a video that describes the same technique but in a bit more visual way, of course, without too much of tech information:\r\n\r\n<div class=\"screen\"><object width=\"425\" height=\"355\"><param name=\"movie\" value=\"http://www.youtube.com/v/v6gqipmbcok&rel=1&border=0\"></param><param name=\"wmode\" value=\"transparent\"></param><embed src=\"http://www.youtube.com/v/v6gqipmbcok&rel=1&border=0\" type=\"application/x-shockwave-flash\" wmode=\"transparent\" width=\"425\" height=\"355\"></embed></object></div>"
+  }
+]

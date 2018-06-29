@@ -1,0 +1,38 @@
+[
+  {
+    "author": "kuza55",
+    "avatar": "2f6303f9095f59c14c3097ef4df566f5",
+    "date": "2008-06-23T12:22:11.000Z",
+    "content": "I'm of the opinion that wildcards are simple a bad idea for security in general, and pointing them at IP addresses you don't control is just plain stupid.\r\n\r\nSo have you seriously seen an administrator who thinks it's a good idea to let someone control subdomains that are under their DNS?\r\n\r\nThe ghs.google.com domain doesn't seem to suffer this problem, however if you were to point the wildcard at a working domain then you are also trusting that that domain does not have xss holes."
+  },
+  {
+    "author": "NurBo",
+    "avatar": "3cead94016ef2136edb79c952ddb9f95",
+    "date": "2008-06-24T00:16:10.000Z",
+    "content": "This isn't anything knew Ive seen tricks done to get access to a domain gmail account. Such as @whatever.com you just trick your way into verifying and now you have the a email address with somebodys domain you can do alot of things with just a bit of that. And the image is cool in my book."
+  },
+  {
+    "author": "jtyrrell",
+    "avatar": "aaf6458b296bd09d5f21a8c05b7f13ac",
+    "date": "2008-06-24T00:21:52.000Z",
+    "content": "I haven't used Blogspot, but from the services I've seen, you must first tell Google the value of the CNAME before creating the record.  If you enter a wildcard into that field, it tells you that *'s aren't allowed.\r\n\r\nThis is so that ghs.google.com can respond to an HTTP query properly according to the Host: header that the client sends.  If an unknown Host is submitted, Google simply sends back a 404 error.\r\n\r\nSo you're saying this really isn't the case with Blogspot?  Oversight indeed...."
+  },
+  {
+    "author": "sirdarckcat",
+    "avatar": "de37b9dc788b0268d438591e085e4496",
+    "date": "2008-06-30T16:52:52.000Z",
+    "content": "jtyrrell is right, http://help.blogger.com/bin/answer.py?answer=55373\r\n\r\nI Notes they say:\r\n\r\nYou can use this feature with domains (e.g. mysite.com) or subdomains (e.g. name.mysite.com). However, you cannot specify subdirectories (e.g. mysite.com/blog/) or wildcards (e.g. *.mysite.com).\r\n\r\nGreetz!!"
+  },
+  {
+    "author": "Albert",
+    "avatar": "b482000b6e3554ee69d69fddea82cf4e",
+    "date": "2008-07-06T17:49:01.000Z",
+    "content": "Pdp means that if *.acme.com points to Blogspot, you can go to Blogspot and occupy blog.acme.com. The wildcard is entered in the DNS, and not at Blogspot."
+  },
+  {
+    "author": "jtyrrell",
+    "avatar": "993d2a833e69225f9119768f4e58e555",
+    "date": "2008-07-07T12:31:30.000Z",
+    "content": "Right, but Google doesn't have to respond to that hostname.  Through HTTP, they could choose to give you a 404 error, as I'm sure they do."
+  }
+]

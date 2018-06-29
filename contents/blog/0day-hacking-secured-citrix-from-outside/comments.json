@@ -1,0 +1,122 @@
+[
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-10-10T19:54:45.000Z",
+    "content": "Nice work. Let's keep the client-side hacks coming!"
+  },
+  {
+    "author": "vindic",
+    "avatar": "2fbd3fcfa626bd4301c18cdbd207a7bb",
+    "date": "2007-10-11T00:25:04.000Z",
+    "content": "Yes, very nice, thnx for good work ;)"
+  },
+  {
+    "author": "zeridon",
+    "avatar": "d21c24ebcd620ac30f876e5a92904a1a",
+    "date": "2007-10-11T07:10:46.000Z",
+    "content": "Looks nice,\r\n\r\nand also i see a storm brewing ... smth. like the 0day pdf."
+  },
+  {
+    "author": "rootkid",
+    "avatar": "8288f51796514beb3c57314ebcfa5423",
+    "date": "2007-10-11T10:49:21.000Z",
+    "content": "Oh bummer. Man, I was investigating the same stuff (citrix that is) at the moment, and somehow you are always a leap ahead. I hate that...:) Anyhow, good work as always. I would really like to have a chat with you someday if you happen to be around (any con you are on this year in europe?). Probably we can share ideas, if you like. \r\nCheers."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-11T11:00:15.000Z",
+    "content": "rootkid, there is nothing on the horizon for me in europe for the rest of this year. feel free to contact me through!"
+  },
+  {
+    "author": "hellboy726",
+    "avatar": "cd1b2be4df9002f9cf7f93a8807a642f",
+    "date": "2007-10-11T11:15:53.000Z",
+    "content": "Nice!"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-11T11:22:57.000Z",
+    "content": "hellboy726, interesting site you have there! reminds  me of 1998... but I like it."
+  },
+  {
+    "author": "lol",
+    "avatar": "3174bb62ad708abe84a3e3cc942af4b6",
+    "date": "2007-10-11T18:14:58.000Z",
+    "content": "it just seems to be the category clickmyexecutableiwonthurt \"exploit\". unfortunately we can't patch users."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-11T18:40:27.000Z",
+    "content": "no user interaction is required!"
+  },
+  {
+    "author": "wekrid",
+    "avatar": "67525f265dc56778e9a1088e29fdb0f2",
+    "date": "2007-10-12T07:47:46.000Z",
+    "content": "will this hack also work with csg and cags?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-12T08:40:42.000Z",
+    "content": "Folk, apparently CITRIX has removed the YouTube videos due to some copyright violation. This is strange and the same time not the right way to handle security advisories. Still haven't got any response from them around the issue and I seriously doubt that this will ever happen. However, I am going to keep the POC private for now and give them a chance to react on the in sensible way."
+  },
+  {
+    "author": "hackathology",
+    "avatar": "271ecedbd232e23677ddc1d3956147eb",
+    "date": "2007-10-22T10:20:14.000Z",
+    "content": "Is this the same vulnerability found here?\r\n\r\nhttp://support.citrix.com/article/CTX112589"
+  },
+  {
+    "author": "Major Fukup",
+    "avatar": "33edf67af751e34ebf717b396f15a657",
+    "date": "2007-10-22T11:50:56.000Z",
+    "content": "One of the reasons why you should always give users on these systems minimum rights.\r\nDoes it require a published desktop?\r\nWhich virtual channels do you use?\r\n\r\nRegards M.F."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-22T13:54:57.000Z",
+    "content": "hackathology, nope, it is different. you should be able to figure it out though."
+  },
+  {
+    "author": "hackathology",
+    "avatar": "271ecedbd232e23677ddc1d3956147eb",
+    "date": "2007-10-22T17:09:42.000Z",
+    "content": "got it pdp. I found it"
+  },
+  {
+    "author": "hackathology",
+    "avatar": "271ecedbd232e23677ddc1d3956147eb",
+    "date": "2007-10-22T17:10:19.000Z",
+    "content": "i found out the clue"
+  },
+  {
+    "author": "Noob",
+    "avatar": "dc5ab7a20f1a46254d0ebfb38b10b24b",
+    "date": "2007-10-25T20:33:48.000Z",
+    "content": "Question:\r\n\r\nIf the user does not have pass through enabled, but does have stored credentials in the client- (username, password, domain) - will the attack still work?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-26T06:28:54.000Z",
+    "content": "Noob I haven't tested that but it should work in theory."
+  },
+  {
+    "author": "Kaustubh Kumar",
+    "avatar": "bbfcc390c96f01104c2587b0d3a1a8b7",
+    "date": "2008-03-21T00:15:33.000Z",
+    "content": "Hi All,\r\nI need help in hacking citrix which can allow me to open websites in the citrix metaframe."
+  },
+  {
+    "author": "DH",
+    "avatar": "5b1a9d9d8a038edb1efd2f81db4dc06e",
+    "date": "2008-05-14T10:37:27.000Z",
+    "content": "Here is the fix, nice job PDP :-D\r\n\r\nXenApp 4.5\r\nhttp://support.citrix.com/article/CTX116954"
+  }
+]

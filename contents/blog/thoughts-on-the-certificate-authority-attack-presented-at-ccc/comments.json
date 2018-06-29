@@ -1,0 +1,86 @@
+[
+  {
+    "author": "Kender",
+    "avatar": "37b0f7cf8ccf81abfff68beb1ea54c3e",
+    "date": "2008-12-31T14:29:07.000Z",
+    "content": "The 1st step to improve the PKI would be to find out why it is possible for a CA to operate with flawed procedures (non-random serial, MD5 hashing). I thought they were held to some pretty strict standards. This attack, combined with [url=http://www.sslshopper.com/article-ssl-certificate-for-mozilla.com-issued-without-validation.html this] is making me lose trust in the PKI infra."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-12-31T14:34:10.000Z",
+    "content": "not to mention that users who are usually familiar with PKI or SSL will completely ignore any warnings anyway."
+  },
+  {
+    "author": "rvdh",
+    "avatar": "fcab05a2d8d8ca0d32e66d0cbd22269e",
+    "date": "2008-12-31T15:24:15.000Z",
+    "content": "I don't understand the motivation behind all of this. Just like the DNS issues which has been known since ages (see: Berkeley) and many theorems written in 1991, MD5 has been written off since the late nineties and finally in 2004, and completely in 2005 by Vlastimil Klima who could produce collisions on a Pentium 1.6 GHZ. It's fairly known that you cannot rely on MD5 as well as SHA_0 since a decade. So anyone in the security field who relied on MD5 commits the original sin, so what's the news?\r\n\r\nOther than that, there are plenty of other ways which are easier to perform. Think about shared certs on virtual hosting for example, keys that link all over place without the need for fast computation. Criminals use the path of least resistance, maybe this feat in Cryptography is interesting for governments, my bet is that we won't see attacks like these on webshops. it totally lacks perspective on the reality of Internet criminals, the term hacking certs is the right one as I see it only as a intellectual accomplishment build upon years of Cryptographic study unnecessary to provide PoC's because everyone in Cryptography was already in the knowing.  \r\n\r\nEveryone knew the possible problems without the need for PoC's. But no one did anything, maybe that's the news: people start to see the real danger, other than that I'm far from impressed. I wonder if they are in need of funding of some kind, academics with too much spare time with  agenda's beyond my comprehension. \r\n\r\nThis is not a shoot down, it's a common sense analysis on something that doesn't needed a PoC in the first place to scare people away from using certs."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-12-31T15:55:10.000Z",
+    "content": "I am not sure about the motivation, apart from pointing that it is possible. And I think that this often is very much needed in order to open the eyes of the masses."
+  },
+  {
+    "author": "rvdh",
+    "avatar": "fcab05a2d8d8ca0d32e66d0cbd22269e",
+    "date": "2008-12-31T16:04:34.000Z",
+    "content": "I believe Schneier said years ago in one of his books something similar like:\r\n\r\n\"...How do we know that the CA issuer of certs can be trusted?...\"\r\n\r\nObvious answer: we can't. \r\n\r\nFurthermore I know no-one who checks the certs and read them before accepting them, it just a false sense of security for man in the middle attacks if you own one end of the line already. Root a box that sets up a SSL connection and no matter how secure your certs are, MIM won't be nessesary. Don't know about you but guess a root password requires less computation than setting up a CA yourself with 300 playstations.\r\n\r\nBut that might be me, I think to simple."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-12-31T16:29:53.000Z",
+    "content": "no, you are right. technically speaking, it will be easier to crack the root password but only if you can do that offline. remote attacks are challenging. and you are right about the CAs. we cannot trust them in anyway. this is the reason why I said in my post that for the same amount of money invested into this project, you can buy yourself a cert from an insider.  the only thing that I can figure right now that can potentially mitigate the whole trust in CAs issue is to record the signatures for every cert you encounter and you are willing to trust. that way you create an offline index of trusted certs, which if modified on later stage, you should get some warning for. but again, these warning will most likely be ignored by most people. :)\n\nthe way I see it now, self-signed certificates are more secure (from browser prospective). at least with the self-signed certs I can explicitly trust them. and if these trusted certs are changed, well... no worries! the browser will warn you, i think :)"
+  },
+  {
+    "author": "Alexander Sotirov",
+    "avatar": "e2b4b990be56dd468211730436e98b11",
+    "date": "2008-12-31T20:30:17.000Z",
+    "content": "I am one of the researchers who published this research. Our motivation (aside from getting famous) was to force the CAs to stop using the insecure MD5 hash function.\r\n\r\nObviously the theoretical attacks on certificate signing presented in 2005 and 2007 were not sufficient to make these companies stop using MD5, so we had to make the theoretical practical and do the attack. I was very pleased that Verisign responded quickly and as of today RapidSSL is no longer issuing MD5 signed certificates."
+  },
+  {
+    "author": "Kender",
+    "avatar": "37b0f7cf8ccf81abfff68beb1ea54c3e",
+    "date": "2009-01-01T10:13:29.000Z",
+    "content": "What you're saying is that certificates are useless for determining the identity of servers. Do you assume that there are more rogue CA's out there? (one was created with a method you say is harder than other available methods)\n\nI don't believe in perfect security so no, you cannot 100% trust all CA's. But the PKI is not built on 100% trust but on reasonable trust (imho). Incidents like the ones above erode that trust towards a level where it might not be reasonable to trust them anymore. Of course 'reasonable' has different values for different people :)\n\nPersonally I would like to see some actions taken by the browser manufacturers (who include default trusted certs) and the CA's to beef up that trust. Stricter rules wrt algorithms and processes used should be enforced. Stricter validation and vetting of both CA's and resellers should be applied.\n\n\nOh, and if you don't trust a CA, feel free to remove their certs from your browser :) (Ff: Tools->Options->Advanced->Encryption->View certificates->Authorities)"
+  },
+  {
+    "author": "rvdh",
+    "avatar": "fcab05a2d8d8ca0d32e66d0cbd22269e",
+    "date": "2009-01-01T22:01:14.000Z",
+    "content": "@Alexander,\r\n\r\nIn that case it's a deserved recognition. Security is and always has been an economics issue, and they surely knew about MD5 collision weakness and denied the fact that MD5 is obsolete, because it would hurt their business model, forgetting that brilliant researchers like yourself will make them regret the choice of dollar signs in their eyes. But maybe not, I don't think they even care after it went globally, these CA people don't care about their users safety, they care about dollars.\r\n\r\nI wish they were as responsible as automobile manufacturers, when they detect a flaw they recall all models, something that the Internet is still missing: Liability."
+  },
+  {
+    "author": "rvdh",
+    "avatar": "fcab05a2d8d8ca0d32e66d0cbd22269e",
+    "date": "2009-01-01T22:20:49.000Z",
+    "content": "@Kender,\r\n\r\nFor me security and hacking is only about latency, and variations thereof. The trick for criminals is to have short latency, and for security folks it is to have long latency. It's a nice game but I think it's critical to realize that indeed the security paradigm cannot exist. That doesn't mean that security is void, it means that with long latency and addequate response and monitoring on a breach, you can be more secure."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-01-01T22:33:51.000Z",
+    "content": "still, this is a vulnerability in the vendor's (RapidSSL) certificate issuing process, although MD5 is weak! or am I wrong?"
+  },
+  {
+    "author": "rvdh",
+    "avatar": "fcab05a2d8d8ca0d32e66d0cbd22269e",
+    "date": "2009-01-01T23:36:45.000Z",
+    "content": "I only gleamed over the material, I got the idea that’s is sequential. It seems they sign plaintext with MD5 with minor entropy in the plaintext, but I think that the entropy isn’t the biggest problem here, it’s the signed plaintext ab initio. So even if they used SHA-X you could theoretically collide due to a chosen plaintext attack because of signing the plaintext. Granted it would be way tougher. So the flaw favors it’s injury: MD5. But most of the cryptanalysis goes way above my comprehension, maybe Alexander or someone else can elaborate on it."
+  },
+  {
+    "author": "Janus Cook",
+    "avatar": "08a272db1b317fdd3613e62953e4ac35",
+    "date": "2009-01-02T09:05:43.000Z",
+    "content": "\"still, this is a vulnerability in the vendor’s (RapidSSL) certificate issuing process, although MD5 is weak! or am I wrong?\"\r\n\r\nIt just makes it easier to bruteforce, because knowing about RapidSSL's process eliminates some parameters that would otherwise be completely random.\r\n\r\nNow that Alexander is responding here, I would like to ask what he suggests for the near future. Since SHA-0/1 hashes have major flaws as well, and I believe that's still widely used."
+  },
+  {
+    "author": "Martin",
+    "avatar": "7f158c6175e898144a79dac0fb645972",
+    "date": "2009-01-02T13:26:21.000Z",
+    "content": "It might be worth mentioning that, while using MD5 was a bad idea, Verisign has shown an excellent response (they stopped using MD5 for RapidSSL within 24 hours): \r\nhttps://blogs.verisign.com/ssl-blog/2008/12/on_md5_vulnerabilities_and_mit.php"
+  }
+]

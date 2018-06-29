@@ -1,0 +1,122 @@
+[
+  {
+    "author": "djteller",
+    "avatar": "44c5e290ccf283471210752d0b1ed6df",
+    "date": "2007-12-09T10:59:48.000Z",
+    "content": "Great post, very informative."
+  },
+  {
+    "author": "Matt",
+    "avatar": "bd8ac47a2a650bc3add0502686f33e39",
+    "date": "2007-12-10T17:43:32.000Z",
+    "content": "Just thought I would add a note about the long hex-style string. When I tested this on my corporate OWA installation, I got the exact same string as in your post. I also tested with two other colleagues and they also received the same string.\r\n\r\nAlthough our installation generates an error on the server from owaauth.dll, just thought I would alert you to the string issue."
+  },
+  {
+    "author": "maotx",
+    "avatar": "35de4e43c45dcc0c2148e3bec6d50458",
+    "date": "2007-12-10T23:54:43.000Z",
+    "content": "Does not work with Exchange 2007.  OWA requires .html attached files be saved to disk first."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-12-11T00:29:32.000Z",
+    "content": "content disposition attachment can be forced to open inside object elements in some browsers"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-12-11T12:42:16.000Z",
+    "content": "@djteller - thanks for such kind comment!\r\n\r\n@Matt - if the hex string is NOT not a unique variable, but rather a constant, then crafting the exploit URL would become even easier. I'm not sure what you mean by the error. Is this an error generated when accessing the specially-crafted URL?\r\n\r\n@maotx - it'd be cool to make it work on OWA2K7 as well. Unfortunately, I don't have access to a OWA2K7 installation to find out if there is a way to replicate this phishing attack."
+  },
+  {
+    "author": "Matt",
+    "avatar": "bd8ac47a2a650bc3add0502686f33e39",
+    "date": "2007-12-11T15:49:37.000Z",
+    "content": "@Adrian - Yes the error is returned when accessing the specially crafted URL. The process is that I get the normal Basic Auth pop-up to enter credentials, enter my valid credentials, and then I get another older looking login page. (Can send you screen shots if interested). Then after entering my creds on this new page (and verifying that the url has not changed and I am still on my companies OWA site), I get the owaauth.dll error.\r\n\r\nLet me know if you want screenshots for your review."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-12-12T15:45:59.000Z",
+    "content": "@Matt - If you paste the real URL (with domain name hidden for privacy) I should be able to reconstruct the exploit URL. One thing I'm thinking of is that the inbox folder's name has been customized. In that case you need to use the customized value.\r\n\r\nI'll contact you to see the screenshots. Can't understand why you get the authentication prompt after you have logged in. What's described on this post has been tested on 3 different OWA2K3 installations with no problem. It'd be quite useful if other GC readers tested it on their installations."
+  },
+  {
+    "author": "Matt",
+    "avatar": "bd8ac47a2a650bc3add0502686f33e39",
+    "date": "2007-12-12T21:05:45.000Z",
+    "content": "Thanks, Adrian. I have all the screen shots ready. I have confirmed that our OWA and Exchange servers in prod are 2003.\n\nAnother thing that I have noticed though is that none of my URLs have the \"1_multipart_xF8FF_2_\" at the beginning of attached file names. Could this be an issue?\n\nP.S. I have tried the URL with this string in front of the attachment name,m but to no avail."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-12-15T14:40:56.000Z",
+    "content": "@Matt - perhaps you don't even need \"1_multipart_xF8FF_2_\" in your case? Best thing is just post the original path of a URL that accesses an attachment, and we'll show you what to do. Anyway, we'll be in touch via email."
+  },
+  {
+    "author": "Raffi",
+    "avatar": "a42a84163d3921e0f5ec7617a40b9842",
+    "date": "2007-12-17T14:29:50.000Z",
+    "content": "I tested on a client's OWA server and removed the UID. pretty scary. If you don't have your status line in view, and looked there, you wouldn't notice that the logon button points to someplace else. holy spear phishing batman"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-12-17T14:32:01.000Z",
+    "content": "this is exactly what we thought :)"
+  },
+  {
+    "author": "hackathology",
+    "avatar": "271ecedbd232e23677ddc1d3956147eb",
+    "date": "2007-12-18T15:42:19.000Z",
+    "content": "pretty interesting discovery. Too bad, i cant test it."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-12-18T22:49:34.000Z",
+    "content": "Hi Raffi, this is the same result we got on 3 different OWA installations. Glad to hear to find this attack as neat as we do!"
+  },
+  {
+    "author": "Mike",
+    "avatar": "ecba29751333cb64231eb2a109721323",
+    "date": "2008-01-05T23:31:03.000Z",
+    "content": "Very cool hack!  I'm not surprised that Microsoft doesn't take it seriously. I think this flaw can be made even more serious by using flash and the crossdomain.xml file as described in this hack presented at Defcon 15: http://www.defcon.org/images/defcon-15/dc15-presentations/Rios/Whitepaper/dc-15-rios-WP.pdf"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-01-10T23:53:19.000Z",
+    "content": "Hey Mike. I just read most of the paper and love it. Very simple yet effective technique. These are the kind of hacks I really love!"
+  },
+  {
+    "author": "Jan",
+    "avatar": "f97b424c5b255846de9495c77f5ea445",
+    "date": "2008-04-07T17:33:31.000Z",
+    "content": "Ok I have been playing with this all morning and I am stuck.\r\n\r\nThe server used is OWA2003. I have tried sending it to myself from my private mail doing it a few different ways. Not exactly sure what I am doing wrong. Not sure if it is because I am at home and logging into the OWA from here remotely. Would you be willing to help me out with this? After the victim enters the cred where do I view them at, I post the url, but just get the sign in sheet.\r\n\r\nAny help would be very appreciated. I am a bit new to this, but love the challange. Just stuck"
+  },
+  {
+    "author": "chrisb",
+    "avatar": "896af640bb7078f474ca359486730538",
+    "date": "2008-05-07T10:36:13.000Z",
+    "content": "Hi, Im in quite slow, but explain the get-credentials.php file please. Must I still write this and host it on my website?"
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2008-09-09T22:53:07.000Z",
+    "content": "Just tested this attack again successfully on a OWA 2K3 installation during a pentest. It's good to see it still works!\r\n\r\nHowever, I  would like to know why it doesn't work on all OWA 2K3 installations. Reading our readers' comments on this post shows that the exploit doesn't seem to work for everyone. Perhaps there is something configuration-specific that would make this attack not work?"
+  },
+  {
+    "author": "sillentbot007",
+    "avatar": "654c2bb555502b981c22c51c203f0283",
+    "date": "2010-12-09T18:54:56.000Z",
+    "content": "Is this method still effective anyone?"
+  },
+  {
+    "author": "Nitin Kushwaha",
+    "avatar": "2247999ae1e03ceeec5c0706404c8214",
+    "date": "2011-12-08T19:02:15.000Z",
+    "content": "Hey Adrian,\n\nI would like to know if any other exploits in EX2k3 OWA with SP2. running on MS W2k3 Sp2. The problem i am facing is the company had implemented the fix for URL redirection: something like, making a copy of OWALogon.asp, then say Re-directing the base URL for OWA to itself.\n\nany clues??"
+  }
+]

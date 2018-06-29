@@ -1,0 +1,80 @@
+[
+  {
+    "author": "NIX",
+    "avatar": "f8069e4c4dcb95906f6f6e2604bc7677",
+    "date": "2007-10-20T09:26:02.000Z",
+    "content": "thats a good one ;)\r\nthanks"
+  },
+  {
+    "author": "Sirw2p",
+    "avatar": "06153f784be70e3391b07b3582683c0f",
+    "date": "2007-10-20T10:08:41.000Z",
+    "content": "Good code, but there are easier ways to filter and prevent xss attacks."
+  },
+  {
+    "author": "kuza55",
+    "avatar": "2f6303f9095f59c14c3097ef4df566f5",
+    "date": "2007-10-20T11:46:43.000Z",
+    "content": "You're missing the end of a line:\r\n\r\n<pre><code>return strip_tags(str_replace($search, $replace, $string)</code></pre>\r\n\r\nshould be\r\n\r\n<pre><code>return strip_tags(str_replace($search, $replace, $string));</code></pre>\r\n\r\nFurthermore editing $_REQUEST does not change the values in $_GET, $_POST, $_COOKIE, etc. SO you would need to do this to every array you want to sanitize, and then reconstruct $_REQUEST from your already filtered initial arrays.\r\n\r\nThis is purely IMO, but $_REQUEST seems like a bad idea, since you don't know where the stuff your working with came from, especially considering it relies on the variables_order directive.\r\n\r\nAnyway, this seems pretty much identical to magic_quotes so I'm not going to bother criticising it since the arguments for/against magic_quotes have been rehashed enough times already."
+  },
+  {
+    "author": ".mario",
+    "avatar": "89886495b27cfdc78593e1f5c8810594",
+    "date": "2007-10-20T12:00:28.000Z",
+    "content": "Hi!\r\n\r\nThanks for the comments. \r\n\r\nKuza55 you are right - $_REQUEST _can_ be problematic in some setups but this is example is more to show on how you can build an easy to extend first solution to cope with global input filtering - which I really rarely come to see during work. It of course no 'use it and be happy forever' solution but a snippet to point into a certain direction.\r\n\r\nGreetings,\r\n.mario"
+  },
+  {
+    "author": "David",
+    "avatar": "c3c67ef1a4beba7889ca36b0c609cad4",
+    "date": "2007-10-20T22:05:13.000Z",
+    "content": "Not really recursive (function doesn't call itself, just goes 1 level into an array). Seems you can reduce the whole thing to 1 function by using actual recursion:\r\n\r\n<pre><code> $var) {\r\n\t\t\t\t$safe_html[$key]=recurs_escape_html($var);\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\treturn htmlentities($data, ENT_QUOTES, 'ISO-8859-1');\r\n\t\t}\r\n\t\treturn $safe_html;\r\n\t}\r\n?&gt;</code></pre>"
+  },
+  {
+    "author": "digi7al64",
+    "avatar": "ac08a11dabb6e8a4477a4fc96b7399be",
+    "date": "2007-10-21T03:26:25.000Z",
+    "content": "I been using a similar method to the one you presented here for a while now but there are a few different things in mine that perhaps could be blended into yours to make it safer.\r\n\r\nI.E\r\n\r\n<blockquote>&gt; I use the iconv function to force an encoding set on the supplied data\r\n&gt; I loop through each $_POST and $_GET and set the values that way (as kuza55 suggested [cookie not included as this is only an idea to get you going])</blockquote>\r\n\r\nFinally, there is a small bug in my code (intentional for this post) so post back if you can find how to make it throw an error, should be easy :)\r\n\r\noh and as a final thought, generally you might want to trim the string straight up to a fixed length you know you can handle it with whatever you want to do.\r\n\r\n<pre><code>$value){\r\n\t\t\t$_POST[$name] = santize($value);\r\n\t\t}\r\n\t}\r\n\t\r\n\t// Clean any supplied get values\r\n\tif(isset($_GET)) {\r\n\t\tforeach($_GET as $name =&gt; $value){\r\n\t\t\t$_GET[$name] = santize($value);\r\n\t\t}\r\n\t}\r\n?&gt;</code></pre>"
+  },
+  {
+    "author": "digi7al64",
+    "avatar": "ac08a11dabb6e8a4477a4fc96b7399be",
+    "date": "2007-10-21T03:29:05.000Z",
+    "content": "it seems this blog removed half of my code. therefore don't worry about approving my post, please delete it. i don't intend to repost"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-21T06:50:50.000Z",
+    "content": "digi7al64, wordpress will try to prevent you from posting anything that looks like HTML. Just make sure that all your &lt; are replaced &amp;lt; and &gt; is replaced with &amp;gt; :) cheers"
+  },
+  {
+    "author": "Wade",
+    "avatar": "edbb8d1cd610f8c1049b954c8095c2cc",
+    "date": "2007-10-22T14:35:14.000Z",
+    "content": "mario. sorry for rehashing this again, but I don't want to see anyone using this code thinking that it's going to save them against XSS. As previously mentioned by kuza55 and digi7al64, $_GET and $_POST values (which would typically used by developers) are not being affected by the sanitation script. For this to be more \"copy and paste\" friendly,  you might want to initialize the whole thing by using:\r\n\r\n<pre><code>$_GET = filter($_GET);\r\n$_POST = filter($_POST);\r\n$_COOKIE = filter($_COOKIE);</code></pre>"
+  },
+  {
+    "author": "ReZEN",
+    "avatar": "578dd9336bc31629d60c31f6f39bdadd",
+    "date": "2007-10-22T14:57:58.000Z",
+    "content": ".mario:\r\n\r\nWow this is hilarious.  Kids and their games.  Next time you want to post pure crap just through up a link to rotten.com or ogrish or something and quit wasting everyones time with your absolute shit code.  Have you done NO research on this subject at all?  And if you had THIS IS WHAT YOU CAME UP WITH?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-22T16:10:20.000Z",
+    "content": "ReZEN, if you don't like it, please don't read it. All .mario did is to show a kind of code which may fit into some scenarios. We all know that there are no bulletproof solutions."
+  },
+  {
+    "author": "Mario Heiderich",
+    "avatar": "e53f5d616931bfe8fa74bfd9f72e049e",
+    "date": "2007-10-22T21:13:49.000Z",
+    "content": "Hey ReZEN - click that, junior!\r\nhttp://tinyurl.com/2h3ps6\r\n\r\nYou should have read my post ;)"
+  },
+  {
+    "author": "Raaka!",
+    "avatar": "11566af8dcd11e7aa34805614eab2385",
+    "date": "2007-10-26T19:19:38.000Z",
+    "content": "LOL =))\r\n\r\nwhere is reZen now :p\r\n\r\nthanks for the code"
+  }
+]

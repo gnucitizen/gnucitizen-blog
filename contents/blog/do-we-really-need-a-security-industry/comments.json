@@ -1,0 +1,26 @@
+[
+  {
+    "author": "Aodhhan",
+    "avatar": "613720a7bae4ce9b3c7a536782671ee9",
+    "date": "2007-05-04T19:46:15.000Z",
+    "content": "First time I've heard of him. After reading his column I know why.\r\nHe obviously lacks any detailed education with tcp/ip, software development/reverse engineering, defense in depth, and the all powerful malicious insider. \r\n...Or perhaps he was drinking."
+  },
+  {
+    "author": "David Kierznowski",
+    "avatar": "1d95d2324345e3dd2e41d6066cc1b492",
+    "date": "2007-05-06T00:58:52.000Z",
+    "content": "In most cases all these things come down to money and not ethics - this is what I picked up from Bruce's post.\r\n\r\nThe major driving force behind security has always been fear. Why install alarms around your house, because it looks pretty?\r\n\r\nThe security industry thrives and booms on fear. What if my company website looks bad after being defaced? what if our customers information is disclosed to the Internet? What if corporate and government secrets are stolen? \r\n\r\nWhat drives the fear? Ultimately I belive its money in the form of credibility. If this makes us look bad we lose customers and therefore lose money.\r\n\r\nAs long as there are bad guys doing bad things, the security industry will be around. If they really wanted to hinder progress, they shouldn't do anything at all and be patient."
+  },
+  {
+    "author": "Gar",
+    "avatar": "8e71e197b04669e0f5712f520528d7a7",
+    "date": "2007-05-09T03:49:11.000Z",
+    "content": "Let me be the devil's advocate here.\r\n\r\nWhat is wrong with the security industry is that  much of it - think antiviruses - tries to mitigate problems that happened.\r\n\r\nNow there is a very good reason for that: pointy-haired bosses are blissfully unaware of how secure their products are, and are therefore unable to wisely spend money on their own products' security. But they will have problems, and they will spend a pot of money in trying to fix the problems once they are discovered.\r\n\r\nI don't know if our economy (market forces, whatever) will be able to head into the distant future Schneier describes, where the security industry can't be told apart from the software industry. Still, I'd consider the security industry a failure if it doesn't happen."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-05-09T08:32:06.000Z",
+    "content": "Gar, here is an interesting though for you...\r\n\r\n<blockquote>Security is a process not a destination.</blockquote>"
+  }
+]

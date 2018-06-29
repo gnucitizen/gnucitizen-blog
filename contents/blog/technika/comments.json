@@ -1,0 +1,86 @@
+[
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-10-23T10:43:43.000Z",
+    "content": "I think the latest version still needs to be added to: https://addons.mozilla.org/en-US/firefox/addon/4665\r\n\r\nbtw, you should consider making a video showing some tricks with Technika."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-23T17:02:17.000Z",
+    "content": "definitely, I need to put some docs together. btw, only technika 1.3.1 will be available for the Mozilla addons. first of all, I need to do some improvements on various places in order to make the extension even more useful."
+  },
+  {
+    "author": "steev",
+    "avatar": "e190dfc61c3e3ea459f3d796130f7806",
+    "date": "2007-12-04T16:53:07.000Z",
+    "content": "When attempting to work with Technika, I can't seem to get it - perhaps it is due to the way that I have Firefox compiled, the extension installs fine, but I don't seem to have any interface for it - FireBug works fine, and I have tried uninstalling FireBug, and adding 1.3 from here (as opposed to 1.2 from addons.mozilla.org) with the same result, no apparent way of using Technika - what am I missing?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-12-04T18:10:44.000Z",
+    "content": "steev, yes we are lacking any sort of documentation but usually you should be able to build bookmarklets and you can also use the console by pressing F1 or by following <strong>View -> Technika F1</strong>. I hope that this helps. Let me know if you need further assistance. Or feel free to put some documentation if you feel like it. It is an open source project at the end of the day."
+  },
+  {
+    "author": "David",
+    "avatar": "a49d504d79a751345bf67be81688d007",
+    "date": "2008-01-28T07:11:20.000Z",
+    "content": "Guys! You're smart coders. Respect! Thank's a lot for this .xpi. I'll immediately share with another web-developmenters!"
+  },
+  {
+    "author": "nickbotulism",
+    "avatar": "87ad7a662e5d034ae84d5a2d86c40464",
+    "date": "2008-01-29T03:33:47.000Z",
+    "content": "Technika has been very useful. However, now it seems to disable the CTRL+A keyboard shortcut when the focus is the Firefox page (i.e. not in a text-editing field). I'm not sure when (what version) this started happening; all I know is that when I disable Technika, the normal operation of CTRL+A returns. This is on Windows, Firefox 2.0.0.11.\n\n(My apologies if this is not the right place to report this. Thanks!)."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-29T08:57:00.000Z",
+    "content": "nickbotulism, it is probably more appropriate to post these stuff in the project issue page which is part of google code (thanks google). 10x, btw. I think that we might bind to CTRL+A but I am not sure. The current version is not very well organized GUI wise and I welcome you to suggest the changes you would like to see in the next version. Also, if you would like to help and you are familiar with XPCOM or you know someone that is familiar with XPCOM, please let us know, since there is one minor issue that prevents us from taking Technika to the next level."
+  },
+  {
+    "author": "mr.r.birtles",
+    "avatar": "8c8d38091ac5bee13439a3ed7fa88ab4",
+    "date": "2008-06-19T14:00:00.000Z",
+    "content": "Hey when will a ff3 compatible version be out?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-06-19T14:57:10.000Z",
+    "content": "I soon as I find time which wont be very soon :) sorry."
+  },
+  {
+    "author": "mr.r.birtles",
+    "avatar": "8c8d38091ac5bee13439a3ed7fa88ab4",
+    "date": "2008-06-20T09:07:09.000Z",
+    "content": "Bla I didn't want to wait that long so here is a temp fix for the people using FF3 (I hope thats all of you) download Technika.xpi and rename the file Technika.zip, pull out the install.rdf file and change the line that reads <code>em:maxVersion2.0.0.*em:maxVersion</code> to <code>em:maxVersion3.0.0.*em:maxVersion</code>\n\nThere ya sorted for now until pdp gets some more time back."
+  },
+  {
+    "author": "Alograg",
+    "avatar": "1073e67522d646551f1270de7f238c84",
+    "date": "2008-07-12T10:21:07.000Z",
+    "content": "i'm newbie, how autorun works, where i can get examples?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-07-13T05:02:08.000Z",
+    "content": "just specify keyword <q>autorun</q> for your bookmark."
+  },
+  {
+    "author": "Zsolt",
+    "avatar": "e89afc156dfe66a24639016157f6bc63",
+    "date": "2009-02-26T21:47:30.000Z",
+    "content": "This isn't compatible with Firefox ver. 3.0.6. Please upload a newer version soon. Thanx..."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-02-27T09:13:07.000Z",
+    "content": "I need to rewrite the whole thing from scratch. There are a quite a few things that I would like to change."
+  }
+]

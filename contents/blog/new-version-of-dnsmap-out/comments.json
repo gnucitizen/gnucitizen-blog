@@ -1,0 +1,92 @@
+[
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-02-23T00:22:37.000Z",
+    "content": "now you need to make it multi-threaded :)"
+  },
+  {
+    "author": "pagvac",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2009-02-25T00:19:19.000Z",
+    "content": "yeah, multi-threading among other features are mentioned in the included TODO file. will eventually implement them all hopefully!"
+  },
+  {
+    "author": "kanedaaa",
+    "avatar": "cb93bd138e40ebb0735b2ab228ec2f1e",
+    "date": "2009-02-27T23:02:26.000Z",
+    "content": "Small patch add -fw option to scan even wildcard is detected.\n\n<pre><code>dnsmap-0.22$ patch < dnsmap.patchwildcard.patch</code></pre>\n\nhttp://kaneda.bohater.net/files/dnsmap.patchwildcard.diff"
+  },
+  {
+    "author": "meathive",
+    "avatar": "0a382f78d8540baaacd4fcb3a0bb4900",
+    "date": "2009-03-01T10:02:59.000Z",
+    "content": "Well done. https://kinqpinz.info/lib/2009/feb/#09c81545"
+  },
+  {
+    "author": "pagvac",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2009-03-01T17:55:01.000Z",
+    "content": "@kanedaaa: thanks for the patch, haven't tested it yet, but wanted to let u know that i fixed a few bugs reported by users, so it'd be cool if the patch also worked on version 0.22.1: http://lab.gnucitizen.org/projects/dnsmap (downloads on bottom of page)"
+  },
+  {
+    "author": "Varun",
+    "avatar": "d6ae9cf1198458bd791075ed744bf667",
+    "date": "2009-03-17T11:54:37.000Z",
+    "content": "The \"dnsmap\" link in the first sentence seems to have broken after this post was made. Leads to \"http://lab.gnucitizen.org/projects/dnsmap-1\" which gives a \"Page not found\". Thanks!"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-03-17T17:12:25.000Z",
+    "content": "should be fixed now!"
+  },
+  {
+    "author": "GNa",
+    "avatar": "16ea8181da57081da74205a150c6d720",
+    "date": "2009-03-18T20:53:01.000Z",
+    "content": "kanedaaa's patch is great for opendns users :)\n\nfor the 0.22.2 there is 1 thing to correct:\n<pre><code>-       unsigned short int i=0, j=0, found=0, ipCount=0, wordlist=FALSE, results=FALSE;\n+       unsigned short int i=0, j=0, found=0, ipCount=0, wordlist=FALSE, results=FALSE, forcewildcard=FALSE;</code></pre>\n\nnotice the unsigned short at the beginning"
+  },
+  {
+    "author": "GNa",
+    "avatar": "16ea8181da57081da74205a150c6d720",
+    "date": "2009-03-18T21:00:20.000Z",
+    "content": "i should also note that opendns users get the whole wordlist resolved, so they should filter out the ip 67.215.65.132 , or disable the nxdomain capture in their opendns account :)"
+  },
+  {
+    "author": "David Kierznowski",
+    "avatar": "1d95d2324345e3dd2e41d6066cc1b492",
+    "date": "2009-03-23T21:38:48.000Z",
+    "content": "Yo AP, its not that serious considering its run from the command line, but argv[1] is vulnerable to a buffer overflow.\n\nThe problem is in: <code>wildcarddetect(char *dom)</code>\nVULNERABLE LINE: <code>strcat(s, dom);</code>\nFIXED: <code>strncat(s, dom, sizeof(s));</code>\n\n<pre><code>Program received signal SIGSEGV, Segmentation fault.\n0x41414141 in ?? ()\n(gdb) info reg\neax            0x0      0\necx            0xffffffe0       -32\nedx            0x3      3\nebx            0x41414141       1094795585\nesp            0xbf90c600       0xbf90c600\nebp            0x41414141       0x41414141\nesi            0x41414141       1094795585\nedi            0x41414141       1094795585\neip            0x41414141       0x41414141\neflags         0x200282 2097794\ncs             0x73     115\nss             0x7b     123\nds             0x7b     123\nes             0x7b     123\nfs             0x0      0\ngs             0x33     51</code></pre>\n\nI can just imagine someone using this tool on a web frontend or something and getting themselves in trouble ;)\n\nCheers for the cool tool.\n\nDK"
+  },
+  {
+    "author": "pagvac",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2009-03-27T11:45:59.000Z",
+    "content": "lols. thought i fixed most of those! will fix it probably when i update other things in the code i was planning to fix. thanks for that DK. we should post a working PoC, that'd be cool :)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-03-27T22:07:14.000Z",
+    "content": "as far as I know nmap has been (still is) vulnerable to all sorts of attacks for years, and it is more likely to end up with a suid bit than dnsmap. of course, it is always good to fix the bugs, ap :)"
+  },
+  {
+    "author": "pagvac",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2009-03-28T19:58:30.000Z",
+    "content": "pdp: the only reason why i haven't cared much about input validation on dnsmap is because it doesn't require the SUID bit to be on, where tools like nmap do require to be run with root privileges. i.e.: for SYN portscans. nevertheless, as DK pointed out, if someone created a web gui for dnsmap, it could lead to remote command exec. i'd hope that if someone did implement a web gui for dnsmap, they filtered malicious input from the server-side script itself, unless they want their site to be owned :)"
+  },
+  {
+    "author": "Zee",
+    "avatar": "c59152a77c0bc073fe6f2a3141b99010",
+    "date": "2009-07-14T14:01:24.000Z",
+    "content": "My resolver does ~400-600k per minute on core 2 duo, 5 mbit."
+  },
+  {
+    "author": "meathive",
+    "avatar": "0a382f78d8540baaacd4fcb3a0bb4900",
+    "date": "2010-06-26T07:51:00.000Z",
+    "content": "The PHP port for those interested. https://kinqpinz.info/?%C2%B6=cb252860#index"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "author": "kl",
+    "avatar": "f0a29af415477aa8c498a4f41ffe6640",
+    "date": "2006-12-22T23:31:38.000Z",
+    "content": "True, true. I think the biggest problem are environments where code is created from bits of text. \r\nThe article praises ASP.Net for detection of HTML injection. I'm not familiar with this feature, but its description sounds to me like a patch on poor architecture (like PHP's magic quotes), rather than solid long-term solution.\r\n\r\nIf it used templates that aren't just bunch of echoed bytes, but really a tree of HTML/XML elements (where it's explict when application outputs tag, attribute or text - preventing you from creating ill-formed HTML/XML), programmer would have to work hard just to make XSS possible."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-12-23T08:15:29.000Z",
+    "content": "kl, well yes but it is essential to understand that such an approach is not very flexible and you need to be very specific with the specs at a very early stage. Moreover, if you are planning to extend upon your application in the future you need design a schema/method for achieving this task. This is extremely long and time consuming process which not that many applications undertake. Not today. Not even in the future.\r\n\r\nIn the open source world everything is pretty much build upon quick hacks that are glued together with some code. PHP applications are trivial to extend with .htaccess and mod_rewrite for example. IMHO, PHP is the most agile language for web development currently available. There is nothing else that gives you so much power in such a tiny core.\r\n\r\nI agree that applications need to be very specific in what they take as input and what they output but again this is a matter of finding the balance between accessibility and security. Usually we prefer accessibility over security because it works better in the long term."
+  },
+  {
+    "author": "deadonarrival",
+    "avatar": "d6391ac585e5f7ebd2e87774bb1d7051",
+    "date": "2006-12-24T18:46:26.000Z",
+    "content": "Yes, we need more security baked into the frameworks. But the by far biggest contribution will come through:\r\n* Education - developers need to learn how to create secure software. Universities etc. need to focus much more on security\r\n* Software customers - budget for security and demand secure products."
+  },
+  {
+    "author": "hrrm",
+    "avatar": "a191dfa003cb5562a00356d2b7bc27fb",
+    "date": "2009-12-30T09:02:29.000Z",
+    "content": "i have been developing php commercially since php3 around 10 years back, and over the years have done lots of far out stuff with it.  visualisation, cron jobs, VOIP/fax/SMS systems integration, web spiders, diskless workstation single sign-on environments, etc.\r\n\r\nall my development is based on a custom, heavily modular framework, since every time i evaluate an off the shelf open source one i find massive issues, typically in areas like suitability for alternate execution paths (unix shell or cron-based executions), and real extensibility (eg: hooks defined in framework core / existing modules).  a lot of them are also bloated and irritate me by integrating crappy templating languages or defining only one, always-available optimisation/caching model.  but to get back to the story of the post, security is also a concern.\r\n\r\nthe real problem is - the web is complex.  managing application-specific database state, http state and caching (browser, user proxy, frontend load-balancing proxy), application-internal multi-level caching (database, memcache?, filesystem?) each layer with its own automated expiry rules, multi-frontend node web server farms, multi-node database backends, failures, live migrations, different browsers, mobile devices with differing capabilities, user input....... and every few years a new piece of the puzzle.  \"flash vLATEST\" \"ajax\" \"silverlight\" \"javascript library #9999\" \"php vLATEST\" \"XML standard #99999\"\r\n\r\nThe life of any serious web developer is just too busy to perform code audits.  They should be writing good code up front.  Perhaps automated audits through SVN commit hooks or similar are a good solution.  Probably there's good room for a well considered product in this area.\r\n\r\nRight now I audit the code of new coders I hire as I train them with the framework.  Eventually I just trust them.  There's not enough hours in the day..."
+  }
+]

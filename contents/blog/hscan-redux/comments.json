@@ -1,0 +1,80 @@
+[
+  {
+    "author": ".mario",
+    "avatar": "7ef1c803c904b9a9834d3bd7645790bb",
+    "date": "2007-02-23T15:04:11.000Z",
+    "content": "This is a very interesting approach of history stealing! I didn't know about the about:cache-entry directive. I guess i will spend some time the next days to check what other about: directives are available and maybe exploitable...\r\n\r\nGreat find!"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-02-23T15:06:51.000Z",
+    "content": ".mario about:cache is actually a protocol to access Firefox internal cache information. There are a few other about: directives. about:mozilla is fun."
+  },
+  {
+    "author": "duk",
+    "avatar": "ba5a3bdac8fd4a070620436c7a5c111e",
+    "date": "2007-02-23T15:46:06.000Z",
+    "content": "Firefox 2.0.0.2 is also vulnerable"
+  },
+  {
+    "author": ".mario",
+    "avatar": "7ef1c803c904b9a9834d3bd7645790bb",
+    "date": "2007-02-23T16:37:15.000Z",
+    "content": "What about XHRing the URL about:cache?device=disk and parsing out all URLs from the response body via regex? Then you'd have a complete history theft - guess i have to test that tomorrow.\r\n\r\nBTW, it's .mario with an o..."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-02-23T16:40:12.000Z",
+    "content": "sorry man, fixed it. I am almost certain that you cannot read about:cache with XMLHttpRequest."
+  },
+  {
+    "author": ".mario",
+    "avatar": "7ef1c803c904b9a9834d3bd7645790bb",
+    "date": "2007-02-23T16:45:19.000Z",
+    "content": "Thanx ;) I did a little quick test and from what i acn say it is hard to impossible. I will give it a deeper look tomorrow.\r\n\r\nI used it on a jquery featured site trying this:\r\n\r\n<pre><code>$.get('about:cache?device=disk', function(response){alert(response);});</code></pre>"
+  },
+  {
+    "author": "-am",
+    "avatar": "1dbcf6eb15832f6b55883666e12c2836",
+    "date": "2007-02-23T21:51:24.000Z",
+    "content": "Works on FF 1.5.0.9/WinXP. Good catch :)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-02-23T23:26:40.000Z",
+    "content": "It works on Mac OS 10.4.8 Firefox 2.0.0.1 too."
+  },
+  {
+    "author": "dusoft",
+    "avatar": "872db587ab19a541a102df9d63c06f57",
+    "date": "2007-02-24T02:45:32.000Z",
+    "content": "Does not work for Firefox 2.0.0.1 under Linux"
+  },
+  {
+    "author": "Adriaan",
+    "avatar": "650b19345a595cebcbae70e414aa48ab",
+    "date": "2007-02-24T11:16:48.000Z",
+    "content": "Indeed. Does not work under gentoo linux, 2.0.0.1."
+  },
+  {
+    "author": "Jordan",
+    "avatar": "bd38ec8896a46f6a173c7b80aac0d5be",
+    "date": "2007-02-25T16:53:33.000Z",
+    "content": "Doesn't work for me, OS X, FF 2.0.0.1 but it's probably SafeCache or SafeHistory blocking it.\r\n\r\nhttp://safecache.com/\r\nhttp://safehistory.com/"
+  },
+  {
+    "author": "MustLive",
+    "avatar": "997a9fa55e557e2aa8262a07758b161d",
+    "date": "2007-02-27T20:32:43.000Z",
+    "content": "Don't work in my Mozilla 1.7.7 :P (and in old version of Firefox).\r\n\r\nOld version browsers rulez! :-) Want to save your history - use old school browsers."
+  },
+  {
+    "author": "mozzio",
+    "avatar": "77c82debf123c6abb3f276b4eb3c0e02",
+    "date": "2007-03-29T17:12:58.000Z",
+    "content": "No surprise, any version of the Mozilla browsers with NoScript installed is immune.\r\n\r\nhttp://noscript.net"
+  }
+]

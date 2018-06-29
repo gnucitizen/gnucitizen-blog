@@ -1,0 +1,26 @@
+[
+  {
+    "author": "C4",
+    "avatar": "94941a06331f4aff885f34f0e099e712",
+    "date": "2008-03-01T18:40:35.000Z",
+    "content": "@Adrian Pastor\r\n\r\nGood article, deffintley good to know and another thing to check/lookout for on home routers."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-03-03T00:18:21.000Z",
+    "content": "Thanks for the feedback C4. I'm sure that if everyone checked their devices' web interface for this type of auth bypass, many devices would be found to be vulnerable!"
+  },
+  {
+    "author": "ikkuhqhp",
+    "avatar": "0167f880df81b3301d51444696d8728c",
+    "date": "2008-03-05T21:44:20.000Z",
+    "content": "is there a good application for crafting packets on windows, since that seems to be the best way of trying these \"hacks\"?"
+  },
+  {
+    "author": "Martin Theiler",
+    "avatar": "b7d4ae90b574bd0ee6e3c4e01e192998",
+    "date": "2008-03-16T21:03:08.000Z",
+    "content": "Even i would like to get some more knowledge on setting up home or institutional routers. Anybody up for a link?"
+  }
+]

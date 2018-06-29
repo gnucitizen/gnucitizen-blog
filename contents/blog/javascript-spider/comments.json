@@ -1,0 +1,74 @@
+[
+  {
+    "author": "Anush Shetty",
+    "avatar": "bb36446fdbaefbfd1a3741238863316e",
+    "date": "2006-10-06T17:30:22.000Z",
+    "content": "This is neat :)\r\n\r\nWould like to get some more details on its implementation\r\n\r\n-\r\nAnush"
+  },
+  {
+    "author": "John Resig",
+    "avatar": "b3e04a46e85ad3e165d66f5d927eb609",
+    "date": "2006-10-07T17:54:27.000Z",
+    "content": "I don't think you know what \"attack vector\" means. Using a publicly-accessible anonymous proxy is hardly a security concern - especially considering that none of the user's personal information is passed along.\r\n\r\nHonestly, the only thing that you \"discovered\" (and that was just something you noticed, as the world has passed you by) is that publicly-accessible anonymous proxies can be used for \"bad\" things."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-10-09T01:51:00.000Z",
+    "content": "Hi John, I appreciate your comment but from what I can see from your blog, you are not a dealing with security at all. That is the reason why I believe that you are more experienced in JavaScript programming than me and I am more experienced in security than you.\n\nAs far as what attack vector is... well, I am not claiming that my English is perfect but if we <a href=\"http://www.google.com/search?q=define:vector\" rel=\"nofollow\">google</a> for the word vector you will see that there are mainly two types of definitions: one related to biology and one related to mathematics. Check these two samples:\n\n<blockquote>carrier of an infectious agent; capable of transmitting infection from one host to another; especially the animal that transfers an infectious agent from one host to another, usually an arthropod. <strong>life.umd.edu</strong></blockquote>\n\n<blockquote>A vector is a number (a magnitude) together with a direction (compare with scalar). A vector can be represented by an arrow whose length represents the magnitude and the direction represents the direction. <strong>enchantedlearning.com</strong></blockquote>\n\nIt is more than obvious what attack vector is.\n\nYou are also saying:\n\n<blockquote>Honestly, the only thing that you 'discovered' (and that was just something you noticed, as the world has passed you by) is that publicly-accessible anonymous proxies can be used for \"bad\" things.</blockquote>\n\nYou are right for one thing. Publicly accessible proxies can be used for bad things and that's nothing new. However, who has done it in the past with JavaScript? I couldn't find anything like this on the web and to me it is a new thing.\n\nJohn, I am very interested to see your opinion on this respond. Many thanks."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-10-09T02:13:12.000Z",
+    "content": "Hi Anush,\r\n\r\nYes, I will go into details in my next post. Thanks for asking."
+  },
+  {
+    "author": "san",
+    "avatar": "e3d30c4b6d656d74e8caba1d30f6cc75",
+    "date": "2006-10-09T09:27:38.000Z",
+    "content": "wat  a stupid code , i dont think its useful in any way by gettin a anoymous proxy wat the heck u r tryin to do .. u seems a pretty overconfident starter in security. and everybody know anoymous proxy can be used to do lots of stuff lots of tool already there wat r u tryin to do"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-10-09T09:44:11.000Z",
+    "content": "san, I admit that the code is quite bad but it was hacked in 30 minutes. What do you expect? What I am trying to do can be appreciated by those who understand the subject.\r\n\r\nHowever, I think that the community will be quite interested in your solution if you manage to do what I am trying to do without using the technique I have already discussed. :)\r\n\r\nI am not overconfident. Do I sound overconfident? I am sorry if this is the impression you are getting."
+  },
+  {
+    "author": "maluc",
+    "avatar": "803e289068dc08d5b34ae47778e67bb6",
+    "date": "2006-10-09T21:53:41.000Z",
+    "content": "Wow .. such hatred. \r\n\r\n<blockquote>Using a publicly-accessible anonymous proxy is hardly a security concern - especially considering that none of the user's personal information is passed along.</blockquote>\r\n\r\nJohn, you apparently didn't understand the post at all. He's not claiming that those using proxies are at greater risk, or that their personal information can be disclosed by it. It has nothing to do with proxy users.\r\n\r\nIt's saying that by using certain public proxies you can work around the javascript's same origin policies. If you bothered reading his previous blog posts about Google Search API Worms, you'd understand. Another tool in the arsenal, alongside google and yahoo's APIs\r\n\r\nThis may help you comprehend the security restrictions of javascript: http://www.windowsitlibrary.com/Content/1160/22/1.html\r\n\r\n-maluc"
+  },
+  {
+    "author": "Bas Wenneker",
+    "avatar": "bf4cf01f42f14053f6de9f2916fe444f",
+    "date": "2007-01-23T20:57:38.000Z",
+    "content": "Your spider example is broken. For some reason Proxydrop.com filters out all javascript. You should take another proxy.\r\n\r\nCheers, Bas"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-23T22:03:54.000Z",
+    "content": "I noticed that long time ago. Thanks for the comment though. I will fix it as soon as I have some free time. Thanks."
+  },
+  {
+    "author": "Sudeep",
+    "avatar": "17420ffa5b050aa74833b488cbd37ab5",
+    "date": "2007-07-24T10:48:45.000Z",
+    "content": "Exactly what I was looking for. I found an XSS at a different site , and needed a way to retrieve another page on the same site , parse it and extract sensitive data from it. (Yeah , I could steal the cookie and use it later, but I am doing a POC for the vendor, an so , need to make it more dramatic)\r\nI aint no JS expert, so thanks for the code :-)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-07-24T16:46:41.000Z",
+    "content": "I don't think that the code will help you much but I guess you know what you are doing :)"
+  },
+  {
+    "author": "Anthony Alexander",
+    "avatar": "921b8aae7be64663102c1e2940d7c288",
+    "date": "2012-01-04T21:47:17.000Z",
+    "content": "John Resig is a prick. That is why I don't use Jquery."
+  }
+]

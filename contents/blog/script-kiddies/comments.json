@@ -1,0 +1,128 @@
+[
+  {
+    "author": "omegalfa",
+    "avatar": "c5ea78b1fe5ef8f3a0847f4c25bb2f49",
+    "date": "2008-10-25T11:58:37.000Z",
+    "content": "Well, I cant agree with you. There are two possibilities: you don't understand what you're reading (which I doubt) or you want to say something about something that really doesn't matter at all.\n\nExempli gratia:\n\n<blockquote>Script Kiddies use tools they don't write - Like you write everything you use? Life is short! Successful people build themselves on the top of the experience and the work of those before them. Why reinvent the wheel?</blockquote>\n\nYes, of course you shouldn't reinvent the wheel but you clearly should understand how it works and how to do it if you must to. Script kiddies use tools like others but they don't understand how tool works at that's the catch because without understanding you cannot use something properly.\n\n<blockquote>Script Kiddies cannot program - It is perceived that 1337 security researchers are those who know ASM and C and perhaps perl, python or ruby. A junior web developer knows 10 times more languages and has experience with a lot more programming environments.</blockquote>\n\nWell, if you really think about hacking you need to know assembler and C also. (C because it's wide spread not because you really need it, Asm you really need). It doesn't matter that junior webdeveloper knows <q>10 times more languages and hase experience with a lot more programming environments</q> because webdeveloper do not need to worry about i.e. properly memory allocation.\n\n<blockquote>Script Kiddies' objective is to try to impress their friends or gain credit - Everybody wants some type of credit even when they claim that they don't. They lie. In our human nature there are a driving forces bigger then wealth and these are credit, approval and acceptance among your family and peers.</blockquote>\n\nOf course but it doesn't collide with each other. Everybody wants some credit, that's true but not everybody do something only because they want credit. Hackers want credit like any other human being but they don't do something only because they want credit (which script kiddies does).\n\nAnd I can opposite every other argument that you wrote. It's just pointless because you point out things without logic behind; you just write some dumb acapits to prove you're right, but you are not.\n\nPS.\nSorry for my poor english."
+  },
+  {
+    "author": "orlin",
+    "avatar": "4b429556286033080067302588d7963c",
+    "date": "2008-10-25T12:12:08.000Z",
+    "content": "more ontopic: There is something, which is missing in the description of a script kiddie. Normally they use hacking tools without understanding what those tools are actually doing. I think that the lack of understanding is the main difference between a hacker and a script kiddie."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-10-25T15:16:20.000Z",
+    "content": "the reason behind this post is fairly obvious. while I understand that most of the readers will say well yes, script kiddies this and that... bad, bad, bad, no one really asks who are the script kiddies and what the term actually symbolizes. why? because most people have prejudice. it is too hard to think nowadays when you can get most of the answers from other people who don't have a clue, or the web.\r\n\r\nomegalfa, you can find a lot of logic in my thoughts. i can counter argue every point you make but that will be a complete waste of my time. clearly, you think that knowing ASM is a great thing but I can tell you that I've taken ASM courses as part of my high school education but this does not make my classmates hackers.\r\n\r\nthe security scene is full of prejudice. if you are not part of ASM/C group you are out of it. you are a script kiddie. if you don't understand how the tool works then you are scrip kiddie. you are out of the group. but knowing how to write a tool and knowing how to use it in the most effective way are two completely different things. more over, people that write the tools often don't know how to use them in the most effective way. i bet that at some point in your life you used a tool that you didn't understand how it worked. perhaps it was closed source. perhaps you were too lazy to read the code. perhaps at that moment you were a script kiddie!\r\n\r\n<q>you have sword makers and sword masters. a sword maker can engineer the best sword from the best steal. however, sword masters are those who know how to make the most use of the weapon.</q>\r\n\r\norlin, parts of your comment were censored out. read the rules before posting.\r\n\r\nyour comment doesn't make sense. surely you must have a tiny clue what the tool does before using it. understanding how things work is a very subjective. everybody who claims that s/he knows everything, clearly doesn't have a clue.\r\n\r\nmy point is that between you and those that you call script kiddies there isn't much difference. we are talking about different people at different point of their learning curve."
+  },
+  {
+    "author": "mindcorrosive",
+    "avatar": "be3b138352dc100c9459e612b275b413",
+    "date": "2008-10-25T16:02:39.000Z",
+    "content": "@pdp\n<q>we are talking about different people at different point of their learning curve.</q>\n\nSo very true. Anybody claiming that he/she had learnt programming without looking through, running and randomly changing seemingly incomprehensible examples is probably lying. It's called \"learning by example\". I still remember copying-and-pasting the BASIC examples from the help file, and trying to understand what's going on - possibly running them several times until things get clear. Or using a piece of \"dark magic\" code (abound in low-level languages). \n\n@omegalfa:\n<q>..because webdeveloper do not need to worry about i.e. properly memory allocation.</q>\n\nSince when? You are probably referring to \"web designers\", which are entirely different species. I'd hate to see a JS/Java/Flash/Silverlight thingie that consumes obscene amount of memory and resources, and crashes every once in a while because of attempted memory corruption. That would make all of us script kiddies in the beginning. What happens next is more important.\n\nand one more:\n<q>Script kiddies use tools like others but they don't understand how tool works at that's the catch because without understanding you cannot use something properly.</q>\n\nSurely you understand the absurdity of this claim - are you certain that you know how your microwave, your fridge, your car, your operating system works? Can you duplicate this? Can you improve it? And yet, you pretty much use them on a regular basis. The key phrase is \"user interface\"."
+  },
+  {
+    "author": "rvdh",
+    "avatar": "80d7b8935b953dabd63268177b7981f6",
+    "date": "2008-10-25T17:25:58.000Z",
+    "content": "People who use nmap are scriptkids too, the person who wrote nmap is a scriptkid too according to the official description since nmap uses pre-written C libraries and API's like making socket connections. (which is hard for a scriptkid to figure out) therefore he only uses high level API's and libraries, so only diehards write in assembly can be considered not  scriptkids.\r\n\r\nI think the term is used by intellectual snobs trying to prove something from themselves. nonetheless, beware of the scriptkid, he too can take you down.\r\n\r\n;)"
+  },
+  {
+    "author": "rvdh",
+    "avatar": "80d7b8935b953dabd63268177b7981f6",
+    "date": "2008-10-25T17:47:44.000Z",
+    "content": "@mindcorrosive who said: \r\n\"The key phrase is user interface\"\r\n\r\nUser interfaces are sometimes useful for saving time. Actually C is a user-interface also (high level language) for faster programming and development. So they key isn't user-interfaces. If you still believe that go write a browser in ASM: goodluck, and goodluck in browsing with it.\r\n\r\nWell, scriptkid is a useless term. He might know 3 things you didn't know. All there is for a successful exploitation. Security is like a chain, one parts fails the whole chain breaks. If the kid knows one part that can fail, he can own you. \r\n\r\nIn other words: you will never know everything about everything you use. You can mitigate a lot on experience, but not everything.\r\n\r\nI met a lot of assembly guys and they are living in the past, when I talk about attacking their  server they are running with my browser, they kinda stare at me for a couple of minutes. Guess what, I know something they didn't know.\r\n\r\nSo whose the kid in this respect? well, no-one or both. In the very end of the day the scriptkid gets his work done, whatever er that may be."
+  },
+  {
+    "author": "Chapter",
+    "avatar": "484bb8a0e7bdd1cd0ac43c7b8f448464",
+    "date": "2008-10-25T19:00:55.000Z",
+    "content": "Yes a script kiddie is somebody that uses exploits,tools,software and know nothing about the concept and or pray on milw0rm waiting for the next exploit to drop so they can run it threw Google.\r\n\r\nEverybody starts out a script kiddie and its weather or not you want to advance into something more. But nice post about the subject it self I might have to do one."
+  },
+  {
+    "author": "univax",
+    "avatar": "7051dadbfb1eaffc49eb517409c1b880",
+    "date": "2008-10-25T20:28:07.000Z",
+    "content": "Let's talk about hacker mentality and just what that means.  Hackers are naturally curious to learn about how things work, and sometimes, even how to break them.  But that does not necessarily imply malicious intent.  The overall goal of a hacker is (or should be) to learn.  Knowledge is thereby obtained to more fully understand systems, and thus also to fix and improve them.  \r\n\r\nIn my mind at least, the connotation of a script kiddie is that of one to whom none of this matters.  pdp, mincorrosive, and rvdh have all touched on the fact that there are similarities and overlaps (by necessity) in the methodologies employed by both hackers and script kiddies, but in my opinion it is intent and objective, as well as experience, that define the divide between these two terms.  A script kiddie can play at hacker, but really doesn't grasp the concepts, nor does he have hacker mentality.  \r\n\r\nIt's great to know of a trick to take down msn chat at will. I think we can all agree to that. But to what purpose? Just to impress friends while sitting around the computer with Coca-Colas and a bag of chips? Or to gain a better understanding of this media to which all of us here are dedicated and build upon it?  (Of course, there is that one guy in chat who always gets on my nerves who'd I'd like to ...)"
+  },
+  {
+    "author": "orlin",
+    "avatar": "4b429556286033080067302588d7963c",
+    "date": "2008-10-26T00:28:19.000Z",
+    "content": "Apparently I didnt make myself too clear in my first post, so I will give it a try now, when I am kind of drunk.\n\nWe have already defined what a script kiddie is, but we did not define what a hacker is. For my definition I will use RFC1392: http://tools.ietf.org/html/rfc1392 According to it a hacker is: a person who delights in having an intimate understanding of the internal workings of a system, computers and computer networks in particular.\n\nThere are quite a lot of differences between a hacker and a script kiddie, and it is not only the knowledge. What we can see from this defintion is that there is nothing about <q>hacking</q> as in <q>harassing even advanced computers and networks</q>.  If we think about it a little bit more we will agree with univax on almost every word. What he describes is a whitehat (or maybe an ethical hacker). A hacker might not always hack with the purpose of <q>to more fully understand systems, and thus also to fix and improve them.</q> There are evil hackers as well and even anonymous hackers on steroids (courtesy to Fox news).\n\n@pdp: <q>my point is that between you and those that you call script kiddies there isn't much difference. we are talking about different people at different point of their learning curve.</q>\n\nThat would be true if every script kiddie tries to understand what actually happens when he clicks the <q>hack</q> button. Which would mean that he/she will acquire the knowledge that he/she is lacking to be a hacker. Most of the script kiddies however do not try to understand and learn, so according to your definition they stay at the same point of their learning curve.\n\nMy personal idea of what a script kiddie is, is shown in this thread: http://www.webforumz.com/webforumz-cafe/15441-worlds-most-dumb-hacker.htm\n\nps: about the censored stuff, what I actually wrote is something like, that pdp finally admitted being a script kiddie. I meant it in an ironic way, yet today I was told by 5 different people that I am not good at that stuff."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-10-26T08:42:33.000Z",
+    "content": "orlin, fair enough, but you are a bit too general with your statement. while I understand what you are trying to say, I disagree:\r\n\r\n<blockquote>Most of the script kiddies however do not try to understand and learn, so according to your definition they stay at the same point of their learning curve.</blockquote>\r\n\r\nMy definition of a script kiddie is more liberal. Would you call yourself a script kiddie? Perhaps not. I bet that most script kiddies do not know that they are script kiddies. Yet, if you take a test similar to <q>Harvard Implicit Association Test (IAT) for race</q> but designed to test your script kiddiness, you may end up being deeply surprised by the results. As rvdh mentioned, this term is useless and let me quote his words:\r\n\r\n<blockquote>I think the term is used by <strong>intellectual snobs</strong> trying to prove something from themselves. nonetheless, beware of the scriptkid, he too can take you down.</blockquote>"
+  },
+  {
+    "author": "orlin",
+    "avatar": "4b429556286033080067302588d7963c",
+    "date": "2008-10-26T15:51:08.000Z",
+    "content": "I know that I dont know anything and this is why I want to learn more. Only once I have understood the concept of an attack I try to execute it and see what happens. If it works - cool, time to experiment some more, if not I try to debug and see why it didnt work.\r\n\r\nBecause my knowledge is so limied I cannot call myself a hacker. Because I want to understand what is happening I cannot call myslef a script kiddie. If I have to choose what I am - a hacker or a script kiddie, I must be hounest and say I am far nearer to the second category then to the first one. I better description for me would be total n00b.\r\n\r\npdp said that there are two types of people, who craft a weapon and those who use it. Yes, this is so. Yet when you start learning the way of the sword, you use a wooden once and once you have proven yourself you get a better sword until one day you are recognized and recieve a master sword.\r\nYet today anyone can get a master sword and start with it, skipping all the needed years of trainig. Those people are (should be) called script kiddies.\r\n\r\nIn one of his posts pdp said that everyone starts as a script kiddie. Yet I should disagree with him. Not everyone starts as a script kiddie, but everyone starts as a noob. And having no idea what is going on is not so bad - you can repair the problem by learning alot. We all start from 0. Yet being a 0 and pretending to be the greatest is something else.\r\n\r\nEven thoug rvdh is right - if you have the tools and some luck you can hack a site, compromise a system, etc. That is thanks to the UI which allows us to use complex system without fully understanding them. Yet if you lack any understanding of how a tool works you might make big mistakes. I will take mindcorrosive's example with the microwave oven - we have all heard examples of people trying to \"warm\" up different living creatures in a micorwave. I think the most popular one are cats. Though I might not be able to recreate a microwave oven, still will know that putting something alive in there will kill it. As another example I will use the link, which I gave in my last post, to a script kiddie which used a good tool and successfully hacked 127.0.0.1. Yep, because he knew nothing about the loopback, he hacked himself.\r\n\r\nIn conclusion I should say that the definition of script kiddie in wikipedia is way to broad. The definition of hacker is way to complex. Only the definition of a noob is well written.\r\n\r\nps: I miss the preview feature :/"
+  },
+  {
+    "author": "Flapjack",
+    "avatar": "00412d67c42e10252d8f987fb10cf46d",
+    "date": "2008-10-27T23:12:14.000Z",
+    "content": "My idea of a script kiddie (If anyone cares) is someone who uses tools to hack things. He doesn't care how they work, and doesn't bother to find out. They're not interested in learning, and just want to hack for the lols. The main thing about them though is that they understand almost nothing about security besides hitting the hack button, and then they call themselves hackers.\r\n\r\nSure we all use tools to get the job done, and maybe some of them we don't know all about, but we don't claim to know about them, even if we don't."
+  },
+  {
+    "author": "rvdh",
+    "avatar": "fcab05a2d8d8ca0d32e66d0cbd22269e",
+    "date": "2008-10-29T07:41:20.000Z",
+    "content": "If one thinks out of the box, one also stops judging of the box. e.g. not placing labels anymore. A hackers mind absorbs anything, yet is attached to nothing.\r\n\r\nThe term hacker is somewhat vague. Old hackers used to say: If you can hotwire a car, that doesn't mean you are a car engineer. So the car egineer usually knows more about cars than the car-hacker, because he designed it.\r\n\r\nBeing a hacker for me, doesn't mean you know everything about a particular system, but you have the ability to approach it in a different way, look around it, and seeing the system in 4D instead if the 1D that the designer of the system has. A 4D mind sees the whole instead of it's parts, that why most hackers are left &amp; right brained, and they can switch between them, whereas as the system programmer usually can only think left-brain, linear instead of creative.\r\n\r\nOne luck is that you can learn to be linear as a rightbrian person, but it's very hard to be creative for a leftbrain person, since creativity lacks a linear structure, creativity just emerges like spontaneity."
+  },
+  {
+    "author": "tndz",
+    "avatar": "12406af94e500f8398892cb0264c8d05",
+    "date": "2008-10-30T19:19:54.000Z",
+    "content": "I've written a tool that exploits my school's security system (an old version of Netware), it can crash remote computers with only 2 tcp packets. I've proudly told some friends of mine about it. \r\n\r\nA few weeks later someone used my tool (my friend leaked it) to crash all computers (~50) at once, because he didn't know what to do with it. Later he said that it was his tool and he wrote it, he called himself \"hacker\".\r\n\r\nNow, is there a difference between me and him? Or are we both just script kiddies?"
+  },
+  {
+    "author": "Crus4d3r",
+    "avatar": "d1a4c5f7953a7ceff029caf3ac3983ff",
+    "date": "2008-11-18T16:16:17.000Z",
+    "content": "Hmmm...I suppose that script kiddies would be those 11 year old kids who think that batch is 1337? We were all at that stage though, we all wanted to feel cool for at least the slightest moment. Well, what I think about a Script Kiddie / Skid really is that when they do sometimes develop code they use parts from other's work. Almost everyone has looked at an example code once or twice. Who dosn't need that motivation to better the code? But I mean common' at least give credit to the author..who helped you develop the better. So a skid or whatever you want to call them is really up to you.."
+  },
+  {
+    "author": "Alex Sverdlov",
+    "avatar": "b16542002cdfb04f3872cfc2b0af7cf0",
+    "date": "2008-11-27T13:45:00.000Z",
+    "content": "pdp, can't agree with you more. \r\n\r\nEverybody, since days of 1980-ties, when people where PHreaks and not hax0rs, one should have to read stuff, talk stuff, listen to stuff, in order to learn stuff. Nobody is born 3l337... \r\n\r\nI enjoy being a SK. Because I do it for helping people, and for my own pleasure of doing things. Is that bad? Don't think so."
+  },
+  {
+    "author": "XORG",
+    "avatar": "71edab8ed1657a5bf9873833ef16e2f5",
+    "date": "2009-07-10T18:25:05.000Z",
+    "content": "Well...\r\nThe main difference between skiddie and hacker is that hacker uses his knowledge to hack,and script kiddies use tools other people wrote to hack.\r\nScript kiddies got no idea about how the tools work or how they will affect the server.They just press the \"HACK\" button and if it affected the website in some way they go on telling their friends about it.\r\n\r\nLike on time i got on some page on the internet that described a vulnerability in php.exe if apache is not properly configured ,there was like 10 comments that said \"From where can i download php.exe and how do i use it?\".Those are real skiddies they don't know even what the program does they just click \"OK\" ,and wait for some effect.\r\n\r\nThis kind of people are actually dangerous. There is no use for hacker to launch a DoS attack on some server.While the skiddie will do it ,and then tell his friends \"Hey ,see this web site is down of because of me\".\r\n\r\nRespect,XORG"
+  },
+  {
+    "author": "Stuart",
+    "avatar": "b0ba92f69fb3b664facb22392bd726dd",
+    "date": "2010-02-22T16:02:06.000Z",
+    "content": "Way to much talk in my opinion.Ill leave it there."
+  },
+  {
+    "author": "Stuart",
+    "avatar": "b0ba92f69fb3b664facb22392bd726dd",
+    "date": "2010-02-22T16:06:27.000Z",
+    "content": "why dont you nerds just make a danm program that stops all hacking so i dont have to read all your complains and arguments just tring to find a site that has an answer to the problem. And you guys think your smart.Well maybe at scripting or hacking but common sence you guys are lost. Your all so pridful about how great you guys all are at hacking or scripting but none of you can solve the problem.Your all so smart you stupid. bye the way ill save you the trouble im not a hacker but then again i never said i was. Read betwen the line's you know the ones you guys hack betwen to solve problems you all created just to make a buck because you couldnt earn one."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2010-02-23T10:45:29.000Z",
+    "content": "Stuart, if we could write a program to stop all hacking we would have done so already. :)"
+  },
+  {
+    "author": "syphillus",
+    "avatar": "5588034547bef37e2e895c9d4b8a0314",
+    "date": "2011-01-02T03:30:08.000Z",
+    "content": "\"Stuart, if we could write a program to stop all hacking we would have done so already. :)\"\r\n\r\nThen in a weeks time that program would be obselete and the source of the newest exploits..."
+  }
+]

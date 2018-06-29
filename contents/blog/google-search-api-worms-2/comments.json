@@ -1,0 +1,44 @@
+[
+  {
+    "author": "maluc",
+    "avatar": "803e289068dc08d5b34ae47778e67bb6",
+    "date": "2006-10-04T04:20:05.000Z",
+    "content": "I've checked out the site, and looked online .. but i don't see anywhere about SearchMash supplying an API for it. It's stands to reason that it may have one in the future, since Google does.. but maybe i missed something?\r\n\r\ncan searchmash be used for javascript propogation as well? Because I don't see it."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-10-04T04:28:39.000Z",
+    "content": "hi maluc,\r\n\r\nThere is no API! However, if you carefully watch the request/responds while surfing though SearchMash you will be able to see that the entire application depends on JSON. This is cross domain pulling mechanism that can be automated quite easily with JavaScript.\r\n\r\nHowever, I did't make it clear that SearchMash does not support callback functionalities, my bad. This means that when pulling information with SCRIPT elements the script that will be evaluated is useless. There are a couple of workarounds to this problem and I will discuss them as soon as I get my notes fixed.\r\n\r\nThanks for the question. Very good one!"
+  },
+  {
+    "author": "maluc",
+    "avatar": "803e289068dc08d5b34ae47778e67bb6",
+    "date": "2006-10-04T08:23:46.000Z",
+    "content": "ah, can't wait.. i'll be interested to see if the ajax-ness of it provides any extras capabilities. Although for alot of webapp vulnerabilities, google and yahoos APIs are sufficient for locating more vulnerable sites.\r\n\r\nAnd for those not well versed in javascript worm writing and mitigation, those APIs are about as important for jscript worms as xmlhttp[request] is for xss/csrf .. it's always been possible with a command and control server, but using google/yahoo means immense bandwidth and much harder to take down.\r\n\r\nAnyways, first time to post but've been following for your blog since the backdooring series, keep up the good work ^^"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-10-05T01:36:01.000Z",
+    "content": "hi maluc,\n\nThanks for the comment. I am trying my best to put as many and interesting stuff as possible. I hope that the spirit of this blog will remain the same in the future. Thanks."
+  },
+  {
+    "author": "Kishor",
+    "avatar": "8646bd4e904762c599e11665cc67f158",
+    "date": "2006-10-06T08:39:01.000Z",
+    "content": "Man I got what you are saying. Fire this query http://www.searchmash.com/results/images:wordpress?n=3&ei=CJKWp-6F5IcCFQNICQods6p4PA\n\nYou will get a response with content type as javascript! Use this URL to spread the worm! When you search e.g for Wordpress, you will definitely get better and accurate results than google api. And thats what you want!\n\nCoooool!"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-10-06T08:53:46.000Z",
+    "content": "yes, but the problem is that this code will result in nothing. If only searchmash supports callbacks than a lot of things could happen."
+  },
+  {
+    "author": "Kishor",
+    "avatar": "8646bd4e904762c599e11665cc67f158",
+    "date": "2006-10-06T10:31:20.000Z",
+    "content": "Oh, I see. It does not return a javascript object. I thought it returned something like var b = {...} and then we use it as b.attribute I should have looked at it carefully."
+  }
+]

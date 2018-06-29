@@ -1,0 +1,278 @@
+[
+  {
+    "author": "pagvac",
+    "avatar": "c34e06c4b96ab0fbcf661527205ec988",
+    "date": "2006-09-06T18:31:06.000Z",
+    "content": "Good job pdp! I like the concept of XSS through the backdooring of media files. Everyone likes media files, so it's an ideal way to exploit both human and technical weaknesses.\r\n\r\nImagine downloading Michael's Jackson Thriller video clip which exploits your router's web interface in order to expose internal hosts to the Internet :D\r\n\r\nNice one!\r\n"
+  },
+  {
+    "author": "Alberto",
+    "avatar": "496d41d99736af7cc2104508c00ee715",
+    "date": "2006-09-07T11:58:44.000Z",
+    "content": "I'm probably posting a real newbie question, but I've opened both files you provided with QuickTime Alternative codecs (with VLC and Media Player Classic) and I can't see any difference or pop-up. It is just silently failing but still vulnerable or this codec (Quicktime 7.0.4) is safer to use?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-09-07T16:01:03.000Z",
+    "content": "The example backdoor will work only if the movie file is embedded inside a page or previewed inside the browser. \r\n\r\nHowever, it is possible to make a movie that is previewed inside a standalone QuickTime player to open a remote page which in tern can contain malicious code. Of course this is not very stealthy but can be successfully used to attack the browser at a very low level.\r\n\r\nI haven’t tested opening URLs with VLC and Media Player Classic. However, if both players support HREFTracks, than they are affected by this issue."
+  },
+  {
+    "author": "nrg",
+    "avatar": "3e0298a2854e87166f6ddcee1fe4e005",
+    "date": "2006-09-07T16:08:16.000Z",
+    "content": "@Alberto You have to open in a program that can interpret javascript. Like a web browser. just click in the video link to see it in your browser.\r\n\r\n--\r\n@pdp once again good job mate"
+  },
+  {
+    "author": "lolage",
+    "avatar": "8986e36a2447878a0a02bb6d95d34f75",
+    "date": "2006-09-09T15:37:04.000Z",
+    "content": "\"if both players support HREFTracks, than they are affected by this issue.\" - Now you're assuming my friend. Although nice find, great work."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-09-09T16:43:08.000Z",
+    "content": "I wish I have more time to play with that. But, yeh... well said."
+  },
+  {
+    "author": "Chris",
+    "avatar": "72b4146dbe097766f0927a20dae4a2dc",
+    "date": "2006-09-23T15:03:17.000Z",
+    "content": "Isn't this already widely used on Gnutella? There is a lot of .mov spam, usually pr0n but also for other sites, which will open certain links in a browser window. I don't think these use JavaScript though."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-09-23T15:52:38.000Z",
+    "content": "Chris,\r\n\r\nyou might be right. I am not sure. Several readers verified that some video formats are able to open links in the browser. It will be good if someone verifies all that."
+  },
+  {
+    "author": "smetten",
+    "avatar": "4fae41220c16f84caeeb402fb242f432",
+    "date": "2006-10-24T20:10:19.000Z",
+    "content": "Hi all,\r\n\r\nThis seems to be very interesting information. I'll be having a good look at this, might come in handy some time.\r\n\r\nGreetz\r\n\r\nSmetten"
+  },
+  {
+    "author": "...",
+    "avatar": "19432a7e08878a8eac210f9c827dcb2b",
+    "date": "2006-10-30T18:08:18.000Z",
+    "content": "jesus, you made me spend like 10 minutes looking for a way to rename the text track to HREFtrack :)\r\nanyone else who wants to do this, just single click on the text track name and you can edit it"
+  },
+  {
+    "author": "Loucas",
+    "avatar": "53261b12b1efb53d6906c238344a69e7",
+    "date": "2006-11-16T18:10:19.000Z",
+    "content": "Hi thanks for the example. I would like to know if is possible to create the popup alter when the movie is previewed inside a standalone QuickTime player."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-11-17T02:29:13.000Z",
+    "content": "IMHO I don't think it is possible. What ever you do, it will be opened in a browser window. However, don't take my word for granted.\r\n\r\nHave you seen any .mov files that open pop-up boxes rather than full browser windows? If yes, it will be easy to decompose that and see what is going on."
+  },
+  {
+    "author": "mistersquid",
+    "avatar": "6d02dabfa3913cd68dc8acd4594e4859",
+    "date": "2006-12-05T00:40:59.000Z",
+    "content": "I've loaded the Sample_backdoored.mov in my web browser (Safari 2.0.4) with OS X 10.4.8 (Security Update 2006-07) and I'm not getting any pop-ups.\r\n\r\nI'm running QuickTime 7.1.3 but not QuickTime Pro.\r\n\r\nThis proof-of-concept seems to be a non-starter."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-12-05T02:05:44.000Z",
+    "content": "Hello mistersqui, unfortunately I am not running MacOS. However, here from my side it works. If somebody is willing to investigate on that matter, please you are more than welcome.\r\n\r\nI don't think that Apple has fixed this issue and I am not sure if they will because the exploit presented in this article depends on a feature rather than a bug. Many thanks."
+  },
+  {
+    "author": "ohemia",
+    "avatar": "7049b1d7ce3809a9705271cfb0727890",
+    "date": "2006-12-05T16:24:30.000Z",
+    "content": "I agree with mistersquid - no popup here on MacOS X. Doesn't seem to work at all on the Mac."
+  },
+  {
+    "author": "Jeffbart",
+    "avatar": "8b099ac895b300eaac27157e5962e76f",
+    "date": "2006-12-05T16:26:51.000Z",
+    "content": "Not getting popup either. Also running Safari 2.0.4. Not installed latest security updates. 0S X 10.4.8."
+  },
+  {
+    "author": "Anton",
+    "avatar": "0c69a88addcf1c84c39a619eca83ca32",
+    "date": "2006-12-05T16:54:29.000Z",
+    "content": "The demonstration works in FireFox 2.0 on Mac OS X 10.4.8. It does not work with Safari.\n\nI'm not sure why. Apple's QT documentation claims only that JavaScript functions defined on the same web page as the movie can be invoked, so perhaps Safari is adhering more strictly to this specification."
+  },
+  {
+    "author": "BdcstTek",
+    "avatar": "c5d9ffc8c870120901be4f20e228ddb5",
+    "date": "2006-12-06T01:05:41.000Z",
+    "content": "Mac OSX, Version 10.4.6, without the latest security update...(probably without a few)\r\n\r\nSafari v 2.0.3 is not affected: no popup window\r\n\r\nFirefox v 1.5.08 IS affected, and Backdoor did indeed say hi.\r\n\r\nWhich goes along with the way Safari seems to \"Think Different\" with JS a bit too much."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-12-06T02:18:40.000Z",
+    "content": "I guess it is all clear now. Safari complies with Apple's specifications while Firefox and IE don't. There must be something wrong with QuickTime browser integration."
+  },
+  {
+    "author": "Wladimir Palant",
+    "avatar": "7806629160a492b05d21fd738953a4cf",
+    "date": "2006-12-07T19:20:08.000Z",
+    "content": "What I fail to see here is the XSS part of it. It is bad of course that a movie can load web content through the browser (why did they chose to do this instead of connecting directly from the plugin???) but any JavaScript is still executed in the context of the web page. This means that it will only be able to do something the web page itself can do, so that anybody able to put a movie into a web page could do the same by directly putting the necessary JavaScript code into it. Unless of course it is used somewhere where JavaScript is filtered out but movies are allowed - is it what happened on MySpace?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-12-08T03:47:31.000Z",
+    "content": "exactly!"
+  },
+  {
+    "author": "Brennan Young",
+    "avatar": "61717cb9574d9ca13af8c10f155c6239",
+    "date": "2006-12-10T00:24:15.000Z",
+    "content": "This isn't a backdoor. It's a sloppily coded website. The same sh1t can happen with SWFs and DCRs.\r\n\r\nHREF tracks have been around for about 10 years, with all this functionality. This page is worth a look, especially the last section \"More on QuickTime and HREFs.\":\r\n\r\nhttp://www.apple.com/quicktime/tutorials/hreftracks.html\r\n\r\nScarcely news, but it's great if you guys see some more of what QuickTime can do, even if you all have dastardly plans. ;)\r\n\r\nThe page linked above also shows how a MOV can open any QuickTime viewable file in another window *in QuickTime player itself*, if you wanted to make a little grey-goo / denial of service beastie.\r\n\r\nThere's also a turing-complete bytecode interpreter built-in to QuickTime. Apple usually forgets to mention it because it doesn't help to sell iPods.\r\n\r\nhttp://developer.apple.com/documentation/quicktime/RM/rmWiredIntro.htm\r\n\r\nSo, if you're feeling particularly dastardly your MOV could even construct javascript URLs on the fly."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-12-10T01:22:07.000Z",
+    "content": "Hi Brennan,\n\nyes you are completely right. However, It is the same situation with everything in the computer security field. Look at BF attacks, for example. We know about them since the 80s. Still, people find clever ways to inject instructions into remote and local processes.\n\nI am sure that HREF tracks is nothing new to core QuickTime/Apple developers. However, the problem is that they wasn't able to spot this potential misuse of their technology. It is not their fault. At the time when this technology was designed, I don't think that anyone was familiar with XSS to that extend as we are today. This problem is so common and I am sure we will see more of it very soon."
+  },
+  {
+    "author": "Richard John",
+    "avatar": "2ced4279a627bd560f46883f7fd461ea",
+    "date": "2007-01-04T22:31:40.000Z",
+    "content": "Hmm... When I try and rename Text Track to HREFTrack, I change the name and it changes back as soon as I hit enter!"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-04T22:35:11.000Z",
+    "content": "Richard, that's not supposed to happen. You are sure that you do it properly. The GUI is a bit bulky."
+  },
+  {
+    "author": "ConcernedUser",
+    "avatar": "ca64f83212ec0e936bded653e2387144",
+    "date": "2007-01-06T19:04:13.000Z",
+    "content": "Hi.  I was wondering is there any way to check the existing mov files that I have if they have any href tracks in them.  I do not have quicktime pro.  Also, how can u detect that a mov file in your browser might have a malicious href track before playing it?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-06T20:56:13.000Z",
+    "content": "ConcernedUser, I am not aware of any tools that you can use. It will be good if someone can come up with Firefox extension, but this probably wont happen. The best thing to so is to wait for a fix from Adobe. Actually there is one that is offered to MySpace users only on Windows platform. If you happen to be on Window, go to MySpace an try to open .mov file that someone has hosted. Then you will receive the update. There are other solutions but they are all unofficial and they might work only in certain situations. Good luck.\n\nI hope Apple understands that this is a serious security issue and it requires immediate actions."
+  },
+  {
+    "author": "psyc",
+    "avatar": "632819dac251da66e2131ada45ea5adc",
+    "date": "2007-01-09T17:11:32.000Z",
+    "content": "Hmm... When I try and rename Text Track to HREFTrack, I change the name and it changes back as soon as I hit enter!\n\nYea same problem with me .."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-09T21:52:56.000Z",
+    "content": "Well, this is the tricky bit. You need to show your creative mind here. The reast is easy :)"
+  },
+  {
+    "author": "psyc",
+    "avatar": "632819dac251da66e2131ada45ea5adc",
+    "date": "2007-01-11T16:39:42.000Z",
+    "content": "Heh forget about it, i always love reverse engineering ;) Problem solved"
+  },
+  {
+    "author": "Edward",
+    "avatar": "cc02cb322fd190bdce7ebb0eef64ecb5",
+    "date": "2007-01-11T18:51:11.000Z",
+    "content": "I couldn't change the name to HREFTrack too, i searched forums and heared that it's QT 7 bug. How can we change it ? Found some scripts to change but i don't know how to use. Can someone help please ?"
+  },
+  {
+    "author": "AR",
+    "avatar": "f7b04775d4ed3a3c6de44d40635406de",
+    "date": "2007-01-20T14:44:56.000Z",
+    "content": "If you can't change it, you most likely need to update Quicktime. It is a bug in the one version that does not allow you to change it."
+  },
+  {
+    "author": "Nick",
+    "avatar": "7d7de8deb8cf14f3615642f142970119",
+    "date": "2007-01-25T21:45:58.000Z",
+    "content": "How do you pop the browser directly from quicktime standalone player? I can make it work from within the browser, but I want it to pop directly from the stand alone player."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-25T23:11:38.000Z",
+    "content": "I am not quite sure how to do that but I know that it is possible since I did it before. Try to mess with the target field\r\n\r\n<pre><code>A&lt;javascript:alert(\"hello from backdoor\")&gt; T&lt;target&gt;</code></pre>"
+  },
+  {
+    "author": "Windows Vista",
+    "avatar": "7fc746a111dd11d10ed4800353495952",
+    "date": "2007-03-17T04:02:14.000Z",
+    "content": "neat"
+  },
+  {
+    "author": "lastjedi",
+    "avatar": "fd288b71cffb96b62cc5d26a0ab27fc1",
+    "date": "2007-03-19T03:54:43.000Z",
+    "content": "i have quicktime pro and vlc media player none work on limewire.when i download a video to watch i get the same thing a girl dancing for about 10 seconds nothing else.ive downloaded hundreds of videos and i get the same thing the girl dancing.why wont it show the video i downloaded.nothing works please help!"
+  },
+  {
+    "author": "Cityboi",
+    "avatar": "40e0da21900632754f741e5b6c5f4fe9",
+    "date": "2007-04-25T13:34:11.000Z",
+    "content": "How can you get around websense to get to myspace"
+  },
+  {
+    "author": "sasha",
+    "avatar": "04d8c347fabcf0d1124c4d02e0c5facc",
+    "date": "2007-05-04T19:01:42.000Z",
+    "content": "How can you get around websense to get to myspace"
+  },
+  {
+    "author": "Runic",
+    "avatar": "c5f0e90661f3a2806981366d25db0b20",
+    "date": "2007-06-07T15:20:19.000Z",
+    "content": "Starting with QuickTime 7.1.5, you can no longer issue javascript&#58;// URLs or call JavaScript functions from within a QuickTime movie. This feature was removed from QuickTime for security reasons."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-06-07T19:09:50.000Z",
+    "content": "yes... this is right... and this is how it should be"
+  },
+  {
+    "author": "dodgescabin",
+    "avatar": "5ee2a42efef6c1d7228aee6b0de018b4",
+    "date": "2007-08-30T18:37:32.000Z",
+    "content": "I never use quicktime its not very good"
+  },
+  {
+    "author": "Doc",
+    "avatar": "191b0fffb287ef964bd5a9650c4ff0ba",
+    "date": "2007-09-01T00:52:17.000Z",
+    "content": "Quote [dodgescabin responds: I never use quicktime its not very good] ???\r\n\r\nWhat the f***? - Is that the dumbest sweeping statement ever? It's like saying cars are not very good - or the sky is not very good!"
+  },
+  {
+    "author": "roger",
+    "avatar": "45d9386afa2a075ecb44701e8a89daef",
+    "date": "2007-09-05T18:27:37.000Z",
+    "content": "yea i need this to work"
+  },
+  {
+    "author": "vbx",
+    "avatar": "c1b3c1defde44822d4a6bf0c6ded9171",
+    "date": "2007-11-05T17:20:34.000Z",
+    "content": "would like to know if is possible to create the popup alter when the movie is previewed inside a standalone QuickTime player."
+  },
+  {
+    "author": "Andre",
+    "avatar": "34537102affa859bed3fcd9f051015f5",
+    "date": "2007-11-18T00:21:05.000Z",
+    "content": "vbx i am interesting that too.. popup on preview movie its very interesting.."
+  },
+  {
+    "author": "student0911",
+    "avatar": "c0585450b7659482e47ea7d5a39b4ee5",
+    "date": "2009-02-23T11:55:08.000Z",
+    "content": "Whenever I read about how QuickTime makes cyberspace more scary or dangerous (JS is JS; I have JS enabled in my browser, but I won't use IE outside the LAN; I just wish I could tell my browser to not load scripts from 3rd-party servers), it reminds me that the most dangerous thing about QuickTime movies is that the site with the most best hijacker-exculpatory 9/11 video evidence, 911blimp.net, chose to use QT (because, like a VCR, it lets the viewer pause and go frame-by-frame in either direction using the keyboard arrow keys) to present its videos.  So, to the extent that people can be made to be extra reluctant to even open a .mov file, that helps keep the evidence (and danger to the actual perpetrators) as well-suppressed as it's been.\r\n\r\nBTW, that site (like this one) uses JS, harmlessly, but its QT videos do not contain any embedded code or scripts of any kind."
+  }
+]

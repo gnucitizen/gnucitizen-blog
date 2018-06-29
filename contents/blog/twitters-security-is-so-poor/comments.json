@@ -1,0 +1,32 @@
+[
+  {
+    "author": "Alex",
+    "avatar": "2174a263052988e6b62a87944b481513",
+    "date": "2009-01-30T10:04:38.000Z",
+    "content": "Twitter will be launching a private beta of OAuth in Jan 2009. http://apiwiki.twitter.com/FAQ#WhenwillTwittersupportOAuth"
+  },
+  {
+    "author": "Andrew Becherer",
+    "avatar": "8780b4cb47f21d713eb871fd3db2500c",
+    "date": "2009-01-30T18:50:38.000Z",
+    "content": "Someday Twitter will open the floodgates to their OAuth service. It is in private beta right now."
+  },
+  {
+    "author": "cryptmod",
+    "avatar": "c3fbe3f71cd4e6533a60350efd0dc62e",
+    "date": "2009-02-06T02:50:37.000Z",
+    "content": "Only a few weeks ago, twitter was vulnerable to password dictionary attack, where Presidents Obama account &amp; others was hacked, now with  OAuth coming out, The guys @Twitter are improving their API.  Functionality &amp; popularity first, security later is their method."
+  },
+  {
+    "author": "Str187",
+    "avatar": "18e1810130148141d9a47239f35b2ed2",
+    "date": "2009-05-01T20:17:40.000Z",
+    "content": "i thought about this issue before and i completely agree with you..."
+  },
+  {
+    "author": "Tim Acheson",
+    "avatar": "ba9422e96112bd5cb4e8e7b5abd92eda",
+    "date": "2009-07-16T14:11:56.000Z",
+    "content": "Now Twitter's own internal systems have been hacked, along with the accounts of Twitter users including celebrities: http://www.timacheson.com/Blog/2009/jul/twitter_hacked_via_google_apps\n\nThe initial point of entry wasn't a gap in Twitter's security. The hacker(s) gained access through a Google Apps account. The worry with a Google account is, it's web-based and therefore only as secure as the rest of the Internet. If yuor Google account is compromised and you use Google Docs in a serious commercial setting, your Twitter account will be the least of your worries."
+  }
+]

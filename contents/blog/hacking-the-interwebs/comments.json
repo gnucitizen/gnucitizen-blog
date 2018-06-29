@@ -1,0 +1,578 @@
+[
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-12T14:52:07.000Z",
+    "content": "the mxml file can be compiled with Flex2 or Flex3 compiler (mxmlc). The <code>navigateToURL</code> method can be replaced with <code>sendToURL</code>. That will make the attack a lot more stealthier. Though, we thought that <code>navigateToURL</code> is a lot better for our demonstration, since you can see with your eyes what is happening in reality."
+  },
+  {
+    "author": "David Kierznowski",
+    "avatar": "1d95d2324345e3dd2e41d6066cc1b492",
+    "date": "2008-01-12T14:56:29.000Z",
+    "content": "Looks like this has been touched on before: http://www.informit.com/articles/article.aspx?p=461084&amp;rl=1 However, this post obviously shows how an attacker can do this remotely. Cisco doesn't believe in UPnP so won't be affected, althought the LinkSys range probably is.\r\n\r\nWithout looking at UPnP in detail, I would say the one limiting factor is knowing the Router IP address: We can get the internal range from the browser, but I still haven't seen an effective technique to enumerate and identify live hosts via the browser, which means we have to guess/brute force (.1, .254 etc) or rely on defaults."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-12T15:06:09.000Z",
+    "content": "David, incorrect. Although UPnP research has been going on for some time now, what we show here is a completely different technique. For example, people used to believe that UPnP is exploitable only if you are within the LAN where the UPnP device is located, due to the fact that you need SSDP and presumably HTTPU. Well, it seams that this is not the case. UPnP is exploitable over the Web and this is a huge risk, and this is the new thing that needs to be flagged.\n\nUPnP is supported by most if not all home devices. Enterprise grade routers also have UPnP functionalities although they are turned off by default. UPnP is supported by printers and Network Cameras as well.\n\n<blockquote>Without looking at UPnP in detail, I would say the one limiting factor is knowing the Router IP address: We can get the internal range from the browser, but I still haven't seen an effective technique to enumerate and identify live hosts via the browser, which means we have to guess/brute force (.1, .254 etc) or rely on defaults.</blockquote>\n\nI see what you are saying but you can hit on the router within 4 tries. Home routers are located on 192.168.0.1, 192.168.1.1, 192.168.0.254 or 192.168.1.254 and this is the case with %99.9 if not %100 of all cases.\n\nThe attack has been tried in our laboratory successfully. It has been already tested on several router models and they all are vulnerable. Different models have different UPnP functionalities although they all have Layer3 forwarding services. This is a common service that comes with most if not all routers. As I explained before, this is what Skype and MSN are using in order to establish voice or video connections (P2P). Of course, this can also be abused and used for evil purposes.\n\nSo, I don't want to confuse the readers, neither I do want to create FUD, but the risk is serious and it needs to be taken quite seriously."
+  },
+  {
+    "author": "David Kierznowski",
+    "avatar": "1d95d2324345e3dd2e41d6066cc1b492",
+    "date": "2008-01-12T15:26:40.000Z",
+    "content": "pdp, \"incorrect\"? Not really, the UPnP vulnerabilities spoken of have been considered a risk for a little while now. This research does however, highlight the fact that it is exploitable from the outside rather then the inside (as I gave credit for in my previous comment). \r\n\r\nI do think there are more shades of gray here.\r\n\r\nHaving a port NAT'ed to the outside world isn't nessesarily bad, as newer PCs now all come standard with an Internet Security package and a host-based firewall (XP SP2/Vista). This mitigates this risk.\r\n\r\nThe UPnP DNS forgery attack could be a pain in the ass, I'll give you that one, as this opens up a different can of worms altogether."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-12T15:34:57.000Z",
+    "content": "David, there is no UPnP vulnerability. There are only speculations on the risk that exists if you allow your devices to run UPnP. I did point our readers to a very good UPnP security paper written several years back.\r\n\r\nThe portforwarding rule attack was given as an example as this is probably one of the things that cannot be used right away by script kiddies and it is sufficient enough to prove a point. Though, the portforwarding rule attack can be used to construct <q>onion ring</q>-like networks, or as Adrian <a href=\"http://www.gnucitizen.org/blog/bt-home-flub-pwnin-the-bt-home-hub-5\" rel=\"nofollow\">referred</a> to as <q>NewInternalClient</q> bug. It also might be possible, although I haven't tested it personally, to portforward the device Web administration interface on the outside, therefore, effectively enabling attackers to login into your router. Through UPnP you can also reset the Admin password. As such, an attack that consists of two-three requests in total can portforward the web administration interface, assign dynamic DNS entry and change the admin password."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-12T15:36:36.000Z",
+    "content": "another point that I am trying to make is that although many people have heard of UPnP very few know how to exploit it."
+  },
+  {
+    "author": "David Kierznowski",
+    "avatar": "1d95d2324345e3dd2e41d6066cc1b492",
+    "date": "2008-01-12T15:52:09.000Z",
+    "content": "I'm really surprised that UPnP doesn't provide some network authentication key to prevent tampering. An HMAC of the client/server MAC addresses would prevent these attacks?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-12T16:20:38.000Z",
+    "content": "yes, unfortunately the current state with UPnP is what it is. Though, the technology does make sense. If you have a TV box that requires portforwarding for whatever reason, it is convenient to tell that to the router instead of relaying on the user to perform the configuration manually."
+  },
+  {
+    "author": "sal-e",
+    "avatar": "9509edb3b8aecd89b16384938a3f696b",
+    "date": "2008-01-12T17:06:34.000Z",
+    "content": "I have to agree that UPnP protocol is very useful and can help the end-user to setup his/hers home network with minimal effort. I always believed that if something can be made simple it will be more reliable. But at the same time simplicity is not excuse for lazinesses. Since I have purchased my first router I have some unanswered questions:\r\n\r\n<ol>\r\n<li>How difficult will be to randomly generate new network ID during the first power cycle of the new router? All routers I have seen are using 192.168.0.x or 192.168.1.x networks.</li>\r\n<li>Why UPnP protocol don't have simple, but in my opinion very effective (not perfect), authentication like Bluetooth? I don't thing entering the PIN will be problem for the most of the consumers.</li>\r\n</ol>"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-01-12T20:50:27.000Z",
+    "content": "David, that article mentions UPnP to be an *internal* threat. We mentioned how previously published UPnP security research focuses on *internal* attacks here: http://www.gnucitizen.org/blog/bt-home-flub-pwnin-the-bt-home-hub-5\r\n\r\nOur research is focusing on exploiting UPnP *remotely* by simply having the victim user visit a webpage."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-01-12T21:02:17.000Z",
+    "content": "New UPnP stack implementations will probably make sure that the client's IP address matches the IP address for the \"AddPortMapping\" request. In other words, you should only be able to add port forwarding to *your* LAN IP address and no other internal IP address. However, this is not completely secure as the victim who visits the malicious webpage containing the exploit (preauth XSS + XHR(SOAP request) or Flex Flash SOAP request) will ultimately request the port-forwarding action to the target router.\r\n\r\nA huge problem (as we have mentioned already) is that the value of \"NewInternalClient\" can be an external IP address on many UPnP stacks (due to the protocol specs being vague?). This is very serious as it's TRIVIAL to setup a botnet of proxies to hide the cracker's attacks."
+  },
+  {
+    "author": "hanfi",
+    "avatar": "464220dbba92a957cf4fb21c7b0e15d8",
+    "date": "2008-01-14T13:22:11.000Z",
+    "content": "<blockquote>Without looking at UPnP in detail, I would say the one limiting factor is knowing the Router IP address: We can get the internal range from the browser, but I still havenâ€™t seen an effective technique to enumerate and identify live hosts via the browser, which means we have to guess/brute force (.1, .254 etc) or rely on defaults.</blockquote>\r\n\r\nCan we use IPv6 for this? As in http://[ff01::2] or http://[ff02::2] but those are multicasts, does that matter for a browser?"
+  },
+  {
+    "author": "arete",
+    "avatar": "de06c170a4002b98c0064c408cea3041",
+    "date": "2008-01-14T15:37:18.000Z",
+    "content": "All,\r\n\r\nPlease understand that I realize this is a generally exploitable flaw in the way uPnP is used, which is terrible.  But the rest of my post is just about Flash.  (I suspect your idea is also executable in Java and quite possibly in other platforms, so please don't think I'm trying to diminish your efforts.)\r\n\r\nHOWEVER, unless I misunderstood something, what you've done is ALSO a (relatively limited) violation of the Flash Player's protection model.  Adobe Flash Player goes out of their way to, really broadly, restrict an applet from talking to any but the original server without that new server's permission.  For instance, to limit the impact of using Flash in DDOS attacks, as an unwilling proxy, etc.\r\n\r\nBriefly, my question is: any idea why sendToURL works from a nontrusted Flex app on a random server?  Can you confirm that you tested it this way?  (And it could simply be that \"sendToURL\" isn't protected by this presently for some reason...)\r\n\r\n[I don't KNOW how much you guys know about this Flash topic...  so with apologies, I'm going to give a little more information just in case.  A user can set any directories (globally) to be \"trusted\" by them if they want.  The only really common case is that developers have to set their local directories this way to test local apps that communicate with the network.  This is usually setup by default for the working directory when you install an Adobe creation app - e.g. Flex Builder.  An applet you place in this directory can basically do anything.\r\n\r\nBut a random applet loaded from site A in a browser can't make, say, a random webservices call to site B.  Which implies you shouldn't be able to do this, unless the test applet was local or hosted ON the router already.\r\n\r\n\"navigateToURL\" is probably excluded, since it's behaving exactly as an HTML link and actually taking the browser to that page.  ]"
+  },
+  {
+    "author": "Mike",
+    "avatar": "d9c8860c73bf2cbf1ff0d37f9f01a90e",
+    "date": "2008-01-14T15:40:13.000Z",
+    "content": "I fail to see how this is much of a \"security vulnerability\" so much as a biproduct of a simple, unobtrusive method to get a port forwarded as necessary.\r\n\r\nThe only thing that shouldn't be doable is the change to DNS servers--which is kinda crappy :D\r\n\r\nSpammers could have a lot of fun with that one for sure.\r\n\r\nIn terms of this being some dire critical thing--not really...\r\n\r\nBesides, it's not being exploited \"remotely\". It's very much being done so on the client-end. My definition of remote is by not having any application/processing done on a machine located within said network. You're relying on the user to click on harmful URLs. That's a local issue."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-14T15:42:47.000Z",
+    "content": "We've got <a href=\"http://it.slashdot.org/it/08/01/14/1319256.shtml\" rel=\"nofollow\">slashdoted</a> but the <a href=\"http://it.slashdot.org/it/08/01/14/1319256.shtml\" rel=\"nofollow\">Slashdot</a> article is quite incorrect. From the article:\r\n\r\n<blockquote>Looks like Firefox & Safari users are safe for now.</blockquote>\r\n\r\nThis is not true. Firefox and Safari users are as vulnerable as IE users. It is not browser dependent. It is based on Flash. So, wherever flash runs, so that the exploit."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-14T16:00:52.000Z",
+    "content": "Mike,\n\n<blockquote><p>In terms of this being some dire critical thing, not really...</p>\n\n<p>Besides, it's not being exploited \"remotely\".</p></blockquote>\n\nThe change is permanent on your router. This means that when you try to visit yourbank.com, instead of going on the real think you will end up on the attackers web server? Or what if someone portforwards interesting service off your network onto the router's Internet facing side? This is an extremely serious issue that needs to be resolved."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-14T16:19:27.000Z",
+    "content": "arete,\n\n<blockquote>\"navigateToURL\" is probably excluded, since it's behaving exactly as an HTML link and actually taking the browser to that page.</blockquote>\n\nprecisely, and this is the point. there is nothing within the provided POC that is hackish. This is exactly how Flash is supposed to work."
+  },
+  {
+    "author": "Anonymous",
+    "avatar": "eaa5275b7c8df78c4d4216169c3add10",
+    "date": "2008-01-14T19:16:36.000Z",
+    "content": "Flashblock (for FireFox/SeaMonkey) is a nice aid in this particular front.  It won't prevent the attack from happening if you choose to play malicious flash content, but it will stop it from happening by tiny or hidden applets or ads that you wouldn't want running in the first place."
+  },
+  {
+    "author": "Cyb",
+    "avatar": "7905d373cfab2e0fda04b9e7acc8c879",
+    "date": "2008-01-14T19:27:26.000Z",
+    "content": "Since in most home setups the UPnP router is also the default gateway and DNS server for the hosts, a very effective way to discover it's IP address is to simply use the default gateway or default dns server IP as a target to find the right IP. Don't know if a flash application has access to this kind of data, but a java app definately does.\r\n\r\nCyb."
+  },
+  {
+    "author": "Alex",
+    "avatar": "a8d75870431d765df3c067283af3d370",
+    "date": "2008-01-14T21:56:09.000Z",
+    "content": "Cite: \"I see what you are saying but you can hit on the router within 4 tries. Home routers are located on 192.168.0.1, 192.168.1.1, 192.168.0.254 or 192.168.1.254 and this is the case with %99.9 if not %100 of all cases.\"\r\nAnd, of course, 192.168.2.1 and 192.168.2.254.\r\n\r\nCite: \"The most malicious of all malicious things is to change the primary DNS server. That will effectively turn the router and the network it controls into a zombie which the attacker can take advantage of whenever they feel like it. It is also possible to reset the admin credentials and create the sort of onion routing network all the bad guys want.\"\r\n\r\nThis is what I can do using CSRF-attacks. This isn't possible with the described UPnP, is it ? Because this section sounds like that I'm able to exchange the IP-address of the DNS-server-entry using this new kind of attack.\r\n\r\nMaybe I've just overseen something ..."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-14T22:11:17.000Z",
+    "content": "when you DHCP, the router will provide you with info about the DNS server. In most cases, it just tells you that your DNS is your router. Well, the attacker can basically the address of the DNS server with their own. That will effectively make all DNS requests to go through their DNS server. So when you resolve google.de, which is usually [216.239.59.104, 72.14.221.104, 66.249.93.104], you will receive [86.154.244.15] which has nothing to do with Google.\r\n\r\nOk, ok, there are a few more things to it, but this is how it works in general. Keep in mind that it depends on the router model, as well."
+  },
+  {
+    "author": "quitte",
+    "avatar": "59fd50c069b3042ad95b6f57b1533a6b",
+    "date": "2008-01-14T22:56:31.000Z",
+    "content": "the avm fritzboxes use 192.168.178.1 and .254 iirc. they are very common here."
+  },
+  {
+    "author": "Alex",
+    "avatar": "a8d75870431d765df3c067283af3d370",
+    "date": "2008-01-14T23:57:15.000Z",
+    "content": "Cite: \"That will effectively make all DNS requests to go through their DNS server. So when you resolve google.de, which is usually [216.239.59.104, 72.14.221.104, 66.249.93.104], you will receive [86.154.244.15] which has nothing to do with Google.\"\r\n\r\nYes, of course, I know. But I haven't thought, that changing this data is possible using UPnP, so I had to ask. Until now, I thought, that I can only set port-forwardings using UPnP and have to use CSRF-attacks for DNS stuff, ... But now I've seen http://www.gnucitizen.org/blog/flash-upnp-attack-faq and it's keeps scaring me."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-15T00:01:56.000Z",
+    "content": "yes Alex, we started investigating UPnP several months back and back then I was also surprised with the kind of things you can get done via this standard. check your home router UPnP service and I am sure that you will get even clearer picture of what's going on."
+  },
+  {
+    "author": "ironiridis",
+    "avatar": "4106ae4b276f4ee6d14d4ca46c71504a",
+    "date": "2008-01-15T02:05:34.000Z",
+    "content": "Every time I assist someone in setting up their home network (and that is really damned often) I pick up a Belkin wifi router, and give them a unique IP range in 172.18.---.---. Each place I set up uses a different third octet.\r\n\r\nI've always suspected that having a known IP configuration is a dangerous risk."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-15T02:08:58.000Z",
+    "content": "ironiridis, good but that doesn't matter. you can still locate the home router by name. a lot of them are just called <strong>home</strong>."
+  },
+  {
+    "author": "Ed",
+    "avatar": "9e30000fad6dc59ec9183cfa7b1cd026",
+    "date": "2008-01-15T03:10:50.000Z",
+    "content": "Afaik, this isn't going to work, unless your router has a crossdomain.xml file. Flash simply won't interact with any hosts appart from the server that either the .swf or hosted .html came from.\r\n\r\nhttp://livedocs.adobe.com/flex/201/html/wwhelp/wwhimpl/common/html/wwhelp.htm?context=LiveDocs_Book_Parts&amp;file=05B_Security_176_02.html"
+  },
+  {
+    "author": "SJF",
+    "avatar": "27248e8985219e9deb1ffee03dcf101d",
+    "date": "2008-01-15T05:52:09.000Z",
+    "content": "So for those of us that are security conscious but not technically knowledgeable, what are the consequences if I turn off UPnP in my router. And specifically does that interfere with LAN connections in a household wireless network or are there any other consequenses other that those mentioned, (that is unworkable Skype and MSN)."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-15T08:19:43.000Z",
+    "content": "Ed, read the following: <a href=\"http://livedocs.adobe.com/flex/2/langref/flash/net/package.html#navigateToURL()\" rel=\"nofollow\">http://livedocs.adobe.com/flex/2/langref/flash/net/package.html#navigateToURL()</a>"
+  },
+  {
+    "author": "me",
+    "avatar": "3ffe5aaa2f185655cde345b7e34fef53",
+    "date": "2008-01-15T11:00:36.000Z",
+    "content": "What that picture means?"
+  },
+  {
+    "author": "The Mole",
+    "avatar": "ca896c213fdd33cd62c6a161b1e7bfaf",
+    "date": "2008-01-15T11:15:17.000Z",
+    "content": "I find it very tenious that the reason that this isn't a security flaw in flash is because flash is behaving the way it was designed too. This is complete rubbish.\r\n\r\nIt IS a security flaw in flash. I can see no justifiable circumstances why a flash script from the internet should be able to open a page to a private non-public ip address. It shouldn't be allowed."
+  },
+  {
+    "author": "TimP",
+    "avatar": "aa527517fb8000daf5c7cbf89054a507",
+    "date": "2008-01-15T11:27:19.000Z",
+    "content": "\"A multicast SSDP packet is submitted to 239.255.255.250:1900. Any device that listens on this multicast port will then respond with information about their service description if they are happy with the body of the discovery packet.\"\r\n\r\nSo, the question is, can listening be turned off on this port? What other protocols use this port?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-15T11:33:50.000Z",
+    "content": "TimP, the multicast packet is used only for discovery. This is the SSDP part of the UPnP stack and it has nothing to do with HTTP or HTTPU side of it. So not listening to multicast 239.255.255.250:1900 wont fix the problem."
+  },
+  {
+    "author": "pk",
+    "avatar": "9dcdf153feab1875c297e9e32f31a04b",
+    "date": "2008-01-15T12:39:26.000Z",
+    "content": "If my router is hacked by a UPnP attack like the one described, is it making permanent changes to my router's configuration (ie ones which can be seen from the router's admin page), or \"temporary changes\" of the type that will be lost everytime the router is rebooted? ie is this attack simply that through upnp a particular computer's connection is now compromised until the router is next rebooted, clearing any ports opened\\forwarded by a upnp request. \r\n\r\nIf the browser's admin page is portforwarded to be accessible externally over the net, it is presumably still protected by whatever username\\password you've set for accessing it... ie only accessible through a brute force password attack? \r\n\r\nI'm just trying to understand the full scope of what sounds like a serious vulnerability."
+  },
+  {
+    "author": "Sneaky",
+    "avatar": "9d8922f357c4c850f20b40e130fa36cc",
+    "date": "2008-01-15T12:42:06.000Z",
+    "content": "I'm no security expert, but it looks to me like a problem in the security model of flash. Shouldn't they sanitise the NavigateToURL URLRequest to disallow this kind of thing? Surely, if you can't do it from a raw web page without a XSS bug, then you shouldn't be able to do it from flash either.\r\n\r\nFlash should obey the same SOP policy with URLRequest objects with content type set to  application/xml as XMLHttpRequest"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-15T12:55:20.000Z",
+    "content": "pk, certain UPnP changes are permanent. For example, you can change your admin account password . Of course, this depends on whether your router supports it, but I've seen many routers that does have this feature which is very scary."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-15T12:57:39.000Z",
+    "content": "Sneaky, flash does comply with the same origin policies. keep in mind that we cannot read the request responds. the URLRequest object combined with navigateToURL is exactly like automatically submitting a FORM via JavaScript <code>form.submit()</code> The only difference is that Flash allows you to supply additional headers and also to provide the request body in XML format. So, in theory, Flash does not break the same origin policies."
+  },
+  {
+    "author": "mim",
+    "avatar": "47f5e3a58e49d3b0d10f015f71dd6347",
+    "date": "2008-01-15T14:03:49.000Z",
+    "content": "Thank you for this article"
+  },
+  {
+    "author": "Sneaky",
+    "avatar": "9d8922f357c4c850f20b40e130fa36cc",
+    "date": "2008-01-15T15:12:34.000Z",
+    "content": "pdp, nevertheless, it must be possible for flash to sanitise the parameters to NavigateToURL in such a way as to make this attack impossible. If flash is the attack vector, then the solution must lie with it too. If there is a hole, then it is a lack of restrictions in comparison to XMLHttpRequest that makes the attack possible."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-15T15:14:40.000Z",
+    "content": "I guess adobe can just make sure that none can set the <code>SOAPAction</code> header, but this is not a fix but a hack."
+  },
+  {
+    "author": "Kudos",
+    "avatar": "a9937a23bfdbfaa7065f16a9dfa10f10",
+    "date": "2008-01-15T19:17:41.000Z",
+    "content": "Flash is used as an example here but really any application the browser downloads and runs on their computer (i.e. javascript, activeX, Java, silverlight, etc.) could potentially do this. The only thing stopping this exploit from being executed would be the features in that language/technology."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-01-16T00:10:01.000Z",
+    "content": "FYI guys, it appears that the BT Home Hub responds to the following two domain names: api.home and bthomehub.home\r\n\r\n@Kudos - you're correct, any client-side technology supported by web browsers is a potential vehicle to carry out this CSRF SOAP attack. However, activeX controls are not such a sexy option as the user needs to agree to install it (although yes, he/she could be social-engineered to do so). Our Flash demo exploit shows no warning/confirmation message to the victim user whatsoever!"
+  },
+  {
+    "author": "ebo",
+    "avatar": "acebdcd5be93ad802de61a0626e9c61e",
+    "date": "2008-01-16T00:40:10.000Z",
+    "content": "Great article.\r\n\r\nI checked my french home hub. Everything works except that the port used to send your SOAP request is specific to each home hub. You have to send a discovery message (broadcast &amp; UDP) to obtain it (impossible in Flex/Flash/JavaScript no ?). A good way to prevent an exploitation."
+  },
+  {
+    "author": "Kez",
+    "avatar": "b334ba1ca311ffabb5bda96fdaff570b",
+    "date": "2008-01-16T05:39:13.000Z",
+    "content": "A possible workaround (for uPnP implementors) would be to generate a random, long nonce at router startup which is included within each control point URL.\r\n\r\nThat way, if you can't successfully do SSDP with the target, you can't make any uPnP requests either.\r\n\r\nIt's still a boneheaded protocol though.\r\n\r\nThoughts?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-16T07:40:09.000Z",
+    "content": "ebo,\r\n\r\nwe don't have to. that information can be known in advance unless a random port is automatically assigned for each SSDP discovery. However, I don't think that this kind of thing exists mainly because UPnP has another mechanism known as GENA and for GENA to work you need the port, as well as the control point, to be static."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-16T07:43:48.000Z",
+    "content": "<blockquote>A possible workaround (for uPnP implementors) would be to generate a random, long nonce at router startup which is included within each control point URL.</blockquote>\r\n\r\nKez, yes, could work. But it needs to be implemented within UPnP specifications cuz otherwise it will break the way UPnP works at the moment."
+  },
+  {
+    "author": "MikeC",
+    "avatar": "72aeca853c5737eab54e1ea90c8d9ef9",
+    "date": "2008-01-16T15:18:50.000Z",
+    "content": "Couldn't the router catch the dns ip change and redirect you to a router embedded html page which forced you to enter the router password and accept the change?"
+  },
+  {
+    "author": "Madison A",
+    "avatar": "e46eb89c9e3954d2c5faf4ad5917522e",
+    "date": "2008-01-16T22:40:04.000Z",
+    "content": "Interesting reading, but now need to know how to access Upnp to turn it off I'm using XP PRO."
+  },
+  {
+    "author": "Kez",
+    "avatar": "b334ba1ca311ffabb5bda96fdaff570b",
+    "date": "2008-01-17T07:07:16.000Z",
+    "content": "pdp: Perhaps I am misreading the uPnP specs, but I don't think the format of the controlUrl is specified by the DCP for Internet Gateway Devices.  So rather than using <code>http&#58;//host/upnp/control/igd/wanpppcInternet</code>, it could use <code>http&#58;//host//upnp/control/igd/wanpppcInternet</code>, where  is randomly generated at router startup."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-17T07:38:20.000Z",
+    "content": "Kes, at the end of the day, the control part of the UPnP stack is just SOAP. So, developers can add whatever functionalities they want for the UPnP enabled routers. They can even add, let's say... a function to play SuperMario theme song with beep. I've seen already a bunch of routers that does support change of DNS plus a lot more interesting features.\r\n\r\nA lot of people talk about randomizing the URL and also the port number but this is not feasible to do. Remember, UPnP is not just SOAP. We also have GENA. And GENA is very different. If you randomize any of control points you will break GENA probably. OR at least, you will force the developers to perform a discovery for every single SOAP or GENA request. So, I don't think that that will happen."
+  },
+  {
+    "author": "lcbrevard",
+    "avatar": "1e7eb924ee9df4d139b404e3fe8f1f5d",
+    "date": "2008-01-17T21:48:32.000Z",
+    "content": "To Madison A (and any others): You can turn off UPnP in Windows most easily using the \"UnPlug'n Pray\" application at Gibson Research: http://www.grc.com/unpnp/unpnp.htm directly to this app.\r\n\r\nAny given router will have a control page at which you can enable or disable UPnP. For instance, for a default setup Netgear router this is at http://192.168.0.1/upnp.htm"
+  },
+  {
+    "author": "Kez",
+    "avatar": "b334ba1ca311ffabb5bda96fdaff570b",
+    "date": "2008-01-18T02:59:03.000Z",
+    "content": "pdp: That's why I suggested only re-generating the random nonce at IGD startup.  If a client device using GENA is started, it will perform an SSDP discovery and obtain the correct control point URLs.  These will remain the same until the IGD is rebooted, at which point the IGD will send out a SSDP notification containing the new control point URLs."
+  },
+  {
+    "author": "T.U.V",
+    "avatar": "25b8c259020a9c2c9c14807e880ca1f1",
+    "date": "2008-01-18T09:47:26.000Z",
+    "content": "It should also be remembered that many routers are reset to their default settings after power failures."
+  },
+  {
+    "author": "arete",
+    "avatar": "de06c170a4002b98c0064c408cea3041",
+    "date": "2008-01-18T16:32:52.000Z",
+    "content": "My position is that this isn't mainly Flash's fault, but I'm still curious about some details... which doesn't mean they couldn't hypothetically sanitize navigateToURL to limit different-origin requests to only having more-common control over the headers.  Hypothetically.  But as you point out, they definitely aren't the problem; anything that can generate a complex request is.\n\nOn the other hand, pdp, you mostly skipped answering my question.  Let me try to explain better.  \n\n\npdp responds:\n\narete,\n\n    \"navigateToURL\" is probably excluded...\n\nprecisely, and ... This is exactly how Flash suppose to work.\n\n\n\nMy point is roughly this:  have you guys tested sendToURL in addition to navigateToURL from \"untrusted\" websites?   IF this is confirmed to work, then your other descriptions are accurate.  IF it doesn't work then, at least from Flash, some of the other implications are more limited...  The user can clearly tell something is weird when navigateToURL happens.\n\nMore importantly, you essentially only get one shot at navigateToURL.  Those people that changed the IPs of their router and such WOULD be mostly safe, IF sendToURL doesn't work.  Because once you load via navigateToURL you don't have the page with the Flash applet anymore to keep sending requests...  \n\nI'm not SAYING Flash has limited sendToURL - but I'm saying that whether they have or not is an important piece of information that's currently missing."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-18T17:03:50.000Z",
+    "content": "arete, first of all it is completely possible to hide the execution of navigateToURL and also perform the exploit as many times as you need without the victim noticing anything. All the attacker needs to do is to open it within an iframe which is 1px wide and 1px heigh. The exploit is absolutely trivial in the form it is at the moment.\n\nsecond, the exploit can be performed through sendToURL as well. Here I coded and example that sends the malicious data against google so that you can use a packet sniffer or a proxy to see that it actually works:\n\n<pre><code><a href=\"http://www.gnucitizen.org/static/blog/2008/01/sendtogoogletest.mxml\" rel=\"inline-text\" rel=\"nofollow\">http://www.gnucitizen.org/static/blog/2008/01/sendtogoogletest.mxml</a></code></pre>\n\nAnd here you can see how it looks like in Wireshark:\n\n<div class=\"screen\"><a href=\"http://www.gnucitizen.org/static/blog/2008/01/flash-upnp-screen.jpg\" rel=\"nofollow\"><img src=\"http://www.gnucitizen.org/static/blog/2008/01/flash-upnp-screen-198x150.jpg\" alt=\"flash-upnp-screen\" title=\"flash-upnp-screen\" width=\"198\" height=\"150\" class=\"alignnone size-thumbnail wp-image-2712\" /></a></div>\n\nOf course, the second method is a lot stealthier and faster but I believe that it is a bug within Flash security model. This is the reason why I used the first method."
+  },
+  {
+    "author": "9110",
+    "avatar": "655c62c6dd27aa41cfdc9979abf9ae83",
+    "date": "2008-01-20T13:30:59.000Z",
+    "content": "Is flash 9 mandatory? Or can this be done for flash 7 or flash 8 also?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-20T21:36:46.000Z",
+    "content": "It has been tested on Flash9. Not sure about earlier versions! Test it and post results here! 10x."
+  },
+  {
+    "author": "Larry Whaley",
+    "avatar": "f589b8befbe2aca378291aede92884c6",
+    "date": "2008-01-23T09:20:09.000Z",
+    "content": "Thank you for your work, your expertise, and your integrity. I have been working with computers for only five years, and I started late in life, I'm sixty-six years old. In 2005 hackers invaded my first computer. It is my nature to resist such action so I fought back with everything I could learn (was not enough), and everything I could buy, such as software and repair persons help. I lost eight Windows-type computers in the struggle which was fierce and lasted two years. I then gave up on Windows OS and bought an iMac, which I am now actually using. I have a great deal of information (including a hard drive) which I am considering turning over to the FBI. I would welcome advice on this proposed action.\r\n \r\nI learned a great deal from your material, and believe the hackers broke in through the gateway router, an ActionTec model from Qwest. I have a different isp now, but am afraid I am going to suffer the same fate as before since the isp controls my router, and I cannot access it at all. \r\nI have never had an email like this reach its destination; here's hoping I get through.\r\n\r\nThanks so much,\r\nLarry"
+  },
+  {
+    "author": "Ids Zandleven",
+    "avatar": "d450f8f171954f678953fa80ae28796d",
+    "date": "2008-01-23T11:44:29.000Z",
+    "content": "It would be very convincing if you could offer a demo-website where the attack is successfully demonstrated. Of course in such a way that I can reset the changes in my router. I've no idea if this is realistic.\r\n\r\nIds Zandleven"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-23T11:50:18.000Z",
+    "content": "Ids, the code that I have provided is sufficient enough to test for the issue."
+  },
+  {
+    "author": "Oliver",
+    "avatar": "388cabe525143d9e4a97793741f7e2f4",
+    "date": "2008-01-23T18:45:00.000Z",
+    "content": "I think the most worrying aspect of this exploit is the possibility that someone could alter ones DNS settings by using UPnP. With this in mind I did some digging.\r\n\r\nI checked the \"Internet Gateway Device (IGD) Standardized Device Control Protocol V 1.0\" at the UPnP Forum website. It appears that the UPnP specification actually consists of 13 \"Service Templates\". The service that controls port fowarding is called \"WANIPConnection\" and the service which controls LAN DNS is \"LANHostConfigManagement\".\r\n\r\nWANIPConnection says \"The service is REQUIRED if an IP connection is used for WAN access\"\r\n\r\nLANHostConfigManagement says \"The LANHostConfigManagement is an OPTIONAL service\".\r\n\r\nInteresting, the really dangerous service (LANHostConfigManagement) is OPTIONAL for a UPnP enabled router. Time to check mine out!\r\n\r\nFirstly I wrote a script to forward a few ports using the WANIPConnection service. After making sure my script worked, I moved on to LANHostConfigManagement. I tried several different actions, including the dangerous \"SetDNSServer\", and in each case my router replied \"Invalid Action\". From that I conclude that my router, which is a Netgear DG834, is not vulnerable to having its DNS settings altered by this exploit.\r\n\r\nIt would be very interesting to know, at this point, which routers do support \"SetDNSServer\" in their UPnP implementation."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-23T18:49:57.000Z",
+    "content": "Oliver, very interesting and well researched. Keep in mind though that there are many UPnP options that can be altered. It might also be possible to alter the admin password and perform a CSRF or XSS attack knowing what the password would be. It also might be possible to alter the password and export the admin interface on the Internet facing side. Depending on the router model, some attacks may fail, other will definitely work."
+  },
+  {
+    "author": "Oliver",
+    "avatar": "388cabe525143d9e4a97793741f7e2f4",
+    "date": "2008-01-23T19:28:16.000Z",
+    "content": "Thanks for your reply pdp, no doubt hackers are always looking for new exploits, good work on exposing the flaws!\r\n\r\nI looked a bit more into it and found out a way of asking a UPnP router what services it offers. Just go to:\r\n\r\nhttp://[router-ip]:49152/gateway.xml\r\n\r\nWhere [router-ip] is the ip of your router. It should display an XML document which shows all the supported UPnP services. One can then check the UPnP specifications to see what actions can be performed.\r\n\r\nA couple of variables I just discovered are \"TotalBytesSent\" and \"TotalBytesReceived\" - could be useful for making a bandwidth monitor for routers without SNMP :-)"
+  },
+  {
+    "author": "chiston",
+    "avatar": "c45997313f7af9c3b4e7fc55c84ef609",
+    "date": "2008-01-24T11:08:41.000Z",
+    "content": "I was wondering, are Apple Airport Extreme basestations also vunerable to this kind of 'exploits'?"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-01-25T00:28:19.000Z",
+    "content": "Just noticed another domain name which the BT Home Hub responds to: bthomehub\n\nSo far we got:\n\n<pre><code>api.home\nbthomehub.home\nbthomehub</code></pre>"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-01-25T00:33:52.000Z",
+    "content": "@Oliver - the \"http://[router-ip]:49152/gateway.xml\" technique doesn't work on the BT Home Hub unfortunately."
+  },
+  {
+    "author": "Oliver",
+    "avatar": "388cabe525143d9e4a97793741f7e2f4",
+    "date": "2008-01-26T01:19:15.000Z",
+    "content": "@Adrian\r\n\r\nIt seems that the url varies from device to device. The url is actually discovered by using the SSDP protocol ( http://en.wikipedia.org/wiki/Simple_Service_Discovery_Protocol ) - which also means that you don't actually have to guess the IP of the router, because the SSDP asks each UPnP device to advertise itself and its LAN IP address.\r\n\r\nI've been investigating UPnP on my DG834 further, the most disruptive UPnP action it allows is to disconnect it from the internet. Whilst irritating, it would not pose a security threat."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-26T10:21:16.000Z",
+    "content": "Oliver, I don't want to get into more detail how this attack vector can be made ultra stable, but here are two thoughts for you:\r\n\r\n<ol>\r\n<li>Various router models comply to specific router names (DNS), i.e. <strong>api</strong>, <strong>api.home</strong>, <strong>home</strong>, etc.</li>\r\n<li>Flashs <strong>sendToURL</strong> is executed within the context of the Flash movie and therefore can be made to submit 100 requests in a coupe of seconds.</il>\r\n</ol>"
+  },
+  {
+    "author": "Mike Myers",
+    "avatar": "fef26a19c3f17a05420007a30423493e",
+    "date": "2008-02-05T08:55:08.000Z",
+    "content": "Just tested out what the UPnP services are like on the DD-WRT v24 firmware (a popular replacement firmware for the Linksys WRT54g).\r\n\r\nIt implements only these services, and even then only the required functions:\r\nWANIPConnection\r\nWANPPPConnection\r\nWANCommonInterfaceConfig\r\nLayer3Forwarding\r\n\r\nThe good news is that it is pretty secure: \r\n* It rejects any attempt to set a port forward to an external IP address destination.\r\n* It doesn't support the \"getUserName\" or \"getPassword\" commands, nor any way to reset or change them\r\n* It doesn't support the ability to change the DNS server\r\n* It doesn't support changing wifi settings"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-02-05T10:26:53.000Z",
+    "content": "DD-WRT, is actually pretty good security-wise!"
+  },
+  {
+    "author": "SG_01",
+    "avatar": "e785c4589f481a43fbc48f6e38ad868d",
+    "date": "2008-02-07T19:22:38.000Z",
+    "content": "Without going through all the details and comments, I did have a simple question.\r\n\r\nIf I understand this correctly, the control point URL is supplied in the answer to the broadcasted request, right? So wouldn't it be perfectly possible, within the current UPnP set, so set up this control point URL to contain an encryption key? This way you could set up a dynamic URL structure such as \"http&#58;//HOSTNAME/upnp/IP_SPECIFIC_PASSKEY/control_point\", without having to surcomfent the UPnP protocol."
+  },
+  {
+    "author": "shafted",
+    "avatar": "d8b593cc56e8a709d9f1f608c4752947",
+    "date": "2008-03-01T19:35:33.000Z",
+    "content": "I suspect the proof of this being possible is that it seems to have happened to me - I use the bthomehub and voip phone and have been stung for hundreds of calls made using the voip  number, to numbers which were called when i know no one was home and no pc was left running, thus eliminating diallers. Getting proof to convince bt is the problem."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-03-01T22:41:15.000Z",
+    "content": "this is very interesting and quite unfortunate. you have to investigate to see what are the damages."
+  },
+  {
+    "author": "ionstorm",
+    "avatar": "f432f91e7343dada3bfed35d7ceeb511",
+    "date": "2008-03-08T06:28:46.000Z",
+    "content": "excellent article, I have something to contribute although I am not familiar with upnp very much but I have found some interesting things with ferret on my lan:\r\nIt seems all new 2WIRE Home Gateways have upnp enabled when you enable remote access to admin your router via your web browser, I have found all these files:\r\n\r\nhttp://ubuntu-debs.googlecode.com/files/270HG-D_Gateway_upnp_xml.tar.gz\r\nvia: http://qwestcustomer-ip-address/upnp/*\r\n\r\nI have reason to believe all these companies customers are effected: http://2wire.com/index.php?p=2\r\n\r\nWhile I was taking a look at these xml files it looks like people can take full control of all these 2WIRE modems which hundreds of thousands of people use, including AT&amp;T/qwest customers.  I may be completely wrong.  With access to xml files with commands to change passwords and modify firewall rulesets like I have found with my own router is scary lol.\r\n\r\nLet me know what you think of these files, can someone take full control over these routers?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-03-08T11:44:57.000Z",
+    "content": "if UPnP is enables and it supports interesting methods such as SetDnsServer, etc then it is almost certain that someone can own them. Keep in mind though that some devices show that this method is supported although when used it is evident that it hasn't been implemented."
+  },
+  {
+    "author": "Ken Jackson",
+    "avatar": "c3b4f5f1655f891ce2f39b7d621fed43",
+    "date": "2008-03-15T17:11:31.000Z",
+    "content": "@pdp: \"Home routers are located on 192.168.0.1, 192.168.1.1, 192.168.0.254 or 192.168.1.254 and this is the case with %99.9 if not %100 of all cases.\"\r\n\r\nYears ago, when I first setup my home router, I chose an IP network range that was different than any of those.  I reasoned it would be more secure if I denied an attacker a default.\r\n\r\nBut I never really knew of any attack that I was protecting myself from--until now.  Thanks for the article."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-03-15T17:47:40.000Z",
+    "content": "Ken,\r\n\r\nkeep also in mind that even if you choose a different IP address from the default one, your router still can be discovered by name. Most of the time it is simply called <strong>home</strong>. In the case of BT home hub it is know as <strong>api</strong>. Therefore, request to api or home will result to requests to your router no matter what the IP address is."
+  },
+  {
+    "author": "jimbo",
+    "avatar": "7ef4ba0527ce31958d49d9f9c019fc92",
+    "date": "2008-04-21T15:53:50.000Z",
+    "content": "Sorry but this is nothing new, it was mentioned at the last brumcon"
+  },
+  {
+    "author": "nanard",
+    "avatar": "a527e088f6990abefef9b49309463281",
+    "date": "2008-05-26T16:46:54.000Z",
+    "content": "You are right when you say that 99% of the home routers can be found by probin 192.168.0.1, 192.168.0.254, 192.168.1.1 and 192.168.1.254. But that won't give you neither the port nor the Path for the request. There is NO standard port for UPnP HTTP SOAP. (I'm not talking about SSDP). And different vendors do use differents ports (for example : 2468, 5440, 6688). Also the path is almost always different depending on the router vendor. The Linksys WRT54G (fw v2.02.7) does prefix the URL used with the device UUID. You just cannot guess that ? : /uuid:000625d7-caf9-0006-25d7-caf90232011c/WANPPPConnection:1\r\n\r\nlinksys rocks :)"
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2008-05-26T19:55:04.000Z",
+    "content": "@nanard: how hard is it to setup a DB of most common UPnP port number/UPnP SOAP URL combinations? \r\n\r\nHome routers can be fingerprinted using JavaScript among other methods, so this attack is trivial to mount once you have a decent database."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-05-27T06:55:34.000Z",
+    "content": "all you need is a database of endpoints. that's all. you don't even need to fingerprint."
+  },
+  {
+    "author": "josman",
+    "avatar": "ff3f56499427d5af75534a529b0b759b",
+    "date": "2008-06-28T21:10:57.000Z",
+    "content": "Hello blog very interesting. This week I found another talk about where things very interesting. Here I leave the address: http://informaniaticos.blogspot.com/"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-06-28T21:13:54.000Z",
+    "content": "looks like an interesting read... but I cannot read Spanish, just yet."
+  },
+  {
+    "author": "Mancunian Bloke",
+    "avatar": "06137bd54a447d7a3737e48aa19e95fc",
+    "date": "2008-10-21T21:47:46.000Z",
+    "content": "This is an excellent forum.  I have the following remarks to make: -\r\n\r\nI deliberately avoid getting the DNS server addresses from the router.  They are configured in the PC network settings (to the OpenDNS servers).\r\n\r\nI use a very useful free security tool called Threatfire (www.threatfire.com).  It allows me to set a rule to control which processes may access specified IP addresses, e.g. the router.\r\n\r\nThis web site is very useful: http://cc.uoregon.edu/cnews/spring2003/upnp.html\r\nI have taken the advice dispensed within.\r\n\r\n\r\nThank you very much.  Your comments have helped me to a better understanding of the subject."
+  },
+  {
+    "author": "ZeroOne",
+    "avatar": "0036cfbb7b8c28f336eab868e0fd0f1c",
+    "date": "2009-02-24T14:57:03.000Z",
+    "content": "The link to the Test.mxml-file does not work. Could you please fix it? Or does anyone have a copy?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-02-25T11:44:39.000Z",
+    "content": "It has been fixed now! We are still moving stuff around!"
+  },
+  {
+    "author": "Matthew",
+    "avatar": "3289a66a422091cf7422b1dd2d4b31d1",
+    "date": "2009-02-26T20:47:00.000Z",
+    "content": "Thank you--I learned from this article as well as the discussion."
+  },
+  {
+    "author": "Seer",
+    "avatar": "9ab38a17441b272dc6ac0b941cdde966",
+    "date": "2009-04-20T14:12:21.000Z",
+    "content": "Hi there... About the \"discovery\" problem for hackers (how to guess UUIDs and ports ?), maybe Adobe \"solved\" it with its freshly announced \"Adobe Flash Platform for the Digital Home\" ? (I think not, as I develop further on)\r\n\r\nI guess if it was available to anyone, this should provide developers APIs to read media (WebTVs) from real TVs/set-top boxes... why not from UPnP Media Servers ? Thus, things are getting easier, except if they restrain the supported requests to concern media stuff, and only it (no DNS change or port forwarding ?).\r\n\r\nAnyway the special player may not be available to anyone except device manufacturers. With flash apps not gotten from the internet but deployed in the boxes (no download, only stream play ?), no problem. I guess then that we won't be able to play free flash games from the web ;) Or only certified ones ?\r\n\r\nKeep in mind that all of it was just pure speculation and anticipation...\r\n\r\nOne last word : Good discussion indeed with lots of information. I haven't studied the UPnP Security profile, but would it provide solutions ? I believe (am I wrong ?) no manufacturer has implemented it yet :)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-04-20T15:25:51.000Z",
+    "content": "Seer, thanks for the informative comment. I will have a look into the Adobe Flash Platform for the Digital Home which you've mentioned. Since I've been trying to hack my TV for some time now, this technology may prove to be very interesting.\r\n\r\nI am not sure if I understand your last question correctly. I believe that you are suggesting that none one is implementing UPnP in real devices at the moment. This is not true. UPnP is virtually everywhere from embedded devices to mobile phones. As I mentioned before, my brand new TV has support for UPnP and pretty much every home router I've seen is UPnP enabled."
+  },
+  {
+    "author": "Lee",
+    "avatar": "d9c17725fa675545f3bfe7330b122a4b",
+    "date": "2009-06-03T18:41:19.000Z",
+    "content": "Educational if esoteric discussion.  I'm happy to say that my Netgear WGT624 does not enable UPnP by default, and I don't have a need to enable it as far as I can tell."
+  },
+  {
+    "author": "Timbo",
+    "avatar": "5846c919628dd7816ae10461febebece",
+    "date": "2009-06-12T11:59:46.000Z",
+    "content": "Fascinating! I'm just a user of computers, neither and IT specialist nor a programmer but it seems that what you're saying is, once the hacker has obtained entry through to your network, the damage is done and turning uPnP off will be too late because the hackers are in. Is that right, or if I disable UPnP, will I be saved?\r\n\r\nExcellent article though!\r\n\r\nregards\r\n\r\nTimbo"
+  },
+  {
+    "author": "Mexx",
+    "avatar": "71a5f9b75bc65500887bc34c953e243b",
+    "date": "2009-09-21T02:00:14.000Z",
+    "content": "Can't we just hack the router without UPnP. I mean just fire queries to change DNS settings using default admin/password when 90% of the people never care to change it?"
+  },
+  {
+    "author": "hilbert",
+    "avatar": "f532215fa38c29664357759a3e34b38d",
+    "date": "2010-11-06T14:11:00.000Z",
+    "content": "More than two years have gone since this post and one from the last message... and I would like to know if the situation has evolved somehow. \r\n\r\nIs it still dangerous using UPnP? Did somebody try to make it more secure?\r\n\r\nThanks for your answer,"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2010-11-13T02:42:06.000Z",
+    "content": "regarding upnp, the situation is still the same although we cannot exploit it with flash through the web... not yet... some day the browser will evolve enough to allow us to do that"
+  },
+  {
+    "author": "Bharath",
+    "avatar": "370b6f61b3a00729f969291b84ffc632",
+    "date": "2012-08-07T06:17:50.000Z",
+    "content": "I have been trying to figure how the DNS settings can be changed using the UPnP protocol. I have figured out discovering the host and also its description but I have not been able to get into the DNS settings change . Can anyone suggest a way I can proceed with it.\r\n\r\nBharath"
+  },
+  {
+    "author": "Omid",
+    "avatar": "1bdb9d853761250f7c2c47b9bea5149e",
+    "date": "2012-11-02T23:56:31.000Z",
+    "content": "Can anyone tell me whether this vulnerability still exists or not?\r\n\r\nThanks"
+  }
+]

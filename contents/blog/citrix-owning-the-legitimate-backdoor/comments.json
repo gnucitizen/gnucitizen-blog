@@ -1,0 +1,284 @@
+[
+  {
+    "author": "David Kierznowski",
+    "avatar": "1d95d2324345e3dd2e41d6066cc1b492",
+    "date": "2007-10-04T16:47:26.000Z",
+    "content": "pdp, awesome demonstrations and code. I'm sure those new to these attack vectors will love it."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-04T19:30:55.000Z",
+    "content": "CITRIX hacking is just like back in the old days with NetBIOS. It simple. It is malicious. It is highly effective. And the problem is that CITRIX is pretty useful. Here is a dilemma for you:\n\n<div class=\"message\">Let's say that you have a pretty stable desktop app which you would like to be available on the Web. What are you going to do? Port it to XHTML, JavaScript and CSS? No way! You are most likely going to put it on CITRIX and forget about it.</div>"
+  },
+  {
+    "author": "hackathology",
+    "avatar": "271ecedbd232e23677ddc1d3956147eb",
+    "date": "2007-10-05T02:39:25.000Z",
+    "content": "Awesome pdp, you are hacking citrix server and i am constantly being challenge by guys to hack them"
+  },
+  {
+    "author": "vindic",
+    "avatar": "2fbd3fcfa626bd4301c18cdbd207a7bb",
+    "date": "2007-10-05T02:48:50.000Z",
+    "content": "heh, it's amazing man, really :)"
+  },
+  {
+    "author": "wirepair",
+    "avatar": "015dba318ece79e80b157518e8729f9a",
+    "date": "2007-10-05T06:18:33.000Z",
+    "content": "Hey pdp, that's cool and all but that paper (hackingcitrix.txt) is actually mine, not Ian Vitek's. I wrote it like 4 or 5 years ago ;> Funny to see this stuff still works. Also I wrote a brute forcer in C that works differently than Ian's.\n\nhttp://sh0dan.org/oldfiles/citrix-pab/\n\npeace."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-05T06:28:47.000Z",
+    "content": "wirepair, my bad, it wasn't really clear to me who is the author of the paper. Let me change the post so it outlines the correct information. BTW, I am working on a bruteforcer as well and it will be based on the top of the ICAClient."
+  },
+  {
+    "author": "Ronald",
+    "avatar": "80d7b8935b953dabd63268177b7981f6",
+    "date": "2007-10-05T10:01:41.000Z",
+    "content": "How about wrapping it up in a CSRF referer attack. Since most surfers send their referer along the lines, Referer CSRF in order to launch a simple attack on behalve of their IP, instead of ours. :) The mashups can be endless! \r\n\r\nOh my..."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-05T10:07:02.000Z",
+    "content": "what do u mean?"
+  },
+  {
+    "author": "Ronald",
+    "avatar": "80d7b8935b953dabd63268177b7981f6",
+    "date": "2007-10-05T10:17:33.000Z",
+    "content": "I mean to simply send a form to their localhost, since when you use a form and submit it for them back where they came from, you could embed cmd commands in a textarea and possibly do it remotely. It works on Tor for example, I was researching a way of shutting Tor down this way, by sending a large payload. But Tor requires authentication I learned. Since Citrix doesn't, it might as well work."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-05T10:25:12.000Z",
+    "content": "Depending how CITRIX is configured it may or may not require authentication.\n\n<blockquote>I mean to simply send a form to their localhost, since when you use a form and submit it for them back where they came from, you could embed cmd commands in a textarea and possibly do it remotely. It works on Tor for example, I was researching a way of shutting Tor down this way, by sending a large payload. But Tor requires authentication I learned. Since Citrix doesnâ€™t, it might as well work.</blockquote>\n\nI see what u mean. Interesting, through, it needs to be verified. I may play around with this concept over the weekend."
+  },
+  {
+    "author": "Sp0oKeR",
+    "avatar": "3c5103f613c394651ced1e7b48eaa66b",
+    "date": "2007-10-05T14:48:07.000Z",
+    "content": "OMG! awesome article!!\r\n\r\nVery nice job as always .\r\n\r\nRegards,\r\n\r\nSp0oKeR"
+  },
+  {
+    "author": "Adrian Pastor (pagvac)",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-10-05T22:25:19.000Z",
+    "content": "This is an excellent intro to the survival skills for hacking Citrix.\r\n\r\nI love the concept of breaking into a company through a backdoor that's already there for me, a.k.a. secure remote access.\r\n\r\nCitrix, Terminal Services and Microsoft PPTP are some of my favorites!"
+  },
+  {
+    "author": "dink",
+    "avatar": "5e40dfa8b2f4f620cdf199af6efb8890",
+    "date": "2007-10-05T22:29:29.000Z",
+    "content": "Evidently there's also a lot of .rdp files (MS Term Server connectoids) out there, although not quite as many.  Second one I tried took me right to some desktop app."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-06T07:11:52.000Z",
+    "content": "dink, you are getting ahead of the time. :) I will get into that as well."
+  },
+  {
+    "author": "Maverick",
+    "avatar": "4d795ad3f4ebd1f974b61b93f704cc99",
+    "date": "2007-10-07T14:36:48.000Z",
+    "content": "Dude, none of the things you did is called \"hacking\". Only thing you did is find systems, admin-ed by people who don't know how to properly secure their systems. Wanna hack? Try to get through an Access Gateway. Then i'll be impressed. The above stuff hardly has any skill to it."
+  },
+  {
+    "author": "NoOne",
+    "avatar": "75bb0a0da88d97ebdbb71cb1c16886de",
+    "date": "2007-10-08T11:57:04.000Z",
+    "content": "You could also use Citrix keyboard shortcuts like \"CTRL+F1\" or \"CTRL+F2\" which correspond to \"CTRL+ALT+DELETE\" and \"CTRL+ESC\"."
+  },
+  {
+    "author": "CG",
+    "avatar": "1037354f27302ad1053ed800cc989d3c",
+    "date": "2007-10-08T23:30:28.000Z",
+    "content": "you can also just use:\r\n\r\n<pre><code>InitialProgram=explorer.exe</code></pre>\r\n\r\nthen you'll get your windows explorer prompt. fun for checking out those shares on the internal LAN :-)\r\n\r\nyou can also navigate to <code>WINDOWS\\System32\\cmd.exe</code> and double click to get your cmd prompt.\r\n\r\n_CG"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-09T06:11:11.000Z",
+    "content": "CG, but that of course depends on the setup really. Although, it does work roughly in 70% of the cases."
+  },
+  {
+    "author": "NIX",
+    "avatar": "f8069e4c4dcb95906f6f6e2604bc7677",
+    "date": "2007-10-09T13:34:55.000Z",
+    "content": "i tested your enum.js, and its not working properly, if i run it agains unix machines :D ... it tells me that they have access, winword, excel, iexplorer and so on. i tried it against *nix machines on which there is no citrix, i still get that they have access, winword, excel and so on ... funny ;)"
+  },
+  {
+    "author": "George Ou",
+    "avatar": "f9c248cd7777158bbc2b92da6b469efb",
+    "date": "2007-10-09T21:07:43.000Z",
+    "content": "How is this an exploit when all you have is a brute force exhaustive search that performs 1 check per second at most?  A simple lockout mechanism (which people should have already implemented) for failed attempts would pretty much rule out this type of attack."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-09T21:16:39.000Z",
+    "content": "George, you are misunderstanding the whole purpose of the post. All I am showing here is that there are CITIRX instances on very critical domains which are wide open to attacks. No authentication is required - just simple enumeration tactics. The second post I wrote discusses how simple it is to write a CITRIX burteforcer with common windows utilities. Both posts are completely different by nature."
+  },
+  {
+    "author": "Donnerjack",
+    "avatar": "6b5917e5763985c0fb3ceb3f7d70a01b",
+    "date": "2007-10-10T14:36:47.000Z",
+    "content": "I've confirmed this same sort of attack repeatedly It will not work over a properly configured firewall and Citrix Web Interface setup.  Even following the most basic recommended setups by the firewall vendor and Citrix would stop this style of attack from working.  If you would have pointed out that these attacks would only work in poorly configured and mismanaged environments, I would have applauded your efforts.  As it is, you're deliberatly misleading the public."
+  },
+  {
+    "author": "Kevin",
+    "avatar": "5d3ad0f7abda0f8fbeb2fe91090a2f45",
+    "date": "2007-10-10T15:58:09.000Z",
+    "content": "hey PDP, thanks for the article, pretty timely since I'm assessing a clients citrix install right now. I wasnt able to get any results from your enum.js script however, using the syntax \"enum.js apps TCPBrowserAddress=x.x.x.x\" and \"enum.js apps HTTPBrowserAddress=x.x.x.\" it seems like its not even trying to connect to the server (sniffing the connection yields 0 packets between my machine and the citrix gateway) do you have any insight on this? Also can you link the SDK pages you used? I can just write my own but its a bit difficult finding the docs on their site..."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-10T16:08:25.000Z",
+    "content": "hi Kevin, you have to be quite familiar with CITRIX in order to make the JS script work. Playing with different options is the key. For example you may need to try to force the client to go over UDP, etc. I would recommend to use the perl script first, cuz it seams to work without too much of configuration. In case your CITRIX is communicating over IPX, NetBios or whatever you have there, use the JavaScript version and play around with the options.\r\n\r\nInstructions on how to program the client can be found from CITRIX's website. I don't remember the link."
+  },
+  {
+    "author": "Kevin",
+    "avatar": "5d3ad0f7abda0f8fbeb2fe91090a2f45",
+    "date": "2007-10-10T16:13:07.000Z",
+    "content": "Ok thanks for the prompt reply. I think I've found the PDF that I need, I've tried the perl script, but that too seems to be having problems. In any case thanks for the files and the articles I'll make it work one way or another :)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-10T16:18:07.000Z",
+    "content": "cool, just post it here when you are done! ok? :)"
+  },
+  {
+    "author": "Kevin",
+    "avatar": "5d3ad0f7abda0f8fbeb2fe91090a2f45",
+    "date": "2007-10-10T16:23:01.000Z",
+    "content": "If I get it working I will be happy to :)"
+  },
+  {
+    "author": "CUG",
+    "avatar": "aef244150ddfcf98a9d0366e51fceb7b",
+    "date": "2007-10-10T19:28:11.000Z",
+    "content": "Good write up but I must admit that these security issues are not a result of the Citrix products being insecure but rather the people implementing them being clueless. Exposing ICA to the internet (rather than using a reverse proxy like the secure or access gateway) should be a dismissible offence! You wouldn't expose your SMB shares to the internet. Good write up but it shows there are a lot of clueless people out there calling themselves IT professionals."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-10T19:43:27.000Z",
+    "content": "CUG, absolutely..."
+  },
+  {
+    "author": "curious1",
+    "avatar": "c3c7f8243fb013a2ac9f2e96c50fe700",
+    "date": "2007-10-10T20:39:16.000Z",
+    "content": "PDP...You're correct with the weaknesses that you found on the internet, however, the ICA 3.0 protocol hasn't been used by Citrix in more than 5 years and if you're dumb enough to put you ICA presentation server on the web...you get what you deserve.  What about a setup using CAGs and RSA through a reverse proxy...do all your same assertions apply?  Let me know.  Either way, you have a valid point with what you found on google.  You should, however, clarify your applicable scenarios.\r\n\r\nPeace"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-12T08:41:27.000Z",
+    "content": "Apparently CITRIX has removed the YouTube videos due to some copyright violation. This is strange and the same time not the right way to handle situations like this one."
+  },
+  {
+    "author": "rjhoward",
+    "avatar": "97ac5d83e3f09ecbc247b807c97ea06f",
+    "date": "2007-10-12T19:13:01.000Z",
+    "content": "Ok, you have my attention and the attention of everyone in my organization.  How can we tighten things up?  What is this lazy administrator doing to contribute to the issue and how can I improve?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-13T08:44:07.000Z",
+    "content": "rjhoward, one word: gateways! make sure that you use nfuse or whatever else you want but just never, ever, expose 1494/UDP/TCP on the Internet. Segment as much as possible."
+  },
+  {
+    "author": "stupidisasstupiddoes",
+    "avatar": "c3dba1b9edb1e0281ab368435548376a",
+    "date": "2007-10-13T20:58:21.000Z",
+    "content": "Stupid is as stupid does.  You can lead a horse, but making it drink is another issue.  Secure Gateway and Access Gateway have been available for years.  If the Citrix admin is getting away with exposing a Presentation Server in the DMZ, then they deserve to be hacked."
+  },
+  {
+    "author": "Alan",
+    "avatar": "b32902f252bbe3a91594e88da1b57aa5",
+    "date": "2007-10-15T09:28:33.000Z",
+    "content": "Hack is a hack. Doesn't matter whether you find it sophisticated or not. If you can get to .mil sites with it, that's obviously something critical.\r\n\r\ni didnt see the video btw, can someone fix the link:\r\n\r\n<blockquote>This video is no longer available due to a copyright claim by Citrix Systems, Inc.</blockquote>\r\n\r\nwhat copyright? :)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-15T09:34:54.000Z",
+    "content": "video links are updated..."
+  },
+  {
+    "author": "Bbb",
+    "avatar": "f645051a8179e9b28161b6ebe2eb9cbf",
+    "date": "2007-10-15T09:58:27.000Z",
+    "content": "How about 'hacking' Windows Terminal services\r\n\r\nhttp://search.yahoo.com/search?p=originurlextension:rdp\r\n\r\nhttp://www.google.com/search?q=ext:rdp\r\n\r\nAs mentioned above this isn't a hack just someone who left the front door open for someone to easily walk through"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-15T10:02:50.000Z",
+    "content": "Bbb, but it is still concerning isn't it? which was the point of the post! right?"
+  },
+  {
+    "author": "Bbb",
+    "avatar": "f645051a8179e9b28161b6ebe2eb9cbf",
+    "date": "2007-10-15T15:06:32.000Z",
+    "content": "Absolutely very concerning, the fact that you can get Numb-Nut administrators. \r\n\r\nAs I mentioned above....\r\n\r\nhttp://search.yahoo.com/search.....ension:rdp\r\n\r\nhttp://www.google.com/search?q=ext:rdp\r\n\r\n.....you get the same numb-nuts administrating plain old Terminal services as well as any other product.\r\n\r\nThe first line of your article 'The Internet is full of wide open CITRIX gateways' probably put the Sh$ts up many a CITRIX administrator because they implement true CITRIX gateways (that only open for the correct people). I hope people reading this article realise that this is not the way to implement CITRIX for remote access.\r\n\r\nI can't believe the amount of people who don't follow simple IT Security recommended practices. This is probably why your article should be entitled 'Beware There are Numb-Nut Administrators everywhere!!' ;-)\r\n\r\nBbb"
+  },
+  {
+    "author": "Intrigued",
+    "avatar": "da646a488e9688b9607f5e30fe66f110",
+    "date": "2007-10-30T01:56:30.000Z",
+    "content": "I found it interesting that some of the servers have user names and domain names in the config files. After looking around I found that some of them give you a remote desktop without authentication with full access by using a user name and domain name (could be dead wrong and it just gives you the remote desktop anyways but none the less its still a blatant hole)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-30T08:21:04.000Z",
+    "content": "Intrigued, absolutely!"
+  },
+  {
+    "author": "newKid",
+    "avatar": "c019fcae5a1095e5d4264040c87ff251",
+    "date": "2007-11-19T04:30:40.000Z",
+    "content": "I am not a hacker, just a college kid, studying networking, programming, security, the like. I am researching Citrix for a security paper. I clicked on some of these links, to see what would happen, as the read is seriously intriguing to me. Most of them you can't actually get to. One came up but gave me an error and did not display. Please explain; are you telling me that by clicking the links that are returned in the search, that you are actually accessing information running on the server? There is no one on the other end that can see or be alerted of the fact that some remote user is actually getting in unauthenticated? I don't understand. How does this actually work out?"
+  },
+  {
+    "author": "ikkuhqhp",
+    "avatar": "0167f880df81b3301d51444696d8728c",
+    "date": "2008-05-18T09:57:47.000Z",
+    "content": "pdp, I was reading this post but found that the youtube link doesn't work. Could you explain \"escaping windows GUI\" again please?"
+  },
+  {
+    "author": "free dlls",
+    "avatar": "57868e0b6789d0f3d11480b8fc9f0918",
+    "date": "2008-10-14T07:54:17.000Z",
+    "content": "the video can't be play , it says it may removed. Please check."
+  },
+  {
+    "author": "john",
+    "avatar": "ff3cec9bb633b643f803f127ae170eb6",
+    "date": "2010-10-20T02:23:25.000Z",
+    "content": "looking for mentors...i need to learn how to hack"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2010-11-13T02:47:57.000Z",
+    "content": "it is not difficult to learn how to hack... use google... or sign up for a course :)"
+  },
+  {
+    "author": "anon",
+    "avatar": "67b3c4ea713eb0515772ae6f21953b6f",
+    "date": "2013-01-07T17:05:46.000Z",
+    "content": "The video works by clicking the download link at the bottom of the post: http://www.gnucitizen.org/static/blog/2007/10/hc01.wmv"
+  }
+]

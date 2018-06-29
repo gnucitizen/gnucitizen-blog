@@ -1,0 +1,68 @@
+[
+  {
+    "author": "Marchiner",
+    "avatar": "564e44b6b33cc73b9bb444ea8f22694c",
+    "date": "2008-07-04T11:56:37.000Z",
+    "content": "pdp,\n\n<pre><code>On --> Onboard Wireless Internet.\n\nWhere -->1. You have open access points.\n           -->2. You connect and your browser redirects to a login page.\n\nif -->1.Use something like airodump-ng, and search for MAC  clients associated to the access point.\n   -->2. Select of of the MACs and clone it to your interface.\n   -->3. Try one dhcp client.\n   -->4. If there is no dhcp, just try to snif something and setup right ip config. \n\nthem --> This may grant you access ??</pre></code>"
+  },
+  {
+    "author": "Felipe",
+    "avatar": "ac3a0b60777749402493e149c2746044",
+    "date": "2008-07-04T12:34:51.000Z",
+    "content": "Indeed all these anonymous attack points will become an issue. Hotels that offer free WiFi to clients are also just as good. I am staying at a nice hotel in Brussels (there is a NATO conference btw right now) with a nice open and free WiFi that can even be accessed by the guests of the next door competition hotel.\r\n\r\nIt something ever happens the farthest it can be traced would be to say the hotel, train, plane, etc. The level of granularity that the free provider uses from then on (be able to distinguish that the specific connection belongs to the passenger in place X or Y or to hotel guest in room 333) will not help much either as we come to the same situation as a home open wireless network.\r\n\r\nA paradise of anonimity for the new shool ever travelling hacker."
+  },
+  {
+    "author": "bluebirch",
+    "avatar": "e879a77a465f17c48e3beeade1c30248",
+    "date": "2008-07-04T15:04:13.000Z",
+    "content": "Security-threw-identity doesn't work. Even if you could remove all anonymous access you would do more harm than good. Journalism needs anonymity for example. And anonymous access on planes? C'mon you need fake passports to get on anonymously and if it gets tracked to the plane there is no way to escape."
+  },
+  {
+    "author": "Radu",
+    "avatar": "29ccc91a8ab96c9aaace68f692cd2c6e",
+    "date": "2008-07-04T18:22:27.000Z",
+    "content": "I don't think this is that much of an issue. Most of these Open Hot-Spots only allow http/https/smtps/imap/im traffic. I know http/https are more than enough for a lot of attacks but even if you identify the source of an attack trough these protocols you might just end up seeing a TOR exit node, so i can't imagine why this is such a serious issue. At least for OWI you might have some actual data to tie to the attacker: credit card purchase of train tickets or, even better, a flight passenger list. Frankly the only alternative to this issue, as far as i can see, is a total lack of anonymity and i don't find that very comforting."
+  },
+  {
+    "author": "cedric",
+    "avatar": "793820b31140e8c7fd8d2236c066a567",
+    "date": "2008-07-04T18:58:59.000Z",
+    "content": "You left out, the trains login portal actually tells you to log in as \"guest\".  It did the last time I was on the train from KingsCross to Peterborough.\n\nYour right the implementation is from a Swedish firm, but your missing out talking about the routing in depth (network mapping skills) and their interesting proxy provider.\n\nWhat about the GPS????"
+  },
+  {
+    "author": "Sandro Gauci",
+    "avatar": "192a78d487076b95fb3562ad601a1535",
+    "date": "2008-07-04T19:32:57.000Z",
+    "content": "I see it differently. The speed at which the attacker is traveling doesn't really matter. I think that if the attacker is on a train or a plane, then the destination is a known and static one. Once he or she is off the plane or train, that's where he/she can be caught by the local police / mafia / whatever. \r\n\r\nOf course, unless the attacker hijacks the plane or train. But we're not talking about terrorist plots here.. I hope :)"
+  },
+  {
+    "author": "Adrian 'pagvac' Pastor",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2008-07-04T19:47:23.000Z",
+    "content": "@bluebirch: who needs a fake passport when you're on a plane with more than 500 passengers. The question is: which passenger committed the crime? That's the challenge. But then again, I'm not saying it's impossible to catch the bad guy on the plane. Your point of more than valid.\r\n\r\n@Marchiner: this is pagvac, notice the author at bottom :).\r\n\r\nI'm aware of MAC cloning for using commercial APs for free. Once you login with a registered account that has Internet time, the system simply identifies you based on your MAC address which can be cloned both on Win and *nix. The only problem with MAC cloning for free Internet access is that you don't want to clone the MAC address of a user that is currently online as it corrupts the network traffic. So Ideally you want to collect a list of MAC addresses of users who have online access, and only clone a given MAC address while its respective user is NOT online.\r\n\r\nI've also researched alternative ways (different MAC cloning) to get free Internet at hotels which I presented at a Defcon meeting in London. Perhaps I should upload the slides to GNUCITIZEN!"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-07-04T20:26:30.000Z",
+    "content": "I agree with Adrian. It becomes significantly harder to track the real location where an attack is launched from. If the attacker is not sloppy and has some basic knowledge regarding IT (some of them don't) then s/he can hide her/his tracks to the extend that is no longer feasible to launch a pursuit. Think of FON."
+  },
+  {
+    "author": "marchiner",
+    "avatar": "564e44b6b33cc73b9bb444ea8f22694c",
+    "date": "2008-07-05T09:15:25.000Z",
+    "content": "Hi Adrian, \n\nsorry for calling yoy... \"pdp\".. credits for \"pagvac\".\"Pdp\" its a nice guy, but no credits for him now! I just sow the mistake minutes after posting... \n\nBut so...\n\nLet's came back to the topic...\n\n\"I've also researched alternative ways (different MAC cloning) to get free Internet at hotels which I presented at a Defcon meeting in London. Perhaps I should upload the slides to GNUCITIZEN!\"\n\nPlease... post your presentation.. as it possible!  I live to far away from London, so it's hard watch this things. Thank god... Internet exists! :D\n\nContinue ....\n\nThis week i had a conversation with some people that represent companies like \"3com\" and deploy corporative wireless. So... something like:\n\nWireless Switch + 802.1x + radius... and blah blah blah!\n\nSomeone there said about some changes on XP SP3 and Win Vista.\n\nWhere 802.1x will become first than layer 2...\n\nbut i don't knows if this is true.. i didn't research anything about it yet. But i will do soon. If this is right, \"MAC cloning is out\" i believe.\n\nDo you know something about it \"pagvac\" not \"pdp\"?  :D"
+  },
+  {
+    "author": "LonerVamp",
+    "avatar": "1e41c58e98f24908060130e58333e07a",
+    "date": "2008-07-08T16:29:47.000Z",
+    "content": "I'm not sure I see much difference from any other wireless hotspot. I don't think I've ever used one that would have been able to find me had I been nearby and doing something naughty. And even if I felt like someone may be watching, I can just up and move. And I have yet to see or even hear of any wireless/hotspot implementation that has resident geeks or IT at hand enough to do anything about whatever I do.\r\n\r\nI don't see this as much different from how things were in 2003, but I admit as access becomes more ubiquitous and free, the capability to track malicious activity to a physical person becomes a more apparent challenge."
+  },
+  {
+    "author": "TP",
+    "avatar": "2951fe1808235515d6527b005c309f81",
+    "date": "2008-07-29T18:57:15.000Z",
+    "content": "Why should anonymously be a bad thing? It's a bit the standard argument if you have nothing to hide you should not fear the new anti-privacy laws and procedures.\r\n\r\nTheir can be many reasons to be anonymous with out being hacking, cracker or terrorist."
+  }
+]

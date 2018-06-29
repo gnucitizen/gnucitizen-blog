@@ -1,0 +1,62 @@
+[
+  {
+    "author": "zmx",
+    "avatar": "1963988aaa853301e2d8d231a9b2cf94",
+    "date": "2008-01-10T15:43:49.000Z",
+    "content": "There is a nice application Universal Plug-and-Play Tester for playing with http://noeld.com/programs.asp?cat=dstools.\r\n\r\nHowever, you can play with UPnP only if you are inside the internal network. You need to see broadcast announcements to be able to interrogate and control an UPnP capable device.\r\n\r\nHow can you interrogate an UPnP device from the internet?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-10T15:54:52.000Z",
+    "content": "yes, Universal Plug-and-Play Tester is pretty good, but it has some limitations.\r\n\r\n<blockquote>How can you interrogate an UPnP device from the internet?</blockquote>\r\n\r\nfirst of all check <a href=\"http://www.gnucitizen.org/blog/bt-home-flub-pwnin-the-bt-home-hub-5\" rel=\"nofollow\">Adrian's post</a> on how to hack into BT Home Hub from outside with a combined attack: XSS + UPnP. It works flawlessly. The victim needs to visit a specially crafted webpage. Upon visit, the attacker will reconfigure their router with an UPnP SOAP message. At that moment the attacker can do pretty much whatever they like, including but not only: change the primary DNS server, reconfigure the local network, expose internal ports on the router's Internet facing side.\r\n\r\nThe broadcast announcement is useful only if you don't know where to look for the UPnP service description. I lot of people believe that UPnP is useful only if you are inside a network. This is incorrect. If you manage to find a printer or an exposed router, or any other type of UPnP enabled device and you know where their description is located, you might be able to send arbitrary SOAP request to any of control points over the Internet. It is as simple as that.\r\n\r\nFor example, if you enable the BT Home Hub router Web interface on the internet facing side, you will be able to reconfigure the device across the Internet even if the default admin password was changed."
+  },
+  {
+    "author": "agent0x0",
+    "avatar": "f1bb89072d693d5c41cc8b1d8ae30b3a",
+    "date": "2008-01-10T16:59:29.000Z",
+    "content": "Good stuff guys!  I am concerned with all these \"media server\" devices and clients that auto enable  UPnP...I know many people are sticking 360's and PS3's out on their Internet Gateway so they can play multiplayer games easier...perhaps video game consoles with UPnP enabled is a growing attack vector along with the devices you mentioned.  Have you done any research with UPnP and consoles like the Xbox 360 or PS3?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2008-01-10T17:25:16.000Z",
+    "content": "definitely a risk, I must say. we haven't done any research on UPnP enabled consoles although I am sure that there might be a lot of interesting stuff to play with. To give you a hint, certain printers allow you to do a lot more through UPnP then the Web interface ;)"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-01-11T01:26:26.000Z",
+    "content": "@zmx - Plug-and-Play Tester - like other upnp tools - are very handy for reverse-engineering the protocol. make a config change with the tool while sniffing the traffic. once the SOAP request is captured is trivial to convert to XHR() for remote exploitation.\r\n\r\n@agent0x0 - you definitely made me want to test UPnP attacks on consoles. Nice idea as I'm sure they use UPnP stacks that can also be found on other devices besides gaming consoles."
+  },
+  {
+    "author": "G-Brain",
+    "avatar": "01d19034656c578ab4242f0df4fddc3c",
+    "date": "2008-01-13T12:47:58.000Z",
+    "content": "\"Home Wirless\". An excellent article nonetheless."
+  },
+  {
+    "author": "rizki",
+    "avatar": "566373054d286e9ffc6a1421847d5ffb",
+    "date": "2008-01-15T11:25:13.000Z",
+    "content": "how to hacking in the syistem"
+  },
+  {
+    "author": "Nick",
+    "avatar": "e0f7afa38b6726339a3a85e5943f09e4",
+    "date": "2008-03-28T08:17:48.000Z",
+    "content": "Alright.\r\n\r\nSo I'm in an interesting situation. A desperate friend convinced me to help him try to get a friend's MSN and Gmail accounts back from a malicious ex-friend. I am now communicating with the malicious ex-friend's router via Flash SOAP requests and I would really like to change this person's DNS servers. Bad I know, but my friend claims her life is getting ruined. I am having trouble finding an API for SOAP communication with routers - specifically a 3COM OfficeConnect.\r\n\r\nFor justice!"
+  },
+  {
+    "author": "vino",
+    "avatar": "f24fe8ba877a9580cf6c71354102c431",
+    "date": "2008-04-28T14:27:39.000Z",
+    "content": "Thats Greatt.., You guys Rock !!!!"
+  },
+  {
+    "author": "LoRdRapTuReZ",
+    "avatar": "e53069f7d147afb3a01e57881c1ee764",
+    "date": "2008-11-10T03:43:25.000Z",
+    "content": "I have an universal plug and play server gateway. And its protected with the password which was set by pervously guy who work in my company.So, is there any other options that i can reset the server gateway or get the default"
+  }
+]

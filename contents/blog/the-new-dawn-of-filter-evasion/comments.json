@@ -1,0 +1,50 @@
+[
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-07-13T09:08:29.000Z",
+    "content": "good stuff, quite interesting"
+  },
+  {
+    "author": "david.kierznowski",
+    "avatar": "1d95d2324345e3dd2e41d6066cc1b492",
+    "date": "2007-07-13T10:25:55.000Z",
+    "content": "Mario, this article is definately a Saturday morning read :)"
+  },
+  {
+    "author": "sirdarckcat",
+    "avatar": "de37b9dc788b0268d438591e085e4496",
+    "date": "2007-07-14T07:31:28.000Z",
+    "content": ":( I'm not in the credits\r\n\r\n<a href=\"http://sla.ckers.org/forum/read.php?2,13209,page=1#msg-13326\" rel=\"nofollow\">http://sla.ckers.org/forum/read.php?2,13209,page=1#msg-13326</a>\r\n\r\n<pre><code>eval.call(this,unescape.call(this,location))</code></pre>\r\n\r\n<pre><code>code:_=eval,__=unescape,___=document.URL,_(__(___)) code:with(location)with(hash)eval(substring(1))</code></pre>\r\n\r\nthat is from ma1: <a href=\"http://sla.ckers.org/forum/read.php?2,13209,page=2#msg-13366\" rel=\"nofollow\">http://sla.ckers.org/forum/read.php?2,13209,page=2#msg-13366</a>\r\n\r\nbut based on: <a href=\"http://sla.ckers.org/forum/read.php?2,13209,page=2#msg-13361\" rel=\"nofollow\">http://sla.ckers.org/forum/read.php?2,13209,page=2#msg-13361</a>\r\n\r\nand the last vector.. doesn't work:\r\n\r\n<pre><code>l=0||'str',m= 0||'sub',x= 0||'al',y= 0||'ev',g= 0||'tion.h',f= 0 ||'ash',k= 0||'loca',d=(k)+(g)+(f),a</code></pre>\r\n\r\na is not defined.. it should be something like..\r\n\r\n<pre><code>1[(y)+(x)](d)</code></pre>\r\n\r\ninstead of a like this:\r\n\r\n<pre><code>l=0||'str',m= 0||'sub',x= 0||'al',y= 0||'ev',g= 0||'tion.h',f= 0 ||'ash',k= 0||'loca',d=(k)+(g)+(f),1[(y)+(x)](d)</code></pre>\r\n\r\nGreetz!!"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-07-14T07:51:05.000Z",
+    "content": "well, I don't know what to say. definitely, we are going to discuss your comments with .mario and see if there is a problem. no worries, there must be some kind of misunderstanding :)\r\n\r\ncheers"
+  },
+  {
+    "author": ".mario",
+    "avatar": "e53f5d616931bfe8fa74bfd9f72e049e",
+    "date": "2007-07-14T08:25:57.000Z",
+    "content": "Hi!\r\n\r\nOh man I am sorry - you are perfectly right. We'll fix that asap!!\r\n\r\nThe vector was you are talking about is from Martin and worked - but I guess the bolg's filter must have cut something. Here's the full version:\r\n\r\nhttp://groups.google.com/group/php-ids/msg/d6e8871d4f7ce1ef\r\n\r\nGreetings,\r\n.mario"
+  },
+  {
+    "author": "marktwin",
+    "avatar": "58ef199dd7af95b190b3f3b08f8f2277",
+    "date": "2007-07-15T17:59:09.000Z",
+    "content": "Shame on you who don't give credits.\r\n\r\nCorrectness it the first thing to look at.\r\n\r\nd. c. marktwin"
+  },
+  {
+    "author": ".mario",
+    "avatar": "e53f5d616931bfe8fa74bfd9f72e049e",
+    "date": "2007-07-15T21:41:50.000Z",
+    "content": "Thx for your comment marktwin. Mistakes happen to (most) people and some even learn of them. Few have reached perfection and avoid them and some of those few even share their knowledge to do so - thx again.\r\n\r\nGreetings,\r\n.mario"
+  },
+  {
+    "author": "sirdarckcat",
+    "avatar": "de37b9dc788b0268d438591e085e4496",
+    "date": "2007-07-16T01:22:16.000Z",
+    "content": ":P no problem .mario, I hope you get better from that flue.\r\n\r\nGreetz!!"
+  }
+]

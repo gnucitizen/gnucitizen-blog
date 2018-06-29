@@ -1,0 +1,44 @@
+[
+  {
+    "author": "nexact",
+    "avatar": "5df87b40193ad4365f6399456f16dd5e",
+    "date": "2008-02-14T16:38:22.000Z",
+    "content": "hey pdp!\r\n\r\ndid I gave you some idea with my auth bypass for airspan prost antenna ? heheh ;)\r\n\r\ngood posts. ;-)\r\n\r\nbtw.. if your able to put your hand on a device with port 23 open and you have the firmware.. disassemble it, check if you can't find a default login/passwd account in it.. i made a found during a pentest, apc battery had a backdoor account.. I've been able to go in debug mode and dump the eeprom then gain access to web interface. gg. :)\r\n\r\ni know theres a couple of websites around there that giving out default password but you can be *really* surprised if u take a look by yourself."
+  },
+  {
+    "author": "nexact",
+    "avatar": "5df87b40193ad4365f6399456f16dd5e",
+    "date": "2008-02-14T18:10:44.000Z",
+    "content": "s/pdp/ap/ in the last comments"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-02-15T01:13:35.000Z",
+    "content": "hey nexact, thanks for your feedback! just for the record the BT Home Hub auth bypass mentioned as an example was published in Oct 2007 (http://www.gnucitizen.org/blog/bt-home-flub-pwnin-the-bt-home-hub) and found a month before that. \r\n\r\nNeedless to say, URL fuzzying is nothing new. The point of this post series is to show that embedded devices can be susceptible to *very* trivial auth bypass bugs.\r\n\r\nYou're so right, that we shouldn't just rely on documented default accounts when trying to find a valid username/password combination. Reverse-engineering the firmware is definitely the way forward!"
+  },
+  {
+    "author": "ap",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2008-02-15T01:17:01.000Z",
+    "content": "correction: \"that we shouldn't just rely\" -&gt; \"we shouldn't just rely\""
+  },
+  {
+    "author": "NurBo",
+    "avatar": "4236928e0739f6875dc108729a1e12be",
+    "date": "2008-02-23T02:23:41.000Z",
+    "content": "good shez Adrian Pastor keep it up I like all 3 parts!"
+  },
+  {
+    "author": "joephantom",
+    "avatar": "d8582ad45d02151e2f22560a64036336",
+    "date": "2008-03-02T23:47:50.000Z",
+    "content": "nice photo. differential equations and gauss's divergence are your best friends."
+  },
+  {
+    "author": "spenser",
+    "avatar": "beb21939f6a5a1e3b48faa2d5eed358a",
+    "date": "2008-07-06T07:45:54.000Z",
+    "content": "Never mind a ups.\r\n\r\nThere is a $30K+ \"enterprise unified threat management\" appliance that seems to have a hard coded backdoor super admin account that is not documented to purchasers. It certainly is not mentioned in the documentation. But, it can be seen plain as day to anyone looking at the firmware.\r\n\r\nAs a matter of fact, in recent years, the newsgroups are rife with complaints from admins that the first thing support wants when called is to be granted admin access from outside the perimeter. Naturally, due to the fact that firewall admins are likely to be somewhat aware of security, this tendency has raised a great deal of derision. The existence of a secret \"super admin\" account would certainly explain the desire of first level support techs to gain permission to logon."
+  }
+]

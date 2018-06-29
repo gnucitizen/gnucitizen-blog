@@ -1,0 +1,56 @@
+[
+  {
+    "author": "Thomas Roessler",
+    "avatar": "645ade6965ddd0b8b4ceff68538a1203",
+    "date": "2007-12-18T12:41:18.000Z",
+    "content": "This sounds like the kind of stuff that the W3C HTML working group should hear.\r\n\r\nSee here for joining instructions: http://www.w3.org/html/wg/#who"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-12-18T13:43:29.000Z",
+    "content": "Thomas, sure I can, but it will be better if someone transmits the message to the people who need to know about it. :)"
+  },
+  {
+    "author": "tenest",
+    "avatar": "4dac203be4e70cc420e7b853b6a84505",
+    "date": "2007-12-19T18:57:28.000Z",
+    "content": "Not that this is a big deal, but XML Spy is by AltovA not AltovE.  http://www.altova.com/"
+  },
+  {
+    "author": "Sverre Johansen",
+    "avatar": "7fbd6be0fb0acd878c35d5c49c485933",
+    "date": "2007-12-20T00:07:59.000Z",
+    "content": "If I understand you correct this parser would drop any message that contains invalid (evil) markup. What you usually want is a parser that drops the invalid parts and produces a safe version. \r\n\r\nIs there any way of specifying what is legal in a formal way (like XML Schema, as you suggest, or RelaxNG), and then drop the invalid parts?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-12-20T00:18:48.000Z",
+    "content": "Sverre, hmmm, this is the hard bit. But I don't see why you have to be so user friendly. If the markup looks different from what you allow you should really say <strong>stop</strong> to the user and ask them to rephrase their input."
+  },
+  {
+    "author": "Sverre Johansen",
+    "avatar": "7fbd6be0fb0acd878c35d5c49c485933",
+    "date": "2007-12-20T09:38:59.000Z",
+    "content": "That would be a usability tradeoff, in my opinion. It is probably OK for small texts such as comments and descriptions, but not that suited for larger content such as a blog post. People are used to being able to write tagsoup and the browser will figure it out for them, it's really the same with security validation. A blogger might not know that the recipe he found for having a floating CSS menu (or whatever), could also be used for phishing. The content could even be something produces by Microsoft Word.\r\n\r\nIt's kind of like how the web works, even if we like it or not :)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-12-20T11:00:22.000Z",
+    "content": "yes, I see your point. I don't see why it shouldn't be possible to strip out anything that does not much the XML Definition. Though, I am not aware of how this can be done in practice. It might be the case of converting the XML Definition into XML Stylesheet which only extract the parts that are safe and produce a normalized document. That might be a good solution."
+  },
+  {
+    "author": "ArkanoiD",
+    "avatar": "504b32a2f9a4212c4a2f139fdd7a8b1e",
+    "date": "2007-12-30T22:20:08.000Z",
+    "content": "I'd go for schema for \"compliance\" and XPath-based filter for extra filtering rules if there is need in more restructions.."
+  },
+  {
+    "author": "arshan",
+    "avatar": "8c80c44ed05803212488c7257f8ff429",
+    "date": "2008-04-24T03:50:10.000Z",
+    "content": "there are a few problems with using xsd after you turn the input into the predictable xhtml format. if i had not been so rushed and drained in san jose we could have talked about this.\r\n\r\na) xsd is a blanket yes/no validation, so the application can't provide the user any feedback on how their input was altered. you may want to prevent any information leakage if you're a hardcore security person, but that's not very usable, especially for the myspace scenario when you want to help the user tune their input. i want the antisamy project to be an enabler - help give the little guy some functionality that has been totally reserved for the big players, and feedback is one way antisamy can differentiate you from others, safely.\r\n\r\nb) an xsd would have a very difficult time parsing cascading style sheets (which AntiSamy does, safely). if you're attacking antisamy, you can't provide a z-index, position values other than auto/inherit, and other CSS tricks that could lead to phishing.\r\n\r\nc) since antisamy doesn't retain all the extra functionality that an xsd parser has, it has a lighter footprint and doesn't have any of the xsd parser's attack surface.\r\n\r\nthere are benefits of using xsd, of course: speed, stability, better supported code."
+  }
+]

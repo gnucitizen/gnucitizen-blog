@@ -1,0 +1,44 @@
+[
+  {
+    "author": "Awesome AnDrEw",
+    "avatar": "5e0f595cbc8f1811233adce10ac6c5d3",
+    "date": "2007-11-05T17:29:12.000Z",
+    "content": "This is a lot similar to many forum services that offer user-uploadable attachments, and then use the \"Content-Disposition\" header to have them appear in a prompt as displayed. I've never come across a situation other than something along those lines though I did do some experimenting with files served in that manner, and figured that as the file executes in a local zone (the internet cache) if one could convince someone else to open the file as long as it did not contain any off-site files it should render on Internet Explorer without the ActiveX warning appearing."
+  },
+  {
+    "author": "Alice",
+    "avatar": "43339143dc6f7b2c4e370bda638ab0e5",
+    "date": "2007-11-06T08:15:58.000Z",
+    "content": "It's weird, I was attempting to do this exact same thing only yesterday, and now I see your article.\r\n\r\nVery good work- it'll come in handy."
+  },
+  {
+    "author": "Gafoa",
+    "avatar": "7a2bd432bd10cbf14f24621356a109ad",
+    "date": "2007-11-08T02:53:36.000Z",
+    "content": "people at gnu are just smart I plan on looking for a few bugs etc... My self now"
+  },
+  {
+    "author": "eXeCuTe",
+    "avatar": "1ef7b4d2c0e4c4b7d034c56fd70ac2f4",
+    "date": "2007-11-18T12:45:43.000Z",
+    "content": "Alice, it's even more weird. i also tried that, yesterday, and now i see this.. strange :)\r\n\r\nanyway, this is a really cool idea... but i do get the ActiveX warning on IE, even if i don't use any off-site files, why is that?\r\nwith FF it works great.."
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-11-20T14:34:12.000Z",
+    "content": "@eXeCuTe - IE 7 displays a warning when opening files locall - which is great in my opinion. Even opening a .html file with a empty JS snippet causes the warning to show: \r\n\r\n<pre><code>&lt;script&gt;//TEST&lt;/script&gt;</code></pre>\r\n\r\nOn Firefox however, no warning is shown, which scares me as you can steal any files by using XHR()\r\n\r\nAnyway, if you can cause manipulate the content-disposition reponse on a site, you can exploit the trust the victim has on that brand/company.\r\n\r\n@Alice and @eXeCuTe - what you guys are telling is creeping the heck out of me! I guess we all are in similar frequencies!"
+  },
+  {
+    "author": "Adrian Pastor",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2007-11-20T14:35:26.000Z",
+    "content": "btw, I meant to say *locally*."
+  },
+  {
+    "author": "Anant Shrivastava",
+    "avatar": "ed1b771c7e43f92943ce3da8c5f9f82b",
+    "date": "2013-01-25T09:56:32.000Z",
+    "content": "Awesome was just looking for something simmilar. Altohugh i know i am atleast 5 years late. however what about POST request do you see a flaw in that too. as GET i can understand the requesting url trust is what we can voilate."
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "author": "josh",
+    "avatar": "7936ef0dd045abb6e2987ea18d9964cc",
+    "date": "2009-07-24T17:05:52.000Z",
+    "content": "Here are some pictures of the insides of the Linksys WVC54GCA Webcam along with liks to the data sheets for some of the chips...\r\n\r\nhttp://www.flickr.com/photos/bigjosh/3750837001/in/photostream/\r\n\r\n...just to save oneone the time of taking thiers appart. \r\n\r\n-josh"
+  },
+  {
+    "author": "pagvac",
+    "avatar": "0367b81839d31a5fa3d7bea79ef71b9e",
+    "date": "2009-07-24T18:01:54.000Z",
+    "content": "sweet, thanks for that josh!"
+  },
+  {
+    "author": "paul",
+    "avatar": "588eba37270fb74cfbf5769916be6dd6",
+    "date": "2009-08-01T21:26:01.000Z",
+    "content": "So one you have mounted the bin, cant you edit that to setup some back door to let you in, or better yet to enable telnet???"
+  },
+  {
+    "author": "Ricardo",
+    "avatar": "28f059a0c51b50a25e4de146e9834a64",
+    "date": "2009-11-08T15:33:01.000Z",
+    "content": "I have a question. The camera has a surveilance mode that lets you record event-driven video of up to 5 (yes, five) seconds before/after the event itself. Is there any way to have the camera record something like, maybe 10 minutes worth of video instead of 5 seconds?"
+  },
+  {
+    "author": "nick",
+    "avatar": "d87e8180176a69ad1f937148d38f4663",
+    "date": "2009-11-17T23:13:12.000Z",
+    "content": "Ricardo,\r\n\r\nUnlikely. The device only has 32MB of onboard RAM and a not very powerful processor. To be able to \"record\" 10 minutes worth of video at any useable resolution and then send that by ftp (forget email due to the size of the video file) would require processing power and RAM that the device just does not have. Best scenario is to use the video stream produced by the device and feed that into a PC running security software that would detect motion and record the event. Such software is available."
+  },
+  {
+    "author": "Bruno",
+    "avatar": "56f904629fb4ecda24ea08d0ee1ac199",
+    "date": "2009-12-16T14:10:27.000Z",
+    "content": "You can disassemble the firmware binary and mount the filesystem. Q: can you assemble it back to a valid firmware binary?"
+  },
+  {
+    "author": "digger",
+    "avatar": "13a615814d6804e1b540a7abd4aa424b",
+    "date": "2010-01-12T07:05:01.000Z",
+    "content": "Sorry to bother you, but on my side of the planet ftp.linksys.com seems to be broken so I can't find any download source for R22 and R24 releases (both firmware and gpl code). If either of you have them backed up please give me a link, torrent, rapidshare, megaupload ... whatever.\n\nThanks in advance."
+  },
+  {
+    "author": "valex",
+    "avatar": "76f87cf7f843121e20d8c6beb85858bd",
+    "date": "2010-01-13T14:07:29.000Z",
+    "content": "The ftp site is down, anyone with a stashed copy of the R24 firmware + code ?"
+  },
+  {
+    "author": "Luke",
+    "avatar": "5954e66dc983aae37340fc26feb58aae",
+    "date": "2010-01-13T15:57:19.000Z",
+    "content": "Very nice stuff you folks did but little beyond me. So could you help a mere mortal with what I think is a simple question. Would there be a command that would do a warm reboot of the camera (cf the reset to factory defaults). All the pieces seem to be there but I don't know how to do that."
+  },
+  {
+    "author": "Paul",
+    "avatar": "40fb2a4f6c88ac008a80b3ab235167c3",
+    "date": "2010-03-08T21:33:27.000Z",
+    "content": "The source code wvc54gca_v1.00R24.tgz is there... http://downloads.linksysbycisco.com/downloads/wvc54gca_v1.00R24.tgz"
+  },
+  {
+    "author": "Nick",
+    "avatar": "d87e8180176a69ad1f937148d38f4663",
+    "date": "2010-03-08T23:24:32.000Z",
+    "content": "Bruno,\r\n\r\nI had a go at doing this since I wanted hack the root password. However, the problem I had was that I could not generate a squashfs image that was the same size as the same size as the original. I gave up when the new firmware was made available, since seemed to solve the main issue I had with the previous f/w (motion detect ridiculously sensitive). Only problem I have with the camera at the moment is that it won't stay on the wireless network for any length of time. Just drops off and has to be hard reset.\r\n\r\nDigger/Valex. Linksys site appears okay at present. Current f/w is Ver.1.1.00 build 02.\r\n\r\nLuke. I don't know of a hack to reset the camera. When logged in with admin privs I thought that there was an option to reset it, but unfortunately, my camera is not online at the moment and I cannot get it to come up on the wi-fi network so I cannot check that - sorry."
+  },
+  {
+    "author": "Luke",
+    "avatar": "5954e66dc983aae37340fc26feb58aae",
+    "date": "2010-03-10T09:41:36.000Z",
+    "content": "In case anybody else needs it the command to software reset the camera:\r\nhttp://ip_address:port/adm/reboot.cgi\r\nThe reboot command will respond with a simple OK.\r\n\r\nSometimes the camera blacks-out (there is no image) but you still can access the the built-in webserver. If you are in luck the reboot will restore the image. However if the camera really locks-up (the webserver doesn't respond) you need to unplug the camera."
+  },
+  {
+    "author": "Return Privacy",
+    "avatar": "32b8d3fea35b14d50c9a1256bbb13b46",
+    "date": "2010-08-22T16:12:06.000Z",
+    "content": "Hi all, I need firmware v1.1.00 build 02 for wvc54gca. Linksys tech support had me update to v1.1.01 build 01 and it totally broke the motion detection recording function. I need the v1.1.00 build 02, that worked fine. I found the problem was a router, I should have never called them. The v1.1.00 build  02 worked great. I did find a copy of v1.00R24 on another site, but that won't work with wpa2, and some other things don't work right. If you have v1.1.00 build 02, please share it with me so I can get this camera working again. Thank you."
+  },
+  {
+    "author": "Return Privacy",
+    "avatar": "32b8d3fea35b14d50c9a1256bbb13b46",
+    "date": "2010-08-22T18:07:46.000Z",
+    "content": "I found the firmware v1.1.00 build 02 and it fixed all the problems with this camera. Do NOT use the newer v1.1.01 build 01, it breaks the motion detection recording completely! If anyone else wants the download link, it is a german drivers site, here it is:\r\nhttp://translate.google.com/translate?hl=en&amp;sl=de&amp;u=http://www.treiberupdate.de/treiber-download/download-182342-treiber-LinkSys-WVC54GCAWireless-G.html&amp;ei=LVZxTJHJL4P_8AbF_-T9DA&amp;sa=X&amp;oi=translate&amp;ct=result&amp;resnum=2&amp;ved=0CB0Q7gEwATiWAQ&amp;prev=/search%3Fq%3Dfirmware%2Bwvc54gca%26start%3D150%26hl%3Den%26client%3Dsafari%26sa%3DN%26rls%3Den"
+  },
+  {
+    "author": "ryan",
+    "avatar": "a74a0f540ba907c625760a318f326162",
+    "date": "2010-10-15T23:49:47.000Z",
+    "content": "hello , \r\n\r\nI am trying to mount this firmware so I can explore the other cgi options available within. Why?\r\n\r\nI have a Sercomm wireless IP camera and the commands I HAVE unconvered are very similar to those in this article. Except, my firmware was already updated to prevent the exploits. \r\n\r\nTherefore, if I can mount it and explore the filesystem, I may have luck decoding more cgi commands for my camera ...\r\n\r\nIf anyone astill has access to or a copy of the firmware source code, I would love to host it publicly for all. All links provided in this comment thread no longer work as of the date of this post. Google turns up nothing. I see the BIN posted, but I need the source code!\r\n\r\nThanks for any help!"
+  }
+]

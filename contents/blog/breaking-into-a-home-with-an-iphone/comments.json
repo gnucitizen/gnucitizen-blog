@@ -1,0 +1,104 @@
+[
+  {
+    "author": "Alexander Sverdlov",
+    "avatar": "3773cd5671a7560d76bf55a2e024bcc0",
+    "date": "2009-05-11T11:37:06.000Z",
+    "content": "as much as I like your blog, this is overreacting. A stone can be used to kill or sit on - are stones to be banned or considered a security vulnerability, writing articles on the danger of having stones just lying around on the streets? Same way, an application giving you useful information can be used in thousands of ways - if only one of them can be used for malicious purposes, you should prosecute the criminal, NOT the application. You can't ban all useful web 2.0 apps, just because some jerk will start using it for bad things. Higher punishment for crime and real prosecution of criminals - that is what we need more than panic over the possible uses of all great apps and devices we have around."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-05-11T16:29:46.000Z",
+    "content": "Hi Alexander,\n\nThanks for the comment. I just want to make clear that some of the posts are not meant to point and expose security issues but to start a dialog. I saw the video and I thought that it is an interesting thing that can be shared. My aim is not to <q>ban applications</q> :) but rather than elaborate how these applications, that data that is out there but yet undiscovered, can be used to create insecure situations or scenarios."
+  },
+  {
+    "author": "Jason",
+    "avatar": "b2c2f868aa777b620148969f352f2a68",
+    "date": "2009-05-11T16:44:06.000Z",
+    "content": "Just to add on to this, Zillow allows pretty much anyone to create a developer account to access their APIs.  I signed up for it once upon a time and iirc, all I needed was a valid email address.  You get a token to use to authenticate your calls to their app and then you are good to go."
+  },
+  {
+    "author": "David G from Zillow.com",
+    "avatar": "a5aacf35f0b767a7a1cbe5d945f6827d",
+    "date": "2009-05-11T18:41:13.000Z",
+    "content": "Hi, this is David from Zillow,\r\n\r\nI must agree with Alexander.\r\n\r\nProperty information is actually part of the public record in the US. We as a society decided that things like property taxes and transactions would be more likely to be fair if they were publicly recorded. Zillow uses that information and additional details posted by our users to empower home-shoppers with data and functionality useful for selling, buying and financing a home. \r\n\r\nWe are certainly sensitive to owners' privacy concerns (which vary greatly.) Ownership information, for example, is also part of the public record, but Zillow selects not to display it. \r\n\r\nAs we've seen from the success of the Zillow iPhone app, people find the real estate data Zillow publishes very useful while visiting homes for sale ... or simply walking around the neighborhoods. Nothing sinister about it!"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-05-11T19:20:37.000Z",
+    "content": "Hi David,\r\n\r\nThanks for stopping by. Please do not interpret my efforts to start a conversation as a personal attack against Zillow. Your video just happened to grab my attention.\r\n\r\nYou are correct that Zillow provides already public information. That's not the problem. The problem is that this information, regardless how harmless it my look to you, could be used for <q>sinister</q> purposes when combined with other sources of information and tools. In other words, your application, although obviously useful to many, facilitates easier research for malicious purposes.\r\n\r\nZillow is among all other web2.0 enabled services out there. I am not arguing that we should abolish these tools and stop using them because of security and privacy concerns. I am only arguing that the web2.0 meme facilitates a different kind of future which mostly relays on openness. I am also arguing that web2.0 tools facilitate that openness in an unimaginable ways. And that is my only argument.\r\n\r\nKeep in mind that I am not anti-web2.0 person. I am running web2.0 infrastructures myself in other projects unrelated to GNUCITIZEN."
+  },
+  {
+    "author": "Banana",
+    "avatar": "ebdac9f16789a1988d40444e09d84476",
+    "date": "2009-05-12T10:23:57.000Z",
+    "content": "I have to agree to pdp. (although the responds from Alexander and David are also valid)\n\nBut as pdp already say, at the start of the e-mail nobody thought if missusing it. And now everybody is aware of the Spam.\n\nThis can happen to this application too. I would also go this far to say that with everyinformation you can do harm or not.\n\nIt is up to the ppl to decide what to do. And it is also up to us to whatch over what ppl are doing with information since information can also be used as a \"weapon\". It would be foolish to believe that information will only be used for the purpose it was created.\n\nBanana"
+  },
+  {
+    "author": "rvdh",
+    "avatar": "fcab05a2d8d8ca0d32e66d0cbd22269e",
+    "date": "2009-05-12T15:42:47.000Z",
+    "content": "I agree PDP.\r\n\r\nuseful for terrorists, Scheier always thinks this stuff is movie plot material, well guess what 9/11 was no movie plot, it happened due to technological advancements. Information in that sense is power.\r\n\r\nBut as always, we think it's innocent untill it gets abused."
+  },
+  {
+    "author": "rwnin",
+    "avatar": "bca2204daa687abf6e3963108ff5dc97",
+    "date": "2009-05-12T21:02:27.000Z",
+    "content": "this issue lines up with my latest blog post ( http://rwnin.blogspot.com/2009/04/effective-selective-near-real-time-mass.html ) in the sense that prior to the internet this type of information was kept secret mainly via obscurity and the difficultly in performing the recon.\r\n\r\nnowadays, all that info is dumped into databases and apps like zillow make it accessible.\r\n\r\nit isn't really a new vuln, because attackers can do recon with or without zillow.  the bar is just lowered for attackers and raised for defenders.\r\n\r\ntraditional home defenses beyond obscurity (locks, alarms, dogs, weapons, piles of dirty underwear, etc) don't loose effectiveness when zillow is introduced.  thusly, it kinda reinforces that obscurity isn't defense, but is more like keeping off the radar...\r\n\r\nimho :)"
+  },
+  {
+    "author": "Elisha Grey",
+    "avatar": "7ccfac7d3d319f875f178ba0e8720f12",
+    "date": "2009-05-16T00:54:42.000Z",
+    "content": "After downloading the app and takeing a look at its features the thing most apparent is this \"isn't the movies\"\r\n\r\nThe street names in the area surveyed are all wrong, the values on the home are incorrect.  But the GPS and images were spot on.\r\n\r\nI hope potential attackers think long and hard before trusting this sort of data.  Google Maps and an MLS site would probably get you a lot further.  For more infromation city hall might be the place to check...\r\n\r\nThe best thing about the information age is so much of the data is crap.  Interesting post,  I could defiantly see how this could be a useful tool if the data was more reliable.  The whole town is messed up."
+  },
+  {
+    "author": "xen",
+    "avatar": "a35285f81e583d8d30e8bafaea775d7a",
+    "date": "2009-05-25T22:56:27.000Z",
+    "content": "I agree with PDP too. Just take Google Maps as an example. People are using it to find pools so they can have little swim if the feel like it.\r\n\r\nI understand that Alexander and especially David want to tone it down, but it's still possible what PDP says. People laughed when Apple released their iPod, and who knew people would use Google Maps for finding pools to swim in.\r\n\r\nI'm pretty sure some chuckled when they read or saw the movie 1984.\r\n\r\nI must say it's really bad to see someone using a strawman argument. Yes, the stone example is a perfect example of a strawman. It's like when someone says we should ban cars, because they can kill people.\r\n\r\nPDP addresses a really good subject. Just look at the information we have access to now. To visit USA I had to go there. Now I can just go on Google Maps and even look at someone front door. I have no intentions on using this information for criminal activities, but I can with 100% confidence tell you that there is people who will.\r\n\r\nAnd punishment won't stop people from committing the crime. Education will!\r\n\r\nAgain, great article!"
+  },
+  {
+    "author": "NTBugtraq",
+    "avatar": "9eba43c29dfcd2c470fac5161458dfe1",
+    "date": "2009-05-28T15:10:41.000Z",
+    "content": "Fromâ€¦who would have thought that the idea of having people live in houses close together might have led to the plague?...toâ€¦who would have thought that the idea of computer networking might have led to a worm like SQL Slammer?\r\n\r\nYour fear is merely your interpretation of stuff humans have been thinking more or less since we began thinking. We come up with a good idea, and someone else uses it in another way. Often this is beneficial; practically all new inventions or theories are based on modifications of an older version. Whomever came up with the idea of a master key that would open any of their locks probably saved a lot of safes, meanwhile another person soon realized that if they could steal one, or forge it, they could break into lots of safes.\r\n\r\nWhat I think youâ€™re overlooking is the fact that we, as humans, have been dealing with the cons from our pros for eons. There are people, like myself, whose job it is to figure out how to secure things. Most of us donâ€™t spend our time coming up with ideas for the criminals to abuseâ€¦instead; we consider how to secure the stuff people are concerned about.\r\n\r\nConsider:\r\n-\tIs the app going to actually give criminals information that would lead them to target a given home? Probably not. Standing outside or simply driving by should give them a good enough idea regarding which is a likely target. Why would they want to pick only one anyway?\r\n-\tIs the app going to give war-drivers more information than they can already get? Again, probably not. So what if thereâ€™s coax or telephone lines, how will that tell you more? Driving by and seeing a FIOS box or a cable truck from Company XYZ will tell you more.\r\n\r\nFinally, does any of this matter if I have decent locks, a reasonable security system, and insurance?\r\n\r\nPerhaps your concerns were focused more on the privacy aspect? Even there, if youâ€™ve taken pictures inside your house and given them to a lister, youâ€™ve already asked that they make them available to the publicâ€¦havenâ€™t you? Those details, which you somehow perceive as being abused, are the very things which may get you the money you want for the sale of your house. You canâ€™t have your cake and eat it too! Regardless, the choice is still yours.\r\n\r\nIn the end, however, Iâ€™d ask you to ask yourselfâ€¦are you truly thinking of ways to better secure peopleâ€¦or are you thinking of criminal acts not yet thought of? If itâ€™s the latter, perhaps thereâ€™s a better use for such thoughts than publication to wanna-be criminals-at-large rather than making suggestions about how to use new devices criminally."
+  },
+  {
+    "author": "averno",
+    "avatar": "1f61b6523e4bdaebe237d69ffccda6c8",
+    "date": "2009-05-28T16:26:22.000Z",
+    "content": "Hi everyone.\n\nI read the article and I couldn't resist on giving my opinion. \n\nFirst of all we can not deny that apps like Zillow has two faces: one is the development of marvellous dynamic applications that are extremely useful for the \"good guys\", and another that is equally useful for the \"bad guys\". Like it or not, that is the fact.\n\nBut as pdp says, we can not Ban this apps just because they have \"another\" use; or should we ban Wireless transmissions based on 802.11x just because they can be eavesdropped or misused?? There is a reality in all this, and this is that people have to be more up to date with different security issues, and I don't just mean in the Internet.\n\nThe paradox resides in that regular people are not informed and that makes the real security issue in these cases. Clearly now, the inners of their homes are exposed to everyone. I take this chance to thank you, pdp, for this Great Blog and to apologize for my poor English.\n\nRegards,\naverno."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-06-02T20:05:18.000Z",
+    "content": "NTBugtraq,\n\nI like your comment although rather long. Question: do you agree that more accessible information has made you more vulnerable than ever, before? If yes, than you see my point.\n\npdp"
+  },
+  {
+    "author": "b0und",
+    "avatar": "6fb5cb3666c75e0e4a23e8eee2e94bab",
+    "date": "2009-06-12T13:39:09.000Z",
+    "content": "I have noticed the prevalence of access to this type of highly detailed databases become common place.  My initial thought is to analyze all vectors as to how this spread of highly targeted data can be used and misused.  This particular database is much less intrusive than it will be in the future.\r\n\r\nMultiple sources of data will be indexed and mashed up against each other.  Searching by location to find the highest income individual in an area, and a full bio on them. An article in the current 2600 sums it up better than I can.  Database of marriage licenses and birth records correlated to find maiden names: security words.  Author says and exploit that works against .01% of a big number is still a big number\r\n\r\nThe amount of information readily available in public data sources can be benign by themselves.  When they are all referenced together is when things get scary.  It brings me to the realization that much of our societies idea of 'security' is in fact obfuscation that can readily be brought to light.\r\n\r\n"
+  },
+  {
+    "author": "Cyph3rdk",
+    "avatar": "b80ba431acfc84cb100dd12abddc6c43",
+    "date": "2009-07-02T19:59:44.000Z",
+    "content": "pdp\n\nYour point is valid in a lot of ways, but then again... IMHO, if people want to use information in a \"sinister\" way, be it real estate or something else, there's nothing stopping you from doing some wardriving, logging to maps, finding points of interest, and getting the blueprints somewhere else. I have to admit, I don't how things are in the US, but here, when it comes to real estate, blueprints can be bought very cheap from the city planners office with no questions asked what s ever.\n\nSo, maybe it isn't so much a discussion about \"what\" info there should be floating around, opposed to how easy it is to get without some logging on _who_ got the information, and for what purpose....\n\njust a thought.."
+  },
+  {
+    "author": "Farik",
+    "avatar": "0e463bcafebec6850f108d69cf46a57d",
+    "date": "2010-04-09T13:21:00.000Z",
+    "content": "everï»¿ heard about personal data protection and the right for privacy ey ?"
+  },
+  {
+    "author": "chris",
+    "avatar": "045782e7e1b1bcb00da08605d9eb5cac",
+    "date": "2010-04-15T21:30:31.000Z",
+    "content": "this is a total invasion of privacy. what is this world comming 2? what next we are gonna be able to see eachother walking around from satelite images.... great way for stalkers..."
+  }
+]

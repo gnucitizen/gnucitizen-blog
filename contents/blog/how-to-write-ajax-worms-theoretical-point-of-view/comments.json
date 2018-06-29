@@ -1,0 +1,32 @@
+[
+  {
+    "author": "Chris Korhonen",
+    "avatar": "5a64b64d7a2c7347be1a42a5bbb03360",
+    "date": "2007-01-07T16:07:27.000Z",
+    "content": "Interesting article, and things like the MySpace worm's are evidence that AJAX can prevent a serious security issue. But, looking at the examples, this vulnerability  is limited to sites which publish user generated content.\r\n\r\nLike all Web applications, developers need to be aware of one simple principle of application design - Never Trust the User. Systems should be designed so user generated content can never present any kind of security risk. Simple precautions like stripping out HTML and other illegal characters, or sanitizing them, is something which should be done as standard.\r\n\r\nThis should be the responsibility of the developer, though it probably wouldn;t hurt if authors of frameworks such as Ruby on Rails add this functionality as a default..."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-07T16:44:38.000Z",
+    "content": "This is a good point, however WEB 2.0 and the future of the WEB in general is all about user generated content. Long gone are the days of simple, disintegrated WEB application. Today we are talking about dynamic systems that are easily deployed. Systems that provide high degree of accessibility and flexibility. Complex systems! <a href=\"http://www.gnucitizen.org/blog/security-vs-accessibility\" rel=\"nofollow\">It is always a matter of choosing between security and accessibility.</a>"
+  },
+  {
+    "author": "Aodhhan",
+    "avatar": "613720a7bae4ce9b3c7a536782671ee9",
+    "date": "2007-01-12T22:30:15.000Z",
+    "content": "Web 2.0 and its future is not about user generated content. In fact, it is the opposite. It is about automatically generated content in response to a manual or automatic request.\r\n\r\nFor instance: I book a flight, hotel and rental car from one site. Web 2.0 allows me to visit a web site which takes my information from my domain, and gets the information I need from many different sites, sorts it out in its services, then sends it to my domain so I can view it and make a decision.\r\n\r\nAnother example: Ebay. You don't think they keep all their databases in one domain do you? Although, it may appear they do! Some of their databases are thousands of miles away from the main site and in a totally different domain. Google is the same.\r\n\r\nWhat makes AJAX so dangerous, is it is perfect in the world of web services. It allows functionality too complicated for traditional HTML &amp; GET/POST requests. Plus it is easier to write java and XMLHTTP, than to code a C++ client.\r\nThis makes it popular to make backend calls in many different web services architectures. \r\nThe huge danger with Web 2.0, is separate domains share information automatically. To do this, we must set up a trust between my domain and yours. A scary throught for any security specialist.\r\nIn the corporate world, there are special security filters to monitor this progress. You hope it works!\r\n\r\nHowever, using this technology in other environments is dangerous, since normal firewalls, even application layer firewalls do not have the ability to see any danger in XML style requests.\r\nHackers understand this, and know many web sites which are set up, may not have this extra security, and bang... you are owned, and your firewall is useless.\r\n\r\nBut it affirms your statement; Flexibility vs Security, is still the major lip babbler in IT risk assessment."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-15T10:42:07.000Z",
+    "content": "Aodhhan, well said."
+  },
+  {
+    "author": "Search Marketing Specialist",
+    "avatar": "cd920ee0026c32274d2691663388b038",
+    "date": "2007-02-28T14:59:56.000Z",
+    "content": "It is so badly spread it and no one seems to care or to prevent it."
+  }
+]

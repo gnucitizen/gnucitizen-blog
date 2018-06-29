@@ -1,0 +1,182 @@
+[
+  {
+    "author": "pdphoenix3",
+    "avatar": "121f0b424651ceb90c553c958d9c6c0a",
+    "date": "2007-10-25T22:02:08.000Z",
+    "content": "Very interesting will have to look into this some more. I mean I used to think Java was use less but pdp has been doing some sick sh.t with it lately good job man and keep the post coming im loving them.\r\n\r\n-pdphoenix3"
+  },
+  {
+    "author": "rado",
+    "avatar": "d025d43c89ca5da6b20fb27fdf6b73e9",
+    "date": "2007-10-26T08:26:25.000Z",
+    "content": "I like your understanding of hacking - who needs to write exploits nowadays when there are so many simple and clever ways to do the job :)\r\n\r\nThe answer of the $1M question - it is *very* secure from technical point of view since you can't harm the client's PC if he doesn't trust your applet. There is no technology which is protected from human mistakes ..."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-26T08:59:26.000Z",
+    "content": "rado, very interesting but I have to disagree. It is not secure! Let's compare it with signed JavaScript which can do exactly the same as signed applets. The difference between both is that signed JavaScript is disabled by default (browser preferences) and there is no reason why you should have it enabled.\r\n\r\nMoreover, compare this with tricking the user into downloading an executable and running it from the desktop: this thing requires more then one step and it looks very suspicious. Not to mention that if you have an anti-virus it is very likely that it will lock the executable if it matches a known signature and your Firewall wont probably let it go out. The chances for something like this to work is like <strong>10%</strong> maybe even less.\r\n\r\nLet's compare it with browser extensions. The victim needs to first of all approve the supplier. Then wait for 3 seconds and then approve it. The first step requires 3 additional sub-steps, such as right clicking on the pop-up bar, selecting Approve suppler (whatever it was) option and clicking on the <strong>Allow</strong> button.\r\n\r\nAn attack, like the one described in the post, which does not require any exploit, can be easily made to look like a legitimate operation (forging the applet name and the certificate CN), and has <strong>50%</strong> chance to succeed is far from a good news for the IT industry. Based on personal experience, I know that this thing works more then 50%. It works all the time in fact."
+  },
+  {
+    "author": "NurBo",
+    "avatar": "3d6a350133d92590f648098405210bae",
+    "date": "2007-10-26T09:07:39.000Z",
+    "content": "pdp you always amaze me keep up the good post man. Im loving it"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-26T09:08:11.000Z",
+    "content": "<div class=\"message\">The problem with security researchers today is that we converted hacking into science. we care about highly ineffective kernel vulnerabilities and we forget that simplicity is the attackers' best friend all the time. You will spend 3 months developing your exploit and coming up with solutions, where the bad guys will spend no more then 10 minutes and hit more targets then anyone has expected.</div>"
+  },
+  {
+    "author": "rado",
+    "avatar": "d025d43c89ca5da6b20fb27fdf6b73e9",
+    "date": "2007-10-26T12:17:35.000Z",
+    "content": "pdp, I totally agree that it is very easy to trick the user to execute a signed applet. I just don't think that something is \"insecure\" if it is not foolproof :) Or may be I'm wrong ... Anyways, keep up the good work!"
+  },
+  {
+    "author": "waldo",
+    "avatar": "de57fc56102886f5d3fe467e5dda179d",
+    "date": "2007-10-28T09:16:50.000Z",
+    "content": "Very interesting. Thanks for the information buddy is really valuable to keep security levels high."
+  },
+  {
+    "author": "hackathology",
+    "avatar": "271ecedbd232e23677ddc1d3956147eb",
+    "date": "2007-10-29T13:48:10.000Z",
+    "content": "pdp, i got to admit that this is one of the coolest trick that you pulled out of your bag. REspect mate."
+  },
+  {
+    "author": "moon",
+    "avatar": "f91ff97dfa134351fe94c06c918ddb95",
+    "date": "2007-10-29T14:44:36.000Z",
+    "content": "thenk you"
+  },
+  {
+    "author": "Richard Moore",
+    "avatar": "def56caf405ed3e209df3913a54247ec",
+    "date": "2007-10-29T18:31:31.000Z",
+    "content": "You say that applets are the only embeddable object that can do this, what about activeX controls?"
+  },
+  {
+    "author": "rezn",
+    "avatar": "5d1658ac36692c8b5ff5612aa9d6a837",
+    "date": "2007-10-29T18:59:12.000Z",
+    "content": "another big problems with signed applets (as currently implemented) is that the dialog which pops up is very similar looking (especially if you just glance quickly) for valid (as in, traceable to CA trusted by your browser) and invalid signatures.  \r\n\r\nthe world would be better if users were not given the choice of consuming things which the computer knows are wrong, at least not without going and explicitly tweaking some settings.  since everyone has now been trained to virtually ignore errors about invalid SSL Server certs, people blindly click 'OK' on almost any warning presented to them by the browser.\r\n\r\nalso, you may discount social engineering attacks as 'lame' or 'irrelevant'.  lots of people do.  this is precisely why they are so effective and popular among attackers."
+  },
+  {
+    "author": "G-Brain",
+    "avatar": "870419564f7ebe6cb4f631e98e14e5dd",
+    "date": "2007-10-29T20:33:24.000Z",
+    "content": "I don't like the title: \"Hacking without 0days\"?\r\n\r\nIt doesn't even make sense if you think about it. I mean, as opposed to \"Hacking _with_ 0days\"? Releasing an exploit for software X the same day software X is released _is_ the hack.\r\n\r\nHow do you hack _with_ a 0day? Run the pre-made Perl script? That isn't hacking.\r\n\r\nThe first part of the title makes no sense. Overall: nice article."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-29T20:49:16.000Z",
+    "content": "Richard Moore, it is different when it comes to ActiveX controllers.\r\n\r\nrezn, absolutely!\r\n\r\nG-Brain, point taken! :)"
+  },
+  {
+    "author": "Technocrat",
+    "avatar": "06e750d2110805500cfaaaf72343af99",
+    "date": "2007-10-30T03:46:22.000Z",
+    "content": "Good stuff pdp. \r\n\r\nThe weakest link in security is the human element. Clearly things could be changed to better protect non-informed users from themselves...but in the end, the only solution is education.\r\n\r\nBy bringing issues like this into the light, you are helping educate people....nice work."
+  },
+  {
+    "author": "mogano",
+    "avatar": "76e25688ec30669c675e77bdbb8a5b0e",
+    "date": "2007-10-30T10:42:46.000Z",
+    "content": "Don't know that you get an attack working. How for example you can get some binary stuff (shellcode) running?? Thats only a exec command! Other things are not possible like write binfile or ???"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-30T12:23:36.000Z",
+    "content": "mogano, I am not sure what u are trying to say!"
+  },
+  {
+    "author": "mogano",
+    "avatar": "76e25688ec30669c675e77bdbb8a5b0e",
+    "date": "2007-10-30T13:54:10.000Z",
+    "content": "what can I do with signed Applets?? Also stuff like execute arbitary code (from outside)? (if so, how?)"
+  },
+  {
+    "author": "LiquidBrain",
+    "avatar": "a3b620701f9268c2da5b7d8eb8c36935",
+    "date": "2007-10-30T14:37:02.000Z",
+    "content": "Actually you can execute any command on system... start service, download file... you can do anything..."
+  },
+  {
+    "author": "mogano",
+    "avatar": "76e25688ec30669c675e77bdbb8a5b0e",
+    "date": "2007-10-30T15:02:55.000Z",
+    "content": "how do I download a file for example??"
+  },
+  {
+    "author": "jayjwa",
+    "avatar": "aa3630e0f05c7ad2144ac3292d402a40",
+    "date": "2007-10-30T15:07:26.000Z",
+    "content": "Works for Linux too, as long as the app. exists (ln -s xcalc calc for this example). It does put up a warning box and ask for confirmation that is obvious enough for me, but I can see how some people would click away without checking. Oddly, Firefox (2.0.0.7) also pops up an authenticaion box (bug?)."
+  },
+  {
+    "author": "mogano",
+    "avatar": "76e25688ec30669c675e77bdbb8a5b0e",
+    "date": "2007-10-30T17:22:59.000Z",
+    "content": "Still only one question from me:\r\n\r\nHow do I download a File using a signed applet?\r\n\r\n\r\ngreetz,\r\nmogano"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-30T17:54:49.000Z",
+    "content": ":) what are u building man?"
+  },
+  {
+    "author": "sid",
+    "avatar": "2822499a0c362c28f0de5df8fc34ead5",
+    "date": "2007-10-30T18:38:52.000Z",
+    "content": "Some of us at Indiana University tried out this type of re-signing and modifying applets in a realistic scenario last year... you're right, it works very well.  People don't care about whether or not they should trust an executable; if they expect it, they will click yes no matter what.\n\nCheck out our results: http://www.indiana.edu/~phishing/verybigad/"
+  },
+  {
+    "author": "diesl0w",
+    "avatar": "5b7bc69f8e5026e15aaf789df081d84b",
+    "date": "2007-10-30T19:33:39.000Z",
+    "content": "\r\nSounds like someones trying to compile a download/execute payload :)\r\n"
+  },
+  {
+    "author": "mogano",
+    "avatar": "76e25688ec30669c675e77bdbb8a5b0e",
+    "date": "2007-10-30T20:38:51.000Z",
+    "content": "we call it:  DA BOMB! ;)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-10-30T20:49:36.000Z",
+    "content": "diesl0w, indeed!\r\n\r\nmogano, DA BOMB? should we watch out for it?"
+  },
+  {
+    "author": "mogano",
+    "avatar": "76e25688ec30669c675e77bdbb8a5b0e",
+    "date": "2007-10-30T23:24:36.000Z",
+    "content": "I've already done s.th. but not on Applets. Therefore I asked because I don't think that they has increased the level of system rights. Does someone know that writing (binary) files in (signed )Applets work???"
+  },
+  {
+    "author": "kbnet",
+    "avatar": "84ae706aabc97f12ff5d73f772f32e08",
+    "date": "2008-01-20T09:28:36.000Z",
+    "content": "This guy has a very interesting blog, he has a video which shows an applet patching a binary. Very nice!"
+  },
+  {
+    "author": "kbnet",
+    "avatar": "84ae706aabc97f12ff5d73f772f32e08",
+    "date": "2008-01-20T11:18:52.000Z",
+    "content": "Sorry, didn't post the URL: http://www.aboulton.blogspot.com"
+  },
+  {
+    "author": "goblert",
+    "avatar": "8ad8fecb1c17081146446f0372b1fb55",
+    "date": "2008-06-02T20:02:26.000Z",
+    "content": "It is possible to make the applet download and run a executable. I have seen it with my own eyes. Its a very effective way to infect someone."
+  }
+]

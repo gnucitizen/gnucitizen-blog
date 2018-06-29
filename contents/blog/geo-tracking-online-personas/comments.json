@@ -1,0 +1,44 @@
+[
+  {
+    "author": "Megaemce",
+    "avatar": "203aa517063e3f128e254454ea2ee76e",
+    "date": "2007-11-30T21:20:04.000Z",
+    "content": "Yeah, it's looks nice, but... it's not working. I realised that this GEOTrack works only when I use feeds.feedburner.com's rss. So, You can say anything about this project, but at this moment it's fake."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-11-30T21:55:14.000Z",
+    "content": "well, the concepts are there. the tool... well it is not very reliable. it is just a POC which I coded in 30 minutes. the reason sometimes you don't see any results is because the Yahoo Pipe I am using sometimes times out. In order to solve the issue just import the feed several times until it works. Or you can use the interface from here: http://pipes.yahoo.com/pipes/pipe.info?_id=UPBGkR1f3BGBCMxf6kjTQA"
+  },
+  {
+    "author": "Awesome AnDrEw",
+    "avatar": "5e0f595cbc8f1811233adce10ac6c5d3",
+    "date": "2007-12-01T10:13:29.000Z",
+    "content": "I think it's pretty good for a rough example. I noticed that it seems to have trouble deciphering countries when there is a state with similar initials such as California and Canada. Perhaps you can expand upon it to look for more phrases in order to avoid this, but I like it pdp."
+  },
+  {
+    "author": "NIX",
+    "avatar": "fc569dc75bff454672e05115679cd473",
+    "date": "2007-12-01T10:16:02.000Z",
+    "content": "thats really cool, and it worked for me you can begin to know your victims and there life patterns :D it worked for me ... nice work pdp ;)"
+  },
+  {
+    "author": "Megaemce",
+    "avatar": "203aa517063e3f128e254454ea2ee76e",
+    "date": "2007-12-01T16:37:45.000Z",
+    "content": "Ok, on Pipe it's working, but not as good as I thought. IMHO, RSS is not a good place where hackers should start looking for information. Better way is open Flickr, Digg, etc. and starting to looking for similar (to our aim) login."
+  },
+  {
+    "author": "ronald",
+    "avatar": "80d7b8935b953dabd63268177b7981f6",
+    "date": "2007-12-02T04:04:58.000Z",
+    "content": "It works, I used this for over 5 years now. I owned a lot of pr0n websites that GEO located surfers, and presented them a payed dialer in their language. :) That works pretty good :)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2007-12-02T09:50:03.000Z",
+    "content": "I know it works cuz I already tried it life and proved that it is an effective way to extract GEO data. this is one of the things that we are going to face with the so called Web2.0."
+  }
+]

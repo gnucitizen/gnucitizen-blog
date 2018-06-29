@@ -1,0 +1,128 @@
+[
+  {
+    "author": "Kishor",
+    "avatar": "8646bd4e904762c599e11665cc67f158",
+    "date": "2006-12-04T13:29:23.000Z",
+    "content": "It is interesting to see that most of \r\nthese well known sites have CSRF on logout possible.\r\n\r\nOrkut https://www.orkut.com/GLogin.aspx?cmd=logout\r\nYahoo! <a href=\"http://us.ard.yahoo.com/SIG=12h2u4tp1/M=289534.5473431.6553392.5333790/D=mail/S=150500014:HEADR/Y=YAHOO/EXP=1165241048/A=2378664/R=4/SIG=12rkkt5h8/*http://login.yahoo.com/config/login?logout=1&amp;.done=http://mail.yahoo.com&amp;.src=ym&amp;.intl=us\" rel=\"nofollow\">http://us.ard.yahoo.com/SIG=12h2u4tp1/M=289534.5473431.6553392.5333790/D=mail/S=150500014:HEADR/Y=YAHOO/EXP=1165241048/A=2378664/R=4/SIG=12rkkt5h8/*http://login.yahoo.com/config/login?logout=1&amp;.done=http://mail.yahoo.com&amp;.src=ym&amp;.intl=us</a>\r\nHotmail http://by124w.bay124.mail.live.com/mail/logout.aspx\r\nGmail https://mail.google.com/mail/?logout&amp;hl=en\r\n\r\nNow this is not a concern as such, but if you are\r\nable to force a logout, victim may get fooled by phishing more easily (Since s/he will be willing\r\nto enter credentials... I'm not able to explain\r\nthis but hope you get me)."
+  },
+  {
+    "author": "pagvac",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2006-12-04T21:51:56.000Z",
+    "content": "CSRF is definitely a biggy since most websites on the web are vulnerable to these types of attacks. \r\n\r\nOne thing that kind of turns me off is that it requires social engineering in most cases. However, imagine a CSRF attack combined with persistent XSS: every time the victim visits the page with the injected code, the attacker can force the browser to do actions on behalf of the victim without social engineering required!\r\n\r\nPersistent (server-side) XSS + CSRF = killer (IMHO)\r\n\r\nThat's why it's very important for developers that it is always assumed that current authenticated sessions might currently be controlled by attackers (i.e.: ask for the previous password when allowing the user to change it to a new one - same thing goes for updating the user's email address)\r\n\r\nAs in for CSRF attacks that require social engineering to somehow trick the user to be authed when visiting the page with the evil XSS, the way I always pictured the attack is through an email that tells the victim some BS in order to get him to login before visiting the evil URL. Of course this email should appear to come from the target entity (just like phishing emails). People like good deals and free things, so this is something I would aim for when social engineering users to get them CSRFed successfully.\r\n\r\nGood post pdp."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-12-05T03:02:15.000Z",
+    "content": "<blockquote>One thing that kind of turns me off is that it requires social engineering in most cases.</blockquote>\r\n\r\nyes man, but there are so many situations where CSRF can be used without social engineering. You are right that these types of attacks are not targeted, but you can hit a lot of random web users by spawning splogs for example. That's why the WEB is the perfect medium for spreading worms."
+  },
+  {
+    "author": "Delixe",
+    "avatar": "91d4f236a8bad4b3130a696ebfaa98c3",
+    "date": "2006-12-05T03:27:39.000Z",
+    "content": "So you're saying that those MySpace trains are examples of CSRF? (MySpace trains add people to friend lists and etc. just by clicking on a link.)\r\n\r\nI don't really see the huge gain from a CSRF attack, could you possibly provide an example that would truly open our eyes to how \"powerful\" it seems to be?"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-12-05T03:43:30.000Z",
+    "content": "Delixe, let's say that you have a router vulnerable to CSRF (all of them are). You login but you forget to logout. Than you continue surfing the net. Suddenly you reach a page that is a bit malicious. You don't know about that so you happily continue browsing around. Unfortunately, what have just happened is your network being exposed to attackers. How? Well, you have visited a page that contains a CSRF vector for you router located at 192.168.1.1/192.168.0.1. You router admin interface is now exposed to the Internet. All attackers need to do is to collect your IP which is already logged on their server and access the admin interface. Very simple but quite powerful."
+  },
+  {
+    "author": "Delixe",
+    "avatar": "91d4f236a8bad4b3130a696ebfaa98c3",
+    "date": "2006-12-05T03:46:27.000Z",
+    "content": "I don't think that's a fitting example considering how many users are going to be logged in their router interface. 95% (and I pulling this out of my ass yes) of people probably haven't logged in that more than once.\r\n\r\nWhat does have access to a router interface do? You can play around with ports and such but what else? (Yes I am ignorant to this)"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-12-05T04:02:30.000Z",
+    "content": "heh, no worries...\r\n\r\nThe purpose of CSRF is to perform actions on behalf of the current user but this user must be authenticated first. Otherwise, there is no point in doing whatsoever.\r\n\r\nOk, here is another one: let's say that an attacker wants to transfer some money to his/her account. They start a splog network which is backdoored from top to bottom with malicious JavaScript. The attacker targets several banks at the same time. So he/she has CSRF for Lloyds, Natwest, HSBC and some other bank. Once an unaware user visits any page from this splog network a CSRF will be executed to all bank sites initiating a money transfer. Most of the requests will fail, however, if the current user is unlucky enough to have their account open at the same time, or they forgot to logoff, the transfer will be successful.\r\n\r\nAs pagvac, put it very clear, CSRF in combination with persistent XSS could be quite dangerous. Why? Well, let's say that someone targets MySpace with a similar exploit as the one discussed above. A worm like that could reach a critical mass in less then an hour effecting millions of users. Even if only 0.5% of them have their account open, the attacker could collect substantial amount of money.\r\n\r\nSometimes I see that attack vectors discussed in this blog are tried for real. I've seen some of them in the wild. The <a href=\"http://www.websense.com/securitylabs/alerts/alert.php?AlertID=708\" rel=\"nofollow\">QuickTime attack on MySpace</a> is just one of them. I hope that you won't try this thing at home. Right?"
+  },
+  {
+    "author": "Delixe",
+    "avatar": "91d4f236a8bad4b3130a696ebfaa98c3",
+    "date": "2006-12-05T04:27:54.000Z",
+    "content": "I am in the pursuit for knowledge like many of you and besides I don't steal.\r\n\r\nI've seen the acronym CSRF quite often, I was interested in what the buzz was all about.\r\n\r\nThank you for clarifying, yes the combination of CSRF and persistent XSS can be deadly -- I can definitely see that.\r\n\r\nThe protection mechanisms to prevent CSRF seem rather difficult to apply and rather cumbersome to say at the least. I know I would hate to apply that with every damn form or many."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-12-05T04:41:24.000Z",
+    "content": "Sorry man, I didn't mean to offend you. Anyway, I am glad that we have clarified this.\r\n\r\n<blockquote>The protection mechanisms to prevent CSRF seem rather difficult to apply and rather cumbersome to say at the least. I know I would hate to apply that with every damn form or many.</blockquote>\r\n\r\nYes, however, this is what frameworks are for. They are designed to save your time. Still, people like writing things themselves.\r\n\r\nMany thanks."
+  },
+  {
+    "author": "Kishor",
+    "avatar": "8646bd4e904762c599e11665cc67f158",
+    "date": "2006-12-05T18:18:22.000Z",
+    "content": "Identifying if your victim is logged in is easy:\r\n\r\nHere is the article\r\n\r\nhttp://wasjournal.blogspot.com/2006/12/use-of-time-delay-technique-for.html"
+  },
+  {
+    "author": "pagvac",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2006-12-05T23:24:37.000Z",
+    "content": "<blockquote>you can hit a lot of random web users by spawning splogs for example</blockquote>\r\n\r\nAutomated CSRF, that's a very good point!\r\n\r\n<blockquote>let’s say that you have a router vulnerable to CSRF (all of them are)</blockquote>\r\n\r\nActually I don't agree with this statement. While I would say that *most* router's web interfaces are vulnerable to CSRF, not all are. For instance, BT Voyager 2091 router adds a token to all admin HTTP requests that change configuration settings. \r\n\r\ni.e.:\r\n\r\nhttp://192.168.1.1/lancfg2.cgi?checkNum=6418&amp;ethIpAddress=192.168.1.1&amp;ethSubnetMask=255.255.255.0&amp;hostname=voyager&amp;domainname=home&amp;enblLan2=0&amp;lan2IpAddress=0.0.0.0&amp;lan2SubnetMask=255.255.255.255&amp;lanmtu=1500\r\n\r\nIn this case the attacker needs to know the value of 'checkNum' when CSRFing, which is really assigned from the variable 'randomNum' within a JS snippet. 'randomNum' changes each time a page is loaded. YES, I'm sure that you can reverse engineer the router and figure out how the random token is generated (especially since the software is open source), but the point here is that BT kept in mind CSRF attacks when designing the web interface for Voyager 2091.\r\n\r\nI do believe that routers' web interfaces will be designed in the future using randomly-generated tokens for all configuration requests. But since now most people don't have a damn clue what CSRF is and why it can be bad thing, there is still a lot of opportunities (and time) for exploitation."
+  },
+  {
+    "author": "pagvac",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2006-12-06T00:18:18.000Z",
+    "content": "<blockquote>I don’t think that’s a fitting example considering how many users are going to be logged in their router interface</blockquote>\r\n\r\nGuys, we need to remind ourselves that many routers have vulnerabilities on their web interfaces which when combined with CSRF can potentially allow you to gain internal access to a network WITHOUT requiring the victim user to be authenticated.\r\n\r\nConsider an authentication bypass vuln\r\n\r\nhttp://www.securityfocus.com/bid/19347/discuss\r\n\r\nBy simply visiting the following URL, you just changed configuration settings on your router (if vulnerable) WITHOUT needing to be authenticated:\r\n\r\nhttp://ikwt.com/projects/linksys/BID19347_test.html\r\n\r\nAlso consider an unauthenticated access to the router's config file vuln. If combined with an XSS vuln, an attacker should be able to steal your router's config file by using XMLHttpRequest() in the XSS payload:\r\n\r\nhttp://www.securityfocus.com/bid/19057/discuss\r\nhttp://ikwt.com/projects/btvoyager-getconfig.txt\r\n\r\n<blockquote>What does have access to a router interface do?</blockquote>\r\n\r\nIf you can make admin requests to a router's web inteface then you just gained internal access to the target network, by setting port forwarding for instance, or placing internal hosts on the DMZ."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-12-06T03:14:30.000Z",
+    "content": "pagvac, you have some interesting stuff on your domain. Very nice! I think that we are going to see a lot more of these attacks in the future, especially the ones concerning network devices. Web browsers are the perfect platform to bridge protected networks with the wild web."
+  },
+  {
+    "author": "pagvac",
+    "avatar": "ef14ae4ef69235fa6c3709438357819d",
+    "date": "2006-12-06T15:03:14.000Z",
+    "content": "Most people are super skeptic to CSRF attacks. The typical scenario of being CSRFed while doing online banking and transferring funds to the attacker's account is one that many people refuse to believe.\r\n\r\nCSRF skeptics would say \"How the hell would an attacker fool me to visit a third-party site, while I'm still *logged on* to https://www.[nameOfBank].com\r\n\r\nWell, unfortunately there is a web browser feature that is becoming more and more popular which will make CSRF attacks even more feasible in the future. It's called TAB BROWSING. The more web users do tab browsing, the more victims that will get CSRFed.\r\n\r\nCheck out the following scenario:\r\n\r\n1. Victim is reading a blog\r\n2. Victim opens new tab (without closing the already-open tabs) and logs into https://www.[nameOfBank].com\r\n\r\nWhat if the blog that was still open in a different tab had injected a script snippet that submits a CSRF attack to https://www.[nameOfBank].com every X seconds in the background?\r\n\r\nGuess what, you've just been robbed :-D\r\n\r\nAs pdp reminded us, we should consider splogs as a vector for maximizing the chances of successful exploitation."
+  },
+  {
+    "author": "Joe Phantom",
+    "avatar": "13bd3836ffa2be42ccfa97d2cb5a2ee0",
+    "date": "2006-12-09T07:12:19.000Z",
+    "content": "I knew what CSFR meant, but I didn't understand it's full potential. Thanks for clarifying the power of CSFR.\r\nHow can we protect our webs from this type of attack? Any idea?\r\npdp, you mentioned frameworks, can you tell me which framework already has some type of built in protection against CSFR?\r\nThanks"
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-12-10T01:31:46.000Z",
+    "content": "Joe,\r\n\r\nthere are many of them. I am quite sure that you can find at least one framework per programming language.\r\n\r\n.NET for example has the __VIEWSTATE. I don't like transmitting so much data back'nfort to the client but, hey, that is by default and it protects your from CSRF. Microsoft has just released their Anti-XSS Library, I am not sure if that helps in terms of CSRF as well.\r\n\r\nHowever, although there are available frameworks that more less prevent CSRF on your applications you must understand that none of them are AJAX compatible. As Billy Hoffman suggested on a few occasions, AJAX technologies are not completely understood and that makes them a lot more hackable. These are not his exact word but the context is the same."
+  },
+  {
+    "author": "Joe Phantom",
+    "avatar": "13bd3836ffa2be42ccfa97d2cb5a2ee0",
+    "date": "2006-12-10T18:42:03.000Z",
+    "content": "I know many frameworks for developing webs, in many languages, but I didn't know anyone who had any library that was useful against CSRF. I will read the documentation of the frameworks.\r\n\r\n(Sorry for my english, I am from Argentina)\r\nThank you for doing such a great blog."
+  },
+  {
+    "author": "Delixe",
+    "avatar": "91d4f236a8bad4b3130a696ebfaa98c3",
+    "date": "2006-12-10T19:44:08.000Z",
+    "content": "I believe sessions in general take care of this.\r\n\r\nYou can just plug sessions vars in the action portion of a form and neutralize all attempts of CSRF since the attacker can't possibly know the session string."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-12-11T01:07:16.000Z",
+    "content": "Joe as Delixe mentioned you can implement your own mechanism for preventing CSRF. It is all about adding a hidden field in the forms you are displaying that has unique id. If this id matches the id generate and stored inside the user session then the request from the form is allowed, otherwise you disregard prompting an error.\r\n\r\nIt is even more trivial to generalize this with a simple PHP class that will generate the form for you and do the rest. The problem is that the larger the application gets the more tedious this method is. I guess it is much better to do some kind of smart layered filtering where a top level application firewall modifies the form with all necessary information. I don't think that you can do that with mod_security but a little bit of perl will do.\r\n\r\nAnd, hei, your English is not that bad. Cheers."
+  },
+  {
+    "author": "Joe Phantom",
+    "avatar": "13bd3836ffa2be42ccfa97d2cb5a2ee0",
+    "date": "2006-12-11T20:57:28.000Z",
+    "content": "We have an closed source intranet web in the company  I work (it was already bought when I entered the company, and we are not allowed to change in any way  the web intranet). The intranet is vulnerable to Cross-site Request Forgery.\r\n\r\nI think the best way would be to have a application firewall (as you said), I will try to code it.\r\nThank's Delixe and pdp."
+  },
+  {
+    "author": "pdp",
+    "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
+    "date": "2006-12-12T02:17:32.000Z",
+    "content": "You can either write a pure Perl module for Apache or just proxy the request to another server that will do the filtering and the processing. Good luck."
+  }
+]

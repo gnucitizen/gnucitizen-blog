@@ -1,0 +1,20 @@
+[
+  {
+    "author": "Acidus",
+    "avatar": "bc99640b554acac6fb6b03be8ff047b1",
+    "date": "2006-10-10T18:22:05.000Z",
+    "content": "There are some really cool attacks you can do with Ajax Bridges/proxies/gateways. Most of the time it makes more sense for an attacker to use the bridge on www.example.com to attack api.datastore.com than to directly attack api.datastore.com\r\n\r\nCheck out slides 37 - 45 (ignore the slanting)\r\n\r\n<a href=\"http://www.spidynamics.com/spilabs/education/presentations/BillyHoffman-Ajax(in)security.pdf\" rel=\"nofollow\">http://www.spidynamics.com/spilabs/education/presentations/BillyHoffman-Ajax(in)security.pdf</a>"
+  },
+  {
+    "author": "maluc",
+    "avatar": "803e289068dc08d5b34ae47778e67bb6",
+    "date": "2006-10-12T14:01:01.000Z",
+    "content": "Wow, the author of stripe snoop..? That code helped me more than you could know, so.. thanks ^^\r\n\r\n-maluc"
+  },
+  {
+    "author": "Gar",
+    "avatar": "8e71e197b04669e0f5712f520528d7a7",
+    "date": "2007-05-07T01:20:48.000Z",
+    "content": "I'm probably very naive, but I just wish that browser implementors got rid of cookies in iframes. The only sensible use would be doubleclick and urchin anyway."
+  }
+]
