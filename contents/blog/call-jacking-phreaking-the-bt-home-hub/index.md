@@ -24,6 +24,6 @@ The following are some attack scenarios in which this vulnerability could be use
 
 I don't want to repeat myself, but please remember that from the victim point of view it _looks_ like he is receiving a phone call but in fact he is making/paying for the phone call!
 
-<div class="screen"><object width="425" height="355"><param name="movie" value="http://www.youtube.com/v/0V0YZQWYCHI&rel=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/0V0YZQWYCHI&rel=1" type="application/x-shockwave-flash" wmode="transparent" width="425" height="355"></embed></object></div>
+<iframe class="video" src="http://www.youtube.com/embed/0V0YZQWYCHI" frameborder="0" allowfullscreen></iframe>
 
 And finally the boring (but needed) testing details: tested on BT Home Hub firmware 6.2.6.B. Only customers using the BT Broadband Talk service are affected by this attack. Other firmware versions are likely to be affected as well, but we have not tested them.

@@ -19,9 +19,19 @@ mixin content()
 
         //- --
 
+        - function fileSort(a, b) {
+        -    if (a['index.md']) a = a['index.md']
+        -    if (b['index.md']) b = b['index.md']
+        -    if (a.metadata.date && b.metadata.date) {
+        -        return new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime()
+        -    } else {
+        -        return a.filename.localeCompare(b.filename)
+        -    }
+        - }
+
         - function recurseFolder(folder, page) {
             ul
-                for item in folder._.directories.sort(function (a, b) { return a.filename.localeCompare(b.filename) })
+                for item in folder._.directories.sort(fileSort)
                     unless item.filename
                         - continue
 
@@ -81,7 +91,8 @@ mixin content()
 
         //- --
 
-        - recurseFolder(page.parent, page)
+        #index
+            - recurseFolder(page.metadata.from ? page.parent[page.metadata.from] : page.parent, page)
 
 //- --
 

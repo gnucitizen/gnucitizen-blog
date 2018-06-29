@@ -7,7 +7,7 @@ template: post.jade
 
 This is going to be one of these quick posts which just makes you think what the information security landscape will be like in 5 years. Before I move on with my commentary, here is a video which is essential for you to watch.
 
-<iframe width="100%" height="420" src="http://www.youtube.com/embed/rJfrdcbfXsc" frameborder="0" allowfullscreen></iframe>
+<iframe class="video" src="http://www.youtube.com/embed/rJfrdcbfXsc" frameborder="0" allowfullscreen></iframe>
 
 Got the idea? No? Let me explain. What you see in the video above is an application for the iPhone which gives you detailed characteristics of properties (houses) in USA. You can either search the map or just use your GPS coordinates to get information such as price of the house, number of floors, number of rooms, pictures taken from inside the house if the house was part of any register (letting agencies etc.) before you moved in, and other interesting information.
 

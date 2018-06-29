@@ -9,7 +9,7 @@ template: post.jade
 
 As ways, I prepared a video that demonstrates the attack in more visual way. BTW, 90% of test I've done are subjected this type of attack. It is insane really.
 
-<div class="screen"><object width="425" height="350"><param name="movie" value="http://www.youtube.com/v/i_zbObjFnrY"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/i_zbObjFnrY" type="application/x-shockwave-flash" wmode="transparent" width="425" height="350"></embed></object></div>
+<iframe class="video" src="http://www.youtube.com/embed/i_zbObjFnrY" frameborder="0" allowfullscreen></iframe>
 
 In case the video does not work, you can download the high-quality version from over [here](http://www.gnucitizen.org/static/blog/2007/10/hc02.wmv).
 

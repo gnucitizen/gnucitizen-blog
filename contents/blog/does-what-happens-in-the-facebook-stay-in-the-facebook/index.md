@@ -7,4 +7,4 @@ template: post.jade
 
 "Does what happens in the Facebook stay in the Facebook?" is a quite clever video that shows some of the privacy issues that concern social networks today. More on the topic can be found [here](/blog/social-networks-mayhem), which was published not that long time ago.
 
-<iframe width="100%" height="420" src="http://www.youtube.com/embed/wogtTQs8Kzw" frameborder="0" allowfullscreen></iframe>
+<iframe class="video" src="http://www.youtube.com/embed/wogtTQs8Kzw" frameborder="0" allowfullscreen></iframe>

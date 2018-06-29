@@ -31,6 +31,6 @@ Even though I've been the owner of a BT Home Hub for quite a while, I never both
 
 We're now in the process of contacting BT and Thomson. However, I don't have high hopes for BT. Last year, I [found](http://unknown.pentester.googlepages.com/bt-voyager-unauth-access.txt) a way to dump the BT Voyager 2091's config file without credentials. Even though I forwarded them my findings they never responded at all.
 
-<div class="screen"><object width="425" height="350"><param name="movie" value="http://www.youtube.com/v/i4tkM3UtF1Y"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/i4tkM3UtF1Y" type="application/x-shockwave-flash" wmode="transparent" width="425" height="350"></embed></object></div>
+<iframe class="video" src="http://www.youtube.com/embed/i4tkM3UtF1Y" frameborder="0" allowfullscreen></iframe>
 
 _Enjoy the demo video which was kindly prepared by pdp. We misspelled some words on the chat conversation, so please forgive us! In the video, the attacker social-engineers the victim to visit a malicious website. The malicious website in turn enables remote assistance on the victim's router with a password chosen by the attacker. After that, the attacker gains full privileges to the router remotely, and steals the config file and WEP key._

@@ -27,7 +27,7 @@ You might have heard before that a XSS vulnerability on a login page is nasty. H
 
 The following video shows the previous exploit in action. I don't think the quality of the video is that good, but oh well. Basically what it shows is how after visiting the exploit URL, the username and password are sent to google.com in the background. I use Paros in the video to demonstrate that the credentials do indeed get sent to google.com.
 
-<div class="screen"><object width="425" height="350"><param name="movie" value="http://www.youtube.com/v/wCUovL9WLVQ"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/wCUovL9WLVQ" type="application/x-shockwave-flash" wmode="transparent" width="425" height="350"></embed></object></div>
+<iframe class="video" src="http://www.youtube.com/embed/wCUovL9WLVQ" frameborder="0" allowfullscreen></iframe>
 
 If you look at the code, you'll notice that we wait 1.5 secs using the _setTimeout()_ function before forwarding the credentials to the evil site. The reason for this is because we need to let the browser auto-complete the fields before performing the redirect. Otherwise the value of the username and password field would be blank by the time we steal them. 
 
