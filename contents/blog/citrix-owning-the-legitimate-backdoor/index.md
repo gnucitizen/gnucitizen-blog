@@ -23,7 +23,7 @@ The other day I was performing some CITRIX poking, so I had a lot of fun with br
 
     But to get to the command line, you have to escape the GUI first and when it comes to Windows GUIs, escaping them is like a walk in the park. As soon as you open explorer with File Open/Save/Save as/Print or Help features, you can execute commands. Just for demonstration purposes, I composed a [video](/files/2007/10/hc01.wmv) that shows how it is done:
 
-    <iframe class="video" src="http://www.youtube.com/embed/1-cXrZIVlTU" frameborder="0" allowfullscreen></iframe>
+    <iframe class="video" src="//www.youtube.com/embed/1-cXrZIVlTU" frameborder="0" allowfullscreen></iframe>
 
     Here is more. The following example shows an ICA file which just opens `cmd.exe` right in front of your eyes:
 

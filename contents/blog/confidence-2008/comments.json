@@ -45,7 +45,7 @@
     "author": "pdp",
     "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
     "date": "2008-05-21T10:20:59.000Z",
-    "content": "We promised to do some videos for the event. So here they are. It was great fun as you can see. :)\r\n\r\n<div class=\"screen\"><object width=\"213\" height=\"178\"><param name=\"movie\" value=\"http://www.youtube.com/v/GuhD8RgIS7E&hl=en\"></param><param name=\"wmode\" value=\"transparent\"></param><embed src=\"http://www.youtube.com/v/GuhD8RgIS7E&hl=en\" type=\"application/x-shockwave-flash\" wmode=\"transparent\" width=\"213\" height=\"178\"></embed></object><object width=\"213\" height=\"178\"><param name=\"movie\" value=\"http://www.youtube.com/v/xSTXOz6ovH4&hl=en\"></param><param name=\"wmode\" value=\"transparent\"></param><embed src=\"http://www.youtube.com/v/xSTXOz6ovH4&hl=en\" type=\"application/x-shockwave-flash\" wmode=\"transparent\" width=\"213\" height=\"178\"></embed></object></div>"
+    "content": "We promised to do some videos for the event. So here they are. It was great fun as you can see. :)\n\n<iframe class=\"video\" src=\"//www.youtube.com/embed/GuhD8RgIS7E\" frameborder=\"0\" allowfullscreen></iframe>\n\n<iframe class=\"video\" src=\"//www.youtube.com/embed/xSTXOz6ovH4\" frameborder=\"0\" allowfullscreen></iframe>"
   },
   {
     "author": "carstein",

@@ -39,6 +39,6 @@
     "author": "pdp",
     "avatar": "c4db4e65c9f09f2a373fcaefa5e2bfb4",
     "date": "2007-11-29T10:47:19.000Z",
-    "content": "Here is a video that describes the same technique but in a bit more visual way, of course, without too much of tech information:\r\n\r\n<div class=\"screen\"><object width=\"425\" height=\"355\"><param name=\"movie\" value=\"http://www.youtube.com/v/v6gqipmbcok&rel=1&border=0\"></param><param name=\"wmode\" value=\"transparent\"></param><embed src=\"http://www.youtube.com/v/v6gqipmbcok&rel=1&border=0\" type=\"application/x-shockwave-flash\" wmode=\"transparent\" width=\"425\" height=\"355\"></embed></object></div>"
+    "content": "Here is a video that describes the same technique but in a bit more visual way, of course, without too much of tech information:\r\n\r\n<div class=\"screen\"><object width=\"425\" height=\"355\"><param name=\"movie\" value=\"//www.youtube.com/v/v6gqipmbcok&rel=1&border=0\"></param><param name=\"wmode\" value=\"transparent\"></param><embed src=\"//www.youtube.com/v/v6gqipmbcok&rel=1&border=0\" type=\"application/x-shockwave-flash\" wmode=\"transparent\" width=\"425\" height=\"355\"></embed></object></div>"
   }
 ]

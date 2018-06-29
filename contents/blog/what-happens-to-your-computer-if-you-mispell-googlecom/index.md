@@ -7,7 +7,7 @@ template: post.jade
 
 That's for real people. Don't try this at home!  Leave it to the professionals.
 
-<iframe class="video" src="http://www.youtube.com/embed/MjbKmw4tK8c" frameborder="0" allowfullscreen></iframe>
+<iframe class="video" src="//www.youtube.com/embed/MjbKmw4tK8c" frameborder="0" allowfullscreen></iframe>
 
 The attack surface of WEB technologies has dramatically increased over the past couple of years. It is not only about WEB Applications. Today we explore client side technologies which also play big part in the Web security game.
 

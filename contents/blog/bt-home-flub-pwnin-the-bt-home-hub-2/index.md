@@ -28,7 +28,7 @@ We've been asked by some non-technical users how would the intruder incite the v
 
 ### Backdooring the Home Hub PERMANENTLY
 
-Once the router has been compromised the attacker gets an email (as shown in the [demo video](http://www.youtube.com/watch?v=i4tkM3UtF1Y)) with the URL needed to access the Home Hub remotely using the "tech support" account - a.k.a. remote assistance. The attacker then logs in using the username 'tech' and a password which was chosen by her and was set when the malicious website was loaded in the victim user's browser. At this point, the intruder can do anything to the router. For instance, because remote assistance gets disabled after 20 minutes of inactivity, the intruder can do the following in order to make sure that she can come back any time to the router to tamper with it:
+Once the router has been compromised the attacker gets an email (as shown in the [demo video](//www.youtube.com/watch?v=i4tkM3UtF1Y)) with the URL needed to access the Home Hub remotely using the "tech support" account - a.k.a. remote assistance. The attacker then logs in using the username 'tech' and a password which was chosen by her and was set when the malicious website was loaded in the victim user's browser. At this point, the intruder can do anything to the router. For instance, because remote assistance gets disabled after 20 minutes of inactivity, the intruder can do the following in order to make sure that she can come back any time to the router to tamper with it:
 
 * Save the Home Hub config file (contains all router settings including the passwords for any services the victim is subscribed to)
 * Add the following line in the config file under the `[ servmgr.ini ]` section: `ifadd name=HTTPs group=wan`

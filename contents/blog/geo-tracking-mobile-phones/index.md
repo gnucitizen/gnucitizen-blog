@@ -33,7 +33,7 @@ Notice that the information is not very specific. Depending on the quality of th
 
 If the attacker continuously captures the information given from the cell phone towers, she will be able to tell the location of the mobile by guessing the area or doing some crazy computation geometry (triangulation) as described by this [paper](http://www.ncg.knaw.nl/Publicaties/Groen/pdf/44VanOosterom.pdf). This information can be placed on a map which tracks the mobile phone and predicts the direction. For that purpose, the attacker can use something like Google Maps API or preferably Microsoft's Live Maps Birds Eye 3D view as shown on the video bellow:
 
-<iframe class="video" src="http://www.youtube.com/embed/r4L4T1pUZUU" frameborder="0" allowfullscreen></iframe>
+<iframe class="video" src="//www.youtube.com/embed/r4L4T1pUZUU" frameborder="0" allowfullscreen></iframe>
 
 In some cases the attacker could combine the information obtained from the cell phone towers and the GPS (if there is any) in order to get even more accurate information about the current position of the mobile phone. This technique can be applied on any other phone and can be trivially automated for Blackberries using their development SDK.
 
