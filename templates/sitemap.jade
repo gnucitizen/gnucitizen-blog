@@ -13,94 +13,94 @@ include ./globals.jade
 urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
     - var buildDate = new Date().toISOString()
     - var changeFrequency = page.metadata.frequency || 'daily'
-    
+
     //- --
-    
+
     - var baseUrl = page.metadata.url || siteUrl || ''
-    
+
     //- --
-    
+
     if baseUrl.match(/^\/\//i)
         - baseUrl = 'http:' + baseUrl
-        
+
     //- --
-    
+
     url
         loc=baseUrl
         lastmod=buildDate
         changefreq=changeFrequency
         priority 1.0
-        
+
     //- --
-    
+
     - function shouldIgnore(basePage, filename) {
     -     return basePage.metadata &&    basePage.metadata.ignore && basePage.metadata.ignore.some(function (ignore) {
     -         return (new RegExp(ignore)).test(filename)
     -     })
     - }
-    
+
     //- --
-    
+
     - function recurseFolder(folder, page) {
         for item in folder._.directories.sort(function (a, b) { return a.filename.localeCompare(b.filename) })
             unless item.filename
                 - continue
-                
+
             if /(^\.|\/\.)/.test(item.filename)
                 - continue
-                
+
             //- --
-            
+
             if !shouldIgnore(page, item.filename) && item != page
                 - var index = item['index.md'] || item['index.json'] || item['index.html']
-                
+
                 //- --
-                
+
                 if index
                     url
                         loc=index.getUrl(baseUrl)
                         lastmod=index.metadata.date ? (new Date(index.metadata.date)).toISOString() : buildDate
                         changefreq=changeFrequency
                         priority 1.0
-                        
+
                 //- --
-                
+
                 - recurseFolder(item, page)
-                
+
         for item in folder
             unless item.filename
                 - continue
-                
+
             if /(^\.|\/\.)/.test(item.filename)
                 - continue
-                
+
             //- --
-            
+
             unless item.metadata
                 - continue
-                
+
             if item.metadata.indexed == 'false'
                 - continue
-                
+
             //- --
-            
+
             if !shouldIgnore(page, item.filename) && item != page
                 - var basename = item.filename.substring(item.filename.lastIndexOf('/') + 1)
-                
+
                 if basename.match(/index\.html$/)
                     - continue
-                    
+
                 //- --
-                
+
                 url
                     loc=item.getUrl(baseUrl)
                     lastmod=item.metadata.date ? (new Date(item.metadata.date)).toISOString() : buildDate
                     changefreq=changeFrequency
                     priority 1.0
     - }
-    
+
     //- --
-    
+
     - recurseFolder(page.parent, page)
-    
+
 //- --

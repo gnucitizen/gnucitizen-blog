@@ -15,155 +15,155 @@ html(lang="en")
     head
         block head
             meta(charset="utf-8")
-            
+
             //- --
-            
+
             meta(meta name="viewport", content="width=device-width, initial-scale=1.0")
-            
+
             //- --
-            
+
             //- NOTE: DON'T TOUCH
-            
+
             - var pageTitle = (page.title && page.title != 'Untitled' ? page.title : null) || pageTitle || title || site || brand
-            
+
             //- --
-            
+
             //- NOTE: DON'T TOUCH
-            
+
             - var pageDescription = page.metadata.description || pageDescription || description || null
-            
+
             //- --
-            
+
             //- NOTE: DON'T TOUCH
-            
+
             - var pageKeywords = page.metadata.keywords || pageKeywords || keywords || null
-            
+
             //- --
-            
+
             //- NOTE: DON'T TOUCH
-            
+
             - var pageType = page.metadata.type || pageType || type || 'website'
-            
+
             //- --
-            
+
             //- NOTE: DON'T TOUCH
-            
+
             - var pageUrl = (page.metadata.url ? getUrl(page.metadata.url) : null) || pageUrl || (url ? getUrl(url) : null) || page.getUrl(siteUrl) || null
-            
+
             //- --
-            
+
             //- NOTE: DON'T TOUCH
-            
+
             - var pageImage = (page.metadata.image ? getUrl(page.metadata.image) : null) || pageImage || (image ? getUrl(image) : null) || (pageUrl ? 'http://s.wordpress.com/mshots/v1/' + encodeURIComponent(pageUrl) + '?w=1024' : null) || null
-            
+
             //- --
-            
+
             title
                 block title
                     =pageTitle
-                    
+
             //- --
-            
+
             block description
                 if pageDescription
                     meta(name="description", content=pageDescription)
-                    
+
             block keywords
                 if pageKeywords
                     meta(name="keywords", content=pageKeywords)
-                    
+
             //- --
-            
+
             block meta
                 block meta-pageUrl
                     //- -- if pageUrl
                     //- --     link(rel="canonical", href=pageUrl)
-                    
+
                 //- --
-                
+
                 block meta-pageTitle
                     if pageTitle
                         meta(property="name", content=pageTitle)
                         meta(itemprop="name", content=pageTitle)
-                        
+
                 //- --
-                
+
                 block meta-pageDescription
                     if pageDescription
                         meta(property="description", content=pageDescription)
                         meta(itemprop="description", content=pageDescription)
-                        
+
                 //- --
-                
+
                 block meta-pageImage
                     if pageImage
                         meta(property="image", content=pageImage)
                         meta(itemprop="image", content=pageImage)
-                        
+
                 //- --
-                
+
                 block meta-facebook
                     if pageType
                         meta(property="og:type", content=pageType)
-                        
+
                     if pageUrl
                         meta(property="og:url", content=pageUrl)
-                        
+
                     if pageTitle
                         meta(property="og:title", content=pageTitle)
-                        
+
                     if pageDescription
                         meta(property="og:description", content=pageDescription)
-                        
+
                     if pageImage
                         meta(property="og:image", content=pageImage)
-                        
+
                 //- --
-                
+
                 block meta-twitter
                     if twitterVia
                         meta(name="twitter:site" content=twitterVia)
                         meta(name="twitter:creator" content=twitterVia)
-                        
+
                     if pageTitle
                         meta(name="twitter:title", content=pageTitle)
-                        
+
                     if pageDescription
                         meta(name="twitter:description", content=pageDescription)
-                        
+
                     if pageImage
                         meta(name="twitter:card" content="summary_large_image")
                         meta(name="twitter:image", content=pageImage)
-                        
+
             //- --
-            
+
             block assets
                 block styles
-                
+
                 //- --
-                
+
                 block scripts
-                
+
                 //- --
-                
+
                 block page-style
                     link(type="text/css", href=contents['blog.less'].getUrl(), rel="stylesheet")
-                    
+
                     if page.metadata.style
                         link(type="text/css", href=page.metadata.style, rel="stylesheet")
-                        
+
                 //- --
-                
+
                 block page-script
                     script(type="text/javascript", src=contents['blog.js'].getUrl())
-                    
+
                     if page.metadata.script
                         script(type="text/javascript", src=page.metadata.script)
-                        
+
             //- --
-            
+
     //- --
-    
+
     body(id=bodyId, class=bodyClass)
         block body
             block header
@@ -171,9 +171,9 @@ html(lang="en")
                     block header-content
                         h1: a(href="/")=site
                         p=description
-                        
+
             //- --
-            
+
             block topnav
                 if (topNav && Object.keys(topNav).length > 0) || hasTopNav
                     nav#topnav
@@ -183,18 +183,18 @@ html(lang="en")
                                     li
                                         block topnav-li
                                             a(href=value, target=(value.match(/(https?:)?\/\//) ? '_blank' : null))=key
-                                            
+
             //- --
-            
+
             block article
                 article
                     #content
                         block content
                             if page && page.html
                                 !=page.html
-                                
+
             //- --
-            
+
             block bottomnav
                 if (bottomNav && Object.keys(bottomNav).length > 0) || hasBottomNav
                     nav#bottomnav
@@ -204,16 +204,16 @@ html(lang="en")
                                     li
                                         block topnav-li
                                             a(href=value, target=(value.match(/(https?:)?\/\//) ? '_blank' : null), rel=(value.match(/(https?:\/\/plus\.google\.com)?\/\//) ? 'publisher' : null))=key
-                                            
+
             //- --
-            
+
             block footer
                 footer
                     block footer-content
                         p Copyright &copy; #{ new Date().getFullYear() } <a href="#{ brandURL }">#{ brand }</a>. All rights reserved.
-                        
+
             //- --
-            
+
             block anon
-            
+
 //- --
