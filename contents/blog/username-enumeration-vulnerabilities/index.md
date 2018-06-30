@@ -1,6 +1,6 @@
 ---
 title: Username Enumeration Vulnerabilities
-author: adrian-pastor
+author: pagvac
 date: Wed, 04 Apr 2007 09:34:18 GMT
 template: post.jade
 ---

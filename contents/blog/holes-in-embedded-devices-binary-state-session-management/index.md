@@ -1,6 +1,6 @@
 ---
 title: Holes in Embedded Devices - Binary state session management
-author: adrian-pastor
+author: pagvac
 date: Tue, 29 Jan 2008 09:52:22 GMT
 template: post.jade
 ---

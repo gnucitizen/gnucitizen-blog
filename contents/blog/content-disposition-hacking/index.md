@@ -1,6 +1,6 @@
 ---
 title: Content-Disposition Hacking
-author: adrian-pastor
+author: pagvac
 date: Mon, 05 Nov 2007 12:44:31 GMT
 template: post.jade
 ---

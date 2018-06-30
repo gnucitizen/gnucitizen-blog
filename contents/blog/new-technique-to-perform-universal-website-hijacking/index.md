@@ -1,6 +1,6 @@
 ---
 title: New Technique To Perform Universal Website Hijacking
-author: adrian-pastor
+author: pagvac
 date: Sat, 20 Sep 2008 14:56:05 GMT
 template: post.jade
 ---

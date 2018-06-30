@@ -1,6 +1,6 @@
 ---
 title: 1ST European Edition of HITB Coming Up!
-author: adrian-pastor
+author: pagvac
 date: Thu, 24 Jun 2010 09:16:22 GMT
 template: post.jade
 ---

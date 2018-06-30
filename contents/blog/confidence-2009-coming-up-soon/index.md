@@ -1,6 +1,6 @@
 ---
 title: CONFidence 2009 coming up soon!
-author: adrian-pastor
+author: pagvac
 date: Sat, 14 Mar 2009 13:47:47 GMT
 template: post.jade
 ---

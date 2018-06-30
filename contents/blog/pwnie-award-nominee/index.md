@@ -1,6 +1,6 @@
 ---
 title: Pwnie Award Nominee
-author: adrian-pastor
+author: pagvac
 date: Thu, 24 Jul 2008 12:36:06 GMT
 template: post.jade
 ---

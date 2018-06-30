@@ -1,6 +1,6 @@
 ---
 title: Holes In Embedded Devices Authentication Bypass (pt 3)
-author: adrian-pastor
+author: pagvac
 date: Sat, 16 Feb 2008 08:08:17 GMT
 template: post.jade
 ---

@@ -1,6 +1,6 @@
 ---
 title: Security And Hacking Scene in London
-author: adrian-pastor
+author: pagvac
 date: Tue, 11 Dec 2007 21:04:10 GMT
 template: post.jade
 ---

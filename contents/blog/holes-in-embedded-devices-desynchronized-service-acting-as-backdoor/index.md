@@ -1,6 +1,6 @@
 ---
 title: Holes In Embedded Devices - Desynchronized Service Accting As Backdoor
-author: adrian-pastor
+author: pagvac
 date: Wed, 06 Feb 2008 11:04:08 GMT
 template: post.jade
 ---

@@ -1,6 +1,6 @@
 ---
 title: Dnsmap v0.30 is now out!
-author: adrian-pastor
+author: pagvac
 date: Sat, 20 Feb 2010 21:08:48 GMT
 template: post.jade
 ---

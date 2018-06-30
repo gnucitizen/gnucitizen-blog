@@ -1,6 +1,6 @@
 ---
 title: Owning Outlook Web Access (OWA) users
-author: adrian-pastor
+author: pagvac
 date: Sat, 08 Dec 2007 18:56:01 GMT
 template: post.jade
 ---

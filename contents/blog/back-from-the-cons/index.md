@@ -1,6 +1,6 @@
 ---
 title: Back From The Cons
-author: adrian-pastor
+author: pagvac
 date: Mon, 10 Nov 2008 10:05:21 GMT
 template: post.jade
 category: fucked

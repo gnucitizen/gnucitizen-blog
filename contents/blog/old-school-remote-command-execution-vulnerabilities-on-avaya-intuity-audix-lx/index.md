@@ -1,6 +1,6 @@
 ---
 title: Old-school Remote Command Exec Vulnerabilities on Avaya Intuity
-author: adrian-pastor
+author: pagvac
 date: Thu, 17 Sep 2009 08:32:47 GMT
 template: post.jade
 ---

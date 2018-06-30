@@ -1,6 +1,6 @@
 ---
 title: Strategic GeoIP Hacking and TV Streaming Theft
-author: adrian-pastor
+author: pagvac
 date: Fri, 16 Nov 2007 14:22:00 GMT
 template: post.jade
 ---

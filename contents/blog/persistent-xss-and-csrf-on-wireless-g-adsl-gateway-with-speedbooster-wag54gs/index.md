@@ -1,6 +1,6 @@
 ---
 title: Persistent XSS and CSRF on Wireless-G ADSL Gateway with SpeedBooster (WAG54GS)
-author: adrian-pastor
+author: pagvac
 date: Tue, 20 Nov 2007 20:51:16 GMT
 template: post.jade
 ---

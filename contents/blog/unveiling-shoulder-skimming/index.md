@@ -1,6 +1,6 @@
 ---
 title: Unveiling shoulder skimming
-author: adrian-pastor
+author: pagvac
 date: Wed, 12 Dec 2007 16:42:58 GMT
 template: post.jade
 ---

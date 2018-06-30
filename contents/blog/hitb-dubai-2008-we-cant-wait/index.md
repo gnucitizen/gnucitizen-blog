@@ -1,6 +1,6 @@
 ---
 title: HITB Dubai - 2008 We Can't Wait
-author: adrian-pastor
+author: pagvac
 date: Mon, 03 Mar 2008 12:40:24 GMT
 template: post.jade
 ---

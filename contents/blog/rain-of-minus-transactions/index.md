@@ -1,6 +1,6 @@
 ---
 title: Rain Of -MINUS Transactions
-author: adrian-pastor
+author: pagvac
 date: Tue, 11 Sep 2007 11:43:15 GMT
 template: post.jade
 ---

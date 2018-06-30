@@ -1,6 +1,6 @@
 ---
 title: CSRF-ing Blogger Classic
-author: adrian-pastor
+author: pagvac
 date: Fri, 19 Jan 2007 10:02:10 GMT
 template: post.jade
 ---

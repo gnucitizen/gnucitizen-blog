@@ -1,6 +1,6 @@
 ---
 title: Agile Hacking - A Homegrown Telnet-based Portscanner
-author: adrian-pastor
+author: pagvac
 date: Sun, 11 May 2008 06:21:29 GMT
 template: post.jade
 category: fucked

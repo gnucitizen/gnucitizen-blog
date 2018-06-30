@@ -1,6 +1,6 @@
 ---
 title: Viva La Defcon!
-author: adrian-pastor
+author: pagvac
 date: Wed, 13 Aug 2008 06:19:42 GMT
 template: post.jade
 category: fucked

@@ -1,6 +1,6 @@
 ---
 title: Frame Injection Fun
-author: adrian-pastor
+author: pagvac
 date: Fri, 10 Oct 2008 00:01:28 GMT
 template: post.jade
 category: fucked

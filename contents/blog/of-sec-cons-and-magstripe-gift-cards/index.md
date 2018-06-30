@@ -1,6 +1,6 @@
 ---
 title: Of Sec Cons and Magstripe Gift Cards
-author: adrian-pastor
+author: pagvac
 date: Wed, 22 Jul 2009 09:53:54 GMT
 template: post.jade
 ---

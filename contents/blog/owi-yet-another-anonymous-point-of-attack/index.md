@@ -1,6 +1,6 @@
 ---
 title: OWI - Yet Another Anonymous Point Of Attack
-author: adrian-pastor
+author: pagvac
 date: Fri, 04 Jul 2008 09:35:41 GMT
 template: post.jade
 ---

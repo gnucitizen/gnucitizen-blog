@@ -1,6 +1,6 @@
 ---
 title: Exploring The UNKNOWN Scanning The Internet Via SNMP
-author: adrian-pastor
+author: pagvac
 date: Mon, 03 Mar 2008 16:51:32 GMT
 template: post.jade
 category: fucked

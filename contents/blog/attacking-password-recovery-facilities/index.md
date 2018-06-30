@@ -1,6 +1,6 @@
 ---
 title: Attacking Password Recovery Facilities
-author: adrian-pastor
+author: pagvac
 date: Fri, 06 Jul 2007 08:54:44 GMT
 template: post.jade
 ---
