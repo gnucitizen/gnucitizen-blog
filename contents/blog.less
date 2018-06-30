@@ -30,8 +30,31 @@ a {
     color: #ffffff;
 }
 
-#header, #content, #footer {
+#header, #content, #footer, #topnav {
     margin: 0px 20px 0px 20px;
+}
+
+#topnav {
+    ul {
+        list-style-type: none;
+
+        margin: 0px 0px 20px 0px;
+        padding: 0px;
+
+        li {
+            display: inline-block;
+
+            &:not(:last-child):after {
+                content: "/";
+
+                margin: 0px 5px 0px 5px;
+            }
+        }
+    }
+}
+
+#footer {
+    margin: 20px 20px 0px 20px;
 }
 
 #index {

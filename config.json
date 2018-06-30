@@ -1,6 +1,13 @@
 {
   "locals": {
-    "siteUrl": "https://www.gnucitizen.org"
+    "siteUrl": "https://www.gnucitizen.org",
+
+    "topNav": {
+      "Home": "/",
+      "Blob": "/blog",
+      "Projects": "/projects",
+      "About": "/about"
+    }
   },
 
   "plugins": [
