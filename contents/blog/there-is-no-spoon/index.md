@@ -1,6 +1,6 @@
 ---
 title: There Is No Spoon
-author: petko-d-petkov
+author: pdp
 guest: paul-asadoorian
 date: Mon, 21 Apr 2008 10:22:11 GMT
 template: post.jade

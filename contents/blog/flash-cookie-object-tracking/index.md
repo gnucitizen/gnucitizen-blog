@@ -1,6 +1,6 @@
 ---
 title: Flash Cookie Object Tracking
-author: petko-d-petkov
+author: pdp
 date: Thu, 06 Dec 2007 14:44:26 GMT
 template: post.jade
 category: fucked

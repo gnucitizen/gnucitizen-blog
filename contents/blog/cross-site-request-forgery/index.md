@@ -1,6 +1,6 @@
 ---
 title: Cross-site Request Forgery
-author: petko-d-petkov
+author: pdp
 date: Mon, 04 Dec 2006 07:32:39 GMT
 template: post.jade
 ---

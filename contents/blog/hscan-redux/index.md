@@ -1,6 +1,6 @@
 ---
 title: HScan Redux
-author: petko-d-petkov
+author: pdp
 date: Fri, 23 Feb 2007 12:28:43 GMT
 template: post.jade
 ---

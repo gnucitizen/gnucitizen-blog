@@ -1,6 +1,6 @@
 ---
 title: The Value Of Automated Security Tests
-author: petko-d-petkov
+author: pdp
 date: Tue, 04 Dec 2007 21:28:16 GMT
 template: post.jade
 ---

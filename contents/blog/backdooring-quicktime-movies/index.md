@@ -1,6 +1,6 @@
 ---
 title: Backdooring QuickTime Movies
-author: petko-d-petkov
+author: pdp
 date: Tue, 05 Sep 2006 22:51:33 GMT
 template: post.jade
 category: fucked

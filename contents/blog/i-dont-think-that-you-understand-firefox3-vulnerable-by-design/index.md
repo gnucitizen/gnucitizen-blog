@@ -1,6 +1,6 @@
 ---
 title: I don't think that you understand! - Firefox3 Vulnerable by Design
-author: petko-d-petkov
+author: pdp
 date: Sat, 25 Aug 2007 19:35:40 GMT
 template: post.jade
 ---

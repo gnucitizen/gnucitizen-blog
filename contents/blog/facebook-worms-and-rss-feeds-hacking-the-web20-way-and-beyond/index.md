@@ -1,6 +1,6 @@
 ---
 title: Facebook, Worms and RSS Feeds - Hacking The Web2.0 Way and Beyond
-author: petko-d-petkov
+author: pdp
 date: Wed, 29 Oct 2008 09:36:34 GMT
 template: post.jade
 ---

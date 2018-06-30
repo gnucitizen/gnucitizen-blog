@@ -1,6 +1,6 @@
 ---
 title: Hacking without 0days Drive-by Java
-author: petko-d-petkov
+author: pdp
 date: Thu, 25 Oct 2007 16:13:36 GMT
 template: post.jade
 ---

@@ -1,6 +1,6 @@
 ---
 title: Black Hat Las Vegas Baby
-author: petko-d-petkov
+author: pdp
 date: Wed, 30 Jul 2008 13:49:53 GMT
 template: post.jade
 ---

@@ -1,6 +1,6 @@
 ---
 title: WP Blogsecurify
-author: petko-d-petkov
+author: pdp
 date: Sun, 26 Oct 2008 08:09:04 GMT
 template: post.jade
 ---

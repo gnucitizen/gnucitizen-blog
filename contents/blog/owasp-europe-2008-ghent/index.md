@@ -1,6 +1,6 @@
 ---
 title: OWASP Europe 2008 Ghent
-author: petko-d-petkov
+author: pdp
 date: Sat, 21 Jun 2008 09:40:56 GMT
 template: post.jade
 ---

@@ -1,6 +1,6 @@
 ---
 title: Social Networks Mayhem
-author: petko-d-petkov
+author: pdp
 date: Mon, 30 Apr 2007 14:27:20 GMT
 template: post.jade
 ---

@@ -1,6 +1,6 @@
 ---
 title: Landing Securls.com
-author: petko-d-petkov
+author: pdp
 date: Sat, 30 Jun 2007 09:25:11 GMT
 template: post.jade
 ---

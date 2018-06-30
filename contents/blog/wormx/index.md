@@ -1,6 +1,6 @@
 ---
 title: WormX
-author: petko-d-petkov
+author: pdp
 date: Mon, 22 Jan 2007 23:01:33 GMT
 template: post.jade
 ---

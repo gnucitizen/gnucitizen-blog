@@ -1,6 +1,6 @@
 ---
 title: Remote Desktop Command Fixation Attacks
-author: petko-d-petkov
+author: pdp
 date: Wed, 10 Oct 2007 11:00:42 GMT
 template: post.jade
 ---

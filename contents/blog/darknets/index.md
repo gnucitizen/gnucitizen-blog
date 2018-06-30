@@ -1,6 +1,6 @@
 ---
 title: Darknets
-author: petko-d-petkov
+author: pdp
 date: Fri, 04 Apr 2008 08:44:00 GMT
 template: post.jade
 ---

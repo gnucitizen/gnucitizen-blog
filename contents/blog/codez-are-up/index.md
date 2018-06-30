@@ -1,6 +1,6 @@
 ---
 title: Codez Are Up
-author: petko-d-petkov
+author: pdp
 date: Wed, 11 Mar 2009 14:18:54 GMT
 template: post.jade
 ---

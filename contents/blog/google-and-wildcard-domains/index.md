@@ -1,6 +1,6 @@
 ---
 title: Google and Wildcard Domains
-author: petko-d-petkov
+author: pdp
 date: Mon, 23 Jun 2008 09:38:59 GMT
 template: post.jade
 ---

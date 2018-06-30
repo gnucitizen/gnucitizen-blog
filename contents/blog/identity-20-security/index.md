@@ -1,6 +1,6 @@
 ---
 title: Identity 2.0 Security
-author: petko-d-petkov
+author: pdp
 date: Sat, 18 Aug 2007 07:41:22 GMT
 template: post.jade
 ---

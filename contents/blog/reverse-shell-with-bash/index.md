@@ -1,6 +1,6 @@
 ---
 title: Reverse Shell with Bash
-author: petko-d-petkov
+author: pdp
 date: Sat, 19 Apr 2008 11:03:39 GMT
 template: post.jade
 ---

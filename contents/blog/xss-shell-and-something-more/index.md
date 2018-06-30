@@ -1,6 +1,6 @@
 ---
 title: XSS Shell and Something More
-author: petko-d-petkov
+author: pdp
 date: Sat, 04 Nov 2006 08:15:22 GMT
 template: post.jade
 ---

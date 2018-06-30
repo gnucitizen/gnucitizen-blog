@@ -1,6 +1,6 @@
 ---
 title: Hamster Plus Hotspot Equals Web 2.0 Meltdown NOT
-author: petko-d-petkov
+author: pdp
 date: Wed, 15 Aug 2007 09:28:40 GMT
 template: post.jade
 ---

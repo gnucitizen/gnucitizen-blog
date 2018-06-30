@@ -1,6 +1,6 @@
 ---
 title: Compliance
-author: petko-d-petkov
+author: pdp
 date: Thu, 09 Oct 2008 12:51:30 GMT
 template: post.jade
 ---

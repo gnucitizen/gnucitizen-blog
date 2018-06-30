@@ -1,6 +1,6 @@
 ---
 title: Backdooring MP3 Files
-author: petko-d-petkov
+author: pdp
 date: Wed, 20 Sep 2006 21:39:18 GMT
 template: post.jade
 ---

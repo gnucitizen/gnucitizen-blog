@@ -1,6 +1,6 @@
 ---
 title: Free Web Application Security Testing Tool
-author: petko-d-petkov
+author: pdp
 date: Fri, 07 Aug 2009 08:02:38 GMT
 template: post.jade
 ---

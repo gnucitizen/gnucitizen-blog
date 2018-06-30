@@ -1,6 +1,6 @@
 ---
 title: Router Hacking Challenge
-author: petko-d-petkov
+author: pdp
 date: Sun, 03 Feb 2008 16:15:28 GMT
 template: post.jade
 ---

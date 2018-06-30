@@ -1,6 +1,6 @@
 ---
 title: HITB Dubai 2008
-author: petko-d-petkov
+author: pdp
 date: Thu, 24 Apr 2008 14:23:38 GMT
 template: post.jade
 ---

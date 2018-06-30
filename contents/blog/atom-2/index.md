@@ -1,6 +1,6 @@
 ---
 title: Atom Database
-author: petko-d-petkov
+author: pdp
 date: Sat, 20 Jan 2007 10:12:19 GMT
 template: post.jade
 category: fucked

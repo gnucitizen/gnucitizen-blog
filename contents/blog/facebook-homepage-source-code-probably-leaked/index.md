@@ -1,6 +1,6 @@
 ---
 title: Facebook Homepage Source Code Probably Leaked
-author: petko-d-petkov
+author: pdp
 date: Sun, 12 Aug 2007 08:13:28 GMT
 template: post.jade
 ---

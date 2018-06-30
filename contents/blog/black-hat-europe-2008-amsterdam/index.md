@@ -1,6 +1,6 @@
 ---
 title: Black Hat Europe 2008 Amsterdam
-author: petko-d-petkov
+author: pdp
 date: Tue, 25 Mar 2008 16:17:51 GMT
 template: post.jade
 ---

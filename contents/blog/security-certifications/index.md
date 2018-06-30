@@ -1,6 +1,6 @@
 ---
 title: Security Certifications
-author: petko-d-petkov
+author: pdp
 date: Mon, 06 Oct 2008 16:33:37 GMT
 template: post.jade
 ---

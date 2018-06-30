@@ -1,6 +1,6 @@
 ---
 title: Security Common Sense
-author: petko-d-petkov
+author: pdp
 date: Tue, 18 Dec 2007 15:53:23 GMT
 template: post.jade
 ---

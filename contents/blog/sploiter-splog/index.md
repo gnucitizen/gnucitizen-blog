@@ -1,6 +1,6 @@
 ---
 title: Sploiter Splog
-author: petko-d-petkov
+author: pdp
 date: Sat, 18 Nov 2006 07:04:25 GMT
 template: post.jade
 ---

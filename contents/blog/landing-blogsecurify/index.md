@@ -1,6 +1,6 @@
 ---
 title: Landing Blogsecurify
-author: petko-d-petkov
+author: pdp
 date: Thu, 26 Jun 2008 08:45:30 GMT
 template: post.jade
 ---

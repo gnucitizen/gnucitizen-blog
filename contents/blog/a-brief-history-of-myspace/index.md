@@ -1,6 +1,6 @@
 ---
 title: A Brief History of MySpace
-author: petko-d-petkov
+author: pdp
 date: Fri, 22 Jun 2007 21:23:17 GMT
 template: post.jade
 ---

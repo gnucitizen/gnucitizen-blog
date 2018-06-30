@@ -1,6 +1,6 @@
 ---
 title: Black Hat Europe 2008
-author: petko-d-petkov
+author: pdp
 date: Tue, 22 Apr 2008 15:11:48 GMT
 template: post.jade
 ---

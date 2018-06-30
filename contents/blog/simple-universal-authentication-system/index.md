@@ -1,6 +1,6 @@
 ---
 title: Simple Universal Authentication System
-author: petko-d-petkov
+author: pdp
 date: Wed, 24 Sep 2008 20:29:21 GMT
 template: post.jade
 ---

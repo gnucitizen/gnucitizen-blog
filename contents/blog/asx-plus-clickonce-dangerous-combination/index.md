@@ -1,6 +1,6 @@
 ---
 title: ASX Plus ClickOnce - Dangerous Combination
-author: petko-d-petkov
+author: pdp
 date: Mon, 05 Nov 2007 12:52:02 GMT
 template: post.jade
 ---

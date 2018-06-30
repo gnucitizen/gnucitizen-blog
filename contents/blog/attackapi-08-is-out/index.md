@@ -1,6 +1,6 @@
 ---
 title: AttackAPI 0.8 is OUT
-author: petko-d-petkov
+author: pdp
 date: Mon, 16 Oct 2006 04:39:05 GMT
 template: post.jade
 ---

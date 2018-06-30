@@ -1,6 +1,6 @@
 ---
 title: Web Pages from Hell
-author: petko-d-petkov
+author: pdp
 date: Mon, 11 Sep 2006 21:23:31 GMT
 template: post.jade
 ---

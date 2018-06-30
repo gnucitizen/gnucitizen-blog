@@ -1,6 +1,6 @@
 ---
 title: Hijacking OpenID Enabled Accounts
-author: petko-d-petkov
+author: pdp
 date: Sun, 03 Feb 2008 16:08:49 GMT
 template: post.jade
 ---

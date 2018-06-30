@@ -1,6 +1,6 @@
 ---
 title: Bulletproof Rich-content Filters
-author: petko-d-petkov
+author: pdp
 date: Tue, 18 Dec 2007 11:13:28 GMT
 template: post.jade
 ---

@@ -1,6 +1,6 @@
 ---
 title: The Public Perception of the Image of Hackers
-author: petko-d-petkov
+author: pdp
 date: Mon, 05 May 2008 23:11:05 GMT
 template: post.jade
 ---

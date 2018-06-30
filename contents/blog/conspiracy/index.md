@@ -1,6 +1,6 @@
 ---
 title: Conspiracy
-author: petko-d-petkov
+author: pdp
 date: Wed, 07 May 2008 23:14:47 GMT
 template: post.jade
 ---

@@ -1,6 +1,6 @@
 ---
 title: Social Media Security
-author: petko-d-petkov
+author: pdp
 date: Mon, 22 Sep 2008 10:57:46 GMT
 template: post.jade
 ---

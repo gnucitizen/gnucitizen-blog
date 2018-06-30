@@ -1,6 +1,6 @@
 ---
 title: JavaScript Attack Channel
-author: petko-d-petkov
+author: pdp
 date: Mon, 02 Oct 2006 04:14:57 GMT
 template: post.jade
 ---

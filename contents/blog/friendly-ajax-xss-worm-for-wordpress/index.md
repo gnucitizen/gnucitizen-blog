@@ -1,6 +1,6 @@
 ---
 title: Friendly AJAX XSS Worm For Wordpress
-author: petko-d-petkov
+author: pdp
 date: Tue, 31 Jul 2007 22:30:04 GMT
 template: post.jade
 ---

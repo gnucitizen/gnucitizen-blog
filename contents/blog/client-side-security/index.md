@@ -1,6 +1,6 @@
 ---
 title: Client-side Security
-author: petko-d-petkov
+author: pdp
 date: Mon, 11 Jun 2007 17:11:36 GMT
 template: post.jade
 ---

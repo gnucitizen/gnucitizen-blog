@@ -1,6 +1,6 @@
 ---
 title: Professional Soldier
-author: petko-d-petkov
+author: pdp
 date: Wed, 23 Jul 2008 15:44:48 GMT
 template: post.jade
 ---

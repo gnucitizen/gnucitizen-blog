@@ -1,6 +1,6 @@
 ---
 title: OWASP
-author: petko-d-petkov
+author: pdp
 guest: dinis-cruz
 date: Tue, 06 Mar 2007 16:33:51 GMT
 template: post.jade

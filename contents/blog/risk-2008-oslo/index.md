@@ -1,6 +1,6 @@
 ---
 title: RISK 2008 Oslo
-author: petko-d-petkov
+author: pdp
 date: Sat, 21 Jun 2008 09:21:35 GMT
 template: post.jade
 ---

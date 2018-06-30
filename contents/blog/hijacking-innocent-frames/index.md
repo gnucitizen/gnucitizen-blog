@@ -1,6 +1,6 @@
 ---
 title: Hijacking Innocent Frames
-author: petko-d-petkov
+author: pdp
 date: Thu, 11 Dec 2008 21:39:16 GMT
 template: post.jade
 ---

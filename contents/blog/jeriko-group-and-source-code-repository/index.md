@@ -1,6 +1,6 @@
 ---
 title: Jeriko Group and Source Code Repository
-author: petko-d-petkov
+author: pdp
 date: Tue, 28 Apr 2009 06:50:39 GMT
 template: post.jade
 ---

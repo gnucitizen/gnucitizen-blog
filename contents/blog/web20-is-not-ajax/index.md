@@ -1,6 +1,6 @@
 ---
 title: Web2.0 is not AJAX
-author: petko-d-petkov
+author: pdp
 date: Thu, 09 Aug 2007 09:57:42 GMT
 template: post.jade
 ---

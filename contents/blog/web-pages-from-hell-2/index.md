@@ -1,6 +1,6 @@
 ---
 title: Web Pages from Hell 2
-author: petko-d-petkov
+author: pdp
 guest: adrian-pastor
 date: Wed, 15 Nov 2006 02:39:52 GMT
 template: post.jade

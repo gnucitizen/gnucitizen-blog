@@ -1,6 +1,6 @@
 ---
 title: Target Profiling with Windows
-author: petko-d-petkov
+author: pdp
 date: Mon, 07 Apr 2008 16:28:40 GMT
 template: post.jade
 ---

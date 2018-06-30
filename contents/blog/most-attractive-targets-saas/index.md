@@ -1,6 +1,6 @@
 ---
 title: Most Attractive Targets SaaS
-author: petko-d-petkov
+author: pdp
 date: Wed, 18 Jun 2008 10:42:40 GMT
 template: post.jade
 ---

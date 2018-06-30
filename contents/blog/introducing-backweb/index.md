@@ -1,6 +1,6 @@
 ---
 title: Introducing Backweb
-author: petko-d-petkov
+author: pdp
 date: Mon, 30 Oct 2006 09:36:42 GMT
 template: post.jade
 ---

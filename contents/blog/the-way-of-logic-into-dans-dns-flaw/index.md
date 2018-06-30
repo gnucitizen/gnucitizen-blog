@@ -1,6 +1,6 @@
 ---
 title: The Way of Logic into Dan's DNS Flaw
-author: petko-d-petkov
+author: pdp
 date: Thu, 17 Jul 2008 10:49:37 GMT
 template: post.jade
 ---

@@ -1,6 +1,6 @@
 ---
 title: Noscript HScan
-author: petko-d-petkov
+author: pdp
 date: Wed, 28 Feb 2007 22:57:00 GMT
 template: post.jade
 category: fucked

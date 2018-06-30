@@ -1,6 +1,6 @@
 ---
 title: Mozilla Prism Not There Yet
-author: petko-d-petkov
+author: pdp
 date: Tue, 30 Oct 2007 16:53:25 GMT
 template: post.jade
 ---

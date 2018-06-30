@@ -1,6 +1,6 @@
 ---
 title: Clouds and The Distorted Notion of Direct Control
-author: petko-d-petkov
+author: pdp
 date: Wed, 27 Aug 2008 09:38:20 GMT
 template: post.jade
 ---

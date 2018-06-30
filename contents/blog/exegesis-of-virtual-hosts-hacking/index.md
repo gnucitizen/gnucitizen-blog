@@ -1,6 +1,6 @@
 ---
 title: Exegesis of Virtual Hosts Hacking
-author: petko-d-petkov
+author: pdp
 date: Thu, 06 Apr 2006 22:45:00 GMT
 template: post.jade
 ---

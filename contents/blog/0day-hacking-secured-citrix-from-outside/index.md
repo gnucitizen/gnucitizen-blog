@@ -1,6 +1,6 @@
 ---
 title: 0day Hacking Secured CITRIX From Outside
-author: petko-d-petkov
+author: pdp
 date: Wed, 10 Oct 2007 15:40:34 GMT
 template: post.jade
 ---

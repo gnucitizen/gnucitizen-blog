@@ -1,6 +1,6 @@
 ---
 title: You and Your Research
-author: petko-d-petkov
+author: pdp
 date: Wed, 05 Dec 2012 00:40:04 GMT
 template: post.jade
 ---

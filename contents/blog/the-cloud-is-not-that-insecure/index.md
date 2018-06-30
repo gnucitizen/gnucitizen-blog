@@ -1,6 +1,6 @@
 ---
 title: The Cloud Is Not That Insecure
-author: petko-d-petkov
+author: pdp
 date: Fri, 21 Nov 2008 15:06:01 GMT
 template: post.jade
 ---

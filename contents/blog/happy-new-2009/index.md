@@ -1,6 +1,6 @@
 ---
 title: Happy New 2009
-author: petko-d-petkov
+author: pdp
 date: Thu, 01 Jan 2009 11:15:58 GMT
 template: post.jade
 ---

@@ -1,6 +1,6 @@
 ---
 title: CONFidence 2008
-author: petko-d-petkov
+author: pdp
 date: Tue, 20 May 2008 09:03:33 GMT
 template: post.jade
 ---

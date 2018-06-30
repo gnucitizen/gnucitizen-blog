@@ -1,6 +1,6 @@
 ---
 title: Even More XSS Worms
-author: petko-d-petkov
+author: pdp
 date: Sun, 12 Apr 2009 08:29:41 GMT
 template: post.jade
 ---

@@ -1,6 +1,6 @@
 ---
 title: JavaScript Global Namespace Pollution
-author: petko-d-petkov
+author: pdp
 date: Thu, 07 Feb 2008 10:11:56 GMT
 template: post.jade
 ---

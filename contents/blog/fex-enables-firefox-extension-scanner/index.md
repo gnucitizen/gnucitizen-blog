@@ -1,6 +1,6 @@
 ---
 title: Fex - Enables Firefox Extension Scanner
-author: petko-d-petkov
+author: pdp
 date: Fri, 25 Aug 2006 09:35:18 GMT
 template: post.jade
 ---

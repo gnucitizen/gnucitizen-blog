@@ -1,6 +1,6 @@
 ---
 title: Pareto Principle In The Informtion Security Industry
-author: petko-d-petkov
+author: pdp
 date: Mon, 28 Jul 2008 13:26:13 GMT
 template: post.jade
 ---

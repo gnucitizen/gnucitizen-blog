@@ -1,6 +1,6 @@
 ---
 title: MPack - The Movie
-author: petko-d-petkov
+author: pdp
 date: Fri, 22 Jun 2007 10:22:48 GMT
 template: post.jade
 ---

@@ -1,6 +1,6 @@
 ---
 title: Technika
-author: petko-d-petkov
+author: pdp
 date: Wed, 31 Jan 2007 22:37:26 GMT
 template: post.jade
 ---

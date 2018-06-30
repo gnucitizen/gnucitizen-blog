@@ -1,6 +1,6 @@
 ---
 title: Backdooring Web Pages
-author: petko-d-petkov
+author: pdp
 date: Mon, 28 Aug 2006 11:09:08 GMT
 template: post.jade
 category: fucked

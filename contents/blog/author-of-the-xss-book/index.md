@@ -1,6 +1,6 @@
 ---
 title: Author of the XSS Book
-author: petko-d-petkov
+author: pdp
 date: Fri, 16 Feb 2007 23:19:40 GMT
 template: post.jade
 ---

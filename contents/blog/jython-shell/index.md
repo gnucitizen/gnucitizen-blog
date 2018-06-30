@@ -1,6 +1,6 @@
 ---
 title: Jython Shell
-author: petko-d-petkov
+author: pdp
 date: Sun, 25 Jun 2006 19:22:55 GMT
 template: post.jade
 ---

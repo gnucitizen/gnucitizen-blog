@@ -1,6 +1,6 @@
 ---
 title: How To Write AJAX Worms - Theoretical Point Of View
-author: petko-d-petkov
+author: pdp
 date: Sun, 07 Jan 2007 14:26:26 GMT
 template: post.jade
 ---

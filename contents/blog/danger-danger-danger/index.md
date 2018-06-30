@@ -1,6 +1,6 @@
 ---
 title: DANGER, DANGER, DANGER
-author: petko-d-petkov
+author: pdp
 date: Wed, 03 Jan 2007 01:10:32 GMT
 template: post.jade
 category: fucked

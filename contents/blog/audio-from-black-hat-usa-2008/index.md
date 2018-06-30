@@ -1,6 +1,6 @@
 ---
 title: Audio From Black Hat USA 2008
-author: petko-d-petkov
+author: pdp
 date: Wed, 17 Sep 2008 09:50:16 GMT
 template: post.jade
 ---

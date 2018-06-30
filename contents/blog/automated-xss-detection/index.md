@@ -1,6 +1,6 @@
 ---
 title: Automated XSS Detection
-author: petko-d-petkov
+author: pdp
 date: Mon, 06 Nov 2006 01:42:47 GMT
 template: post.jade
 ---

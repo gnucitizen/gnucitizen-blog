@@ -1,6 +1,6 @@
 ---
 title: 0day PDF pwns Windows
-author: petko-d-petkov
+author: pdp
 date: Thu, 20 Sep 2007 13:03:33 GMT
 template: post.jade
 ---

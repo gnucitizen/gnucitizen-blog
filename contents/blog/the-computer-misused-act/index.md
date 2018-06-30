@@ -1,6 +1,6 @@
 ---
 title: The Computer Misused Act
-author: petko-d-petkov
+author: pdp
 date: Tue, 01 Apr 2008 19:37:46 GMT
 template: post.jade
 ---

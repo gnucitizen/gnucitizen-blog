@@ -1,6 +1,6 @@
 ---
 title: The State Of WiFi Security
-author: petko-d-petkov
+author: pdp
 date: Fri, 21 Mar 2008 07:10:23 GMT
 template: post.jade
 ---

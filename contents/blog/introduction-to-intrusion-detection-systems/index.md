@@ -1,6 +1,6 @@
 ---
 title: Introduction To Intrusion Detection Systems
-author: petko-d-petkov
+author: pdp
 date: Sat, 03 Jun 2006 09:33:31 GMT
 template: post.jade
 ---

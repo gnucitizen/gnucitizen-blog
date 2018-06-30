@@ -1,6 +1,6 @@
 ---
 title: Firefox Could Also Be Used As The Entry Point
-author: petko-d-petkov
+author: pdp
 date: Tue, 24 Jul 2007 08:11:45 GMT
 template: post.jade
 ---

@@ -1,6 +1,6 @@
 ---
 title: Targeted
-author: petko-d-petkov
+author: pdp
 date: Tue, 12 Aug 2008 22:21:34 GMT
 template: post.jade
 ---

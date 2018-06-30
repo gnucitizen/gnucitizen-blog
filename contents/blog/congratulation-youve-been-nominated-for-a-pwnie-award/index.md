@@ -1,6 +1,6 @@
 ---
 title: Congratulation! You've been nominated for a Pwnie Award.
-author: petko-d-petkov
+author: pdp
 date: Wed, 01 Aug 2007 08:36:05 GMT
 template: post.jade
 ---

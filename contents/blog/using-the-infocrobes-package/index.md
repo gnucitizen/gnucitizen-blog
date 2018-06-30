@@ -1,6 +1,6 @@
 ---
 title: Using The Infocrobes Package
-author: petko-d-petkov
+author: pdp
 date: Tue, 06 Jun 2006 10:00:01 GMT
 template: post.jade
 ---

@@ -1,6 +1,6 @@
 ---
 title: Bring Back the Attack to the API
-author: petko-d-petkov
+author: pdp
 date: Mon, 24 Nov 2008 11:56:23 GMT
 template: post.jade
 ---

@@ -1,6 +1,6 @@
 ---
 title: Google Search API Worms 3
-author: petko-d-petkov
+author: pdp
 date: Thu, 05 Oct 2006 02:05:51 GMT
 template: post.jade
 ---

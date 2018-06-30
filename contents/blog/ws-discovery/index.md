@@ -1,6 +1,6 @@
 ---
 title: WS Discovery
-author: petko-d-petkov
+author: pdp
 date: Tue, 06 Jun 2006 08:45:42 GMT
 template: post.jade
 ---

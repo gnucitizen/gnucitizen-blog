@@ -1,6 +1,6 @@
 ---
 title: On Security Buzzwords
-author: petko-d-petkov
+author: pdp
 date: Fri, 03 Apr 2009 09:36:08 GMT
 template: post.jade
 ---

@@ -1,6 +1,6 @@
 ---
 title: Identity Theft Attacks
-author: petko-d-petkov
+author: pdp
 date: Sat, 07 Feb 2009 13:19:09 GMT
 template: post.jade
 ---

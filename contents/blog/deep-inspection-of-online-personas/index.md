@@ -1,6 +1,6 @@
 ---
 title: Deep Inspection of Online Personas
-author: petko-d-petkov
+author: pdp
 date: Thu, 29 Jan 2009 18:17:49 GMT
 template: post.jade
 ---

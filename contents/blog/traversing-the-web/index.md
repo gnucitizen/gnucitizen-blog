@@ -1,6 +1,6 @@
 ---
 title: Traversing the Web
-author: petko-d-petkov
+author: pdp
 date: Tue, 10 Oct 2006 06:48:09 GMT
 template: post.jade
 ---

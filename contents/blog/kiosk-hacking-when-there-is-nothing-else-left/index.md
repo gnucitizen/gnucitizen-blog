@@ -1,6 +1,6 @@
 ---
 title: Kiosk Hacking When there is nothing else left
-author: petko-d-petkov
+author: pdp
 date: Mon, 07 Apr 2008 10:31:15 GMT
 template: post.jade
 ---

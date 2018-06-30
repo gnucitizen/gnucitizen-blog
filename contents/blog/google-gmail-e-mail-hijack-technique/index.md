@@ -1,6 +1,6 @@
 ---
 title: Google GMail E-mail Hijack Technique
-author: petko-d-petkov
+author: pdp
 date: Tue, 25 Sep 2007 18:50:33 GMT
 template: post.jade
 ---

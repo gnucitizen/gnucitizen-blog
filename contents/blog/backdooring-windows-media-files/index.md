@@ -1,6 +1,6 @@
 ---
 title: Backdooring Windows Media Files
-author: petko-d-petkov
+author: pdp
 date: Tue, 18 Sep 2007 12:51:31 GMT
 template: post.jade
 ---

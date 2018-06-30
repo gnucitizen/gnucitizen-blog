@@ -1,6 +1,6 @@
 ---
 title: Big Fish
-author: petko-d-petkov
+author: pdp
 date: Tue, 03 Apr 2007 13:01:10 GMT
 template: post.jade
 ---

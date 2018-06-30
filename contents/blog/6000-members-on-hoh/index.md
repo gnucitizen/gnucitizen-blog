@@ -1,6 +1,6 @@
 ---
 title: 6000 Members on HoH
-author: petko-d-petkov
+author: pdp
 date: Mon, 24 Nov 2008 10:56:37 GMT
 template: post.jade
 ---

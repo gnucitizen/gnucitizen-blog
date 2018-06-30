@@ -1,6 +1,6 @@
 ---
 title: Script Kiddies
-author: petko-d-petkov
+author: pdp
 date: Sat, 25 Oct 2008 09:22:50 GMT
 template: post.jade
 ---

@@ -1,6 +1,6 @@
 ---
 title: Trapping HTTP Requests and Responses with Python
-author: petko-d-petkov
+author: pdp
 date: Wed, 18 Feb 2009 11:52:34 GMT
 template: post.jade
 ---

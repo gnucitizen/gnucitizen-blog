@@ -1,6 +1,6 @@
 ---
 title: 0DAY QuickTime pwns Firefox
-author: petko-d-petkov
+author: pdp
 date: Wed, 12 Sep 2007 12:05:53 GMT
 template: post.jade
 category: fucked

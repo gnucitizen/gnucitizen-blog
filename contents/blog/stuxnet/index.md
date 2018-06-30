@@ -1,6 +1,6 @@
 ---
 title: Stuxnet
-author: petko-d-petkov
+author: pdp
 date: Mon, 13 Jun 2011 15:21:37 GMT
 template: post.jade
 ---

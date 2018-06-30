@@ -1,6 +1,6 @@
 ---
 title: All Your Metadata Are Belong To Us
-author: petko-d-petkov
+author: pdp
 date: Fri, 04 Jan 2008 08:15:22 GMT
 template: post.jade
 ---

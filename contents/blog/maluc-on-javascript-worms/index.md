@@ -1,6 +1,6 @@
 ---
 title: Maluc on JavaScript Worms
-author: petko-d-petkov
+author: pdp
 date: Tue, 10 Oct 2006 01:51:16 GMT
 template: post.jade
 ---

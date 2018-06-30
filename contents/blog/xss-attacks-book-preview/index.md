@@ -1,6 +1,6 @@
 ---
 title: XSS Attacks Book Preview
-author: petko-d-petkov
+author: pdp
 date: Wed, 25 Apr 2007 10:20:26 GMT
 template: post.jade
 ---

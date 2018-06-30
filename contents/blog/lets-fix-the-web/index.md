@@ -1,6 +1,6 @@
 ---
 title: Let's Fix The Web
-author: petko-d-petkov
+author: pdp
 date: Sun, 31 Aug 2008 08:12:25 GMT
 template: post.jade
 ---

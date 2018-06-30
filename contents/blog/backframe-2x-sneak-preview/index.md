@@ -1,6 +1,6 @@
 ---
 title: Backframe 2.x Sneak Preview
-author: petko-d-petkov
+author: pdp
 date: Wed, 13 Dec 2006 08:42:08 GMT
 template: post.jade
 ---

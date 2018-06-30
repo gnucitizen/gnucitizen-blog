@@ -1,6 +1,6 @@
 ---
 title: Hacking The Interwebs
-author: petko-d-petkov
+author: pdp
 date: Sat, 12 Jan 2008 12:57:22 GMT
 template: post.jade
 category: fucked

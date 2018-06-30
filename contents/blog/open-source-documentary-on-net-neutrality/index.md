@@ -1,6 +1,6 @@
 ---
 title: Open Source Documentary on Net Neutrality
-author: petko-d-petkov
+author: pdp
 date: Tue, 26 Jun 2007 21:33:04 GMT
 template: post.jade
 ---

@@ -1,6 +1,6 @@
 ---
 title: Self-contained XSS Attacks
-author: petko-d-petkov
+author: pdp
 date: Fri, 22 Sep 2006 11:52:17 GMT
 template: post.jade
 category: fucked

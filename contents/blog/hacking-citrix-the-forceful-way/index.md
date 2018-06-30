@@ -1,6 +1,6 @@
 ---
 title: Hacking CITRIX - the forceful way
-author: petko-d-petkov
+author: pdp
 date: Fri, 05 Oct 2007 15:39:03 GMT
 template: post.jade
 ---

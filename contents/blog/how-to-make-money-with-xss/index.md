@@ -1,6 +1,6 @@
 ---
 title: How To Make Money With XSS
-author: petko-d-petkov
+author: pdp
 date: Mon, 10 Sep 2007 15:27:59 GMT
 template: post.jade
 ---

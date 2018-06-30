@@ -1,6 +1,6 @@
 ---
 title: Vulnerabilities in Skype
-author: petko-d-petkov
+author: pdp
 date: Thu, 17 Jan 2008 21:03:04 GMT
 template: post.jade
 ---

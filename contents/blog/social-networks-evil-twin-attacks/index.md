@@ -1,6 +1,6 @@
 ---
 title: Social Networks Evil Twin Attacks
-author: petko-d-petkov
+author: pdp
 date: Mon, 18 Feb 2008 21:01:42 GMT
 template: post.jade
 ---

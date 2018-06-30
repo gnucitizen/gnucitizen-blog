@@ -1,6 +1,6 @@
 ---
 title: Well Websecurify Runs on The iPhone
-author: petko-d-petkov
+author: pdp
 date: Thu, 04 Aug 2011 16:27:04 GMT
 template: post.jade
 ---

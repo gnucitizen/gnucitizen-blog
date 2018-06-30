@@ -1,6 +1,6 @@
 ---
 title: Name (mDNS) Poisoning Attacks Inside The LAN
-author: petko-d-petkov
+author: pdp
 date: Wed, 23 Jan 2008 16:15:29 GMT
 template: post.jade
 ---

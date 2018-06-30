@@ -1,6 +1,6 @@
 ---
 title: QuickTime 0day for Vista and XP
-author: petko-d-petkov
+author: pdp
 date: Fri, 25 Apr 2008 17:57:42 GMT
 template: post.jade
 ---

@@ -1,6 +1,6 @@
 ---
 title: Strategic Hacking GEOIP
-author: petko-d-petkov
+author: pdp
 date: Fri, 12 Oct 2007 10:52:56 GMT
 template: post.jade
 ---

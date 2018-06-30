@@ -1,6 +1,6 @@
 ---
 title: Hacking with UPnP (Universal Plug and Play)
-author: petko-d-petkov
+author: pdp
 date: Thu, 10 Jan 2008 11:45:44 GMT
 template: post.jade
 ---

@@ -1,6 +1,6 @@
 ---
 title: WSDL Digest 200606
-author: petko-d-petkov
+author: pdp
 date: Fri, 30 Jun 2006 09:39:58 GMT
 template: post.jade
 ---

@@ -1,6 +1,6 @@
 ---
 title: Why HttpOnly Won't Protect You
-author: petko-d-petkov
+author: pdp
 date: Thu, 12 Apr 2007 08:27:07 GMT
 template: post.jade
 ---

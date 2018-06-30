@@ -1,6 +1,6 @@
 ---
 title: Java JAR Attacks and Features
-author: petko-d-petkov
+author: pdp
 date: Sat, 10 Nov 2007 22:35:33 GMT
 template: post.jade
 ---

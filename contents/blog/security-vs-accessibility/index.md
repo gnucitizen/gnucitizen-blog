@@ -1,6 +1,6 @@
 ---
 title: Security vs. Accessibility
-author: petko-d-petkov
+author: pdp
 date: Sat, 26 Aug 2006 01:19:27 GMT
 template: post.jade
 ---

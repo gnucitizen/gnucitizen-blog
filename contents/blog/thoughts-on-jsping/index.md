@@ -1,6 +1,6 @@
 ---
 title: Thoughts on JSPing
-author: petko-d-petkov
+author: pdp
 date: Mon, 09 Oct 2006 07:46:42 GMT
 template: post.jade
 ---

@@ -1,6 +1,6 @@
 ---
 title: Google Hacking for Penetration Testers Second Edition
-author: petko-d-petkov
+author: pdp
 date: Thu, 03 Jan 2008 14:26:20 GMT
 template: post.jade
 category: fucked

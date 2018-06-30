@@ -1,6 +1,6 @@
 ---
 title: Snoop Onto Them As They Snoop Onto Us
-author: petko-d-petkov
+author: pdp
 date: Sat, 21 Jul 2007 08:47:37 GMT
 template: post.jade
 ---

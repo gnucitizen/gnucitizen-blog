@@ -1,6 +1,6 @@
 ---
 title: Promo Videos
-author: petko-d-petkov
+author: pdp
 date: Tue, 20 May 2008 16:45:44 GMT
 template: post.jade
 ---

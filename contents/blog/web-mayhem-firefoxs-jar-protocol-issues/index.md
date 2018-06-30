@@ -1,6 +1,6 @@
 ---
 title: Web Mayhem Firefox's JAR Protocol issues
-author: petko-d-petkov
+author: pdp
 date: Wed, 07 Nov 2007 00:51:46 GMT
 template: post.jade
 ---

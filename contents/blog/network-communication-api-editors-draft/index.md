@@ -1,6 +1,6 @@
 ---
 title: Network Communication API Editor's Draft
-author: petko-d-petkov
+author: pdp
 date: Fri, 23 Nov 2007 11:42:56 GMT
 template: post.jade
 ---

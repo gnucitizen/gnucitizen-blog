@@ -1,6 +1,6 @@
 ---
 title: Reconsidering The Side-jacking Attack
-author: petko-d-petkov
+author: pdp
 date: Sun, 17 Feb 2008 17:11:19 GMT
 template: post.jade
 ---

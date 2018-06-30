@@ -1,6 +1,6 @@
 ---
 title: Infocrobes
-author: petko-d-petkov
+author: pdp
 date: Fri, 02 Jun 2006 10:37:39 GMT
 template: post.jade
 ---

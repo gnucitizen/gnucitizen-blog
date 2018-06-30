@@ -1,6 +1,6 @@
 ---
 title: About The Power Of Google
-author: petko-d-petkov
+author: pdp
 date: Sat, 23 Jun 2007 10:31:50 GMT
 template: post.jade
 ---

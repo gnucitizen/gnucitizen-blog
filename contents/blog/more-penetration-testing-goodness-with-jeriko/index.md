@@ -1,6 +1,6 @@
 ---
 title: More Penetration Testing Goodness with Jeriko
-author: petko-d-petkov
+author: pdp
 date: Tue, 07 Apr 2009 21:14:29 GMT
 template: post.jade
 ---

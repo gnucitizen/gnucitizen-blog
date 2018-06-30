@@ -1,6 +1,6 @@
 ---
 title: Client-side SQL Injection Attacks
-author: petko-d-petkov
+author: pdp
 date: Tue, 05 Jun 2007 21:33:36 GMT
 template: post.jade
 ---

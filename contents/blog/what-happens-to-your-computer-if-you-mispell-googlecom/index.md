@@ -1,6 +1,6 @@
 ---
 title: What Happens To Your Computer if You Mispell Google.com
-author: petko-d-petkov
+author: pdp
 date: Sun, 21 Jan 2007 11:41:44 GMT
 template: post.jade
 ---

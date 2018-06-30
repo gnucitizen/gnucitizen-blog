@@ -1,6 +1,6 @@
 ---
 title: For my next trick... hacking Web2.0
-author: petko-d-petkov
+author: pdp
 date: Fri, 31 Aug 2007 23:01:06 GMT
 template: post.jade
 ---

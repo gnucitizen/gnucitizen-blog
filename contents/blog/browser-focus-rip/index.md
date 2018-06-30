@@ -1,6 +1,6 @@
 ---
 title: Browser Focus RIP
-author: petko-d-petkov
+author: pdp
 date: Mon, 12 Feb 2007 23:59:32 GMT
 template: post.jade
 ---

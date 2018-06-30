@@ -1,6 +1,6 @@
 ---
 title: You Don't Need the Ultimate Pen-testing Framework!
-author: petko-d-petkov
+author: pdp
 date: Mon, 23 Feb 2009 12:50:02 GMT
 template: post.jade
 ---

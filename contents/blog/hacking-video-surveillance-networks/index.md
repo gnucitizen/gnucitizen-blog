@@ -1,6 +1,6 @@
 ---
 title: Hacking Video Surveillance Networks
-author: petko-d-petkov
+author: pdp
 date: Wed, 30 Jan 2008 11:05:48 GMT
 template: post.jade
 ---

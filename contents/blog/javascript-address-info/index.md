@@ -1,6 +1,6 @@
 ---
 title: JavaScript Address Info
-author: petko-d-petkov
+author: pdp
 date: Sat, 12 Aug 2006 08:26:47 GMT
 template: post.jade
 category: fucked

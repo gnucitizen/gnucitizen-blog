@@ -1,6 +1,6 @@
 ---
 title: Zero Degrees of Seperation
-author: petko-d-petkov
+author: pdp
 date: Wed, 09 May 2007 15:12:01 GMT
 template: post.jade
 ---

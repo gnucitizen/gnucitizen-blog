@@ -1,6 +1,6 @@
 ---
 title: OpenID Provides A Better Security Model
-author: petko-d-petkov
+author: pdp
 date: Mon, 24 Mar 2008 11:23:20 GMT
 template: post.jade
 ---

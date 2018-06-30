@@ -1,6 +1,6 @@
 ---
 title: AttackAPI
-author: petko-d-petkov
+author: pdp
 date: Sat, 26 Aug 2006 02:00:47 GMT
 template: post.jade
 ---

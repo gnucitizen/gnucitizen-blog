@@ -1,6 +1,6 @@
 ---
 title: Thoughts on the Certificate Authority Attack presented at CCC
-author: petko-d-petkov
+author: pdp
 date: Wed, 31 Dec 2008 11:02:05 GMT
 template: post.jade
 ---

@@ -1,6 +1,6 @@
 ---
 title: ZombieMap
-author: petko-d-petkov
+author: pdp
 date: Wed, 21 Mar 2007 11:57:38 GMT
 template: post.jade
 ---

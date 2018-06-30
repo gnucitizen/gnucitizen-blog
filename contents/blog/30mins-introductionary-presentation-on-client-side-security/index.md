@@ -1,6 +1,6 @@
 ---
 title: 30mins Introductionary Presentation On Client-side Security
-author: petko-d-petkov
+author: pdp
 date: Sun, 17 Feb 2008 11:07:31 GMT
 template: post.jade
 ---

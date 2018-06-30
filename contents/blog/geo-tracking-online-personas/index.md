@@ -1,6 +1,6 @@
 ---
 title: GEO Tracking Online Personas
-author: petko-d-petkov
+author: pdp
 date: Fri, 30 Nov 2007 14:37:45 GMT
 template: post.jade
 ---

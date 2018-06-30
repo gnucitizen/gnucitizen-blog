@@ -1,6 +1,6 @@
 ---
 title: Backdooring Flash Objects (the walkthrough)
-author: petko-d-petkov
+author: pdp
 date: Mon, 04 Sep 2006 19:07:37 GMT
 template: post.jade
 category: fucked

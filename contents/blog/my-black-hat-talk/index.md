@@ -1,6 +1,6 @@
 ---
 title: My Black Hat Talk
-author: petko-d-petkov
+author: pdp
 date: Fri, 01 Aug 2008 13:23:39 GMT
 template: post.jade
 ---

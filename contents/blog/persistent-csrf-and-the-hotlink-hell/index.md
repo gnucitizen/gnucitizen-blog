@@ -1,6 +1,6 @@
 ---
 title: Persistent CSRF and The Hotlink Hell
-author: petko-d-petkov
+author: pdp
 date: Mon, 16 Apr 2007 15:04:34 GMT
 template: post.jade
 ---

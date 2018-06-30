@@ -1,6 +1,6 @@
 ---
 title: Step One - Become an Insider
-author: petko-d-petkov
+author: pdp
 date: Fri, 30 Nov 2007 12:41:18 GMT
 template: post.jade
 ---

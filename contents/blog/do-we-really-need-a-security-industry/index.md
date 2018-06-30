@@ -1,6 +1,6 @@
 ---
 title: Do We Really Need a Security Industry?
-author: petko-d-petkov
+author: pdp
 date: Fri, 04 May 2007 09:20:40 GMT
 template: post.jade
 ---

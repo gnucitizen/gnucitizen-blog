@@ -1,6 +1,6 @@
 ---
 title: Application Layer Anti-virus/Firewall
-author: petko-d-petkov
+author: pdp
 date: Wed, 11 Apr 2007 09:05:44 GMT
 template: post.jade
 ---

@@ -1,6 +1,6 @@
 ---
 title: Tools of Trade
-author: petko-d-petkov
+author: pdp
 date: Fri, 10 Apr 2009 20:18:31 GMT
 template: post.jade
 ---

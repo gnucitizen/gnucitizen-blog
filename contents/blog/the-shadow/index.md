@@ -1,6 +1,6 @@
 ---
 title: The Shadow
-author: petko-d-petkov
+author: pdp
 date: Fri, 02 Feb 2007 14:26:48 GMT
 template: post.jade
 ---

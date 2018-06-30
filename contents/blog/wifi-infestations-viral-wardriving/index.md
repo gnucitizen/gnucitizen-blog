@@ -1,6 +1,6 @@
 ---
 title: WiFi Infestations - Viral Wardriving
-author: petko-d-petkov
+author: pdp
 date: Wed, 20 Feb 2008 12:04:54 GMT
 template: post.jade
 ---

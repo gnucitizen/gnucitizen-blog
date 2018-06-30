@@ -1,6 +1,6 @@
 ---
 title: Twitter's Security is so Poor
-author: petko-d-petkov
+author: pdp
 date: Thu, 29 Jan 2009 23:17:21 GMT
 template: post.jade
 ---

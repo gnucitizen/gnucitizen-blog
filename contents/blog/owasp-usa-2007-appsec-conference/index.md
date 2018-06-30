@@ -1,6 +1,6 @@
 ---
 title: OWASP USA 2007 AppSec Conference
-author: petko-d-petkov
+author: pdp
 date: Sun, 18 Nov 2007 20:51:36 GMT
 template: post.jade
 ---

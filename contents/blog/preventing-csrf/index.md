@@ -1,6 +1,6 @@
 ---
 title: Preventing CSRF
-author: petko-d-petkov
+author: pdp
 date: Fri, 30 Mar 2007 10:12:43 GMT
 template: post.jade
 ---

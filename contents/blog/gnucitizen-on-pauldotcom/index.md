@@ -1,6 +1,6 @@
 ---
 title: GNUCITIZEN on PaulDotCom
-author: petko-d-petkov
+author: pdp
 date: Fri, 14 Mar 2008 14:37:39 GMT
 template: post.jade
 ---

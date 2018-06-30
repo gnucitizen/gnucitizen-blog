@@ -1,6 +1,6 @@
 ---
 title: Universal PDF XSS After Party
-author: petko-d-petkov
+author: pdp
 date: Thu, 04 Jan 2007 12:14:52 GMT
 template: post.jade
 ---

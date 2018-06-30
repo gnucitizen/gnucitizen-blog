@@ -1,6 +1,6 @@
 ---
 title: DHCP/mDNS Injection Issues
-author: petko-d-petkov
+author: pdp
 date: Sun, 27 Jan 2008 09:30:07 GMT
 template: post.jade
 ---

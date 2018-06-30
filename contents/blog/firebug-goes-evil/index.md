@@ -1,6 +1,6 @@
 ---
 title: Firebug Goes Evil
-author: petko-d-petkov
+author: pdp
 date: Wed, 04 Apr 2007 19:12:38 GMT
 template: post.jade
 ---

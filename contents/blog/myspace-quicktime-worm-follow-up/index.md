@@ -1,6 +1,6 @@
 ---
 title: MySpace QuickTime Worm Follow-up
-author: petko-d-petkov
+author: pdp
 date: Thu, 07 Dec 2006 03:05:27 GMT
 template: post.jade
 ---

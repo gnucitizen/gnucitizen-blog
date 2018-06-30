@@ -1,6 +1,6 @@
 ---
 title: Gmail Security Flaw
-author: petko-d-petkov
+author: pdp
 date: Mon, 24 Nov 2008 13:03:50 GMT
 template: post.jade
 ---

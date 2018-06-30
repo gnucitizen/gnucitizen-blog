@@ -1,6 +1,6 @@
 ---
 title: GIFARs and Other Issues
-author: petko-d-petkov
+author: pdp
 date: Sun, 03 Aug 2008 15:20:11 GMT
 template: post.jade
 ---

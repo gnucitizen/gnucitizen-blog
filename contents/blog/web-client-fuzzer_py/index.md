@@ -1,6 +1,6 @@
 ---
 title: Web Client Fuzzer.py
-author: petko-d-petkov
+author: pdp
 date: Wed, 24 Oct 2007 22:00:50 GMT
 template: post.jade
 ---

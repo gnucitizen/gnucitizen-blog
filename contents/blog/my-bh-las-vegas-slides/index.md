@@ -1,6 +1,6 @@
 ---
 title: My BH Las Vegas Slides
-author: petko-d-petkov
+author: pdp
 date: Tue, 09 Sep 2008 10:30:05 GMT
 template: post.jade
 ---

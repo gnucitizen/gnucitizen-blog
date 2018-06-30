@@ -1,6 +1,6 @@
 ---
 title: Google.js
-author: petko-d-petkov
+author: pdp
 date: Sat, 06 Oct 2007 11:39:00 GMT
 template: post.jade
 ---

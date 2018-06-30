@@ -1,6 +1,6 @@
 ---
 title: Fuzzing XML and JSON Pt.1
-author: petko-d-petkov
+author: pdp
 date: Thu, 13 Dec 2012 11:47:35 GMT
 template: post.jade
 ---

@@ -1,6 +1,6 @@
 ---
 title: GEO-tracking Mobile Phones
-author: petko-d-petkov
+author: pdp
 date: Thu, 18 Oct 2007 11:11:47 GMT
 template: post.jade
 ---

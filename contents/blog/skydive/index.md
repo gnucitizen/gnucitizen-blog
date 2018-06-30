@@ -1,6 +1,6 @@
 ---
 title: Skydive
-author: petko-d-petkov
+author: pdp
 date: Mon, 07 Sep 2009 19:12:26 GMT
 template: post.jade
 ---

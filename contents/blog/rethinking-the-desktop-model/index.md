@@ -1,6 +1,6 @@
 ---
 title: Rethinking The Desktop Model
-author: petko-d-petkov
+author: pdp
 date: Tue, 02 Sep 2008 22:21:28 GMT
 template: post.jade
 ---

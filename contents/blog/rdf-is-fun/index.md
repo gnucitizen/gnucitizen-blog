@@ -1,6 +1,6 @@
 ---
 title: RDF is Fun
-author: petko-d-petkov
+author: pdp
 date: Tue, 27 Jun 2006 09:43:44 GMT
 template: post.jade
 ---

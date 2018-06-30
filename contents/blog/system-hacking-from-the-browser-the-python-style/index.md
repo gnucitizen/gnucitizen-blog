@@ -1,6 +1,6 @@
 ---
 title: System Hacking from the Browser (the Python Style)
-author: petko-d-petkov
+author: pdp
 date: Wed, 05 Dec 2007 21:39:01 GMT
 template: post.jade
 ---

@@ -1,6 +1,6 @@
 ---
 title: Severe XSS in Google and Others Due To The JAR Protocol Issues
-author: petko-d-petkov
+author: pdp
 date: Sat, 10 Nov 2007 11:39:16 GMT
 template: post.jade
 ---

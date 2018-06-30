@@ -1,6 +1,6 @@
 ---
 title: GNUCITIZEN in 2005
-author: petko-d-petkov
+author: pdp
 date: Mon, 24 Nov 2008 11:09:18 GMT
 template: post.jade
 category: fucked

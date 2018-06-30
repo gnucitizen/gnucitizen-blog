@@ -1,6 +1,6 @@
 ---
 title: Airport Kiosks Security
-author: petko-d-petkov
+author: pdp
 date: Sat, 24 Nov 2007 22:05:39 GMT
 template: post.jade
 ---

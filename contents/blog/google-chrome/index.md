@@ -1,6 +1,6 @@
 ---
 title: Google Chrome
-author: petko-d-petkov
+author: pdp
 date: Tue, 02 Sep 2008 10:51:20 GMT
 template: post.jade
 ---

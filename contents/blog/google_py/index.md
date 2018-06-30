@@ -1,6 +1,6 @@
 ---
 title: Google.py
-author: petko-d-petkov
+author: pdp
 date: Sat, 22 Dec 2007 08:29:35 GMT
 template: post.jade
 category: fucked

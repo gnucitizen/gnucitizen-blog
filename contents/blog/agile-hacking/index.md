@@ -1,6 +1,6 @@
 ---
 title: Agile Hacking
-author: petko-d-petkov
+author: pdp
 date: Mon, 17 Mar 2008 18:57:40 GMT
 template: post.jade
 ---

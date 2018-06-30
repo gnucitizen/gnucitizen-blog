@@ -1,6 +1,6 @@
 ---
 title: Submit Your Top Web Hacking Techniques for 2008
-author: petko-d-petkov
+author: pdp
 date: Fri, 30 Jan 2009 00:03:06 GMT
 template: post.jade
 ---

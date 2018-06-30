@@ -1,6 +1,6 @@
 ---
 title: Windows Defence and Attacks
-author: petko-d-petkov
+author: pdp
 date: Sat, 03 Jun 2006 09:23:36 GMT
 template: post.jade
 ---

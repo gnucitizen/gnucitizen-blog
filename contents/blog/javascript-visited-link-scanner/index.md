@@ -1,6 +1,6 @@
 ---
 title: JavaScript Visited Link Scanner
-author: petko-d-petkov
+author: pdp
 date: Tue, 15 Aug 2006 20:50:51 GMT
 template: post.jade
 ---

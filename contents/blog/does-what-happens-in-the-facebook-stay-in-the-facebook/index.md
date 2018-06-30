@@ -1,6 +1,6 @@
 ---
 title: Does what happens in the Facebook stay in the Facebook?
-author: petko-d-petkov
+author: pdp
 date: Fri, 22 Jun 2007 14:15:43 GMT
 template: post.jade
 ---

@@ -1,6 +1,6 @@
 ---
 title: Browser Rootkits
-author: petko-d-petkov
+author: pdp
 date: Tue, 16 Oct 2007 10:41:12 GMT
 template: post.jade
 ---

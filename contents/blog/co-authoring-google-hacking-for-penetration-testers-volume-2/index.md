@@ -1,6 +1,6 @@
 ---
 title: Co-authoring Google Hacking for Penetration Testers, Volume 2
-author: petko-d-petkov
+author: pdp
 date: Wed, 04 Jul 2007 08:44:42 GMT
 template: post.jade
 ---

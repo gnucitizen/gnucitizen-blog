@@ -1,6 +1,6 @@
 ---
 title: Virtualizations
-author: petko-d-petkov
+author: pdp
 date: Thu, 19 Jun 2008 10:14:16 GMT
 template: post.jade
 ---

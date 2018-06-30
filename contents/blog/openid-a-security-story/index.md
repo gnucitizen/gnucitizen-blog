@@ -1,6 +1,6 @@
 ---
 title: OpenID - A Security Story
-author: petko-d-petkov
+author: pdp
 date: Mon, 20 Aug 2007 10:15:48 GMT
 template: post.jade
 ---

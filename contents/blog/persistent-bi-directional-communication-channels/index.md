@@ -1,6 +1,6 @@
 ---
 title: Persistent Bi-directional Communication Channels
-author: petko-d-petkov
+author: pdp
 date: Mon, 02 Oct 2006 04:24:33 GMT
 template: post.jade
 ---

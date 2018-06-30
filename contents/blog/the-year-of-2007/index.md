@@ -1,6 +1,6 @@
 ---
 title: The Year Of 2007
-author: petko-d-petkov
+author: pdp
 date: Fri, 29 Dec 2006 08:45:48 GMT
 template: post.jade
 ---

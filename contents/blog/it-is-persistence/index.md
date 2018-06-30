@@ -1,6 +1,6 @@
 ---
 title: It is Persistence
-author: petko-d-petkov
+author: pdp
 date: Wed, 25 Feb 2009 11:25:20 GMT
 template: post.jade
 ---

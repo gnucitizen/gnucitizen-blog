@@ -1,6 +1,6 @@
 ---
 title: Hidden
-author: petko-d-petkov
+author: pdp
 date: Tue, 08 Apr 2008 08:56:27 GMT
 template: post.jade
 ---

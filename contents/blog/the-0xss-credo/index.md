@@ -1,6 +1,6 @@
 ---
 title: The 0XSS Credo
-author: petko-d-petkov
+author: pdp
 date: Sun, 05 Nov 2006 07:13:28 GMT
 template: post.jade
 ---

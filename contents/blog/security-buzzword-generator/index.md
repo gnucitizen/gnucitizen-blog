@@ -1,6 +1,6 @@
 ---
 title: Security Buzzword Generator
-author: petko-d-petkov
+author: pdp
 date: Thu, 02 Apr 2009 11:27:25 GMT
 template: post.jade
 ---

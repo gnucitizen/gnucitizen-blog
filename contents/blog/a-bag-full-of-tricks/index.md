@@ -1,6 +1,6 @@
 ---
 title: A Bag Full Of Tricks
-author: petko-d-petkov
+author: pdp
 date: Thu, 19 Oct 2006 03:26:10 GMT
 template: post.jade
 category: fucked

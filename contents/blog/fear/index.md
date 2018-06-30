@@ -1,6 +1,6 @@
 ---
 title: Fear
-author: petko-d-petkov
+author: pdp
 date: Fri, 20 Jun 2008 08:43:22 GMT
 template: post.jade
 ---

@@ -1,6 +1,6 @@
 ---
 title: Landing Secapps
-author: petko-d-petkov
+author: pdp
 date: Mon, 29 Sep 2008 19:08:09 GMT
 template: post.jade
 ---

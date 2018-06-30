@@ -1,6 +1,6 @@
 ---
 title: Landing Proxify
-author: petko-d-petkov
+author: pdp
 date: Wed, 06 Feb 2013 23:28:40 GMT
 template: post.jade
 ---

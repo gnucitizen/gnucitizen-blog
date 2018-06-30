@@ -1,6 +1,6 @@
 ---
 title: JavaScript Authorization Forcer
-author: petko-d-petkov
+author: pdp
 date: Tue, 15 Aug 2006 21:32:48 GMT
 template: post.jade
 category: fucked

@@ -1,6 +1,6 @@
 ---
 title: Clear
-author: petko-d-petkov
+author: pdp
 date: Sat, 13 Oct 2007 12:38:55 GMT
 template: post.jade
 ---

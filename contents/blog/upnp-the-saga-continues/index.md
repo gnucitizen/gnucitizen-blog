@@ -1,6 +1,6 @@
 ---
 title: UPnP The Saga Continues
-author: petko-d-petkov
+author: pdp
 date: Sun, 20 Jan 2008 20:35:27 GMT
 template: post.jade
 ---

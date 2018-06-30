@@ -1,6 +1,6 @@
 ---
 title: Extreme Search Engine Hacking
-author: petko-d-petkov
+author: pdp
 date: Fri, 22 Feb 2008 11:45:12 GMT
 template: post.jade
 ---

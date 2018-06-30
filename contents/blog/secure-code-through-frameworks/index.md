@@ -1,6 +1,6 @@
 ---
 title: Secure Code Through Frameworks
-author: petko-d-petkov
+author: pdp
 guest: jeremiah-grossman
 date: Fri, 22 Dec 2006 18:32:49 GMT
 template: post.jade

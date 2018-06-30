@@ -1,6 +1,6 @@
 ---
 title: One Drop on A Spider Web
-author: petko-d-petkov
+author: pdp
 date: Mon, 25 Jun 2007 14:56:36 GMT
 template: post.jade
 ---

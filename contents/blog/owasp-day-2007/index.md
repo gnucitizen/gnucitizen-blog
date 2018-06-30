@@ -1,6 +1,6 @@
 ---
 title: OWASP Day 2007
-author: petko-d-petkov
+author: pdp
 date: Sun, 09 Sep 2007 09:36:32 GMT
 template: post.jade
 ---

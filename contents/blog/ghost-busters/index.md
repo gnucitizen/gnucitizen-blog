@@ -1,6 +1,6 @@
 ---
 title: Ghost Busters
-author: petko-d-petkov
+author: pdp
 guest: eduardo-vela
 date: Thu, 15 May 2008 16:26:48 GMT
 template: post.jade

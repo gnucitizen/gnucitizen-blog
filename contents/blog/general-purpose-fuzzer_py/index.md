@@ -1,6 +1,6 @@
 ---
 title: General Purpose Fuzzer.py
-author: petko-d-petkov
+author: pdp
 date: Mon, 17 Dec 2007 00:15:42 GMT
 template: post.jade
 ---

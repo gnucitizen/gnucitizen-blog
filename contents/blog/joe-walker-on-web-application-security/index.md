@@ -1,6 +1,6 @@
 ---
 title: Joe Walker on Web Application Security
-author: petko-d-petkov
+author: pdp
 date: Tue, 30 Oct 2007 20:31:55 GMT
 template: post.jade
 category: fucked

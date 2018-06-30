@@ -1,6 +1,6 @@
 ---
 title: Breaking Into a Home With an iPhone
-author: petko-d-petkov
+author: pdp
 date: Mon, 11 May 2009 11:27:16 GMT
 template: post.jade
 ---

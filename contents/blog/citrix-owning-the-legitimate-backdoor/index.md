@@ -1,6 +1,6 @@
 ---
 title: CITRIX Owning the Legitimate Backdoor
-author: petko-d-petkov
+author: pdp
 date: Thu, 04 Oct 2007 16:26:51 GMT
 template: post.jade
 ---

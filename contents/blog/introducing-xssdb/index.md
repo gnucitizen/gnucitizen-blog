@@ -1,6 +1,6 @@
 ---
 title: Introducing XSSDB
-author: petko-d-petkov
+author: pdp
 date: Sun, 24 Sep 2006 11:18:37 GMT
 template: post.jade
 ---

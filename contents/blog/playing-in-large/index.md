@@ -1,6 +1,6 @@
 ---
 title: Playing in Large
-author: petko-d-petkov
+author: pdp
 date: Tue, 06 Feb 2007 14:18:53 GMT
 template: post.jade
 ---

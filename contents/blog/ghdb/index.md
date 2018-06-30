@@ -1,6 +1,6 @@
 ---
 title: GHDB
-author: petko-d-petkov
+author: pdp
 date: Mon, 21 May 2007 13:24:45 GMT
 template: post.jade
 ---

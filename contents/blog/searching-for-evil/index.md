@@ -1,6 +1,6 @@
 ---
 title: Searching For Evil
-author: petko-d-petkov
+author: pdp
 date: Fri, 31 Aug 2007 09:47:10 GMT
 template: post.jade
 ---

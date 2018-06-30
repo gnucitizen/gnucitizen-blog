@@ -1,6 +1,6 @@
 ---
 title: Backdooring Images
-author: petko-d-petkov
+author: pdp
 date: Fri, 15 Dec 2006 04:57:22 GMT
 template: post.jade
 ---

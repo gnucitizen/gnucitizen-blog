@@ -1,6 +1,6 @@
 ---
 title: More on GIFARS and Other Dangerous Attacks
-author: petko-d-petkov
+author: pdp
 date: Sun, 03 Aug 2008 16:40:39 GMT
 template: post.jade
 ---

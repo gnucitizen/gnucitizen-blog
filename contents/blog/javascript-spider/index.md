@@ -1,6 +1,6 @@
 ---
 title: Javascript Spider
-author: petko-d-petkov
+author: pdp
 date: Fri, 06 Oct 2006 09:36:13 GMT
 template: post.jade
 ---

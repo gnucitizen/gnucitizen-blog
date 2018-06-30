@@ -1,6 +1,6 @@
 ---
 title: Even More Advanced Clickjacking
-author: petko-d-petkov
+author: pdp
 date: Thu, 27 Nov 2008 17:18:27 GMT
 template: post.jade
 ---

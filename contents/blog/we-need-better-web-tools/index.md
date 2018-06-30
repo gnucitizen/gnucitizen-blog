@@ -1,6 +1,6 @@
 ---
 title: We Need Better Web Tools
-author: petko-d-petkov
+author: pdp
 date: Fri, 21 Nov 2008 17:33:26 GMT
 template: post.jade
 ---

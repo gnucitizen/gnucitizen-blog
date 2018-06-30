@@ -1,6 +1,6 @@
 ---
 title: Attack Of The URL Vulnerabilities
-author: petko-d-petkov
+author: pdp
 date: Wed, 25 Jul 2007 09:51:28 GMT
 template: post.jade
 ---

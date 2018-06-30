@@ -1,6 +1,6 @@
 ---
 title: Extensions at War
-author: petko-d-petkov
+author: pdp
 date: Sun, 03 May 2009 08:37:28 GMT
 template: post.jade
 ---

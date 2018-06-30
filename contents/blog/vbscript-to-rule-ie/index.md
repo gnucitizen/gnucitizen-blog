@@ -1,6 +1,6 @@
 ---
 title: VBScript to Rule IE
-author: petko-d-petkov
+author: pdp
 date: Fri, 16 Mar 2007 10:36:09 GMT
 template: post.jade
 ---

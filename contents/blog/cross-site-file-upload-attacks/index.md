@@ -1,6 +1,6 @@
 ---
 title: Cross-site File Upload Attacks
-author: petko-d-petkov
+author: pdp
 date: Thu, 21 Feb 2008 12:15:32 GMT
 template: post.jade
 ---

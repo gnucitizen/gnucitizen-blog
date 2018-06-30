@@ -1,6 +1,6 @@
 ---
 title: The Attack of the TINY URLs
-author: petko-d-petkov
+author: pdp
 date: Thu, 16 Nov 2006 02:41:30 GMT
 template: post.jade
 ---

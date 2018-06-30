@@ -1,6 +1,6 @@
 ---
 title: 6th OWASP Conference
-author: petko-d-petkov
+author: pdp
 date: Thu, 17 May 2007 07:33:14 GMT
 template: post.jade
 ---

@@ -1,6 +1,6 @@
 ---
 title: Massive Enumeration Toolset
-author: petko-d-petkov
+author: pdp
 date: Mon, 06 Mar 2006 07:31:56 GMT
 template: post.jade
 ---

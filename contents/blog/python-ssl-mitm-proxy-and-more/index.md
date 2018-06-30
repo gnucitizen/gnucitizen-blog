@@ -1,6 +1,6 @@
 ---
 title: Python SSL Mitm Proxy and More
-author: petko-d-petkov
+author: pdp
 date: Sat, 14 Feb 2009 17:54:19 GMT
 template: post.jade
 category: fucked

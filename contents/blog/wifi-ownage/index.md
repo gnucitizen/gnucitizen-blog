@@ -1,6 +1,6 @@
 ---
 title: WiFi Ownage
-author: petko-d-petkov
+author: pdp
 guest: sam-aldis
 date: Thu, 07 Feb 2008 10:59:13 GMT
 template: post.jade

@@ -1,6 +1,6 @@
 ---
 title: Backframe
-author: petko-d-petkov
+author: pdp
 date: Mon, 30 Oct 2006 03:02:44 GMT
 template: post.jade
 ---

@@ -1,6 +1,6 @@
 ---
 title: On Browser Security Restrictions
-author: petko-d-petkov
+author: pdp
 date: Sat, 11 Aug 2007 09:27:07 GMT
 template: post.jade
 ---

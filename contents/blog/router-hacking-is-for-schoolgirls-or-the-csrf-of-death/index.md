@@ -1,6 +1,6 @@
 ---
 title: Router hacking is for schoolgirls - or the CSRF of Death
-author: petko-d-petkov
+author: pdp
 date: Mon, 03 Mar 2008 10:28:34 GMT
 template: post.jade
 ---

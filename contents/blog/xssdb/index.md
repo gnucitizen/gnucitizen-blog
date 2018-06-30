@@ -1,6 +1,6 @@
 ---
 title: XSSDB
-author: petko-d-petkov
+author: pdp
 date: Sun, 24 Sep 2006 02:55:35 GMT
 template: post.jade
 ---
