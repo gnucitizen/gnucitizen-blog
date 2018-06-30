@@ -20,12 +20,7 @@ block prepend head
 block content
     block post-title
         h1.title=page.title
-
-    //- --
-
-    if (page.metadata || {}).subtitle
-        block post-subtitle
-            h2.subtitle=page.metadata.subtitle
+        div=page.metadata.date
 
     //- --
 
