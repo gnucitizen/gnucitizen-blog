@@ -27,6 +27,9 @@ mixin content()
                     - recurseFolder(item)
 
                 for item in folder
+                    if item === page
+                        - continue
+    
                     unless item.filename
                         - continue
 
@@ -42,7 +45,7 @@ mixin content()
         //- --
 
         #index
-            - recurseFolder(contents.files)
+            - recurseFolder(page.parent)
 
 //- --
 

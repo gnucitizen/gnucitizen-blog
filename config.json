@@ -6,6 +6,7 @@
       "Home": "/",
       "Blog": "/blog",
       "Projects": "/projects",
+      "Files": "/files",
       "About": "/about"
     }
   },
