@@ -1,7 +1,6 @@
 ---
 title: Projects
 template: page.jade
-filename: projects
 ---
 
 # [SecApps](https://secapps.com)

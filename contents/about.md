@@ -1,7 +1,6 @@
 ---
 title: About
 template: page.jade
-filename: about
 ---
 
 GNUCITIZEN exists to advance public understanding of offensive and defensive information security technologies, to educate and share information with its members and the public on best practices, tools and techniques for such coverage and to represent the interests of its members.
