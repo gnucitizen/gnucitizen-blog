@@ -17,6 +17,10 @@ Websecurify is an application security company based in London. Websecurify was 
 
 Pown.js is an experimental security framework for node. It aims to be security driven with contributions via NPM package registry. The project is currently in its infancy.
 
+# [Vulnerability Researchers](https://www.linkedin.com/groups/115855)
+
+Vulnerability Researchers is one of the larger security groups on LinkedIn. The group was founded 2008-2009 it is still active thanks to the active community support.
+
 # House Of Hackers (defunct)
 
 The first and the only one hacker social network. The network was formed in May 2008 and quickly reached over 30,000 members. Due to many reasons, we had to shut it down. This is bar far one of the most regretful decisions ever made by GNUCITIZEN staff.
@@ -28,3 +32,7 @@ Back in the days blogging platforms were a no match to seasoned hackers and the 
 # Securls (defunct)
 
 We bought securls.com to create an alternative to popurls.com. While the project was interesting it never gained any tractions. The domain expired and someone else bought it under our busy nose.
+
+# Agile Hacking (defunct)
+
+The idea behind Agile Hacking was to create the first crowdsourced information security resource - essentially an alternative to all information security books combined. The project existed briefly and never materialized to anything other than a few small contributions. We have created a GitHub [organization](https://github.com/agilehacking) in memory of this project. Feel free to contact us if you want to take the lead.
