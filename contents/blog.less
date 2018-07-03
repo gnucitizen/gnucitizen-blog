@@ -27,7 +27,15 @@ pre {
 }
 
 a {
+    background: transparent;
     color: #ffffff;
+
+    text-decoration: none;
+
+    &:hover {
+        background: #ffffff;
+        color: #000000;
+    }
 }
 
 #header, #content, #footer, #topnav {
@@ -45,7 +53,7 @@ a {
             display: inline-block;
 
             &:not(:last-child):after {
-                content: "/";
+                content: "";
 
                 margin: 0px 5px 0px 5px;
             }
