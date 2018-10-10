@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/gnucitizen/gnucitizen-blog.svg?branch=master)](https://travis-ci.org/gnucitizen/gnucitizen-blog)
 	
 	  _____ _   _ _    _  _____ _____ _______ _____ ____________ _   _ 
 	 / ____| \ | | |  | |/ ____|_   _|__   __|_   _|___  /  ____| \ | |
