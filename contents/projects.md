@@ -40,3 +40,7 @@ We bought securls.com to create an alternative to popurls.com. While the project
 # Agile Hacking (defunct)
 
 The idea behind Agile Hacking was to create the first crowdsourced information security resource - essentially an alternative to all information security books combined. The project existed briefly and never materialized to anything other than a few small contributions. We have created a GitHub [organization](https://github.com/agilehacking) in memory of this project. Feel free to contact us if you want to take the lead.
+
+# Exploit Sweatshop (defunct)
+
+This was a failed attempt to create a public vulnerability acquisition program. There is more about this over [here](/blog/exploit-sweatshop/).
