@@ -13,4 +13,3 @@ GNUCITIZEN acts on behalf of the whitehat community and it is a passionate adher
 
 * [Twitter](https://twitter.com/gnucitizen)
 * [Facebook](https://www.facebook.com/gnucitizen)
-* [Discord](https://discord.gg/T6ePsSm)
