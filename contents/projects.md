@@ -3,7 +3,7 @@ title: Projects
 template: page.jade
 ---
 
-# [OpenDevSecOps](https://opendevsecops.com)
+# [OpenDevSecOps](https://opendevsecops.org)
 
 The OpenDevSecOps project mission is to provide a world-class resource for implementing complete devsecops and secops programs within organizations of any shape and size using off-the-shelf tools and access to our vibrant community.
 
