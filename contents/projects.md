@@ -3,6 +3,10 @@ title: Projects
 template: page.jade
 ---
 
+# [OpenDevSecOps](https://opendevsecops.com)
+
+The OpenDevSecOps project mission is to provide a world-class resource for implementing complete devsecops and secops programs within organizations of any shape and size using off-the-shelf tools and access to our vibrant community.
+
 # [SecApps](https://secapps.com)
 
 SecApps is a security testing toolkit which runs directly from your own web browser leveraging the capabilities of a browser extension available for both Chrome and Firefox. SecApps is a very mature web application security testing framework with capabilities on par with other products like Burp and ZAP but without the overhead, these tools bring with them. SecApps also distributes several desktop and server tools (AppBandit Attack Proxy, WebReaver Security Scanner, and Cohesion CI testing tooling) which are also part of the online suite.
