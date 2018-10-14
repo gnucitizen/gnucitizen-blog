@@ -51,7 +51,7 @@ mixin content()
                             //- --
 
                             if index
-                                a(href=index.url)=titleCase(basename)
+                                a(href=index.url, title=titleCase(basename))=titleCase(basename)
 
                             else
                                 =titleCase(basename)
@@ -86,7 +86,7 @@ mixin content()
                         //- --
 
                         li.file
-                            a(href=item.url)=item.metadata.title ? item.metadata.title : basename
+                            a(href=item.url, title=(item.metadata.title ? item.metadata.title : basename))=item.metadata.title ? item.metadata.title : basename
         - }
 
         //- --
