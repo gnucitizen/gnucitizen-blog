@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Cross-site Request Forgery</title><meta name="description" content="CSRF or Cross-site Request Forgery sounds quite self-explanatory. This is an attack vector that gives malicious sites the ability to send a (forged) request from its context to a different site. The purpose of this attack vector is to act on behalf of the current user in order to gain control of his/her account or perform other types of malicious activities."><meta property="name" content="Cross-site Request Forgery"><meta itemprop="name" content="Cross-site Request Forgery"><meta property="description" content="CSRF or Cross-site Request Forgery sounds quite self-explanatory. This is an attack vector that gives malicious sites the ability to send a (forged) request from its context to a different site. The purpose of this attack vector is to act on behalf of the current user in order to gain control of his/her account or perform other types of malicious activities."><meta itemprop="description" content="CSRF or Cross-site Request Forgery sounds quite self-explanatory. This is an attack vector that gives malicious sites the ability to send a (forged) request from its context to a different site. The purpose of this attack vector is to act on behalf of the current user in order to gain control of his/her account or perform other types of malicious activities."><meta property="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fcross-site-request-forgery%2F?w=1024"><meta itemprop="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fcross-site-request-forgery%2F?w=1024"><meta property="og:type" content="website"><meta property="og:url" content="https://www.gnucitizen.org/blog/cross-site-request-forgery/"><meta property="og:title" content="Cross-site Request Forgery"><meta property="og:description" content="CSRF or Cross-site Request Forgery sounds quite self-explanatory. This is an attack vector that gives malicious sites the ability to send a (forged) request from its context to a different site. The purpose of this attack vector is to act on behalf of the current user in order to gain control of his/her account or perform other types of malicious activities."><meta property="og:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fcross-site-request-forgery%2F?w=1024"><meta name="twitter:title" content="Cross-site Request Forgery"><meta name="twitter:description" content="CSRF or Cross-site Request Forgery sounds quite self-explanatory. This is an attack vector that gives malicious sites the ability to send a (forged) request from its context to a different site. The purpose of this attack vector is to act on behalf of the current user in order to gain control of his/her account or perform other types of malicious activities."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fcross-site-request-forgery%2F?w=1024"><link type="text/css" href="/blog.css" rel="stylesheet"><script type="text/javascript" src="/blog.js"></script></head><body><header id="header"><h1><a href="/"></a></h1><p></p></header><nav id="topnav"><ul><li><a href="/">Home</a></li><li><a href="/projects.html">Projects</a></li><li><a href="/files">Files</a></li><li><a href="/about.html">About</a></li></ul></nav><article><div id="content"><h1 class="title">Cross-site Request Forgery</h1><div>Mon, 04 Dec 2006 07:32:39 GMT</div><div id="post-content"><p>CSRF or Cross-site Request Forgery sounds quite self-explanatory. This is an attack vector that gives malicious sites the ability to send a (forged) request from its context to a different site. The purpose of this attack vector is to act on behalf of the current user in order to gain control of his/her account or perform other types of malicious activities.</p>
+<p>This may sound a bit difficult to imagine but in practice it is quite simple. However, before showing the practical side of CSRF I should talk about why CSRF is possible on first place and what are the security implications of this type of attack. In order to explain that, we need to have a base study case on the top of which I will develop the story of Joe and Moe.</p>
+<p>Like any other story Joe and Moe used to be friends who eventually become enemies for some unknown reasons. Joe and Moe had been in constant fight since that turning point. One day Joe decided to get back to Moe by dis-faming his status on a mailing list they both participated in. For that purpose Joe used a simple CSRF trick he had learned from a friend. Joe composed a HTML page with a FORM that looked something like the following:</p>
+<pre><code class="language-html"><span class="tag">&lt;<span class="name">body</span> <span class="attr">onload</span>=<span class="string">"document.CSRF.submit()"</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">form</span> <span class="attr">name</span>=<span class="string">"CSRF"</span> <span class="attr">method</span>=<span class="string">"POST"</span> <span class="attr">action</span>=<span class="string">"http://mail.freemail.com/sendmail.php"</span> <span class="attr">style</span>=<span class="string">"display:none"</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"to"</span> <span class="attr">value</span>=<span class="string">"list@bestfriends.com"</span>/&gt;</span>
+        <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">name</span>=<span class="string">"message"</span>&gt;</span>Hi Group, ...<span class="tag">&lt;/<span class="name">textarea</span>&gt;</span>
+    <span class="tag">&lt;/<span class="name">form</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">body</span>&gt;</span></code></pre>
+<p>The purpose of this form, as explained by Joe&#39;s friend, is to automatically send a POST request to <a href="http://mail.freemail.com/sendmail.php">http://mail.freemail.com/sendmail.php</a> once it is opened inside a browser window. If the user who visits the malicious page is already logged into mail.freemail.com the request will be successful because the browser will supply all the necessary session cookies. On the other hand, if the user is not logged, the request will fail with probably a login page presented the user.</p>
+<p>Joe decided to send Moe a message encouraging him to open a link in his browser that points to the malicious page. Exactly how Joe did that is not important, but what is important in this case is that Moe felt into the trap. Since Moe was logged into his account, the malicious page composed a POST request that forced mail.freemail.com to send an email from Moe to <a href="mailto:list@bestfriends.com">list@bestfriends.com</a> containing the dis-faming message. The browser added all necessary cookies to enable the request. Moe have never trusted Joe&#39;s emails or links ever since.</p>
+<p>Although the are far simpler ways to forge emails it is essential to understand the basic principle behind CSRF,... and it is: the browser will add all necessary cookies to the requests made from the remote accessed pages. This means that if the applications you are using are not written with CSRF in mind, with a little bit of knowledge anyone is able to perform actions on behalf of you. That is concerning!</p>
+<p>When Joe sent a request on behalf of Moe, he used a hidden form because it allows not only GET requests but POST as well. In many situations the attacker needs to perform exactly this type of request. However, if you are familiar with Java Servlet Development or other similar technologies you probably know that very often GET and POST are interchangeable. If that was the case with mail.freemail.com then Joe would be able to compose CSRF on behalf of Moe with something as simple as the following:</p>
+<pre><code class="language-html"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://mail.freemail.com/sendmail.php?to=list@bestfriends.com&amp;message=Hi%2BGroup..."</span>/&gt;</span></code></pre>
+<p>or even this:</p>
+<pre><code class="language-html"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://mail.freemail.com/sendmail.php?to=list@bestfriends.com&amp;message=Hi%2BGroup..."</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></code></pre>
+<p>or even this:</p>
+<pre><code class="language-html"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"http://mail.freemail.com/sendmail.php?to=list@bestfriends.com&amp;message=Hi%2BGroup..."</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></code></pre>
+<p>The list of possible ways of performing GET CSRF is endless. Virtually every type of element that results in getting a remote resource is subjected to abuse from CSRFers.</p>
+<p>Going back to POST CSRF, it is obvious that this one is a bit more complicated to perform. POST CSRFs can be composed with HTML FROMS, XHR (XML HTTP Requests), Flash and some other technologies. You must understand though, that these techniques can be applied in different situations. I will not go into details how to use each one of them, I will cover that in a different post I guess, but it is important to understand that there are many possibilities.</p>
+<p>I hope that the theory and practice behind CSRF is clear now. You must understand that this is not an attack vector that is present in WEB technologies only. Not really! Apart from having CSRF in web pages, XML documents, PDF documents and other media formats, custom software is subjected to this type of attack as well. CSRF is everywhere and affects everything. I am not quite sure why this attack vector is not flagged as the most widely spread one.</p>
+<p>Wat do we need to do? The solution in theory is very simple but in practice could get a little bit complicated. First of all the browser should restrict certain things from happening. You shouldn&#39;t be able to initiate forms request from any given page. The same origin policies should be active here, just like they are active for XHR. That of course will break a lot of applications but with a little bit help from W3C, a standard could emerge. Something like Flash&#39;s crossdomain.xml file might come very handy.</p>
+<p>Second, web applications should make sure that every request made to any of their internal scripts will be satisfied only if a special type of handshake is established. Some applications for example support only POST requests that are linked to FORMS marked with unique identifiers. If an attacker wants to perform CSRF, they need to know that identifier in advance. That is not that easy to get. Moreover if the attacker has already access to it, they must be able to do far more dangerous things than tricking the user into CSRF.</p>
+<p>There are several more things that the developer needs to pay attention to but due to their complexity I cannot really generalize and discuss all of them in this article.</p>
+<p><em>Just be careful the next time you are browsing the web!</em></p>
+</div><div id="post-comments"><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Kishor"><span>Kishor</span><div class="post-comment-content">It is interesting to see that most of 
+these well known sites have CSRF on logout possible.
+
+Orkut https://www.orkut.com/GLogin.aspx?cmd=logout
+Yahoo! <a href="http://us.ard.yahoo.com/SIG=12h2u4tp1/M=289534.5473431.6553392.5333790/D=mail/S=150500014:HEADR/Y=YAHOO/EXP=1165241048/A=2378664/R=4/SIG=12rkkt5h8/*http://login.yahoo.com/config/login?logout=1&amp;.done=http://mail.yahoo.com&amp;.src=ym&amp;.intl=us" rel="nofollow">http://us.ard.yahoo.com/SIG=12h2u4tp1/M=289534.5473431.6553392.5333790/D=mail/S=150500014:HEADR/Y=YAHOO/EXP=1165241048/A=2378664/R=4/SIG=12rkkt5h8/*http://login.yahoo.com/config/login?logout=1&amp;.done=http://mail.yahoo.com&amp;.src=ym&amp;.intl=us</a>
+Hotmail http://by124w.bay124.mail.live.com/mail/logout.aspx
+Gmail https://mail.google.com/mail/?logout&amp;hl=en
+
+Now this is not a concern as such, but if you are
+able to force a logout, victim may get fooled by phishing more easily (Since s/he will be willing
+to enter credentials... I'm not able to explain
+this but hope you get me).</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pagvac"><span>pagvac</span><div class="post-comment-content">CSRF is definitely a biggy since most websites on the web are vulnerable to these types of attacks. 
+
+One thing that kind of turns me off is that it requires social engineering in most cases. However, imagine a CSRF attack combined with persistent XSS: every time the victim visits the page with the injected code, the attacker can force the browser to do actions on behalf of the victim without social engineering required!
+
+Persistent (server-side) XSS + CSRF = killer (IMHO)
+
+That's why it's very important for developers that it is always assumed that current authenticated sessions might currently be controlled by attackers (i.e.: ask for the previous password when allowing the user to change it to a new one - same thing goes for updating the user's email address)
+
+As in for CSRF attacks that require social engineering to somehow trick the user to be authed when visiting the page with the evil XSS, the way I always pictured the attack is through an email that tells the victim some BS in order to get him to login before visiting the evil URL. Of course this email should appear to come from the target entity (just like phishing emails). People like good deals and free things, so this is something I would aim for when social engineering users to get them CSRFed successfully.
+
+Good post pdp.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content"><blockquote>One thing that kind of turns me off is that it requires social engineering in most cases.</blockquote>
+
+yes man, but there are so many situations where CSRF can be used without social engineering. You are right that these types of attacks are not targeted, but you can hit a lot of random web users by spawning splogs for example. That's why the WEB is the perfect medium for spreading worms.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Delixe"><span>Delixe</span><div class="post-comment-content">So you're saying that those MySpace trains are examples of CSRF? (MySpace trains add people to friend lists and etc. just by clicking on a link.)
+
+I don't really see the huge gain from a CSRF attack, could you possibly provide an example that would truly open our eyes to how "powerful" it seems to be?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">Delixe, let's say that you have a router vulnerable to CSRF (all of them are). You login but you forget to logout. Than you continue surfing the net. Suddenly you reach a page that is a bit malicious. You don't know about that so you happily continue browsing around. Unfortunately, what have just happened is your network being exposed to attackers. How? Well, you have visited a page that contains a CSRF vector for you router located at 192.168.1.1/192.168.0.1. You router admin interface is now exposed to the Internet. All attackers need to do is to collect your IP which is already logged on their server and access the admin interface. Very simple but quite powerful.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Delixe"><span>Delixe</span><div class="post-comment-content">I don't think that's a fitting example considering how many users are going to be logged in their router interface. 95% (and I pulling this out of my ass yes) of people probably haven't logged in that more than once.
+
+What does have access to a router interface do? You can play around with ports and such but what else? (Yes I am ignorant to this)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">heh, no worries...
+
+The purpose of CSRF is to perform actions on behalf of the current user but this user must be authenticated first. Otherwise, there is no point in doing whatsoever.
+
+Ok, here is another one: let's say that an attacker wants to transfer some money to his/her account. They start a splog network which is backdoored from top to bottom with malicious JavaScript. The attacker targets several banks at the same time. So he/she has CSRF for Lloyds, Natwest, HSBC and some other bank. Once an unaware user visits any page from this splog network a CSRF will be executed to all bank sites initiating a money transfer. Most of the requests will fail, however, if the current user is unlucky enough to have their account open at the same time, or they forgot to logoff, the transfer will be successful.
+
+As pagvac, put it very clear, CSRF in combination with persistent XSS could be quite dangerous. Why? Well, let's say that someone targets MySpace with a similar exploit as the one discussed above. A worm like that could reach a critical mass in less then an hour effecting millions of users. Even if only 0.5% of them have their account open, the attacker could collect substantial amount of money.
+
+Sometimes I see that attack vectors discussed in this blog are tried for real. I've seen some of them in the wild. The <a href="http://www.websense.com/securitylabs/alerts/alert.php?AlertID=708" rel="nofollow">QuickTime attack on MySpace</a> is just one of them. I hope that you won't try this thing at home. Right?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Delixe"><span>Delixe</span><div class="post-comment-content">I am in the pursuit for knowledge like many of you and besides I don't steal.
+
+I've seen the acronym CSRF quite often, I was interested in what the buzz was all about.
+
+Thank you for clarifying, yes the combination of CSRF and persistent XSS can be deadly -- I can definitely see that.
+
+The protection mechanisms to prevent CSRF seem rather difficult to apply and rather cumbersome to say at the least. I know I would hate to apply that with every damn form or many.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">Sorry man, I didn't mean to offend you. Anyway, I am glad that we have clarified this.
+
+<blockquote>The protection mechanisms to prevent CSRF seem rather difficult to apply and rather cumbersome to say at the least. I know I would hate to apply that with every damn form or many.</blockquote>
+
+Yes, however, this is what frameworks are for. They are designed to save your time. Still, people like writing things themselves.
+
+Many thanks.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Kishor"><span>Kishor</span><div class="post-comment-content">Identifying if your victim is logged in is easy:
+
+Here is the article
+
+http://wasjournal.blogspot.com/2006/12/use-of-time-delay-technique-for.html</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pagvac"><span>pagvac</span><div class="post-comment-content"><blockquote>you can hit a lot of random web users by spawning splogs for example</blockquote>
+
+Automated CSRF, that's a very good point!
+
+<blockquote>let’s say that you have a router vulnerable to CSRF (all of them are)</blockquote>
+
+Actually I don't agree with this statement. While I would say that *most* router's web interfaces are vulnerable to CSRF, not all are. For instance, BT Voyager 2091 router adds a token to all admin HTTP requests that change configuration settings. 
+
+i.e.:
+
+http://192.168.1.1/lancfg2.cgi?checkNum=6418&amp;ethIpAddress=192.168.1.1&amp;ethSubnetMask=255.255.255.0&amp;hostname=voyager&amp;domainname=home&amp;enblLan2=0&amp;lan2IpAddress=0.0.0.0&amp;lan2SubnetMask=255.255.255.255&amp;lanmtu=1500
+
+In this case the attacker needs to know the value of 'checkNum' when CSRFing, which is really assigned from the variable 'randomNum' within a JS snippet. 'randomNum' changes each time a page is loaded. YES, I'm sure that you can reverse engineer the router and figure out how the random token is generated (especially since the software is open source), but the point here is that BT kept in mind CSRF attacks when designing the web interface for Voyager 2091.
+
+I do believe that routers' web interfaces will be designed in the future using randomly-generated tokens for all configuration requests. But since now most people don't have a damn clue what CSRF is and why it can be bad thing, there is still a lot of opportunities (and time) for exploitation.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pagvac"><span>pagvac</span><div class="post-comment-content"><blockquote>I don’t think that’s a fitting example considering how many users are going to be logged in their router interface</blockquote>
+
+Guys, we need to remind ourselves that many routers have vulnerabilities on their web interfaces which when combined with CSRF can potentially allow you to gain internal access to a network WITHOUT requiring the victim user to be authenticated.
+
+Consider an authentication bypass vuln
+
+http://www.securityfocus.com/bid/19347/discuss
+
+By simply visiting the following URL, you just changed configuration settings on your router (if vulnerable) WITHOUT needing to be authenticated:
+
+http://ikwt.com/projects/linksys/BID19347_test.html
+
+Also consider an unauthenticated access to the router's config file vuln. If combined with an XSS vuln, an attacker should be able to steal your router's config file by using XMLHttpRequest() in the XSS payload:
+
+http://www.securityfocus.com/bid/19057/discuss
+http://ikwt.com/projects/btvoyager-getconfig.txt
+
+<blockquote>What does have access to a router interface do?</blockquote>
+
+If you can make admin requests to a router's web inteface then you just gained internal access to the target network, by setting port forwarding for instance, or placing internal hosts on the DMZ.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">pagvac, you have some interesting stuff on your domain. Very nice! I think that we are going to see a lot more of these attacks in the future, especially the ones concerning network devices. Web browsers are the perfect platform to bridge protected networks with the wild web.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pagvac"><span>pagvac</span><div class="post-comment-content">Most people are super skeptic to CSRF attacks. The typical scenario of being CSRFed while doing online banking and transferring funds to the attacker's account is one that many people refuse to believe.
+
+CSRF skeptics would say "How the hell would an attacker fool me to visit a third-party site, while I'm still *logged on* to https://www.[nameOfBank].com
+
+Well, unfortunately there is a web browser feature that is becoming more and more popular which will make CSRF attacks even more feasible in the future. It's called TAB BROWSING. The more web users do tab browsing, the more victims that will get CSRFed.
+
+Check out the following scenario:
+
+1. Victim is reading a blog
+2. Victim opens new tab (without closing the already-open tabs) and logs into https://www.[nameOfBank].com
+
+What if the blog that was still open in a different tab had injected a script snippet that submits a CSRF attack to https://www.[nameOfBank].com every X seconds in the background?
+
+Guess what, you've just been robbed :-D
+
+As pdp reminded us, we should consider splogs as a vector for maximizing the chances of successful exploitation.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Joe Phantom"><span>Joe Phantom</span><div class="post-comment-content">I knew what CSFR meant, but I didn't understand it's full potential. Thanks for clarifying the power of CSFR.
+How can we protect our webs from this type of attack? Any idea?
+pdp, you mentioned frameworks, can you tell me which framework already has some type of built in protection against CSFR?
+Thanks</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">Joe,
+
+there are many of them. I am quite sure that you can find at least one framework per programming language.
+
+.NET for example has the __VIEWSTATE. I don't like transmitting so much data back'nfort to the client but, hey, that is by default and it protects your from CSRF. Microsoft has just released their Anti-XSS Library, I am not sure if that helps in terms of CSRF as well.
+
+However, although there are available frameworks that more less prevent CSRF on your applications you must understand that none of them are AJAX compatible. As Billy Hoffman suggested on a few occasions, AJAX technologies are not completely understood and that makes them a lot more hackable. These are not his exact word but the context is the same.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Joe Phantom"><span>Joe Phantom</span><div class="post-comment-content">I know many frameworks for developing webs, in many languages, but I didn't know anyone who had any library that was useful against CSRF. I will read the documentation of the frameworks.
+
+(Sorry for my english, I am from Argentina)
+Thank you for doing such a great blog.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Delixe"><span>Delixe</span><div class="post-comment-content">I believe sessions in general take care of this.
+
+You can just plug sessions vars in the action portion of a form and neutralize all attempts of CSRF since the attacker can't possibly know the session string.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">Joe as Delixe mentioned you can implement your own mechanism for preventing CSRF. It is all about adding a hidden field in the forms you are displaying that has unique id. If this id matches the id generate and stored inside the user session then the request from the form is allowed, otherwise you disregard prompting an error.
+
+It is even more trivial to generalize this with a simple PHP class that will generate the form for you and do the rest. The problem is that the larger the application gets the more tedious this method is. I guess it is much better to do some kind of smart layered filtering where a top level application firewall modifies the form with all necessary information. I don't think that you can do that with mod_security but a little bit of perl will do.
+
+And, hei, your English is not that bad. Cheers.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Joe Phantom"><span>Joe Phantom</span><div class="post-comment-content">We have an closed source intranet web in the company  I work (it was already bought when I entered the company, and we are not allowed to change in any way  the web intranet). The intranet is vulnerable to Cross-site Request Forgery.
+
+I think the best way would be to have a application firewall (as you said), I will try to code it.
+Thank's Delixe and pdp.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">You can either write a pure Perl module for Apache or just proxy the request to another server that will do the filtering and the processing. Good luck.</div></div></div></div></article><footer id="footer"><p>Copyright &copy; 2019 <a href=""></a>. All rights reserved.</p></footer></body></html>

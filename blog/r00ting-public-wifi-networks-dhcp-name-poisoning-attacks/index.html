@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta meta name="viewport" content="width=device-width, initial-scale=1.0"><title>R00Ting Public WiFi Networks DHCP Name Poisoning Attacks</title><meta name="description" content="Hacking is a discipline, which requires a lot of creativity and motivation and less understandings about the technology that is involved. The understanding comes in the process of hacking. All that is needed for a successful attack is the so called X Factor: &quot;Do the bad guys have the motivation and commitment to do it?&quot; If yes, then we have a problem."><meta property="name" content="R00Ting Public WiFi Networks DHCP Name Poisoning Attacks"><meta itemprop="name" content="R00Ting Public WiFi Networks DHCP Name Poisoning Attacks"><meta property="description" content="Hacking is a discipline, which requires a lot of creativity and motivation and less understandings about the technology that is involved. The understanding comes in the process of hacking. All that is needed for a successful attack is the so called X Factor: &quot;Do the bad guys have the motivation and commitment to do it?&quot; If yes, then we have a problem."><meta itemprop="description" content="Hacking is a discipline, which requires a lot of creativity and motivation and less understandings about the technology that is involved. The understanding comes in the process of hacking. All that is needed for a successful attack is the so called X Factor: &quot;Do the bad guys have the motivation and commitment to do it?&quot; If yes, then we have a problem."><meta property="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fr00ting-public-wifi-networks-dhcp-name-poisoning-attacks%2F?w=1024"><meta itemprop="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fr00ting-public-wifi-networks-dhcp-name-poisoning-attacks%2F?w=1024"><meta property="og:type" content="website"><meta property="og:url" content="https://www.gnucitizen.org/blog/r00ting-public-wifi-networks-dhcp-name-poisoning-attacks/"><meta property="og:title" content="R00Ting Public WiFi Networks DHCP Name Poisoning Attacks"><meta property="og:description" content="Hacking is a discipline, which requires a lot of creativity and motivation and less understandings about the technology that is involved. The understanding comes in the process of hacking. All that is needed for a successful attack is the so called X Factor: &quot;Do the bad guys have the motivation and commitment to do it?&quot; If yes, then we have a problem."><meta property="og:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fr00ting-public-wifi-networks-dhcp-name-poisoning-attacks%2F?w=1024"><meta name="twitter:title" content="R00Ting Public WiFi Networks DHCP Name Poisoning Attacks"><meta name="twitter:description" content="Hacking is a discipline, which requires a lot of creativity and motivation and less understandings about the technology that is involved. The understanding comes in the process of hacking. All that is needed for a successful attack is the so called X Factor: &quot;Do the bad guys have the motivation and commitment to do it?&quot; If yes, then we have a problem."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fr00ting-public-wifi-networks-dhcp-name-poisoning-attacks%2F?w=1024"><link type="text/css" href="/blog.css" rel="stylesheet"><script type="text/javascript" src="/blog.js"></script></head><body><header id="header"><h1><a href="/"></a></h1><p></p></header><nav id="topnav"><ul><li><a href="/">Home</a></li><li><a href="/projects.html">Projects</a></li><li><a href="/files">Files</a></li><li><a href="/about.html">About</a></li></ul></nav><article><div id="content"><h1 class="title">R00Ting Public WiFi Networks DHCP Name Poisoning Attacks</h1><div>Fri, 25 Jan 2008 12:19:15 GMT</div><div id="post-content"><p>Hacking is a discipline, which requires a lot of creativity and motivation and less understandings about the technology that is involved. The understanding comes in the process of hacking. All that is needed for a successful attack is the so called <strong>X Factor</strong>: &quot;Do the bad guys have the motivation and commitment to do it?&quot; If yes, then we have a problem.</p>
+<p>Today I would like to cover an interesting attack vector, which can be performed once the attacker gains access to a network: beware, open WiFi networks and free WiFi HotSpots are found to be most vulnerable.</p>
+<p>Here is a scenario: EvilX visits a public WiFi HotSpot. Once he/she is associated with the WiFI network, a DHCP message dialog is exchanged between the his/her computer and the DHCP server, which is most likely the default gateway. Upon that stage an IP address is reserved for the client and the machine is dropped into the network. From that point on, EvilX can see some of the machines by ARP scanning the network or even performing some pings (ICMP) if the network is not segmented, which is usually the case.</p>
+<p>This is not in particular very interesting but what is more interesting is to look how DHCP is handled. If you carefully observe the DHCP <strong>discover-offer-request-ack</strong> dialog, you will notice that each packet initiated by the DHCP client contains several optional fields, one of which represents the name of the client. Many networks/routers will happily take that name and use it as part of their DNS service, so that if your computer is called <em>EvilX</em> and this is the information that you transmit in the DHCP packets, then this is how your computer will be known within that network. Saying that, DNS lookups for <em>EvilX</em> or <em>EvilX.[network suffix]</em> will resolve to his/her IP address. And this is exactly the problem.</p>
+<blockquote>
+<p>The end result is obvious: attackers can register any name of their likings within the network under attack. And this is the problem.</p>
+</blockquote>
+<p>Many laptops/desktops are configured to use shorter names when they are used within corporate and home environments. Simply put, the proxy server is most likely called <code>proxy</code>, the mail server is called <code>mail</code>, the WPAD server is called <code>wpad</code> (<code>wpad</code> hacking made easier), etc. In situations like that, when the client is associated with a HotSpot, it will query for that name but no IPs will be found due to the fact the DNS server cannot resolve the name. This is not the case with some DHCP enabled networks. As we discussed earlier, the name of the DHCP client can be set by us and as such we can create a domain name for <code>proxy</code> and <code>mail</code> which will resolve to no other but ourselves or the IP that we point in the DHCP chat. This means that by using simple UDP DHCP requests, attackers can poison the name of known services and redirect their traffic to an IP of their linkings. This is what I would like to refer to as a DHCP Name Poisoning Attack.</p>
+<p>The situation is even worse then it seems. Due to the fact that we can set the expiry date for the requested IP address, attackers can hold in charge of that domain for long period of time. Lets say 5 days. In some cases, they can even assign domain names to external IP address but I am happy to report that such cases are less likely to occur unless the attacked DHCP service is heavily insecure and flawed by design. Though, I have seen numerous networks that are in particular vulnerable to this type of attack, so attention on this one is required.</p>
+<p>It is also worth mentioning that usually there are no restrictions on how many names someone can register for a particular IP address. In fact, I haven&#39;t seen any DHCP services that enforces restrictions so far. This means that the attacker can simply register a dictionary, each word of which will point to a single IP, therefore exhausting all combinations and increasing the chances of a successful attack.</p>
+<blockquote>
+<p>Attackers can also register domains such as <code>google</code> so that if the user types the word in their browser, they will be redirected to the attacker&#39;s web server.</p>
+</blockquote>
+<p>I have developed a very basic <a href="/files/2008/01/dhcpmangle-perl.txt">script</a> that you can use for testing whether you network is vulnerable or not. I highly suggest to give it a bash and see what it comes up with. If the result is positive then you should undertake some precocious steps to secure your network.</p>
+<pre><code>[/files/2008/01/dhcpmangle-perl.txt](/files/2008/01/dhcpmangle-perl.txt)</code></pre></div><div id="post-comments"><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Arthur"><span>Arthur</span><div class="post-comment-content">This is pretty similar to the idea of dns posioning or wins poisioning leading to fun with names such as wpad.
+
+http://www.robertjbrown.com/2006/08/wpad_windows_proxy_auto_detect.html</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">Arthur, precisely! The only difference here is that the attacker does not have to do anything fancy like poisoning the cache of a DNS server or messing with installing a secondary DHCP on a local network which will only work for clients that renew/release their IP addresses.
+
+<div class="message">The attack will work flawlessly by simply registering the <strong>wpad</strong> domain.</div></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Wladimir Palant"><span>Wladimir Palant</span><div class="post-comment-content">While that approach is interesting of course, the attacker is way more likely to send a fake DHCP response - that will allow him to specify his own DNS server. If he manages to respond faster than the real DHCP server, he will take control of all the name resolution and not just one name. That's a common problem on networks, people installing Linux that comes pre-configured with a DHCP server service - they manage to take down the network (or at least some machines) without even noticing.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">Wladimir, yes. You are right. <strong>However, I believe that this type of attack is less severe.</strong> Here is why:
+
+<ol>
+<li>You have to host your own DHCP server which means that you need to dedicate your own resources.</li>
+<li>You need to respond quicker which is not usually a problem but still...</li>
+<li>You need to host your own DNS which again is a problem.</li>
+<li>You will affect only clients that renew/release their IPs. Although, I think you might be able to force the client to change their IP in some conditions.</li>
+</ol>
+
+The DHCP Name Poisoning Attack is a lot stealthier. Once the domain is cached it will stay there for usually 5 days, depending how the attacked DHCP and DNS services are configured. Sometimes you can map names to external IP ranges. You don't need dedicated DHCP server for that. You don't have to host your own DNS. You don't have to be quicker. And you don't have to wait.
+
+<div class="message">All the attackers need to do, is to poison the DHCP/DNS services. This can be achieved with a single UDP packet as described above.</div></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="dude"><span>dude</span><div class="post-comment-content">"Many networks/routers will happily take that name and use it as part of their DNS service,"
+
+I'm not so sure that this assumption is as widespread as it may seem.  Do yo have any data or perhaps just sample data points from your personal experience with this?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">this assumption is based entirely on my personal experience. but it sort of observed on setups where a single box handles the DHCP and the DNS traffic. This kind of setup is very typical for various devices most of which are in fact WiFi routers. This is the reason why I mentioned WiFi, exclusively, in the title of this post.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="ikkuhqhp"><span>ikkuhqhp</span><div class="post-comment-content">How is the tool used? It complains code 61 (=DHO_DHCP_CLIENT_IDENTIFIER) Neither of 01:23:45:67:89:ab and 01-23-45-67-89-ab work.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">DHO_DHCP_CLIENT_IDENTIFIER is a bug in the Net::DHCP library. The MAC address format is without dashes and semicolons: 0123456789ab</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="bb"><span>bb</span><div class="post-comment-content">Same error code to me (61), even using the MAC address format without dashes and semicolons.
+
+I'm using Net::DHCP 0.66v.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">bb, it is not an error. It is a warning. You can happily ignore it or you can patch the DHO_DHCP_CLIENT_IDENTIFIER variable at the top of the script.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Jason Macpherson"><span>Jason Macpherson</span><div class="post-comment-content">I'm also getting error 61.  Tried many different mac address formats with no success.
+
+<strong>"addOptionValue: unknown format for code (61) at t.pl line 15"</strong>
+
+So I coded up my own version of your tool using Scapy.
+
+<pre><code>#!/usr/bin/env python
+
+from scapy import *
+
+def usage():
+   print "Usage: DHCPspoof  &lt;ip&gt; &lt;name&gt;"
+   sys.exit(1)
+
+if len(sys.argv) != 3:
+   usage()
+
+requested_ip = sys.argv[1]
+requested_name = sys.argv[2]
+
+interface = conf.route.route(requested_ip)[0]
+localmac = get_if_hwaddr(interface)
+localip = get_if_addr(interface)
+
+print("Sending DHCPREQUEST")
+
+ether = Ether(src="00:00:00:00:00:00", dst="ff:ff:ff:ff:ff:ff")
+ip = IP(src="0.0.0.0", dst="255.255.255.255")
+udp = UDP(sport=68, dport=67)
+bootp = BOOTP(chaddr=localmac, xid=0x11033000)
+dhcpOptions = DHCP(options=[('message-type', 'request'), ('hostname', requested_name), ('requested_addr', requested_ip), ('end')])
+
+packet = ether/ip/udp/bootp/dhcpOptions
+sendp(packet)</pre></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">Jason, this is awesome. Wasn't aware that scapy supports BOOTP. Ok, ok, I will test your version to see how it works. 10x.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="bb"><span>bb</span><div class="post-comment-content">No success with the first script.
+
+I guess that i'm meant to use scapy :P It was presented to me a couple of months ago because of a work for college and since then it appeared to me as a very useful tool on a situation or another.
+
+Anyway, tks Jason, it works fine to me.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Shoaib Yousuf"><span>Shoaib Yousuf</span><div class="post-comment-content">pdp,
+
+Very good and interesting post. Excellent researched and well explained.
+
+I don't think so we will see this type of attack vectors in wild for quite some time.
+
+But you never know. Definitely by knowing this we are ahead of bad guys though.
+
+Cheers
+Shoaib</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">bb, Jason's script is nice and simple but I cannot make it work on windows with scapy. Hmmm...
+
+Shoaib, yes of course, and I doubt that you will see these kind of stuff in some massive attack outbreaks. Though, it is a technique to keep in mind when you do pentest/security audit.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Ben"><span>Ben</span><div class="post-comment-content">What is the usage of the 2nd script?
+
+python test.py DHCPspoof (then what?)
+
+Thanks</div></div></div></div></article><footer id="footer"><p>Copyright &copy; 2019 <a href=""></a>. All rights reserved.</p></footer></body></html>

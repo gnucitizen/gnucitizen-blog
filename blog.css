@@ -1,0 +1,96 @@
+html,
+body {
+  font-weight: 400;
+  font-size: 14px;
+  font-family: Menlo, Consolas, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
+  line-height: 18px;
+  background-color: #161616;
+  color: #cccccc;
+}
+body {
+  max-width: 640px;
+  margin: 100px auto 100px auto;
+}
+pre {
+  background-color: #000000;
+  color: #cccccc;
+  padding: 20px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+a {
+  background: transparent;
+  color: #ffffff;
+  text-decoration: none;
+}
+a:hover {
+  background: #ffffff;
+  color: #000000;
+}
+#header,
+#content,
+#footer,
+#topnav {
+  margin: 0px 20px 0px 20px;
+}
+#topnav ul {
+  list-style-type: none;
+  margin: 0px 0px 20px 0px;
+  padding: 0px;
+}
+#topnav ul li {
+  display: inline-block;
+}
+#topnav ul li:not(:last-child):after {
+  content: "";
+  margin: 0px 5px 0px 5px;
+}
+#footer {
+  margin: 20px 20px 0px 20px;
+}
+#index ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+#index ul li {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+#post-content img {
+  border: 1px solid #cccccc;
+  box-shadow: 7px 7px 0px #ccc;
+  margin: 20px 0px 20px 0px;
+}
+#post-content img + img {
+  margin-top: 0px;
+}
+#post-content .video {
+  width: 100%;
+  height: 420px;
+  border: 1px solid #cccccc;
+  box-shadow: 7px 7px 0px #ccc;
+}
+#post-comments {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.post-comment {
+  word-break: break-word;
+  margin-bottom: 20px;
+  clear: both;
+}
+.post-comment img {
+  width: 50px;
+  height: 50px;
+  float: left;
+  margin: 0px 10px 10px 0px;
+}
+.post-comment:after {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}

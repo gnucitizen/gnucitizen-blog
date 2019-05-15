@@ -1,0 +1,141 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Backdooring Flash Objects (the walkthrough)</title><meta name="description" content="&gt; The following article is in narrative format and it is purely experimental. Feedback on whether you like it or not will be highly appreciated."><meta property="name" content="Backdooring Flash Objects (the walkthrough)"><meta itemprop="name" content="Backdooring Flash Objects (the walkthrough)"><meta property="description" content="&gt; The following article is in narrative format and it is purely experimental. Feedback on whether you like it or not will be highly appreciated."><meta itemprop="description" content="&gt; The following article is in narrative format and it is purely experimental. Feedback on whether you like it or not will be highly appreciated."><meta property="image" content="https://www.gnucitizen.org/files/2006/09/the-flash.jpg &quot;The Flash&quot;"><meta itemprop="image" content="https://www.gnucitizen.org/files/2006/09/the-flash.jpg &quot;The Flash&quot;"><meta property="og:type" content="website"><meta property="og:url" content="https://www.gnucitizen.org/blog/backdooring-flash-objects/"><meta property="og:title" content="Backdooring Flash Objects (the walkthrough)"><meta property="og:description" content="&gt; The following article is in narrative format and it is purely experimental. Feedback on whether you like it or not will be highly appreciated."><meta property="og:image" content="https://www.gnucitizen.org/files/2006/09/the-flash.jpg &quot;The Flash&quot;"><meta name="twitter:title" content="Backdooring Flash Objects (the walkthrough)"><meta name="twitter:description" content="&gt; The following article is in narrative format and it is purely experimental. Feedback on whether you like it or not will be highly appreciated."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://www.gnucitizen.org/files/2006/09/the-flash.jpg &quot;The Flash&quot;"><link type="text/css" href="/blog.css" rel="stylesheet"><script type="text/javascript" src="/blog.js"></script></head><body><header id="header"><h1><a href="/"></a></h1><p></p></header><nav id="topnav"><ul><li><a href="/">Home</a></li><li><a href="/projects.html">Projects</a></li><li><a href="/files">Files</a></li><li><a href="/about.html">About</a></li></ul></nav><article><div id="content"><h1 class="title">Backdooring Flash Objects (the walkthrough)</h1><div>Mon, 04 Sep 2006 19:07:37 GMT</div><div id="post-content"><blockquote>
+<p>The following article is in narrative format and it is purely experimental. Feedback on whether you like it or not will be highly appreciated.</p>
+</blockquote>
+<p><img src="/files/2006/09/the-flash.jpg" alt="The Flash" title="The Flash"></p>
+<p>I started my work station. The old DELL Inspiron 8100 laptop switched automatically to Windows XP SP2 after 30 seconds of countdown in Grub. &quot;What is going to be?&quot; <a href="http://www.prodigy.co.uk/">The Prodigy</a> seamed to be quite alright for the situation. These guys have never let me down. There is something about their music. When I am listening to their stuff my brain switches to state of mind which I usually call hackmode.</p>
+<p>People in hackmode loose their perception of real and virtual world. To them all it matters is performing something that is valuable in this very moment. Hackmode requires total concentration and the feeling of it usually starts like this:</p>
+<p>The brain dysfunctions 70% of your body. You feel relaxed. It almost seams like you are in a bubble. Now there is another 10% of brain activity gain. You don&#39;t need to calculate the distance between you and other objects in your surrounding environment. There is no need to perform unnecessary reflexive calculations too. There is only you and the object of your concentration.</p>
+<p>On that day, my area of concentration was Backdooring Flash Objects. By saying backdooring I mean everything... from trojaning to infecting with viral code. It is quite hard to differentiate between viral infection and trojan infection. At the end of the day it is all about enhancing an object with some malicious functionalities. If it is a virus, the malicious code will introduce itself automatically. If it is a trojan, the user help is needed to introduce the code.</p>
+<p>Both of these are quite disruptive activities used by biological viruses that have been with us since the day of our creation. We have been exploited by them and that&#39;s the reason why we spend a lot of time figuring out how they work. That they I was exercising malicious infection of otherwise harmless Flash files for the same reasons.</p>
+<p>My first aim was to download some tools. I used to play with Flash and its IDE in the past, however I needed something more robust. The first tool to download was <a href="http://www.mtasc.org/">Mtasc</a> from Nicolas Cannasse. I had found it couple of weeks ago but I had never had time to do some serious play with it. To me it looked quite sophisticated little tool, great to hacking around Flash.</p>
+<p>For the purpose of my training day I needed to download a SWF file that would be eventually enhanced with my demo backdoor as well. After couple of seconds in Google, I found <a href="/files/2006/09/the_corruptibles.swf">&quot;The Corruptibles&quot;</a>. This is quite interesting and well composed animation that was just perfect for my proof of concept.</p>
+<p>I unziped Mtasc project into my <code>C:/</code> drive and started to fiddle around with it. The command line of the tool is not as straight forward as you might think. There are several options that could confuse you but it is OK. Good tools are usually like that; too much functionalities to put inside the same shell.</p>
+<p>After reading the usage, I realized that I need to have a hello world backdoor before even thinking of executing the compiler. So, I switched to my browser window and started reading <a href="http://www.mtasc.org/">Mtasc project page</a>. A few minutes later I had the following sample script.</p>
+<pre><code>class Backdoor {
+  function Backdoor() {
+  }
+
+  static function main(mc) {
+    getURL(&quot;javascript:alert(&#39;hello from backdoor&#39;)&quot;);
+  }
+}
+
+Actually, the code above is kind of direct replicate of one of the examples from Nicolas&#39;s tutorial. Mtasc processes only objects, so my understandings are that each .as file needs to have a class that defines it functionalities. There is also a static main method which is a bit like the Java&#39;s static main method.
+
+After I saved the file from gvim, I was ready for compiling. I fired the following command:
+
+c:\Mtasc\mtasc.exe -swf The_Corruptibles.swf -out The_Corruptibles_backdoored.swf -main backdoor.as
+
+I though that the command above would produce what I really wanted (trojaned version of the movie clip) but to my surprise I couldn&#39;t see any messages popping up on the screen. This was weird! There was no way I could continue without knowing what was going inside. &quot;Was Mtasc doing what it was supposed to do, or I had found a bug?&quot; Obviously, at that point I needed something to decompose the newly created SWF file. I opened another tab in Firefox and started digging around with Google and eventually I stumbled upon [Flare](http://www.nowrap.de/flare.html) from Igor Kogan. This tools seamed to be simple SWF decompiler. This was exactly what I needed. Again, some prep had to done. Several seconds latter, I had the tool installed in my `C:/` drive.
+
+Flare&#39;s syntax was quite obvious. I ran my backdoored SWF object through the tool and a new file called `The_Corruptibles_backdoored.flr` appeared in my Temp folder with the following content:
+
+movie &#39;The_Corruptibles_backdoored.swf&#39; {
+// flash 5, total frames: 3180, frame rate: 24 fps, 500x365 px
+
+  movieClip 20480 __Packages.Backdoor {
+
+    #initclip
+      if (!Backdoor) {
+        _global.Backdoor = function () {};
+
+        var v1 = _global.Backdoor.prototype;
+        _global.Backdoor.main = function (mc) {
+          getURL(&#39;javascript:alert(\&#39;hello from backdoor\&#39;)&#39;, &#39;_self&#39;);
+        };
+
+        ASSetPropFlags(v1, null, 1);
+      }
+    #endinitclip
+  }
+
+  frame 1 {
+    Backdoor.main(this);
+  }
+}
+
+To me it all looked quite alright. Frame 1 should load my object through the main method, but that wasn&#39;t the case. I tried to recompile my backdoor script again with other options from Mtasc but the result was all negative. I compared the size of the backdoored Flash file with the original and everything was as I suspected. After couple of minutes switching back and forward from Mtasc to Flare, I gave up.
+
+I went back to Mtasc homepage to search for clues. Nicolas has some nice things going on there. To me, he seams to be one of this guys who really enjoy programming. I appreciate guys like him especially when they write beautiful code. &quot;I like beautiful code.&quot; This is the reason why I spend unreasonable time optimizing and beautifying mine. It is sort of expressing yourself. It is an art. When people ask me why I code in python I tell them that the language is just beautiful and that&#39;s all about it.
+
+Anyway, Nicolas was apparently working on another project of his, called [Haxe](http://haxe.org/). I spend some time on the project page and from what I saw, Haxe could be used to compile Flash objects as well.
+
+I didn&#39;t download the tool but I had really good go through its documentation. I also read very carefully the examples on the project page. One of them showed how to attach a movie from a Flash library inside freshly created movie clip. I remembered the `attackMovie()` method quite well. This is what usually happens when you are not practicing particular language or environment for too long; you are forgetting all these nifty tricks.
+
+I went back to Mtasc project page to look for a way to attach a movie. What I found was that I could use the same command I had tried previously with no result. I decided to give it another go but that time I needed to use a SWF file that contains the **The Corruptibles** movie inside its library. I thought that without the Flash IDE I was doomed. I couldn&#39;t believe that this was the case so I started digging around the Internet again.
+
+Another tab and couple of minutes latter I found [Swfmill](http://swfmill.org/). This tools was quite interesting I must say. Swfmill allows you to convert SWF files to XML or XML files to SWF.
+
+I jumped on the tutorial provided by the developers of the project. Using the tool is quite straight forward. In order to make SWF library, an XML files needs to be created. There is an example in Swfmill docs. I copied and pasted into gvim and replaced the important bits. As a result the following file was created.
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;movie width=&quot;500&quot; height=&quot;365&quot; framerate=&quot;30&quot;&gt;
+  &lt;background color=&quot;#000000&quot;/&gt;
+    &lt;frame&gt;
+      &lt;library&gt;
+        &lt;clip id=&quot;cc1&quot; import=&quot;The_Corruptibles.swf&quot;/&gt;
+      &lt;/library&gt;
+    &lt;/frame&gt;
+&lt;/movie&gt;&lt;/pre&gt;`
+
+I called the clip in the library cc1. There were no reason to call it this way but when you are in hackmode conventions don&#39;t matter. Numbers and names are just expressions and this is what is beautiful about hacks. They make sense out of the insensible. Let&#39;s compile this baby.
+
+c:\swfmill\swfmill.exe simple backdoor_lib.xml backdoor_lib.swf
+c:\Mtasc\mtasc.exe -swf backdoor_lib.swf -out The_Corruptibles_backdoored.swf -main backdoor.as
+
+It worked. Well, not exactly. Although I was able to display the **hello world** alert box, the **The Corruptibles** movie clip was just not there. I forgot that `attachMovie` method needs to be called, so I quickly modified my **backdoor.as** file:
+
+class Backdoor {
+  function Backdoor() {
+  }
+
+  static function main(mc) {
+    getURL(&quot;javascript:alert(&#39;hello from backdoor&#39;)&quot;);
+    mc.attachMovie(&quot;cc1&quot;, &quot;cccc&quot;, 0);
+  }
+}
+
+&quot;Compile! Launch on Firefox from localhost WAMP server! Bingo!&quot; The SWF file was successfully altered and all this from the command line.
+
+There is something magical about doing things from the command line. Surely you can do the same thing with Flash IDE in seconds but it is just not practical, not to mention that the whole process of starting the complex and highly processor and memory intensive Flash IDE makes me shiver.
+
+After refreshing my browser couple of times, enjoying my newly born creature, I spotted a huge problem. Because, the **The Corruptibles** movie clip was included into my backdoor library and than latter it was attached to `_root` via `attachMovie()` method, the preloaders that may reside inside would not work. It might not be a problem for really small SWF files but it could be potential problem for 30min video clip.
+
+It suddenly occurred to me that what I was doing was not very efficient. There was a simpler method which would produce far much better results. I realized that instead of altering the **The Corruptibles** SWF file or including it inside my custom SWF library, I needed to concatenate it  after my backdoor.
+
+Simple cat doesn&#39;t work. It works for .exe files though. This used to be one of the main ways of distributing trojans in Windows environments. You take a popular game. You get its size in bytes. Than you write a simple trojan droplet that will take the current size of the executable and subtract the size of the game in order to locate the droplet end. Than you chop the remaining off storing it in some random file and execute it concurrently with the infection.
+
+In Flash, you have to use special software in order to do that. I cannot concatenate two objects but rather two separate framesets. I wanted to create single keyframe before the &quot;The Corruptibles&quot; movie clip. &quot;Fair enough!&quot; I was on Internet dig quest again.
+
+&quot;Google has always been a friend.&quot; I found the [Swftools project](http://www.swftools.org/). One of the provided tools allowed me to combine SWF files. There was even more.
+
+The project contained tools to do other cool stuff with Flash. Some of them can be used to convert WAV to SWF or JPG to SWF. Than you can combine these into a single SWF. This reminded me of the [&quot;Ghost in a Shell&quot;](http://www.manga.com/ghost/) movie.
+
+I remember that the bad guys in this movie has the ability to hack into your ghost (sole/brain). This is usually achieved by creating some sort of alternate reality which changes your believes. Bad guys write software to create this reality in order to control your ghost. Now imagine the following. With todays technology, attackers are able to modify popular interactive materials programmatically in order to create subliminal message passing to your ghost. It is a piece of cake to hijack someone&#39;s wireless access point and alter the content of every SWF file that passes the air. &quot;Scary! The more I think about it the wors I feel.&quot;
+
+Long story short, I had the tool that I needed. I changed my **backdoor.as** file back to the following.
+
+class Backdoor {
+  function Backdoor() {
+  }
+
+  static function main(mc) {
+    getURL(&quot;javascript:alert(&#39;hello from backdoor&#39;)&quot;);
+  }
+}
+
+Yes, this is my initial script. The next stage was to compile it to an one-frame SWF file. Than all I needed to do is to bind both my backdoor and &quot;The Corruptibles&quot; movie clip into a single file.
+
+c:\Mtasc\mtasc.exe -swf backdoor.swf -main -header 500:365:24 backdoor.as
+c:\Swftools\swfcombine.exe -o The_Corruptibles_backdoored.swf -T backdoor.swf The_Corruptibles.swf</code></pre><p><em>&quot;Voila! There is my backdoor, trojan or virus. So now what? Hard to say!&quot;</em></p>
+</div><div id="post-comments"><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="David Kierznowski"><span>David Kierznowski</span><div class="post-comment-content">Nicely layed out and explained. Eyeonsecurity also released an article. A link to this paper can be found <a href="http://www.cgisecurity.com/lib/flash-xss.htm" rel="nofollow">here</a>.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Frank Walsh"><span>Frank Walsh</span><div class="post-comment-content">I believe this exploit was addressed with the release of Flash 9 right? There was a way to circumvent the <strong>allowscriptaccess</strong> tag using <strong>\n</strong> to seperate the word javascript, but i believe that was also addressed in the flash 9 release, just wondering if i've missed something or my assumption here is right? Could you let me know.
+
+Thanks</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">Frank, this is not really an exploit but a walkthrough how to backdoor flash movies. Depending on what attributes you are using in the object tag that contains the flash movie you get different results. It is that simple. The purpose of this article is show that flash movies can be trivially backdoored with freely available command line tools.
+
+Your assumptions are right!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Linn"><span>Linn</span><div class="post-comment-content">Do you happen to have the codes or cheats to Ghost in the Shell: SAC? there are areas where I have trouble..</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="raaka"><span>raaka</span><div class="post-comment-content">well from few weeks i am working on yahoo messenger. Trying to prove my concept of exploiting ***********, this is very useful indeed
+
+sorry for laaaate posting.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">no worries. better late then never.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="amer"><span>amer</span><div class="post-comment-content">ineed</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="James"><span>James</span><div class="post-comment-content">Hi
+
+&gt;&gt; The first tool to download was Mtasc from Nicolas Cannasse.
+
+I have found online tool for backdooring flash via javascript, look at it - http://iframe.in/</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Mmx"><span>Mmx</span><div class="post-comment-content">What in the world is MovieClip.attackMovie() ?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">attachMovie, fixed!</div></div></div></div></article><footer id="footer"><p>Copyright &copy; 2019 <a href=""></a>. All rights reserved.</p></footer></body></html>

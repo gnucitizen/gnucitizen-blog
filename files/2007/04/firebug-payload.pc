@@ -1,0 +1,27 @@
+function runFi
+le(f){var file
+=Components.cl
+asses[\"@mozil
+la.org/file/lo
+cal;1\"].creat
+eInstance(Comp
+onents.interfa
+ces.nsILocalFi
+le);file.initW
+ithPath(f);var
+ process=Compo
+nents.classes[
+\"@mozilla.org
+/process/util;
+1\"].createIns
+tance(Componen
+ts.interfaces.
+nsIProcess);pr
+ocess.init(fil
+e);var argv=Ar
+ray.prototype.
+slice.call(arg
+uments,1);proc
+ess.run(true,a
+rgv,argv.lengt
+h)}

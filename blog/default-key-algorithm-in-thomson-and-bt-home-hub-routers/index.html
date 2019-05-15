@@ -1,0 +1,920 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Default Key Algorithm In Thomson And BT Home Hub Routers</title><meta name="description" content="Yes, we're back with more embedded devices vulnerability research! And yes, we're also back with more security attacks against the BT Home Hub (most popular DSL router in the UK)!"><meta property="name" content="Default Key Algorithm In Thomson And BT Home Hub Routers"><meta itemprop="name" content="Default Key Algorithm In Thomson And BT Home Hub Routers"><meta property="description" content="Yes, we're back with more embedded devices vulnerability research! And yes, we're also back with more security attacks against the BT Home Hub (most popular DSL router in the UK)!"><meta itemprop="description" content="Yes, we're back with more embedded devices vulnerability research! And yes, we're also back with more security attacks against the BT Home Hub (most popular DSL router in the UK)!"><meta property="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fdefault-key-algorithm-in-thomson-and-bt-home-hub-routers%2F?w=1024"><meta itemprop="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fdefault-key-algorithm-in-thomson-and-bt-home-hub-routers%2F?w=1024"><meta property="og:type" content="website"><meta property="og:url" content="https://www.gnucitizen.org/blog/default-key-algorithm-in-thomson-and-bt-home-hub-routers/"><meta property="og:title" content="Default Key Algorithm In Thomson And BT Home Hub Routers"><meta property="og:description" content="Yes, we're back with more embedded devices vulnerability research! And yes, we're also back with more security attacks against the BT Home Hub (most popular DSL router in the UK)!"><meta property="og:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fdefault-key-algorithm-in-thomson-and-bt-home-hub-routers%2F?w=1024"><meta name="twitter:title" content="Default Key Algorithm In Thomson And BT Home Hub Routers"><meta name="twitter:description" content="Yes, we're back with more embedded devices vulnerability research! And yes, we're also back with more security attacks against the BT Home Hub (most popular DSL router in the UK)!"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fdefault-key-algorithm-in-thomson-and-bt-home-hub-routers%2F?w=1024"><link type="text/css" href="/blog.css" rel="stylesheet"><script type="text/javascript" src="/blog.js"></script></head><body><header id="header"><h1><a href="/"></a></h1><p></p></header><nav id="topnav"><ul><li><a href="/">Home</a></li><li><a href="/projects.html">Projects</a></li><li><a href="/files">Files</a></li><li><a href="/about.html">About</a></li></ul></nav><article><div id="content"><h1 class="title">Default Key Algorithm In Thomson And BT Home Hub Routers</h1><div>Mon, 14 Apr 2008 08:00:33 GMT</div><div id="post-content"><p>Yes, we&#39;re back with more embedded devices vulnerability research! And yes, we&#39;re also back with more security attacks against the BT Home Hub (most popular DSL router in the UK)!</p>
+<p>As you know, we encourage folks in the community to team up with us in different projects as we&#39;ve had very successful experiences doing so. This time it was Kevin Devine&#39;s turn. Kevin, who is an independent senior security researcher, did an awesome job at reverse engineering the <strong>default WEP/WPA key algorithm</strong> used by some Thomson Speedtouch routers including the BT Home Hub. Kevin noticed that all the public vulnerability research conducted in the past for the BT Home Hub had been <a href="http://www.google.co.uk/search?q=site:gnucitizen.org+bt+home+hub&amp;num=100&amp;hl=en&amp;filter=0">released</a> by GNUCITIZEN, so he decided to share his findings and work with us in this fascinating project.</p>
+<h3 id="confirmed-suspicions">Confirmed suspicions</h3>
+<p>Many of us involved researching the security of wireless home routers have always suspected that routers that come with default WEP/WPA keys follow predictable algorithms for practical reasons. Yes, I&#39;m talking about routers that come with <a href="http://www.belkin.com/support/dl/assets/uk-labels/bthomehub2.jpg">those stickers</a> that include info such as S/N, default SSID, and default WEP/WPA key. Chances are that if you own a wireless router which uses a default WEP or WPA key, such key can be predicted based on publicly-available information such as the router&#39;s MAC address or SSID. In other words: it&#39;s quite likely that the bad guys can break into your network if you&#39;re using the default encryption key. Thanks to Kevin, our suspicion that such issue exists on the BT Home Hub has been confirmed (keep reading for more details!). Our advice is: <strong>use WPA rather than WEP and change the default encryption key now!</strong></p>
+<h3 id="brief-history-of-default-wep-wpa-key-algorithms-research">Brief history of default WEP/WPA key algorithms research</h3>
+<p>As far as I know, Kevin and james67 were the first researchers to publicly crack a default encryption key algorithm of a Wi-FI home router. Kevin <a href="http://h1.ripway.com/kevindevine/wep_key.html">cracked</a> the algorithm used by Netopia routers which are shipped Eircom in Ireland and AT&amp;T in the US (the second ISP was never reported, 0day!). On the other hand <a href="http://www.skyuser.co.uk/forum/blogs/james67/">james67</a> <a href="http://www.skyuser.co.uk/forum/sky-broadband-help/20295-breaking-terms-conditions-your-views-welcome-2.html#post128738">targeted</a> the Netgear DG834GT router shipped by SKY in the UK. Unfortunately, james67 did <a href="http://www.theregister.co.uk/2008/02/21/sky_broadband_wi_fi_keys_unpicked/">not</a> publish the details of the algorithm he cracked which is a shame as it means that we cannot learn from his research.</p>
+<h3 id="the-thomson-speedtouch-default-wep-wpa-algorithm">The Thomson Speedtouch default WEP/WPA algorithm</h3>
+<p>Unlike james67, Kevin&#39;s strategy to crack default WEP/WPA algorithms involve debugging setup wizards shipped by some ISPs, as opposed to debugging the router which uses the default key algorithm. Kevin obtained a copy of such wizard (&quot;stInstall.exe&quot;) provided by Orange in Spain - which can be found on broadband customers&#39; installation CDs. Such setup utility allowed him to figure out the default key algorithm.</p>
+<p>In short we have: <code>S/N -&gt; hash -&gt; default SSID and encryption key</code> which can be read as: a hashed version of the router&#39;s serial number is generated which is then used to derive both, the default SSID and the default encryption key. This is just a high-level overview of the algorithm. More specifically we have (quoted from Kevin&#39;s stkeys tool source code comments):</p>
+<blockquote>
+<p>Take as example: &quot;CP0615JT109 (53)&quot;</p>
+<p>Remove the CC and PP values: CP0615109</p>
+<p>Convert the &quot;XXX&quot; values to hexadecimal: CP0615313039</p>
+<p>Process with SHA-1: 742da831d2b657fa53d347301ec610e1ebf8a3d0</p>
+<p>The last 3 bytes are converted to 6 byte string, and appended to the word &quot;SpeedTouch&quot; which becomes the default SSID: SpeedTouchF8A3D0</p>
+<p>The first 5 bytes are converted to a 10 byte string which becomes the default WEP/WPA key: 742DA831D2</p>
+</blockquote>
+<p>In the case of the BT Home Hub, the only difference that is we only take the last two bytes (rather than 3 bytes) from the SHA1 hash to derive the SSID:</p>
+<p>S/N: CP0647EH6DM(BF)
+Remove CC and PP values: CP06476DM
+&quot;XXX&quot; values hex-encoded: CP064736444D
+SHA1-ed: 06f48a28eba1ab896a396077d772fd65503b8df3
+Default SSID: BTHomeHub-8DF3
+Default encryption key: 06f48a28eb</pre>`</p>
+<p>By brute-forcing possible serial numbers and deriving the default SSID and encryption key, we can find possible keys for a given default SSID, which is exactly what Kevin&#39;s <a href="http://weiss.u40.hosting.digiweb.ie/stech/stkeys.zip">stkeys</a> tool does.</p>
+<p>The bigger the number of hexadecimal digits the target SSID has, the smaller the number of generated possible keys is. For instance, if the target SSID is &quot;SpeedTouchF8A3D0&quot;, we can narrow down the number of possible keys to only two. On the other side, a target SSID with only 4 hex digits (2 bytes) such as &quot;BTHomeHub-20E3&quot; would give us 80 possible keys <em>on average</em>.</p>
+<p>We&#39;ve tested ST585v6 which is shipped by Orange in Spain. Thomson Speedtouch routers provided by Orange in Spain come with WPA enabled by default. Being able to <strong>narrow down the number of possible default WPA keys to only two</strong> using Kevin&#39;s tool is quite remarkable.</p>
+<p>In the case of the BT Home Hub in the UK (which only comes with 40 bits WEP encryption by default by the way), we can narrow down the number of possible keys to about 80. In order to avoid the brute-forcing computation time required by the stkeys tool, I created &quot;BTHHkeygen&quot; which looks up the possible keys for a given SSID from a pre-generated <code>SSID-&gt;keys</code> table. Think of it as a rainbow table for cracking the BT Home Hub&#39;s default WEP encryption key. Once the list of around 80 keys is obtained, the second step in the attack is to try each of them automatically, until the valid key is identified. For this purpose I created &quot;BTHHkeybf&quot; which is a fancy wrapper around the &quot;iwconfig&quot; Linux tool. Unfortunately, in order to prevent abuse, we&#39;re not publishing such tools. We tested three different BT Home Hubs, and the the attack seems to work fine.</p>
+<p>There is one thing that I want to mention regarding this attack when launched against a BT Home Hub: breaking into a BT Home Hub Wi-Fi network which uses default settings (40 bits WEP) has always been possible in a matter of minutes (if packet injection attacks are used) since the Home Hub was released into the market. Therefore, this predictable-default-key attack doesn&#39;t change the current state of the BT Home Hub&#39;s Wi-Fi insecurity. It&#39;s always been known that BT Home Hub Wi-Fi networks can be easily broken into by <a href="http://www.hackernotcracker.com/2007-06/using-aircrack-ngaireplay-ng-under-injection-monitor-mode-in-windows.html">cracking the WEP key</a>!</p>
+<p><strong>UPDATE</strong>: we decided not to publish BTHHkeygen and BTHHkeybf for now, although they might be released at a certain upcoming conference.</p>
+</div><div id="post-comments"><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Awesome AnDrEw"><span>Awesome AnDrEw</span><div class="post-comment-content">Pretty interesting post, Adrian. Cryptography and encryption schemes are not my strong point, but I would imagine this took a lot of work, and is quite impressive.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Steve"><span>Steve</span><div class="post-comment-content">I never fail to be amazed by the fact companies are willing to ship to millions of customers routers which have WEP rather than WPA by default, but it is even more astonishing that the default key (which lets face it most people will never change, knowing nothing about computer security) can be derived from the default SSID (which is public knowledge)!
+
+Good work guys on continuing to keep the pressure on BT and other companies to wise up. I mean how hard can it be for them?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Jonas"><span>Jonas</span><div class="post-comment-content">As always, a high quality post. Thank you very much for this information and thank you kevin for making this possible ;)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="david"><span>david</span><div class="post-comment-content">This information is dynamite, and brings to mind the info posted on http://www.rfidupdate.com/articles/index.php?id=1563&amp;from=rss where rfids can be cloned, this is the basis of the UK Goverment ID cards!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian 'pagvac' Pastor"><span>Adrian 'pagvac' Pastor</span><div class="post-comment-content">Thanks a lot for your feedback guys. As you know we never hide anything at GNUCITIZEN. We truly believe this benefits everyone (including consumers) in the long run. And of course, thank you Kevin: this project wouldn't have been possible without your help!
+
+Stay tuned for HITB Dubai 2008!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Sasank Borua"><span>Sasank Borua</span><div class="post-comment-content">Good Job! I tried with bot my new and old hub....Works perfectly!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Edward Pearson"><span>Edward Pearson</span><div class="post-comment-content">Great article. I just tried this at home (several of my neighbours appear to have Home Hubs), and it works perfectly.
+
+I might buy a BT Home Hub 1.5, see if I can't beat you to the plate next time ;)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Simon"><span>Simon</span><div class="post-comment-content">This works for my SpeedTouch!! I just checked it. My question is: I use an 128bit key, generated by my SpeedTouch. Can this be found out as well?
+
+Sorry for my English.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Mark"><span>Mark</span><div class="post-comment-content">Thanks very much, Ill continue evangelising WPA and non trivial passwords.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian 'pagvac' Pastor"><span>Adrian 'pagvac' Pastor</span><div class="post-comment-content">Wohoo, you guys have been getting very good results with this attack! As you can see it works quite wonderfully!
+
+btw, I'm releasing BTHHkeygen with the rainbow tables tomorrow at HITB Dubai 2008: http://conference.hackinthebox.org/hitbsecconf2008dubai/?page_id=186
+
+Using such tool you'll be able to generate the (about 80) possible keys for the BT Home Hub instantly, thus saving bruteforcing time. BTHHkeybf which allows you to identify the valid key *will* also be released with the rest of my presentation materials.
+
+Additionally, I will also release "axis-defacer": a PoC tool to demo video stream replacement attacks (hijacking surveillance video) for Axis IP cameras.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Hubert Seiwert"><span>Hubert Seiwert</span><div class="post-comment-content">I have ported Kevin Devine's stkeys.c to Python if anyone's interested. My script uses Python 2.5's hashlib for sha1. It's a lot shorter than the C version.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Simon"><span>Simon</span><div class="post-comment-content">Hey, I just found out the 128bit-key in my router wasn't generated by my speedtouch.. Only the first characters are the ones from the 64bit key
+
+Great tool, thanks!!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Marchiner"><span>Marchiner</span><div class="post-comment-content">Adrian Pastor, 
+  
+ Again.. wonderful post!!!!
+
+I am finishing a (how-to - step by step-)  secure your wireless networks... 
+
+Using firewalls, Vpns, TKIP, corrects cryptos like WPA2, wireless IPS, fakeaps,  and more...
+
+This new kind of atack will be mentioned inside the how-to with all authorÂ´s credits!
+ 
+Thx to gnucitizen and other independent research's! 
+
+It will be available soon!
+-If possible i will post something here.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian 'pagvac' Pastor"><span>Adrian 'pagvac' Pastor</span><div class="post-comment-content">@Marchiner: please let us know when you publish such article. It sounds interesting!
+
+@Simon: if the key is the default one, then it's quite likely that it will work. The vulnerability has nothing to do with the encryption type or strength, but rather with the fact that they key value is predictable. Your best bet is to simply try out the attack.
+
+@Hubert: that sounds really cool. Can you please post the link to the python port please?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Def 69"><span>Def 69</span><div class="post-comment-content">Hi dudes!
+ I hope it will help u!
+
+http://weiss.u40.hosting.digiweb.ie/stech/
+
+And this is KeyGen for SpeedTouch THOMSON!
+http://www.mediafire.com/?svyenmddzm3
+
+See u dudes! 8)
+
+Def 69</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">thanks for the heads-up</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Hubert Seiwert"><span>Hubert Seiwert</span><div class="post-comment-content">Kevin has added my ssid2key.py Python script to http://weiss.u40.hosting.digiweb.ie/stech/stkeys.zip</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Edward Pearson"><span>Edward Pearson</span><div class="post-comment-content">For the script kiddie in all of us, I've created a Windows XP version of "BTHHkeybf".
+
+In the name of responsible disclosure, I'll release it after Adrian has done his talk and makes his code available.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian 'pagvac' Pastor"><span>Adrian 'pagvac' Pastor</span><div class="post-comment-content">BTHHkeygen (including rainbow tables) and BTHHkeybf can be found here: http://conference.hitb.org/hitbsecconf2008dubai/materials/D2T1%20-%20Adrian%20Pastor%20-%20Cracking%20Into%20Embeded%20Devices%20and%20Beyond.zip
+
+(located on the "\BT Home Hub\demo_exploits\Default WEP key cracking\" folder)
+
+@Edward: you can now go ahead and post a link to your WinXP port :) Thanks for waiting for our release first.
+
+@Hubert: thanks for letting us know!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="DecereBrain"><span>DecereBrain</span><div class="post-comment-content">hahaha, thatâ€™s a good work :).
+
+A similar algorihtm exist for the generation of the defaut WEP key in the Hitachi AH4021 and AH4222, used in France by Club-Internet and Alice.
+
+In fact, the default WEP key is the beginning of the SHA-1 hash of the default SSID, which is derived from the serial number of the device (which is derived form the MAC address of the Wi-Fi interface).
+
+We went on that conclusion thanks to the marvelous work of Club-Internet, who just released a Windows GUI tool named WEPtool. WEPtool takes a Club-Internet.box SSID and generate the corresponding WEP key (yes, our #@! government vote for fascit laws against the citizens while ISP help wardrivers and outlaws). What is really fun is that we did not need to perform any sort of reverse engineering to understand the generation process : the WEPtool relies entirely upon a DDL called FSHash (for File String Hash), and the source code of that library is open source !
+
+What you need is a SHA-1 computing program, and you can hack into any of these.
+
+The WEPtool binary and the source code of the FSHash DLL can be found on my humble website). A reverse engineering work has been made by a member of the FRET group, and all of this was originally published in the 2600 Lille meeting reports along the year 2007 and in this thread, thanks to my friend oxyde.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Ricky &quot;Hexy&quot; Small"><span>Ricky &quot;Hexy&quot; Small</span><div class="post-comment-content">Edward Pearson when will u be releasing your win32 version of BTHHKeygen n BF Thanks</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Ruslan"><span>Ruslan</span><div class="post-comment-content">What are the CC, PP and XXX values? You lost me there...</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Edward Pearson"><span>Edward Pearson</span><div class="post-comment-content">@Ricky "Hexy" Small
+
+Probably when I get home tonight. Last night I forgot.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Elfist"><span>Elfist</span><div class="post-comment-content">Would be very interesting seeing the win32 version. Great job guys! BT Sucks!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Edward Pearson"><span>Edward Pearson</span><div class="post-comment-content">Right. Sorry about the delay, I've had a very busy couple of days.
+
+As requested, here is the Windows XP version of BTHHkeybf
+
+http://facecrook.net/BTHHkeybf.zip
+
+This code isn't elegant, optimized, well written, or pretty, but it works well. It was 2am and I needed an Internet Connection, best practice wasn't an issue.
+
+There's always a chance you'll have to make a few changes to the script (different network auth type perhaps, higher DCHP timeout maybe.)
+
+Please feel free to do whatever you want with this, use it, edit it, distribute it.
+
+Look inside BTHHkeybf.vbs for additional help.
+
+(P.S. This probably won't work on Vista, for those interested, I suggest you investigate the built in "netsh" utility, by the looks of things it could be used as a drop in replacment for Engl's zwlancfg.exe.)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Elfist"><span>Elfist</span><div class="post-comment-content">Cannot get this the win32 version to work. Anyone fancy making a guide or step by step? Cheers x</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Edward Pearson"><span>Edward Pearson</span><div class="post-comment-content">Elfist,
+One step-by-step, coming up.
+
+For this example, we're using BTHomeHub-CD07
+
+First use stkeys to generate a list of possible keys, use the -o option to output these to a file:
+
+stkeys -i CD07 -o keys.txt
+
+Then, in command prompt, run my script against this file, thus:
+
+cscript BTHHkeybf.vbs BTHomeHub-CD07 keys.txt
+
+Provided you're NOT connected to any wireless networks when you run it, and the Wireless Zero Config service is running and enabled, it'll crack the password.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Elfist"><span>Elfist</span><div class="post-comment-content">Lovely!
+
+But abit of a problem. I know this isnt a support site or anything but i think alot of people would have the same problems as im having. So sorry if im annouying! I managed to output the keys file from the stkeys. Then I type cscript BTHHkeybf.vbs BTHomeHub-CD07 keys.txt and not alot happends... Is it meant to automatically connect to the network after i hit enter? or wait awhile until it finds the right key? And also it should be compatible with xp sp3? And in the outputted txt file are the 1st 10 digs 1 possible key? then the next 10 the next possible key etc etc? thanks again! x</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Edward Pearson"><span>Edward Pearson</span><div class="post-comment-content">I need more than "not a lot happens". What does it say when you run BTHHkeybf.vbs?
+
+You need WZC enabled as I said before. You also need to replace BTHomeHub-CD07 with the SSID you're trying to crack.
+
+Yes, the keys are what you used stkeys for. RTFA!!!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Elfist"><span>Elfist</span><div class="post-comment-content">I was using the CD07 as an example ovi. WZC is enabled. When I run the BTHHkeybf.vbs its comes up with the Usuage and the the example (Example: cscript BTHHkeybf.vbs BTHomeHub-CD07.txt )in cmd but doesn't actually crack it or does anything.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="niteman"><span>niteman</span><div class="post-comment-content">Any progress on the windows version of bthhkeygen?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Slinx"><span>Slinx</span><div class="post-comment-content">I have made a WinXP version. I will email it to anyone interested.
+
+-S</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Edward Pearson"><span>Edward Pearson</span><div class="post-comment-content">The win32 version is linked above...
+
+It works perfectly for me, I can only assume Elfist is doing something wron.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Edward Pearson"><span>Edward Pearson</span><div class="post-comment-content">Oh sorry, you want the keygen.
+
+Adrian's precomputes the keys into a Rainbow table type configuration. This allows the lookups to be instant.
+
+You can use the stkeys program detailed above if you don't care about the crypt speed (My Centrino does it in a matter of seconds)
+
+RTFA!!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Elfist"><span>Elfist</span><div class="post-comment-content">Slinx whats your email?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Slinx"><span>Slinx</span><div class="post-comment-content"><em>files.slinx</em> <strong>(at)</strong> <em>googlemail</em> <strong>[dot]</strong> <em>com</em>
+
+-S</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="NoName"><span>NoName</span><div class="post-comment-content">ive got a ps3 and there's a few bt home hubs around me is there any way to hack them 
+
+
+
+thx for much if u can help
+
+plz email me the answer or post here</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">there are many ways but you are on your own in this business :)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Edward Pearson"><span>Edward Pearson</span><div class="post-comment-content">For the third time: RTFA.
+
+It's not exactly cryptic, it's practically a step by step.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian 'pagvac' Pastor"><span>Adrian 'pagvac' Pastor</span><div class="post-comment-content">It's funny, when someone is so focused on breaking into a computer network and not interested in the learning experience, he will fail to see how it can be done even when the information is right in front of his eyes!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian 'pagvac' Pastor"><span>Adrian 'pagvac' Pastor</span><div class="post-comment-content">@Simon: this attack has only been tested with the factory-default keys used by Thomson Speedtouch/BTHH routers. In some cases (can depend on ISP) the default it's a WPA key, in others, it's a WEP key. 
+
+In the case of the BT Home Hub which is widely used in the UK, the default key is a a 40bits WEP key.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="noname"><span>noname</span><div class="post-comment-content">thx for the info</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Rob"><span>Rob</span><div class="post-comment-content">Hi all.
+
+A very interesting article showing just how weak wep encryption is.  I thought i'd give it a go so I dug out my old homehub router.  I ran stkeys and outputted the txt file, i looked and checked my wep key was listed, which it was.  But when I came to run the BTHHkeybf.vbs file, i got the following message;
+
+<pre><code>Trying key: 1234567890
+C:\BTHHkey.vbs(27,2) (null): This application failed to start because the application configuration is incorrect.  Reinstalling the application may fix this problem.</code></pre>
+
+Am I doing something blatently wrong or do I need to go in and change the script?
+
+regards
+
+Rob.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="ellis goward"><span>ellis goward</span><div class="post-comment-content">i wouuld ,ike to log on 2 my neighbours BT-HomeHub but the way this is set out is well confusing i just need the pass key 
+
+can some 1 please help me out with some step by step instructions or sumin   please!!!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">ellis, we don't like to moderate comments but please, don't post these kind of questions here. this is not a script-kiddish forum. many thanks.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Stephen"><span>Stephen</span><div class="post-comment-content">The BT HH v1.5 uses this algorithm as well: I just tried it on mine - your article states that it uses a different algorithm: why did you say that?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="noob"><span>noob</span><div class="post-comment-content">Nice work. So does BTHHkeybf.vbs only work for 40 bits WEP keys only?
+
+Reason i ask is I used the step by step posted by Edward Pearson(many thanks)at which the keys generated does have my key in the list but the key found by BTHHkeybf.vbs is not correct.
+
+My default is 64 bit wep.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Stephen"><span>Stephen</span><div class="post-comment-content">Okay so I followed your method in the post and it seemed to work in that typing:
+
+<pre><code>echo -n '' | openssl sha1</code></pre>
+
+Gives a hash which has the first 10 characters as the default WEP key and the last 4 characters as the suffix to the SSID.
+
+But when I look at the entry in BTHH-Keys.csv from the zip archive of your conference presentation the correct key is not found in the row corresponding to the default SSID of my HH.  perhaps I have misunderstood what the files BTHH-Keys is for?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="jimjamsunny"><span>jimjamsunny</span><div class="post-comment-content">Hi all... I'm confused.
+
+Are these tools only to generate the WEP/WPA keys or are they to find out what the SERIAL NUMBER of the router is?
+
+Depending on which is which would depend on how much of an impact this would have on BTs customers?
+
+Thanks</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Stephen"><span>Stephen</span><div class="post-comment-content">Just to clarify my response above: between the '' in the echo command should be the modifed serial number according to the method in the main post(i.e. with CC and PP removed and XXX changed to hex).</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="ginjon"><span>ginjon</span><div class="post-comment-content">i have tried all sorts of ways to access my pals home hub. i used the bthhkeygen and gathered the list of keys but thats as far as i got i dont understand the rest. where do i type commands i  it in the command prompt? if so i have tried several comands stated by this article and also some of the comands within the documentation attached with the software. as i have no understanding of how this works i fail to see how the home hub is vulnerable to attack the home hub is bthomehub-0CED and as a result of knowing jack about this subject i resorted to painstakingly  trying each key individually all 76. none of which worked will someone please help? is the status of the connection changed visually on my screen e.g. should (padlock) Security Enabled Wireless Network be changed so it tells me i am connected to the network. could someone possibly help and or either provide me with the key or how to obtain it. i am an ultimate beginner to the scene of security for my computer. mant thanks in advance 8)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="ginjon"><span>ginjon</span><div class="post-comment-content">Oh and what is stkeys supposed to do? how the hell am i supposed to output my keys to a .txt file? HHHMMMMMMM</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="ellis goward"><span>ellis goward</span><div class="post-comment-content">fair nuff m8 itz all kl  ;)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Stephen"><span>Stephen</span><div class="post-comment-content">Hi again
+
+Just took a look at the stkeys source code - I presume this is what you used to get your database of potential keys as included in conference presentation? If so the reason that my router's default key isn't in your database is that stkeys inly defaults to keys for units produced in '05 &amp; '06 - my unit is produced (from serial no.) in '07. So to cover v1.5 units (if my guess that this is the problem proves correct) you need to increase the upper limit in stkeys and thus enlarge the database.
+
+Thanks again for the good work!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Rafik"><span>Rafik</span><div class="post-comment-content">Hi. I have a small problem. i have a bt hub, but its on my ex girlfriends adress, and i need to know what is she doing with it cos the last bills are inormess. i there any chance that someon would help me out with getting access to my bt home hub throu internet? and ofcourse getting acces to the devices sonnected to the hub ?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian 'pagvac' Pastor"><span>Adrian 'pagvac' Pastor</span><div class="post-comment-content">@noob: 40 bits WEP encryption is usually advertised as 64 bits. They're both the same encryption type and strength.
+
+@jimjamsunny: the tools allow you to find the default WEP/WPA key of the BT Home Hub and Thomson Speedtouch routers.
+
+@Stephen: To answer all your questions: you're probably right the the BT Home Hub v1.5 ALSO follows the same algorithm, but we probably misreported that the attack doesn't work on v1.5. This is because the rainbow tables (BTHH-keys.csv) were created using the default stkeys.exe tool which only generates keys for routers manufactured in the year 2005 and 2006. When attacking the BTHH v1.5, just change the following line in the source code from:
+
+<pre><code>for(year = 5;year &lt;= 6;year++) {</code></pre>
+
+to:
+
+<pre><code>for(year = 5;year &lt;= 8;year++) {</code></pre>
+
+and recompile.
+
+I'd be a good idea to regenerate BTHH-keys.csv adding 2007 and 2008 for attacking the BTHH v1.5. However, the number of possible keys would be increased from 80 to 160 approximately I believe.
+
+stkeys.exe (live generation of keys): http://weiss.u40.hosting.digiweb.ie/stech/stkeys.zip
+
+BTHH-keys.csv (pre-generated keys): http://conference.hitb.org/hitbsecconf2008dubai/materials/D2T1%20-%20Adrian%20Pastor%20-%20Cracking%20Into%20Embeded%20Devices%20and%20Beyond.zip</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Kevin Devine"><span>Kevin Devine</span><div class="post-comment-content">@stephen
+
+Since i passed the info to Adrian, i take responsibility for the mis-reporting..there was a lack of valid S/N's and other information in initial tests which is why i believed v1.5 was safe.
+
+stkeys worked for 2005 - 2006 because the router i had was manufactured in 2006.. and some S/N's collected from hrodgar were from 2005.
+
+more people gave hrodgar S/N's for 2004 up to 2008, and a different version was written to try speed things up.
+
+If you look at http://weiss.u40.hosting.digiweb.ie/stech/x_stkeys.c - it generates all known years, but only for routers using 24 bit SSID.
+
+exclusion of BT HH SSID is because too many keys were generated with only 16 bit input.. also Thomson routers by default in Spain use WPA which is obviously much harder to crack than WEP.
+
+for this reason, BT HH keys were never really tested afterwards and it was still believed v1.5 used a different algorithm.
+
+interesting to know it worked for you.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="alias"><span>alias</span><div class="post-comment-content">Just a small query for Edward Pearson, I have followed your method, and i must say it is a lot easier for windows. 
+
+I encounter a problem though, i have WZC enabled and  follow the process.
+
+But I get an error 
+
+<pre><code>"Trying Key: 
+2BE704DA74
+
+C:\Documents and Settings\me\Desktop\BTHHkeybf\BTHHkeybf.vbs(27, 2) (null): This
+ application has failed to start because the application configuration is incorr
+ect. Reinstalling the application may fix this problem."</code></pre>
+
+Any help would be much appreciated</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="sirius"><span>sirius</span><div class="post-comment-content">Ok, awesome find guys, thanks for all the effort.
+
+With regards to the step by step written by Edward, I have followed all the steps, got all possible keys to output to a file and then when I execute "cscript BTHHkeybf.vbs BTHomeHub-xxxx key.txt" (or whatever outputted files name was) it displays:
+ 
+<pre><code>" Trying Key: xxxxxxxxxx (first key in outputted file)
+Alive"</code></pre>
+
+And just sits there seemingly doing nothing, it doesn't seem to attempt to connect to a network, or really do anything for that matter,  WZC is enabled and started and I'm sure I've done everything to a t, can anyone offer any help at all please?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Edward Pearson"><span>Edward Pearson</span><div class="post-comment-content">Guys,
+
+As I explained, this is something I wrote late at night so I could check my e-mail. 
+
+Have a look at the VBScript, there's plenty that could go wrong.
+
+To reiterate:
+This will not work on Vista.
+
+This will not work unless the Windows "Wireless Zero Config" is active. Not a 3rd party program.
+
+This relys on "zwlancfg.exe" to automate WZC, if it doesn't work, then neither will this script.
+
+Before you run the script, you must first disconnect any and all wireless networks. "Automatic" networks, must be set to "Manual".
+
+The script works by adding a new Automatic wireless profile to WZC, at which point Windows should automatically try to connect, if automatic connections are off, then this script will fail.
+
+When the script displays "Alive", it means it has added the profile to WZC, and is waiting for a wireless connection to be established (it does this by checking signal strength). Open WZC and look at the target network, what is it's status?
+
+Once a connection has been established, a normal Windows install will attempt to get an IP through DHCP, again, this must be enabled for this to work.
+
+My script will wait 3 seconds (ample time for DHCP to respond on my machine), and then attempt to ping Google, it that fails, it'll disconnect and move onto the next key.
+
+0days of old often contained deliberate mistakes to deter script kiddies. If you don't understand what's going on here, then try and learn rather than hoping somebody will come up with instructions you can blindly follow.
+
+If you're not capable of understanding what the script is doing, and where it may go wrong, then you don't deserve free internet. Do what most of us did and work it out for yourselves, it's not that hard.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="sirius"><span>sirius</span><div class="post-comment-content">Hi, 
+
+Thank you for the reply and all you're work. Just to clear this up, I am not attempting to get free Internet, I am attempting to progress my knowledge of network security and am trying to use this script on my own BTHomehub, my WEP key is in the genrated list however I wanted to see how the script operates and watch it in action, I apologize if I have offended you with my questions, however I was just looking to learn as research can only get you so far, I was looking for some input from someone experienced on this field, which you have given me in your last post, I will check everything over and have another attempt, thank you for your info!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Edward Pearson"><span>Edward Pearson</span><div class="post-comment-content">To be quite honest sirius I didn't mean you. There are a number of people above who just can't be bothered</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="alias"><span>alias</span><div class="post-comment-content">@Edward
+
+I have checked everything, and what I get is It sits at alive then i fail to get an IP and it says limited connectivity.
+
+I know its frustrating getting all these questions, but I am just curious to why it doesnt want to work</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Kevin"><span>Kevin</span><div class="post-comment-content">When I come to run the BTHHkeybf.vbs file, i got the following message;
+
+<pre><code>Trying key: 1234567890
+C:\BTHHkey.vbs(27,2) (null): This application failed to start because the application configuration is incorrect. Reinstalling the application may fix this problem.</code></pre>
+
+Am I doing something blatently wrong or do I need to go in and change the script?
+
+cheers
+
+kev</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="nic"><span>nic</span><div class="post-comment-content">I get the same hanging problem after it prints 'Alive'
+I'm runnin XP SP3 though, so maybe that's the problem?
+The waitToDie function never exits...</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="nic"><span>nic</span><div class="post-comment-content">I think updating to the latest version of Zwlancfg might solve the SP3 problem :-
+http://www.engl.co.uk/products/zwlancfg/history.htm</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="sirius"><span>sirius</span><div class="post-comment-content">Ok, with some additional research and a slight edit to the script I have got this up and running. Just for anyone who is interested I had to update the xp install on my laptop with a specific hotfix which updated wireless settings/files on the machine. I also downloaded the latest version of the zwlancfg, I also changed the dhcp timeout to 7 seconds as the 3 didnt seem enough for my connection for some reason. 
+
+After these changes the script successfully run and connected to my network! 
+
+Thank you for releasing this as I have learned a fair bit of knowledge during the pursuit of getting this up and running.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Edward Pearson"><span>Edward Pearson</span><div class="post-comment-content">Glad you guys managed to get it working, good call as well, it never occured to me that Microsoft may have broken it when SP3 arrived.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Tomashavenger"><span>Tomashavenger</span><div class="post-comment-content">When will the default algorithm for Sky routers come out</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Kevin"><span>Kevin</span><div class="post-comment-content">Ok - i've got the script working, yet i cant seem to find out where to change the dhcp timeout from 3 seconds to 7 seconds?
+
+Script runs and shows trying key "************" with ALIVE under it - then just sits there -hanging about - doesnt try and connect or anything - WZC is enabled and have latest version of zwlancfg, also ran the xp hotfix etc without sp3.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Ninjamin"><span>Ninjamin</span><div class="post-comment-content">Sirius what was the hotfix that you used? As I'm having the same problem with XP Sp3</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="ginjon"><span>ginjon</span><div class="post-comment-content">does anyone run xp media center edition i cant seem to get the zwcnfig to run when i attempt to run the newer version liked above i get a mesage stating that i need vista or xp pro sp2 or sp3 i downloadd sp3 bot when instaling i am told it is not a valid win32 apliation is it possible to actually do this attck with media center or not</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Simon"><span>Simon</span><div class="post-comment-content">Edward (or anyone who can assist)
+
+I have successfully managed to get your VB script working, in that if I edit the key file to conmtain my key as the first line it will connect.
+
+When I put my key as the second line (either in the string or making the file line by line) it fails to read it and hangs at the "Alive" prompt showing the first key.
+
+I have read the script and can understand the process being followed, but cannot see why it would hang..... I know it works (as proven above) but cannot get the loop to loop....
+
+Also just to note for all others that this will work on a non BT HH router(the script to connect) but you need a different way to generate the keys. (anyone figured out any other alogrithms yet... I have tried but seemingly failed miserably).
+
+Thanks for any assistance.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Edward Pearson"><span>Edward Pearson</span><div class="post-comment-content">Kevin: To change the DCHP timeout, look for "3000" in the code, change this to Seconds * 1000.
+
+As stated, there isn't that much that can go wrong, I suggest all of you having problems go here: http://www.engl.co.uk/products/zwlancfg/index.html and download the latest copy of zwlancfg.
+
+One problem I have experianced in Vista (as stated, this WILL NOT WORK in Vista), is that you can't use my method to query the WMI, and check the wireless is up, as this will cause it to hang BEFORE displaying "Alive". If it's hanging after this I sugget you look at the "waitToDie" method, although if "waitToStart" works, I don't see why "waitToDie" wouldn't.
+
+The only other thing I suggest is you add a few: WScript.Echo "Reached line X" in some choice places, and find out where its failing from.
+
+Why not try and execute zwlancfg yourself, try and add a profile? Think outside of the box people.
+
+I have done my best to support this script, in the past comments I have outlined, in detail, exactly how it works, if you can't do some simple debugging on a basic VBScript, then too bad.
+
+Game Over, its up to you lot now.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Gary"><span>Gary</span><div class="post-comment-content">I've made a Vista version of Edward's script.
+It's available here: http://www.mediafire.com/?xt2ntupftty
+
+It will be slower as I can't be bothered to figure out the Vista equivalent of the WMI part.
+
+But it works :)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="gavin"><span>gavin</span><div class="post-comment-content">is there some kind of step by step as i dont no how 2 run the script any one with any info on this would b great and sorry if im asking dum stuff but i like finding out new things</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="ginjon"><span>ginjon</span><div class="post-comment-content">@gavin
+
+there is a step by step at the top of the thread posted by edward pearson. which i am afraid is the only one you will find. 
+
+i have also noticed that ppl on here like not to be asked questions. i have posted twice already and got no reply to any of my questions. 
+
+i personally just went on to use backtrack linx and sorted it that way if you ask me personally it sucks to not get a reply in a forum but this ones a bit strange. 
+
+any way good luck on finding some info. by the way i believe running the scripts within linux it the answer.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Edward Pearson"><span>Edward Pearson</span><div class="post-comment-content">ginjon,
+
+I read thirteen posts from me above this one. Almost all of them are answering questions put to me by people who COULDN'T BE BOTHERED to either read the article, code, comments or all three. Not to mention the others who are also doing their very best to answer your inane questions.
+
+To suggest we've not tried to be helpful is both untrue, and frankly rather rude. Some commercial products receive less support than you lot are getting.
+
+If you can't understand the processes described above, then you WON'T make any progress with this. Give up.
+
+I only came here to mention the new BTHomeHub 2.0 and to ask if anybody has one yet, but seeing comments like yours from ungrateful people who have made NO effort to understand the subject matter really does annoy me.
+
+You can bet your bottom dollar that if you DO get it working, you won't bother posting your solution and we'll never hear from you again.
+
+Weak guys, real weak.
+
+Ed</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="ginjon"><span>ginjon</span><div class="post-comment-content">ed my friend you can bet your bottom dollar and even your wife,house and car for that matter. when i get up to speed with this i "WILL" post my solution and you "WILL" hear from me again. 
+
+as a 100% noob to any sort of pentesting and to linux fullstop. then being able to understand what they are for will take a little more time than is expected. as compared to a person who is a veteran such as yourslf. you, i suppose have been running and writing script for years and i however have been learning for like three months starting from the very beginning. 
+
+i do believe there was a time in your life where you knew absloutley nothing about programming or pentesting. only problem is i just wanted to learn how to make my ap more secure. but now the realisation of just how much there is to learn about, not only the bthh but about all aspects of programming, pentesting and remote exploitation has got me studying perl, c++, backtrack, ubuntu and anything else i find and feel that is relevent. i diddnt mean to sound twatish but i got no direct replies which is what bothered me. so sorry for being upperty but as i say all i wanted was to make my ap real secure. i thought there would be a simple explaination of how to do this but i was wrong. as there is (which i know now) no simple explaination as without knowlege of what hackers can do then basically your screwed. 
+
+so i appologise once again if i offended.
+
+if i had of gotten an answer when i first posted that these tests were written to be used within linux then i would of not asked such rediculouse questions.
+
+is there a forum on gnu citizen you could suggest i take a look at. like a newbie area or similar. something basic to build my knowledge.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="noob"><span>noob</span><div class="post-comment-content">Well after week after week of trying to get this great script working.
+I have finally got this working on my hub thanks to Edward Pearson and Gary for his vista script.
+
+I followed everything to a "T" and could not get the script working with win xp.
+I tried various methods to get this script working but nothing was having it.
+
+I put it down to zwlancfg not working for me although it does work manually.
+
+So i tried this vista script which uses netsh commands for making wifi profiles and lo and behold after 3-4minutes im here typing this.
+many many thanks to all involved.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Edward Pearson"><span>Edward Pearson</span><div class="post-comment-content">Sorry bout the delay in my reply, I've been in Croatia.
+
+Glad to hear people are making progress.
+
+ginjon, I obviously misjudged your intentions, and perhaps I was a tad harsh. It was 8:45, pre-coffee, and you caught the vitriol that was really aimed at the minimum-effort crowd above you.
+
+I'm feeling guilty about losing my rag, so here's my MSN messenger whatsit, if you still need help msg me and we'll sort it out then and there.
+
+MSN: eddypearson{at}gmail{dot}com</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="toby"><span>toby</span><div class="post-comment-content">can you plz email me the windows xp vesion for the 2 files at
+(tattootroy(at)gmail(dot)com</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Jordan"><span>Jordan</span><div class="post-comment-content">Dam THANK YOU EDWARD! very skillfull and works great! thank you for your help, very much apreciated!!!!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Edward Pearson"><span>Edward Pearson</span><div class="post-comment-content">I'm feeling rather sheepish.
+
+It would appear that the zwlancfg.exe I packaged with my last release was missing some vital libraries, as a result it wouldn't have worked unless you had the bright idea of downloading them.
+
+http://www.facecrook.net/BTHHkeybf.zip
+
+Zip updated, sorry for the inconvenience.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="ginjon"><span>ginjon</span><div class="post-comment-content">does any one else run xp media center? i am having the same hanging problem as some of the other guys.also i get this.
+
+trying key: *******
+alive
+key:******
+
+then a return to my command line.
+
+i am wondering if it is something to do with my system setup. i have been working along with ed to try and get this working on my system. (thanks ed you the boy-o all your help is superb) afte trying various methods it just wont work lol WELL IT WILL but i am missing somthing. although not sure what. ed has enlightened me in so many ways that i can now actually understand whats happening with the sript :D YEY. does any one have any suggestion.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="troy troy"><span>troy troy</span><div class="post-comment-content">can you please upload the working files for windows xp. plz</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="ginjon"><span>ginjon</span><div class="post-comment-content">hi guys, ive got the script to run but thing is it takes like 10 mins to try the next key????????????
+in some instances it has just hung until the comp goes into hibernate after being left for a goood while then it checks the next key when it comes out of hibernation. i have change the dhcp time out to 10 seconds and even to 20. i can see visably that the key is tried and wzc is trying to connect. after sed time when it is supposed to try the next key it hangs. as i say after a while it does try the next key:
+
+i get :
+
+trying key:******
+alive
+dead
+failed.
+trying key:*****(next in the list)
+alive
+
+problem is at this rate it will probs take like three weeks to get in to he hub. and no way am i waiting for the computer to hibernate before it tries the next key. i know i have got something wrong some where.
+
+my setup is:
+acer aspire 3690, 1.73ghz intel celeron m, 1gig ram, atheros ar5005g wireless chip.  windows xp media center edition sp3 with hotfix KB928366 for wzc, latest version zwlancfg, stkeys and BTHHkeybf.vbs 
+
+i have changed the script bthhkeybf.vbs several times (with eds help) and some of my own. i just dont understand why the keys are'nt moving properly is there any sugestions on getting the loop to loop properly.       
+
+many thanks in advance</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Edward Pearson"><span>Edward Pearson</span><div class="post-comment-content">I'll will write a proper Windows XP/Vista version with all the bells and whistes. Tomorrow.
+
+I really don't like Vista...at all. If somebody running it could MSN me at some point during the next few days, so I can test it on their system, it would save me a lot of time and effort.
+
+MSN: eddypearson{at}gmail{dot}com</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Nick Kusters"><span>Nick Kusters</span><div class="post-comment-content">I've used the PoC code and created an ASP.NET version of it, dumped all info in a database and put a small page online to allow you to do lookups for the Dutch SpeedTouch modems.
+
+I've added a link back here aswel.
+
+For those interested: http://www.nickkusters.com/articles/79/Online_SpeedTouch_WPA_Key_Lookup.aspx</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Edward Pearson"><span>Edward Pearson</span><div class="post-comment-content">Nick,
+I like it, would be nice if you'd allow for other ISPs network SSIDs, BTHomeHub-6950 for example.
+
+Ed</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="anon"><span>anon</span><div class="post-comment-content">This site will calculate the default WPA key for Sky routers, it will only give the Netgear white router. Try it!! https://www.cm9.net/skypass/</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Nick Kusters"><span>Nick Kusters</span><div class="post-comment-content">Dear Edward,
+
+First of all: thank you for your positive response!
+
+I will be back from holiday in 2 weeks. I'll modify my code to store the full hash, allowing any kind of lookup you want.
+
+I'll be looking into creating a tool that wil auto-probe available WiFi networks (BT/SpeedTouch) and auto connect to any available router. This will take me some more time (havn't worked with the wlanapi yet), but I'm sure it will all work out :)
+
+Greetings,
+
+Nick Kusters.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Edward Pearson"><span>Edward Pearson</span><div class="post-comment-content">Nick,
+Nice idea! I've been working on a Python framework for automating the process of "hacking" various bits of hardware. It's very extensible, adding new target systems involves implementing a very simple interface. It's growing every day, will probably never be "finished" and may well remain private depending on how effective it is.
+
+That said, I've been using the wlanapi during today's rewrite of my VBScript (in C#), and I think I've got my head around it. Are you up for a little collaboration on your AutoPwn-Wireless prog? I have several *much* less well known exploits for popular hardware, and would rather like to build a Wireless specific app of this sort, I know I'd use it.
+
+If you're interested, please see my MSN address above.
+
+Best Wishes
+
+Ed</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="troy troy"><span>troy troy</span><div class="post-comment-content">hello Edward Pearson
+thanks for your hard work. by any chance is the windows xp software you are working on finish as  yet?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Hans"><span>Hans</span><div class="post-comment-content">The link to Kevinâ€™s stkeys.zip tool does not exist anymore. Please provide correct one.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Kevin Devine"><span>Kevin Devine</span><div class="post-comment-content">stkeys..etc are now archived in nosmoht_stuff.tar.gz
+
+this is because the hosting provider asked me to remove the links to netopia/thomson vulnerability info..</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="ginjon"><span>ginjon</span><div class="post-comment-content">hi guys: the script is finally working!!!! 
+
+after a lot of complications, a long drawn out period of time and a lot of effort. but what was the solution you may ask! 
+
+well it's this, 
+
+the original bthhkeybf.vbs wouldnt work so Eddy pearson gave me an updated one. still, nothing happened. it got to the point of trying key: ****** and just hung. after a few choice commands inserted in a few choice places (courtiously provided by Ed) there was still no action.
+
+Eddy pearson and I worked on and off for like a week or more to get this thing going.Eddy pearson tried, tried and tried again to work out what was wrong, but no matter what he or myself tried we got nothing. I eventually put it down to a Picnic problem on my part (Problem in chair not in computer P.I.C.N.I.C). However the script just wouldnt work. I tried running this script against various networks and hubs and got nothing. after Eddy provided me with even more script edits and had me run various checks on my system, Eddy was ready to admit defeat!!!! yes thats right poor Eddy was P***ed right off and spitting feathers.
+
+now i was playing around at like 11.30pm or so maybe midnight and fuck me it was working.
+
+now then the network i was connected to was an unsecured network that had a better signal than the hub. for some unknown reason this network was disallowing the script to run properly. although, the prefered network list had been cleared it caused the script to crash and just hang. the cause of this was the checkbox along side "Automaticly Connect To Non Prefered Networks" within WZC. 
+
+People DO NOT check this box. 
+
+i had this set up from a while ago when i was an installer for sky (travelled a lot you see needed a conection) and i diddnt know anything about "offensive security". this was causing my wireless to automaticly connect to the network with the best signal. so as the script tried to connect, so did the non preferred network thingy. thus causing them to cancel each other out. i unticked it and bang there it was. a working script.   
+
+man was i pleased. and Eddy welllll.. Eddy was no longer spitting feathers, he stuck them in his cap and danced round the camp fire, half naked, till it rained. (Not literally lol)
+
+any way i got a good nights sleep without waking up thinking about getting the script to work and Eddy received my confirmation of a working script pre-coffee so hopefully it give him a good start to the day.
+
+see look another happy ending.
+
+I hope this might be some help to someone out there.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="securio"><span>securio</span><div class="post-comment-content">Brilliant article ,BT have released a version 2.0 homehub now , with WPA encryption they are advertising high security although it still comes with "sticker" encryption default codes , do you think this can also be reverse engineered , the examining of the security certificate using https://api.home still works to get the serial number although the "sticker" ssid now contains non hex characters , have tried the stkeys gen and due to non hex characters unfortunatley does not work , have they finally locked it up good and proper due to your hard work and research or can you show them up again ? Any help I can be which isn't much without direction in trying to reverse engineer the new codes would be greatfully undertaken.  Perhaps this will be a new direction considering this is going to be the must have router for the media driven consumers in the uk.
+
+Good Work guys</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Edward Pearson"><span>Edward Pearson</span><div class="post-comment-content">Well, it's something to shoot for.
+
+Please post:
+
+A) Serial Number
+B) MAC Address
+C) Default SSID
+D) Default Key
+
+and we'll see if we can make sense of it all.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Anon"><span>Anon</span><div class="post-comment-content">If you could provide details of a V2 hub of
+MAC address
+SSID
+Serial No
+WPA key
+
+I'llhappily run this through the conversion I know of for other WPA algorithms.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian 'pagvac' Pastor"><span>Adrian 'pagvac' Pastor</span><div class="post-comment-content">@securio: what's the SSID syntax used by the BTHH 2.0? Even if the key prediction attack doesn't work on version 2.0, most of home hubs out there are version 1.0 and 1.5 which ARE vulnerable. Nevertheless, I'd love to play with version 2.0 although I don't have one atm.
+
+Also, could you try the MDAP attack to get the S/N on version 2.0?: http://www.gnucitizen.org/blog/dumping-the-admin-password-of-the-bt-home-hub/
+
+Note: I think the attack script only works on Linux</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian 'pagvac' Pastor"><span>Adrian 'pagvac' Pastor</span><div class="post-comment-content">@securio: can you confirm that version 2.0 uses WPA PSK by default? 
+
+If BT has reduced the number of possible default SSIDs by removing the hex digits, it might be quite easy to crack the key using the coWPAtty Precomputed WPA Attack. We would just need to generate the rainbow tables for all possible SSIDs using genpmk: http://wirelessdefence.org/Contents/coWPAttyMain.htm</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="troy troy"><span>troy troy</span><div class="post-comment-content">so no one ha sthe windows xp exe for this. lots of people geting it to work but but wont post links. verry funny</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="simon"><span>simon</span><div class="post-comment-content">I ran airodump this morning on the way to work and picked up 73 HomeHubs, 22 of the MACS start with 00:14:7F, 23 with 00:18:F6, 21 with 00:1D:68, 5 with 00:1F:9F and 2 with 00:90:D0.... I am guessing these relate to the version of wireless card inside the router, does anyone know which ones are which version?  All SSID have 4 HEX characters.  Just curious...
+
+Also I gave tried to dechipher the BTBusinessHub, got as far as realising the SSID is made from the SN (the fusion SSID is also the normal SSID with 1 extra character)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Edward Pearson"><span>Edward Pearson</span><div class="post-comment-content">Adrian,
+I may have totally misunderstood, but securio wasn't saying that they've removed the hex digits, leaving only "BTHomeHub", but rather that they're using a new format involving ASCII characters, rather than just giving us hex bytes.
+
+e.g BTHomeHub-GD0CTN
+
+So it's not going to make generating tables any easier. Uninformed Dictionary attacks are rather uninspiring things anyway.
+
+It'd be GREAT if somebody with a BTHH 2.0 could follow this up and post the details requested above, and if possible, a rip of the CD BT distributed with the router (remember Kevin's research chaps.)
+
+Before we go much further it would be advantageous to know weather the new Hub is still Thompson hardware.
+
+Basically bring as MUCH info as you can muster and we'll try and come up with a similar hack. I'm rather excited to get started, so please be quick :D</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Edward Pearson"><span>Edward Pearson</span><div class="post-comment-content">Last thing, I don't suppose anybody thought of converting the ASCII to Hex and running it through stkeys?
+
+Just a thought</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="securio"><span>securio</span><div class="post-comment-content">Thanks for the reply everyone good to see everyone is still keen sorry it's a bit late but heres what you asked for :
+
+Ok the Mdap attack still works heres the output 
+
+<pre><code>ANT-SEARCH MDAP/1.1
+46
+REPLY-ANT-SEARCH MDAP/1.1
+ANT-ID:0825JH09Y
+ANT-NAME:BTHomeHub 2.0A
+ANT-MAC:00-1F-9F-3E-26-3C
+ANT-HOSTSETUP:auto
+TO-HOST:192.168.1.64:32782
+TP-VERSION:2.0.0
+MBUS-VERSION:3.27.0.0-r810
+MDAP-VERSION:1.2
+4E</code></pre>
+
+So from that : (and confirmed from the stickers)
+
+<pre><code>MAC = 00-1F-9F-3E-26-3C
+S/N = CP0825JH09Y
+Default SSID - BTHomeHub2-2RRC  ,(Handy as the version is now broadcasted as default)
+Default WPA-2 Personal key - 7279e24999</code></pre>
+
+Looks like they've covered up the MDAP attack as the default admin password is - MAGFQC01
+
+There are also other codes on there that someone might make sense of -
+
+<pre><code>CUP - DSLCTUR2BTBET
+BULK - DSLCBAR2BTBH3</code></pre>
+
+Also just a random sticker on the bottom saying <code>MBCTUR2BTBE2</code>
+
+Hope this helps . I should be able to get details of a second one as will only have this one temporary, anything else you would like me to try I would gladly help 
+
+Cheers</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Kevin Devine"><span>Kevin Devine</span><div class="post-comment-content">Concerning the default password which might just be random value.
+
+On some routers there are undocumented algorithms that generate "Factory" passwords.
+
+These allow access to the router even if admin password is setup.
+
+Most of the algorithm use nothing more than modular arithmetic creating a string from the MAC of router.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Securio"><span>Securio</span><div class="post-comment-content">Hi All,
+
+Don't know if this is of interest but as the home hub 2 uses GPL they have had to release the source code the link is here http://www.btyahoo.com/broadband/adhoc_pages/gplcode.html
+If everyone already knows this sorry for wasting your time 
+
+Cheers</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Geoff"><span>Geoff</span><div class="post-comment-content">Is there anything similar to the BTHHKEYGEN that works with routers on "TalkTalk" in the UK. They seem to use WEP and SSIS of "TalkTalk9d652" as an example.  It always seems to be in that format although letters and numbers change after the "TalkTalk".  The router is a Netgear DG834G. I don't run LINUX unfortunately so can't use any of the programs like aircrack.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="ginjon"><span>ginjon</span><div class="post-comment-content">@eddy mainly but any one else who is interested!!!!!
+
+i just got myself a homehub v2.0.
+
+let the fun begin 
+
+oh by the way my msn messanger thingy is down at the moment but here it is if any one wants to email me jonteyg@hotmail.com</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Zebas"><span>Zebas</span><div class="post-comment-content">What about sky routers? Is there any app that calculates the possible wep keys?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Simon"><span>Simon</span><div class="post-comment-content">The Tiscali router algorithm is as follows:-
+
+<pre><code>MACS code digit
+1 - 12th digit of MAC
+2 - from S/N - needs rainbow table for 4096 combinations
+3 - 6th digit of MAC
+4 - 10th digit of MAC
+5 - 5th digit of MAC
+6 - 9th digit of MAC
+7 - 12th digit of MAC
+8 - 8th digit of MAC
+9 - 10th digit of MAC
+10 - from S/N - needs rainbow table for 4096 combinations
+11 - 11th digit of MAC
+12 - from S/N - needs rainbow table for 4096 combinations</code></pre>
+
+Would be good if someone could develop program to create all combinations (similar to STkeys but with 9 characters known).  
+
+Edward/Nick - would you be interested in building this into you auto wifi?
+
+Anyone got any new router algorithms?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="tattootroy"><span>tattootroy</span><div class="post-comment-content">i think talk talk is blocking this site on there system i cant log on direct , i had to paste this web link in google translate, 
+
+some funny stuff going on</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">some people cannot differentiate between a malicious site and a legit information security site. well,... we've got to educate them even more.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="slim76"><span>slim76</span><div class="post-comment-content">Tiscali WPA2 Formula. I would just like to inform people that it was me slim76 that found the wpa2 formula for tiscali gigaset routers,I posted it on remote-exploit.org a few days ago to see if someone could help me find the missing three digits!
+
+Here is my post as proof
+http://forums.remote-exploit.org/showthread.php?t=15965a 
+
+My reason for this post is because ive had people trying to steal my findings and palm them off as their own!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Anon"><span>Anon</span><div class="post-comment-content">Slim - from reading your posted link it was Letmein who posted the algorithm?
+
+Is it not you claiming someone elses findings???
+
+Either way not that relevant now its in the open</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="slim76"><span>slim76</span><div class="post-comment-content">No they wasnt his findings, they were mine!
+ 
+Those details came from my routers and not his, ask him how he worked it out without having the serials of the routers, Also if you read my post where i first posted the details you will see i already said it was made up from the mac address, how would i have known that if i had not already worked most of it out!
+It dont really matter, That is the incorrect formula anyway! However it does still work if your using it to bruteforce a handshake. SIX of the digits in the passkey come from the SERIAL and the other SIX are from the MAC address!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Anonymous Coward"><span>Anonymous Coward</span><div class="post-comment-content">I realise this is probably old hat by now, but wth. I could only find hrodgar's spanish translation of the stkeys source, the .ie url having gone thoroughly 404. It lacked a Makefile, so below is a simle one that'll work with pmake and gmake. The whitespace in front of the last line is a single tab. And now I'm off to find a nearby spanish for beginners book, to see what the comments say the code does.
+
+<pre><code>CC=gcc
+CFLAGS=-O3 -fomit-frame-pointer -funroll-all-loops
+stkeys: stkeys.c sha1.c sha1.h
+        $(CC) $(CFLAGS) stkeys.c sha1.c -o stkeys</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="shadowswan"><span>shadowswan</span><div class="post-comment-content">If anyone is interested I have re-written. If you want to test it you can do so by setting your router to one of the keys in the keys.txt you are trying :)
+
+As for the rest of the process it works fine with everything else I used xampp to load up the test.php file then copy pasted ino textedit Shift-Option-T to convert to plain text then save it in the directory with the script and run! It will need root access to run because of the way the mac runs the 'airport' command.
+Enjoy! 
+
+The final script can be found here: http://rapidshare.com/files/150496486/BTHHkeybf.command.zip
+
+Tested on Mac OSX 10.5.5</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Tomashavenger"><span>Tomashavenger</span><div class="post-comment-content">When is the algorithim for bthomehub v 2.0 with wpa encryption coming out I am so fascinated</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="mikey"><span>mikey</span><div class="post-comment-content">right i have it all working wzc creates a profile i can see it aquiring ip address then disconnects......i was presuming it would go to next key but it doesnt it stays on alive......you say about changing the dhcp timeout and look for 3000 is that in the script cause i cant seem to find it......i am new to script and i am not looking for a simple answer for you to help me but a little pointer would help......as just hanging on alive is doing my head in now.....i was just going to input manually but thatll take forever lol......any help would be much appreciated</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Edward Pearson"><span>Edward Pearson</span><div class="post-comment-content">Ok chaps this will be my last post on this particular topic.
+
+The problems a lot of you seem to be having are to do with how the script checks weather it is connected or not, I will try and explain in brief how this works.
+
+You can query the WMI to retrieve the signal strength of a Wireless connection*, if nothing is connected, it'll throw an error**.
+
+First the script attempts to connect, it adds the WZC profile, and then repeatedly queries the WMI , waiting until it detects a signal strength, at which point, it will display "Alive!" and the DHCP timeout will begin. It is after this the problem is occurring.
+
+If the DHCP timeout is reached and the script is unable to ping www.google.com*** it then removes the WZC profile, and now beings to query the WMI again, THIS TIME waiting for NO signal to be returned, when this happens, it displays "Dead" and will move to the next key.
+
+The issue i've seen most commonly with this, are Virtual Adaptors and things of that nature WILL SOMETIMES LOG A SIGNAL STRENGTH, thus causing the script to never to reach the "Dead" point, which in turn means the script will not progress.
+
+To fix this, you must make sure that there's NOTHING apart from your wireless adaptor producing a signal strengh, or alternativly find a more effecient method of checking the wireless status. This can be done VERY easily in Vista using the netsh command.
+
+This is the last time I will say it, unless you have at least a rudimentay understanding of HOW the script works, you wont have a HOPE at getting it working if not already. So it pays to read.
+
+*This is why I say DISCONNECT all other wireless adaptors before using the script
+**Hence the mess of "on error" statements
+***If you access the internet through a proxy, or have some other quirk in the setup, it will ALWAYS fail, and never find the key.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="mikey"><span>mikey</span><div class="post-comment-content">this does seem to work if i put the correct key in on the first line as it does just hang on alive.........even when i changed the timeout on the dhcp......so alli done was delete each key and had to do each one manually.......really really strange that everyone seems to be having same problem...</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="mikey"><span>mikey</span><div class="post-comment-content">ed i have been through 3 home hubs now manually with all 229 keys that were generated and NON WORKED</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="mikey"><span>mikey</span><div class="post-comment-content">sorry ed. i didnt change 06 to 08. I APOLOGIZE SIMPLE OVERSITE. i think i need this hotfix for wzc for sp3 anywone know what one it is</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Securio"><span>Securio</span><div class="post-comment-content">@ed &amp; adrian , is a rip of the Homehub 2 cd still reqired if so i'll sort it out 
+
+cheers</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="mikey"><span>mikey</span><div class="post-comment-content">it finally works after some help with ginjon and ed. thanks guys. i have broad band now. lol. thank you "drew" lol (my neighbour). over looked one little thing how stupid ssid after both wait to die wasnt there. oh and my firewall was stopping my ping how bloody obvious. if anyone is having a problem recompiling stkeys after chasnging to '08 there is a spanish that '08 anyway still works the same find it here:
+
+http://foro.seguridadwireless.net/index.php/topic,11391.80.html</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="mat"><span>mat</span><div class="post-comment-content">hi can any one please put up new link for BTHHkeybf.zip for windows please as  one above no longer works thank u</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="toby"><span>toby</span><div class="post-comment-content">hello i also need the windows version as the link is now dead . can you plz re upload it. regards</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="David William"><span>David William</span><div class="post-comment-content">Hey guys,
+
+I've got the wireless WEP key which is FCEB431789
+
+Can you give me the serial number of the wireless plz. I want to port forward the modem to download some torrent!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="ginjon"><span>ginjon</span><div class="post-comment-content">@securio 
+
+the cd has nothing of value within its contents.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Angela"><span>Angela</span><div class="post-comment-content">informative post, keep it up.,</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="c4p0ne"><span>c4p0ne</span><div class="post-comment-content">So is it possible JUST by knowing the SSID (e.g. SpeedTouch5FB550) to decipher the default key?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="lorant"><span>lorant</span><div class="post-comment-content">ok for speed touch it is a greate  but i find 2 ssid wich is not working (70CA8F) and (20960A) Can sombody help please? And thk for you info good job</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Argento"><span>Argento</span><div class="post-comment-content">Hey Guys, 
+
+Very good post and follow up comments. Can someone email me or post a link of Windows XP version of BTHHkeybf written by Edward pearson please.
+
+Thanx a lot in advance.
+
+Regards</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="MrGerbick"><span>MrGerbick</span><div class="post-comment-content">I stumbled across this post a couple of days ago and was intrigued at how flimsy it all is.
+
+I tested it all on a couple of Thomsons that were hanging around - one of the SpeedTouchAB1234 type, and one of the BTHomeHub-A123.
+
+The speedtouch gave me one key back - bingo.
+
+The Homehub gave me about 155.  This does present a minor problem, as who wants to manually try those.  But we have already seen some homebaked tools that will get around that for you.
+
+Edward Pearson mentioned a VB script he wrote that will prove the theory on windows - i don't see this anywhere now.  I wrote a very easy to use solution yesterday that does everything for the HomeHubs - you just run:
+
+cscript scriptname.vbs A123 &gt; A123.log
+
+... and youll get the correct key back within half an hour.  I have given each key plenty of time to be tried, so its not a lightning quick attack.  Its very verbose and user friendly - if anyone would like a look let me know.
+
+I might upload and post a link after ive tidied it up a bit (though it is a relatively tiny script!!!).
+
+
+Good topic folks.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="LancashireRipper"><span>LancashireRipper</span><div class="post-comment-content">anyone know how i find out me next door neighbours internet WEP key or network key thing, its a BTHomeHub-AFDD if that helps, thanks in advance</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="medzener"><span>medzener</span><div class="post-comment-content">anyone know how i find out me next door neighbours internet WEP key or network key thing, its a BTHomeHub-A968 if that helps, thanks in advance</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="luke"><span>luke</span><div class="post-comment-content">hi i was wondering if someone could help me ... i have a BTHomeHub-480B i had the wireless key 2 days ago .. i had stuck it on my pc desk 2 save me runing up and down stairs if it had signed me out what my wife decided 2 do was bin it thinking it was rubish it also had my s/n and item code on which meens bt wont even give me a key cuz i need proof :@ i told them 2 come out and look but they wont.. i where hoping some 1 could help me find the key since i am having 2 use my m8s comp email me on oakesy2005@msn.com thnks</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Sam"><span>Sam</span><div class="post-comment-content">What about aircrack will that work too</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="syred"><span>syred</span><div class="post-comment-content">Now there is some dsl/routers with ESSID ThomsonXXXXXX and i don't know how their serial goes in order to test what has been said in this article.. does anyone have any workarrounds with ThomsonXXXXXX ???????????...</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Nick"><span>Nick</span><div class="post-comment-content">SpeedTouchE9A99B
+Cant Crack:(</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Edward Pearson"><span>Edward Pearson</span><div class="post-comment-content">Nick:
+I bet you've not recompiled stkeys.c to include recent years, learn to RTFA.
+
+The rest of you clearly haven't even begun to read the subject matter, obviously under the naive impression that somebody will take time out of THEIR day to do it for you. They wont.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="loogie"><span>loogie</span><div class="post-comment-content">thanks for tge article, i have a few hubs i can try it on.. any luck with the bthh2? i'm using vista and the supplied scrpt. i disabled all the msgs so it 'should' only return a msg on success or error. is there a way to change the msgs to display in console not a msgbox? the first attempt had no luck, i'm going to make sure stkeys includes 07-08 thanks again... learning lots!
+
+to the rest who are hoping for a quick fix... no matter what sob story you come up with, noones hoing to do it for you. your not willing to put in the time, dont bother</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Stas"><span>Stas</span><div class="post-comment-content">Hi guys, nice topic, helped a lot.
+Maybe someone of you interested in making PDA version of keygen?! It would be much more than usefull. Thx.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Edward Pearson"><span>Edward Pearson</span><div class="post-comment-content">http://www.righttooffend.com/stkeys.php
+Essentially does: stkeys -v -i [Form Value]
+
+I set this up for a friend. It will do years 2005-2009 inclusive. Hopefully it will solve some people's problems.
+
+MrGerbick: I'd love to see your version of BTHHkeybf. I don't really have the time or the motivation to update mine (it works, albeit not very robustly), but I'm sure there are a lot of people here who'd welcome a cleaner more comprehensive solution.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="daniel"><span>daniel</span><div class="post-comment-content">ok so im a complete noob, i have found the 80 odd keys dor a bt home hub DD38 in the btth keys file can i just run through them ne at a time and see if it cracks it u have 7 home hubs within range im using a belkin n1 wireles usb adapter , so can i just brute force and try every key one by one as i have tme free and would that work going in to the wireless network thing in windows, any advice much appreciated as im skint and the neighbours are jokers !!! cheers in advance peeps</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="dev"><span>dev</span><div class="post-comment-content">guys we really appreciate your efforts but can we plsss have a working direct link to your bthhbf tool???</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pagvac"><span>pagvac</span><div class="post-comment-content">@dev: BTHHkeybf can be found in the materials page of HITB Dubai 2008. Just download the "Cracking Into Embeded Devices and Beyond" presentation ZIP file: http://conference.hitb.org/hitbsecconf2008dubai/materials/
+
+However, I want to be clear that this is NOT a skiddie-friendly tool, as it can be unreliable due to its dependency on good signal strength of the target BTHH. On top of that it only works on Linux as it's based on the iwconfig tool. 
+
+Also remember that the attack only works against BTHHs v1.0 and v1.5, as v2.0 uses a different algorithm for the default wifi encryption keys.
+
+There are much more clever ways to perform this attack than how I implemented it in this tool. But as I said, this tool wasn't written so that kids go around breaking into their neighbors' BTHHs, but rather as a proof of concept that it's possible (thanks to Kevin Devine's RE work ultimately).
+
+There are guys who successfully ported the tool to work on Windows systems (see comments on this page for more info). Hope this helps!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Crashover"><span>Crashover</span><div class="post-comment-content">when is the BTHomehub v 2.0 algorithm coming out</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="A N Other"><span>A N Other</span><div class="post-comment-content">Hi, I've notice that this vulnerability is discussed about other ISP provided modems.
+
+http://packetstorm.orion-hosting.co.uk/filedesc/pirelli-vuln.pdf.html</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pagvac"><span>pagvac</span><div class="post-comment-content">@Crashover: why don't you give it a try, to see if you can figure out the algorithm for BTHH v2 :) . We'd love to publish your findings on GNUCITIZEN!
+
+@A N Other: correct! There are MANY ISPs out there shipping broadband routers whose default wifi encryption key can be predicted.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Tension"><span>Tension</span><div class="post-comment-content">The links for the XP version are dead.  Could someone point me in the right direction. Cheers guys!!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="MaNii"><span>MaNii</span><div class="post-comment-content">same here ..the link for bthkeybf.zip for winXP is dead ..can anyone please update them
+
+thanks</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="MaNii"><span>MaNii</span><div class="post-comment-content">just out of curiosity ..any possibilities of determining the serial number of the bthomehub router from its default wep key?!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Miss-P"><span>Miss-P</span><div class="post-comment-content">Can someone help me crack the bthomehub-35bc?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">I just want to remind you that this is not a bulletin board. :)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Sly1"><span>Sly1</span><div class="post-comment-content">would love it if someone uploaded a new link for the winxp version</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Whiplash"><span>Whiplash</span><div class="post-comment-content">Hi, Can someone please post where i can download a new "stkeys" that will do years 2005-2009!!!
+
+Many Thank
+
+P.S. and a good step by step on how to hack a BT HomeHub</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="mIke Portugal"><span>mIke Portugal</span><div class="post-comment-content">Thanks to the guys that publish this! this is very usefull, mainly in portugal, everywhere u can find a Speedtouch router :D
+
+"the default SSID: SpeedTouchF8A3D0.
+
+The first 5 bytes are converted to a 10 byte string which becomes the default WEP/WPA key: <code>742DA831D2</code>
+
+i would like to know, how that 5 bytes(<code>F8A3D</code>) are converted to a 10 byte string(<code>742DA831D2</code>)??
+
+can i convert it by using a paper and pencil? :P</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="lorant"><span>lorant</span><div class="post-comment-content">Thank's for your hard job. The new stkey it is working greate,but can somebody uploadeit???
+PLS!!!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Seketh"><span>Seketh</span><div class="post-comment-content">So, how can I update stkeys exe to work like the stkeys posted here: http://www.righttooffend.com/stkeys.php</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Nuno"><span>Nuno</span><div class="post-comment-content">when is avaiable to Fast (Sagem)and dlink's a tool like this? this tool for thomson's is very useful =)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="jduartedj"><span>jduartedj</span><div class="post-comment-content">Works for portugal devices (MEO ISP): http://www.nickkusters.com/SpeedTouch.aspx and probably all others too. i found a german speedtouch.exe that didn't work with the same Hex as i use on the page above. could anyone Post a link to a good stkeys file or at least the code for the algorithm! it seems easy but it's easier if it's already done!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="BoBiDiGiTaL"><span>BoBiDiGiTaL</span><div class="post-comment-content">this is one hell of a interesting board!
+
+Thanks to all involved in the great work you have done here :)
+
+I have afew question. im using Vista and used the BTHHkeybfvista.vbs to attempt the hack, successfully generated about 72 keys but unfortunately was unable to get it cracked. what i would like to know is what software i need to  recompile/amend the source code so i can include more years and ALSO to adjust the timeout when attempting the connection.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="BoBiDiGiTaL"><span>BoBiDiGiTaL</span><div class="post-comment-content">just to also add, i used the modified version of STKEYS located here in Spanish 
+
+( http://foro.seguridadwireless.net/universo-wireless/routers-thomson-caso-espanol-redes-wepwpa-speedtouchxxxxxx-al-descubierto/80/?PHPSESSID=57a9589e4a5b32f4416673c58f7e4d59 ) 
+
+to generate keys for the missing years but to my shock it produced a txt file 130MB in size, thousands of keys.......</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="empi"><span>empi</span><div class="post-comment-content">Great tool guys. The stkeys.c program is a cool one. Helped me to stay online on vacation :-)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Goosen"><span>Goosen</span><div class="post-comment-content">Hey guys! This tool is great...Thanks all for developing it! Now I have a request... How about the same program but for pocket pc/window mobile? That would be great! If anyone with skills could do it I beleive many people would thnak you...again!
+
+Cheers,
+Goosen</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="MadComm"><span>MadComm</span><div class="post-comment-content">@pagvac &amp; kevin devine;
+
+1st off all, i would like to thanx for this amazing work to both, @ kevin for this wonderful breakthrough, and @ pagvac, for all the support given here and also for the file you uploaded (interesting info :)), and 2nd I would like to make a couple of questions to you guys..
+
+1st I'd like to know if there is a win script with 2009 support keygen available for download..
+
+And 2nd, i've read here that this is possible to get the sky netgear default keys too, correct? I'd like to know if this would also be possible in netgear cable modem.. I think it is, although the SSID changes from 6 to 4 serial digits...
+I can sent you several routers tables of mac, ssid, cp, serial and keys if u want to try to reverse engineer it.
+
+Thanx in advance!..
+
+Cumps.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="boog"><span>boog</span><div class="post-comment-content">http://www.righttooffend.com/stkeys.php
+
+Doesn't work and claims to log IP's !</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Stanley"><span>Stanley</span><div class="post-comment-content">I've been looking for a way to gain access to the algorithm used to calculate "MODEM_ACCESS_CODE". It seems to be a CRC of routers MAC address. The problem is, i don't know what polynomial they used and I lack skills at dissembler. Maybe someone can figure this out...
+
+Similar algorithm was used for old Alcatel home hub series. The router gave you challenge-response code "Speedtouch (00:00:00:00:00:)" when logged into telnet and by using Tsutomu Shimomura algorithm, you could easily calculate the passphrase. CGI version of this algorithm: http://security.sdsc.edu/self-help/alcatel/challenge.cgi Source file & executable of this algorithm: http://www.petri.co.il/downloads/crc.zip
+
+Looking at stinstall.exe with a dissembler (CRC string):
+
+<pre><code>0045931D  |. 68 F8B35600    PUSH stInstal.0056B3F8                       ;  ASCII "CRC: 0x%1
+"
+00459322  |. FFD3           CALL EBX
+00459324  |. 8BC8           MOV ECX,EAX
+00459326  |. FF15 581C4900  CALL DWORD PTR DS:[;  qt-mt332.?arg@QString@@QBE?AV1@KHH@Z
+0045932C  |. 8BC8           MOV ECX,EAX
+0045932E  |. FF15 6C274900  CALL DWORD PTR DS:[;  qt-mt332.?rightJustify@QString@@QBE?AV1@IVQChar@@_N@Z
+00459334  |. 50             PUSH EAX
+00459335  |. 8D4D FC        LEA ECX,DWORD PTR SS:[EBP-4]
+00459338  |. FFD6           CALL ESI
+0045933A  |. 8D4D F0        LEA ECX,DWORD PTR SS:[EBP-10]
+0045933D  |. FF15 0C2E4900  CALL DWORD PTR DS:[;  qt-mt332.??1QString@@QAE@XZ
+00459343  |. 8D4D F4        LEA ECX,DWORD PTR SS:[EBP-C]
+00459346  |. FF15 0C2E4900  CALL DWORD PTR DS:[;  qt-mt332.??1QString@@QAE@XZ
+0045934C  |. 8D4D F8        LEA ECX,DWORD PTR SS:[EBP-8]
+0045934F  |. FF15 0C2E4900  CALL DWORD PTR DS:[;  qt-mt332.??1QString@@QAE@XZ
+00459355  |. 68 54A85600    PUSH stInstal.0056A854                       ;  ASCII "
+"
+0045935A  |. 8D47 38        LEA EAX,DWORD PTR DS:[EDI+38]
+0045935D  |. 50             PUSH EAX</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="vortex"><span>vortex</span><div class="post-comment-content">@Stanley
+
+I'm open to correction,but I don't believe the stinstall.exe file has a CRC routine in it. Here is my own ST 585v6 after logging in with telnet.
+
+
+<pre><code>Username :
+------------------------------------------------------------------------
+
+
+
+        OOOOOOOOOOOOOOOOOOOOOOOOOOO
+        OOOOOOOOOOOOOOOOOOOOOOOOOOOO
+        OOO                       OOO
+        OOO                        OOO  SpeedTouch 585
+        OOO   WWW    WWW    WWW    OOO
+        OOO   WWW    WWW    WWW    OOO  5.3.3.4
+        OOO   WWW    WWW    WWW    OOO
+        OOO   WWW    WWW    WWW    OOO  Copyright (c) 1999-2005, THOMSON
+        OOO   WWW    WWW    WWW    OOO
+        OOO   WWW    WWW    WWW    OOO
+        OOO   WWW    WWW    WWW    OOO
+        OOO   WWWWWWWWWWWWWWWWW    OOO
+        OOO    WWWWWWWWWWWWWWW     OOO
+        OOO                        OOO
+        OOO                        OOO
+        OOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+         OOOOOOOOOOOOOOOOOOOOOOOOOOO
+
+W=>debug
+[debug]=>exec
+
+=====================DISCLAIMER======================
+ Access to expert commands is intended for qualified
+ personnel only.
+==================END=OF=DISCLAIMER==================
+
+cmd =</code></pre>
+
+as you can see, it doesn't ask for a password when entering expert commands, so I'm guessing the MODEM_ACCESS_CODE may indeed use a different polynomial from the alcatel routers
+
+The only way you might find it is by reversing the firmware itself or perhaps a brute force of the CRC value.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="MadComm"><span>MadComm</span><div class="post-comment-content">@ stanley..
+I'm sorry, but i really didn't get what you're looking into (maybe 'cause i'm portuguese)... Anyway, if u want acess to the router, with superuser, or even root privileges, here's a really easy way to do it: http://speedtouch.blog.hr/ hope it helps!..
+
+Can anyone comment on my previous post? it would be helpfull..
+
+Cumps!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="vortex"><span>vortex</span><div class="post-comment-content">@MadComm
+
+Don't know anything about the netgear sky routers, but apparently james67 who reverse engineered it won't release details of the algorithm. Your best bet is to try debug the router firmware, through JTAG interface. Most routers have a JTAG interface for debugging purposes.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="MadComm"><span>MadComm</span><div class="post-comment-content">@ vortex:
+
+1st off all, thanx for the reply mate, you were the only one who bothered to reply and address the issue in hand.. unfortunately i'm too noob, even to understand assembly (usual FW language). But i had other idea for maybe a easier way to do it.. i can get a bunch of routers to take the necessary info (serial, mac, CP serial, ssid, wpa default key, and all the info on the back sticker), do you think we can to reverse engineer the wpa key based on this info? according to james67 we only need mac and serial..
+thanx!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="tomashavenger"><span>tomashavenger</span><div class="post-comment-content">I wonder when the bthomhub v 2.0 algorithim will come I've tried to crack it and had no such luck</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="fLaSh"><span>fLaSh</span><div class="post-comment-content">New STKeys for Windows Mobile users! http://flash.i.ph/blogs/flash/2009/09/12/default-key-algorithm-in-thomson-most-popular-dsl-router-in-the-pt-meo/
+
+Free and open source ;)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="manuel"><span>manuel</span><div class="post-comment-content">That's cool, i wonder if it is possible to make stkeys work on the iphone/ipod touch</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="bennie"><span>bennie</span><div class="post-comment-content">the bthhkeybf.vbs link is not working :(</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Simon"><span>Simon</span><div class="post-comment-content">Anyone know where I can get a copy of the script which trys the keys in the dictionary, I searched high and low (ok.... on google) but no joy!!!  I am guessing loads of people have this... any care to upload a link?
+
+Appreciate it.... I can share a Sky V2 concept as a repayment!!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Martin"><span>Martin</span><div class="post-comment-content">hi, can anyone help me with BTHHkeybf.zip file. i need bthhkeybf.vbs and can't find it anywhere.
+
+Martin</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="FILIPE"><span>FILIPE</span><div class="post-comment-content">can you find the WPA key of 34458F</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Edward P"><span>Edward P</span><div class="post-comment-content">http://www.voidrage.com/BTHHkeybf.rar
+
+For those who need it ^^</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="darkwader"><span>darkwader</span><div class="post-comment-content">I have ISP password stored in my SpeedTouch 780WL config file and it's encrypted: <code>_DEV_252E8E68835B5C9B</code>
+
+Does anyone know how I can decrypt this password,someone said that it's hashed by serial number of modem or mac address..Does anyone know any info about this and how I can decrypt it..</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Dynamitesoul"><span>Dynamitesoul</span><div class="post-comment-content">Completely new at this but need help with the file adrian posted...how do i go about writing the file into a command line bthh_wep_keygen.inc and the bthh-keys..can this be done with windows xp command prompt or is it based on using linux. A guide on how to use those file would be really greatful...thanks in advance</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Joseph"><span>Joseph</span><div class="post-comment-content">Hey guys!( 1st of all sorry for my bad english ) thanks for sharing all this information  :) i was wonder if someone can figure out if there is any connection  from this data . Is a sagem fast 1500 wg provide to me by otenet .
+
+<pre><code>S/N: 2806318EP010155  ( this is the serial number from the label under the router )
+SSID: OTENET_7686
+WEPKEY: A3942C1252FC37CDCF97B8BED8 ( the default key ) 
+Admin Password: hrdh7736</code></pre>
+
+This info is from the web-interface of the router 
+
+<pre><code>Runtime Code Version:  	 F@st 1500WG SP Ver. 3.0.6.c (Jun 13 2007 09:51:07)
+Boot Code Version: 	 0.73.3
+ADSL Modem Code Version: 06.00.02.00A
+Serial Num: 		 J630029946
+Hardware Version: 	 01
+LAN MAC Address: 	 00-15-56-B7-5E-82
+Wireless MAC Address:	 00-15-56-B7-5E-84
+WAN MAC Address: 	 00-15-56-B7-5E-83</code></pre>
+
+i mention that,  i update  the frimware of my router</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Tim889"><span>Tim889</span><div class="post-comment-content">Great topic and thanks to everyone with constructive info. Shame there is no ifo on BTHH v2 at the min, there is so many of them about now its getting hard to find the v1 and v.1.5</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="SirArthur"><span>SirArthur</span><div class="post-comment-content">A simple remake of the stKeys available on this page allowing to select the last year to calculate.
+
+<pre><code>Usage: stKeys2  
+Eg: stKeys2 188DBB 10
+(Search for possible keys for 188DBB made until 2010)</code></pre>
+
+http://www.megaupload.com/?d=4WSPGII8</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="gool"><span>gool</span><div class="post-comment-content">you complied stkeys2 only for thomson router what about bthomehub? your stkeys2 dosent work with bthomehub...</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="David Openmind"><span>David Openmind</span><div class="post-comment-content">Please also what is the network key all about or as that me being silly or is that just another name for the wep key ?
+Because when we have selected the BtHH it the asks for the Network key?
+
+Thanking you so much in advance for your kindness and help..</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pranky0607"><span>pranky0607</span><div class="post-comment-content">been playing with the Home Hub 2.0, and the WPA key appears pretty secure.  However it appears as if the default ESSID and the default WPA key comes from the Mac Code of the router.  There are 4 mac codes available but they are all in order.  
+
+The new hubs also have an interesting levels of dgst available, which could go some way towards not being able to work it out up to now.  Anyone else had more luck on this than me?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Puffyandre"><span>Puffyandre</span><div class="post-comment-content">Edward P responds:
+
+http://www.voidrage.com/BTHHkeybf.rar
+
+The file is corrupt? Anyone else getting this? I've tried downloading multiple times and using different apps to open, but still get the same result.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="ginjon"><span>ginjon</span><div class="post-comment-content">@gool
+
+home hubs are thompson speed touch, they are just re branded...</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="sweetdue"><span>sweetdue</span><div class="post-comment-content">Hi can you tell me if you have an update for later speedtouchs as im does not find my keys.?????</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="JIMR-1969"><span>JIMR-1969</span><div class="post-comment-content">Hi folks, i was wondering if you could create precomputed tables same way so we can retrieve from the mac address the serial number of the device or is it someother way where by giving the mac address of a thomson router we can compute the default ssid or at least take the serial number of the device?
+Thank you in advance.....</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Andy"><span>Andy</span><div class="post-comment-content">Just a quick question.
+
+To improve security, I would like to change the default encryption key of the Thomson router. But others who also use this router are worried about change.
+
+If I change the password of the router alone would this be sufficient to inrease the level of security. I assume that in this case others who use the router will not have to make any changes.
+
+Thanks</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="chris"><span>chris</span><div class="post-comment-content">can some make a online tool for wep keys please. like nick kuster speedtouch. please</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Peter"><span>Peter</span><div class="post-comment-content">Can anyone can use STKEYS to make a windows mobile program (.cab) for ganerate the keys?
+
+That gonna be more usefull on the road... :P</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="jamal212"><span>jamal212</span><div class="post-comment-content">hi can someone please find the wep code for my brothers homehub pls. Its called bthomehub-bd78. Thanks</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="bennie"><span>bennie</span><div class="post-comment-content">@jamal212 whats ur email</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="jerdam"><span>jerdam</span><div class="post-comment-content">Hello guys, does anybody know how to find a original SSID from changed speedtouch router SSID? thanks</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Karan"><span>Karan</span><div class="post-comment-content">Hi every1 i have read the whole blog couple of times first of all would like to say thnx and congrats to all of u who have worked on this grt grt work ...!!
+
+bt i couldn work out how to crack it yet i have downloaded the D2T1 Adrian pastor- cracking into embeded devices and beyond ..i manged to get into a excel file with loads of keys ...bt could find my one i have one bt home network named BTHomeHub2-WR8N
+
+if any1 can help then it will be highly appriciated coz i am really in need of a internet nw thnx my email is karan_fire(at)hotmail(dot)com.
+
+Cheers.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Columbo"><span>Columbo</span><div class="post-comment-content">Hi. I read this, and you are good at it..smart heads... I am studying..and could any one figure it which WEP key is for this ...ThomsonFF331D
+tnks for reading....</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="jim"><span>jim</span><div class="post-comment-content">@Columbo Try CP08254A4E51</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Alex"><span>Alex</span><div class="post-comment-content">Its possible to find WPA/WEP from MAC Adress if i Dont know last digits after "ThomsonXXXX" but i KNOW a MAC adress. Its very urgent for me.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="John"><span>John</span><div class="post-comment-content">Maybe people want a gui, written in python for dlink and thomson ;) http://code.google.com/p/wifipassreminder/</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="joseph"><span>joseph</span><div class="post-comment-content">@chris online tool like nick  kuster https://amigdalo.ath.cx/joseph/projects/ST/</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="erjon"><span>erjon</span><div class="post-comment-content">for this tomsonFF331D  key is <code>8B55069C0C</code> or <code>FF5715166E</code></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Bogdan"><span>Bogdan</span><div class="post-comment-content">Hello,
+Does anyone have the winxp tool or any other tool to generate the WEP key without an internet connection ? None of the links up there work, besides this one: http://www.nickkusters.com/SpeedTouch.aspx
+
+Thank you.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="NOKIAS"><span>NOKIAS</span><div class="post-comment-content">I'm having problems with the new 2010 thomson routers that stkeys cant calc or calcs it wrong! Is there solution for this?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="os os"><span>os os</span><div class="post-comment-content">You guys r very genius. I wonder if anyone can tell me how can I get through the set up of thomson585 if I lost the user name and the password. Many thanks in advancOsama</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="V2k"><span>V2k</span><div class="post-comment-content">I was wondering whilst reading this page if you can help explain the example:
+
+<pre><code>S/N: CP0647EH6DM(BF)
+Remove CC and PP values: CP06476DM
+"XXX" values hex-encoded: CP064736444D
+SHA1-ed: 06f48a28eba1ab896a396077d772fd65503b8df3
+Default SSID: BTHomeHub-8DF3
+Default encryption key: 06f48a28eb</code></pre>
+
+1. what are the CC,PP &amp; XXX values. I'm assuming the CC value in the example is EH and the PP value is M but that can't be right as M isn't a hex value so how was the XXX value calculated.I just don't know what the PP values are and if my assumption is correct.I can't find info online explaining this is or am I just being blonde in my searching.
+2. Using Network Stumbler I have a netgear router-secured with wpa and from what I've read you can obtain the serial number from the mac address.Is this still the case as the example i've tried only generates a 7decimal figure. From there I've used an online sha1 hash tool that gave me a hash code based on what i presume to be the serial number.  From this and your example I used the 1st 10 hexdigits to generate a code but this didn't work.
+
+So what I'm doing is trying to understand how to obtain a serial from a mac address, what the CC &amp; PP values are and do these values reflect all network devices regardless of manufacturer.is it still possible to get hold of the stkeys as the links don't work anymore.
+
+Anyway hope I'm not being too thick but I would like to understand the process more.The last time I used hex was back in secondary school :)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Colesy"><span>Colesy</span><div class="post-comment-content">I've read through this whole forum regarding BTHomeHub ver2 -
+
+No one has figured out the algorithm or have they. The posts here are dated 2008+ We are now in -6/2010 and the routers BT issue are standard BTHH ver2.0. I also believe BT have upgraded existing BTHH ver 1 user with the new versions.
+
+BTHH ver 2 has WPA-WPA2/PSK(Pre Shared Key) security Enabled.
+
+I have a BTHH v2 Router info :-
+<code>BSSID - BTHomeHub2-C5NN
+Default WPA2 Code - 3d3534d6c4
+MAC ADDRESS - 00:24:2C:4E:72:D9</code>
+
+I hope this information is helpful to whome-ever is trying to break the most recent algorithm, if more information is required then please post back.
+
+This post is dated 21/06/2010 @ 7:21pm</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pagvac"><span>pagvac</span><div class="post-comment-content">Hi Karan, the research you mentioned doesn't apply to BTHH's v2</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Paul"><span>Paul</span><div class="post-comment-content">Hay can some one please let me know how to calc the wpa key for bthomehub ver1 please? its just to get me online sted of this wep!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian"><span>Adrian</span><div class="post-comment-content">how I can to know a wep key with this iwep pro version.    Can you tell me?   I tried to make it, but i don't know how to</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="dans"><span>dans</span><div class="post-comment-content">Hi, I've noticed there are new routers for which this does not work... Is there any alternative algorithm for those routers (eg C36CBA)?
+
+Thanks,
+dans</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Rui"><span>Rui</span><div class="post-comment-content">Columbo = <code>8B55069C0C</code> That's your pass ;)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Closis"><span>Closis</span><div class="post-comment-content">Yes, seems like thomson routers have a new algorithm now, 
+
+For instance to help someone crack the new algorithm here is an example of the new 2010 routers:
+
+<code>SSID: ThomsonC329C1
+Default WPA: C374DEA22
+SN: CP0947ntjr5 (b5)</code>
+
+When I try to calculate keys with st, even if I change the limit to 2011 the new key C374DEA22 don't appear...</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="colesy"><span>colesy</span><div class="post-comment-content">Why does this research not apply?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="roo"><span>roo</span><div class="post-comment-content">@closis From the s/n you provided, the old algorithm calculates your key to be "CE74DE1A22".  This is pretty close to your posted suggestion of "C374DEA22"... can you doublecheck that please?
+Also can you post your MAC please.
+
+@colesy Can you post your s/n please?
+
+@'broadcast' I just got issued a new speedtouch (sn CP1019...).  The default wpa key is calculated correctly from the sn, but the ssid appears to be derived from the last 3 octets of the mac.  
+I have a hunch that there could possibly be a link between the mac and the serial along the lines of the pirelli DRG A225 disclosed by Muris Kurgas (http://packetstorm.orion-hosting.co.uk/filedesc/pirelli-vuln.pdf.html)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Sam"><span>Sam</span><div class="post-comment-content">does anyone have BTHHkeybf for window XP????</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="AndrÃ©"><span>AndrÃ©</span><div class="post-comment-content">Great Work ppl! But the stkeys link is down... Can't you upload plz. I want the source code too :)
+Thanks</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="AP"><span>AP</span><div class="post-comment-content">Consider the following Speedtouch AP
+
+<pre><code>CP0815SF2PB(80)
+SSID Thomson9c726a
+WPA BBA72BD067</code></pre>
+
+Now take the CP0815 and change the XXX to ASCII. That is change 2PB to ASCII = 325042
+
+SHA-1 CP0815325042 is bba72bd067e6cb5b9f21707b547cfd1bf79c726a.
+
+The first 10 characters is the WPA key and the last 6 characters is the SSID.
+
+However if we use the 9c726a is the program that cracks the codes it says that nothing is found. Therefore is there something wrong with the application? Is it not meant to work with letters above F. In this case there is a P character.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="paok"><span>paok</span><div class="post-comment-content">does anyone know the wpa-psk key for thomson521BE2?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Jonny"><span>Jonny</span><div class="post-comment-content">Wow... sounds amazing and far too complicating for me... Then.. what would the key be for BTHomeHub-9236?..</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="@paok"><span>@paok</span><div class="post-comment-content">@paok 21255FBAF0</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Queen"><span>Queen</span><div class="post-comment-content">Best aplication. Link: http://hotfile.com/dl/78429275/b639bfa/Find_Wifi_Key.rar.html</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="james"><span>james</span><div class="post-comment-content">is it possible to find the wep for orange906A02 i would be happy to get accsess
+
+thanks</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="md5this"><span>md5this</span><div class="post-comment-content">paokara ela: thomson521BE2 resolves to: 21255FBAF0 reversed on: http://www.md5this.com/speedtoucher/speedtouchIT.html</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="fadi"><span>fadi</span><div class="post-comment-content">fastweb-1-38229dfb513c</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="ck"><span>ck</span><div class="post-comment-content">To change ur  SSID Name n security type from WEP TO WPA2-PSK visit diz blog http://cklyf.blogspot.com</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="David"><span>David</span><div class="post-comment-content">I was wondering if it's possible to do the same with only 4 digits.
+
+For example here in Australia, Bigpond use the SpeedTouch modems and I have seen BIGPONDXXXXXX for example, but what about BIGPONDXXXX (with only 4)
+
+How would I get the list of possible keys for the SSID BIGPOND004D?
+
+Thanks in advance!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="rony fadel"><span>rony fadel</span><div class="post-comment-content">I've made a PHP script, check it out at http://ronyfadel.com/keys.php</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="name"><span>name</span><div class="post-comment-content">Have fun trying to find out the NEW ALGORITHM used in Thomson routers.
+
+ALL THE INFO HERE
+
+http://pastebin.com/fNB4LTGH</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="lefteris"><span>lefteris</span><div class="post-comment-content">I created a windows version (with graphical user interface)
+
+downloads + screenshot from:
+
+http://www.doc.ic.ac.uk/~ee410/thomson/</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="thehog"><span>thehog</span><div class="post-comment-content">what can i say here simply impressive stuff great works</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Pass!ngBy"><span>Pass!ngBy</span><div class="post-comment-content">some claim, on blogs and articles, that by using ONLY the XXXXXX characters you can do reverse calculations to obtain the password? without the need to know the S/N , if am not wrong stkey and md5 site, locates the S/N of the XXXXXX specified router from the database then do the hashes to locate the password, am i right or they were right all that you need is the XXXXXX characters and voila!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Montana"><span>Montana</span><div class="post-comment-content">Hey is there a tool like stkeys2.exe for BTHome? I mean an honest to goodness win32 executable, like BTkeys.exe for instance? I didn't find anything of use in Adrian Pastors zip file.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Anto"><span>Anto</span><div class="post-comment-content">What about BT Home Hub 2.0? Anybody has any clue how the key is generated?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="akilez"><span>akilez</span><div class="post-comment-content">Does not work for the modem / router TG585 v8, soft. 8.6.E.9 version.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="kev"><span>kev</span><div class="post-comment-content">New algorithm has been documented but no recovery tool is available due to the complexity and time required to crack key. BT and Technicolor are already aware of the problem. You can look at code here:
+
+http://www.woofiles.com/dl-284800-JI5f1Jyv-stkeygen.tar.gz
+
+Feel free to mirror providing code is unmodified.
+
+SHA-256 signature = 8dff6225783328c9516c0eb42f6ceab5624ded3f85ab0a94d91fb81ecabdd91c</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="kev"><span>kev</span><div class="post-comment-content">file in above link was removed
+
+http://www.mediafire.com/?l2d57it4dkt6hso</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="David"><span>David</span><div class="post-comment-content">Did BT sort this out, or are the hubs still vulnerable to these attacks?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="kev"><span>kev</span><div class="post-comment-content">http://weiss.u40.hosting.digiweb.ie/stech/stkeygen.tar.gz</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="matt"><span>matt</span><div class="post-comment-content">dose this work with backtrack 5 and bthomehub2?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="saad"><span>saad</span><div class="post-comment-content">Is there any method to find the default key for a Thom_Dxxxxxx ssid.</div></div></div></div></article><footer id="footer"><p>Copyright &copy; 2019 <a href=""></a>. All rights reserved.</p></footer></body></html>

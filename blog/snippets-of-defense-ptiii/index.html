@@ -1,0 +1,132 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Snippets Of Defense Pt.III</title><meta name="description" content="This article is part of a series of posts about small and easy to understand code fragments you can use on your site for protection against certain kinds of attacks. Also this series is targeted to help you understand better what tricks are used by attackers to break into your site and how to avert them. If you have a Snippet of defense yourself and you want to share it, feel free to contact us. Self-defense with a Walking-stick."><meta property="name" content="Snippets Of Defense Pt.III"><meta itemprop="name" content="Snippets Of Defense Pt.III"><meta property="description" content="This article is part of a series of posts about small and easy to understand code fragments you can use on your site for protection against certain kinds of attacks. Also this series is targeted to help you understand better what tricks are used by attackers to break into your site and how to avert them. If you have a Snippet of defense yourself and you want to share it, feel free to contact us. Self-defense with a Walking-stick."><meta itemprop="description" content="This article is part of a series of posts about small and easy to understand code fragments you can use on your site for protection against certain kinds of attacks. Also this series is targeted to help you understand better what tricks are used by attackers to break into your site and how to avert them. If you have a Snippet of defense yourself and you want to share it, feel free to contact us. Self-defense with a Walking-stick."><meta property="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fsnippets-of-defense-ptiii%2F?w=1024"><meta itemprop="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fsnippets-of-defense-ptiii%2F?w=1024"><meta property="og:type" content="website"><meta property="og:url" content="https://www.gnucitizen.org/blog/snippets-of-defense-ptiii/"><meta property="og:title" content="Snippets Of Defense Pt.III"><meta property="og:description" content="This article is part of a series of posts about small and easy to understand code fragments you can use on your site for protection against certain kinds of attacks. Also this series is targeted to help you understand better what tricks are used by attackers to break into your site and how to avert them. If you have a Snippet of defense yourself and you want to share it, feel free to contact us. Self-defense with a Walking-stick."><meta property="og:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fsnippets-of-defense-ptiii%2F?w=1024"><meta name="twitter:title" content="Snippets Of Defense Pt.III"><meta name="twitter:description" content="This article is part of a series of posts about small and easy to understand code fragments you can use on your site for protection against certain kinds of attacks. Also this series is targeted to help you understand better what tricks are used by attackers to break into your site and how to avert them. If you have a Snippet of defense yourself and you want to share it, feel free to contact us. Self-defense with a Walking-stick."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fsnippets-of-defense-ptiii%2F?w=1024"><link type="text/css" href="/blog.css" rel="stylesheet"><script type="text/javascript" src="/blog.js"></script></head><body><header id="header"><h1><a href="/"></a></h1><p></p></header><nav id="topnav"><ul><li><a href="/">Home</a></li><li><a href="/projects.html">Projects</a></li><li><a href="/files">Files</a></li><li><a href="/about.html">About</a></li></ul></nav><article><div id="content"><h1 class="title">Snippets Of Defense Pt.III</h1><div>Sat, 20 Oct 2007 08:47:10 GMT</div><div id="post-content"><p>This article is part of a series of posts about small and easy to understand code fragments you can use on your site for protection against certain kinds of attacks. Also this series is targeted to help you understand better what tricks are used by attackers to break into your site and how to avert them. If you have a Snippet of defense yourself and you want to share it, feel free to <a href="http://www.gnucitizen.org/contact">contact us</a>. Self-defense with a Walking-stick.</p>
+<h2 id="the-snippet-sanitize-your-input-recursively">The snippet - sanitize your input recursively</h2>
+<p>This time we are going to show a PHP snippet which you can use to filter your input recursively - working for PHP4 and PHP5 and being pretty copy&amp;paste ready. Furthermore, the snippet shows how you can defeat XSS on your application without being too aggressive and not forbidding the user to use certain characters. Several large applications use this method or similar ones - although, of course, it is not suitable for all platform out there.</p>
+<p>You can use this snippet to secure existing applications by embedding it via <a href="http://php.net/manual/en/ini.core.php">auto_prepend_file</a> or using it at a centralized position in your application&#39;s index.php. It doesn&#39;t rely on any external software or extensions so it should be running fine on most PHP environments without any problems. And of course don&#39;t use it sightlessly - but that goes for all snippets of this series.</p>
+<pre><code class="language-php"><span class="meta">&lt;?php</span>
+    <span class="comment">/**
+     * Initial filter method
+     *
+     * <span class="doctag">@param</span> array $to_filter
+     * <span class="doctag">@return</span> array
+     */</span>
+    <span class="function"><span class="keyword">function</span> <span class="title">filter</span><span class="params">($to_filter)</span> </span>{
+        <span class="keyword">if</span> (!<span class="keyword">empty</span>($to_filter)) {
+            <span class="keyword">foreach</span> ($to_filter <span class="keyword">as</span> $key =&gt; $value) {
+                $filtered[$key] = iterate($key, $value);
+            }
+        }
+        <span class="keyword">return</span> $filtered;
+    }
+
+    <span class="comment">/**
+     * Iterates recursively of the array to 
+     * be filtered
+     *
+     * <span class="doctag">@param</span> string $key
+     * <span class="doctag">@param</span> string $value
+     * <span class="doctag">@return</span> mixed
+     */</span>
+    <span class="function"><span class="keyword">function</span> <span class="title">iterate</span><span class="params">($key, $value)</span> </span>{
+        <span class="keyword">if</span> (!is_array($value)) {
+            <span class="keyword">if</span> (is_string($value)) {
+                $filtered[$key] = sanitize($value);    
+            }
+        } <span class="keyword">else</span> {
+            <span class="keyword">foreach</span> ($value <span class="keyword">as</span> $subKey =&gt; $subValue) {
+                $filtered[$key][$subKey] = sanitize($subValue);
+            }
+        }
+        <span class="keyword">return</span> $filtered[$key];
+    }
+
+    <span class="comment">/**
+     * The sanitization method
+     *
+     * <span class="doctag">@param</span> string $string
+     * <span class="doctag">@return</span> string
+     */</span>
+    <span class="function"><span class="keyword">function</span> <span class="title">sanitize</span><span class="params">($string)</span> </span>{
+
+        $search = <span class="keyword">array</span>(<span class="string">'"'</span>, <span class="string">"'"</span>);
+        $replace = <span class="keyword">array</span>(<span class="string">'"'</span>, <span class="string">''</span><span class="string">'); // &amp;rdquo; and &amp;rsquo; are used here
+
+        /**
+         * Remind that the replacement is just one way of many.
+         * You can also use html_special_chars() or htmlentities() - but 
+         * don'</span>t forget the third parameter :)
+         */
+        <span class="keyword">return</span> strip_tags(str_replace($search, $replace, $string)
+    }
+
+    <span class="comment">/**
+     * overwrite the original request array with the filtered one
+     */</span>
+    $_REQUEST = filter($_REQUEST);
+<span class="meta">?&gt;</span></code></pre>
+<p><em>We hope that you enjoy the trick  - please tell us what you think. Till the next time.</em></p>
+</div><div id="post-comments"><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="NIX"><span>NIX</span><div class="post-comment-content">thats a good one ;)
+thanks</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Sirw2p"><span>Sirw2p</span><div class="post-comment-content">Good code, but there are easier ways to filter and prevent xss attacks.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="kuza55"><span>kuza55</span><div class="post-comment-content">You're missing the end of a line:
+
+<pre><code>return strip_tags(str_replace($search, $replace, $string)</code></pre>
+
+should be
+
+<pre><code>return strip_tags(str_replace($search, $replace, $string));</code></pre>
+
+Furthermore editing $_REQUEST does not change the values in $_GET, $_POST, $_COOKIE, etc. SO you would need to do this to every array you want to sanitize, and then reconstruct $_REQUEST from your already filtered initial arrays.
+
+This is purely IMO, but $_REQUEST seems like a bad idea, since you don't know where the stuff your working with came from, especially considering it relies on the variables_order directive.
+
+Anyway, this seems pretty much identical to magic_quotes so I'm not going to bother criticising it since the arguments for/against magic_quotes have been rehashed enough times already.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt=".mario"><span>.mario</span><div class="post-comment-content">Hi!
+
+Thanks for the comments. 
+
+Kuza55 you are right - $_REQUEST _can_ be problematic in some setups but this is example is more to show on how you can build an easy to extend first solution to cope with global input filtering - which I really rarely come to see during work. It of course no 'use it and be happy forever' solution but a snippet to point into a certain direction.
+
+Greetings,
+.mario</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="David"><span>David</span><div class="post-comment-content">Not really recursive (function doesn't call itself, just goes 1 level into an array). Seems you can reduce the whole thing to 1 function by using actual recursion:
+
+<pre><code> $var) {
+				$safe_html[$key]=recurs_escape_html($var);
+			}
+		} else {
+			return htmlentities($data, ENT_QUOTES, 'ISO-8859-1');
+		}
+		return $safe_html;
+	}
+?&gt;</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="digi7al64"><span>digi7al64</span><div class="post-comment-content">I been using a similar method to the one you presented here for a while now but there are a few different things in mine that perhaps could be blended into yours to make it safer.
+
+I.E
+
+<blockquote>&gt; I use the iconv function to force an encoding set on the supplied data
+&gt; I loop through each $_POST and $_GET and set the values that way (as kuza55 suggested [cookie not included as this is only an idea to get you going])</blockquote>
+
+Finally, there is a small bug in my code (intentional for this post) so post back if you can find how to make it throw an error, should be easy :)
+
+oh and as a final thought, generally you might want to trim the string straight up to a fixed length you know you can handle it with whatever you want to do.
+
+<pre><code>$value){
+			$_POST[$name] = santize($value);
+		}
+	}
+	
+	// Clean any supplied get values
+	if(isset($_GET)) {
+		foreach($_GET as $name =&gt; $value){
+			$_GET[$name] = santize($value);
+		}
+	}
+?&gt;</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="digi7al64"><span>digi7al64</span><div class="post-comment-content">it seems this blog removed half of my code. therefore don't worry about approving my post, please delete it. i don't intend to repost</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">digi7al64, wordpress will try to prevent you from posting anything that looks like HTML. Just make sure that all your &lt; are replaced &amp;lt; and &gt; is replaced with &amp;gt; :) cheers</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Wade"><span>Wade</span><div class="post-comment-content">mario. sorry for rehashing this again, but I don't want to see anyone using this code thinking that it's going to save them against XSS. As previously mentioned by kuza55 and digi7al64, $_GET and $_POST values (which would typically used by developers) are not being affected by the sanitation script. For this to be more "copy and paste" friendly,  you might want to initialize the whole thing by using:
+
+<pre><code>$_GET = filter($_GET);
+$_POST = filter($_POST);
+$_COOKIE = filter($_COOKIE);</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="ReZEN"><span>ReZEN</span><div class="post-comment-content">.mario:
+
+Wow this is hilarious.  Kids and their games.  Next time you want to post pure crap just through up a link to rotten.com or ogrish or something and quit wasting everyones time with your absolute shit code.  Have you done NO research on this subject at all?  And if you had THIS IS WHAT YOU CAME UP WITH?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">ReZEN, if you don't like it, please don't read it. All .mario did is to show a kind of code which may fit into some scenarios. We all know that there are no bulletproof solutions.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Mario Heiderich"><span>Mario Heiderich</span><div class="post-comment-content">Hey ReZEN - click that, junior!
+http://tinyurl.com/2h3ps6
+
+You should have read my post ;)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Raaka!"><span>Raaka!</span><div class="post-comment-content">LOL =))
+
+where is reZen now :p
+
+thanks for the code</div></div></div></div></article><footer id="footer"><p>Copyright &copy; 2019 <a href=""></a>. All rights reserved.</p></footer></body></html>

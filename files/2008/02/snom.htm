@@ -1,0 +1,21 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <form action="" method="post">
+            <p>
+                <label for="ip">IP of the Snom phone</label>
+                <br />
+                <input type="text" onblur="document.forms[0].action = 'http://' + this.value + ''" value="" tabindex="1" />
+            </p>
+            <p>
+                <label for="no">Number to call (sometimes you have to dial 00123456 to call 0123456)</label>
+                <br />
+                <input type="text" name="NUMBER" tabindex="2" />
+            </p>
+            <p>
+                <input type="submit" value="Make a call" />
+            </p>
+        </form>
+    </body>
+</html>

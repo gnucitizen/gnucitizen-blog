@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta meta name="viewport" content="width=device-width, initial-scale=1.0"><title>The Way of Logic into Dan's DNS Flaw</title><meta name="description" content="There is a serious flaw in the DNS system and apparently it is a design bug, the types of bugs I like the most. I am very curious to learn what exactly Dan has prepped for us and I get the feeling that we will be deeply shaken by its simplicity."><meta property="name" content="The Way of Logic into Dan's DNS Flaw"><meta itemprop="name" content="The Way of Logic into Dan's DNS Flaw"><meta property="description" content="There is a serious flaw in the DNS system and apparently it is a design bug, the types of bugs I like the most. I am very curious to learn what exactly Dan has prepped for us and I get the feeling that we will be deeply shaken by its simplicity."><meta itemprop="description" content="There is a serious flaw in the DNS system and apparently it is a design bug, the types of bugs I like the most. I am very curious to learn what exactly Dan has prepped for us and I get the feeling that we will be deeply shaken by its simplicity."><meta property="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fthe-way-of-logic-into-dans-dns-flaw%2F?w=1024"><meta itemprop="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fthe-way-of-logic-into-dans-dns-flaw%2F?w=1024"><meta property="og:type" content="website"><meta property="og:url" content="https://www.gnucitizen.org/blog/the-way-of-logic-into-dans-dns-flaw/"><meta property="og:title" content="The Way of Logic into Dan's DNS Flaw"><meta property="og:description" content="There is a serious flaw in the DNS system and apparently it is a design bug, the types of bugs I like the most. I am very curious to learn what exactly Dan has prepped for us and I get the feeling that we will be deeply shaken by its simplicity."><meta property="og:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fthe-way-of-logic-into-dans-dns-flaw%2F?w=1024"><meta name="twitter:title" content="The Way of Logic into Dan's DNS Flaw"><meta name="twitter:description" content="There is a serious flaw in the DNS system and apparently it is a design bug, the types of bugs I like the most. I am very curious to learn what exactly Dan has prepped for us and I get the feeling that we will be deeply shaken by its simplicity."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fthe-way-of-logic-into-dans-dns-flaw%2F?w=1024"><link type="text/css" href="/blog.css" rel="stylesheet"><script type="text/javascript" src="/blog.js"></script></head><body><header id="header"><h1><a href="/"></a></h1><p></p></header><nav id="topnav"><ul><li><a href="/">Home</a></li><li><a href="/projects.html">Projects</a></li><li><a href="/files">Files</a></li><li><a href="/about.html">About</a></li></ul></nav><article><div id="content"><h1 class="title">The Way of Logic into Dan's DNS Flaw</h1><div>Thu, 17 Jul 2008 10:49:37 GMT</div><div id="post-content"><p>There is a serious flaw in the DNS system and apparently it is a design bug, the types of bugs I like the most. I am very curious to learn what exactly Dan has prepped for us and I get the feeling that we will be deeply shaken by its simplicity.</p>
+<p>Although, I have no clue what this bug is, and I am also reluctant to pursue its mystery for my own entertainment, I will try to express what it could be by walking you through a simple process of thinking by elimination. Keep in mind that we could have been fooled and put off track with the information that is currently available - a common showmanship trick - so much like Dan :).</p>
+<h3 id="so-let-s-start-with-the-information-that-we-have-">So, let&#39;s start with the information that we have:</h3>
+<blockquote>
+<ul>
+<li>It is a flaw in the DNS system which allows attackers to poison the cache of your nameservers.</li>
+<li>The patch has to do with randomizing the source port of the standard query response.</li>
+<li>Although quite serious, Dan is suggesting that it is not the end of the world just yet (probably irrelevant but good to mention).&gt; </li>
+</ul>
+</blockquote>
+<h3 id="then-i-would-have-to-conclude-that-">Then, I would have to conclude that:</h3>
+<blockquote>
+<ul>
+<li>It has something to do with sending fake/forged responses to the attacked namerserver due to the fact that the patch is related to randomizing the source port of the standard responses and as such contributes to the increased level of difficulty for a successful forgery.</li>
+<li>The attacker must know in advance or can predict the transaction ID and given the fact the source port is static, she can then forge a response.</li>
+<li>It is probably something that can happen but it may not work well for high profile domains such as <code>google.com</code>, <code>microsoft.com</code>, etc due to being almost persistently cached for quite active namerservers... I don&#39;t know, just suggesting.&gt; </li>
+</ul>
+</blockquote>
+<h3 id="that-leads-to-the-following-">That leads to the following:</h3>
+<blockquote>
+<ul>
+<li>The attack is remote so we can eliminate man-in-the-middle attacks. This means that the attacker is blindly sending packets to the attacked server hoping to poison its cache.</li>
+<li>Predicting the transaction IDs could be possible but probably irrelevant to Dan&#39;s advisory otherwise it would have been an old news. Therefore Dan probably knows it in advance and I think that this is where the design bug come into play.</li>
+<li>... nothing here.. :) we can disregard this point&gt; </li>
+</ul>
+</blockquote>
+<h3 id="which-suggests-that-">Which suggests that:</h3>
+<blockquote>
+<ul>
+<li>We have a remote blind attack - packet spoofing etc.</li>
+<li>Dan knows the transaction IDs in advance - of course, the only thing that will save the day is to add a random source port.&gt; </li>
+</ul>
+</blockquote>
+<h3 id="having-this-in-mind-">Having this in mind:</h3>
+<blockquote>
+<ul>
+<li>In order to perform the attack we need a simple spoofing/flooding tool.</li>
+<li>We might need to involve our own DNS server to help us predict or guess the transaction IDs - the design bug, which involves the plethora of DNS magic including CNAMES, A and PTR queries.</li>
+</ul>
+</blockquote>
+<p>And this is where I am pretty much stuck after spending 30 minutes skimming through all news resources and research materials available online. As I said, I will leave the show to Dan and I am looking for some great entertainment this year at Black Hat Las Vegas. If you are interested in learning about some more design bugs, you may want to check out my own poor <a href="http://www.blackhat.com/html/bh-usa-08/bh-usa-08-speakers.html#Petkov">presentation</a> which I will happily <a href="http://www.blackhat.com/html/bh-usa-08/bh-usa-08-speakers.html#Petkov">present</a> on the first day of BH.</p>
+</div><div id="post-comments"><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Ross Snider"><span>Ross Snider</span><div class="post-comment-content">Keep in mind his saying, "If it recurses, it is vulnerable". The authoritative name servers are not at risk, while recursive name servers are. He has suggested a few times that you disable recursion if you do not use it.
+
+I personally believe this is the key.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">recursion is the fancier way of saying that the DNS server turns into a DNS client, i.e. the same thing. The DNS server makes a request to an authoritative servers, which in tern proposes a response after recursing itself.
+
+this means that Dan spoofs responses for the first or any other DNS server of the recursive chain. I suspect that he might do something like a mass spoof for each ns server of the chain, thus increasing the chances of getting the right transaction ID.
+
+<q>My take is that Dan is simply blasting all the name servers in the recursive chain until one of them has a transaction ID that matches any of his requests. I suspect, although I haven't tried, this is very much doable.</q></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Ross Snider"><span>Ross Snider</span><div class="post-comment-content">I'm not sure that this is it PDP. There are 16 bits of randomness. It is true that mass spoofing for each nameserver seems like it would increase the probability of a successful cache poison, however mail.victimsite.com doesn't seem like it has enough recursion there to trivialize the DNS cache spoofing. He made a very big deal on how trivial it is to successfully poison a nameserver.
+
+If he had the resources to mass spoof 3 nameservers X amount couldn't he mass spoof 1 nameserver 3X amount (disregarding packet loss).
+
+It doesn't seem that advantageous. Now, I have little experience with DNS, so I may be wrong; there are not that many nameservers in each recursive chain to make the whole system fundamentally flawed. I believe Dan is leveraging this in some other way.
+
+What do you think, PDP?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">Hei Ross,
+
+I was politely asked by Dan to discontinue this conversation and I respect that. I suspect that it is not because my thoughts are any closer to the real thing but mainly because he doesn't want to cause too much chaos. So we will wait until BH and will see what is going to happen.
+
+cheers</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="rvdh"><span>rvdh</span><div class="post-comment-content">How about reusing source ports, how about reusing all ports. 
+
+But, fact is DNS is insecure by design. Doesn't mean I am interested in the actual release of details though.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="yanky"><span>yanky</span><div class="post-comment-content">1. "There is a serious flaw in the DNS system and apparently it is a design bug".
+
+No really, quote from the RFC: "This document recommends the use of UDP source port number randomization to extend the effective DNS transaction ID beyond the available 16 bits."
+
+But DNS applications developers didn't respect that. That's where the vulnerability is.
+
+2. "It has something to do with sending fake/forged responses to the attacked namerserver "
+
+No, the attacker must know the DNS server in order to change the source address of the malicious packet. The packet is sent to the victim.
+
+3. "The attacker must know in advance or can predict the transaction ID"
+
+Yep, we got 2^16-1 possibilities, but in fact the transaction ID is incremented by 1 for each new request. So if we know a TID sent by the victim, this can be done easily.
+
+4. "It is probably something that can happen but it may not work well for high profile domains such as google.com"
+
+Why not ? The cache is deleted for each reboot on XP.
+
+5. "The attack is remote so we can eliminate man-in-the-middle attacks."
+
+What if I redirect a domain to my own ip address ? And for each request sent to me, I sent a request to the true domain, then I show the response to the victim. Acting like a proxy.
+
+6. The vuln was found many years ago and published, but no one cared about it. The solution reduce the probability ... but what if I have a lot of computer.
+
+7. Journalists said something like "OMFG they can hack us !" ... Oh excuse me, but, is there anything new here ? :)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="yanky"><span>yanky</span><div class="post-comment-content">Oops sorry, Concerning 2 that's not what I wanted to say, you're right for this point ;)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">Dan says that this is a very much practical attack and brute forcing the transaction IDs is not practical at all unless you are within an environment you can control like a LAN.
+
+yanky, I do not understand most of your points. :) sorry mate.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="IDE"><span>IDE</span><div class="post-comment-content">Here is the solution: http://amd.co.at/dns.htm
+
+That is very interesting and I have studied this.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="ducnm"><span>ducnm</span><div class="post-comment-content">On 07/25/2008, Bkis, has released BkavDNSCheck, new software checking for Dan Kaminsky DNS flaw. 
+
+The advantage of this software is that BkavDNSCheck could solve the limitation of Dan's Tool (http://www.doxpara.com). BkavDNSCheck is able to test exactly the specific DNS Server which we want to check, while Dan's Tool could only test the last top DNS server (not owned by the checker - DNS administrator).
+
+Together with launching the software, Bkis has published some articles on how to apply patch against this flaw for vulnerable systems, thus keeping DNS systems away from a hazardous large-scale attack. These may help ISPs to check their DNS systems. We also provide the article of the tool to local press in order to guide administrators to check and patch their systems.
+
+Please, read the following: http://security.bkis.vn/?p=75 for reference.
+
+If you find it's usefull, please provide it to whom may concern
+
+Thank you and best regards</div></div></div></div></article><footer id="footer"><p>Copyright &copy; 2019 <a href=""></a>. All rights reserved.</p></footer></body></html>

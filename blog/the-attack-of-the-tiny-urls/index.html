@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta meta name="viewport" content="width=device-width, initial-scale=1.0"><title>The Attack of the TINY URLs</title><meta name="description" content="Just for fun I recently shrank a few URLs with the infamous tinyurl.com. Well, it worked. After submitting the URL in question, I had around 26 characters long string which was perfect for the job."><meta property="name" content="The Attack of the TINY URLs"><meta itemprop="name" content="The Attack of the TINY URLs"><meta property="description" content="Just for fun I recently shrank a few URLs with the infamous tinyurl.com. Well, it worked. After submitting the URL in question, I had around 26 characters long string which was perfect for the job."><meta itemprop="description" content="Just for fun I recently shrank a few URLs with the infamous tinyurl.com. Well, it worked. After submitting the URL in question, I had around 26 characters long string which was perfect for the job."><meta property="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fthe-attack-of-the-tiny-urls%2F?w=1024"><meta itemprop="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fthe-attack-of-the-tiny-urls%2F?w=1024"><meta property="og:type" content="website"><meta property="og:url" content="https://www.gnucitizen.org/blog/the-attack-of-the-tiny-urls/"><meta property="og:title" content="The Attack of the TINY URLs"><meta property="og:description" content="Just for fun I recently shrank a few URLs with the infamous tinyurl.com. Well, it worked. After submitting the URL in question, I had around 26 characters long string which was perfect for the job."><meta property="og:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fthe-attack-of-the-tiny-urls%2F?w=1024"><meta name="twitter:title" content="The Attack of the TINY URLs"><meta name="twitter:description" content="Just for fun I recently shrank a few URLs with the infamous tinyurl.com. Well, it worked. After submitting the URL in question, I had around 26 characters long string which was perfect for the job."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fthe-attack-of-the-tiny-urls%2F?w=1024"><link type="text/css" href="/blog.css" rel="stylesheet"><script type="text/javascript" src="/blog.js"></script></head><body><header id="header"><h1><a href="/"></a></h1><p></p></header><nav id="topnav"><ul><li><a href="/">Home</a></li><li><a href="/projects.html">Projects</a></li><li><a href="/files">Files</a></li><li><a href="/about.html">About</a></li></ul></nav><article><div id="content"><h1 class="title">The Attack of the TINY URLs</h1><div>Thu, 16 Nov 2006 02:41:30 GMT</div><div id="post-content"><p><em>Just for fun I recently shrank a few URLs with the infamous <a href="http://tinyurl.com">tinyurl.com</a>. Well, it worked. After submitting the URL in question, I had around 26 characters long string which was perfect for the job.</em></p>
+<p>I have been playing with tinyurl before. Since the service started in 2002, on numerous accessions I have been shrinking URLs like crazy. This time was different though. After finishing up all the remaining work on <a href="https://www.gnucitizen.org/svn/attackapi/branches/2.x/demos/">AttackAPI&#39;s new interface</a>, which I recommend to check out, I started thinking how tinyurl can be employed for evil.</p>
+<p>So, I am there in the corner, holding a can of coke in one hand and scratching my head with the other. The room is dark. It is around 5:30pm &#39; 6:00pm Asian time. Then it suddenly came to me; <strong>REMOTE STORAGE</strong>.</p>
+<p>Yes, I know. This thing has been known for ages. Back in 2002 people knew how to take advantage of tinyurl&#39;s service to store different files online by breaking the data into URL like segments that are indexed by a simple text file. This time was different though. I was thinking of something more agile, something that is alive. I was thinking in terms of JavaScript; moreover, malicious JavaScript.</p>
+<p>A true self propagating worm is one that does not rely on external resources. Otherwise it will be too easy to kill. But how does a fat worm move its frame while keeping its agility? Since there is no global file system, AJAX worms may use services like tinyurl to hack around this limitation.</p>
+<p>For the purpose of this exercise I employ a single technique that I discussed in detail over <a href="/blog/traversing-the-web">here</a>. What this technique shows is that although parent documents cannot read the content of child iframes, child iframes can assign values to their parent&#39;s fragment identifier. In conjunction with tinyurl storage capabilities and a simple trick, this technique can be used to make AJAX worms live and bread on the web.</p>
+<p>The receipt for making such a worm is quite straight forward. First of all we need some type of data that is about to be stored in tinyurl. We break that into segments and base64 encode each one of them. Shrink each segment with tinyurl while keeping an index of it. Than we base64 the index and shrink again. One thing that you must remember is that we are going use fragment identifiers (#hash) to access the data. So, the actual URL that will be shrunk must have capabilities of sending data back to the parent hash and be formated in something like the following:</p>
+<pre><code>http://&lt;site&gt;#&lt;segment&gt;</code></pre><p>When the iframe is loaded, the the underlying logic will send the current hash data back to the parent hash. Of course there is another way of achieving the same result. And I repeat, tinuyrl is <strong>NOT</strong> vulnerable to XSS. And I repeat, tinyurl is <strong>NOT</strong> vulnerable to XSS and I repeat.</p>
+<p>So, all the worm needs to remember is a 26 characters long string which eventually will expand to a quite big file. When the file is needed, the following algorithm is applied:</p>
+<ol>
+<li><strong>Load</strong> the end URL in an iframe.</li>
+<li><strong>Wait</strong> for a change in the hash.</li>
+<li><strong>Read</strong> the fragment identifier and base64 decode it.</li>
+<li><strong>Read</strong> the content of the data to find each segment.</li>
+<li><strong>Load</strong> the segment.</li>
+<li><strong>Repeat</strong> the process for each segment.</li>
+</ol>
+<p><em>Apart from tinyurl there are several other services that offer similar functionalities. One of them is <a href="http://urlic.com">urlic.com</a> which is top to bottom AJAX. I wonder what else we can do with it.</em></p>
+</div><div id="post-comments"><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="maluc"><span>maluc</span><div class="post-comment-content">Actually, tinyurl does have a persistent XSS. So i think the more accurate sentence would be "This does NOT use an XSS on tinyurl."
+
+And you say it's to use for remote storage, but what sort of example storage would a javascript worm need? i mean, i can't think of a way to load any dynamic flash or file like this with IE. Like can you think of a sample attack using it? i'm just drawing a blank..
+
+It's a good idea if it does have some use.. but there's alot of ways to use remote storage. For example, putting it on a myspace page.. then using your double proxy iframes method to extract it. You can put it on anyy site that allows user content - forums, comments, wordpress, etc. Assuming it can handle the bandwidth of a worm.
+
+-maluc</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">maluc,
+
+I tried to be ironic. tinyurl does have persistent XSS but I am not disclousing that, and it doesn't matter anyway. 
+
+<blockquote>And you say it's to use for remote storage, but what sort of example storage would a javascript worm need? i mean, i can't think of a way to load any dynamic flash or file like this with IE. Like can you think of a sample attack using it? i'm just drawing a blank..</blockquote>
+
+This is easy. Get the base64 value and append the following in front of it: data:application/x-shockwave-flash;base64,. Put that into an iframe src attribute and you have the flash running. This doesn't work on IE though. More on that <a href="http://www.gnucitizen.org/blog/self-contained-xss-attacks" rel="nofollow">here</a> and <a href="http://www.gnucitizen.org/blog/a-bag-full-of-tricks" rel="nofollow">here</a>.
+
+<blockquote>... but there's a lot of ways to use remote storage ... you can put it on any site that allows user content</blockquote>
+
+Yes I agree on that, but I want something that is more agile, as I said in this post. I want to create a virtual file system that the agent can operate without requiring assistance. This is where tinyurl shines: everyone is free to shrink, no registration is required.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="luma"><span>luma</span><div class="post-comment-content">Yes interesting, I decided to write my own version:
+
+This only works in localhost
+ 
+<pre><code>lol = document.createElement('iframe');
+lol.src = 'http://tinyurl.com/ym7yba';
+document.body.appendChild(lol);
+
+function printCODE()
+{
+code = lol.contentDocument.location + '';
+
+if(code)
+ {
+ body = document.getElementById('code');
+ code = unescape(code);
+ body.innerHTML = code.substr(28, code.length-18);
+ }
+ else
+ {
+ alert('error');
+ }
+}
+
+setInterval("printCODE()", 3000);</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">interesting piece of code</div></div></div></div></article><footer id="footer"><p>Copyright &copy; 2019 <a href=""></a>. All rights reserved.</p></footer></body></html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Network Communication API Editor's Draft</title><meta name="description" content="&gt; To enable Web applications to communicate using TCP this specification introduces the TCPSocket interface and a corresponding optional security model."><meta property="name" content="Network Communication API Editor's Draft"><meta itemprop="name" content="Network Communication API Editor's Draft"><meta property="description" content="&gt; To enable Web applications to communicate using TCP this specification introduces the TCPSocket interface and a corresponding optional security model."><meta itemprop="description" content="&gt; To enable Web applications to communicate using TCP this specification introduces the TCPSocket interface and a corresponding optional security model."><meta property="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fnetwork-communication-api-editors-draft%2F?w=1024"><meta itemprop="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fnetwork-communication-api-editors-draft%2F?w=1024"><meta property="og:type" content="website"><meta property="og:url" content="https://www.gnucitizen.org/blog/network-communication-api-editors-draft/"><meta property="og:title" content="Network Communication API Editor's Draft"><meta property="og:description" content="&gt; To enable Web applications to communicate using TCP this specification introduces the TCPSocket interface and a corresponding optional security model."><meta property="og:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fnetwork-communication-api-editors-draft%2F?w=1024"><meta name="twitter:title" content="Network Communication API Editor's Draft"><meta name="twitter:description" content="&gt; To enable Web applications to communicate using TCP this specification introduces the TCPSocket interface and a corresponding optional security model."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fnetwork-communication-api-editors-draft%2F?w=1024"><link type="text/css" href="/blog.css" rel="stylesheet"><script type="text/javascript" src="/blog.js"></script></head><body><header id="header"><h1><a href="/"></a></h1><p></p></header><nav id="topnav"><ul><li><a href="/">Home</a></li><li><a href="/projects.html">Projects</a></li><li><a href="/files">Files</a></li><li><a href="/about.html">About</a></li></ul></nav><article><div id="content"><h1 class="title">Network Communication API Editor's Draft</h1><div>Fri, 23 Nov 2007 11:42:56 GMT</div><div id="post-content"><blockquote>
+<p>To enable Web applications to communicate using TCP this specification introduces the TCPSocket interface and a corresponding optional security model.</p>
+</blockquote>
+<pre><code class="language-javascript">var con = null;
+
+try { 
+    con = new TCPSocket(&quot;www.example.com, &quot;12345&quot;);
+} catch (ex) { 
+    if (&quot;SECURITY_ERR&quot; == ex.message) { 
+        alert(&quot;unable to connect&quot;);
+    }
+}
+
+con.addEventListener(&quot;socketdata&quot;, function(ev) {
+    if (&quot;pong&quot; == ev.data) {
+        alert(&quot;Success&quot;);
+    }
+    else {
+        alert(&quot;Failure&quot;);
+    }
+}
+
+con.write(&quot;ping&quot;);
+con.flush();</code></pre>
+<blockquote>
+<p>The TCPSocket interface enables a TCP connection from the client to the server from which the script was downloaded and executed from. Instances of this object can be made using a constructor on the Window object. <a href="http://dev.w3.org/2006/webapi/network-api/network-api.html">W3C</a></p>
+</blockquote>
+<p><em>Cool stuff!</em></p>
+</div><div id="post-comments"><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Wladimir Palant"><span>Wladimir Palant</span><div class="post-comment-content">Great, the last thing the world needs is yet another way of sending raw TCP data. On the other hand, Java and Flash do this already...</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Matt"><span>Matt</span><div class="post-comment-content">Is this API downloadable yet? 
+
+I also noticed that you used a closure in your function declaration of the event handler so it is definitely not Java. Is it JavaScript perchance?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">well TCPSocket is already implemented into Firefox but it is not part of the DOM. So, this draft suggests that the object it should be part of it and in a year or two, that might be the case.</div></div></div></div></article><footer id="footer"><p>Copyright &copy; 2019 <a href=""></a>. All rights reserved.</p></footer></body></html>

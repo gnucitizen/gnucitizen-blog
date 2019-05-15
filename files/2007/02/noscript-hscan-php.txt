@@ -1,0 +1,27 @@
+<?php
+	$params = array();
+
+	foreach ($_GET as $key => $val) $params[$key] = $val;
+	foreach ($_POST as $key => $val) $params[$key] = $val;
+
+	$target = isset($params['t'])?htmlspecialchars($params['t']):'';
+	$client = $_SERVER['REMOTE_ADDR'];
+	$urls = array();
+
+	foreach ($params as $key => $val)
+		if (substr($key, 0, 1) == 'u') {
+			$url = htmlspecialchars($val);
+			$urls[] = $url;
+		}
+?>
+<html><head><style>
+<?php
+	foreach ($urls as $index => $url)
+		echo "a:visited #s$index {background:url(\"${target}u=".urlencode($url)."&t=".time()."&c=$client\")}\n";
+?>
+</style></head><body>
+<?php
+	foreach ($urls as $index => $url)
+		echo "<a href=\"$url\"><span id=\"s$index\">v</span></a>\n";
+?>
+</body></html>

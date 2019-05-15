@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Google.js</title><meta name="description" content="I am learning to love Windows. Yeh it has its own problems and sometimes could be a bit insecure but in general, it just works well and every single piece of it is reusable and scriptable. Today, I quickly wrote a Google search scraper. It runs straight from the command line."><meta property="name" content="Google.js"><meta itemprop="name" content="Google.js"><meta property="description" content="I am learning to love Windows. Yeh it has its own problems and sometimes could be a bit insecure but in general, it just works well and every single piece of it is reusable and scriptable. Today, I quickly wrote a Google search scraper. It runs straight from the command line."><meta itemprop="description" content="I am learning to love Windows. Yeh it has its own problems and sometimes could be a bit insecure but in general, it just works well and every single piece of it is reusable and scriptable. Today, I quickly wrote a Google search scraper. It runs straight from the command line."><meta property="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fgoogle_js%2F?w=1024"><meta itemprop="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fgoogle_js%2F?w=1024"><meta property="og:type" content="website"><meta property="og:url" content="https://www.gnucitizen.org/blog/google_js/"><meta property="og:title" content="Google.js"><meta property="og:description" content="I am learning to love Windows. Yeh it has its own problems and sometimes could be a bit insecure but in general, it just works well and every single piece of it is reusable and scriptable. Today, I quickly wrote a Google search scraper. It runs straight from the command line."><meta property="og:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fgoogle_js%2F?w=1024"><meta name="twitter:title" content="Google.js"><meta name="twitter:description" content="I am learning to love Windows. Yeh it has its own problems and sometimes could be a bit insecure but in general, it just works well and every single piece of it is reusable and scriptable. Today, I quickly wrote a Google search scraper. It runs straight from the command line."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fgoogle_js%2F?w=1024"><link type="text/css" href="/blog.css" rel="stylesheet"><script type="text/javascript" src="/blog.js"></script></head><body><header id="header"><h1><a href="/"></a></h1><p></p></header><nav id="topnav"><ul><li><a href="/">Home</a></li><li><a href="/projects.html">Projects</a></li><li><a href="/files">Files</a></li><li><a href="/about.html">About</a></li></ul></nav><article><div id="content"><h1 class="title">Google.js</h1><div>Sat, 06 Oct 2007 11:39:00 GMT</div><div id="post-content"><p>I am learning to love Windows. Yeh it has its own problems and sometimes could be a bit insecure but in general, it just works well and every single piece of it is reusable and scriptable. Today, I quickly wrote a Google search scraper. It runs straight from the command line.</p>
+<p>Pay attention on the size of the script and the level of clarity of the code. Moreover, it is well integrated with the host&#39;s setup and connection settings (proxies, socks, etc). You cannot do that even with Python. Thanks Microsoft.</p>
+<pre><code>[/files/2007/10/google.js](/files/2007/10/google.js)</code></pre><p>There are two way you can run the script. If your default scripting engine is <code>cscript</code>, then you can just type: <code>google.js **some query here**</code>. If this is not the case then you either need to be explicit like this: <code>cscript /nologo google.js **some query here**</code>, or make cscript default like this: <code>cscript //H:CScript</code>. Whatever you do, the code will run and will work flawlessly.</p>
+<p><em>I enjoy when things are plain and easy or just simply clever.</em></p>
+</div><div id="post-comments"><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Stephen Bloch"><span>Stephen Bloch</span><div class="post-comment-content">When running your script I'm getting:
+
+<pre><code>"Access is denied" message.
+The error code: 80070005,
+the source: msxml3.dll</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content"><pre><code>cscript //H:CScript</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="thornade"><span>thornade</span><div class="post-comment-content">No output for me, when I debug, it seems like I have no tag &lt;a&gt; in the returned document but when I sniff, I could see answers from Google, furthermore the script sends 2 requests (q=xxx, q=xxx&amp;start=10)
+
+I wrote a similar script in perl to find all web servers crawled by google for a specific domain (ie: gnucitizen.org). I did not use the wap version, is there any reason to use it ? (speeder, smaller ... ?)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="nori"><span>nori</span><div class="post-comment-content">Hi, no outpout when using no proxy. But when passing through Paros, results are returned. Maybe an issue with Accept-Encoding: gzip,deflate...</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">strange, it should work flawlessly... are you sure that your system proxy settings are set correctly?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="nori"><span>nori</span><div class="post-comment-content"><pre><code>if (WScript.Arguments.length == 0) {
+	WScript.Echo('usage: ' + WScript.ScriptName + ' &lt;query&gt;');
+	WScript.Echo('       ' + WScript.ScriptName + ' site:gnucitizen.org ext:js');
+	WScript.Echo('');
+	WScript.Echo('Google Search');
+	WScript.Echo('by Petko D. Petkov (pdp) GNUCITIZEN (http://www.gnucitizen.org)');
+	WScript.Quit(1);
+} else {
+	var tmp = [];
+
+	for (var i = 0; i &lt; WScript.Arguments.length; i++) {
+		tmp.push(WScript.Arguments(i));
+	}
+
+	var query = tmp.join(' ');
+}
+
+var pos = 0;
+var doc = WScript.CreateObject('MSXML2.DOMDocument');
+var xhr = WScript.CreateObject('Microsoft.XMLHTTP');
+var resp;
+
+doc.async = false;
+doc.validateOnParse = false;
+
+do {
+	var lns = [];
+  xhr.open('GET','http://www.google.com/xhtml?q=' + escape(query) + (pos != 0 ? '&start=' + pos : ''),false);
+  //xhr.setRequestHeader("Accept-Encoding", "text");
+  xhr.send(null);
+	//doc.load('http://www.google.com/xhtml?q=' + escape(query) + (pos != 0 ? '&start=' + pos : ''));
+	try{
+		doc.loadXML(xhr.responseText);
+    //WScript.Echo(xhr.responseText);
+	//WScript.Echo('XML:' + xhr.responseText);
+	var as = doc.getElementsByTagName('a');
+
+	for (var i = 0; i &lt; as.length; i++) {
+		var href = as[i].getAttribute('href');
+		//WScript.Echo(href);
+		var match = href.match(/^\/gwt\/.*?u=(.*?)$/);
+		//WScript.Echo(match);
+		if (match) {
+			var ln = unescape(match[1]);
+			
+			lns.push(ln);
+		}
+	}
+
+	}catch(ex){
+		//WScript.Echo(ex.description);
+	}
+	if (pns && pns.sort().join() == lns.sort().join()) {
+		break;
+	}
+
+	for (var i = 0; i &lt; lns.length; i++) {
+		WScript.Echo(lns[i]);
+	}	
+
+	var pns = lns;
+
+	pos += 10;
+} while (lns);</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="thornade"><span>thornade</span><div class="post-comment-content">Yes, it sounds like MSXML2.DOMDocument could not deflate gzip. If I disable HTTP/1.1 on Internet Explorer settings, it works better, in this case no gzip encoding support.  Nevertheless, foreach page Google returns, the DTD is checked. This represents 31 documents downloaded...</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">nori, cheers for that.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="albert arul prakash"><span>albert arul prakash</span><div class="post-comment-content">Working fine for me. Its lovely</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="hackathology"><span>hackathology</span><div class="post-comment-content">same here. No output when not using any proxy</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">I don't know. it works really well for me. Check if cscript is your default scripting engine. If not, just follow the steps described above.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="hackathology"><span>hackathology</span><div class="post-comment-content">followed all three steps man, still, it doesn't work. Strange.</div></div></div></div></article><footer id="footer"><p>Copyright &copy; 2019 <a href=""></a>. All rights reserved.</p></footer></body></html>

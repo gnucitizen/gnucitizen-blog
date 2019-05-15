@@ -1,0 +1,164 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta meta name="viewport" content="width=device-width, initial-scale=1.0"><title>New Version Of Dnsmap Out</title><meta name="description" content="We just released a new version of dnsmap. dnsmap is a subdomain bruteforcer for stealth enumeration."><meta property="name" content="New Version Of Dnsmap Out"><meta itemprop="name" content="New Version Of Dnsmap Out"><meta property="description" content="We just released a new version of dnsmap. dnsmap is a subdomain bruteforcer for stealth enumeration."><meta itemprop="description" content="We just released a new version of dnsmap. dnsmap is a subdomain bruteforcer for stealth enumeration."><meta property="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fnew-version-of-dnsmap-out%2F?w=1024"><meta itemprop="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fnew-version-of-dnsmap-out%2F?w=1024"><meta property="og:type" content="website"><meta property="og:url" content="https://www.gnucitizen.org/blog/new-version-of-dnsmap-out/"><meta property="og:title" content="New Version Of Dnsmap Out"><meta property="og:description" content="We just released a new version of dnsmap. dnsmap is a subdomain bruteforcer for stealth enumeration."><meta property="og:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fnew-version-of-dnsmap-out%2F?w=1024"><meta name="twitter:title" content="New Version Of Dnsmap Out"><meta name="twitter:description" content="We just released a new version of dnsmap. dnsmap is a subdomain bruteforcer for stealth enumeration."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fnew-version-of-dnsmap-out%2F?w=1024"><link type="text/css" href="/blog.css" rel="stylesheet"><script type="text/javascript" src="/blog.js"></script></head><body><header id="header"><h1><a href="/"></a></h1><p></p></header><nav id="topnav"><ul><li><a href="/">Home</a></li><li><a href="/projects.html">Projects</a></li><li><a href="/files">Files</a></li><li><a href="/about.html">About</a></li></ul></nav><article><div id="content"><h1 class="title">New Version Of Dnsmap Out</h1><div>Sun, 22 Feb 2009 16:42:19 GMT</div><div id="post-content"><p>We just released a new version of <a href="/files/2009/03/dnsmap-0222tar.gz">dnsmap</a>. dnsmap is a subdomain bruteforcer for stealth enumeration.</p>
+<p>Originally released in 2006, dnsmap is mainly meant to be used by pentesters during the information gathering/enumeration phase of infrastructure security assessments. During the enumeration stage, the security consultant would typically discover the target company&#39;s IP netblocks, domain names, phone numbers, etc. dnsmap was <a href="http://backtrack.offensive-security.com/index.php?title=Tools" title="Tools">included</a> in Backtrack 2 and 3, although the version included is the now dated version 0.1.</p>
+<p>Subdomain brute-forcing is another technique that should be used in the enumeration stage, as it&#39;s especially useful when other domain enumeration techniques such as zone transfers don&#39;t work (I rarely see zone transfers being publicly allowed these days by the way).</p>
+<h2 id="original-features-of-version-0-1">Original Features of Version 0.1</h2>
+<ul>
+<li>obtain all IP addresses (A records) associated to each successfully bruteforced subdomain, rather than just one IP address per subdomain</li>
+<li>abort the bruteforcing process in case the target domain uses wildcards</li>
+<li>ability to be able to run the tool without providing a wordlist by using a built-in list of keywords</li>
+<li>bruteforcing by using a user-supplied wordlist (as opposed to the built-in wordlist)</li>
+</ul>
+<h2 id="new-improvements-in-version-0-22">New Improvements in Version 0.22</h2>
+<ul>
+<li>saving the results in human-readable and CSV format for easy processing</li>
+<li>fixed bug that disallowed reading wordlists with DOS CRLF format</li>
+<li>improved built-in subdomains wordlist</li>
+<li>new bash script (<code>dnsmap-bulk.sh</code>) included which allows running dnsmap against a list of domains from a user-supplied file. i.e.: bruteforcing several domains in a bulk fashion</li>
+<li>bypassing of signature-based <a href="https://lists.dns-oarc.net/pipermail/dns-operations/2006-September/001047.html">dnsmap detection</a> by generating a proper pseudo-random subdomain when checking for wildcards</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<pre><code>usage: dnsmap &lt;target-domain&gt; [options]
+options:
+-w &lt;wordlist-file&gt;
+-r &lt;results-path&gt;</code></pre><h2 id="example-on-live-domain">Example on Live Domain</h2>
+<p>The following is just an example so you get an idea of how dnsmap works. Very simple to use as you can see. If you want to save the results or use your own wordlist, checkout the usage syntax. Question for those who pay attention to detail: can you spot the potential leaks of <a href="http://www.faqs.org/rfcs/rfc1918.html">internal IP addresses</a>?</p>
+<pre><code class="language-bash">$ dnsmap baidu.com
+dnsmap 0.22 - DNS Network Mapper by pagvac (gnucitizen.org)
+
+[+] searching (sub)domains <span class="keyword">for</span> baidu.com using built-in wordlist
+
+accounts.baidu.com
+IP address <span class="comment">#1: 10.11.252.74</span>
+
+events.baidu.com
+IP address <span class="comment">#1: 202.108.23.40</span>
+
+finance.baidu.com
+IP address <span class="comment">#1: 60.28.250.196</span>
+IP address <span class="comment">#2: 60.28.251.79</span>
+IP address <span class="comment">#3: 60.28.251.206</span>
+IP address <span class="comment">#4: 123.129.240.28</span>
+IP address <span class="comment">#5: 123.129.240.29</span>
+IP address <span class="comment">#6: 60.28.250.102</span>
+IP address <span class="comment">#7: 60.28.250.111</span>
+
+forum.baidu.com
+IP address <span class="comment">#1: 202.108.250.212</span>
+
+images.baidu.com
+IP address <span class="comment">#1: 61.135.163.93</span>
+
+mail.baidu.com
+IP address <span class="comment">#1: 10.23.3.137</span>
+
+mobile.baidu.com
+IP address <span class="comment">#1: 202.108.23.125</span>
+
+mx.baidu.com
+IP address <span class="comment">#1: 61.135.163.61</span>
+
+mx1.baidu.com
+IP address <span class="comment">#1: 61.135.163.61</span>
+
+mx2.baidu.com
+IP address <span class="comment">#1: 61.135.163.62</span>
+
+mx3.baidu.com
+IP address <span class="comment">#1: 61.135.162.61</span>
+
+news.baidu.com
+IP address <span class="comment">#1: 61.135.163.87</span>
+
+ns1.baidu.com
+IP address <span class="comment">#1: 202.108.22.220</span>
+
+ns2.baidu.com
+IP address <span class="comment">#1: 61.135.165.235</span>
+
+ns3.baidu.com
+IP address <span class="comment">#1: 220.181.37.10</span>
+
+oracle.baidu.com
+IP address <span class="comment">#1: 172.18.0.50</span>
+
+photo.baidu.com
+IP address <span class="comment">#1: 61.135.163.93</span>
+
+photos.baidu.com
+IP address <span class="comment">#1: 61.135.163.93</span>
+
+pop.baidu.com
+IP address <span class="comment">#1: 61.135.166.249</span>
+
+proxy.baidu.com
+IP address <span class="comment">#1: 202.108.11.30</span>
+
+smtp.baidu.com
+IP address <span class="comment">#1: 61.135.163.61</span>
+
+vpn.baidu.com
+IP address <span class="comment">#1: 202.108.250.231</span>
+
+wap.baidu.com
+IP address <span class="comment">#1: 61.135.163.237</span>
+
+webmail.baidu.com
+IP address <span class="comment">#1: 61.135.166.249</span>
+
+win.baidu.com
+IP address <span class="comment">#1: 10.65.19.212</span>
+
+www.baidu.com
+IP address <span class="comment">#1: 220.181.5.222</span>
+
+www1.baidu.com
+IP address <span class="comment">#1: 220.181.5.222</span>
+
+www2.baidu.com
+IP address <span class="comment">#1: 202.108.22.136</span>
+
+www3.baidu.com
+IP address <span class="comment">#1: 202.108.22.188</span>
+
+[+] 29 (sub)domains and 35 IP address(es) found</code></pre>
+</div><div id="post-comments"><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">now you need to make it multi-threaded :)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pagvac"><span>pagvac</span><div class="post-comment-content">yeah, multi-threading among other features are mentioned in the included TODO file. will eventually implement them all hopefully!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="kanedaaa"><span>kanedaaa</span><div class="post-comment-content">Small patch add -fw option to scan even wildcard is detected.
+
+<pre><code>dnsmap-0.22$ patch < dnsmap.patchwildcard.patch</code></pre>
+
+http://kaneda.bohater.net/files/dnsmap.patchwildcard.diff</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="meathive"><span>meathive</span><div class="post-comment-content">Well done. https://kinqpinz.info/lib/2009/feb/#09c81545</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pagvac"><span>pagvac</span><div class="post-comment-content">@kanedaaa: thanks for the patch, haven't tested it yet, but wanted to let u know that i fixed a few bugs reported by users, so it'd be cool if the patch also worked on version 0.22.1: http://lab.gnucitizen.org/projects/dnsmap (downloads on bottom of page)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Varun"><span>Varun</span><div class="post-comment-content">The "dnsmap" link in the first sentence seems to have broken after this post was made. Leads to "http://lab.gnucitizen.org/projects/dnsmap-1" which gives a "Page not found". Thanks!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">should be fixed now!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="GNa"><span>GNa</span><div class="post-comment-content">kanedaaa's patch is great for opendns users :)
+
+for the 0.22.2 there is 1 thing to correct:
+<pre><code>-       unsigned short int i=0, j=0, found=0, ipCount=0, wordlist=FALSE, results=FALSE;
++       unsigned short int i=0, j=0, found=0, ipCount=0, wordlist=FALSE, results=FALSE, forcewildcard=FALSE;</code></pre>
+
+notice the unsigned short at the beginning</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="GNa"><span>GNa</span><div class="post-comment-content">i should also note that opendns users get the whole wordlist resolved, so they should filter out the ip 67.215.65.132 , or disable the nxdomain capture in their opendns account :)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="David Kierznowski"><span>David Kierznowski</span><div class="post-comment-content">Yo AP, its not that serious considering its run from the command line, but argv[1] is vulnerable to a buffer overflow.
+
+The problem is in: <code>wildcarddetect(char *dom)</code>
+VULNERABLE LINE: <code>strcat(s, dom);</code>
+FIXED: <code>strncat(s, dom, sizeof(s));</code>
+
+<pre><code>Program received signal SIGSEGV, Segmentation fault.
+0x41414141 in ?? ()
+(gdb) info reg
+eax            0x0      0
+ecx            0xffffffe0       -32
+edx            0x3      3
+ebx            0x41414141       1094795585
+esp            0xbf90c600       0xbf90c600
+ebp            0x41414141       0x41414141
+esi            0x41414141       1094795585
+edi            0x41414141       1094795585
+eip            0x41414141       0x41414141
+eflags         0x200282 2097794
+cs             0x73     115
+ss             0x7b     123
+ds             0x7b     123
+es             0x7b     123
+fs             0x0      0
+gs             0x33     51</code></pre>
+
+I can just imagine someone using this tool on a web frontend or something and getting themselves in trouble ;)
+
+Cheers for the cool tool.
+
+DK</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pagvac"><span>pagvac</span><div class="post-comment-content">lols. thought i fixed most of those! will fix it probably when i update other things in the code i was planning to fix. thanks for that DK. we should post a working PoC, that'd be cool :)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">as far as I know nmap has been (still is) vulnerable to all sorts of attacks for years, and it is more likely to end up with a suid bit than dnsmap. of course, it is always good to fix the bugs, ap :)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pagvac"><span>pagvac</span><div class="post-comment-content">pdp: the only reason why i haven't cared much about input validation on dnsmap is because it doesn't require the SUID bit to be on, where tools like nmap do require to be run with root privileges. i.e.: for SYN portscans. nevertheless, as DK pointed out, if someone created a web gui for dnsmap, it could lead to remote command exec. i'd hope that if someone did implement a web gui for dnsmap, they filtered malicious input from the server-side script itself, unless they want their site to be owned :)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Zee"><span>Zee</span><div class="post-comment-content">My resolver does ~400-600k per minute on core 2 duo, 5 mbit.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="meathive"><span>meathive</span><div class="post-comment-content">The PHP port for those interested. https://kinqpinz.info/?%C2%B6=cb252860#index</div></div></div></div></article><footer id="footer"><p>Copyright &copy; 2019 <a href=""></a>. All rights reserved.</p></footer></body></html>

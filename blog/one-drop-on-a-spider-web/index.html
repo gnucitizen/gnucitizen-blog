@@ -1,0 +1,132 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta meta name="viewport" content="width=device-width, initial-scale=1.0"><title>One Drop on A Spider Web</title><meta name="description" content="On 6th February 2007, I've published an article titled Playing in Large, which discusses various ways of injecting large JavaScript payloads into tiny XSS holes. The technique that I used as an example is quite simple. In general, all attackers need to do is to place their malicious payload behind the fragment identifier (`# sign`) and evaluate it within the attacked application context. This can be achieved by using something like this: `eval(location.hash.substr(1))`."><meta property="name" content="One Drop on A Spider Web"><meta itemprop="name" content="One Drop on A Spider Web"><meta property="description" content="On 6th February 2007, I've published an article titled Playing in Large, which discusses various ways of injecting large JavaScript payloads into tiny XSS holes. The technique that I used as an example is quite simple. In general, all attackers need to do is to place their malicious payload behind the fragment identifier (`# sign`) and evaluate it within the attacked application context. This can be achieved by using something like this: `eval(location.hash.substr(1))`."><meta itemprop="description" content="On 6th February 2007, I've published an article titled Playing in Large, which discusses various ways of injecting large JavaScript payloads into tiny XSS holes. The technique that I used as an example is quite simple. In general, all attackers need to do is to place their malicious payload behind the fragment identifier (`# sign`) and evaluate it within the attacked application context. This can be achieved by using something like this: `eval(location.hash.substr(1))`."><meta property="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fone-drop-on-a-spider-web%2F?w=1024"><meta itemprop="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fone-drop-on-a-spider-web%2F?w=1024"><meta property="og:type" content="website"><meta property="og:url" content="https://www.gnucitizen.org/blog/one-drop-on-a-spider-web/"><meta property="og:title" content="One Drop on A Spider Web"><meta property="og:description" content="On 6th February 2007, I've published an article titled Playing in Large, which discusses various ways of injecting large JavaScript payloads into tiny XSS holes. The technique that I used as an example is quite simple. In general, all attackers need to do is to place their malicious payload behind the fragment identifier (`# sign`) and evaluate it within the attacked application context. This can be achieved by using something like this: `eval(location.hash.substr(1))`."><meta property="og:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fone-drop-on-a-spider-web%2F?w=1024"><meta name="twitter:title" content="One Drop on A Spider Web"><meta name="twitter:description" content="On 6th February 2007, I've published an article titled Playing in Large, which discusses various ways of injecting large JavaScript payloads into tiny XSS holes. The technique that I used as an example is quite simple. In general, all attackers need to do is to place their malicious payload behind the fragment identifier (`# sign`) and evaluate it within the attacked application context. This can be achieved by using something like this: `eval(location.hash.substr(1))`."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fone-drop-on-a-spider-web%2F?w=1024"><link type="text/css" href="/blog.css" rel="stylesheet"><script type="text/javascript" src="/blog.js"></script></head><body><header id="header"><h1><a href="/"></a></h1><p></p></header><nav id="topnav"><ul><li><a href="/">Home</a></li><li><a href="/projects.html">Projects</a></li><li><a href="/files">Files</a></li><li><a href="/about.html">About</a></li></ul></nav><article><div id="content"><h1 class="title">One Drop on A Spider Web</h1><div>Mon, 25 Jun 2007 14:56:36 GMT</div><div id="post-content"><p>On 6th February 2007, I&#39;ve published an article titled <a href="/blog/playing-in-large">Playing in Large</a>, which discusses various ways of injecting large JavaScript payloads into tiny XSS holes. The technique that I used as an example is quite simple. In general, all attackers need to do is to place their malicious payload behind the fragment identifier (<code># sign</code>) and evaluate it within the attacked application context. This can be achieved by using something like this: <code>eval(location.hash.substr(1))</code>.</p>
+<p>This works really well when you are restricted in terms of the vulnerable field length. It was found that we can squeeze XSS payloads into 50 to 60 characters in size. Keep in mind that this is only when we use script elements (<code>&lt;script/&gt;</code>), which is by far the longest way of doing it. In some case, we can inject a couple of MBs of JavaScript inside a vulnerable application by composing a XSS string that is around 25 to 30 characters long.</p>
+<p>Another interesting point to outline is that the fragment identifier technique is quite stealth. Every information that is behind the hash (<code>#</code>) sign is not sent to the server. The fragment identifier is only used on the client. This means that this technique is suitable for circumventing firewalls, intrusion detection and intrusion prevention systems.</p>
+<p>It is recommended to check the <a href="/blog/playing-in-large">Playing in Large</a> article, if you are not familiar with this technique.</p>
+<p>In this post, I will show you a technique that I have developed in the last half an hour, which is as stealth compared to what we have discussed before, but a lot smaller in terms of length of characters needed and does not require special characters such as:</p>
+<ul>
+<li><code>dots .</code></li>
+<li><code>square brackets []</code></li>
+<li><code>spaces</code></li>
+<li><code>other meta characters that are usually used inside JavaScript</code></li>
+</ul>
+<p>The character set that is required is composed of lower case letters and the round brackets <code>()</code>. In order to explain how the technique works, I am going to lay out a hypothetical scenario which is as follows:</p>
+<pre><code>https://acme.com/vuln.php3?&lt;code&gt;&quot;&gt;&lt;/script&gt;&lt;script&gt;alert(1)&lt;/script&gt;&lt;!--`&lt;/code&gt;&lt;/pre&gt;
+
+It is clear that the example above is vulnerable to XSS. However, although we can alert the character 1 on the screen, we are not able to do anything else, mainly because the site converts special characters into underscores (`_`). This means that the payload: `&quot;&gt;&lt;/script&gt;&lt;script&gt;alert(&lt;code&gt;document.cookie`)&lt;/script&gt;&lt;!--&lt;/code&gt; is converted to `&quot;&gt;&lt;/script&gt;&lt;script&gt;alert(&lt;code&gt;document_cookie`)&lt;/script&gt;&lt;!--&lt;/code&gt;, which fails mainly because `document_cookie` does not exists. If we try to inject more complicated JavaScript, we pretty much end with the same problem. What&#39;s even worse, single quotes and double quotes are also sanitized.
+
+One thing is for sure, we might be able to inject remote script files by using various browser quirks such as `&lt;script src=domain/script`. However, these type of payload is unstable and require to host a file in a server in rather strange way. Remember, most meta characters are not allowed, including dots (`.`) and columns (`:`).
+
+I was toying around this problem for a bit when I realized that the best way to bypass this restriction is to reuse something that is part of the DOM already. I needed something that fits into the following vector:
+
+https://acme.com/vuln.php3?**&quot;&gt;&lt;/script&gt;&lt;script&gt;eval(something)&lt;/script&gt;&lt;!--**
+
+... where something is a variable part of the DOM global space and can be controlled from outside. There are plenty of such kind of variables but not that many of them are suitable for the job. For example we can inject stuff into the referrer and try to evaluate that. It is possible but very complicated since we need to find a way of spoofing this information.
+
+After digging into DOM I found a global namespace variable, which seamed that could work.
+
+`name` is a global namespace variable that defines the name of the current window. Most of the time, `name` contains nothing but a blank string. However, once we call a page within an iframe or an object with the appropriate attributes, the `name` value is changed to reflect that. In order to see how `name` looks like when opened from a browser window and an iframe try the following:</code></pre><ul>
+<li><p>create a blank html page with the following content: <code>&lt;script&gt;alert(name)&lt;/script&gt;</code></p>
+</li>
+<li><p>open the page within your browser - you should see a blank alert box</p>
+</li>
+<li><p>create a blank html page with the following content: <code>&lt;iframe name=&quot;test&quot; src=&quot;path_to_the_first_page.htm&quot;&gt;&lt;/iframe&gt;</code></p>
+</li>
+<li><p>open the page within your browser - you should see an alert box with the message test</p>
+  <div class="message">All this proves that we can manipulate the value of the global namespace variable `name`. So how this applies to XSS?</div>
+
+<p>  If you haven&#39;t realized yet, we can use this technique to circumvent filters in a very clever and quite sneaky way. Let&#39;s get back to our hypothetical scenario with the XSS vulnerability in acme.com which cannot be exploited easily. By using the technique I discussed above, we can bypass the restriction and here it is how:</p>
+  <iframe src="https://acme.com/vuln.php3?%22%3E%3C/script%3E%3Cscript%3E**eval%28name%29**%3C/script%3E%3C%21--" name="**/* your JavaScript payload here*/ alert('xss')**"></iframe>
+
+</li>
+</ul>
+<p>If you take the code displayed above and place it inside an innocent HTML page, you will be able to XSS anyone who visits it and is on the acme.com domain, although acme does a good job of sanitizing some of the meta characters.</p>
+<p>Some of the sceptical XSSers may not see the point of using this technique for a number of reasons. The first reason is based on the fact that there are other ways to exploit acme.com. This is true, but the example here was provided as a case study only. Very often we can <code>alert(1)</code> but nothing else, because the string needs to be short and can only contain standard characters. This is exactly when this technique is most suitable, because the character set is standard and <code>eval(name)</code> is a lot like <code>alert(1)</code>.</p>
+<p>Keep in mind that this attack leaves a very small footprint on the attacked system. The data that is contained in the <code>name</code> variable is never submitted to the server. It is worth mentioning that HTML/XML attributes are usually allowed to contain quite a lot of data which allows attackers to include entire XSS frameworks within the boundaries of <code>name</code>.</p>
+<div class="message">To summarize, the technique presented here allows you to inject JavaScript in places where the supported character set is usually not enough. The attack footprint is very small and the payload can exceed MBs of data. This makes this technique very stealth and extremely hard to detect. The technique is a combination of reflected/dom based XSS and works everywhere where attackers can simple inject `alert(1)`.</div>
+
+<p><em>This technique was published in order to raise the security awareness in regards to XSS (Cross-site Scripting) attacks. There are more then one way of doing things, which we usually overlook.</em></p>
+</div><div id="post-comments"><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="christ1an"><span>christ1an</span><div class="post-comment-content">Very good writeup, I was doing quite a lot of research on this because such a situation was present on YouTube (//www.youtube.com/advertise) a few days ago.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">what is interesting about this technique that is a combination of reflected XSS with a little help from the DOM.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pagvac"><span>pagvac</span><div class="post-comment-content">This is VERY powerful. We're saying that if we can run 
+
+<pre><code>&lt;script&gt;eval(name)&lt;/script&gt;</code></pre>
+
+as our XSS payload, then we can run JavaScript without any restrictions whatsoever.
+
+So when testing for XSS, if we get a blank alert box when injecting 
+
+<pre><code>&lt;script&gt;eval(name)&lt;/script&gt;</code></pre>
+
+then we know we can run absolutely anything by visiting a third-party page that embeds our magic iframe.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Giorgio Maone"><span>Giorgio Maone</span><div class="post-comment-content">If yours is new, I guess I can patent the following:
+
+<pre><code>with(location)with(hash)eval(substring(1))</code></pre>
+
+Much easier to post everywhere, because it's self-contained and you don't need to control the window name.
+
+Cheers
+--
+There's a brower safer than Firefox... it's Firefox, with NoScript - http://noscript.net</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">Giorgio, no one is patenting anything, but your trick is cooler I must admit. Nice stuff... I love it. However, mine is still smaller... :) but heck I love self-contained stuff so you win. :)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Giorgio Maone"><span>Giorgio Maone</span><div class="post-comment-content">pdp, I was just kidding - Cenzic is enough about patents.
+Of course I wouldn't have figured out mine if I didn't read your [a-z\(\)] challenge, so many thanks for inspiration ;)
+--
+Thereâ€™s a brower safer than Firefoxâ€¦ itâ€™s Firefox, with NoScript - http://noscript.net</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">Giorgio, I've totally ignored the <strong>with</strong> statement. To be honest with you, I am not using it that often. In fact, I cannot remember the last time I've made any use of it apart from the time when I tried to create a sandbox within JavaScript which didn't work, so I had to use full blown iframes to imitate similar characteristics.
+
+Anyway, great stuff. RSnake should include this one into his cheat sheet.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pagvac"><span>pagvac</span><div class="post-comment-content">Giorgio,
+
+That's a killer snippet. Thanks a lot for that.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content"><div class="message">Here you can find a snippet from a resent discussion on Sla.ckers.org about the techniques that were presented in this post</div>
+
+<blockquote>Awesome AnDrEw Wrote:
+<hr/>
+But then in essence I would see the technique pdp has found as relatively useless unless it was able to be done through some type of service within the site. What I mean by that is I would think it'd only be useful if say I had the ability to post an IFRAME within a messageboard on the site that I am targetting, but then again it still is of little value. If you can get a user to navigate to a third-party page then you've already won, because you can use your own payloads without cross-site scripting as a prerequisite unless you absolutely need to use the frame to target the site.</blockquote>
+
+Use the right tool for the right job... although I find ma1 technique rather cool, it may not work in some cases. For example, changes in the fragment identifier wont result in page refresh which is what you might want to achieve in some cases. Also, there are ways to make the fragment identifier to go away via a series of redirections, which is something that happens quite often. Another bad thing about the fragment identifier technique is that although everything is inside the URL, it looks too suspicious. Very often, attackers will use a 3rd party website which upon user arrival does the actual exploitation. Not to mention the fact that in some cases the # hash is used as communication mechanism between frames which are served from different origins. Any use of the fragment identifier will break the communication. You don't want to do that if you want to be stealth.
+
+Here is an example. Let's say that you have a worm that exploits the user on several domains. For sure you can use the fragment identifier technique and compose URLs which are included inside a hidden iframe. However, you need to do all the manual work for nothing, when you can simply create the iframe, assign the name or the target with your payload and rotate the src value with the URLs you want to exploit. XSSED.com has tones of vectors that simply <code>alert(1)</code>. All we need to do in order to make them work is <code>/alert\((1|'XSS'|"XSS")\)/eval(name)/i</code> and start rotating them inside an iframe. The chances of this technique to work are higher mainly because we do not add that much more characters into the payload. We don't have to do any characters counting and we don't have to think whether there is something before our code that makes uses of the information after the # hash. believe me, more and more applications make use of the hash today.
+
+To sum up... do not be ignorant. use the right tools for the right job. as you can see, there are real applications of the technique I described.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Acidus"><span>Acidus</span><div class="post-comment-content">I'm not sure if you all know it or not, but the contents of window.name are persisted across domains for the lifetime of the browsing context. This means window.name can be used to as a global session storage system.
+
+For example, site1.com writes a value into window.name. Any other websites that are visited in that browsing context (i.e. that browser tab or single browsing window) can read or write this value. In fact, I've got some cool demos where I track individual users across domains without web bugs/3rd part image server using JavaScript and window.name.
+
+In fact, we touch on this in the upcoming Ajax security book in our attacking offline Ajax apps chapter. I even wrote a source code compatible implementation for Firefox's sessionStorage object for ther other browsers.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">Acidus,
+
+I didn't know that. Actually this is very funny. I cannot see to what extend <code>window.name</code> can be used for malicious purposes although it is sort of interesting since it is almost like some kind of global dashboard where everyone can leave a message. So, we can implement some sort of a system where sites leave information about the user inside <code>window.name</code> and other sites can reuse that information in a clever way.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="ascii"><span>ascii</span><div class="post-comment-content">i would like to patent (built on the maone's one)
+
+</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Kishor"><span>Kishor</span><div class="post-comment-content">What about frame breaking code on acme?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">Kishor, what do u mean?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="ascii"><span>ascii</span><div class="post-comment-content">i would like to patent (built on the maone's one)
+
+<pre><code>&lt;img src=http://w onError=with(document)with(e)eval(unescape(innerHTML))</code></pre>
+
+please tell me when the registration process is finished : )
+
+http://www.ush.it/2007/06/27/xss-cheat-sheet-two-stage-payloads/</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">ascii, I am opening a patent bureau. Please send your submissions to <em>contact <strong>at</strong> gnucitizen.org</em> or contact the GNUCITIZEN group at <em>group <strong>at</strong> gnucitizen.org</em>. thanks.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Kishor"><span>Kishor</span><div class="post-comment-content">This code inside the page which is vulnerable:
+
+<pre><code>if (top.location != location)
+  top.location.href = document.location.href ;</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Kishor"><span>Kishor</span><div class="post-comment-content">As per Acidus's comments
+
+Here is what I tried out,
+
+1.html:
+
+<pre><code>window.name = unescape("alert('XSS!');");</code></pre>
+
+and 
+
+2.html:
+
+<pre><code>breakframe();
+eval(window.name);</code></pre>
+
+2.html still alerts XSS!
+
+So it means we can use window.name even if frame breaking code is present.
+
+So another 'with' may be necessary for window'.'</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Giorgio Maone"><span>Giorgio Maone</span><div class="post-comment-content">SirDarckCat and I are having fun with PHPIDS at http://groups.google.de/group/php-ids/browse_thread/thread/f689a9c8cc934867 
+
+Incidentally, he just added some extra spice to hash (fragment) payload attacks:
+
+<pre><code>eval(unescape(location))</code></pre>
+
+This works if you break the hash with a %0A (newline) before your payload, because:
+
+<blockquote>"http:" gets parsed as a label
+"//host:port/path...#..." is ignored until newline (C++ style comment)</blockquote>
+
+So simple, so nice :)
+--
+Thereâ€™s a brower safer than Firefoxâ€¦ itâ€™s Firefox, with NoScript - http://noscript.net</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">Neato!</div></div></div></div></article><footer id="footer"><p>Copyright &copy; 2019 <a href=""></a>. All rights reserved.</p></footer></body></html>

