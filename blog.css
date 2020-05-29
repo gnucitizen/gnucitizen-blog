@@ -47,6 +47,7 @@ a:hover {
 }
 #footer {
   margin: 20px 20px 0px 20px;
+  font-size: small;
 }
 #index ul {
   list-style-type: none;
@@ -57,6 +58,10 @@ a:hover {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+#content .date,
+#content .author {
+  font-size: small;
 }
 #post-content img {
   border: 1px solid #cccccc;
@@ -76,21 +81,21 @@ a:hover {
   margin-top: 40px;
   margin-bottom: 40px;
 }
-.post-comment {
+#post-comments .post-comment {
   word-break: break-word;
   margin-bottom: 20px;
   clear: both;
 }
-.post-comment img {
-  width: 50px;
-  height: 50px;
-  float: left;
-  margin: 0px 10px 10px 0px;
-}
-.post-comment:after {
+#post-comments .post-comment:after {
   content: " ";
   visibility: hidden;
   display: block;
   height: 0;
   clear: both;
+}
+#post-comments .post-comment img {
+  width: 50px;
+  height: 50px;
+  float: left;
+  margin: 0px 10px 10px 0px;
 }

