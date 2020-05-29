@@ -1,8 +1,8 @@
 html,
 body {
+  font-family: Menlo, Consolas, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
   font-weight: 400;
   font-size: 14px;
-  font-family: Menlo, Consolas, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
   line-height: 18px;
   background-color: #161616;
   color: #cccccc;
@@ -58,6 +58,9 @@ a:hover {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+#content .title {
+  line-height: 1.4em;
 }
 #content .date,
 #content .author {
