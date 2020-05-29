@@ -1,3 +1,4 @@
+![Build and Deploy](https://github.com/gnucitizen/gnucitizen-blog/workflows/Build%20and%20Deploy/badge.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/6d32cafa40cc4e54a685873b4f703cc7)](https://www.codacy.com/app/GNUCITIZEN/gnucitizen-blog?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=gnucitizen/gnucitizen-blog&amp;utm_campaign=Badge_Grade)
 [![Follow on Twitter](https://img.shields.io/twitter/follow/gnucitizen.svg?logo=twitter)](https://twitter.com/gnucitizen)
 
