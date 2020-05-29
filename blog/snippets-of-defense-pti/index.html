@@ -13,11 +13,11 @@ alert = <span class="function"><span class="keyword">function</span>(<span class
     <span class="keyword">return</span> <span class="literal">false</span>;
 }</code></pre>
 <p><em>Till the next time.</em></p>
-</div><div id="post-comments"><p><em>Archived Comments</em></p><div class="post-comment"><img class="post-comment-avatar" src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="Kishor"><span class="post-comment-author">Kishor</span><div class="post-comment-content">Nice trick to get your app scanned for xss for free!
+</div><div id="post-comments"><p><em>Archived Comments</em></p><div class="post-comment"><img class="post-comment-avatar" src="//gravatar.com/avatar/8646bd4e904762c599e11665cc67f158?s=256&amp;d=retro" alt="Kishor"><span class="post-comment-author">Kishor</span><div class="post-comment-content">Nice trick to get your app scanned for xss for free!
 
 Although, a frustrated attacker could add dummy entries to your logs. And since you believe that the log file contains accurate XSSs , you may have hard time removing those false entries.
 
-You may need something more at server side to detect such spamming.</div></div><div class="post-comment"><img class="post-comment-avatar" src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="ascii"><span class="post-comment-author">ascii</span><div class="post-comment-content">hi mario! a simple bypass is
+You may need something more at server side to detect such spamming.</div></div><div class="post-comment"><img class="post-comment-avatar" src="//gravatar.com/avatar/9eb5ed1067bbc3c9675f8911316b7600?s=256&amp;d=retro" alt="ascii"><span class="post-comment-author">ascii</span><div class="post-comment-content">hi mario! a simple bypass is
 
 <pre><code>alert=old_alert;alert("test");</code></pre>
 
@@ -27,14 +27,14 @@ http://www.wisec.it/sectou.php?id=44c7949f6de03
 
 it can be bypassed too using frames and other techniques (eg: you can try everything but if it's hooked in js it can also be reverted to the original in js). anyway why not? it's cheap! i'm going to implement both on my sities
 
-ps: pdp make this textbox larger please : )</div></div><div class="post-comment"><img class="post-comment-avatar" src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="clinisbut"><span class="post-comment-author">clinisbut</span><div class="post-comment-content">Yeah it's a good way to detect when someone try to hack our site.
+ps: pdp make this textbox larger please : )</div></div><div class="post-comment"><img class="post-comment-avatar" src="//gravatar.com/avatar/df19c3b9f76eb4e351b9d09f71e1b103?s=256&amp;d=retro" alt="clinisbut"><span class="post-comment-author">clinisbut</span><div class="post-comment-content">Yeah it's a good way to detect when someone try to hack our site.
 But there is the famous Firebug extension for firefox that offers the console.log() to debug apps. Maybe a function like yours would be necessary for firebug?
 
-ps:I know my english is poor...</div></div><div class="post-comment"><img class="post-comment-avatar" src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="RoC_MM"><span class="post-comment-author">RoC_MM</span><div class="post-comment-content">pdp, this is a good blog, I read it all the time.
+ps:I know my english is poor...</div></div><div class="post-comment"><img class="post-comment-avatar" src="//gravatar.com/avatar/f84bc32c30e1ca0c33aa407fdf581dad?s=256&amp;d=retro" alt="RoC_MM"><span class="post-comment-author">RoC_MM</span><div class="post-comment-content">pdp, this is a good blog, I read it all the time.
 
 ascii, in cases like this, I use the "enlarge textareas" bookmarklet.  Make a bookmark with this as the URL, then click it anytime you are on a page with a too small text box.
 
-<pre><code>javascript:(function(){var i,x; for(i=0;x=document.getElementsByTagName(%22textarea%22)[i];++i) x.cols += 150; })()</code></pre></div></div><div class="post-comment"><img class="post-comment-avatar" src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="ascii"><span class="post-comment-author">ascii</span><div class="post-comment-content">@RoC_MM: thanks good bookmarklet!</div></div><div class="post-comment"><img class="post-comment-avatar" src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="kuza55"><span class="post-comment-author">kuza55</span><div class="post-comment-content">Personally I don't like this for two reasons:
+<pre><code>javascript:(function(){var i,x; for(i=0;x=document.getElementsByTagName(%22textarea%22)[i];++i) x.cols += 150; })()</code></pre></div></div><div class="post-comment"><img class="post-comment-avatar" src="//gravatar.com/avatar/9eb5ed1067bbc3c9675f8911316b7600?s=256&amp;d=retro" alt="ascii"><span class="post-comment-author">ascii</span><div class="post-comment-content">@RoC_MM: thanks good bookmarklet!</div></div><div class="post-comment"><img class="post-comment-avatar" src="//gravatar.com/avatar/2f6303f9095f59c14c3097ef4df566f5?s=256&amp;d=retro" alt="kuza55"><span class="post-comment-author">kuza55</span><div class="post-comment-content">Personally I don't like this for two reasons:
 
 a) It places IDS logic into the web page, thereby giving it to the attacker
 b) It puts you in a position where an attacker can easily clog your IDS with false positives
@@ -42,10 +42,10 @@ c) It won't work if referers are turned off
 
 Sure, in regards to (b), you could collect more data, but you still need some way to verify it - you might be able to automate this by getting some machine to visit the pages in the referer (or passed to your logged as a GET parameter), but that's just ugly (and seems like a wide open security hole), and it also tells you nothing about POST XSS's, and so unless you want to discount all the POST XSS's this detects, you would have to investigate every referer you get with no parameters (or parameters for which your page uses POST data).
 
-So while it might work, it will probably give people a false sense of security, and be a headache to administer if anyone malicious notices it.</div></div><div class="post-comment"><img class="post-comment-avatar" src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="djteller"><span class="post-comment-author">djteller</span><div class="post-comment-content">Kuza55, this is against kiddies, and since 99% are using automated scripts that will work just fine.
+So while it might work, it will probably give people a false sense of security, and be a headache to administer if anyone malicious notices it.</div></div><div class="post-comment"><img class="post-comment-avatar" src="//gravatar.com/avatar/44c5e290ccf283471210752d0b1ed6df?s=256&amp;d=retro" alt="djteller"><span class="post-comment-author">djteller</span><div class="post-comment-content">Kuza55, this is against kiddies, and since 99% are using automated scripts that will work just fine.
 You can even obfuscate this code to make it harder to read.
 
-Always good to have logs, even if they are false you can learn from them.</div></div><div class="post-comment"><img class="post-comment-avatar" src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="bedirhan"><span class="post-comment-author">bedirhan</span><div class="post-comment-content">Sorry if this makes a duplicate post, but during the last one your domain seemed to go down :(.
+Always good to have logs, even if they are false you can learn from them.</div></div><div class="post-comment"><img class="post-comment-avatar" src="//gravatar.com/avatar/dff7d8b6c240962aecc4dfa95e99005a?s=256&amp;d=retro" alt="bedirhan"><span class="post-comment-author">bedirhan</span><div class="post-comment-content">Sorry if this makes a duplicate post, but during the last one your domain seemed to go down :(.
 
 If we can change the code to;
 
@@ -57,7 +57,7 @@ If we can change the code to;
     }
 })();</code></pre>
 
-then by-passing would be a little harder. This is creating private members thru closures.</div></div><div class="post-comment"><img class="post-comment-avatar" src="//gravatar.com/avatar/#{comment.avatar}?s=256&amp;d=retro" alt="pdp"><span class="post-comment-author">pdp</span><div class="post-comment-content">bedirhan, excellent. I did something similar for <a href="http://www.gnucitizen.org/blog/technika" rel="nofollow">technika</a>. I needed to insert some code, but I did not wanted to pollute the <strong>this</strong> namespace with some random vars such as <strong>i</strong> or anything along these lines. My solution is the following:
+then by-passing would be a little harder. This is creating private members thru closures.</div></div><div class="post-comment"><img class="post-comment-avatar" src="//gravatar.com/avatar/c4db4e65c9f09f2a373fcaefa5e2bfb4?s=256&amp;d=retro" alt="pdp"><span class="post-comment-author">pdp</span><div class="post-comment-content">bedirhan, excellent. I did something similar for <a href="http://www.gnucitizen.org/blog/technika" rel="nofollow">technika</a>. I needed to insert some code, but I did not wanted to pollute the <strong>this</strong> namespace with some random vars such as <strong>i</strong> or anything along these lines. My solution is the following:
 
 <pre><code>(new function () {
   return function (self) {
