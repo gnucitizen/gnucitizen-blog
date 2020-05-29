@@ -35,7 +35,7 @@ block content
 
                 for comment in page.parent['comments.json'].metadata
                     div.post-comment
-                        img.post-comment-avatar(src="//gravatar.com/avatar/#{comment.avatar}?s=256&d=retro", alt=comment.author)
+                        img.post-comment-avatar(src="//gravatar.com/avatar/" + comment.avatar + "?s=256&d=retro", alt=comment.author)
                         span.post-comment-author=comment.author
 
                         div.post-comment-content
