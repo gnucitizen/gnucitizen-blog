@@ -26,9 +26,12 @@
 
 ]]></description></item><item><title>BBH Scale</title><link>https://www.gnucitizen.org/blog/bbh-scale/</link><pubDate>Tue, 09 Jul 2019 16:38:00 GMT</pubDate><guid isPermaLink="true">https://www.gnucitizen.org/blog/bbh-scale/</guid><dc:creator>pdp</dc:creator><description><![CDATA[
 <p>Here is a short tutorial on how to search when you do BBH. Now, you can do a lot of unix pipes and grep/ripgrep and so on but if you want to get a scale you might want to look into elasticsearch. #bugbountytips Here are a couple of commands to get you started:</p>
-<p>First, you need to convert your data to JSON. <code>jq</code> is your friend. The following command will curl a request and put it into a document: <code>C=$(curl -v https://secapps.com 2&gt;&amp;1) jq -n &#39;{contents: env.C}&#39;</code></p>
-<p>Sending a document to elasticsearch can be done like this: <code>curl -XPUT &#39;http://localhost:9200/curl/_doc/abc&#39; -d &#39;{}&#39;</code></p>
-<p>Stringing it all together should look like this:  <code>T=https://secapps.com D=abc C=$(curl -v &quot;$T&quot; 2&gt;&amp;1) jq -n &#39;{contents: env.C}&#39; | curl -XPUT &quot;http://localhost:9200/curl/_doc/$D&quot; -d &#39;@-&#39;</code></p>
+<p>First, you need to convert your data to JSON. <code>jq</code> is your friend. The following command will curl a request and put it into a document:</p>
+<pre><code class="language-bash">C=$(curl -v https://secapps.com 2&gt;&amp;1) jq -n <span class="string">'{contents: env.C}'</span></code></pre>
+<p>Sending a document to elasticsearch can be done like this:</p>
+<pre><code class="language-bash">curl -XPUT <span class="string">'http://localhost:9200/curl/_doc/abc'</span> -d <span class="string">'{}'</span></code></pre>
+<p>Stringing it all together should look like this:</p>
+<pre><code class="language-bash">T=https://secapps.com D=abc C=$(curl -v <span class="string">"<span class="variable">$T</span>"</span> 2&gt;&amp;1) jq -n <span class="string">'{contents: env.C}'</span> | curl -XPUT <span class="string">"http://localhost:9200/curl/_doc/<span class="variable">$D</span>"</span> -d <span class="string">'@-'</span></code></pre>
 <p>In the previous tweet, you control the <code>T</code> and <code>D</code> variables. The rest is just doing the job. These variables are only available for that specific line. You don&#39;t need to export them beforehand. Bash is magic!</p>
 <p>Once you have your docs in elasticsearch you can search whichever way you want and with kebana, you can graph them too or set alerts ;) Now you can call yourself a data scientists.</p>
 <p>Spinup a $5 DO node and play around.</p>
