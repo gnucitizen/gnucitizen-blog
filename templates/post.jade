@@ -20,7 +20,8 @@ block prepend head
 block content
     block post-title
         h1.title=page.title
-        div=page.metadata.date
+        div.date=page.metadata.date
+        div.author='by ' + page.metadata.author
 
     //- --
 
@@ -30,10 +31,12 @@ block content
 
         if page.parent['comments.json']
             div#post-comments
+                p: em Archived Comments
+
                 for comment in page.parent['comments.json'].metadata
-                    .post-comment
-                        img(src="//gravatar.com/avatar/#{comment.avatar}?s=256&d=retro", alt=comment.author)
-                        span=comment.author
+                    div.post-comment
+                        img.post-comment-avatar(src="//gravatar.com/avatar/#{comment.avatar}?s=256&d=retro", alt=comment.author)
+                        span.post-comment-author=comment.author
 
                         div.post-comment-content
                             !=comment.content

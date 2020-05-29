@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     font-weight: 400;
     font-size: 14px;
     font-family: Menlo, Consolas, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
@@ -38,7 +39,10 @@ a {
     }
 }
 
-#header, #content, #footer, #topnav {
+#header,
+#content,
+#footer,
+#topnav {
     margin: 0px 20px 0px 20px;
 }
 
@@ -63,6 +67,8 @@ a {
 
 #footer {
     margin: 20px 20px 0px 20px;
+
+    font-size: small;
 }
 
 #index {
@@ -72,11 +78,18 @@ a {
         margin: 0px;
         padding: 0px;
 
-		li {
-			text-overflow: ellipsis;
-		    white-space: nowrap;
-		    overflow: hidden;
-		}
+        li {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    }
+}
+
+#content {
+    .date,
+    .author {
+        font-size: small;
     }
 }
 
@@ -88,7 +101,7 @@ a {
 
         margin: 20px 0px 20px 0px;
 
-        & + img {
+        &+img {
             margin-top: 0px;
         }
     }
@@ -106,29 +119,29 @@ a {
 #post-comments {
     margin-top: 40px;
     margin-bottom: 40px;
-}
 
-.post-comment {
-    word-break: break-word;
+    .post-comment {
+        word-break: break-word;
 
-    margin-bottom: 20px;
+        margin-bottom: 20px;
 
-    clear: both;
-
-    img {
-        width: 50px;
-        height: 50px;
-
-        float: left;
-        
-        margin: 0px 10px 10px 0px;
-    }
-    
-    &:after {
-        content: " ";
-        visibility: hidden;
-        display: block;
-        height: 0;
         clear: both;
+
+        &:after {
+            content: " ";
+            visibility: hidden;
+            display: block;
+            height: 0;
+            clear: both;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+
+            float: left;
+
+            margin: 0px 10px 10px 0px;
+        }
     }
 }
