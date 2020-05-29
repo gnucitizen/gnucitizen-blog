@@ -1,9 +1,10 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css');
-@import url('https://fonts.googleapis.com/css?family=Inconsolata');
 html,
 body {
-  font-family: Inconsolata, monospace;
+  font-family: Menlo, Consolas, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
+  font-size: 14px;
+  line-height: 1.4em;
   background-color: #ffffff;
   color: #2b2b2b;
 }
