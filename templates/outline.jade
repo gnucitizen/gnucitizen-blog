@@ -169,8 +169,11 @@ html(lang="en")
             block header
                 header#header
                     block header-content
-                        h1: a(href="/")=site
-                        p=description
+                        if site
+                            h1=site
+
+                        if description
+                            p=description
 
             //- --
 

@@ -1,3 +1,4 @@
 {
-  "template": "files.jade"
+    "template": "files.jade",
+    "title": "Files"
 }
