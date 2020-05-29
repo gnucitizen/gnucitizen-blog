@@ -1,11 +1,11 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
 html,
 body {
-  font-family: Menlo, Consolas, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 18px;
-  background-color: #161616;
-  color: #cccccc;
+  font-family: Inconsolata, monospace;
+  background-color: #ffffff;
+  color: #2b2b2b;
 }
 body {
   max-width: 640px;
@@ -20,12 +20,11 @@ pre {
 }
 a {
   background: transparent;
-  color: #ffffff;
+  color: rgb(33, 144, 211);
   text-decoration: none;
 }
 a:hover {
-  background: #ffffff;
-  color: #000000;
+  text-decoration: underline;
 }
 #header,
 #content,
@@ -47,7 +46,11 @@ a:hover {
 }
 #footer {
   margin: 20px 20px 0px 20px;
-  font-size: small;
+  padding: 0px;
+}
+#content .date,
+#content .author {
+  font-weight: bold;
 }
 #index ul {
   list-style-type: none;
@@ -58,13 +61,6 @@ a:hover {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-}
-#content .title {
-  line-height: 1.4em;
-}
-#content .date,
-#content .author {
-  font-size: small;
 }
 #post-content img {
   border: 1px solid #cccccc;
@@ -77,8 +73,8 @@ a:hover {
 #post-content .video {
   width: 100%;
   height: 420px;
-  border: 1px solid #cccccc;
-  box-shadow: 7px 7px 0px #ccc;
+  border: 1px solid #2b2b2b;
+  box-shadow: 7px 7px 0px #2b2b2b;
 }
 #post-comments {
   margin-top: 40px;
