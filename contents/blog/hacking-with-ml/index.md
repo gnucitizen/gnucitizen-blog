@@ -2,6 +2,7 @@
 title: Hacking with ML
 author: pdp
 date: Mon Apr 26 2021 16:10:45 GMT+0100 (British Summer Time)
+template: post.jade
 ---
 
 Let's say that we want to train an ML model to hack web applications. What would that look like in practice? Let's do this thought experiment.
