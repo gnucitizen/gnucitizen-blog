@@ -5,23 +5,29 @@ template: page.jade
 
 # Projects
 
-## [OpenDevSecOps](https://opendevsecops.org)
+## [SecApps](https://secapps.com)
 
-The OpenDevSecOps project mission is to provide a world-class resource for implementing complete devsecops and secops programs within organizations of any shape and size using off-the-shelf tools and access to our vibrant community.
+SecApps is a cloud environment for security tools and services. SecApps was originally conceived as a web security toolkit that ran directly on top of web browsers, leveraging a browser extension. SecApps is a mature security testing platform that customers can use for security monitoring, testing, bug bounty hunting, and more.
+
+SecApps is under Websecurify's management.
+
+## [Cohesion](https://cohesion.sh)
+
+Cohesion is a web application testing technology for continuous integration pipelines. Cohesion comes with many tools packed together to support everyday security testing tasks such as web security scanning, API fuzz testing, content discovery, and more.
+
+Cohesion is under Websecurify's management.
+
+## [Websecurify](https://websecurify.com)
+
+Websecurify is an application security company based in London. Websecurify was initially founded to support the Websecurify automated security scanner, which was open source. Due to lack of contributions, the desktop scanner was canceled and morphed into [SecApps](https://secapps.com).
 
 ## [PownJs](https://pownjs.com/)
 
 Pown.js is an experimental security framework for node. It aims to be security driven with contributions via NPM package registry. The project is currently in its infancy.
 
-## [SecApps](https://secapps.com)
+## [OpenDevSecOps](https://opendevsecops.org)
 
-SecApps is a security testing toolkit which runs directly from your own web browser leveraging the capabilities of a browser extension available for both Chrome and Firefox. SecApps is a very mature web application security testing framework with capabilities on par with other products like Burp and ZAP but without the overhead, these tools bring with them. SecApps also distributes several desktop and server tools (AppBandit Attack Proxy, WebReaver Security Scanner, and Cohesion CI testing tooling) which are also part of the online suite.
-
-SecApps is under Websecurify's management.
-
-## [Websecurify](https://websecurify.com)
-
-Websecurify is an application security company based in London. Websecurify was initially founded to support the Websecurify automated security scanner which was open source. Due to lack of contributions, the tool was canceled and SecApps was born which offers many free features but it also has a commercial aspect.
+The OpenDevSecOps project mission is to provide a world-class resource for implementing complete devsecops and secops programs within organizations of any shape and size using off-the-shelf tools and access to our vibrant community.
 
 ## [Vulnerability Researchers](https://www.linkedin.com/groups/115855)
 
