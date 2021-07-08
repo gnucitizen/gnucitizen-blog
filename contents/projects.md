@@ -1,6 +1,6 @@
 ---
 title: Projects
-template: page.jade
+template: page.pug
 ---
 
 # Projects

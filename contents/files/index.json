@@ -1,4 +1,4 @@
 {
-    "template": "files.jade",
+    "template": "files.pug",
     "title": "Files"
 }

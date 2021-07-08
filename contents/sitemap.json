@@ -1,4 +1,4 @@
 {
-  "template": "sitemap.jade",
+  "template": "sitemap.pug",
   "filename": "sitemap.xml"
 }

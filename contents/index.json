@@ -1,5 +1,5 @@
 {
-  "template": "index.jade",
+  "template": "index.pug",
   "from": "blog",
   "ignore": [
     "comments.html"
