@@ -21,6 +21,21 @@ Petko is the founder and leading member of GNUCITIZEN, a non-profit Information 
 
 In his spare time, Petko likes to read books on science, philosophy, and business strategy. He is also an avid biohacker, interested in cellular mechanics and biochemistry.
 
+## GNUCITIZEN
+
+GNUCITIZEN exists to advance public understanding of offensive and defensive information security technologies, to educate and share information with its members and the public on best practices, tools and techniques for such coverage and to represent the interests of its members.
+
+Our mission is to act as a focus for research on a wide range of defensive and offensive information security technologies. We do this by conducting our own research, commissioning research from outside, starting projects and ideas, organizing and participating in working groups, conferences and seminars to draw together the work of academic and underground specialists in a wide range of areas.
+
+GNUCITIZEN acts on behalf of the whitehat community and it is a passionate adherent of all the ethical principles followed by the information security scene.
+
+### Where To Find Us
+
+* [GitHub](https://github.com/gnucitizen)
+* [Twitter](https://twitter.com/gnucitizen)
+* [Facebook](https://www.facebook.com/gnucitizen)
+* [YouTube](https://www.youtube.com/user/gnucitizen)
+
 ## Projects
 
 * [Websecurify](https://websecurify.com)
@@ -29,18 +44,3 @@ In his spare time, Petko likes to read books on science, philosophy, and busines
 * [Cohesion](https://cohesion.sh)
 * [PownJS](https://pownjs.com)
 * [OpenDevSecOps](https://opendevsecops.org)
-
-### GNUCITIZEN
-
-GNUCITIZEN exists to advance public understanding of offensive and defensive information security technologies, to educate and share information with its members and the public on best practices, tools and techniques for such coverage and to represent the interests of its members.
-
-Our mission is to act as a focus for research on a wide range of defensive and offensive information security technologies. We do this by conducting our own research, commissioning research from outside, starting projects and ideas, organizing and participating in working groups, conferences and seminars to draw together the work of academic and underground specialists in a wide range of areas.
-
-GNUCITIZEN acts on behalf of the whitehat community and it is a passionate adherent of all the ethical principles followed by the information security scene.
-
-#### Where To Find Us
-
-* [GitHub](https://github.com/gnucitizen)
-* [Twitter](https://twitter.com/gnucitizen)
-* [Facebook](https://www.facebook.com/gnucitizen)
-* [YouTube](https://www.youtube.com/user/gnucitizen)
