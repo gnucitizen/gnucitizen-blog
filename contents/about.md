@@ -9,6 +9,8 @@ template: page.jade
 
 ![pdp](/files/pdp.png)
 
+Petko is the founder and leading member of GNUCITIZEN, a non-profit Information Security Think Tank.
+
 Founder/Director at FinTech and Security Startups <a href="https://twitter.com/pdp"><i class="fa fa-twitter"></i></a> <a href="https://github.com/pdparchitect"><i class="fa fa-github"></i></a> <a href="https://www.linkedin.com/in/pdparchitect"><i class="fa fa-linkedin"></i></a>
 
 Petko D. Petkov's professional experience encompasses both leadership and technical roles in the following industries: Identity Verification, Artificial Intelligence & Machine Learning, Financial Technologies (FinTech), Gambling, Security Automation, and Security Consulting.
@@ -16,8 +18,6 @@ Petko D. Petkov's professional experience encompasses both leadership and techni
 Notable Information Security contributions include developing exploitation techniques against web technologies, common browsers, the portable document format (PDF), DHCP, UPnP, other network protocols, and NoSQL databases. He has also contributed some of the earliest research on embedded devices and IoT security.
 
 Petko is a recognized Information Security leader, researcher, frequent speaker at industry-recognized events, and a published book author.
-
-Petko is the founder and leading member of GNUCITIZEN, a non-profit Information Security Think Tank.
 
 In his spare time, Petko likes to read books on science, philosophy, and business strategy. He is also an avid biohacker, interested in cellular mechanics and biochemistry.
 
@@ -38,9 +38,8 @@ GNUCITIZEN acts on behalf of the whitehat community and it is a passionate adher
 
 ## Projects
 
-* [Websecurify](https://websecurify.com)
 * [SecApps](https://secapps.com)
-* [Webreaver](https://webreaver.com)
 * [Cohesion](https://cohesion.sh)
+* [Websecurify](https://websecurify.com)
 * [PownJS](https://pownjs.com)
 * [OpenDevSecOps](https://opendevsecops.org)
