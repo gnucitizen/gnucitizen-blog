@@ -2,7 +2,7 @@
 title: XSSing the Lan 2
 author: pdp
 date: Fri, 04 Aug 2006 09:07:31 GMT
-template: post.jade
+template: post.pug
 category: fucked
 ---
 

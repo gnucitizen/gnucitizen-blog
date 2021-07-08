@@ -2,7 +2,7 @@
 title: Automated XSS Detection
 author: pdp
 date: Mon, 06 Nov 2006 01:42:47 GMT
-template: post.jade
+template: post.pug
 ---
 
 Automation - it is the power to change the boring repetitive task into something that is more fun. Automation is also what I seek when I do security research or penetration testing. If there is a security vulnerability; we write an exploit for it. If there is a known method of exposing thousands of machines to malicious attacks; we write a worm for it or at least a vulnerability assessment engine.

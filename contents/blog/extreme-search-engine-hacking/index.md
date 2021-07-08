@@ -2,7 +2,7 @@
 title: Extreme Search Engine Hacking
 author: pdp
 date: Fri, 22 Feb 2008 11:45:12 GMT
-template: post.jade
+template: post.pug
 ---
 
 If you are a beginner Google Hacker then I would recommend to have a look at the [Google Hacking for Penetration Testers Second Edition](/blog/google-hacking-for-penetration-testers-second-edition/) book or check the [cDc](http://www.cultdeadcow.com/)'s [GoolagScanner](http://goolag.org/). If you want to learn some new tricks follow me:

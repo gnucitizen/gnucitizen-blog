@@ -1,0 +1,102 @@
+extends ./page.pug
+
+//- --
+//- --
+//- --
+
+mixin content()
+    block content
+        if page.metadata.title
+            h1=page.metadata.title
+
+        //- --
+
+        - function shouldIgnore(basePage, filename) {
+        -     return basePage.metadata && basePage.metadata.ignore && basePage.metadata.ignore.some(function (ignore) {
+        -         return (new RegExp(ignore)).test(filename)
+        -     })
+        - }
+
+        //- --
+
+        - function fileSort(a, b) {
+        -    if (a['index.md']) a = a['index.md']
+        -    if (b['index.md']) b = b['index.md']
+        -    if (a.metadata.date && b.metadata.date) {
+        -        return new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime()
+        -    } else {
+        -        return a.filename.localeCompare(b.filename)
+        -    }
+        - }
+
+        - function recurseFolder(folder, page) {
+            ul
+                for item in folder._.directories.sort(fileSort)
+                    unless item.filename
+                        - continue
+
+                    if /(^\.|\/\.)/.test(item.filename)
+                        - continue
+
+                    //- --
+
+                    if !shouldIgnore(page, item.filename) && item != page
+                        - var basename = item.filename.substring(item.filename.lastIndexOf('/') + 1)
+
+                        //- --
+
+                        li.folder
+                            - var index = item['index.md'] || item['index.json'] || item['index.html']
+
+                            //- --
+
+                            if index
+                                a(href=index.url, title=titleCase(basename))=titleCase(basename)
+
+                            else
+                                =titleCase(basename)
+
+                            //- --
+
+                            - recurseFolder(item, page)
+
+                for item in folder
+                    unless item.filename
+                        - continue
+
+                    if /(^\.|\/\.)/.test(item.filename)
+                        - continue
+
+                    //- --
+
+                    unless item.metadata
+                        - continue
+
+                    if item.metadata.indexed == 'false'
+                        - continue
+
+                    //- --
+
+                    if !shouldIgnore(page, item.filename) && item != page
+                        - var basename = item.filename.substring(item.filename.lastIndexOf('/') + 1)
+
+                        if basename.match(/index\.html$/)
+                            - continue
+
+                        //- --
+
+                        li.file
+                            a(href=item.url, title=(item.metadata.title ? item.metadata.title : basename))=item.metadata.title ? item.metadata.title : basename
+        - }
+
+        //- --
+
+        #index
+            - recurseFolder(page.metadata.from ? page.parent[page.metadata.from] : page.parent, page)
+
+//- --
+
+block content
+    +content()
+
+//- --

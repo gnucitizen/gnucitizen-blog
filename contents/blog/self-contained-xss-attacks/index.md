@@ -2,7 +2,7 @@
 title: Self-contained XSS Attacks
 author: pdp
 date: Fri, 22 Sep 2006 11:52:17 GMT
-template: post.jade
+template: post.pug
 category: fucked
 ---
 

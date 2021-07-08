@@ -2,7 +2,7 @@
 title: Identity 2.0 Security
 author: pdp
 date: Sat, 18 Aug 2007 07:41:22 GMT
-template: post.jade
+template: post.pug
 ---
 
 A couple of months ago I was invited by [InformIT](http://www.informit.com) to write an article on Identity 2.0 Security. I am generally interested in this subject so I decided to give it a try. The result is [Identity 2.0: How Attackers Break into Identity-centric Services](http://www.informit.com/articles/article.aspx?p=787262&seqNum=4), which was published yesterday. For those who don't know what Identity 2.0 means, check the following video from [Dick Hardt](http://identity20.com) who was my personal inspiration to get involved into this subject.

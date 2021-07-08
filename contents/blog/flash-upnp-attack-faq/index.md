@@ -2,7 +2,7 @@
 title: Flash UPnP Attack FAQ
 author: pdp
 date: Mon, 14 Jan 2008 20:20:02 GMT
-template: post.jade
+template: post.pug
 category: fucked
 ---
 

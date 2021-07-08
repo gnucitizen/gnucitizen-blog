@@ -2,7 +2,7 @@
 title: Google Search API Worms
 author: pdp
 date: Thu, 14 Sep 2006 10:17:52 GMT
-template: post.jade
+template: post.pug
 ---
 
 One of the main disadvantages of AJAX is the lack of cross domain request capabilities. In simple words, a web object from one site cannot access another one from a different site. The reason for this security feature is hidden deeply inside every modern browser security sandbox which is responsible for keeping your personal information private and safe.

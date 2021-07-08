@@ -2,7 +2,7 @@
 title: Strategic GeoIP Hacking and TV Streaming Theft
 author: pagvac
 date: Fri, 16 Nov 2007 14:22:00 GMT
-template: post.jade
+template: post.pug
 ---
 
 A couple of weeks ago, my wife pointed out to me this really [cool appliance](http://www.cnettv.com/9742-1_53-27769.html) she saw on a magazine. Since she knows I like spending my free time hacking/researching embedded devices, she thought I'd be interested.

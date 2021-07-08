@@ -2,7 +2,7 @@
 title: Black Hat Las Vegas Baby
 author: pdp
 date: Wed, 30 Jul 2008 13:49:53 GMT
-template: post.jade
+template: post.pug
 ---
 
 So, Black Hat is next week. Great! I will be happy to see you all there. You may even join me on the 6th at 13:45 - the "Client-side Security" talk. The details of my talk are [here](http://www.blackhat.com/html/bh-usa-08/bh-usa-08-speakers.html#Petkov), which btw is the improved version of what I have over [here](/blog/black-hat-europe-2008/).

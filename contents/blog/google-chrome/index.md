@@ -2,7 +2,7 @@
 title: Google Chrome
 author: pdp
 date: Tue, 02 Sep 2008 10:51:20 GMT
-template: post.jade
+template: post.pug
 ---
 
 It is true what many of you have heard. Google is releasing their own browser. Google Chrome, as they call it, is based on WebKit rendering engine and introduces some novel approaches to interacting with web technologies. I must say, it is very exciting to see all of this happening.

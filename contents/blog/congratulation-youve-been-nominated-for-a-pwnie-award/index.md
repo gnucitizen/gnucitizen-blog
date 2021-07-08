@@ -2,7 +2,7 @@
 title: Congratulation! You've been nominated for a Pwnie Award.
 author: pdp
 date: Wed, 01 Aug 2007 08:36:05 GMT
-template: post.jade
+template: post.pug
 ---
 
 Ok, hmm, I've been nominated for a [Pwnie Award](http://pwnie-awards.org) for "Mass 0wnage". [From](http://pwnie-awards.org/awards.html#mass0wnage) the Pwnie Awards website, the "Mass 0wnage" Pwnie Award is "Awarded to the person who discovered the bug that resulted in the most widespread exploitation. Also known as the "Pwnie for Breaking the Internet"."

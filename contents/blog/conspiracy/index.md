@@ -2,7 +2,7 @@
 title: Conspiracy
 author: pdp
 date: Wed, 07 May 2008 23:14:47 GMT
-template: post.jade
+template: post.pug
 ---
 
 > There is a lot of conspiracy about GNUCITIZEN. Who are they? Where they come from? And what they are trying to do? Well, these videos shall give you all the answers.

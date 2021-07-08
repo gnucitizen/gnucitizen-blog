@@ -2,7 +2,7 @@
 title: CSRF Demystified
 author: mario-heiderich
 date: Wed, 21 Nov 2007 10:22:34 GMT
-template: post.jade
+template: post.pug
 category: fucked
 ---
 

@@ -2,7 +2,7 @@
 title: It has been a while
 author: pdp
 date: Sat, 30 Jun 2018 09:49:53 GMT
-template: post.jade
+template: post.pug
 ---
 
 GNUCITIZEN is 12 years old more or less. Can you believe it?

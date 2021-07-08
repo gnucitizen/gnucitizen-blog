@@ -2,7 +2,7 @@
 title: The Cloud Is Not That Insecure
 author: pdp
 date: Fri, 21 Nov 2008 15:06:01 GMT
-template: post.jade
+template: post.pug
 ---
 
 I am sure that by now you've seen/heard a lot of rants about how insecure cloud technologies are, etc. What worries me is that these claims are made by people who have never worked with cloud technologies and therefore have no clue on the subject whatsoever.

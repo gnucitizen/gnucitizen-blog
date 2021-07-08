@@ -2,7 +2,7 @@
 title: Rethinking The Desktop Model
 author: pdp
 date: Tue, 02 Sep 2008 22:21:28 GMT
-template: post.jade
+template: post.pug
 ---
 
 _It is time to rethink the way the desktop works. Some of my ideas may seem radical but sometimes evolution is the only solution to all of our problems_.

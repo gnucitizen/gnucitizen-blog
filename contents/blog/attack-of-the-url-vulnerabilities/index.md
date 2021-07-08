@@ -2,7 +2,7 @@
 title: Attack Of The URL Vulnerabilities
 author: pdp
 date: Wed, 25 Jul 2007 09:51:28 GMT
-template: post.jade
+template: post.pug
 ---
 
 I think that it is getting worse. [Billy Rios](http://xs-sniper.com/blog/) has discovered another critical Firefox issue related to the infamous bugs that has been recently discussed on multiple blogs including [GC](/blog/firefox-could-also-be-used-as-the-entry-point) (us), [Thor Larholm](http://larholm.com/2007/07/18/firefox-fixes-internet-explorer-flaw/)'s blog, [Mozilla's Security Blog](http://blog.mozilla.com/security/2007/07/23/related-security-issue-in-url-protocol-handling-on-windows/), the [0x000000](http://www.0x000000.com/?i=401) hack zine and [Billy (BK) Rios](http://xs-sniper.com/blog/2007/07/24/remote-command-execution-in-firefox-2005/)' personal blog. This time, the bug is extremely dangerous. Fortunately, the issue was fixed in the 2.0.0.6 release candidate.

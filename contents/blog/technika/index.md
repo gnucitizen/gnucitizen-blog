@@ -2,7 +2,7 @@
 title: Technika
 author: pdp
 date: Wed, 31 Jan 2007 22:37:26 GMT
-template: post.jade
+template: post.pug
 ---
 
 Technika is a general purpose scripting platform for Firefox. It acts like a standard OS shell scripting environment. You can script everything from the currently viewed page, just like Greasemonkey, and everything in the chrome, just like any browser extensions but without need to restart the browser every time you make a change. The platform will be used as a base component to other projects, such as TSF (Technika Security Framework) and [AttackAPI](/blog/attackapi) browser extension.

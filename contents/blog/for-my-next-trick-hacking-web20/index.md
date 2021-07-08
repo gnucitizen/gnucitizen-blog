@@ -2,7 +2,7 @@
 title: For my next trick... hacking Web2.0
 author: pdp
 date: Fri, 31 Aug 2007 23:01:06 GMT
-template: post.jade
+template: post.pug
 ---
 
 After several month spent in research on **Web2.0 Insecurities** I've decided to sit down and write a whitepaper. The paper quickly became rather blurred due to enormous amount of notes I've collected on this subject. This is the reason why it was later restructured into stories, which provide a lot better medium for understanding the content.

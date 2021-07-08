@@ -2,7 +2,7 @@
 title: CONFidence 2008
 author: pdp
 date: Tue, 20 May 2008 09:03:33 GMT
-template: post.jade
+template: post.pug
 ---
 
 [CONFidence](http://2008.confidence.org.pl) was great! We would like to thank to Andrzej, Anna and everybody else in the CONFidence team for making this event one of the greatest experiences of a lifetime. Thanks again. We are looking forward for the next one. :)

@@ -2,7 +2,7 @@
 title: Changes in the British Computer Misuse Act
 author: pdp
 date: Fri, 27 Apr 2007 09:40:57 GMT
-template: post.jade
+template: post.pug
 category: fucked
 ---
 

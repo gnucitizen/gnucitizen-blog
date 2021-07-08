@@ -2,7 +2,7 @@
 title: WiFi Infestations - Viral Wardriving
 author: pdp
 date: Wed, 20 Feb 2008 12:04:54 GMT
-template: post.jade
+template: post.pug
 ---
 
 WiFi networks are the necessary evil. In this post I would like to briefly highlight some ideas on the potential damages that can be introduced when attackers combine automated viral-like attacks with human power. This post is largely related to the wifi worms topic that was quite present among all media outlets at the beginning of 2008. Although the proposed paper was quite theoretical, in this post I will try to prove that the introduced concepts are mostly practical when implemented with a twist.

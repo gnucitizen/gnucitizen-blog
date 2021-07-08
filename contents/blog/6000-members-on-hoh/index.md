@@ -2,7 +2,7 @@
 title: 6000 Members on HoH
 author: pdp
 date: Mon, 24 Nov 2008 10:56:37 GMT
-template: post.jade
+template: post.pug
 ---
 
 Just a couple of months ago, we started [HoH](http://www.houseofhackers.org) as one of our social experiments. Initially the network was composed of just about 10-15 people and there was nothing fancy about it. We didn't even have a domain although we promised to ourselves that if we reach 1000 members we will certainly look into buying a domain and also investing into other resources.

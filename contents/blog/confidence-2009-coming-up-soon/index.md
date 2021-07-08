@@ -2,7 +2,7 @@
 title: CONFidence 2009 coming up soon!
 author: pagvac
 date: Sat, 14 Mar 2009 13:47:47 GMT
-template: post.jade
+template: post.pug
 ---
 
 The new edition of [CONFidence](http://2009.confidence.org.pl/) is coming up soon! CONFidence, which has become one of the biggest technical IT security conferences in Europe, is taking place on 15-16 May in the beautiful city of [Krakow](http://en.wikipedia.org/wiki/Krak%C3%B3w).

@@ -2,7 +2,7 @@
 title: Hacking with UPnP (Universal Plug and Play)
 author: pdp
 date: Thu, 10 Jan 2008 11:45:44 GMT
-template: post.jade
+template: post.pug
 ---
 
 During last month, just around the holiday festivals, Adrian and I did some investigation about potential uses and abuses of the so called UPnP (Universal Plug and Play). The reason why we started playing with this particular technology was mainly due to an urge to discover other creative ways to break into embedded devices. What we have discovered was not necessarily new but rather interesting and very, very intriguing. Soon we realized that very few people in the security/hacker circles are aware of what UPnP is for and how to make use of it. We thought that this is a huge gap which needs to be filled since during our investigations we stumbled upon many networks and devices vulnerable to various types of UPnP related attacks. The number of UPnP related vulnerabilities is quite concerning and we believe that we should pay more attention on this technology in the future.

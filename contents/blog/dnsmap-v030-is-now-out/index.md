@@ -2,7 +2,7 @@
 title: Dnsmap v0.30 is now out!
 author: pagvac
 date: Sat, 20 Feb 2010 21:08:48 GMT
-template: post.jade
+template: post.pug
 ---
 
 After working on [dnsmap](http://dnsmap.googlecode.com/) for a few months whenever time allowed, I decided there were enough additional goodies to make version 0.30 a new public release. Let me just say that a lot of the bugs that have been fixed, and features that have been added to this version would not be possible without the feedback from great folks such as [Borys Lacki](http://www.bothunters.pl), [Philipp Winter](http://7c0.org) and [meathive](http://kinqpinz.info). Thanks guys, your feedback was highly valuable to me.

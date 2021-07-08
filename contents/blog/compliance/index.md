@@ -2,7 +2,7 @@
 title: Compliance
 author: pdp
 date: Thu, 09 Oct 2008 12:51:30 GMT
-template: post.jade
+template: post.pug
 ---
 
 Someone on LinkedIn asked: "Is Information Security driven by compliance?" to which I say "yes and this is a problem"!

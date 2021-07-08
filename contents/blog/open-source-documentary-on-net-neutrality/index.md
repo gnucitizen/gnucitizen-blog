@@ -2,7 +2,7 @@
 title: Open Source Documentary on Net Neutrality
 author: pdp
 date: Tue, 26 Jun 2007 21:33:04 GMT
-template: post.jade
+template: post.pug
 ---
 
 <iframe class="video" src="//www.youtube.com/embed/8rNg_FVaPek" frameborder="0" allowfullscreen></iframe>

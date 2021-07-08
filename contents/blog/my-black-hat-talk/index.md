@@ -2,7 +2,7 @@
 title: My Black Hat Talk
 author: pdp
 date: Fri, 01 Aug 2008 13:23:39 GMT
-template: post.jade
+template: post.pug
 ---
 
 I will give you some heads up what to expect from [my Black Hat talk](http://www.blackhat.com/html/bh-usa-08/bh-usa-08-speakers.html#Petkov). If you are interested, you might want to attend. I prefer smaller but active audience. And of course I expect some interesting conversations after the talk if you are still awake of-course.

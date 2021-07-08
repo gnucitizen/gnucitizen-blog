@@ -2,7 +2,7 @@
 title: Gmail Security Flaw
 author: pdp
 date: Mon, 24 Nov 2008 13:03:50 GMT
-template: post.jade
+template: post.pug
 ---
 
 I woke up today to realize that GNUCITIZEN's web server is bombarded with requests. Good that we are running from a scalable infrastructure. The reason for the storm was a recent disclosure of apparently new Gmail bug similar to the one which I partially and than fully disclosed [here](/blog/google-gmail-e-mail-hijack-technique/), of course after working with the vendor to resolve the problem, which is always the right thing to do.

@@ -2,7 +2,7 @@
 title: Hamster Plus Hotspot Equals Web 2.0 Meltdown NOT
 author: pdp
 date: Wed, 15 Aug 2007 09:28:40 GMT
-template: post.jade
+template: post.pug
 ---
 
 > Robert Graham (CEO Errata Security) gave his Web 2.0 hijacking presentation to a packed audience at Black Hat 2007 today. The audience erupted with applause and laughter when Graham used his tools to hijack someone's Gmail account during an unscripted demo. The victim in this case was using a typical unprotected Wi-Fi Hotspot and his Gmail account just popped on the large projection screen for 500 or so audience members to see. Of course had the poor chap read my blog about email security last week he might have avoided this embarrassment. But for the vast majority of people using Gmail or any other browser or "Web 2.0â€³ application, they're all just a bunch of sheep waiting to be jacked by Graham's latest exploit. [Hamster plus Hotspot equals Web 2.0 meltdown!](http://blogs.zdnet.com/Ou/?p=651)

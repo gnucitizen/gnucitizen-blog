@@ -2,7 +2,7 @@
 title: Deep Inspection of Online Personas
 author: pdp
 date: Thu, 29 Jan 2009 18:17:49 GMT
-template: post.jade
+template: post.pug
 ---
 
 I found myself a new online toy. It is called [Pipl](http://www.pipl.com) and it is all about finding people online. Obviously, the concept behind the tool is not new. There are other tools that does the same, but this one is incredible accurate and verbose. It is a must toy in the arsenal of any serious penetration tester/attacker.

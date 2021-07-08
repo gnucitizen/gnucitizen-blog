@@ -2,7 +2,7 @@
 title: 10 Rules From Books
 author: pdp
 date: Fri, 16 Aug 2019 11:01:00 GMT
-template: post.jade
+template: post.pug
 ---
 
 Here are 10 things I've learned by reading books on various subject. I find this list tremendously useful and I promise I will provide the book titles at a later time. The reason I am sharing this is answered in point 2. Here we go:

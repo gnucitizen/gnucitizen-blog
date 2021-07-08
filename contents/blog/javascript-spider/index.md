@@ -2,7 +2,7 @@
 title: Javascript Spider
 author: pdp
 date: Fri, 06 Oct 2006 09:36:13 GMT
-template: post.jade
+template: post.pug
 ---
 
 During the last couple of days I have been testing several attack vectors to circumvent the browser security sandbox also known as "the same origin policy". There is a lot involved into this subject and I will present my notes very soon.

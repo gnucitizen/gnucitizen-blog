@@ -2,7 +2,7 @@
 title: Bulletproof Rich-content Filters
 author: pdp
 date: Tue, 18 Dec 2007 11:13:28 GMT
-template: post.jade
+template: post.pug
 ---
 
 It is true that here, at GNUCITIZEN, we try to look more on the offensive side of the things rather then the defensive side. I personally find that perfectly fine and ethical since you need people from both camps. Not, that we are the bad guys, (we are whitehats) but we primarily concentrate on how to break things. As such, we are part of the information security food chain. Some break, others fix. Some of us destroy, others build upon. And there is a lot of value in breaking things. More then you can imagine! It is a simple fact that you don't know how things work without first taking them apart.

@@ -2,7 +2,7 @@
 title: Web2.0 is not AJAX
 author: pdp
 date: Thu, 09 Aug 2007 09:57:42 GMT
-template: post.jade
+template: post.pug
 ---
 
 > Web2.0 is not AJAX. Although it is true that client-side (AJAX) security has a significant part of the Web2.0 ecosystem, it is important to realize its role. There are far too many other aspects that we need to look into.

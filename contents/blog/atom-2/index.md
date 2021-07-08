@@ -2,7 +2,7 @@
 title: Atom Database
 author: pdp
 date: Sat, 20 Jan 2007 10:12:19 GMT
-template: post.jade
+template: post.pug
 category: fucked
 ---
 

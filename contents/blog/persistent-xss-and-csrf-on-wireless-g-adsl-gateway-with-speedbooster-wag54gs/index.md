@@ -2,7 +2,7 @@
 title: Persistent XSS and CSRF on Wireless-G ADSL Gateway with SpeedBooster (WAG54GS)
 author: pagvac
 date: Tue, 20 Nov 2007 20:51:16 GMT
-template: post.jade
+template: post.pug
 ---
 
 I really think that web interfaces are the _low-hanging fruit_ of embedded devices. Sure classic attacks such as predictable SNMP community strings, exposed TFTP services and buffer overflows still apply. However, by exploiting the web interface we can steal the data we want, we can enable remote access to the compromised router, we own the victim's connection. In short, bugs on the web interface gives us all we need! Anyway, enough talking! The following are some of the issues I found on the Cisco Linksys WAG54GS.

@@ -2,7 +2,7 @@
 title: Writing Good Bug Bounty Reports
 author: pdp
 date: Mon, 8 Jul 2019 21:18:00 GMT
-template: post.jade
+template: post.pug
 ---
 
 This is what I do to write successful bug bounty reports that payout. I used this technique on 3 hidden bug bounty programs. One of them gave me a 2K bounty. For the other two, I don't know. #bugbountytips

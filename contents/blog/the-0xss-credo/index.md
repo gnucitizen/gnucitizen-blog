@@ -2,7 +2,7 @@
 title: The 0XSS Credo
 author: pdp
 date: Sun, 05 Nov 2006 07:13:28 GMT
-template: post.jade
+template: post.pug
 ---
 
 > Let me explain the new world order. Governments and corporations need people like you and me. We are samurai. The keyboard cowboys. And all those other people out there who have no idea what's going on are the cattle. Mooo! (Hackers)

@@ -2,7 +2,7 @@
 title: Social Media Security
 author: pdp
 date: Mon, 22 Sep 2008 10:57:46 GMT
-template: post.jade
+template: post.pug
 ---
 
 _I am happy to announce the relaunch of Blogsecurify. I have some more announcements to make._

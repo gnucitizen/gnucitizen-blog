@@ -2,7 +2,7 @@
 title: The State Of WiFi Security
 author: pdp
 date: Fri, 21 Mar 2008 07:10:23 GMT
-template: post.jade
+template: post.pug
 ---
 
 One of the fundamental rules, which you wont read about in any security book and you can learn only through experience is that everything is in symbiosis. This means that the security models of the individual components in a system are co-dependent. For example, the security of a server is dependent on the security of the individual clients connected to it and the the security of the clients depend on the security of the servers they are interacting with. If you know how to take advantage of this rule you can hack/break into anything. Let's see how this rule applies to WiFi networks and especially those found in London as I find the situation rather concerning.

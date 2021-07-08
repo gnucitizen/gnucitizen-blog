@@ -2,7 +2,7 @@
 title: OpenID - A Security Story
 author: pdp
 date: Mon, 20 Aug 2007 10:15:48 GMT
-template: post.jade
+template: post.pug
 ---
 
 The other day Eugene Tsyrklevich has pinged me about his talk on OpenID security in regards to my [article](/blog/identity-20-security) on Identity2.0 security issues that we face today. Eugene has presented an co-authored his research with Vlad Tsyrklevich at this year's BlackHat US. You can get the slides from over [here](https://www.blackhat.com/presentations/bh-usa-07/Tsyrklevich/Presentation/bh-usa-07-tsyrklevich.pdf) and read the whitepaper from over [there](https://www.blackhat.com/presentations/bh-usa-07/Tsyrklevich/Whitepaper/bh-usa-07-tsyrklevich-WP.pdf).

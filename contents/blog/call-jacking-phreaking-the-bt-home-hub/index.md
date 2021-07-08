@@ -2,7 +2,7 @@
 title: Call Jacking - Phreaking the BT Home Hub
 author: pagvac
 date: Mon, 21 Jan 2008 02:46:53 GMT
-template: post.jade
+template: post.pug
 category: fucked
 ---
 

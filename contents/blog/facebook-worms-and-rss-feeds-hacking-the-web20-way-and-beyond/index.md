@@ -2,7 +2,7 @@
 title: Facebook, Worms and RSS Feeds - Hacking The Web2.0 Way and Beyond
 author: pdp
 date: Wed, 29 Oct 2008 09:36:34 GMT
-template: post.jade
+template: post.pug
 ---
 
 This morning I was reading an interesting [article](http://blogs.zdnet.com/security/?p=2075) from Ryan Naraine (ZDNet Zero Day Blog) regarding a Facebook worm which uses RSS feeds and in particular Google Reader to strengthen its attack strategy. Interesting...

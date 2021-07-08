@@ -2,7 +2,7 @@
 title: Constructive Chaos
 author: mario-heiderich
 date: Tue, 07 Aug 2007 22:09:52 GMT
-template: post.jade
+template: post.pug
 ---
 
 > Fuzz testing or fuzzing is a software testing technique that provides random data ("fuzz") to the inputs of a program. If the program fails (for example, by crashing, or by failing built-in code assertions), the defects can be noted. [Wikipedia](http://en.wikipedia.org/wiki/Fuzz_testing)

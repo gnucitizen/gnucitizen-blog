@@ -2,7 +2,7 @@
 title: AttackAPI
 author: pdp
 date: Sat, 26 Aug 2006 02:00:47 GMT
-template: post.jade
+template: post.pug
 ---
 
 AttackAPI provides simple and intuitive programmable interface for composing attack vectors with JavaScript and other client and server related technologies.

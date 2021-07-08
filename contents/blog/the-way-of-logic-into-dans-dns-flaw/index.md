@@ -2,7 +2,7 @@
 title: The Way of Logic into Dan's DNS Flaw
 author: pdp
 date: Thu, 17 Jul 2008 10:49:37 GMT
-template: post.jade
+template: post.pug
 ---
 
 There is a serious flaw in the DNS system and apparently it is a design bug, the types of bugs I like the most. I am very curious to learn what exactly Dan has prepped for us and I get the feeling that we will be deeply shaken by its simplicity.

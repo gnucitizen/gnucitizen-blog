@@ -2,7 +2,7 @@
 title: JavaScript Port Scanner
 author: pdp
 date: Tue, 01 Aug 2006 19:37:52 GMT
-template: post.jade
+template: post.pug
 category: fucked
 ---
 

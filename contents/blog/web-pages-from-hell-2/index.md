@@ -3,7 +3,7 @@ title: Web Pages from Hell 2
 author: pdp
 guest: adrian-pastor
 date: Wed, 15 Nov 2006 02:39:52 GMT
-template: post.jade
+template: post.pug
 ---
 
 > This month my guest blogger is Adrian Pastor (a.k.a pagvac) the founder of [In Knowledge We Trust - Security Research Labs](http://www.ikwt.com/) and co-author of [Exegesis of Virtual Hosts Hacking](/blog/exegesis-of-virtual-hosts-hacking/). Adrian and I have been brainstorming together on various security related projects. He currently works as a security analyst and researcher involved in high-profile web application testing. In this post Adrian expands on topic of [Web Pages from Hell](/blog/web-pages-from-hell).

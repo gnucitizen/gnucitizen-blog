@@ -2,7 +2,7 @@
 title: Script Kiddies
 author: pdp
 date: Sat, 25 Oct 2008 09:22:50 GMT
-template: post.jade
+template: post.pug
 ---
 
 According to [Wikipedia](http://en.wikipedia.org/wiki/Script_kiddie):

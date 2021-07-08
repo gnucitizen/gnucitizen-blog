@@ -2,7 +2,7 @@
 title: Attacking Password Recovery Facilities
 author: pagvac
 date: Fri, 06 Jul 2007 08:54:44 GMT
-template: post.jade
+template: post.pug
 ---
 
 Today, most public websites offer the following 3 functionalities: account login facility (login page), account signup facility (account registration / create new account page) and password recovery facility (forgot password page). This is especially true on e-commerce sites with a large user base.

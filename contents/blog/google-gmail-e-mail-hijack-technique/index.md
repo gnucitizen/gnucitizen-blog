@@ -2,7 +2,7 @@
 title: Google GMail E-mail Hijack Technique
 author: pdp
 date: Tue, 25 Sep 2007 18:50:33 GMT
-template: post.jade
+template: post.pug
 ---
 
 In this post I am going to show you how someone can remotely install a simple, persistent filter within a GMail account and download all previous as well as snoop onto all future email conversations.

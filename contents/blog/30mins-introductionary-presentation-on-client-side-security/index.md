@@ -2,7 +2,7 @@
 title: 30mins Introductionary Presentation On Client-side Security
 author: pdp
 date: Sun, 17 Feb 2008 11:07:31 GMT
-template: post.jade
+template: post.pug
 ---
 
 I was asked to have a 30 minutes long introductionary presentation on client-side security issues. Although the presentation is very basic and high-level oriented, as it was designed to serve as an overview rather then as an in depth analysis, I thought that still someone may find it useful or may use it in their own presentations.

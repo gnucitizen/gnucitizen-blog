@@ -2,7 +2,7 @@
 title: Zero Trust Security
 author: pdp
 date: Mon Jun 01 2020 11:05:27 GMT+0100 (British Summer Time)
-template: post.jade
+template: post.pug
 ---
 
 In episode 4 (0x03) of the cult TV-series Mr. Robot, Elliot hacks into Steel Mountain’s Data Center HVAC system (Heating, Ventilation, and Air Conditioning) by connecting a rouge Raspberry Pi to an exposed network access point. By controlling the temperature of the server rooms, Elliot was theoretically able to pump up the heat to cause the backup tapes to melt and as a result destroy Evil Corp’s ability to recover from a software implant attack meant to encrypt all of their data thus rendering their entire business useless overnight and freeing people from the tyranny of credit cards, unfair loans, and other modern-world evils.

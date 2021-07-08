@@ -2,7 +2,7 @@
 title: BT Home Flub Pwnin The BT Home Hub (3)
 author: pagvac
 date: Tue, 23 Oct 2007 10:39:35 GMT
-template: post.jade
+template: post.pug
 ---
 
 Here are the news: it seems that BT is [restricting/crippling the remote assistance feature](http://bt.custhelp.com/cgi-bin/bt.cfg/php/enduser/cci/bt_adp.php?p_sid=B612fPOi&cat_lvl1=346&cat_lvl2=401&cat_lvl3=407&cat_lvl4=751&p_cv=4.751&p_cats=346,401,407,751&p_faqid=10492) as a result of the vulnerabilities we [reported](/blog/bt-home-flub-pwnin-the-bt-home-hub). I personally found the following [statement](http://www.theregister.co.uk/2007/10/22/home_hub_vuln_plugged/) interesting:

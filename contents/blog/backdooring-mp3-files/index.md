@@ -2,7 +2,7 @@
 title: Backdooring MP3 Files
 author: pdp
 date: Wed, 20 Sep 2006 21:39:18 GMT
-template: post.jade
+template: post.pug
 ---
 
 Recently I published information on how specially crafted HTML ([remote](/blog/backdooring-web-pages) and [local](/blog/web-pages-from-hell)), [Flash](/blog/backdooring-flash-objects) and [QuickTime (.mov)](/blog/backdooring-quicktime-movies) files can be used by malicious users to target and exploit internal and external networks. Than my friend and college [David K](http://michaeldaw.org) released his findings on [backdooring PDF](http://michaeldaw.org/md-hacks/backdooring-pdf-files/) documents via builtin Adobe Reader JavaScript features. Also, [JavaScript malware via Google AJAX Search API](/blog/google-search-api-worms) seams to be possible and could affect many popular web products. As Billy Hoffman said "XSS is the new hotness!". I cannot agree more on that.

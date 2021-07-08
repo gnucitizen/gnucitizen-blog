@@ -2,7 +2,7 @@
 title: You and Your Research
 author: pdp
 date: Wed, 05 Dec 2012 00:40:04 GMT
-template: post.jade
+template: post.pug
 ---
 
 This is really one of my favourite talks from this year's HITB in KL.

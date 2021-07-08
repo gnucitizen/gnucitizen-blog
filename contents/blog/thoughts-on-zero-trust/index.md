@@ -2,7 +2,7 @@
 title: Thoughts On Zero Trust
 author: pdp
 date: Mon Jun 08 2020 11:46:28 GMT+0100 (British Summer Time)
-template: post.jade
+template: post.pug
 ---
 
 _This is an extract from a larger piece of work that I have not finished yet but I thought it might be worth sharing at this point to draw attention to this subject. The subject on Zero Trust has been occupying my thoughts for a long, long time. Only recently, I have managed to put this philosophy in a practical context. While I cannot reveal what I am working on, I can share some of the thinking behind it._

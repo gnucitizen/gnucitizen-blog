@@ -2,7 +2,7 @@
 title: Let's Fix The Web
 author: pdp
 date: Sun, 31 Aug 2008 08:12:25 GMT
-template: post.jade
+template: post.pug
 ---
 
 I am heavily frustrated from the way the Web works today. Everything seems to be broken beyond reason. I really want to fix the damn thing but I realize that it is not up to me to do that. It is up to all of us to make sure that code is written in the most secure possible way. Can we do that? Perhaps not! What can we do then?

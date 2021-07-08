@@ -2,7 +2,7 @@
 title: Joe Walker on Web Application Security
 author: pdp
 date: Tue, 30 Oct 2007 20:31:55 GMT
-template: post.jade
+template: post.pug
 category: fucked
 ---
 

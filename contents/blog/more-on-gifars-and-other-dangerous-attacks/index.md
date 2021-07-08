@@ -2,7 +2,7 @@
 title: More on GIFARS and Other Dangerous Attacks
 author: pdp
 date: Sun, 03 Aug 2008 16:40:39 GMT
-template: post.jade
+template: post.pug
 ---
 
 This is a continuation from my [previous post](/blog/gifars-and-other-issues/). The reasons why GIFARs, although in my case it was JPGAR (from JPG + JAR), work was explained to me by FX ([Recurity Labs](http://www.recurity-labs.com/)) after my talk during the [last Black Hat in Amsterdam](/blog/black-hat-europe-2008/).

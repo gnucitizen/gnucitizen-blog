@@ -2,7 +2,7 @@
 title: UPnP The Saga Continues
 author: pdp
 date: Sun, 20 Jan 2008 20:35:27 GMT
-template: post.jade
+template: post.pug
 ---
 
 This post is a quick introduction to some other UPnP related issues. Yes, we have been targeting UPnP in the last couple of weeks mainly because is a big problem many people have forgotten or don't know about.

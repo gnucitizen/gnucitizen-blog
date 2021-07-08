@@ -2,7 +2,7 @@
 title: A Must Read - Brief Testimony of Our Disclosure Experience
 author: ivana-kalay
 date: Sun, 23 Dec 2007 11:15:16 GMT
-template: post.jade
+template: post.pug
 ---
 
 We have been trying to expose our thoughts about the fundamental ethical issues in the industry for a quite a long time. The truth is that it is not very simple to define what a righteous hacking is or which is the best way to deal with discovered vulnerabilities. Moreover, we do realize that having this talk is also very subjective and has different meanings to everyone. In the past couple of months, GNUCITIZEN has increased its rank dramatically and became key topic of many media outlets. Our popularity and running activities have constantly challenged us to reconsider our professional virtues and to seek the answers of the major industrial dilemmas. So in the spirit of upcoming festivals, it seems practically fitting for GNUCITIZEN to devote some time reflecting on the year's past and talk about where we find ourselves as the New Year dawns. Here is our top five list of Year-End ethical questions:

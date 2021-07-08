@@ -2,7 +2,7 @@
 title: Ad-Jacking - XSSing for Fun and Profit
 author: david-kierznowski
 date: Sun, 01 Jul 2007 08:24:28 GMT
-template: post.jade
+template: post.pug
 ---
 
 How to XSS is often the topic of conversation among security professionals; however, the reason or motivation for why an attacker might want to exploit an XSS vulnerability is often limited to stealing cookies or hijacking credentials. This post takes an almost sensationalist point of you as we take you on a journey to a possible web 2.0 XSS worm armed with an Ad-Jacking payload; an attack I introduced a short time ago.

@@ -2,7 +2,7 @@
 title: Tomorrow's Trojan Peddlers
 author: mario-heiderich
 date: Sat, 10 Nov 2007 09:11:43 GMT
-template: post.jade
+template: post.pug
 ---
 
 Some weeks ago I did play a little bit with various [nopaste applications](http://en.wikipedia.org/wiki/Nopaste) - you know, the tools that allow you to paste/host huge amounts of regular text, source code and other non binary stuff. There are dozens of them out there and most of them provide no ACL, whatsoever. So anyone can see the text you've pasted. Pasting new data happens in a matter of seconds due to the very plain interfaces these sites implement. Some of them even support highlighting in dozens of programming and scripting languages. Submit your text and you even get a nice short link for free.

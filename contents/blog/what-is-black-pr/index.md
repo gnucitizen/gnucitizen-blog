@@ -2,7 +2,7 @@
 title: What is Black PR
 author: ivana-kalay
 date: Sat, 29 Mar 2008 17:49:52 GMT
-template: post.jade
+template: post.pug
 ---
 
 Since Black Hat Europe 2008, which took place in Amsterdam, we've got a lot of attention around what is Black PR and what exactly we have to do with it. A few media outlets covered some of the details around our expertise in this area although their point of view was, well, slightly distorted from the reality. Therefore, with this post we would like to clarify the basics of Black PR and PR Security business and also explain how it is integrated within our group.

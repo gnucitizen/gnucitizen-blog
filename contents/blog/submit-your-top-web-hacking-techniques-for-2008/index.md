@@ -2,7 +2,7 @@
 title: Submit Your Top Web Hacking Techniques for 2008
 author: pdp
 date: Fri, 30 Jan 2009 00:03:06 GMT
-template: post.jade
+template: post.pug
 ---
 
 Jeremiah is [calling](http://jeremiahgrossman.blogspot.com/2009/01/calling-all-researchers-send-in-top-web.html) all security researchers and hobbyists to submit their favorite Web hacking techniques released during 2008. There are some nice perks too. I say "Sure!".

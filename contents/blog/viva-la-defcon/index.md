@@ -2,7 +2,7 @@
 title: Viva La Defcon!
 author: pagvac
 date: Wed, 13 Aug 2008 06:19:42 GMT
-template: post.jade
+template: post.pug
 category: fucked
 ---
 

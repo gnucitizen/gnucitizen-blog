@@ -2,7 +2,7 @@
 title: The Agile Hacking Project
 author: pdp
 date: Sat, 06 Dec 2008 22:25:19 GMT
-template: post.jade
+template: post.pug
 ---
 
 This is a quick announcement regarding the Agile Hacking project. For those of you who are not familiar with this project, there is a post that you can go through over [here](/blog/agile-hacking).

@@ -2,7 +2,7 @@
 title: Hidden
 author: pdp
 date: Tue, 08 Apr 2008 08:56:27 GMT
-template: post.jade
+template: post.pug
 ---
 
 Here is the story. The other day I was messing with some crypto. After going through some pretty interesting stuff, I've suddenly realized something which is very, very obvious when you think about it. Indeed, obvious and simple things are harder to grasp. It is a paradox, I know.

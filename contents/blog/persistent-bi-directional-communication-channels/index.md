@@ -2,7 +2,7 @@
 title: Persistent Bi-directional Communication Channels
 author: pdp
 date: Mon, 02 Oct 2006 04:24:33 GMT
-template: post.jade
+template: post.pug
 ---
 
 In this article I am planning to cover the essence of the my "Persistent Bi-directional Communication Channels" research and how they can be used to track and control networks of backdoored web client objects. There is also demonstration tool available as well. The tool is written in PHP and can be downloaded from its project page [here](/blog/javascript-attack-channel). First let's have a look at the structure of the HTTP protocol and the theory behind bi-directional communication in stateless protocols in order to understand what these channels are and why they are interesting to study.

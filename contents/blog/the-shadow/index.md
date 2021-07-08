@@ -2,7 +2,7 @@
 title: The Shadow
 author: pdp
 date: Fri, 02 Feb 2007 14:26:48 GMT
-template: post.jade
+template: post.pug
 ---
 
 _Let's start this conversation with a quick overview of the browser security model._

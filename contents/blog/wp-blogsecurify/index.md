@@ -2,7 +2,7 @@
 title: WP Blogsecurify
 author: pdp
 date: Sun, 26 Oct 2008 08:09:04 GMT
-template: post.jade
+template: post.pug
 ---
 
 The [WP Blogsecurify 1.0](/files/2008/10/wp-blogsecurify-1-0.zip) wordpress plugin is out.

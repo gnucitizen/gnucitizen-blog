@@ -2,7 +2,7 @@
 title: Innovation is Nonlinear
 author: pdp
 date: on Apr 26 2021 12:38:48 GMT+0100 (British Summer Time)
-template: post.jade
+template: post.pug
 ---
 
 I am getting obsessed with the nonlinear way of discovering things.

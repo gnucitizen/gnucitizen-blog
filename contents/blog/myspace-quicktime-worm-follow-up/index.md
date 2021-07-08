@@ -2,7 +2,7 @@
 title: MySpace QuickTime Worm Follow-up
 author: pdp
 date: Thu, 07 Dec 2006 03:05:27 GMT
-template: post.jade
+template: post.pug
 ---
 
 [MySpace was hit by a worm](http://www.websense.com/securitylabs/alerts/alert.php?AlertID=708) in a semi-automatic manner. This time the worm propagated via a [QuickTime flaw found a couple of months ago](/blog/backdooring-quicktime-movies). This shouldn't be a surprise to anyone. It is quite serious that this attack vector was picked up by Apple so late.

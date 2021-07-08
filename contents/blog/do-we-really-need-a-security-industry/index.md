@@ -2,7 +2,7 @@
 title: Do We Really Need a Security Industry?
 author: pdp
 date: Fri, 04 May 2007 09:20:40 GMT
-template: post.jade
+template: post.pug
 ---
 
 I couldn't believe my eyes when I saw Schneier's latest [post](http://www.schneier.com/blog/archives/2007/05/do_we_really_ne.html). With all my respect, I think that he tried to say something but eventually came up with something else that sounds horribly wrong. I usually don't get into flame wars from obvious and quite practical reasons, but here I would like to share my view on the matter. I will break down the entire post into separate Q&A section so it is easier to comprehend.

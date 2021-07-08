@@ -2,7 +2,7 @@
 title: About The Power Of Google
 author: pdp
 date: Sat, 23 Jun 2007 10:31:50 GMT
-template: post.jade
+template: post.pug
 ---
 
 <iframe class="video" src="//www.youtube.com/embed/9zKXCQpUnMg" frameborder="0" allowfullscreen></iframe>

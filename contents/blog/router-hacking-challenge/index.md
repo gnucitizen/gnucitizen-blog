@@ -2,7 +2,7 @@
 title: Router Hacking Challenge
 author: pdp
 date: Sun, 03 Feb 2008 16:15:28 GMT
-template: post.jade
+template: post.pug
 ---
 
 We want you to hack your router! Yes, You. We want you to hack your router and make your findings public on this very same page, the [sla.ckers](http://sla.ckers.org/forum/read.php?13,20128) forum or at _hackerwebzine[at]gmail[dot]com_. The best and most interesting hacks will receive credit, a lot of attention and good media coverage.

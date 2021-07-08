@@ -2,7 +2,7 @@
 title: New Version Of Dnsmap Out
 author: pagvac
 date: Sun, 22 Feb 2009 16:42:19 GMT
-template: post.jade
+template: post.pug
 category: fucked
 ---
 

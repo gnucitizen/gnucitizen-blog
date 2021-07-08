@@ -2,7 +2,7 @@
 title: The Pownce Worm (Yet Another Potential AJAX Worm)
 author: pdp
 date: Wed, 13 Feb 2008 08:31:02 GMT
-template: post.jade
+template: post.pug
 category: fucked
 ---
 

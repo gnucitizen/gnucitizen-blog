@@ -2,7 +2,7 @@
 title: Dumping The Admin Password Of The BT Home Hub
 author: pagvac
 date: Wed, 21 May 2008 09:27:21 GMT
-template: post.jade
+template: post.pug
 category: fucked
 ---
 

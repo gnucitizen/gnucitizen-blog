@@ -2,7 +2,7 @@
 title: The Orkut XSS Worm
 author: pdp
 date: Wed, 19 Dec 2007 11:15:27 GMT
-template: post.jade
+template: post.pug
 category: fucked
 ---
 

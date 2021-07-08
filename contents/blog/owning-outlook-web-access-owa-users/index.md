@@ -2,7 +2,7 @@
 title: Owning Outlook Web Access (OWA) users
 author: pagvac
 date: Sat, 08 Dec 2007 18:56:01 GMT
-template: post.jade
+template: post.pug
 ---
 
 What is this post about? Well, this is something that [pdp](http://www.gnucitizen.org/about/pdp) and I were playing with a few years ago. As you might already know, although we also do a vulnerability research at GNUCITIZEN, what we like the best is _insecurity by design_. There is nothing better than finding an attack vector that won't be resolved by the vendor simply because the product is designed to follow certain behavior. Personally, from a security research point of view, I think that these attacks are the best.

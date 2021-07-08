@@ -2,7 +2,7 @@
 title: Jython Shell
 author: pdp
 date: Sun, 25 Jun 2006 19:22:55 GMT
-template: post.jade
+template: post.pug
 ---
 
 [Jython Shell](http://code.google.com/p/jythonshell/) is a python shell that works straight from your browser. This application can prove to be quite helpful in many situations. For example, you can use it when you don't have access to your computer but you still want to test a few things in python. I've made use of it many times to test various kiosks or to launch python scripts where I have some sort of browser access.

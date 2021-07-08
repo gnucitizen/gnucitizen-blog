@@ -2,7 +2,7 @@
 title: OpenID Provides A Better Security Model
 author: pdp
 date: Mon, 24 Mar 2008 11:23:20 GMT
-template: post.jade
+template: post.pug
 ---
 
 I couple of posts back I've started a conversation on what OpenID is and why it could turn a bit insecure. You can read more about this over [here](/blog/hijacking-openid-enabled-accounts/), [here](/blog/openid-a-security-story/) and [here](/blog/identity-20-security/). Today, I would like to draw your attention on why I believe that OpenID based authentication is a lot more more secure then the dispersed, decentralized, authentication model we use today.

@@ -2,7 +2,7 @@
 title: Web Pages from Hell
 author: pdp
 date: Mon, 11 Sep 2006 21:23:31 GMT
-template: post.jade
+template: post.pug
 ---
 
 You open a html file but you are not aware. You check the content but you don't know.

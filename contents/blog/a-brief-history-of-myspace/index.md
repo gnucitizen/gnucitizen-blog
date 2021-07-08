@@ -2,7 +2,7 @@
 title: A Brief History of MySpace
 author: pdp
 date: Fri, 22 Jun 2007 21:23:17 GMT
-template: post.jade
+template: post.pug
 ---
 
 <iframe class="video" src="//www.youtube.com/embed/iGTSXdXS15U" frameborder="0" allowfullscreen></iframe>

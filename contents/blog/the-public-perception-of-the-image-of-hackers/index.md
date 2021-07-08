@@ -2,7 +2,7 @@
 title: The Public Perception of the Image of Hackers
 author: pdp
 date: Mon, 05 May 2008 23:11:05 GMT
-template: post.jade
+template: post.pug
 ---
 
 It's been a long day. I am happy to inform you that the [House of Hackers](http://houseofhackers.ning.com/) community has reached remarkable 80 members since its opening 10 hours ago. It even have got some exposure on Dark Reading ( 	

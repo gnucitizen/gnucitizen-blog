@@ -2,7 +2,7 @@
 title: Jobs Of Tomorrow
 author: pdp
 date: Thu, 16 May 2019 8:50:00 GMT
-template: post.jade
+template: post.pug
 ---
 
 Keep in mind that your kids will do jobs that don’t yet exist. When I was a child the cyber security field did not exist - not in the same capacity as it did when I started my professional career. What are the niche fields that will drive future innovation?

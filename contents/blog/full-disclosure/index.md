@@ -2,7 +2,7 @@
 title: Full Disclosure?
 author: david-kierznowski
 date: Sun, 29 Jul 2007 08:50:57 GMT
-template: post.jade
+template: post.pug
 ---
 
 > "Bug secrecy is a viable solution only if software vendors are followers of W. Edwards Deming's quality management principles. The longer a bug remains unfixed, the bigger a problem it is. And because the number of systems on the Internet is constantly growing, the longer a security vulnerability remains unfixed, the larger the window of exposure. If companies believe this and then act accordingly, then there is a powerful argument for secrecy. However, history shows this isn't the case." - [schneier](http://www.schneier.com/crypto-gram-0111.html)

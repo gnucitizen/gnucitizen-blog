@@ -2,7 +2,7 @@
 title: Target Profiling with Windows
 author: pdp
 date: Mon, 07 Apr 2008 16:28:40 GMT
-template: post.jade
+template: post.pug
 ---
 
 This Agile Hacking Cookbook recipe was inspired by Nicolasfr and Slaw who contributed some initial tips on Target Profiling. I have modified and simplified some of their content and code for a more compact solution.

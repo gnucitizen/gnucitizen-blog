@@ -2,7 +2,7 @@
 title: Backdooring Web Pages
 author: pdp
 date: Mon, 28 Aug 2006 11:09:08 GMT
-template: post.jade
+template: post.pug
 category: fucked
 ---
 

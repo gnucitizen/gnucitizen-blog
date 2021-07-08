@@ -2,7 +2,7 @@
 title: Steal His Wi-Fi
 author: pagvac
 date: Fri, 11 Jan 2008 07:01:23 GMT
-template: post.jade
+template: post.pug
 ---
 
 Leaving your WiFi network open is not a good idea. Bruce Schneier does not agree and wrote an interesting article. The following is an extract of it:

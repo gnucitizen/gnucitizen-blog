@@ -2,7 +2,7 @@
 title: GHDB
 author: pdp
 date: Mon, 21 May 2007 13:24:45 GMT
-template: post.jade
+template: post.pug
 ---
 
 ![Ggoogle Dark](/files/2006/10/google-dark.jpg "Ggoogle Dark")

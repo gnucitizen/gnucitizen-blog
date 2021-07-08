@@ -2,7 +2,7 @@
 title: Bug Bounty Tips
 author: pdp
 date: Sun, 7 Jul 2019 19:01:00 GMT
-template: post.jade
+template: post.pug
 ---
 
 Perhaps the reason you are not finding vulns/bugs is either because your environment is not setup correctly or your methodology requires improvements. Here are a number of tips to help you with that #bugbountytips

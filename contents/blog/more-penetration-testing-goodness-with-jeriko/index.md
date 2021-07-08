@@ -2,7 +2,7 @@
 title: More Penetration Testing Goodness with Jeriko
 author: pdp
 date: Tue, 07 Apr 2009 21:14:29 GMT
-template: post.jade
+template: post.pug
 ---
 
 Over the last couple of weeks I've added more features to the [Jeriko](http://code.gnucitizen.org/jeriko) toolkit which I briefly covered in my post over [here](/blog/you-dont-need-the-ultimate-pen-testing-framework/). For those of you who don't know, Jeriko is a compilation of various bash scripts to ease manual penetration testing practices. The idea is to automate only the things which are sort of boring.

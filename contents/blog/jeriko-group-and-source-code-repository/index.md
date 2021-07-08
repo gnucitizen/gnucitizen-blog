@@ -2,7 +2,7 @@
 title: Jeriko Group and Source Code Repository
 author: pdp
 date: Tue, 28 Apr 2009 06:50:39 GMT
-template: post.jade
+template: post.pug
 ---
 
 Jeriko moved in its own source code repository which you will be able to find [here](http://code.google.com/p/jeriko/). There is also a discussion group [here](http://groups.google.com/group/Jeriko).

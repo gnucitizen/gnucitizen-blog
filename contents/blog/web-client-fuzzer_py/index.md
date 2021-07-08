@@ -2,7 +2,7 @@
 title: Web Client Fuzzer.py
 author: pdp
 date: Wed, 24 Oct 2007 22:00:50 GMT
-template: post.jade
+template: post.pug
 ---
 
 "Fuzzing - such a wonderful concept". I wish it worked more often usual. Anyway, here is my attempt to put down a fuzzer for testing various web client specific issues. The fuzzer is written in python and I am not aware of any other tool that fuzzes the way I do, although I must admit, haven't researched enough. I found most of the tools out there kind of **over complicated**. I guess, we've lost the ability to write simple and effective software.

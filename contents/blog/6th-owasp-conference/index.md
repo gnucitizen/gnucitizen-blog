@@ -2,7 +2,7 @@
 title: 6th OWASP Conference
 author: pdp
 date: Thu, 17 May 2007 07:33:14 GMT
-template: post.jade
+template: post.pug
 ---
 
 Here you will be able find all materials that I used for my [presentation](/files/2007/05/advanced-web-hacking.ppt) at the [6th OWASP Conference](http://www.owasp.org/index.php/6th_OWASP_AppSec_Conference_-_Italy_2007/Agenda). Further discussion and clarification on the subject to be expected very soon.

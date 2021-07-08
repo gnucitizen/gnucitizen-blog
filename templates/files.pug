@@ -1,0 +1,55 @@
+extends ./page.pug
+
+//- --
+//- --
+//- --
+
+mixin content()
+    block content
+        if page.metadata.title
+            h1=page.metadata.title
+
+        //- --
+
+        - function fileSort(a, b) {
+        -    return b.filename.localeCompare(a.filename)
+        - }
+
+        - function recurseFolder(folder) {
+            ul
+                for item in folder._.directories.sort(fileSort)
+                    unless item.filename
+                        - continue
+
+                    if /(^\.|\/\.)/.test(item.filename)
+                        - continue
+
+                    - recurseFolder(item)
+
+                for item in folder
+                    if item === page
+                        - continue
+    
+                    unless item.filename
+                        - continue
+
+                    unless item.url
+                        - continue
+
+                    //- --
+
+                    li.file
+                        a(href=item.url)=item.filename
+        - }
+
+        //- --
+
+        #index
+            - recurseFolder(page.parent)
+
+//- --
+
+block content
+    +content()
+
+//- --

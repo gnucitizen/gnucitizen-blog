@@ -2,7 +2,7 @@
 title: Virtualizations
 author: pdp
 date: Thu, 19 Jun 2008 10:14:16 GMT
-template: post.jade
+template: post.pug
 ---
 
 Please don't take this post as a rant towards all the virtualization hackers out there. You are doing a great job and there is no doubt about that. My sole purpose is to get to the bottom of a problem which I believe is widely ignored when it comes to the purpose of virtualizations.

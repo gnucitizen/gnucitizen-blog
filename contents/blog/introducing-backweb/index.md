@@ -2,7 +2,7 @@
 title: Introducing Backweb
 author: pdp
 date: Mon, 30 Oct 2006 09:36:42 GMT
-template: post.jade
+template: post.pug
 ---
 
 After a couple of weeks well spend time in Malaysia and a few days in Singapore, I am quite happy to release the [Backweb Attack Console](http://www.gnucitizen.org/backweb).

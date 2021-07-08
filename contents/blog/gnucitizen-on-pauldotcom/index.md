@@ -2,7 +2,7 @@
 title: GNUCITIZEN on PaulDotCom
 author: pdp
 date: Fri, 14 Mar 2008 14:37:39 GMT
-template: post.jade
+template: post.pug
 ---
 
 We were honored to be guests to Paul and Larry on [PaulDotCom](http://pauldotcom.com/) Security Weekly - the best security podcast on the Web. The show was rather long, about 2 hours, but we've discussed many interesting things. Please mind the quality on Adrian's and especially mine side of the audio stream. I used a very crappy headset, which was the cause of all sorts of problems.

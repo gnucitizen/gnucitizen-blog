@@ -2,7 +2,7 @@
 title: Snoop Onto Them As They Snoop Onto Us
 author: pdp
 date: Sat, 21 Jul 2007 08:47:37 GMT
-template: post.jade
+template: post.pug
 ---
 
 This is not that of a news since the service is available since January this year, however I cannot see that many people discussing it. Anyway, Google allows consummation of [SearchHistory](http://www.google.com/searchhistory) profiles as simple RSS/ATOM feeds. IMHO, this will impact the security and privacy of the users (us) quite significantly. Let's see how. But first, for those who don't know what the search history is, here is a short excerpt from the service homepage:

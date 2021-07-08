@@ -2,7 +2,7 @@
 title: BT Home Flub Pwnin The BT Home Hub (5) - exploiting IGDs remotely via UPnP
 author: pagvac
 date: Thu, 10 Jan 2008 11:46:14 GMT
-template: post.jade
+template: post.pug
 category: fucked
 ---
 

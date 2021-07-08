@@ -2,7 +2,7 @@
 title: Trapping HTTP Requests and Responses with Python
 author: pdp
 date: Wed, 18 Feb 2009 11:52:34 GMT
-template: post.jade
+template: post.pug
 ---
 
 In my [last post](/blog/python-ssl-mitm-proxy-and-more/) I showed my own implementation of n HTTPS Man-in-the-middle proxy written from scratch in Python. I've spent great deal of time to make the proxy as programmer-friendly as possible. In this post I am planning to show how you can use the code to write your own proxies in the spirit of Burp, Paros, WebScarab, RatProxy, etc.

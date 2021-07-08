@@ -2,7 +2,7 @@
 title: It is Persistence
 author: pdp
 date: Wed, 25 Feb 2009 11:25:20 GMT
-template: post.jade
+template: post.pug
 ---
 
 Do some people have the magical skill to find vulnerabilities with ease while others don't! Of course not! I disagree with the whole tendency to believe that technical understandings is all that is needed to find vulnerabilities.

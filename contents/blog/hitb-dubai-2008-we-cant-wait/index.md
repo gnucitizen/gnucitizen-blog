@@ -2,7 +2,7 @@
 title: HITB Dubai - 2008 We Can't Wait
 author: pagvac
 date: Mon, 03 Mar 2008 12:40:24 GMT
-template: post.jade
+template: post.pug
 ---
 
 One of the things I like about the hacker/security community is how much ideas exchanging takes place. Most researchers soon realize that there is nothing like a good session of sharing ideas with other peers in order to come up with even more interesting thoughts!

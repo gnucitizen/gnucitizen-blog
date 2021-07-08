@@ -2,7 +2,7 @@
 title: QuickTime 0day for Vista and XP
 author: pdp
 date: Fri, 25 Apr 2008 17:57:42 GMT
-template: post.jade
+template: post.pug
 ---
 
 A remote vulnerability exists in the QuickTime player for Windows XP and Vista (latest service packs). Other versions are believed to be affected as well. For now, no details will be released regarding the method of exploitation.

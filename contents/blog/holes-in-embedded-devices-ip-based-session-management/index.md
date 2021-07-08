@@ -2,7 +2,7 @@
 title: Holes In Embedded Devices - IP-based session management
 author: pagvac
 date: Tue, 29 Jan 2008 10:39:22 GMT
-template: post.jade
+template: post.pug
 category: fucked
 ---
 

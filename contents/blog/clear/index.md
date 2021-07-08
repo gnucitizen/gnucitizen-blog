@@ -2,7 +2,7 @@
 title: Clear
 author: pdp
 date: Sat, 13 Oct 2007 12:38:55 GMT
-template: post.jade
+template: post.pug
 ---
 
 I am planning to be very quick and brief with this post and to try to clarify some misconception regarding some of our latest posts and projects on GNUCITIZEN.

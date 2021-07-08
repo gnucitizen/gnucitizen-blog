@@ -2,7 +2,7 @@
 title: Sploiter Splog
 author: pdp
 date: Sat, 18 Nov 2006 07:04:25 GMT
-template: post.jade
+template: post.pug
 ---
 
 > **Spam** **blogs**, sometimes referred to by the neologism splogs or Blam!, are weblog sites which the author uses only for **promoting** affiliated websites. The purpose is to increase the **PageRank** of the affiliated sites, get ad impressions from visitors, and/or use the blog as a link outlet to get new sites indexed. Spam blogs are a type of scraper site, where content is often nonsense or **text stolen** from other websites. These blogs contain an unusually **high number of links** to sites associated with the splog creator which are often disreputable or otherwise useless websites. [wikipedia](http://en.wikipedia.org/wiki/Spam_blog)

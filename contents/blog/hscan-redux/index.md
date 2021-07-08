@@ -2,7 +2,7 @@
 title: HScan Redux
 author: pdp
 date: Fri, 23 Feb 2007 12:28:43 GMT
-template: post.jade
+template: post.pug
 ---
 
 Inspired by [Michal Zalewski](http://lcamtuf.coredump.cx/)'s recent Firefox bug hunt, I decided to give it a go and see what I can come up with. We all know how vulnerable Firefox and other browsers are. This is the reason why I am not particularly interested in finding specific browser bugs.

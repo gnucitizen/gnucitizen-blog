@@ -2,7 +2,7 @@
 title: Social Networks Mayhem
 author: pdp
 date: Mon, 30 Apr 2007 14:27:20 GMT
-template: post.jade
+template: post.pug
 ---
 
 Recently I stumbled upon the following video. It is nothing but an example of what we, as security professionals, are up against. You see, web application security nearly affects everybody.

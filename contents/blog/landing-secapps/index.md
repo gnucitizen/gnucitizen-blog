@@ -2,7 +2,7 @@
 title: Landing Secapps
 author: pdp
 date: Mon, 29 Sep 2008 19:08:09 GMT
-template: post.jade
+template: post.pug
 ---
 
 A couple of months ago we started sorting out through all our work. In the processes we realized that we have to find a new home for several of our projects. It was a tough decision because we had a lot of projects on our hands and there were even more pending to be completed in some fashion. Nevertheless, we decided to go with the plan. So, the idea of [Secapps](http://www.secapps.com) was born.

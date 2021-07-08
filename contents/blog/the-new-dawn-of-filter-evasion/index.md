@@ -2,7 +2,7 @@
 title: The New Dawn Of Filter Evasion
 author: mario-heiderich
 date: Fri, 13 Jul 2007 06:57:16 GMT
-template: post.jade
+template: post.pug
 ---
 
 This article is about the most important phase when attacking web applications. The phase when the markup has just been broken and the attacker will try to inject his own markup, script code or other data - let's call it the PMBP (post-markup-breaking-phase). This phase is mostly possible to occur when quotes aren't correctly sanitized or when input is placed between two tags. In this article we will set the focus on the first variant - the attribute injection. And we will prove that protecting your markup from being broke into is the very most important task in client side security.

@@ -2,7 +2,7 @@
 title: ZombieMap
 author: pdp
 date: Wed, 21 Mar 2007 11:57:38 GMT
-template: post.jade
+template: post.pug
 ---
 
 ZombieMap is an AJAX application that you can use to locate Zombies hooked on a XSS proxy. If you XSS someone and you attach it ZombieMap, their GEO location will magically appear. The project does not have any other merit apart from being fun.

@@ -2,7 +2,7 @@
 title: IE Pwns SecondLife
 author: pdp
 date: Sun, 16 Sep 2007 10:37:53 GMT
-template: post.jade
+template: post.pug
 category: fucked
 ---
 

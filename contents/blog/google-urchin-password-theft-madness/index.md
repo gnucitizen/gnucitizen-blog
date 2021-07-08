@@ -2,7 +2,7 @@
 title: Google Urchin Password Theft Madness
 author: pagvac
 date: Mon, 24 Sep 2007 14:14:49 GMT
-template: post.jade
+template: post.pug
 category: fucked
 ---
 

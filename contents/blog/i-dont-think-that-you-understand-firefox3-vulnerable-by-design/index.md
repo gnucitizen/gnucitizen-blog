@@ -2,7 +2,7 @@
 title: I don't think that you understand! - Firefox3 Vulnerable by Design
 author: pdp
 date: Sat, 25 Aug 2007 19:35:40 GMT
-template: post.jade
+template: post.pug
 ---
 
 I was going to through the latest entries in my feed reader, when I stumbled upon [Mozilla Aims At Cross-Site Scripting With FF3](http://www.internetnews.com/security/article.php/3695731). "Wow, this is interesting." So I clicked on the link and started reading. The more I read the more I knew it was a big screw up from the start.

@@ -2,7 +2,7 @@
 title: Hacking Linksys IP Cameras (pt 1)
 author: pagvac
 date: Mon, 20 Apr 2009 07:40:35 GMT
-template: post.jade
+template: post.pug
 category: fucked
 ---
 

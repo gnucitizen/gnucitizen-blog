@@ -2,7 +2,7 @@
 title: How To Write AJAX Worms - Theoretical Point Of View
 author: pdp
 date: Sun, 07 Jan 2007 14:26:26 GMT
-template: post.jade
+template: post.pug
 ---
 
 Over the last year the world has experienced some quite disturbing facts about the so called WEB 2.0.  It is all fragile! MySpace was pretty much the most targeted platform among phishers, scammers, spammers and virus writer, but there were also Google, Yahoo and Youtube who had similar issues.

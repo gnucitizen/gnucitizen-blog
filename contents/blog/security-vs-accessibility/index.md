@@ -2,7 +2,7 @@
 title: Security vs. Accessibility
 author: pdp
 date: Sat, 26 Aug 2006 01:19:27 GMT
-template: post.jade
+template: post.pug
 ---
 
 A lot of [noise](http://digg.com/security/A_CSS_Hack_to_steal_your_browser_history_in_Firefox) has been generated around the [CSS History Hack](/blog/javascript-visited-link-scanner). Some people are skeptical about it and think that it can be fixed by installing the latest Firefox version. Others believe that IE is not effected. Unfortunately both groups are wrong.

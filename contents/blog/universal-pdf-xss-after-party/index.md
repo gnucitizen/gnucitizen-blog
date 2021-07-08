@@ -2,7 +2,7 @@
 title: Universal PDF XSS After Party
 author: pdp
 date: Thu, 04 Jan 2007 12:14:52 GMT
-template: post.jade
+template: post.pug
 ---
 
 > Everybody [knows](/blog/danger-danger-danger) about it. Everybody [talks](http://www.webappsec.org/lists/websecurity/archive/2007-01/msg00005.html) about it. We had a nice party. It is time for estimating the damages. In this article I will try to show the impact of the Universal PDF XSS vulnerability by explaining how it can be used in real life situations.

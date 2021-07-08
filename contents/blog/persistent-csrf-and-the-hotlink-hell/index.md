@@ -2,7 +2,7 @@
 title: Persistent CSRF and The Hotlink Hell
 author: pdp
 date: Mon, 16 Apr 2007 15:04:34 GMT
-template: post.jade
+template: post.pug
 ---
 
 When we talk about CSRF we often assume that there is one kind only. After all, what else is in there when CSRF is all about making GET or POST requests on behalf of the victim? The victim needs to visit a page which launches the CSRF exploit. If the victim happens to have an established session with the exploited application, the attacker can perform the desired action like resetting the login credentials, for example.

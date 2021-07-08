@@ -2,7 +2,7 @@
 title: Firebug Goes Evil
 author: pdp
 date: Wed, 04 Apr 2007 19:12:38 GMT
-template: post.jade
+template: post.pug
 ---
 
 Firebug is a very powerful JavaScript debugger for Firefox. "I love it!" It has tones of useful features like a dynamic console, DOM tree explorer, CSS viewer/editor, script explorer and my favorite, a network monitor where I can see all Flash, XMLHttpRequest, JS and Image requests.

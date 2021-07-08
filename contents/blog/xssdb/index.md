@@ -2,7 +2,7 @@
 title: XSSDB
 author: pdp
 date: Sun, 24 Sep 2006 02:55:35 GMT
-template: post.jade
+template: post.pug
 ---
 
 XSSDB provides an intelligent way for browsing and learning about different [Cross-site scripting (XSS)](http://en.wikipedia.org/wiki/XSS) attack vectors. The database itself is built upon [RSnake's Cross-site Scripting Cheat Sheet](http://ha.ckers.org/xss.html) which is one of the most accurate resources for Cross-site Scripting attacks up to date.

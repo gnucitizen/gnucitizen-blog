@@ -2,7 +2,7 @@
 title: Airport Kiosks Security
 author: pdp
 date: Sat, 24 Nov 2007 22:05:39 GMT
-template: post.jade
+template: post.pug
 ---
 
 I had to change at Dublin from London for San Francisco and then San Jose when I was going for the [OWASP USA event](/blog/owasp-usa-2007-appsec-conference). My flight was early in the morning so I needed to give myself a slack of a couple of hours so that I feel safe that I wont miss the joy of the long and rather exhausting flight. So, having about 3 hours to waste, I decided to go around and see if there is anything interesting to do inside the terminal. Keep in mind that it was like 4am GMT.

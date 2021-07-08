@@ -2,7 +2,7 @@
 title: Browser Focus RIP
 author: pdp
 date: Mon, 12 Feb 2007 23:59:32 GMT
-template: post.jade
+template: post.pug
 ---
 
 There was a [discussion](http://seclists.org/fulldisclosure/2007/Feb/0226.html) on Full-disclosure and Bugtraq about a very peculiar vulnerability in Internet Explorer and Mozilla Firefox which can be used by attackers to trick victims into uploading local files.

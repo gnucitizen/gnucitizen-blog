@@ -2,7 +2,7 @@
 title: Social Networks Evil Twin Attacks
 author: pdp
 date: Mon, 18 Feb 2008 21:01:42 GMT
-template: post.jade
+template: post.pug
 ---
 
 What will happen if someone impersonates you on a social network? Will that person be able to fool your friends and as such gain access to resources, which only you are entitled to?... or are social network protected enough to guarantee the credibility of the social participants.

@@ -2,7 +2,7 @@
 title: Facebook Homepage Source Code Probably Leaked
 author: pdp
 date: Sun, 12 Aug 2007 08:13:28 GMT
-template: post.jade
+template: post.pug
 ---
 
 It seams that Facebook's Homepage Source code was leaked. This is yet to be confirmed by Facebook themselves so do not take it for real.

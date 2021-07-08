@@ -2,7 +2,7 @@
 title: XSS Attacks Book Preview
 author: pdp
 date: Wed, 25 Apr 2007 10:20:26 GMT
-template: post.jade
+template: post.pug
 ---
 
 If you haven't heard from [RSnake](http://ha.ckers.org/blog/20070423/xss-book-preview)'s or [JG](http://jeremiahgrossman.blogspot.com/)'s blogs yet, the long awaited **XSS Attacks** book will be out very soon and here I have the chance to present you with the way the cover will look like in addition to the TOC and a sample chapter. I hope that you find it useful. We've put a lot of effort into making this book possible. It is a quite good technical read so give it a try.

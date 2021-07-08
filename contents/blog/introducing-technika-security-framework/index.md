@@ -2,7 +2,7 @@
 title: Introducing Technika Security Framework
 author: david-kierznowski
 date: Thu, 02 Aug 2007 09:10:58 GMT
-template: post.jade
+template: post.pug
 ---
 
 [Technika is a Firefox plugin](/blog/technika/) that [myself](http://gnucitizen.org/about/dk) and [pdp](http://gnucitizen.org/about/pdp) was toying with some months back. The original idea behind this project was to provide independent self-contained security tools based on JavaScript which can be loaded and executed from the browser. TS Framework v1.0 is almost ready for release.

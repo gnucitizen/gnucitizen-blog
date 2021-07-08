@@ -2,7 +2,7 @@
 title: DANGER, DANGER, DANGER
 author: pdp
 date: Wed, 03 Jan 2007 01:10:32 GMT
-template: post.jade
+template: post.pug
 category: fucked
 ---
 

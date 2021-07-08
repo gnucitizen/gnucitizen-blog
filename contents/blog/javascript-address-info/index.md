@@ -2,7 +2,7 @@
 title: JavaScript Address Info
 author: pdp
 date: Sat, 12 Aug 2006 08:26:47 GMT
-template: post.jade
+template: post.pug
 category: fucked
 ---
 

@@ -2,7 +2,7 @@
 title: Backframe 2.x Sneak Preview
 author: pdp
 date: Wed, 13 Dec 2006 08:42:08 GMT
-template: post.jade
+template: post.pug
 ---
 
 Backframe 2.x is coming nicely. [Here](/files/2006/12/backframe-2-preview.swf) is a sneak preview of what it will be like. The video is SWF (Flash) and there is no preloader so you have to wait for a bit without knowing what is going on. I guess that will change in the future. For now you can use the Flash player built-in features to Zoom In and Drag to get the best possible experience/video quality.

@@ -2,7 +2,7 @@
 title: Stuxnet
 author: pdp
 date: Mon, 13 Jun 2011 15:21:37 GMT
-template: post.jade
+template: post.pug
 ---
 
 I have been avoiding the topic about Stuxnet for quite some time, mainly because there were many others who spent the time to take the virus apart. However, here is a video, which I find rather amusing:

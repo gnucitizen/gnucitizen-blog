@@ -2,7 +2,7 @@
 title: Backdooring QuickTime Movies
 author: pdp
 date: Tue, 05 Sep 2006 22:51:33 GMT
-template: post.jade
+template: post.pug
 category: fucked
 ---
 

@@ -2,7 +2,7 @@
 title: Darknets
 author: pdp
 date: Fri, 04 Apr 2008 08:44:00 GMT
-template: post.jade
+template: post.pug
 ---
 
 > A darknet is a private virtual network where users connect only to people they trust. In its most general meaning, a darknet can be any type of closed, private group of people communicating, but the name is most often used specifically for file sharing networks. "The darknet" can be used to refer collectively to all covert communication networks". However, in the information security field, this term has a slightly different meaning.

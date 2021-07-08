@@ -2,7 +2,7 @@
 title: Interview With XS-Snipers
 author: mario-heiderich
 date: Fri, 27 Jul 2007 14:59:24 GMT
-template: post.jade
+template: post.pug
 ---
 
 > Here's some Q&A from some of the researchers of the [exploit issues](/blog/u-r-insecure-how-URI-exploits-are-changing-the-webappsec-landscape) I recently had a phone conference with - thanks for the time and the quality talk, Billy and Nate.

@@ -2,7 +2,7 @@
 title: VBScript to Rule IE
 author: pdp
 date: Fri, 16 Mar 2007 10:36:09 GMT
-template: post.jade
+template: post.pug
 ---
 
 SANS have published a [report](http://isc.sans.org/diary.html?storyid=2397) on VBScript malware and related things. The report was [mentioned](http://ha.ckers.org/blog/20070315/javascript-xss-is-conduit-for-viruses/)  on ha.ckers.org which was followed by a small [discussion](http://ha.ckers.org/blog/20070315/javascript-xss-is-conduit-for-viruses/#comments) on various ways of injecting VBScript, executing statements, etc.

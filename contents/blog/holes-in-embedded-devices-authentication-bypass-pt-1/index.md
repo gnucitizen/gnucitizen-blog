@@ -2,7 +2,7 @@
 title: Holes In Embedded Devices Authentication Bypass (pt 1)
 author: pagvac
 date: Thu, 14 Feb 2008 12:13:33 GMT
-template: post.jade
+template: post.pug
 ---
 
 Finding authentication bypass bugs is an obvious choice for attackers, since such bugs allow administrative changes to be made without knowledge of the admin password. In other words, compromising the target device without requiring a password is of course something attackers are interested in! You bet!

@@ -2,7 +2,7 @@
 title: Hacking without 0days Drive-by Java
 author: pdp
 date: Thu, 25 Oct 2007 16:13:36 GMT
-template: post.jade
+template: post.pug
 ---
 
 From [Wikipedia](http://en.wikipedia.org/wiki/Drive-by_download), the free encyclopedia, drive-by download is: "Download of spyware, a computer virus or any kind of malware that happens without knowledge of the user. Drive-by downloads may happen by visiting a website, viewing an e-mail message or by clicking on a deceptive popup window: the user clicks on the window in the mistaken belief that, for instance, it is an error report from his own PC or that it is an innocuous advertisement popup; in such cases, the "supplier" may claim that the user "consented" to the download though he was completely unaware of having initiated a malicious software download". "So what is this then?"

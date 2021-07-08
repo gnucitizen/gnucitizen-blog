@@ -2,7 +2,7 @@
 title: The Attack of the TINY URLs
 author: pdp
 date: Thu, 16 Nov 2006 02:41:30 GMT
-template: post.jade
+template: post.pug
 ---
 
 _Just for fun I recently shrank a few URLs with the infamous [tinyurl.com](http://tinyurl.com). Well, it worked. After submitting the URL in question, I had around 26 characters long string which was perfect for the job._

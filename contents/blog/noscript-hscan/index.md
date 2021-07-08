@@ -2,7 +2,7 @@
 title: Noscript HScan
 author: pdp
 date: Wed, 28 Feb 2007 22:57:00 GMT
-template: post.jade
+template: post.pug
 category: fucked
 ---
 

@@ -2,7 +2,7 @@
 title: Backdooring Images
 author: pdp
 date: Fri, 15 Dec 2006 04:57:22 GMT
-template: post.jade
+template: post.pug
 ---
 
 > An offensive move where a player cuts behind the defenders and receives a pass for a field-goal attempt. [basketball-betting-college](http://www.google.com.my/url?sa=X&start=5&oi=define&q=http://www.basketball-betting-college.com/basketball_betting_terms.htm&usg=__hUeTqOjYgeES_AHDR_XwZ_vZ9tw=)

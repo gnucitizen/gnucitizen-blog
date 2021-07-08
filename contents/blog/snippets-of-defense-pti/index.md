@@ -2,7 +2,7 @@
 title: Snippets Of Defense Pt.I
 author: mario-heiderich
 date: Sun, 07 Oct 2007 12:17:48 GMT
-template: post.jade
+template: post.pug
 ---
 
 This article is the start of a series of posts about small and easy to understand code fragments you can use on your site for protection against certain kinds of attacks. Also this series is targeted to help you understand better what tricks are used by attackers to break your site and how to avert this. If you have a Snippet of defense yourself and want to share it feel free to [contact us](http://www.gnucitizen.org/contact).

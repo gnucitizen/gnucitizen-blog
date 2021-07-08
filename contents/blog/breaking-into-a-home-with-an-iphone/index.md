@@ -2,7 +2,7 @@
 title: Breaking Into a Home With an iPhone
 author: pdp
 date: Mon, 11 May 2009 11:27:16 GMT
-template: post.jade
+template: post.pug
 ---
 
 This is going to be one of these quick posts which just makes you think what the information security landscape will be like in 5 years. Before I move on with my commentary, here is a video which is essential for you to watch.

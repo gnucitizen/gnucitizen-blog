@@ -2,7 +2,7 @@
 title: Kiosk Hacking When there is nothing else left
 author: pdp
 date: Mon, 07 Apr 2008 10:31:15 GMT
-template: post.jade
+template: post.pug
 ---
 
 I often end up breaking through the least interesting systems. If you ask AP, a password-cracking ninja and master of hacking through simplicity, the leass interesting the system is, the higher the chances to be insecure. A successful exploitation of these systems often leads to successful exploitation of the network and other adjacent systems. This post will concentrate on some theory and practicalities around what to do when penetration testing Kiosks when nothing else is left.

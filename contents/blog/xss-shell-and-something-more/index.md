@@ -2,7 +2,7 @@
 title: XSS Shell and Something More
 author: pdp
 date: Sat, 04 Nov 2006 08:15:22 GMT
-template: post.jade
+template: post.pug
 ---
 
 [Ferruh Mavituna](http://ferruh.mavituna.com/) has released quite intriguing project called [XSS Shell](http://ferruh.mavituna.com/article/?1338). Conceptually XSS Shell is a persistent bi-directional channel that is controlled by a administrative console and can be hooked on any XSS hole; just like [Backweb](http://www.gnucitizen.org/backweb), [XSS Proxy](http://xss-proxy.sourceforge.net/) and [BEEF](http://www.bindshell.net/tools/beef). with this channel attackers are able to do some quite nasty stuff, like accessing your clipboard (IE only), use your machine to get into your local network, use your network resources to DDoS someone, etc.

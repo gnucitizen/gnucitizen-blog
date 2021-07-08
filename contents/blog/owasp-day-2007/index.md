@@ -2,7 +2,7 @@
 title: OWASP Day 2007
 author: pdp
 date: Sun, 09 Sep 2007 09:36:32 GMT
-template: post.jade
+template: post.pug
 ---
 
 Several people asked for the OWASP slides for both presentations, [dk's](/files/2007/09/dwk-owasp-day-september-2007.pdf) and [mine](/files/2007/09/pdp-owasp-day-september-2007.pdf), so here they are. Have fun.

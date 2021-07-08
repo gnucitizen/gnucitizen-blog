@@ -2,7 +2,7 @@
 title: Hijacking OpenID Enabled Accounts
 author: pdp
 date: Sun, 03 Feb 2008 16:08:49 GMT
-template: post.jade
+template: post.pug
 ---
 
 It has been a long time since I last [spoke](/blog/openid-a-security-story) about OpenID. Today I would like to draw your attention to a tiny problem, which I found among several OpenID solutions. The problem is indeed tiny but the overall outcome is concerning.

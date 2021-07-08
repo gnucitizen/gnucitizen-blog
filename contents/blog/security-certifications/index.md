@@ -2,7 +2,7 @@
 title: Security Certifications
 author: pdp
 date: Mon, 06 Oct 2008 16:33:37 GMT
-template: post.jade
+template: post.pug
 ---
 
 Security Certifications - should you get some? Well, this is what I think.

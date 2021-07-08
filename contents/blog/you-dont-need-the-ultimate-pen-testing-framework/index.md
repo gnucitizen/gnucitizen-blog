@@ -2,7 +2,7 @@
 title: You Don't Need the Ultimate Pen-testing Framework!
 author: pdp
 date: Mon, 23 Feb 2009 12:50:02 GMT
-template: post.jade
+template: post.pug
 ---
 
 You've already got it! It is laying on your PC and it is called the "shell". The shell was designed to start/strop and control process with ease so why do we need yet another universal pen-testing framework, which does what another tool is already doing for us and it comes by default? In this post we are going to delve in the world of advanced shell programming for penetration testing purposes.

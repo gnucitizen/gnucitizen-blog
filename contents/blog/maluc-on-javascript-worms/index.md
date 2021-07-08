@@ -2,7 +2,7 @@
 title: Maluc on JavaScript Worms
 author: pdp
 date: Tue, 10 Oct 2006 01:51:16 GMT
-template: post.jade
+template: post.pug
 ---
 
 > This is the story so far: A couple of days ago I published the JavaScript SPIDER [here](/blog/javascript-spider). Than [John Resig](http://ejohn.org), a developer with some cool AJAX projects, notably jQuery, on his belt [claimed](/blog/javascript-spider#comment-209) that this is not a problem at all, misunderstanding the subject. Than maluc (I don't think I know him personally), backed me up with [this comment](/blog/javascript-spider#comment-224). Today I followed John's blog and I found [maluc's personal respond](http://ejohn.org/blog/javascript-spider#comment-15904) on the matter. I really like the summary that he made, so I decided to put it here. To remove the personal bit from his respond I replaced each "you" with "developers".

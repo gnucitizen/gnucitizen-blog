@@ -2,7 +2,7 @@
 title: Web Mayhem Firefox's JAR Protocol issues
 author: pdp
 date: Wed, 07 Nov 2007 00:51:46 GMT
-template: post.jade
+template: post.pug
 ---
 
 One of the things that we enjoy the most, here at GNUCITIZEN, is finding issues in features. Unlike bugs, insecure features tend to be more severe and usually last longer due to uneasy and rather long decision making process on whether the feature should be continued or discontinued once and for all. In my previous post I [outlined](/blog/bugs-in-the-browser-firefoxs-data-url-scheme-vulnerability) some of my concerns about the `data:` protocol. Today, I would like to draw your attention on the insecurities that come with my personal favorite: `jar:`.

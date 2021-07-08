@@ -2,7 +2,7 @@
 title: Network Communication API Editor's Draft
 author: pdp
 date: Fri, 23 Nov 2007 11:42:56 GMT
-template: post.jade
+template: post.pug
 ---
 
 > To enable Web applications to communicate using TCP this specification introduces the TCPSocket interface and a corresponding optional security model.

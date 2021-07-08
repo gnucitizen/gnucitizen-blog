@@ -2,7 +2,7 @@
 title: Most Attractive Targets SaaS
 author: pdp
 date: Wed, 18 Jun 2008 10:42:40 GMT
-template: post.jade
+template: post.pug
 ---
 
 "SaaS" stands for "Software as a Service", which is the new hot topic on the market. It is so hot, it radiates light. Of course all vendors are jumping into the SaaS bandwagon, and for a reason. The usual benefits/reasons that are given to new clients are: _**01** There is no upfront cost involved._, _**02** There is no admin and setup overhead._, _**03** In the long term it costs less._, _**04** And it scales quite well (patching, bug fixes and machine power are instant)._

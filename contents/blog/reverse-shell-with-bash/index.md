@@ -2,7 +2,7 @@
 title: Reverse Shell with Bash
 author: pdp
 date: Sat, 19 Apr 2008 11:03:39 GMT
-template: post.jade
+template: post.pug
 ---
 
 I am stuck at the Dubai International Airport and I have nothing else interesting to do. So, I though I might share a simple technique which will go into the [Agile Hacking](/blog/agile-hacking/) project. Here I will show you how to create a reverse command shell without using any 3rd-party tools such as the all mighty netcat.

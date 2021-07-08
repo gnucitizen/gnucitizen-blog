@@ -2,7 +2,7 @@
 title: OWASP Europe 2008 Ghent
 author: pdp
 date: Sat, 21 Jun 2008 09:40:56 GMT
-template: post.jade
+template: post.pug
 ---
 
 This [year's OWASP Europe](http://www.owasp.org/index.php/OWASP_AppSec_Europe_2008_-_Belgium) event was based in Ghent, Belgium. I had to take an early train from London to Brussels, which is by the way dead easy from where I live. As usual the event was excellent.

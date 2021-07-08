@@ -2,7 +2,7 @@
 title: Google.py
 author: pdp
 date: Sat, 22 Dec 2007 08:29:35 GMT
-template: post.jade
+template: post.pug
 category: fucked
 ---
 

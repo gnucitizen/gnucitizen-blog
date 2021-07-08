@@ -2,7 +2,7 @@
 title: Preventing CSRF
 author: pdp
 date: Fri, 30 Mar 2007 10:12:43 GMT
-template: post.jade
+template: post.pug
 ---
 
 During the last couple of months a lot has been said about Cross-site request forgeries and how to prevent them. Before presenting my approach of dealing with this type of attacks, let's have a look on what Cross-site request forgeries are, for one more time.

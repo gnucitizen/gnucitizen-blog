@@ -2,7 +2,7 @@
 title: Agile Hacking
 author: pdp
 date: Mon, 17 Mar 2008 18:57:40 GMT
-template: post.jade
+template: post.pug
 ---
 
 > Help us create the best hacking reference/manual/book ever made. We provide the scene, the resources and the money, and you keep the credits and the control over the eventual profits. Read on.

@@ -2,7 +2,7 @@
 title: JavaScript XSS Scanner
 author: pdp
 date: Mon, 16 Jul 2007 19:13:04 GMT
-template: post.jade
+template: post.pug
 category: fucked
 ---
 

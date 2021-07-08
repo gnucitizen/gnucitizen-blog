@@ -2,7 +2,7 @@
 title: JavaScript Attack Channel
 author: pdp
 date: Mon, 02 Oct 2006 04:14:57 GMT
-template: post.jade
+template: post.pug
 ---
 
 The JavaScript Attack Channel/Proxy is a simple message queuing and routing application that was designed for demonstration purposes only. The channel can be used to control maliciously infected web content the same way "[Back Orifice](http://www.cultdeadcow.com/tools/bo.html)" and "[Sub7](http://en.wikipedia.org/wiki/Sub7)" are used to control trojaned PCs.

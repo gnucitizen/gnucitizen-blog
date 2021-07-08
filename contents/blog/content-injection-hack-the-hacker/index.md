@@ -2,7 +2,7 @@
 title: Content Injection - Hack the Hacker
 author: david-kierznowski
 date: Fri, 11 Apr 2008 13:52:19 GMT
-template: post.jade
+template: post.pug
 category: fucked
 ---
 

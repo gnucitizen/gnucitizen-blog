@@ -2,7 +2,7 @@
 title: Messing With Web Filtering Gateways
 author: pagvac
 date: Wed, 14 Jan 2009 17:49:26 GMT
-template: post.jade
+template: post.pug
 category: fucked
 ---
 

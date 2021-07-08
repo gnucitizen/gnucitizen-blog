@@ -2,7 +2,7 @@
 title: Thoughts on JSPing
 author: pdp
 date: Mon, 09 Oct 2006 07:46:42 GMT
-template: post.jade
+template: post.pug
 ---
 
 Couple of days ago I had a really good discussion with [David K.](http://michaeldaw.org/) on his [JSPing tool](http://michaeldaw.org/projects/jswebping/) just before he released it. David, who is running Michael Daw's blog has been recently working on some cool projects and JSPing seams to be one of them. This project inspired me to do an extension of his tool and include the implementation into [AttackAPI](/blog/attackapi) 0.8 release which will be out very soon.

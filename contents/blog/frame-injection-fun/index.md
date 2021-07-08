@@ -2,7 +2,7 @@
 title: Frame Injection Fun
 author: pagvac
 date: Fri, 10 Oct 2008 00:01:28 GMT
-template: post.jade
+template: post.pug
 category: fucked
 ---
 

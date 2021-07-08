@@ -3,7 +3,7 @@ title: Secure Code Through Frameworks
 author: pdp
 guest: jeremiah-grossman
 date: Fri, 22 Dec 2006 18:32:49 GMT
-template: post.jade
+template: post.pug
 ---
 
 > This month our guest blogger is [Jeremiah Grossman](http://jeremiahgrossman.blogspot.com), founder and chief technology officer of [WhiteHat Security](http://www.whitehatsec.com). Jeremiah has been a frequent speaker at industry events including the BlackHat Briefings, ISACA's Networks Security Conference, NASA, ISSA and Defcon. In this post Jeremiah is sharing his insights on the problem of secure coding with frameworks.

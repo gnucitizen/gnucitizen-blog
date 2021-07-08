@@ -2,7 +2,7 @@
 title: Audio From Black Hat USA 2008
 author: pdp
 date: Wed, 17 Sep 2008 09:50:16 GMT
-template: post.jade
+template: post.pug
 ---
 
 We've got some audio from the past Black Hat conference I've already talked about over [here](/blog/my-bh-las-vegas-slides/) and [here](/blog/my-black-hat-talk/).

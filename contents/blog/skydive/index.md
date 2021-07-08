@@ -2,7 +2,7 @@
 title: Skydive
 author: pdp
 date: Mon, 07 Sep 2009 19:12:26 GMT
-template: post.jade
+template: post.pug
 ---
 
 What is the best way to spend a quiet, weekend afternoon? - Jump off a perfectly working plane while 10,000 feet in the air.

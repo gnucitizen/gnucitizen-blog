@@ -2,7 +2,7 @@
 title: Automated Web Foo or Fud!
 author: david-kierznowski
 date: Fri, 03 Aug 2007 22:00:04 GMT
-template: post.jade
+template: post.pug
 ---
 
 Jeremiah is the most outspoken that I have seen regarding the effectives of automated web application tools. His recent post, [Are web application scanners ***ing useless?](http://jeremiahgrossman.blogspot.com/2007/07/are-web-application-scanners-ing.html), almost sounds frustrated. While developing the initial version of the [Technika Security Framework](/blog/introducing-technika-security-framework), I have really had a chance to think about this, which I haven't done since an OWASP presentation I attended 2-3 years ago, anyone have the link for this?

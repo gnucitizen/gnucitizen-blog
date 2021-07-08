@@ -2,7 +2,7 @@
 title: Holes In Embedded Devices - Desynchronized Service Accting As Backdoor
 author: pagvac
 date: Wed, 06 Feb 2008 11:04:08 GMT
-template: post.jade
+template: post.pug
 ---
 
 Embedded devices usually offer different types of services or interfaces so they can be configured by administrators remotely either from the Internet or over the LAN. Some of the most common examples include Telnet, FTP, SSH, HTTP (web console), HTTPS and SNMP.

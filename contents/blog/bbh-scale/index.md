@@ -2,7 +2,7 @@
 title: BBH Scale
 author: pdp
 date: Tue, 9 Jul 2019 16:38:00 GMT
-template: post.jade
+template: post.pug
 ---
 
 Here is a short tutorial on how to search when you do BBH. Now, you can do a lot of unix pipes and grep/ripgrep and so on but if you want to get a scale you might want to look into elasticsearch. #bugbountytips Here are a couple of commands to get you started:

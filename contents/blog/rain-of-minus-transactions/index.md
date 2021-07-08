@@ -2,7 +2,7 @@
 title: Rain Of -MINUS Transactions
 author: pagvac
 date: Tue, 11 Sep 2007 11:43:15 GMT
-template: post.jade
+template: post.pug
 ---
 
 In this post, I will describe a type of attack that I have never tested in real life. Of course, this doesn't mean it can't work against a real environment. In fact, it is my suspicion that many online merchants are susceptible to this type of attack. I once discussed the attack described in this post with one of the main technical contacts from a large UK online retailer who thought that the attack might work against certain setups.

@@ -2,7 +2,7 @@
 title: Backdooring Flash Objects (the walkthrough)
 author: pdp
 date: Mon, 04 Sep 2006 19:07:37 GMT
-template: post.jade
+template: post.pug
 category: fucked
 ---
 

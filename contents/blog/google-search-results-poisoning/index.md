@@ -2,7 +2,7 @@
 title: Google Search Results Poisoning
 author: pdp
 date: Tue, 16 Jan 2007 09:31:13 GMT
-template: post.jade
+template: post.pug
 category: fucked
 ---
 

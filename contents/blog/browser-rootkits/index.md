@@ -2,7 +2,7 @@
 title: Browser Rootkits
 author: pdp
 date: Tue, 16 Oct 2007 10:41:12 GMT
-template: post.jade
+template: post.pug
 ---
 
 One of the big stories that hit the security field in the last couple of months, was the debate whether virtualization-based malware can be detected or are they 100% invisible to the systems they infect. Joanna Rutkowska, the researcher behind the [Blue Pill rootkit](http://bluepillproject.org/) and the whole **ghost in the system** movement, has done some amazing work on this subject, which is greatly appreciated, although I would have taken the research into a completely different direction - **browser rootkits**.
