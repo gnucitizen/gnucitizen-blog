@@ -12,6 +12,9 @@ body {
   max-width: 640px;
   margin: 100px auto 100px auto;
 }
+h1 {
+  line-height: 1.5em;
+}
 pre {
   background-color: #000000;
   color: #cccccc;
