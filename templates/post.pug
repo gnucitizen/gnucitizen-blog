@@ -21,7 +21,13 @@ block content
     block post-title
         h1.title=page.title
         div.date=page.metadata.date
-        div.author='by ' + page.metadata.author
+        div.author
+            | by
+            |
+            if contents.members[page.metadata.author + '.md']
+                a(href=contents.members[page.metadata.author + '.md'].getUrl())=page.metadata.author
+            else
+                =page.metadata.author
 
     //- --
 

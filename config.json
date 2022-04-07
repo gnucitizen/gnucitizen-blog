@@ -4,7 +4,6 @@
 
     "topNav": {
       "Home": "/",
-      "Blog": "/blog/",
       "Projects": "/projects.html",
       "Files": "/files",
       "About": "/about.html"

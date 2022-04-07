@@ -5,22 +5,6 @@ template: page.pug
 
 # Projects
 
-## [SecApps](https://secapps.com)
-
-SecApps is a cloud environment for security tools and services. SecApps was originally conceived as a web security toolkit that ran directly on top of web browsers, leveraging a browser extension. SecApps is a mature security testing platform that customers can use for security monitoring, testing, bug bounty hunting, and more.
-
-SecApps is under Websecurify's management.
-
-## [Cohesion](https://cohesion.sh)
-
-Cohesion is a web application testing technology for continuous integration pipelines. Cohesion comes with many tools packed together to support everyday security testing tasks such as web security scanning, API fuzz testing, content discovery, and more.
-
-Cohesion is under Websecurify's management.
-
-## [Websecurify](https://websecurify.com)
-
-Websecurify is an application security company based in London. Websecurify was initially founded to support the Websecurify automated security scanner, which was open source. Due to lack of contributions, the desktop scanner was canceled and morphed into [SecApps](https://secapps.com).
-
 ## [PownJs](https://pownjs.com/)
 
 Pown.js is an experimental security framework for node. It aims to be security driven with contributions via NPM package registry. The project is currently in its infancy.
