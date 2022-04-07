@@ -1,4 +1,249 @@
-<?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xml:base="https://www.gnucitizen.org" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><atom:link href="https://www.gnucitizen.org/feed.xml" rel="self" type="application/rss+xml"></atom:link><title></title><description></description><link>https://www.gnucitizen.org/feed.xml</link><pubDate>Mon, 26 Apr 2021 15:10:45 GMT</pubDate><language>en</language><item><title>Hacking with ML</title><link>https://www.gnucitizen.org/blog/hacking-with-ml/</link><pubDate>Mon, 26 Apr 2021 15:10:45 GMT</pubDate><guid isPermaLink="true">https://www.gnucitizen.org/blog/hacking-with-ml/</guid><dc:creator>pdp</dc:creator><description><![CDATA[
+<?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xml:base="https://www.gnucitizen.org" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><atom:link href="https://www.gnucitizen.org/feed.xml" rel="self" type="application/rss+xml"></atom:link><title></title><description></description><link>https://www.gnucitizen.org/feed.xml</link><pubDate>Thu, 07 Apr 2022 14:13:00 GMT</pubDate><language>en</language><item><title>Mental Models</title><link>https://www.gnucitizen.org/blog/mental-models/</link><pubDate>Thu, 07 Apr 2022 14:13:00 GMT</pubDate><guid isPermaLink="true">https://www.gnucitizen.org/blog/mental-models/</guid><dc:creator>pdp</dc:creator><description><![CDATA[
+<p>This page contains my collection of mental models I use for decision-making, business, and life in general. Some models are more practical and, as such, can be applied to everyday situations. Others can be used for long-term decisions or to enjoy in a thought process.</p>
+<p>Keep in mind that one should never be stuck thinking with common frameworks like the ones provided here. You should use your judgment and adjust to your situations. It is also essential to understand that these mental models are meaningless unless you internalize them. Further reading and practice are required.</p>
+<h2 id="circle-of-competence">Circle of competence</h2>
+<p>Focus on what you know. Double down on your strengths, and do not obsess about your weaknesses.</p>
+<p>For example, Einstein might not be the best pick for a basketball team, but that does not mean he is worthless. His competence is elsewhere. Similarly, if you obsess about your weaknesses, you may never reach your true potential - what you are made for. If you don&#39;t know your strengths, it is worthwhile to meditate on this question and ask parents, siblings, and close friends for opinions if possible.</p>
+<h2 id="eisenhower-matrix">Eisenhower matrix</h2>
+<p>What is important is seldomly urgent. If you divide the problem space in a 2x2 matrix between Important, Urgent, Unimportant, and Not Urgent, you get the following outcomes:</p>
+<ul>
+<li>Important and Urgent - rare but requires immediate attention, however, these problems usually take care of themselves, i.e., once in motion, they will unfold regardless.</li>
+<li>Important and Not Urgent - focus on these but schedule/plan to do later</li>
+<li>Unimportant and Urgent - delegate to someone else to do</li>
+<li>Unimportant and Not Urgent - delete / ignore</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Urgent</th>
+<th>Not Urgent</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Important</td>
+<td>rare, takes care of itself</td>
+<td>focus / do</td>
+</tr>
+<tr>
+<td>Unimportant</td>
+<td>delgate</td>
+<td>delete / ignore</td>
+</tr>
+</tbody></table>
+<h2 id="10-10-10-rule">10/10/10 rule</h2>
+<p>This mental model is also known as the regret minimization framework, and it goes by asking the following questions:</p>
+<ul>
+<li>Are you going to regret this decision ten weeks from now</li>
+<li>Are you going to regret this decision ten months from now</li>
+<li>Are you going to regret this decision ten years from now</li>
+</ul>
+<p>You can use your timescale that fits your problem domain better.</p>
+<h2 id="the-rule-of-5">The rule of 5</h2>
+<p>You are the average of the five people you spend the most time with. Choose carefully who do you spend time with. Similarly, actively seek to spend time with people who will make you better. Don&#39;t leave this to chance. This is also why real education starts at home. Your kids will be influenced by who you are and what you do.</p>
+<h2 id="saying-no">Saying no</h2>
+<p>I like the way Derek Sivers puts it: &quot;It is either fuck yes, or no.&quot; It is a great mental model to do the right things in life. Steve Jobs defined it like this:</p>
+<blockquote>
+<p>People think focus means saying yes to the thing you&#39;ve got to focus on. But that&#39;s not what it means at all. It means saying no to the hundred other good ideas that there are. You have to pick carefully. I&#39;m actually as proud of the things we haven&#39;t done as the things I have done. Innovation is saying no to 1,000 things.</p>
+</blockquote>
+<h2 id="80-20-rule">80/20 rule</h2>
+<p>Being effective is not the same as being efficient. Often 80% of the result is achieved by 20% of the input. That is not to say that efficiency is not a good thing (we want highly efficient engines in our cars for a good reason), but sometimes you need to be effective. It would be best to decide under what situations this rule applies, but it can be used generically to describe a wide range of problems and solutions.</p>
+<h2 id="parkinson-s-law">Parkinson&#39;s law</h2>
+<p>All work expands to fill the time available for completion. This is why it is necessary to set more aggressive timelines to force the hand to focus on what is essential. Like the 80/20 rule, you should not use this mental model without thoughtful considerations. Sometimes attention to detail is necessary, in which case, while still applicable, the Parkinson&#39;s law is not an effective tool.</p>
+<h2 id="barbel-strategy">Barbel strategy</h2>
+<p>Avoid mediocracy. It is a strategy used in finance and trading, but we can use it for all kinds of situations in business and life. It boils down to that you either need to be hyper-aggressive or hyper-conservative. Hedge low risk and low return decisions with high risk with high returns objectives.</p>
+<p>For example, while light jogging is better than nothing, it does introduce the risk of injuries while providing a low return on investment. Instead, as Nasim Taleb puts it, combine easy walking (hyper-conservative) with lifting heavy objects (hyper-aggressive).</p>
+<h2 id="anti-fragile">Anti-fragile</h2>
+<p>Some things benefit from shocks. Sometimes resilience is the result of constant exposure to volatility and randomness. We should aim to build anti-fragile systems and processes.</p>
+<h2 id="via-negativa">Via negativa</h2>
+<p>Often problems can be solved not by addition but by elimination. Consider removing things, not adding more.</p>
+<h2 id="batching">Batching</h2>
+<p>Context switching contributes to most overhead at work. Batching eliminates the context switch by grouping similar tasks in a single block of focused time.</p>
+<p>Driving an analogy from technology, the more software runs on your computer, the more often the CPU needs to slice time for each program (context switch) to run, the slower the overall execution is.</p>
+<p>You can apply batching to work quite well. For example, I batch my email correspondence in two 30-minutes to 1-hour blocks of time per day.</p>
+<h2 id="luck">Luck</h2>
+<p>Luck is most likely to strike when you have more options. Simply put, the more tickets you have, the higher the chance to win the lottery. The more options you have, the higher the chance to get a lucky break. It is also fundamentally important to know when you are struck by luck so that you can either appreciate or take full advantage of the event.</p>
+<h2 id="no-pain-no-gain">No pain, no gain</h2>
+<p>Used mostly for fitness, the reality is that pain is a guide that tells us if we are doing things worth doing. Ray Dalio says that <code>pain + reflection = progress</code>, and I generally agree with him on that one.</p>
+<h2 id="optionality">Optionality</h2>
+<p>When many favorable options surround you, all decisions are equally good. Then your ability to make good decisions does not matter. Increase your options, not your ability to make good decisions.</p>
+<h2 id="algorithm">Algorithm</h2>
+<p>The algorithm is a process or set of rules to be followed in calculations or other problem-solving operations, especially by a computer. You can use algorithms outside of computer science, though. Once you spot a pattern, you can convert it into an algorithm that can be used by yourself and others to achieve consistent results over and over again.</p>
+<p>It is helpful to learn about functional programming and side effects to understand algorithms better.</p>
+<h2 id="happyness">Happyness</h2>
+<p>Happiness is a subjective matter, but without health, wealth, and being surrounded by people you like spending time with, it is unlikely one can be happy.</p>
+<p>Defining what health is is easy. Wealth, on the other hand, is a subjective matter. To be wealthy does not just mean having money. Having wealth is the ability to spend your time whichever way you wish comfortably, and money allows you to buy value which otherwise you need to buy with time. There are plenty of wealthy people worldwide who are not rich from the perspective of the western point of view but are happy nevertheless.</p>
+<p>Some common sources of unhappiness are popular media, social networks, and other online and offline realms. I try to stay away from them as much as I can.</p>
+<h2 id="money">Money</h2>
+<p>Money is a simple, unified system for exchanging value. People who hate money don&#39;t get it. It is essential to understand what money is and how it made the world a better place.</p>
+<h2 id="thinking-in-systems">Thinking in Systems</h2>
+<p>A system is a model that yields predictable output based on a specific input.</p>
+<p>Most people set goals that they fail to achieve. Instead of goals, one must build and execute systems. Systems help you achieve your goals by following a set of processes that maximize your chances.</p>
+<p>For example, losing weight as a goal does not work for many because it does not answer how you will go about it. But setting up a system that focuses on the correct physiological parameters will help you achieve the goal in due course.</p>
+
+]]></description></item><item><title>Links Digest 2021</title><link>https://www.gnucitizen.org/blog/books-digest-2021/</link><pubDate>Fri, 24 Dec 2021 14:13:00 GMT</pubDate><guid isPermaLink="true">https://www.gnucitizen.org/blog/books-digest-2021/</guid><dc:creator>pdp</dc:creator><description><![CDATA[
+<h2 id="what-i-am-currently-reading">What I am currently reading</h2>
+<p>The following is a list of books that I am currently reading. I like to read several books simultaneously to have more options in case I am not ready to absorb specific content.</p>
+<ul>
+<li><a href="https://www.amazon.co.uk/Sapiens-Humankind-Yuval-Noah-Harari/dp/0099590085">Sapiens: A Brief History of Humankind</a> by Yuval Noah Harari</li>
+<li><a href="https://www.amazon.co.uk/Brief-History-Time-Black-Holes/dp/0553176986">A Brief History of Time</a> by Stephen Hawking</li>
+<li><a href="https://www.amazon.co.uk/How-Avoid-Climate-Disaster-Breakthroughs/dp/0241448301">How to avoid a climate disaster</a> by Bill Gates</li>
+<li><a href="https://www.amazon.co.uk/Ride-Lifetime-Lessons-Creative-Leadership/dp/1787630463/ref=tmm_hrd_swatch_0?_encoding=UTF8&amp;qid=&amp;sr=">The Ride of a Lifetime: Lessons in Creative Leadership from 15 Years as CEO of the Walt Disney</a> by Robert Iger</li>
+<li><a href="https://www.amazon.co.uk/gp/product/075382843X/ref=ppx_yo_dt_b_asin_title_o09_s00?ie=UTF8&amp;psc=1">The Double Helix</a> by James Watson</li>
+<li><a href="https://www.amazon.co.uk/Tao-Te-Ching-Lao-Tzu/dp/B0933KF75J/ref=tmm_hrd_swatch_0?_encoding=UTF8&amp;qid=&amp;sr=">Tao Te Ching</a> by Lao Tzu</li>
+<li><a href="https://www.amazon.co.uk/Notes-Underground-Double-Penguin-Classics/dp/0140455124/ref=pd_lpo_2?pd_rd_i=0140455124&amp;psc=1">Notes from the Underground</a> by Fyodor Dostoyevsky</li>
+</ul>
+<h2 id="what-i-ve-read">What I&#39;ve read</h2>
+<p>The following is a list of books that I&#39;ve read and recommend to others to read or browse through. This list is not complete and sorted in no particular order. Some books are better than others. One day I will provide commentary on why these books are unique and how they shaped my thinking and personal philosophy for better or worse.</p>
+<ul>
+<li><a href="https://www.amazon.co.uk/4-Hour-Work-Week-Escape-Anywhere/dp/0091929113">4 Hour Work Week</a> by <a href="https://tim.blog">Tim Ferris</a></li>
+<li><a href="https://www.amazon.co.uk/gp/product/1578645018/ref=ppx_yo_dt_b_asin_title_o07_s00?ie=UTF8&amp;psc=1">Poor Charlie&#39;s Almanack</a> by Charles T. Munger</li>
+<li><a href="https://www.amazon.co.uk/gp/product/1398502316/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&amp;psc=1">The Code Breaker</a> by Walter Isaacson</li>
+<li><a href="https://www.amazon.co.uk/gp/product/3319155237/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&amp;psc=1">Why Greatness Cannot Be Planned</a> by Kenneth O. Stanley</li>
+<li><a href="https://www.amazon.co.uk/gp/product/076150186X/ref=ppx_yo_dt_b_asin_title_o03_s00?ie=UTF8&amp;psc=1">The Einstein Factor</a> by Win Wenger</li>
+<li><a href="https://www.amazon.co.uk/gp/product/0099518473/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&amp;psc=1">Brave New World</a> by Aldous Huxley</li>
+<li><a href="https://www.amazon.co.uk/Nineteen-Eighty-Four-Penguin-Modern-Classics/dp/0141393041">Nineteen Eighty-Four</a> by George Orwell</li>
+<li><a href="https://www.amazon.co.uk/Megatech-Technology-2050-Daniel-Franklin/dp/1781254621">Megatech: Technology in 2050</a> by Daniel Franklin</li>
+<li><a href="https://www.amazon.co.uk/gp/product/0141988517/ref=ppx_yo_dt_b_asin_title_o07_s00?ie=UTF8&amp;psc=1">12 Rules for Life</a> by Jordan B. Peterson</li>
+<li><a href="https://www.amazon.co.uk/gp/product/0393355624/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&amp;psc=1">Surely You&#39;re Joking, Mr. Feynman!</a> by Richard P. Feynman</li>
+<li><a href="https://www.amazon.co.uk/Complete-Hitchhikers-Guide-Galaxy-Boxset/dp/1529044197/ref=pd_sbs_1/257-9516739-9276001?pd_rd_w=HA7Pb&amp;pf_rd_p=1469375b-13b4-495f-86c1-e268482be980&amp;pf_rd_r=WX8M3HKCFKSACHGT2XFY&amp;pd_rd_r=6ba8175f-723d-4a6c-ab9f-58943e0fd9ee&amp;pd_rd_wg=FhlMJ&amp;pd_rd_i=1529044197&amp;psc=1">Hitchhiker&#39;s Guide to the Galaxy</a> by Douglas Adams</li>
+<li><a href="https://www.amazon.co.uk/Lord-Rings-J-R-Tolkien/dp/0261103253">The Lord of The Rings</a> by J. R. R. Tolkien</li>
+<li><a href="https://www.amazon.co.uk/Stealing-Network-Complete-Collectors-Chapter/dp/159749299X">Stealing the Network: The Complete Series Collector&#39;s Edition</a></li>
+<li><a href="https://www.amazon.co.uk/gp/product/0393338525/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&amp;psc=1">The Management Myth</a> by Matthew Stewart</li>
+<li><a href="https://www.amazon.co.uk/gp/product/1857886844/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&amp;psc=1">The 80/20 Principle</a> by Richard Koch</li>
+<li><a href="https://www.amazon.co.uk/gp/product/3952506907/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&amp;psc=1">The Little Book of Stoicism</a> by Jonas Salzgeber</li>
+<li><a href="https://www.amazon.co.uk/gp/product/143914995X/ref=ppx_yo_dt_b_asin_title_o09_s00?ie=UTF8&amp;psc=1">Lessons of History</a> by Durant</li>
+<li><a href="https://www.amazon.co.uk/gp/product/1861975139/ref=ppx_yo_dt_b_asin_title_o09_s00?ie=UTF8&amp;psc=1">Only The Paranoid Survive</a> by Andrew Grove</li>
+<li><a href="https://www.amazon.co.uk/gp/product/0231164688/ref=ppx_yo_dt_b_asin_title_o07_s00?ie=UTF8&amp;psc=1">What I Learned Losing a Million Dollars</a> by Jim Paul</li>
+<li><a href="https://www.amazon.co.uk/gp/product/1861976100/ref=ppx_yo_dt_b_asin_title_o03_s00?ie=UTF8&amp;psc=1">The 22 Immutable Laws Of Marketing</a> by Al Ries</li>
+<li><a href="https://www.amazon.co.uk/gp/product/0517543052/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&amp;psc=1">Be Here Now</a> by Ram Dass</li>
+<li><a href="https://www.amazon.co.uk/gp/product/0750665998/ref=ppx_yo_dt_b_asin_title_o07_s00?ie=UTF8&amp;psc=1">The Daily Drucker</a> by Peter Drucker</li>
+<li><a href="https://www.amazon.co.uk/gp/product/1847941494/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&amp;psc=1">Never Split the Difference</a> by Chris Voss and Tahl Raz</li>
+<li><a href="https://www.amazon.co.uk/gp/product/0141395850/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&amp;psc=1">Letters from a Stoic</a> by Seneca</li>
+<li><a href="https://www.amazon.co.uk/gp/product/0141038225/ref=ppx_yo_dt_b_asin_title_o04_s00?ie=UTF8&amp;psc=1">Antifragile</a> by Nassim Nicholas Taleb</li>
+<li><a href="https://www.amazon.co.uk/gp/product/0141034599/ref=ppx_yo_dt_b_asin_title_o03_s00?ie=UTF8&amp;psc=1">The Black Swan</a> by Nassim Nicholas Taleb</li>
+<li><a href="https://www.amazon.co.uk/gp/product/0143039105/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&amp;psc=1">Complete Short Stories</a> by Graham Greene</li>
+<li><a href="https://www.amazon.co.uk/gp/product/1529032970/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&amp;psc=1">Leadership Strategy and Tactics</a> by Jocko Willink</li>
+<li><a href="https://www.amazon.co.uk/gp/product/0712676090/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&amp;psc=1">Good To Great</a> by Jim Collins</li>
+<li><a href="https://www.amazon.co.uk/gp/product/0241295599/ref=ppx_yo_dt_b_asin_title_o09_s00?ie=UTF8&amp;psc=1">The Infinite Game</a> by Simon Sinek</li>
+<li><a href="https://www.amazon.co.uk/Mans-Search-Meaning-classic-Holocaust/dp/1844132390">Man&#39;s Search For Meaning</a> by Viktor E Frankl</li>
+<li><a href="https://www.amazon.co.uk/Free-smartest-businesses-something-nothing/dp/190521149X/ref=sr_1_1?dchild=1&amp;keywords=free+by+anderson&amp;qid=1625732343&amp;s=books&amp;sr=1-1">Free</a> by Chris Anderson</li>
+<li><a href="https://www.amazon.co.uk/Masters-Doom-created-transformed-culture/dp/0749924896/ref=sr_1_1?dchild=1&amp;keywords=masters+of+doom&amp;qid=1625732380&amp;s=books&amp;sr=1-1">Masters Of Doom</a> by David Kushner</li>
+<li><a href="https://www.amazon.co.uk/Magic-Thinking-Big-David-Schwartz/dp/1785040472/ref=sr_1_1?crid=3AHJ4ROIETZMB&amp;dchild=1&amp;keywords=the+magic+of+thinking+big&amp;qid=1625732423&amp;s=books&amp;sprefix=the+magic+of+thinking+%2Cstripbooks%2C154&amp;sr=1-1">The Magic of Thinking Big</a> by David J Schwartz</li>
+<li><a href="https://www.amazon.co.uk/Start-Why-Leaders-Inspire-Everyone/dp/0241958229/ref=pd_bxgy_img_2/257-9516739-9276001?pd_rd_w=EaZQk&amp;pf_rd_p=c7ea61ca-7168-47e3-9c8b-d84748f5b23c&amp;pf_rd_r=K6GMTSWG898843BR1RPF&amp;pd_rd_r=5db1ee7e-bf06-44e8-b7e6-8f64e18e8bdf&amp;pd_rd_wg=ZQI6M&amp;pd_rd_i=0241958229&amp;psc=1">Start With Why</a> by Simon Sinek</li>
+<li><a href="https://www.amazon.co.uk/Working-Backwards-Insights-Stories-Secrets/dp/1529033829/ref=sr_1_4?dchild=1&amp;keywords=amazon&amp;qid=1625732615&amp;s=books&amp;sr=1-4">Working Backwards: Insights, Stories, and Secrets from Inside Amazon</a> by Colin Bryar and Bill Carr</li>
+<li><a href="https://www.amazon.co.uk/gp/product/0300108834/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&amp;psc=1">A Little History of the World</a> by Ernst Gombrich</li>
+<li><a href="https://www.amazon.co.uk/gp/product/0679762884/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&amp;psc=1">High Output Management</a> by Andy Grove</li>
+<li><a href="https://www.amazon.co.uk/gp/product/1846683149/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&amp;psc=1">The Checklist Manifesto: How to Get Things Right</a> by Atul Gawande</li>
+<li><a href="https://www.amazon.co.uk/gp/product/0062574345/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&amp;psc=1">The Effective Executive: The Definitive Guide to Getting the Right Things Done</a> by Peter F Drucker</li>
+<li><a href="https://www.amazon.co.uk/gp/product/1473675960/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&amp;psc=1">Trillion Dollar Coach: The Leadership Handbook of Silicon Valley&#39;s Bill Campbell</a> by Eric Schmidt, Jonathan Rosenberg and Alan Eagle</li>
+<li><a href="https://www.amazon.co.uk/gp/product/0241209048/ref=ppx_yo_dt_b_asin_title_o03_s00?ie=UTF8&amp;psc=1">Anything You Want: 40 Lessons for a New Kind of Entrepreneur</a> by Derek Sivers</li>
+<li><a href="https://www.amazon.co.uk/gp/product/0393355640/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&amp;psc=1">What Do You Care What Other People Think?</a> by Richard P. Feynman</li>
+<li><a href="https://www.amazon.co.uk/gp/product/0141982659/ref=ppx_yo_dt_b_asin_title_o09_s00?ie=UTF8&amp;psc=1">Skin in the Game: Hidden Asymmetries in Daily Life</a> by Nassim Nicholas Taleb</li>
+<li><a href="https://www.amazon.co.uk/gp/product/0465025277/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&amp;psc=1">Six Easy Pieces: Essentials of Physics Explained by Its Most Brilliant Teacher</a> by Matthew Sands , Richard P. Feynman and Robert Leighton</li>
+<li><a href="https://www.amazon.co.uk/gp/product/1857231465/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&amp;psc=1">The Player of Games</a> by Iain M. Banks</li>
+<li><a href="https://www.amazon.co.uk/gp/product/1471185117/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&amp;psc=1">Every Tool&#39;s A Hammer: Life Is What You Make It</a> by Adam Savage</li>
+<li><a href="https://www.amazon.co.uk/Outliers-Story-Success-Malcolm-Gladwell/dp/0141036257/ref=pd_sbs_1/257-9516739-9276001?pd_rd_w=aXYdD&amp;pf_rd_p=1469375b-13b4-495f-86c1-e268482be980&amp;pf_rd_r=052MF3AQPHV1337AZZ0N&amp;pd_rd_r=13442fef-699d-467c-bd11-151081b239f0&amp;pd_rd_wg=jWYds&amp;pd_rd_i=0141036257&amp;psc=1">Outliers: The Story of Success</a> by Malcolm Gladwell</li>
+<li><a href="https://www.amazon.co.uk/Atlas-Shrugged-Penguin-Modern-Classics/dp/0141188936/ref=sr_1_1?crid=2S52GR508XP6J&amp;dchild=1&amp;keywords=atlas+shrugged&amp;qid=1625733324&amp;s=books&amp;sprefix=atlass+shru%2Caps%2C156&amp;sr=1-1">Atlas Shrugged</a> by Ayn Rand</li>
+<li><a href="https://www.amazon.co.uk/Fountainhead-Ayn-Rand/dp/0141188626/ref=pd_bxgy_img_1/257-9516739-9276001?pd_rd_w=gK53W&amp;pf_rd_p=c7ea61ca-7168-47e3-9c8b-d84748f5b23c&amp;pf_rd_r=2VRPTZBGKEJ70PVM0WMN&amp;pd_rd_r=59b29139-b3d6-44f1-8895-a10bf93c0350&amp;pd_rd_wg=BWyEo&amp;pd_rd_i=0141188626&amp;psc=1">The Fountainhead</a> by Ayn Rand</li>
+<li><a href="https://www.amazon.co.uk/How-Win-Friends-Influence-People/dp/0091906814/ref=msx_wsirn_v1_2/257-9516739-9276001?pd_rd_w=KiirR&amp;pf_rd_p=8841c8c0-713f-4d1f-a3a4-e9de758ed2c9&amp;pf_rd_r=MKYZR8C6YXH4VCNS1EM6&amp;pd_rd_r=5e32ff5f-91f5-4aa9-b5e3-e4f93981f7ce&amp;pd_rd_wg=K60SW&amp;pd_rd_i=0091906814&amp;psc=1">How to Win Friends and Influence People</a> by Dale Carnegie</li>
+<li><a href="https://www.amazon.co.uk/Rich-Dad-Poor-Teach-Middle/dp/1612680194/ref=pd_bxgy_img_1/257-9516739-9276001?pd_rd_w=wABJz&amp;pf_rd_p=c7ea61ca-7168-47e3-9c8b-d84748f5b23c&amp;pf_rd_r=RKFX77PQFEYWC0HA0SDJ&amp;pd_rd_r=970cb02b-f798-407a-be44-013c17553551&amp;pd_rd_wg=PcNgy&amp;pd_rd_i=1612680194&amp;psc=1">Rich Dad Poor Dad: What the Rich Teach Their Kids About Money That the Poor and Middle Class Do Not!</a> by Robert T. Kiyosaki</li>
+<li><a href="https://www.amazon.co.uk/Bryson-History-Nearly-Everything-Paperback/dp/B08KGPC3B7/ref=sr_1_3?crid=1LHB02WDO2QB1&amp;dchild=1&amp;keywords=short+history+of+nearly+everything+bryson&amp;qid=1625733466&amp;s=books&amp;sprefix=short+history+o%2Cstripbooks%2C184&amp;sr=1-3">A Short History of Nearly Everything</a> by Bill Bryson</li>
+<li><a href="https://www.amazon.co.uk/Zero-One-Notes-Start-Future-ebook/dp/B00KHX0II4/?_encoding=UTF8&amp;pd_rd_w=8FIni&amp;pf_rd_p=656e0774-1f76-4457-8dca-30e4052d3226&amp;pf_rd_r=VHS9Z7KW69W81A28R69X&amp;pd_rd_r=84ee4ea8-0ecd-48a6-a64d-4237f9bf5e2e&amp;pd_rd_wg=udC5P&amp;ref_=pd_gw_rnn">Zero to One: Notes on Start Ups, or How to Build the Future</a> by Peter Thiel and Blake Masters</li>
+<li><a href="https://www.amazon.co.uk/Built-Sell-Creating-business-without/dp/1591843979">Built to Sell: Creating a Business That Can Thrive Without You</a> by John Warrillow</li>
+<li><a href="https://www.amazon.co.uk/Crime-Dot-Com-Viruses-Rigging/dp/1789142857">Crime Dot Com: From Viruses to Vote Rigging, How Hacking Went Global</a> by Geoff White</li>
+<li><a href="https://www.amazon.co.uk/Meditations-Marcus-Aurelius/dp/1781398399/ref=tmm_hrd_swatch_0?_encoding=UTF8&amp;qid=&amp;sr=">Meditations</a> by Marcus Aurelius</li>
+<li><a href="https://www.amazon.co.uk/David-Goliath-Underdogs-Misfits-Battling/dp/0316204374">David and Goliath: Underdogs, Misfits, and the Art of Battling Giants</a> by Malcolm Gladwell</li>
+<li><a href="https://www.amazon.co.uk/Talking-My-Daughter-History-Capitalism/dp/1784705756">Talking to My Daughter: A Brief History of Capitalism</a> by Yanis Varoufakis</li>
+<li><a href="https://www.amazon.co.uk/Creativity-Inc-Overcoming-Unseen-Inspiration/dp/0593070097">Creativity, Inc.: Overcoming the Unseen Forces That Stand in the Way of True Inspiration</a> by Ed Catmull</li>
+<li><a href="https://www.amazon.co.uk/Principles-Life-Work-Ray-Dalio/dp/1501124021">Principles: Life and Work</a> by Ray Dalio</li>
+<li><a href="https://www.amazon.co.uk/Alchemist-Fable-about-Following-Dream/dp/0061233846">The Alchemist</a> by Paulo Coelho</li>
+<li><a href="https://www.amazon.co.uk/Almanack-Naval-Ravikant-Wealth-Happiness-ebook/dp/B08FF8MTM6">The Almanack of Naval Ravikant: A Guide to Wealth and Happiness</a> by Eric Jorgenson</li>
+</ul>
+<h2 id="how-do-i-choose-what-to-read-next">How do I choose what to read next</h2>
+<p>There between 600,000 and 1,000,000 books published in the USA alone every year. So, without any filter, you can easily get to spend time on books that probably do not matter in the long run. I try not to buy books that are not at least 5-10 years old. Most of the books I read come as recommendations from people that I like and trust. I buy more books than I can feasibly read so that I have options.</p>
+<p>I believe books are the cheapest form of education one can get, so I go big on this investment.</p>
+<h2 id="when-i-read">When I read</h2>
+<p>The best time to read is before going to bed. Not only I have a great night rest but also plenty of good thoughts in the morning. The second best time is while commuting to maximize idle time. I can easily read about 30 books per year if I read 1 hour a day while on the train.</p>
+<h2 id="how-do-i-read">How do I read</h2>
+<p>Unless I approach fiction, I do not need to read books from cover to cover. The best way to read non-fiction books is to familiarise yourself with the contents by scanning the pages paying attention to titles, introductions, summaries, etc. After that, I can start from whichever part feels most natural to me. Often that is at the beginning of the book, as the author intended, but sometimes I want to jump forward and read the most interesting part first and then go back to the beginning.</p>
+<p>When I read, I take notes with my phone. The Notes.app on iPhone has a feature that allows me to scan pages. It is a great way to collect valuable material you can go back to later. Taking good notes is a skill that you can learn with practice and a bit of patience. Once you get the hang of it, it will be very natural activity.</p>
+
+]]></description></item><item><title>Links Digest 2021</title><link>https://www.gnucitizen.org/blog/links-digest-2021/</link><pubDate>Fri, 24 Dec 2021 14:13:00 GMT</pubDate><guid isPermaLink="true">https://www.gnucitizen.org/blog/links-digest-2021/</guid><dc:creator>pdp</dc:creator><description><![CDATA[
+<p>A short list of useful links.</p>
+<h2 id="security">Security</h2>
+<h3 id="blogs">Blogs</h3>
+<ul>
+<li><a href="https://0x00sec.org/">https://0x00sec.org/</a> - don&#39;t know yet but it looks interesting</li>
+<li><a href="https://abiondo.me">https://abiondo.me</a> - ctf and other hacking things from a talanted hacker</li>
+<li><a href="https://www.vulnano.com/">https://www.vulnano.com/</a> - small blog but cool nevertheless</li>
+<li><a href="https://bugbountyforum.com/">https://bugbountyforum.com/</a> - interesting info about bug bounties</li>
+<li><a href="https://xz.aliyun.com/">https://xz.aliyun.com/</a> - interesting blog full of exploits and stuff</li>
+<li><a href="https://sites.google.com/securifyinc.com/secblogs/table-of-contents">https://sites.google.com/securifyinc.com/secblogs/table-of-contents</a> - very cool research</li>
+<li><a href="https://spaceraccoon.dev/">https://spaceraccoon.dev/</a> - bug bounty stuff</li>
+<li><a href="https://samcurry.net">https://samcurry.net</a> - bug bounty stuff</li>
+</ul>
+<h3 id="zines">Zines</h3>
+<ul>
+<li><a href="https://www.alchemistowl.org/pocorgtfo/">https://www.alchemistowl.org/pocorgtfo/</a> - pocorgtfo</li>
+<li><a href="https://secret.club">https://secret.club</a> - a zine but pretty compact and down to the point</li>
+<li><a href="https://pagedout.institute/">https://pagedout.institute/</a> - not sure yet</li>
+</ul>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="https://github.com/ngalongc/bug-bounty-reference">https://github.com/ngalongc/bug-bounty-reference</a></li>
+<li><a href="https://cxsecurity.com/">https://cxsecurity.com/</a></li>
+</ul>
+<h1 id="random">Random</h1>
+<h2 id="articles">Articles</h2>
+<ul>
+<li><a href="https://a16z.com/2019/01/18/notes-on-security-in-2019/">Notes on Security in 2019 - Andreessen Horowitz</a></li>
+<li><a href="https://apenwarr.ca/log/20190207">https://apenwarr.ca/log/20190207</a> - Quotes from 1992</li>
+</ul>
+<h2 id="hardware">Hardware</h2>
+<ul>
+<li><a href="https://github.com/Kobzol/hardware-effects">Demonstration of various hardware effects</a></li>
+<li><a href="https://twitter.com/ow/status/1060557975184654336/photo/1">IKEA Smart Plugs</a></li>
+</ul>
+<h2 id="software">Software</h2>
+<ul>
+<li><a href="https://github.com/earthquake/UniversalDVC">Universal Dynamic Virtual Channel connector for Remote Desktop Services</a></li>
+<li><a href="https://github.com/kgretzky/evilginx2">Evilgnx2 Phishing framework</a></li>
+<li><a href="https://github.com/Sandarmann/nmap-screenshot">Nmap Screenshots</a></li>
+<li><a href="https://github.com/infosecn1nja/AD-Attack-Defense/blob/master/README.md">Active Directory Kill Chain Attack &amp; Defense</a></li>
+<li><a href="https://github.com/edoz90/pastego">Scrape/Parse Pastebin using GO and expression grammar (PEG)</a></li>
+<li><a href="https://github.com/j3ssie/Osmedeus">Automatic Reconnaisance And Scanning In Penetration Testing</a></li>
+<li><a href="https://github.com/salesforce/ja3">SSL client fingerprints in an easy to produce and shareable way</a></li>
+<li><a href="https://github.com/schutzwerk/CANalyzat0r">Security analysis toolkit for proprietary car protocols</a></li>
+<li><a href="https://github.com/cdipaolo/goml">Golang Machine Learning, On The Wire</a></li>
+<li><a href="https://github.com/caiofilipini/pingo">Simple ICMP ping implementation in Go</a></li>
+<li><a href="https://github.com/Hack-with-Github/Powerful-Plugins">Powerful plugins and add-ons for hackers</a></li>
+<li><a href="https://github.com/rianhunter/wasmjit">Kernel Mode WebAssembly Runtime for Linux</a></li>
+<li><a href="https://github.com/maxmcd/webtty">Share a terminal session over WebRTC</a></li>
+</ul>
+<h2 id="philosophy">Philosophy</h2>
+<ul>
+<li><a href="https://thecreativeindependent.com/weekends/drawing-is-the-best-videogame-by-jeffrey-alan-scudder/">Drawing is the best Videogame</a></li>
+</ul>
+<h2 id="programming">Programming</h2>
+<ul>
+<li><a href="http://jeffe.cs.illinois.edu/teaching/algorithms/?">Algorithms</a></li>
+</ul>
+<h2 id="security">Security</h2>
+<ul>
+<li><a href="https://www.absolomb.com/2018-01-26-Windows-Privilege-Escalation-Guide/">Windows Privilege Escalation Guide</a></li>
+<li><a href="https://www.notsosecure.com/pwning-with-responder-a-pentesters-guide/">Pwning with Responder – A Pentester’s Guide</a></li>
+<li><a href="https://github.com/botherder/targetedthreats/wiki/Reports">Targeted surveillance for the purpose of spying on members of civil society</a></li>
+<li><a href="https://blog.ropnop.com/extracting-ssh-private-keys-from-windows-10-ssh-agent/">Extracting SSH Private Keys from Windows 10 ssh-agent</a></li>
+<li><a href="https://github.com/jivoi/awesome-osint">A curated list of amazingly awesome OSINT</a></li>
+<li><a href="https://github.com/unprovable/PentestHardware">PentestHardware</a></li>
+<li><a href="https://blog.ropnop.com/serverless-toolkit-for-pentesters/">Serverless Toolkit for Pentesters</a></li>
+<li><a href="http://blog.safebuff.com/2016/07/03/SSRF-Tips/">SSRF Tips</a></li>
+<li><a href="https://blog.0daylabs.com/2017/01/22/smart-tomcat/">Exploiting internal tomcat server with SSRF</a></li>
+<li><a href="https://pwn.netlify.com/open-redirect-to-oauth-token-theft.html">OAuth token theft using open redirect</a></li>
+</ul>
+
+]]></description></item><item><title>Hacking with ML</title><link>https://www.gnucitizen.org/blog/hacking-with-ml/</link><pubDate>Mon, 26 Apr 2021 15:10:45 GMT</pubDate><guid isPermaLink="true">https://www.gnucitizen.org/blog/hacking-with-ml/</guid><dc:creator>pdp</dc:creator><description><![CDATA[
 <p>Let&#39;s say that we want to train an ML model to hack web applications. What would that look like in practice? Let&#39;s do this thought experiment.</p>
 <p>We first need to define an environment where the agent (the ML model) can operate and essentially learn. In principle, this would necessitate boiling down the process of web hacking into a limited number of inputs that the agent needs to send in some combination and get rewarded for in return (let&#39;s think of this from the perspective of reinforcement learning).</p>
 <p>For this thought experiment, let&#39;s consider that the input is just three buttons (think of them as a game controller) which the agent can press to manipulate the environment. The agent will smash the buttons, and in return, it may get some reward for finding a vulnerability or getting pretty close to it (novelty-based reward system).</p>
@@ -103,49 +348,5 @@
 <p>Remember that there are people on the other side of the computer screen. Communication is an essential skill.</p>
 <p>Btw, I messed up on almost all points above forgetting my years of training. The final report was the most important deliverable at the company where I and @dcuthbert used to work. We used to spend a lot of time to make sure everything was perfect before we hand over.</p>
 <p><a href="https://twitter.com/pdp/status/1148325597690703872">https://twitter.com/pdp/status/1148325597690703872</a></p>
-
-]]></description></item><item><title>Bug Bounty Tips</title><link>https://www.gnucitizen.org/blog/bug-bounty-tips/</link><pubDate>Sun, 07 Jul 2019 19:01:00 GMT</pubDate><guid isPermaLink="true">https://www.gnucitizen.org/blog/bug-bounty-tips/</guid><dc:creator>pdp</dc:creator><description><![CDATA[
-<p>Perhaps the reason you are not finding vulns/bugs is either because your environment is not setup correctly or your methodology requires improvements. Here are a number of tips to help you with that #bugbountytips</p>
-<ol start="0">
-<li><p>Pivot between multiple exit nodes. Some services apply ACL rules so you will never be able to reach them from your home broadband. Use AWS C9 ;)</p>
-</li>
-<li><p>If you use separate profiles for Chrome you are doing it wrong. You will be wrestling the browser and the target application at the same time. Don&#39;t do this. Use <code>pown cdb launch -t</code> or <code>pown cdb launch -t -P auto</code> to launch chrome with a pentest-friendly configuration.</p>
-</li>
-<li><p>Don&#39;t stick to the scope. You need to have a bird-eye view to understand how things work. Don&#39;t hack but do take out of scope targets for consideration.</p>
-</li>
-<li><p>You will be as good as your tools. If all you do is Burp, ZAP and the likes you will find the same bugs as your peers. You need to understand that all tools have their own intricacies and you will miss things if you stick to one method only. Diversify!</p>
-</li>
-<li><p>Automate as much as you can. Sometimes you are lucky and you get a small window of an opportunity. I will let you know about one such bug once it gets triaged - but let&#39;s say that it appears I had only a window of a couple of hours to find it.</p>
-</li>
-<li><p>Either you do surface scans or deep dives. Don&#39;t do both at the same time. You will get lost and you will miss things. I&#39;ve done this mistake myself many times.</p>
-</li>
-<li><p>Read old reports. The older they are the better. Everyone is looking at the most recent hactivity reports and will follow the same trails. Some of the coolest research you will hear about at BH this year is based on papers written in 2006.</p>
-</li>
-<li><p>Have a methodology. When I was pentesting for a boutique consultancy company in London I learned to use a well-developed methodology which I initially hated. I still consider it one of the best methodologies I have ever encountered. Develop your own.</p>
-</li>
-<li><p>Take your time. Tomorrow you will have better ideas. It hurts when you don&#39;t find anything but this is part of the creative process. I don&#39;t call it a failure, I call it iteration.</p>
-</li>
-<li><p>Don&#39;t obsess about making the perfect system. Far too many people, including myself, try to make the perfect recon or the perfect automated scanning infrastructure, etc. If other people have built it, capitalize on their work. Solve the unsolved problems.</p>
-</li>
-</ol>
-<p>This is what I have on the top of my head. I hope it helps.</p>
-<p><a href="https://twitter.com/pdp/status/1147928550307258368">https://twitter.com/pdp/status/1147928550307258368</a></p>
-
-]]></description></item><item><title>Jobs Of Tomorrow</title><link>https://www.gnucitizen.org/blog/jobs-of-tomorrow/</link><pubDate>Thu, 16 May 2019 08:50:00 GMT</pubDate><guid isPermaLink="true">https://www.gnucitizen.org/blog/jobs-of-tomorrow/</guid><dc:creator>pdp</dc:creator><description><![CDATA[
-<p>Keep in mind that your kids will do jobs that don’t yet exist. When I was a child the cyber security field did not exist - not in the same capacity as it did when I started my professional career. What are the niche fields that will drive future innovation?</p>
-<p>Different sub-disciplines of AI and machine learning for sure including sub-branches of law, psychology, ethics and security.</p>
-<p>Space travel - we are doing it today and we will continue doing it even more in the future.</p>
-<p>Robotics - mostly design I imagine. You could be a robotics designer much like car designers these days.</p>
-<p>Smart wearable clothing - a new world of possibilities will open when you convert atoms to bits which will require rethinking the whole industry from the ground up.</p>
-<p>New types of entertainment - Netflix is already experimenting successfully with interactive content - as AR and VR get adopted will see more of it I am sure. This will require merging gaming with cinematography. It is already happening.</p>
-<p>Bioengineering and nano-engineering!</p>
-<p><a href="https://twitter.com/pdp/status/1128930582900150273">https://twitter.com/pdp/status/1128930582900150273</a></p>
-
-]]></description></item><item><title>It has been a while</title><link>https://www.gnucitizen.org/blog/it-has-been-a-while/</link><pubDate>Sat, 30 Jun 2018 09:49:53 GMT</pubDate><guid isPermaLink="true">https://www.gnucitizen.org/blog/it-has-been-a-while/</guid><dc:creator>pdp</dc:creator><description><![CDATA[
-<p>GNUCITIZEN is 12 years old more or less. Can you believe it?</p>
-<p>I am still trying to process the information and while it saddens me a little that we left the blogging scene for the past 8+ years I am proud with what we have achieved and the kind of legacy we have created. Even after so many successes and countless more failures, it is interesting to trace GC&#39;s impact on the security community over the years - from being first to try out different vulnerability disclosure practices to popping calc.exe from PDF documents or hacking hubs - it has more or less started here and took a life on its own.</p>
-<p>It is almost surreal watching our old videos and even sometimes it is a bit embarrassing reading some of our old research, blog posts, and the good old comment flame wars. But this is normal. As you grow older and learn more you also become aware of your personal limitations. The naivety of the younger you are long gone and what is left is the hardened shell fortified by years of experience.</p>
-<p>But, like any good story there is a sequel and while I cannot promise that will be better than the original what I am certain of is that it will be packed with this same hardened experience I talk about. It will be likely more measured, less flamboyant and to some extent conservative but it will also be insightful and perhaps a little naive. Naivety is important although it may come at some personal costs. To some extent, I believe the security community has forgotten its roots and what I am hoping to achieve with GC2 is to restore to balance in the universe.</p>
-<p>So are you ready? I am not. But I am ready to dive deep!</p>
 
 ]]></description></item></channel></rss>

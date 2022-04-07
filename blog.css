@@ -36,6 +36,9 @@ a:hover {
 #topnav {
   margin: 0px 20px 0px 20px;
 }
+#topnav {
+  font-weight: bold;
+}
 #topnav ul {
   list-style-type: none;
   margin: 0px 0px 20px 0px;
@@ -73,6 +76,17 @@ a:hover {
 }
 #post-content img + img {
   margin-top: 0px;
+}
+#post-content table {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-collapse: collapse;
+  width: 100%;
+}
+#post-content table th,
+#post-content table tr,
+#post-content table td {
+  border: 1px dashed #000000;
 }
 #post-content .video {
   width: 100%;
