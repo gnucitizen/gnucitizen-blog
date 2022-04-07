@@ -7,6 +7,8 @@ template: page.pug
 
 ![](/files/pdp.png)
 
+<a href="https://twitter.com/pdp"><i class="fa fa-twitter"></i></a> <a href="https://github.com/pdparchitect"><i class="fa fa-github"></i></a> <a href="https://www.linkedin.com/in/pdparchitect"><i class="fa fa-linkedin"></i></a>
+
 My professional experience encompasses leadership and technical roles in industries related to Identity Verification, Artificial Intelligence & Machine Learning, Financial Technologies (FinTech), Gambling, Security Software Development, Security Automation, and Security Consulting.
 
 Notable Information Security contributions include developing exploitation techniques against web technologies, common browsers, the portable document format (PDF), DHCP, UPnP, other network protocols, and NoSQL databases. I have also contributed some of the earliest research on embedded devices and IoT security.
