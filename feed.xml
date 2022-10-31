@@ -169,16 +169,6 @@
 <p>This is what I have on the top of my head. I hope it helps.</p>
 <p><a href="https://twitter.com/pdp/status/1147928550307258368">https://twitter.com/pdp/status/1147928550307258368</a></p>
 
-]]></description></item><item><title>Jobs Of Tomorrow</title><link>https://www.gnucitizen.org/blog/jobs-of-tomorrow/</link><pubDate>Thu, 16 May 2019 08:50:00 GMT</pubDate><guid isPermaLink="true">https://www.gnucitizen.org/blog/jobs-of-tomorrow/</guid><dc:creator>pdp</dc:creator><description><![CDATA[
-<p>Keep in mind that your kids will do jobs that don’t yet exist. When I was a child the cyber security field did not exist - not in the same capacity as it did when I started my professional career. What are the niche fields that will drive future innovation?</p>
-<p>Different sub-disciplines of AI and machine learning for sure including sub-branches of law, psychology, ethics and security.</p>
-<p>Space travel - we are doing it today and we will continue doing it even more in the future.</p>
-<p>Robotics - mostly design I imagine. You could be a robotics designer much like car designers these days.</p>
-<p>Smart wearable clothing - a new world of possibilities will open when you convert atoms to bits which will require rethinking the whole industry from the ground up.</p>
-<p>New types of entertainment - Netflix is already experimenting successfully with interactive content - as AR and VR get adopted will see more of it I am sure. This will require merging gaming with cinematography. It is already happening.</p>
-<p>Bioengineering and nano-engineering!</p>
-<p><a href="https://twitter.com/pdp/status/1128930582900150273">https://twitter.com/pdp/status/1128930582900150273</a></p>
-
 ]]></description></item><item><title>It has been a while</title><link>https://www.gnucitizen.org/blog/it-has-been-a-while/</link><pubDate>Sat, 30 Jun 2018 09:49:53 GMT</pubDate><guid isPermaLink="true">https://www.gnucitizen.org/blog/it-has-been-a-while/</guid><dc:creator>pdp</dc:creator><description><![CDATA[
 <p>GNUCITIZEN is 12 years old more or less. Can you believe it?</p>
 <p>I am still trying to process the information and while it saddens me a little that we left the blogging scene for the past 8+ years I am proud with what we have achieved and the kind of legacy we have created. Even after so many successes and countless more failures, it is interesting to trace GC&#39;s impact on the security community over the years - from being first to try out different vulnerability disclosure practices to popping calc.exe from PDF documents or hacking hubs - it has more or less started here and took a life on its own.</p>
@@ -234,5 +224,11 @@ For commercial options please contact us at http://www.gnucitizen.org/.
 <p>It is fair to say that not all unexpected values are equal. Some values are more likely to cause strange behaviour than others and this all depends on the target platform. Let&#39;s take JSON for example. In JSON we have 2 main structured containers: <code>{}</code> - object and <code>[]</code> - array. Now, Java applications typically map/unmarshall JSON structures to classes. Therefore if we have a class which has public member variable <code>&quot;a&quot;</code> of type integer but we send an empty object, an exception will be raised before the input is even processed by the application. This is not quite like that in other programming languages which are not so strictly typed. For example, in PHP the developer may expect an integer but actually the parser will produce an array and while this will cause an error at some point later inside the application it will not immediately explode during parsing. This kind of conditions are very interesting.</p>
 <p>So why I am mentioning this? Well, typically a fuzzer will generate a lot of combinations. Some of them may be fruitful. Most of them will be waste of time. However, by knowing what we are up against we can tune the fuzzer to be smarter and as a result of this a lot faster and more fruitful - I rather spend manually analysing 1000 results than 1000000.</p>
 <p>I think I am running out of energy. After so many years of silence this post looks quite lengthy. Btw, such fuzzers exist. You can find one as part of the <a href="http://www.websecurify.com/suite">Websecurify Online Suite</a> and you can go ahead and try it for free now. Both <a href="https://suite.websecurify.com/market/jsonfuzz">JSON</a> and <a href="https://suite.websecurify.com/market/xmlfuzz">XML</a> are well supported. The reason I am mentioning this is because the rest of the series will concentrate on exploring how these fuzzers work and what kind of vulnerabilities we can find with them.</p>
+
+]]></description></item><item><title>You and Your Research</title><link>https://www.gnucitizen.org/blog/you-and-your-research/</link><pubDate>Wed, 05 Dec 2012 00:40:04 GMT</pubDate><guid isPermaLink="true">https://www.gnucitizen.org/blog/you-and-your-research/</guid><dc:creator>pdp</dc:creator><description><![CDATA[
+<p>This is really one of my favourite talks from this year&#39;s HITB in KL.</p>
+<iframe class="video" src="//www.youtube.com/embed/JoVx_-bM8Tg" frameborder="0" allowfullscreen></iframe>
+
+<p><a href="https://twitter.com/haroonmeer">@haroonmeer</a> did an exceptional job at describing what it takes to produce an exceptional piece of work/research and the various pitfalls and sacrifices one needs to make.</p>
 
 ]]></description></item></channel></rss>
