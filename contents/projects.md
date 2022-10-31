@@ -5,14 +5,6 @@ template: page.pug
 
 # Projects
 
-## [PownJs](https://pownjs.com/)
-
-Pown.js is an experimental security framework for node. It aims to be security driven with contributions via NPM package registry. The project is currently in its infancy.
-
-## [OpenDevSecOps](https://opendevsecops.org)
-
-The OpenDevSecOps project mission is to provide a world-class resource for implementing complete devsecops and secops programs within organizations of any shape and size using off-the-shelf tools and access to our vibrant community.
-
 ## [Vulnerability Researchers](https://www.linkedin.com/groups/115855)
 
 Vulnerability Researchers is one of the larger security groups on LinkedIn. The group was founded 2008-2009 it is still active thanks to the active community support.
