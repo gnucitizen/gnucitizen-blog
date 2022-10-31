@@ -41,6 +41,8 @@ Here you will find a list of all other projects creates by GNUCITIZEN members.
 
 * [SecApps](https://secapps.com)
 * [Cohesion](https://cohesion.sh)
+* [BountyPage](https://bountypage.com)
+* [PriorityAttack](https://priorityattack.com)
 * [Websecurify](https://websecurify.com)
 * [Cure53](https://cure53.de/)
 * [PownJS](https://pownjs.com)
