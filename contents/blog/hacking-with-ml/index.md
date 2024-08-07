@@ -5,7 +5,7 @@ date: Mon Apr 26 2021 16:10:45 GMT+0100 (British Summer Time)
 template: post.pug
 ---
 
-Let's say that we want to train an ML model to hack web applications. What would that look like in practice? Let's do this thought experiment.
+Let's say that we want to train an [ML model](https://chatbotkit.com/platform/models) to hack web applications. What would that look like in practice? Let's do this thought experiment.
 
 We first need to define an environment where the agent (the ML model) can operate and essentially learn. In principle, this would necessitate boiling down the process of web hacking into a limited number of inputs that the agent needs to send in some combination and get rewarded for in return (let's think of this from the perspective of reinforcement learning).
 
