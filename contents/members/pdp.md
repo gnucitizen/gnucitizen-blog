@@ -25,6 +25,22 @@ I like to read books on science, philosophy, and business strategy in my spare t
 
 ## Personal Projects
 
+## [ChatBotKit](https://chatbotkit.com)
+
+ChatBotKit is a conversational AI company that focuses on building cutting-edge chatbot and virtual assistant technologies. The platform enables businesses to easily create and deploy intelligent chatbots to enhance customer engagement and automation.
+
+## [Formshare](https://formshare.ai)
+
+Formshare is an AI-powered form building platform that allows users to effortlessly create beautiful, interactive forms. It leverages artificial intelligence to simplify the form creation process while optimizing for user experience and conversion rates.
+
+## [BountyPage](https://bountypage.com)
+
+BountyPage is a service that enables organizations to quickly set up and manage their own bug bounty programs. It provides a streamlined platform for companies to engage with security researchers and ethically crowdsource the discovery of vulnerabilities in their systems.
+
+## [PDP.IM](https://pdp.im)
+
+PDP.IM is my personal website and online portfolio. It showcases my professional experience, research contributions, projects, and thoughts on various topics related to technology, security, and innovation.
+
 ## [SecApps](https://secapps.com)
 
 SecApps is a cloud environment for security tools and services. SecApps was originally conceived as a web security toolkit that ran directly on top of web browsers, leveraging a browser extension. SecApps is a mature security testing platform that customers can use for security monitoring, testing, bug bounty hunting, and more.
