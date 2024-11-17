@@ -39,6 +39,11 @@ Here you will find links to more GNUCITIZEN content.
 
 Here you will find a list of all other projects creates by GNUCITIZEN members.
 
+* [ChatBotKit](https://chatbotkit.com)
+* [Formshare](https://formshare.ai)
+* [Algo](https://algo.chatbotkit.com)
+* [Colabo](https://colabo.chatbotkit.com)
+* [PeopleAI](https://peopleai.app)
 * [SecApps](https://secapps.com)
 * [Cohesion](https://cohesion.sh)
 * [BountyPage](https://bountypage.com)
