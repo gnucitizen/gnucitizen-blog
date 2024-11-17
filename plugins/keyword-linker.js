@@ -19,6 +19,10 @@ var keywords = {
     'answer': {
         url: 'https://chatbotkit.com/hub/bots/ai-answer-generator',
         times: 1
+    },
+    'need cookies': {
+        url: 'https://chatbotkit.com/examples/cookie-bot',
+        times: 1
     }
 }
 
