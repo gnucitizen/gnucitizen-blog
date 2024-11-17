@@ -16,11 +16,7 @@ var keywords = {
         url: 'https://chatbotkit.com',
         times: 1
     },
-    'get the answer': {
-        url: 'https://chatbotkit.com/hub/bots/ai-answer-generator',
-        times: 1
-    },
-    'answer any questions': {
+    'answer': {
         url: 'https://chatbotkit.com/hub/bots/ai-answer-generator',
         times: 1
     }
