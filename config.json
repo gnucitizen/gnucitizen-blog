@@ -12,6 +12,7 @@
 
   "plugins": [
     "wintersmith-less",
-    "wintersmith-browserify"
+    "wintersmith-browserify",
+    "./plugins/keyword-linker.js"
   ]
 }
