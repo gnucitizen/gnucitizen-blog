@@ -23,7 +23,15 @@ var keywords = {
     'need cookies': {
         url: 'https://chatbotkit.com/examples/cookie-bot',
         times: 1
-    }
+    },
+    'playground' :{
+        url: 'https://chatbotkit.com/playground',
+        times: 1
+    },
+    'chat': {
+        url: 'https://chatbotkit.com',
+        times: 1
+    },
 }
 
 module.exports = function(env, callback) {
