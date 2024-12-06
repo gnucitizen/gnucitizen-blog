@@ -11,7 +11,7 @@
     }
 }</code></pre>
 <p>The function is very simple as you can see, though you have to be careful when used from chrome privileged code. As you can see the if statement comparisons can be used in order to escalate access, something known as chrome execution attack. Nevertheless, the function is sufficient enough to walk any JavaScript object. You can even make it recursive if you want to go several levels down the tree. By using this function, we can compare the namespace before and after and as such detect and locate malicious code.</p>
-<p>This is what I believe will be one of the techniques used by anti-malware software to prevent, but mostly to detect and locate, malicious code. Nevertheless, there are always methods that can be used to overcome namespace pollution problems. One of them is to use closures. Here is an example:</p>
+<p>This is what I believe will be one of the techniques used by anti-malware software to prevent, but mostly to detect and locate, malicious code. Nevertheless, there are always methods that can be used to overcome namespace pollution problems. One of them is to use closures. Here is an <a href="https://chatbotkit.com/examples">example</a>:</p>
 <pre><code class="language-javascript">(<span class="function"><span class="keyword">function</span> (<span class="params">window, document</span>) </span>{
     <span class="comment">// [evil code here]</span>
 })(<span class="built_in">window</span>, <span class="built_in">document</span>);</code></pre>

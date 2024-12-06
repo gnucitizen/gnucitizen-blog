@@ -4,7 +4,7 @@ pagvac</div><div id="post-content"><p>Frame injection vulnerabilities, although 
 <li>There is no need to inject special control characters such as angle brackets (unlike HTMLi/XSS)</li>
 <li>HTMLi/XSS filtering routines will not project against frame injection since the attacker only needs to insert a URL in the non-sanitized parameter</li>
 </ul>
-<p>The best way to explain what I mean is to show an example. Most frame injection issues occur in web applications because dynamic <a href="http://www.w3.org/TR/html4/present/frames.html">frameset/iframe</a> insertion is not implemented with enough filtering. For instance, say that we have the following URL on the target site:</p>
+<p>The best way to explain what I mean is to show an <a href="https://chatbotkit.com/examples">example</a>. Most frame injection issues occur in web applications because dynamic <a href="http://www.w3.org/TR/html4/present/frames.html">frameset/iframe</a> insertion is not implemented with enough filtering. For instance, say that we have the following URL on the target site:</p>
 <pre><code>https://www.victim.foo/index.php?**targeturl**=/contact.php
 
 A malicious user with intentions of launching a phishing attack will try tampering the `targeturl` parameter. His goal is to insert a third-party page that is under his control, rather than the original contact page. Indeed, `index.php`, although is not allowing HTML or JavaScript to be assigned to `targeturl`, is happy to process an absolute URL rather than a relative one:

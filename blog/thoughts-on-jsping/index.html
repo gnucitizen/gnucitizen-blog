@@ -4,7 +4,7 @@
 <p>JSPing can be a lot more than that. I was thinking, instead of just checking for presence, why don&#39;t we check for the time that is required to load that resource. This will be quite useful in many different ways. First of all, the tool can be used to see if a server or page is up and running. Second, we can perform bandwidth related tests and finally we can check if a resource has been cached (visited). The last one is the most interesting IMHO.</p>
 <p>There are two techniques that can be implemented in order to achieve the actions mentioned above. The first one makes use of iframes (David&#39;s implementation) and second one makes use of iframes again but this time we try to make the URL different in order to bypass the browser caching mechanism. Both of these techniques solve different problems.</p>
 <p>David&#39;s implementation is more suitable when we want to check whether a remote resource is present or simply check if the resource is cached. If the page is fetched quite quickly from the remote server than it is likely that no request is made at all but a cache content is provided by the browser. This however is not always true for various reasons.</p>
-<p>The second technique bypasses the cache control mechanism implemented by the browser by simply adding query fields to the URL that is about to be pinged. For example:</p>
+<p>The second technique bypasses the cache control mechanism implemented by the browser by simply adding query fields to the URL that is about to be pinged. For <a href="https://chatbotkit.com/examples">example</a>:</p>
 <pre><code>http://www.gnucitizen.org</code></pre><p>will become:</p>
 <pre><code>http://www.gnucitizen.org?__pingrequest=1,
 http://www.gnucitizen.org?__pingrequest=2,

@@ -6,7 +6,7 @@ pagvac</div><div id="post-content"><p>I really think that web interfaces are the
 <p>There are several persistent XSS vulnerabilities on the <code>/setup.cgi</code> script. It is possible to inject JavaScript by assigning a payload like the following to any of the vulnerable parameters:</p>
 <pre><code>&gt;&lt;script&gt;[PAYLOAD]&lt;/script&gt;
 
-The vulnerable (non-sanitized) parameters are the following: `devname`, `snmp_getcomm`, `snmp_setcomm`, `c4_trap_ip_`. Additionally, all HTTP requests are not tokenized with random values. Thus, all requests to the router&#39;s HTTP interface are vulnerable to Cross-site Request Forgeries (CSRF), perhaps by design. The following is an example of a HTTP request (notice the lack of non-predictable tokens):
+The vulnerable (non-sanitized) parameters are the following: `devname`, `snmp_getcomm`, `snmp_setcomm`, `c4_trap_ip_`. Additionally, all HTTP requests are not tokenized with random values. Thus, all requests to the router&#39;s HTTP interface are vulnerable to Cross-site Request Forgeries (CSRF), perhaps by design. The following is an [example](https://chatbotkit.com/examples) of a HTTP request (notice the lack of non-predictable tokens):
 
 POST /setup.cgi HTTP/1.1
 Authorization: Basic YWRtaW46YWRtaW4=

@@ -13,7 +13,7 @@
 </blockquote>
 <p>Can you spot the difference? No matter which side is vulnerable, the other is indirectly exposed to an attack too. Therefore we need to secure both sides. However, it is really hard to secure the client from the server since only the user has access in there. So how, can we make some sort of generic solution that is implemented on the server to resolve client and server issues? Well, it ain&#39;t going to be easy.</p>
 <p>In my mind I picture something like integrated solution which resembles to a great extend mod_security. but with client-side features. The server-side of the application is protected by the typical input validation rules, while the client is protect by injecting JavaScript inside each stage, or at least at the login stage, that verifies for client side vulnerabilities, such as the version of the Adobe Reader plugin, etc.</p>
-<p>So again, the server is protect by input validation. While the client is protected by JavaScript injected for each stage. For example, coming back your our case study:</p>
+<p>So again, the server is protect by input validation. While the client is protected by JavaScript injected for each stage. For <a href="https://chatbotkit.com/examples">example</a>, coming back your our case study:</p>
 <blockquote>
 <p>Joe visits <code>site.com</code>. Before login <code>site.com</code> verifies the integrity level of Joe&#39;s browser (i.e scan for vulnerabilities). Because Joe&#39;s browser has some issues, <code>site.com</code> informs Joe that unless he patches his system, he won&#39;t be allowed to enter.</p>
 </blockquote>

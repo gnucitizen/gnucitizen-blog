@@ -9,7 +9,7 @@ pagvac</div><div id="post-content"><p>Yes, we&#39;re back with more embedded dev
 <p>Unlike james67, Kevin&#39;s strategy to crack default WEP/WPA algorithms involve debugging setup wizards shipped by some ISPs, as opposed to debugging the router which uses the default key algorithm. Kevin obtained a copy of such wizard (&quot;stInstall.exe&quot;) provided by Orange in Spain - which can be found on broadband customers&#39; installation CDs. Such setup utility allowed him to figure out the default key algorithm.</p>
 <p>In short we have: <code>S/N -&gt; hash -&gt; default SSID and encryption key</code> which can be read as: a hashed version of the router&#39;s serial number is generated which is then used to derive both, the default SSID and the default encryption key. This is just a high-level overview of the algorithm. More specifically we have (quoted from Kevin&#39;s stkeys tool source code comments):</p>
 <blockquote>
-<p>Take as example: &quot;CP0615JT109 (53)&quot;</p>
+<p>Take as <a href="https://chatbotkit.com/examples">example</a>: &quot;CP0615JT109 (53)&quot;</p>
 <p>Remove the CC and PP values: CP0615109</p>
 <p>Convert the &quot;XXX&quot; values to hexadecimal: CP0615313039</p>
 <p>Process with SHA-1: 742da831d2b657fa53d347301ec610e1ebf8a3d0</p>

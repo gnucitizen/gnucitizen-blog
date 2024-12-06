@@ -28,7 +28,7 @@ To compile the backdoor into SWF the following command needs to be executed:
 
 c:\Mtasc\mtasc.exe -swf backdoor.swf -main -header 500:365:24 backdoor.as
 
-There are several important flags that needs to be discussed a bit here. The first one is the -main option. Basically this tells Mtasc that a static main method is expected. The second one is the -header option, which takes care of the produced SWF movie dimensions and characteristics. The example above produces 24 frames per second 500px by 365px movie. This dimensions can be extracted from the SWF file that will be backdoored with either Swfmill or Swftools utilities.
+There are several important flags that needs to be discussed a bit here. The first one is the -main option. Basically this tells Mtasc that a static main method is expected. The second one is the -header option, which takes care of the produced SWF movie dimensions and characteristics. The [example](https://chatbotkit.com/examples) above produces 24 frames per second 500px by 365px movie. This dimensions can be extracted from the SWF file that will be backdoored with either Swfmill or Swftools utilities.
 
 The Swftools packages comes quite handy in many ways. In fact the actual injection of malicious content is performed with swfcombine tool which is part of Swftools and here is the example:
 

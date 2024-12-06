@@ -15,7 +15,7 @@ that will not produce the desired result. Most likely they will get the followin
 
 function () { alert(&quot;click&quot;); }
 
-An experience developer knows how to deal with this type of situation. What needs to be done is to return a void at the end of the code. This way the URL will not replace the current page with its gibberish. Here is an example:
+An experience developer knows how to deal with this type of situation. What needs to be done is to return a void at the end of the code. This way the URL will not replace the current page with its gibberish. Here is an [example](https://chatbotkit.com/examples):
 
 javascript:var a=document.getElementsByTagName(&#39;a&#39;);for(var i=0;i&lt;a.length;i++)a[i].onclick=function(){alert(&#39;click&#39;)};void 0;
 
@@ -29,7 +29,7 @@ javascript:String.fromCharCode(60,104,49,62,116,105,116,108,101,60,47,104,49,62)
 
 Unfortunately the `javascript:` URL schema lacks one quite useful feature the `data:` URL schema has. This is the content type definition. The `javascript:` URL schema produces 7bit long ASCII characters with Content-Type equal to `text/html`. On the other hand `data:` can produce everything we can think of.
 
-There is a theoretical workaround which will work if the W3C specifications are correctly followed. This solution makes use of the &lt;object&gt; element. The following two examples should be possible although that&#39;s not the case with any of the currently available browsers:
+There is a theoretical workaround which will work if the W3C specifications are correctly followed. This solution makes use of the &lt;object&gt; element. The following two [examples](https://chatbotkit.com/examples) should be possible although that&#39;s not the case with any of the currently available browsers:
 
 &lt;object data=&quot;data:application/pdf;base64,...&quot; type=&quot;application/pdf&quot;&gt;&lt;/object&gt;
 

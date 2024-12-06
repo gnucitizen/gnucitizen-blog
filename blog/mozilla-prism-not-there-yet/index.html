@@ -9,7 +9,7 @@
 <p>Here is a list of things, which make sense in terms of security and which mozilla developers should consider implementing into Prism:</p>
 <ul>
 <li>Prism applications should be placed on their own such as cookies, persistent storage, etc are not accessible by other Prism applications which run from the same origin.</li>
-<li>Prism should implement logical <strong>groups</strong> which allow applications to share cookies between each other, when required. So for example, I should be able to define that the GMail application can share cookies with the Google Reader, i.e they are in the same logical group.</li>
+<li>Prism should implement logical <strong>groups</strong> which allow applications to share cookies between each other, when required. So for <a href="https://chatbotkit.com/examples">example</a>, I should be able to define that the GMail application can share cookies with the Google Reader, i.e they are in the same logical group.</li>
 <li>Requests to URLs outside of the current origin should be prohibited. I guess iframes, XMLHttpRequests and JavaScript remoting can be threated as safe operations since they are defined by the developers.</li>
 </ul>
 <p>Keep in mind that you may still suffer from Cross-site scripting and Cross-site request forgery attacks, although the attack surface will be greatly mitigated! I hope that these kind of features are implemented into Prism soon. This will give us the ability to surf the web a little bit safer.</p>

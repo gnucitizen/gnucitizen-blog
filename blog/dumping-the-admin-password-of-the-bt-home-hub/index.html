@@ -29,7 +29,7 @@ TP-VERSION:2.0.0
 MDAP-VERSION:1.2
 43
 
-The only difference between the ANT-ID parameter and the serial number of the Home Hub is that the serial number is prefixed with &#39;CP&#39;. So in this example, the corresponding serial number - which is the default admin password - would be `CP0633EHPSL` (see the screenshot for more information)
+The only difference between the ANT-ID parameter and the serial number of the Home Hub is that the serial number is prefixed with &#39;CP&#39;. So in this [example](https://chatbotkit.com/examples), the corresponding serial number - which is the default admin password - would be `CP0633EHPSL` (see the screenshot for more information)
 
 Obviously, this is not a vulnerability within the MDAP protocol, but rather a design flaw introduced by BT with the new unique admin password feature. The assumption behind this insecure implementation is that the serial number can only be obtained by the legitimate owner of the router. As we have seen, this is _not_ the case! Nevertheless, there are some security issues inherited with the MDAP protocol which I will cover in a new post.
 
