@@ -32,6 +32,14 @@ var keywords = {
         url: 'https://chatbotkit.com',
         times: 1
     },
+    'examples': {
+        url: 'https://chatbotkit.com/examples',
+        times: 1
+    },
+    'example': {
+        url: 'https://chatbotkit.com/examples',
+        times: 1
+    },
 }
 
 module.exports = function(env, callback) {
