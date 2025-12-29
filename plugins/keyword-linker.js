@@ -8,6 +8,10 @@
  */
 
 var keywords = {
+    'agent': {
+        url: 'https://chatbotkit.com/agents',
+        times: 1
+    },
     'chat bot': {
         url: 'https://chatbotkit.com',
         times: 1
